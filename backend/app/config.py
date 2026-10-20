@@ -24,9 +24,9 @@ LLM_PROVIDER = _env("LLM_PROVIDER", "gemini").lower()
 GEMINI_API_KEY = _env("GEMINI_API_KEY")
 GEMINI_MODEL = _env("GEMINI_MODEL", "gemini-3.5-flash-lite")
 # Бесплатный тариф: ~5 запросов/мин на КАЖДУЮ модель → разбор на своей lite-модели, генерация с запасными
-GEMINI_PARSE_MODEL = _env("GEMINI_PARSE_MODEL", "gemini-3.1-flash-lite")
+GEMINI_PARSE_MODEL = _env("GEMINI_PARSE_MODEL", "gemini-flash-lite-latest")
 GEMINI_FALLBACK_MODELS = [m.strip() for m in _env(
-    "GEMINI_FALLBACK_MODELS", "gemini-3.5-flash-lite,gemini-2.5-flash-lite,gemini-3.5-flash,gemini-2.5-flash").split(",") if m.strip()]
+    "GEMINI_FALLBACK_MODELS", "gemini-3.5-flash-lite,gemini-flash-lite-latest,gemini-3.6-flash").split(",") if m.strip()]
 GEMINI_EMBED_MODEL = _env("GEMINI_EMBED_MODEL", "gemini-embedding-2")
 LLM_TIMEOUT_S = float(_env("LLM_TIMEOUT_S", "10"))  # одна попытка генерации
 LLM_TOTAL_BUDGET_S = float(_env("LLM_TOTAL_BUDGET_S", "12"))  # все попытки вместе, дальше — шаблон
