@@ -1,9 +1,9 @@
 {
- "request_id": "fb759768f631",
+ "request_id": "5ce23146f240",
  "context_used": {
   "location": "≈ район ТРЦ «Керуен» (точность ~100 м)",
   "time": "вторник, 14:00",
-  "weather": "+3°C, ветер 6 м/с",
+  "weather": "+4°C, ветер 5 м/с",
   "mode": "пешком",
   "radius_m": 1142,
   "filters": [
@@ -40,11 +40,11 @@
    "distance_m": 133,
    "travel_min": 2,
    "visit_min": [
-    40,
-    55
+    43,
+    58
    ],
-   "why": "Коворкинг с высоким рейтингом 4.9, где есть розетки и Wi-Fi для комфортной работы.",
-   "what_to_do": "Занять свободное рабочее место, подключиться к сети и поработать в течение часа.",
+   "why": "Отличный коворкинг с высоким рейтингом 4.9, розетками и вайфаем для комфортной работы.",
+   "what_to_do": "Занять удобное рабочее место, подключиться к сети и поработать в течение часа.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -63,32 +63,154 @@
     "indoor",
     "sockets",
     "wifi"
-   ]
+   ],
+   "image": null
+  },
+  {
+   "poi_id": "2gis:70000001068267909",
+   "name": "iWork",
+   "category": "coworking",
+   "lat": 51.129274,
+   "lon": 71.428557,
+   "distance_m": 250,
+   "travel_min": 4,
+   "visit_min": [
+    41,
+    56
+   ],
+   "why": "Коворкинг iWork подходит для работы благодаря наличию розеток и высокому рейтингу 4.9.",
+   "what_to_do": "Устроиться за рабочим столом, воспользоваться розеткой и заняться своими задачами.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001068267909"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor",
+    "night",
+    "sockets",
+    "wifi"
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Возьмите с собой наушники, чтобы сосредоточиться на задачах в тишине.",
+   "text": "Возьмите с собой наушники, чтобы полная концентрация помогла быстрее справиться с задачами.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
- "warnings": [
-  "Валидатор убрал 1 мест(а), которых нет в базе."
- ],
+ "warnings": [],
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 1709
+  "latency_ms": 4351
  },
- "_eval_ms": 1772,
+ "_eval_ms": 4406,
+ "_pois_snapshot": {
+  "2gis:70000001033835901": {
+   "id": "2gis:70000001033835901",
+   "name": "IQ Coworking",
+   "name_i18n": {
+    "ru": "IQ Coworking"
+   },
+   "lat": 51.128788,
+   "lon": 71.423117,
+   "category": "coworking",
+   "tags": [
+    "indoor",
+    "sockets",
+    "wifi",
+    "work"
+   ],
+   "description": "Коворкинг «IQ Coworking» по адресу: улица Достык, 5. Рубрики 2GIS: коворкинг, конференц-залы.",
+   "description_source": "template",
+   "address": "улица Достык, 5",
+   "opening_hours": "Mo-Su 09:00-22:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 129,
+   "popularity": 0.177,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 120,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001033835901",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001068267909": {
+   "id": "2gis:70000001068267909",
+   "name": "iWork",
+   "name_i18n": {
+    "ru": "iWork"
+   },
+   "lat": 51.129274,
+   "lon": 71.428557,
+   "category": "coworking",
+   "tags": [
+    "indoor",
+    "night",
+    "sockets",
+    "wifi",
+    "work"
+   ],
+   "description": "Коворкинг «iWork» по адресу: улица Динмухамед Конаев, 12/1. Рубрики 2GIS: коворкинг, конференц-залы, аренда помещений.",
+   "description_source": "template",
+   "address": "улица Динмухамед Конаев, 12/1",
+   "opening_hours": "Mo-Sa 08:00-24:00; Su 08:00-19:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 29,
+   "popularity": 0.117,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 120,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001068267909",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

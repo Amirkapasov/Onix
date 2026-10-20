@@ -1,9 +1,9 @@
 {
- "request_id": "b8b10ad375db",
+ "request_id": "940708974498",
  "context_used": {
   "location": "≈ район Байтерек (точность ~100 м)",
   "time": "вторник, 12:00",
-  "weather": "+3°C, ветер 6 м/с",
+  "weather": "+4°C, ветер 5 м/с",
   "mode": "пешком",
   "radius_m": 1713,
   "filters": [
@@ -27,19 +27,19 @@
  },
  "recommendations": [
   {
-   "poi_id": "osm:way/258753491",
-   "name": "Поющий фонтан",
-   "category": "landmark",
-   "lat": 51.12754,
-   "lon": 71.435247,
-   "distance_m": 370,
-   "travel_min": 6,
+   "poi_id": "wikidata:Q713955",
+   "name": "Бульвар Нуржол",
+   "category": "park",
+   "lat": 51.127208,
+   "lon": 71.436947,
+   "distance_m": 493,
+   "travel_min": 9,
    "visit_min": [
-    15,
-    25
+    30,
+    45
    ],
-   "why": "Одна из достопримечательностей города. Фонтан «Поющий фонтан».",
-   "what_to_do": "Осмотрите снаружи, сделайте фото с лучшего ракурса и пройдитесь по округе.",
+   "why": "Бульвар Нуржол находится всего в 9 минутах ходьбы и отлично подходит для прогулки на открытом воздухе.",
+   "what_to_do": "Пройдитесь по пешеходной зоне в центре Астаны, насладитесь архитектурой и сделайте памятные кадры.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
@@ -49,110 +49,231 @@
    "source_type": "poi_data",
    "sources": [
     {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/258753491"
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q713955"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BB%D1%8C%D0%B2%D0%B0%D1%80_%D0%9D%D1%83%D1%80%D0%B6%D0%BE%D0%BB"
     }
    ],
    "rating": null,
    "badges": [
+    "outdoor",
     "free",
-    "photo",
+    "quiet",
     "hours_unverified"
-   ]
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Astana_DSC04189_%287709788152%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Astana_DSC04189_%287709788152%29.jpg/960px-Astana_DSC04189_%287709788152%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana_DSC04189_(7709788152).jpg",
+    "author": "jtstewart",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "wikimedia_commons"
+   }
   },
   {
-   "poi_id": "2gis:70000001021365759",
-   "name": "Монумент-Бәйтерек",
-   "category": "viewpoint",
-   "lat": 51.128301,
-   "lon": 71.430456,
-   "distance_m": 46,
-   "travel_min": 1,
+   "poi_id": "osm:way/166198046",
+   "name": "Резиденция «Ак Орда» (вид с площади)",
+   "category": "landmark",
+   "lat": 51.1258,
+   "lon": 71.446473,
+   "distance_m": 1175,
+   "travel_min": 20,
    "visit_min": [
     15,
     25
    ],
-   "why": "Одна из достопримечательностей города; высокий рейтинг 4.9.",
-   "what_to_do": "Поднимитесь на смотровую, посмотрите на город, сделайте панорамные фото.",
+   "why": "Резиденция «Ак Орда» — известная достопримечательность столицы с бесплатным доступом к обзорной площади.",
+   "what_to_do": "Подойдите к площади, чтобы рассмотреть здание резиденции президента и сделать фотографии.",
    "open_status": {
     "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 21:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001021365759"
-    }
-   ],
-   "rating": 4.9,
-   "badges": [
-    "indoor",
-    "outdoor",
-    "view",
-    "photo"
-   ]
-  },
-  {
-   "poi_id": "osm:way/230358856",
-   "name": "Национальный архив Республики Казахстан",
-   "category": "landmark",
-   "lat": 51.127967,
-   "lon": 71.427018,
-   "distance_m": 208,
-   "travel_min": 4,
-   "visit_min": [
-    15,
-    25
-   ],
-   "why": "Одна из достопримечательностей города; совсем рядом. Достопримечательность «Национальный архив Республики Казахстан».",
-   "what_to_do": "Осмотрите снаружи, сделайте фото с лучшего ракурса и пройдитесь по округе.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы не указаны; открытая территория — обычно доступна",
-    "source": null
+    "confidence": "medium",
+    "label": "Круглосуточно (часы по OSM, проверено 2026-10-20)",
+    "source": "osm"
    },
    "source_type": "poi_data",
    "sources": [
     {
      "name": "osm",
-     "url": "https://www.openstreetmap.org/way/230358856"
+     "url": "https://www.openstreetmap.org/way/166198046"
     },
     {
      "name": "wikidata",
-     "url": "https://www.wikidata.org/wiki/Q12573359"
+     "url": "https://www.wikidata.org/wiki/Q413579"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D0%BE%D1%80%D0%B4%D0%B0_(%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D1%8F)"
     }
    ],
    "rating": null,
    "badges": [
     "free",
-    "photo",
-    "hours_unverified"
-   ]
+    "night",
+    "photo"
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Astana-2021-10_-_25.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Astana-2021-10_-_25.jpg/960px-Astana-2021-10_-_25.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_25.jpg",
+    "author": "Vyacheslav Bukharov",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   }
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "Загляните на чашку кофе в ближайшую кофейню, чтобы согреться после прогулки.",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "Я работаю только по Астане: Алматы, Медеу (Алматы), Шымбулак (Алматы) — вне зоны покрытия. Вот похожие места в Астане.",
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+  "Я работаю только по Астане: Алматы, Медеу (Алматы), Шымбулак (Алматы) — вне зоны покрытия. Вот похожие места в Астане."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 3599
  },
- "_eval_ms": 6102,
+ "_eval_ms": 4062,
+ "_pois_snapshot": {
+  "wikidata:Q713955": {
+   "id": "wikidata:Q713955",
+   "name": "Бульвар Нуржол",
+   "name_i18n": {
+    "ru": "Бульвар Нуржол",
+    "kk": "Нұржол желек жолы",
+    "en": "Water Green Boulevard"
+   },
+   "lat": 51.127208,
+   "lon": 71.436947,
+   "category": "park",
+   "tags": [
+    "free",
+    "must_see",
+    "outdoor",
+    "quiet",
+    "sight",
+    "walk"
+   ],
+   "description": "Бульвар Нуржол — сооружение с пешеходной зоной в новом административно-деловом центре Астаны на левом берегу реки Ишим.",
+   "description_source": "wikipedia",
+   "address": null,
+   "opening_hours": null,
+   "opening_hours_source": null,
+   "opening_hours_checked_at": null,
+   "phone": null,
+   "website": null,
+   "rating": null,
+   "rating_count": null,
+   "popularity": 0.823,
+   "indoor": false,
+   "wheelchair": "unknown",
+   "kid_friendly": true,
+   "price_level": 0,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q713955",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BB%D1%8C%D0%B2%D0%B0%D1%80_%D0%9D%D1%83%D1%80%D0%B6%D0%BE%D0%BB",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Astana_DSC04189_%287709788152%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Astana_DSC04189_%287709788152%29.jpg/960px-Astana_DSC04189_%287709788152%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana_DSC04189_(7709788152).jpg",
+    "author": "jtstewart",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "wikimedia_commons"
+   },
+   "data_quality": 0.35,
+   "updated_at": "2026-10-20"
+  },
+  "osm:way/166198046": {
+   "id": "osm:way/166198046",
+   "name": "Резиденция «Ак Орда» (вид с площади)",
+   "name_i18n": {
+    "ru": "Резиденция «Ак Орда» (вид с площади)",
+    "kk": "Ақорда резиденциясы",
+    "en": "Ak Orda Presidential Palace"
+   },
+   "lat": 51.1258,
+   "lon": 71.446473,
+   "category": "landmark",
+   "tags": [
+    "24_7",
+    "free",
+    "must_see",
+    "night",
+    "photo",
+    "sight"
+   ],
+   "description": "Акорда — резиденция президента Казахстана. Является штаб-квартирой Администрации Президента.",
+   "description_source": "wikipedia",
+   "address": "4CGW+7GX, Ак орда, Левобережье",
+   "opening_hours": "24/7",
+   "opening_hours_source": "osm",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "8 (702) 383 3734",
+   "website": "https://www.akorda.kz",
+   "rating": null,
+   "rating_count": null,
+   "popularity": 1.0,
+   "indoor": null,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": 0,
+   "typical_visit_min": 20,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/166198046",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q413579",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D0%BE%D1%80%D0%B4%D0%B0_(%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D1%8F)",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Astana-2021-10_-_25.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Astana-2021-10_-_25.jpg/960px-Astana-2021-10_-_25.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_25.jpg",
+    "author": "Vyacheslav Bukharov",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   },
+   "data_quality": 0.8,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

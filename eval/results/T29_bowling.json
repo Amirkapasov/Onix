@@ -1,5 +1,5 @@
 {
- "request_id": "dba8a4402cfe",
+ "request_id": "eaded67d9e15",
  "context_used": {
   "location": "≈ район Хан Шатыр (точность ~100 м)",
   "time": "пятница, 20:00",
@@ -36,8 +36,8 @@
     60,
     90
    ],
-   "why": "Отличный вариант для компании с высоким рейтингом 5.0, работает до 23:00.",
-   "what_to_do": "Сыграйте в боулинг с друзьями, насладитесь атмосферой и видеоиграми.",
+   "why": "Отличный вариант для компании, рейтинг 5.0, место открыто до 23:00, подходит для вечера пятницы.",
+   "what_to_do": "Поиграйте в боулинг с друзьями, насладитесь атмосферой развлекательного центра и проведите вечер за игрой.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -55,12 +55,13 @@
    "badges": [
     "indoor",
     "night"
-   ]
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Забронируйте дорожку заранее, так как по вечерам в пятницу бывает много желающих.",
+   "text": "После боулинга можно зайти в ближайшее кафе, чтобы обсудить результаты игры.",
    "source_type": "generated_idea"
   }
  ],
@@ -71,16 +72,60 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 4134
+  "latency_ms": 3684
  },
- "_eval_ms": 4195,
+ "_eval_ms": 3752,
+ "_pois_snapshot": {
+  "2gis:70000001116864210": {
+   "id": "2gis:70000001116864210",
+   "name": "Strike Zone Bowling",
+   "name_i18n": {
+    "ru": "Strike Zone Bowling"
+   },
+   "lat": 51.13026,
+   "lon": 71.39028,
+   "category": "entertainment",
+   "tags": [
+    "bowling",
+    "fun",
+    "indoor",
+    "night"
+   ],
+   "description": "Развлечения «Strike Zone Bowling» по адресу: улица Сыганак, 17Б. Рубрики 2GIS: боулинг, клубы видеоигр.",
+   "description_source": "template",
+   "address": "улица Сыганак, 17Б",
+   "opening_hours": "Mo-Su 10:00-23:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 5.0,
+   "rating_count": 4,
+   "popularity": 0.102,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001116864210",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

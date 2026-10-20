@@ -1,5 +1,5 @@
 {
- "request_id": "6ba03877f8e3",
+ "request_id": "f10bcd9088f5",
  "context_used": {
   "location": "≈ район Байтерек (точность ~100 м)",
   "time": "суббота, 15:00",
@@ -27,38 +27,6 @@
   ]
  },
  "recommendations": [
-  {
-   "poi_id": "2gis:70000001019940194",
-   "name": "Тарлан",
-   "category": "sport",
-   "lat": 51.151786,
-   "lon": 71.409547,
-   "distance_m": 3005,
-   "travel_min": 12,
-   "visit_min": [
-    60,
-    90
-   ],
-   "why": "Каток — то, что вы искали; в мороз и ветер — под крышей; высокий рейтинг 4.9. Спорт «Тарлан». Рубрики 2GIS: каток.",
-   "what_to_do": "Уточните расписание и прокат инвентаря перед выходом.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 22:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001019940194"
-    }
-   ],
-   "rating": 4.9,
-   "badges": [
-    "indoor"
-   ]
-  },
   {
    "poi_id": "2gis:70000001035892961",
    "name": "Mega Arena",
@@ -89,32 +57,158 @@
    "rating": 4.8,
    "badges": [
     "indoor"
-   ]
+   ],
+   "image": null
+  },
+  {
+   "poi_id": "2gis:70000001095535140",
+   "name": "Megaice",
+   "category": "sport",
+   "lat": 51.089489,
+   "lon": 71.414806,
+   "distance_m": 4412,
+   "travel_min": 16,
+   "visit_min": [
+    60,
+    90
+   ],
+   "why": "Каток — то, что вы искали; в мороз и ветер — под крышей; высокий рейтинг 4.7. Спорт «Megaice». Рубрики 2GIS: каток.",
+   "what_to_do": "Уточните расписание и прокат инвентаря перед выходом.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 23:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001095535140"
+    }
+   ],
+   "rating": 4.7,
+   "badges": [
+    "indoor",
+    "night"
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "После катка можно выпить горячий чай или кофе, чтобы согреться.",
+   "text": "Перед выходом на каток выпейте горячего чая, чтобы согреться.",
+   "source_type": "generated_idea"
+  },
+  {
+   "text": "Убедитесь, что форма одежды удобна и не сковывает движения на льду.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
  "warnings": [
-  "Пешком рядом нет: ближайший вариант (каток) — «Тарлан», 3.0 км, ~12 мин на такси."
+  "Пешком рядом нет: ближайший вариант (каток) — «Турлан», 3.0 км, ~12 мин на такси."
  ],
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 3508
+  "latency_ms": 5447
  },
- "_eval_ms": 3568,
+ "_eval_ms": 5526,
+ "_pois_snapshot": {
+  "2gis:70000001035892961": {
+   "id": "2gis:70000001035892961",
+   "name": "Mega Arena",
+   "name_i18n": {
+    "ru": "Mega Arena"
+   },
+   "lat": 51.088811,
+   "lon": 71.409384,
+   "category": "sport",
+   "tags": [
+    "ice",
+    "indoor",
+    "skating",
+    "winter"
+   ],
+   "description": "Спорт «Mega Arena» по адресу: Кабанбай батыр проспект, 62. Рубрики 2GIS: каток.",
+   "description_source": "template",
+   "address": "Кабанбай батыр проспект, 62",
+   "opening_hours": "Mo-Su 10:00-20:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.8,
+   "rating_count": 221,
+   "popularity": 0.233,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001035892961",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001095535140": {
+   "id": "2gis:70000001095535140",
+   "name": "Megaice",
+   "name_i18n": {
+    "ru": "Megaice"
+   },
+   "lat": 51.089489,
+   "lon": 71.414806,
+   "category": "sport",
+   "tags": [
+    "ice",
+    "indoor",
+    "night",
+    "skating",
+    "winter"
+   ],
+   "description": "Спорт «Megaice» по адресу: проспект Мангилик Ел, 55/1а. Рубрики 2GIS: каток.",
+   "description_source": "template",
+   "address": "проспект Мангилик Ел, 55/1а",
+   "opening_hours": "Mo-Fr 12:00-22:00; Sa-Su 10:00-23:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.7,
+   "rating_count": 106,
+   "popularity": 0.164,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001095535140",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

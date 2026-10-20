@@ -1,9 +1,9 @@
 {
- "request_id": "80ebe8c661bd",
+ "request_id": "ba77afb62c82",
  "context_used": {
   "location": "≈ район Бульвар Нуржол (точность ~100 м)",
   "time": "вторник, 16:00",
-  "weather": "+3°C, ветер 6 м/с",
+  "weather": "+4°C (климатическая норма для выбранного времени)",
   "mode": "пешком",
   "radius_m": 1713,
   "filters": [
@@ -14,34 +14,30 @@
   "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
  "parsed_intent": {
-  "intent": "entertainment",
+  "intent": "other",
   "time_budget_min": null,
   "companions": "solo",
   "constraints": [],
   "keywords": [
-   "развлечения",
-   "досуг",
-   "куда сходить",
-   "интересные места",
    "скучно",
    "сходить"
   ]
  },
  "recommendations": [
   {
-   "poi_id": "2gis:70000001021365759",
-   "name": "Монумент-Бәйтерек",
+   "poi_id": "osm:way/230401645",
+   "name": "Монумент «Байтерек»",
    "category": "viewpoint",
-   "lat": 51.128301,
-   "lon": 71.430456,
-   "distance_m": 229,
+   "lat": 51.128288,
+   "lon": 71.430455,
+   "distance_m": 228,
    "travel_min": 4,
    "visit_min": [
-    15,
-    25
+    20,
+    35
    ],
-   "why": "Отличное место с высоким рейтингом 4.9 для интересного времяпрепровождения и красивых видов со смотровой площадки.",
-   "what_to_do": "Поднимитесь на смотровую площадку, чтобы насладиться панорамным видом города и сделать фотографии.",
+   "why": "Отличный способ развеяться и посмотреть на город с высоты. Монумент со смотровой башней открыт до 21:00.",
+   "what_to_do": "Поднимитесь на смотровую площадку, насладитесь панорамным видом столицы и сделайте памятные фото.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -51,95 +47,82 @@
    "source_type": "poi_data",
    "sources": [
     {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/230401645"
+    },
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q804210"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B9%D1%82%D0%B5%D1%80%D0%B5%D0%BA_(%D0%BC%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D0%BD%D1%82)"
+    },
+    {
      "name": "2gis",
      "url": "https://2gis.kz/astana/firm/70000001021365759"
     }
    ],
    "rating": 4.9,
    "badges": [
-    "indoor",
     "outdoor",
+    "free",
     "view",
     "photo"
-   ]
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg/960px-Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Night_at_Esil_District,_Astana_(P1190721).jpg",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "source": "wikimedia_commons"
+   }
   },
   {
-   "poi_id": "2gis:70000001079723926",
-   "name": "Show Today",
-   "category": "entertainment",
-   "lat": 51.124406,
-   "lon": 71.436578,
-   "distance_m": 382,
-   "travel_min": 7,
-   "visit_min": [
-    65,
-    110
-   ],
-   "why": "Интерактивные развлечения и квесты помогут быстро избавиться от скуки. Рейтинг 5.0.",
-   "what_to_do": "Пройдите необычный интерактивный квест или примите участие в развлекательной программе.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 01:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001079723926"
-    }
-   ],
-   "rating": 5.0,
-   "badges": [
-    "indoor",
-    "night",
-    "unusual",
-    "interactive"
-   ]
-  },
-  {
-   "poi_id": "osm:node/14100100182",
-   "name": "Drinkit",
+   "poi_id": "osm:node/10564988185",
+   "name": "Degirmen",
    "category": "cafe",
-   "lat": 51.130288,
-   "lon": 71.429011,
-   "distance_m": 460,
-   "travel_min": 8,
+   "lat": 51.128566,
+   "lon": 71.433325,
+   "distance_m": 176,
+   "travel_min": 3,
    "visit_min": [
     30,
     45
    ],
-   "why": "Уютное кафе с высоким рейтингом 4.8, где можно согреться за чашкой кофе при прохладной погоде.",
-   "what_to_do": "Закажите любимый кофе и отдохните за чтением книги или просмотром ленты.",
+   "why": "Уютное кафе неподалеку с высоким рейтингом 4.6, где можно выпить кофе и отдохнуть.",
+   "what_to_do": "Зайдите за чашечкой ароматного кофе и отдохните после прогулки.",
    "open_status": {
     "state": "open",
     "confidence": "high",
-    "label": "Открыто до 23:00 (часы по 2GIS, проверено 2026-10-20)",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
     "source": "2gis"
    },
    "source_type": "poi_data",
    "sources": [
     {
      "name": "osm",
-     "url": "https://www.openstreetmap.org/node/14100100182"
+     "url": "https://www.openstreetmap.org/node/10564988185"
     },
     {
      "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001102541704"
+     "url": "https://2gis.kz/astana/firm/70000001032665509"
     }
    ],
-   "rating": 4.8,
+   "rating": 4.6,
    "badges": [
     "indoor",
-    "coffee",
-    "wifi"
-   ]
+    "night",
+    "coffee"
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Попробуйте составить небольшой план прогулки по близлежащим уличным аллеям, если погода покажется комфортной.",
+   "text": "Пройдитесь по бульвару Нуржол и послушайте любимую музыку в наушниках.",
    "source_type": "generated_idea"
   }
  ],
@@ -148,16 +131,132 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 3684
+  "latency_ms": 4517
  },
- "_eval_ms": 3753,
+ "_eval_ms": 7125,
+ "_pois_snapshot": {
+  "osm:way/230401645": {
+   "id": "osm:way/230401645",
+   "name": "Монумент «Байтерек»",
+   "name_i18n": {
+    "ru": "Монумент «Байтерек»",
+    "kk": "Бәйтерек",
+    "en": "Bayterek"
+   },
+   "lat": 51.128288,
+   "lon": 71.430455,
+   "category": "viewpoint",
+   "tags": [
+    "free",
+    "must_see",
+    "outdoor",
+    "photo",
+    "sight",
+    "view"
+   ],
+   "description": "«Байтерек» — монумент и смотровая башня в столице Казахстана — Астане. Монумент был построен как символ переноса столицы Казахстана в 1997 году. Входит в список памятников истории и культуры местного значения Астаны.",
+   "description_source": "wikipedia",
+   "address": "Нұржол желек жолы, 14",
+   "opening_hours": "Mo-Su 10:00-21:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 3228,
+   "popularity": 1.0,
+   "indoor": false,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": 0,
+   "typical_visit_min": 30,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/230401645",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q804210",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B9%D1%82%D0%B5%D1%80%D0%B5%D0%BA_(%D0%BC%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D0%BD%D1%82)",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001021365759",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg/960px-Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Night_at_Esil_District,_Astana_(P1190721).jpg",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "source": "wikimedia_commons"
+   },
+   "data_quality": 0.85,
+   "updated_at": "2026-10-20"
+  },
+  "osm:node/10564988185": {
+   "id": "osm:node/10564988185",
+   "name": "Degirmen",
+   "name_i18n": {
+    "ru": "Degirmen"
+   },
+   "lat": 51.128566,
+   "lon": 71.433325,
+   "category": "cafe",
+   "tags": [
+    "coffee",
+    "night"
+   ],
+   "description": "Кафе «Degirmen».",
+   "description_source": "template",
+   "address": "улица Динмухамед Конаев, 14",
+   "opening_hours": "Mo-Su 08:00-24:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "+7 708 377 7778",
+   "website": "http://degirmen.kz/",
+   "rating": 4.6,
+   "rating_count": 2263,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/10564988185",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001032665509",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.75,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

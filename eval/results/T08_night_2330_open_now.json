@@ -1,5 +1,5 @@
 {
- "request_id": "e9a7cad34ce1",
+ "request_id": "a4d648f2e310",
  "context_used": {
   "location": "≈ район Бульвар Нуржол (точность ~100 м)",
   "time": "вторник, 23:30",
@@ -8,46 +8,74 @@
   "radius_m": 1200,
   "filters": [
    "бюджет не указан — беру ~90 мин",
-   "нужно: бар (только подходящие места)",
-   "пожелания: night",
-   "ночь: места, открытые допоздна"
+   "ночь: места, открытые допоздна",
+   "скрыто закрытых к приходу: 83",
+   "скрыто без часов, вероятно закрытых в это время: 33"
   ],
   "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
  "parsed_intent": {
-  "intent": "coffee",
+  "intent": "other",
   "time_budget_min": null,
   "companions": "solo",
-  "constraints": [
-   "night"
-  ],
+  "constraints": [],
   "keywords": [
-   "бар",
-   "открыто сейчас",
-   "кофейня",
-   "кафе",
-   "посидеть",
-   "ночное",
    "ещё",
    "открыто",
+   "посидеть",
    "нибудь"
   ]
  },
  "recommendations": [
   {
-   "poi_id": "osm:node/13620484606",
-   "name": "Ну, шоты!",
-   "category": "bar",
-   "lat": 51.128465,
-   "lon": 71.433911,
-   "distance_m": 175,
+   "poi_id": "2gis:70000001094584929",
+   "name": "Каусар",
+   "category": "cafe",
+   "lat": 51.12679,
+   "lon": 71.435133,
+   "distance_m": 151,
    "travel_min": 3,
    "visit_min": [
-    65,
-    110
+    30,
+    55
    ],
-   "why": "Открыто до 03:00, высокий рейтинг 4.9 и бар рядом с вами.",
-   "what_to_do": "Зайдите внутрь, выпейте напиток и отдохните в уютной обстановке паба.",
+   "why": "Кафе «Каусар» открыто до 02:00 и отлично подходит, чтобы посидеть ночью в помещении с высоким рейтингом 4.8.",
+   "what_to_do": "Закажите кофе или легкие закуски и отдохните в уютной обстановке.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 02:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001094584929"
+    }
+   ],
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "night",
+    "coffee"
+   ],
+   "image": null
+  },
+  {
+   "poi_id": "2gis:70000001066638430",
+   "name": "Ну",
+   "category": "cafe",
+   "lat": 51.128474,
+   "lon": 71.433707,
+   "distance_m": 171,
+   "travel_min": 3,
+   "visit_min": [
+    30,
+    55
+   ],
+   "why": "Кафе «Ну» работает до 03:00, предлагает кофе и имеет высокий рейтинг 4.9 для комфортного отдыха.",
+   "what_to_do": "Устройтесь за столиком, выпейте кофе и расслабьтесь в ночное время.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -57,56 +85,22 @@
    "source_type": "poi_data",
    "sources": [
     {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/13620484606"
-    },
-    {
      "name": "2gis",
      "url": "https://2gis.kz/astana/firm/70000001066638430"
     }
    ],
    "rating": 4.9,
    "badges": [
-    "indoor"
-   ]
-  },
-  {
-   "poi_id": "osm:node/4199896989",
-   "name": "Avtor",
-   "category": "bar",
-   "lat": 51.128084,
-   "lon": 71.43654,
-   "distance_m": 275,
-   "travel_min": 5,
-   "visit_min": [
-    65,
-    110
-   ],
-   "why": "Бар «Avtor» работает круглосуточно, отлично подойдет для позднего отдыха.",
-   "what_to_do": "Расположитесь за столиком и проведите время за любимым напитком.",
-   "open_status": {
-    "state": "open",
-    "confidence": "medium",
-    "label": "Круглосуточно (часы по OSM, проверено 2026-10-20)",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/4199896989"
-    }
-   ],
-   "rating": null,
-   "badges": [
     "indoor",
-    "night"
-   ]
+    "night",
+    "coffee"
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Проверьте телефон перед выходом, чтобы точно узнать актуальные предложения баров.",
+   "text": "Если захочется прогуляться после заведения, можно пройтись по вечерним улицам города.",
    "source_type": "generated_idea"
   }
  ],
@@ -115,16 +109,100 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 3139
+  "latency_ms": 1621
  },
- "_eval_ms": 3203,
+ "_eval_ms": 4228,
+ "_pois_snapshot": {
+  "2gis:70000001094584929": {
+   "id": "2gis:70000001094584929",
+   "name": "Каусар",
+   "name_i18n": {
+    "ru": "Каусар"
+   },
+   "lat": 51.12679,
+   "lon": 71.435133,
+   "category": "cafe",
+   "tags": [
+    "coffee",
+    "indoor",
+    "night"
+   ],
+   "description": "Кафе «Каусар» по адресу: улица Достык, 13. Рубрики 2GIS: кафе, доставка еды.",
+   "description_source": "template",
+   "address": "улица Достык, 13",
+   "opening_hours": "Mo-Su 08:00-02:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.8,
+   "rating_count": 7105,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001094584929",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001066638430": {
+   "id": "2gis:70000001066638430",
+   "name": "Ну",
+   "name_i18n": {
+    "ru": "Ну"
+   },
+   "lat": 51.128474,
+   "lon": 71.433707,
+   "category": "cafe",
+   "tags": [
+    "coffee",
+    "indoor",
+    "night"
+   ],
+   "description": "Кафе «Ну» по адресу: улица Динмухамед Конаев, 14. Рубрики 2GIS: кафе, бары.",
+   "description_source": "template",
+   "address": "улица Динмухамед Конаев, 14",
+   "opening_hours": "Mo-Th 18:00-03:00; Fr-Sa 18:00-05:00; Su 18:00-03:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 1555,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001066638430",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

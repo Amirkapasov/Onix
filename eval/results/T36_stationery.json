@@ -1,9 +1,9 @@
 {
- "request_id": "3702dcfc1823",
+ "request_id": "3625dfa07fdc",
  "context_used": {
   "location": "≈ район ТРЦ «Керуен» (точность ~100 м)",
   "time": "вторник, 16:00",
-  "weather": "+3°C, ветер 6 м/с",
+  "weather": "+4°C, ветер 5 м/с",
   "mode": "пешком",
   "radius_m": 1713,
   "filters": [
@@ -37,8 +37,8 @@
     15,
     25
    ],
-   "why": "Ближайший открытый магазин с канцтоварами и высоким рейтингом 4.9, работает до 22:00.",
-   "what_to_do": "Зайдите в магазин, выберите нужные тетради и ручки, оформите покупку на кассе.",
+   "why": "Ближайший магазин с высоким рейтингом (4.9), где можно купить канцтовары. Открыт до 22:00.",
+   "what_to_do": "Зайдите внутрь, выберите необходимые тетради и ручки в отделе канцтоваров и оплатите на кассе.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -55,7 +55,8 @@
    "rating": 4.9,
    "badges": [
     "indoor"
-   ]
+   ],
+   "image": null
   },
   {
    "poi_id": "2gis:70000001019252241",
@@ -69,8 +70,8 @@
     15,
     25
    ],
-   "why": "Находится рядом, в том же здании по улице Достык, 9. Открыто до 22:00.",
-   "what_to_do": "Найдите отдел канцелярских товаров и приобретите тетради и письменные принадлежности.",
+   "why": "Магазин находится рядом, предлагает канцтовары и работает до 22:00.",
+   "what_to_do": "Если нужен конкретный товар — уточните наличие по телефону, если он указан.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -87,30 +88,110 @@
    "rating": 4.2,
    "badges": [
     "indoor"
-   ]
+   ],
+   "image": null
   }
  ],
- "ideas": [
-  {
-   "text": "Составьте список необходимых принадлежностей заранее, чтобы быстрее найти всё нужное в магазине.",
-   "source_type": "generated_idea"
-  }
- ],
+ "ideas": [],
  "route": null,
  "warnings": [],
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 4974
+  "latency_ms": 1390
  },
- "_eval_ms": 5039,
+ "_eval_ms": 1461,
+ "_pois_snapshot": {
+  "2gis:70000001021300418": {
+   "id": "2gis:70000001021300418",
+   "name": "Marwin",
+   "name_i18n": {
+    "ru": "Marwin"
+   },
+   "lat": 51.127955,
+   "lon": 71.425553,
+   "category": "shop",
+   "tags": [
+    "indoor",
+    "shopping",
+    "stationery"
+   ],
+   "description": "Магазин «Marwin» по адресу: улица Достык, 9. Рубрики 2GIS: канцтовары, игрушки, товары для творчества, художественные товары, настольные игры.",
+   "description_source": "template",
+   "address": "улица Достык, 9",
+   "opening_hours": "Mo-Su 10:00-22:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 227,
+   "popularity": 0.236,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 20,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001021300418",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001019252241": {
+   "id": "2gis:70000001019252241",
+   "name": "Меломан",
+   "name_i18n": {
+    "ru": "Меломан"
+   },
+   "lat": 51.127885,
+   "lon": 71.425525,
+   "category": "shop",
+   "tags": [
+    "indoor",
+    "shopping",
+    "stationery"
+   ],
+   "description": "Магазин «Меломан» по адресу: улица Достык, 9. Рубрики 2GIS: канцтовары, книги.",
+   "description_source": "template",
+   "address": "улица Достык, 9",
+   "opening_hours": "Mo-Su 10:00-22:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.2,
+   "rating_count": 127,
+   "popularity": 0.176,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 20,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001019252241",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

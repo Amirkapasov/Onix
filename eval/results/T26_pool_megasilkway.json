@@ -1,5 +1,5 @@
 {
- "request_id": "f084063c61ad",
+ "request_id": "5213597556b9",
  "context_used": {
   "location": "≈ район Mega Silk Way (точность ~100 м)",
   "time": "вторник, 18:00",
@@ -9,7 +9,7 @@
   "filters": [
    "бюджет не указан — беру ~90 мин",
    "нужно: бассейн (только подходящие места)",
-   "скрыто закрытых к приходу: 4"
+   "скрыто закрытых к приходу: 3"
   ],
   "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
@@ -33,11 +33,11 @@
    "distance_m": 705,
    "travel_min": 7,
    "visit_min": [
-    65,
-    110
+    60,
+    90
    ],
    "why": "Бассейн — то, что вы искали; спорт и отдых для тела; высокий рейтинг 4.8. Спорт и отдых «iSwim». Рубрики 2GIS: бассейны, спортивные секции.",
-   "what_to_do": "Возьмите купальные принадлежности/форму и сменную обувь; уточните расписание сеансов и цены по телефону.",
+   "what_to_do": "Поплавать в закрытом бассейне и уделить время оздоровлению.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -54,7 +54,8 @@
    "rating": 4.8,
    "badges": [
     "indoor"
-   ]
+   ],
+   "image": null
   },
   {
    "poi_id": "2gis:70000001057714276",
@@ -65,11 +66,11 @@
    "distance_m": 1200,
    "travel_min": 8,
    "visit_min": [
-    65,
-    110
+    60,
+    90
    ],
-   "why": "Бассейн — то, что вы искали; спорт и отдых для тела; высокий рейтинг 4.9. Спорт и отдых «Ocean Child». Рубрики 2GIS: бассейны, соляные комнаты, массажист.",
-   "what_to_do": "Возьмите купальные принадлежности/форму и сменную обувь; уточните расписание сеансов и цены по телефону.",
+   "why": "Отличный вариант с рейтингом 4.9 и бассейном, открыт до 20:00.",
+   "what_to_do": "Посетить бассейн для плавания.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -86,69 +87,115 @@
    "rating": 4.9,
    "badges": [
     "indoor"
-   ]
-  },
-  {
-   "poi_id": "osm:way/663143306",
-   "name": "Барыс Арена",
-   "category": "sport",
-   "lat": 51.109247,
-   "lon": 71.394631,
-   "distance_m": 2494,
-   "travel_min": 11,
-   "visit_min": [
-    65,
-    110
    ],
-   "why": "Бассейн — то, что вы искали; активный отдых; высокий рейтинг 5.0.",
-   "what_to_do": "Уточните расписание и прокат инвентаря перед выходом.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 20:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/663143306"
-    },
-    {
-     "name": "wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16632800"
-    },
-    {
-     "name": "wikipedia",
-     "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%80%D1%8B%D1%81_%D0%90%D1%80%D0%B5%D0%BD%D0%B0"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001020790456"
-    }
-   ],
-   "rating": 5.0,
-   "badges": []
+   "image": null
   }
  ],
- "ideas": [],
- "route": null,
- "warnings": [
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+ "ideas": [
+  {
+   "text": "Захватите с собой очки для плавания и полотенце для комфортного посещения.",
+   "source_type": "generated_idea"
+  }
  ],
+ "route": null,
+ "warnings": [],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 1453
  },
- "_eval_ms": 6067,
+ "_eval_ms": 1523,
+ "_pois_snapshot": {
+  "2gis:70000001091708680": {
+   "id": "2gis:70000001091708680",
+   "name": "iSwim",
+   "name_i18n": {
+    "ru": "iSwim"
+   },
+   "lat": 51.086677,
+   "lon": 71.419388,
+   "category": "wellness",
+   "tags": [
+    "indoor",
+    "pool",
+    "swimming"
+   ],
+   "description": "Спорт и отдых «iSwim» по адресу: улица Турара Рыскулова, 9/1. Рубрики 2GIS: бассейны, спортивные секции.",
+   "description_source": "template",
+   "address": "улица Турара Рыскулова, 9/1",
+   "opening_hours": "Mo-Fr 07:00-21:00; Sa-Su 08:00-21:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.8,
+   "rating_count": 73,
+   "popularity": 0.144,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001091708680",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001057714276": {
+   "id": "2gis:70000001057714276",
+   "name": "Ocean Child",
+   "name_i18n": {
+    "ru": "Ocean Child"
+   },
+   "lat": 51.099695,
+   "lon": 71.407735,
+   "category": "wellness",
+   "tags": [
+    "indoor",
+    "pool",
+    "swimming"
+   ],
+   "description": "Спорт и отдых «Ocean Child» по адресу: Кабанбай батыр проспект, 56а. Рубрики 2GIS: бассейны, соляные комнаты, массажист.",
+   "description_source": "template",
+   "address": "Кабанбай батыр проспект, 56а",
+   "opening_hours": "Tu-Su 09:00-20:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 166,
+   "popularity": 0.2,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001057714276",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

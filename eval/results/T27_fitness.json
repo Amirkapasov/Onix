@@ -1,5 +1,5 @@
 {
- "request_id": "3c99c9fd3a5e",
+ "request_id": "b3e128392a08",
  "context_used": {
   "location": "≈ район Хан Шатыр (точность ~100 м)",
   "time": "вторник, 19:00",
@@ -38,8 +38,8 @@
     60,
     90
    ],
-   "why": "Отличный фитнес-клуб с высоким рейтингом 4.8 и тренажёрным залом, открытый до полуночи.",
-   "what_to_do": "Проведите полноценную силовую тренировку в тренажёрном зале и расслабьтесь в бассейне.",
+   "why": "Отличный фитнес-клуб с тренажёрным залом и бассейном, рейтинг 4.8. Открыто до полуночи.",
+   "what_to_do": "Проведите полноценную тренировку в тренажёрном зале, а после расслабьтесь в бассейне.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -57,7 +57,8 @@
    "badges": [
     "indoor",
     "night"
-   ]
+   ],
+   "image": null
   },
   {
    "poi_id": "osm:node/12686463901",
@@ -71,8 +72,8 @@
     60,
     90
    ],
-   "why": "Ближайший современный фитнес-клуб с тренажёрным залом и высоким рейтингом 4.7.",
-   "what_to_do": "Сходите на тренировку в спортивный зал, оценив доступный wi-fi.",
+   "why": "Современный спортзал неподалеку с высоким рейтингом 4.7 и доступом до 23:00.",
+   "what_to_do": "Сходите на силовую или кардиотренировку в тренажёрный зал.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -95,7 +96,8 @@
     "indoor",
     "night",
     "wifi"
-   ]
+   ],
+   "image": null
   }
  ],
  "ideas": [
@@ -109,16 +111,109 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 2585
+  "latency_ms": 1684
  },
- "_eval_ms": 2634,
+ "_eval_ms": 1746,
+ "_pois_snapshot": {
+  "2gis:70000001018062580": {
+   "id": "2gis:70000001018062580",
+   "name": "Fitness Palace",
+   "name_i18n": {
+    "ru": "Fitness Palace"
+   },
+   "lat": 51.128918,
+   "lon": 71.406196,
+   "category": "wellness",
+   "tags": [
+    "fitness",
+    "gym",
+    "indoor",
+    "night",
+    "pool",
+    "swimming"
+   ],
+   "description": "Спорт и отдых «Fitness Palace» по адресу: проспект Туран, 30. Рубрики 2GIS: бассейны, фитнес-клубы, тренажёрные залы, сквош-корты, плавание для грудничков.",
+   "description_source": "template",
+   "address": "проспект Туран, 30",
+   "opening_hours": "Mo-Su 07:00-24:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.8,
+   "rating_count": 573,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018062580",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "osm:node/12686463901": {
+   "id": "osm:node/12686463901",
+   "name": "INVICTUS GO",
+   "name_i18n": {
+    "ru": "INVICTUS GO"
+   },
+   "lat": 51.128124,
+   "lon": 71.404242,
+   "category": "wellness",
+   "tags": [
+    "fitness",
+    "gym",
+    "night",
+    "wifi"
+   ],
+   "description": "Фитнес-клуб «INVICTUS GO» по адресу: Turan Avenue, 39a. Есть wi-fi.",
+   "description_source": "template",
+   "address": "Turan Avenue, 39a",
+   "opening_hours": "Mo-Fr 07:00-23:00; Sa-Su 09:00-22:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": "http://invictusgo.kz",
+   "rating": 4.7,
+   "rating_count": 687,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/12686463901",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001093714445",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.75,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

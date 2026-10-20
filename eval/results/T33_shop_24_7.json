@@ -1,5 +1,5 @@
 {
- "request_id": "8bdd2a7b8b5a",
+ "request_id": "1b48036c36f5",
  "context_used": {
   "location": "≈ район Бульвар Нуржол (точность ~100 м)",
   "time": "среда, 01:00",
@@ -40,7 +40,7 @@
     15
    ],
    "why": "Магазин работает круглосуточно, что удобно в ночное время суток.",
-   "what_to_do": "Зайдите за необходимыми продуктами и быстро совершите покупки.",
+   "what_to_do": "Зайдите за необходимыми продуктами и быстро вернитесь обратно.",
    "open_status": {
     "state": "open",
     "confidence": "medium",
@@ -58,45 +58,13 @@
    "badges": [
     "indoor",
     "night"
-   ]
-  },
-  {
-   "poi_id": "2gis:70000001020389006",
-   "name": "Айбол",
-   "category": "supermarket",
-   "lat": 51.129441,
-   "lon": 71.434057,
-   "distance_m": 281,
-   "travel_min": 5,
-   "visit_min": [
-    15,
-    25
    ],
-   "why": "Супермаркет открыт до 04:00 и находится недалеко.",
-   "what_to_do": "Продукты и товары на каждый день; на кассах самообслуживания обычно быстрее.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 04:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001020389006"
-    }
-   ],
-   "rating": 4.8,
-   "badges": [
-    "indoor",
-    "night"
-   ]
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Проверь список покупок заранее, чтобы быстро найти всё необходимое ночью.",
+   "text": "Одевайтесь теплее, на улице прохладно (+4°C).",
    "source_type": "generated_idea"
   }
  ],
@@ -105,16 +73,60 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 4987
+  "latency_ms": 2365
  },
- "_eval_ms": 5047,
+ "_eval_ms": 2432,
+ "_pois_snapshot": {
+  "osm:node/2540818469": {
+   "id": "osm:node/2540818469",
+   "name": "Өскен Өңір",
+   "name_i18n": {
+    "ru": "Өскен Өңір"
+   },
+   "lat": 51.126287,
+   "lon": 71.424471,
+   "category": "convenience",
+   "tags": [
+    "24_7",
+    "groceries",
+    "night",
+    "shopping"
+   ],
+   "description": "Магазин у дома «Өскен Өңір» по адресу: Достық көшесі, 12.",
+   "description_source": "template",
+   "address": "Достық көшесі, 12",
+   "opening_hours": "24/7",
+   "opening_hours_source": "osm",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": null,
+   "rating_count": null,
+   "popularity": 0.1,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 10,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/2540818469",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.5,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

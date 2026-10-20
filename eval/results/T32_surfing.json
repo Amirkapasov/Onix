@@ -1,5 +1,5 @@
 {
- "request_id": "5b3e4f60ba80",
+ "request_id": "2d1c10f42f42",
  "context_used": {
   "location": "≈ район Байтерек (точность ~100 м)",
   "time": "суббота, 12:00",
@@ -34,14 +34,15 @@
   "model": null,
   "latency_ms": 0
  },
- "_eval_ms": 63,
+ "_eval_ms": 64,
+ "_pois_snapshot": {},
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

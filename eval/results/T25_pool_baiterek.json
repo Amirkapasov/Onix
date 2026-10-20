@@ -1,5 +1,5 @@
 {
- "request_id": "917ac5892215",
+ "request_id": "761fe71c2602",
  "context_used": {
   "location": "≈ район Байтерек (точность ~100 м)",
   "time": "суббота, 11:00",
@@ -33,11 +33,11 @@
    "distance_m": 368,
    "travel_min": 6,
    "visit_min": [
-    60,
+    65,
     80
    ],
-   "why": "Отличный вариант с бассейном и высоким рейтингом 5.0, открыто до 22:00.",
-   "what_to_do": "Возьмите купальные принадлежности/форму и сменную обувь; уточните расписание сеансов и цены по телефону.",
+   "why": "Отличный вариант с бассейном и высоким рейтингом 5.0, открыт до 22:00. Находится всего в 6 минутах ходьбы.",
+   "what_to_do": "Посетите бассейн для плавания, воспользуйтесь спа-процедурами и отдохните после тренировки.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -54,48 +54,47 @@
    "rating": 5.0,
    "badges": [
     "indoor"
-   ]
+   ],
+   "image": null
   },
   {
-   "poi_id": "osm:node/5776315441",
-   "name": "Life fitness",
+   "poi_id": "2gis:70000001035968932",
+   "name": "Bali SPA",
    "category": "wellness",
-   "lat": 51.119977,
-   "lon": 71.429598,
-   "distance_m": 893,
-   "travel_min": 15,
+   "lat": 51.131982,
+   "lon": 71.428298,
+   "distance_m": 458,
+   "travel_min": 8,
    "visit_min": [
-    60,
+    65,
     80
    ],
-   "why": "Фитнес-центр с бассейном и высоким рейтингом 4.9, работает до 23:45.",
-   "what_to_do": "Начните с разминки в спортзале, затем отправляйтесь на плавание в бассейн.",
+   "why": "СПА-комплекс с бассейном и фитнесом рядом с вами, работает до полуночи, рейтинг 4.4.",
+   "what_to_do": "Возьмите купальные принадлежности/форму и сменную обувь; уточните расписание сеансов и цены по телефону.",
    "open_status": {
     "state": "open",
     "confidence": "high",
-    "label": "Открыто до 23:45 (часы по 2GIS, проверено 2026-10-20)",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
     "source": "2gis"
    },
    "source_type": "poi_data",
    "sources": [
     {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/5776315441"
-    },
-    {
      "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001018069607"
+     "url": "https://2gis.kz/astana/firm/70000001035968932"
     }
    ],
-   "rating": 4.9,
+   "rating": 4.4,
    "badges": [
-    "indoor"
-   ]
+    "indoor",
+    "night"
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Возьмите с собой удобные очки для плавания и сланцы для максимального комфорта в бассейне.",
+   "text": "После плавания приятно выпить теплого чая или травяного сбора.",
    "source_type": "generated_idea"
   }
  ],
@@ -104,16 +103,107 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 1439
+  "latency_ms": 2534
  },
- "_eval_ms": 1492,
+ "_eval_ms": 2593,
+ "_pois_snapshot": {
+  "2gis:70000001111572290": {
+   "id": "2gis:70000001111572290",
+   "name": "The Ritz-Carlton",
+   "name_i18n": {
+    "ru": "The Ritz-Carlton"
+   },
+   "lat": 51.124794,
+   "lon": 71.431297,
+   "category": "wellness",
+   "tags": [
+    "fitness",
+    "gym",
+    "indoor",
+    "pool",
+    "spa",
+    "swimming"
+   ],
+   "description": "Спорт и отдых «The Ritz-Carlton» по адресу: улица Достык, 16. Рубрики 2GIS: бассейны, spa-процедуры, фитнес-клубы.",
+   "description_source": "template",
+   "address": "улица Достык, 16",
+   "opening_hours": "Mo-Su 07:00-22:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 5.0,
+   "rating_count": 6,
+   "popularity": 0.104,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001111572290",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001035968932": {
+   "id": "2gis:70000001035968932",
+   "name": "Bali SPA",
+   "name_i18n": {
+    "ru": "Bali SPA"
+   },
+   "lat": 51.131982,
+   "lon": 71.428298,
+   "category": "wellness",
+   "tags": [
+    "fitness",
+    "gym",
+    "indoor",
+    "night",
+    "pool",
+    "spa",
+    "swimming"
+   ],
+   "description": "Спорт и отдых «Bali SPA» по адресу: улица Динмухамед Конаев, 29/2. Рубрики 2GIS: бассейны, тренажёрные залы, spa-процедуры, массажист.",
+   "description_source": "template",
+   "address": "улица Динмухамед Конаев, 29/2",
+   "opening_hours": "Mo-Fr 08:00-23:00; Sa-Su 09:00-24:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.4,
+   "rating_count": 935,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001035968932",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

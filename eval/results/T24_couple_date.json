@@ -1,5 +1,5 @@
 {
- "request_id": "f1b5b80c1650",
+ "request_id": "6c0cad15b83b",
  "context_used": {
   "location": "≈ район Бульвар Нуржол (точность ~100 м)",
   "time": "пятница, 19:30",
@@ -9,8 +9,8 @@
   "filters": [
    "бюджет 120 мин",
    "пожелания: outdoor_ok, food",
-   "скрыто закрытых к приходу: 29",
-   "скрыто без часов, вероятно закрытых в это время: 5"
+   "скрыто закрытых к приходу: 27",
+   "скрыто без часов, вероятно закрытых в это время: 4"
   ],
   "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
@@ -44,8 +44,8 @@
     30,
     45
    ],
-   "why": "Тихий Корейский сад подходит для вечерней прогулки на свежем воздухе благодаря рейтингу 4.9 и круглосуточному режиму.",
-   "what_to_do": "Прогуляйтесь по тихим аллеям сада, насладитесь вечерней атмосферой и сделайте красивые фотографии.",
+   "why": "Тихий круглосуточный парк с высоким рейтингом 4.9 для вечерней прогулки на свежем воздухе.",
+   "what_to_do": "Пройдитесь по аллеям Корейского сада, насладитесь вечерней атмосферой.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -69,7 +69,8 @@
     "free",
     "quiet",
     "night"
-   ]
+   ],
+   "image": null
   },
   {
    "poi_id": "osm:node/10798946230",
@@ -80,11 +81,11 @@
    "distance_m": 226,
    "travel_min": 4,
    "visit_min": [
-    50,
-    75
+    60,
+    90
    ],
-   "why": "Ресторан Selfie с высоким рейтингом 4.9 и открытый до полуночи отлично подойдет для романтического ужина.",
-   "what_to_do": "Займите уютный столик, выберите блюда по вкусу и проведите время за приятной беседой.",
+   "why": "Ресторан «Selfie» с высоким рейтингом 4.9 подходит для уютного ужина вдвоем.",
+   "what_to_do": "Зайдите на ужин и насладитесь атмосферой ресторана.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -106,12 +107,13 @@
    "badges": [
     "indoor",
     "night"
-   ]
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "После ужина можно продолжить вечер прогулкой по бульвару Нуржол, любуясь вечерней подсветкой зданий.",
+   "text": "Одевайтесь теплее, на улице прохладно (+4°C), поэтому совмещайте прогулку с теплыми остановками.",
    "source_type": "generated_idea"
   }
  ],
@@ -134,7 +136,7 @@
     "minutes": 24
    }
   ],
-  "total_min": 109,
+  "total_min": 119,
   "geometry": [
    [
     51.12695,
@@ -535,16 +537,111 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 2531
+  "latency_ms": 2918
  },
- "_eval_ms": 3014,
+ "_eval_ms": 3272,
+ "_pois_snapshot": {
+  "osm:way/1296051287": {
+   "id": "osm:way/1296051287",
+   "name": "Корейский сад",
+   "name_i18n": {
+    "ru": "Корейский сад"
+   },
+   "lat": 51.13842,
+   "lon": 71.436228,
+   "category": "park",
+   "tags": [
+    "24_7",
+    "free",
+    "night",
+    "outdoor",
+    "quiet",
+    "walk"
+   ],
+   "description": "Сад / сквер «Корейский сад».",
+   "description_source": "template",
+   "address": null,
+   "opening_hours": "24/7",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 161,
+   "popularity": 0.197,
+   "indoor": false,
+   "wheelchair": "unknown",
+   "kid_friendly": true,
+   "price_level": 0,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1296051287",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001093106778",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.55,
+   "updated_at": "2026-10-20"
+  },
+  "osm:node/10798946230": {
+   "id": "osm:node/10798946230",
+   "name": "Selfie",
+   "name_i18n": {
+    "ru": "Selfie"
+   },
+   "lat": 51.125029,
+   "lon": 71.432231,
+   "category": "restaurant",
+   "tags": [
+    "night"
+   ],
+   "description": "Ресторан «Selfie».",
+   "description_source": "template",
+   "address": "улица Достык, 16",
+   "opening_hours": "Mo-Su 12:00-24:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "+7 777 000 0515",
+   "website": "https://goodproject.kz/",
+   "rating": 4.9,
+   "rating_count": 423,
+   "popularity": 0.354,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 75,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/10798946230",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001028338057",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.75,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

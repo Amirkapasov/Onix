@@ -1,5 +1,5 @@
 {
- "request_id": "595fc89b49fb",
+ "request_id": "83a7210373b2",
  "context_used": {
   "location": "≈ район Бульвар Нуржол (точность ~100 м)",
   "time": "вторник, 20:00",
@@ -42,8 +42,8 @@
     65,
     110
    ],
-   "why": "Запрошенного бара нет в базе, но рядом открыт паб «Ну, шоты!» с высоким рейтингом 4.9.",
-   "what_to_do": "Зайдите внутрь, выберите напитки и отдохните вечерком.",
+   "why": "Запрошенного бара нет в базе, но паб «Ну, шоты!» открыт до 03:00 и имеет высокий рейтинг 4.9.",
+   "what_to_do": "Посмотрите меню и спокойно проведите вечер; закажите такси заранее, если возвращаться поздно.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -64,12 +64,13 @@
    "rating": 4.9,
    "badges": [
     "indoor"
-   ]
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Прогуляйтесь по вечернему городу перед посещением бара.",
+   "text": "После бара можно прогуляться по вечернему городу, учитывая прохладную погоду.",
    "source_type": "generated_idea"
   }
  ],
@@ -78,16 +79,62 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 1996
+  "latency_ms": 2508
  },
- "_eval_ms": 2046,
+ "_eval_ms": 2576,
+ "_pois_snapshot": {
+  "osm:node/13620484606": {
+   "id": "osm:node/13620484606",
+   "name": "Ну, шоты!",
+   "name_i18n": {
+    "ru": "Ну, шоты!"
+   },
+   "lat": 51.128465,
+   "lon": 71.433911,
+   "category": "bar",
+   "tags": [
+    "evening"
+   ],
+   "description": "Паб «Ну, шоты!» по адресу: Қонаев көшесі, 14.",
+   "description_source": "template",
+   "address": "Қонаев көшесі, 14",
+   "opening_hours": "Mo-Th 18:00-03:00; Fr-Sa 18:00-05:00; Su 18:00-03:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 1555,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": false,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/13620484606",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001066638430",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Авто-оценка «Серуен»: гоняет eval/cases.json по POST /api/recommend и проверяет правила контракта.
+"""Авто-оценка Seruen: гоняет eval/cases.json по POST /api/recommend и проверяет правила контракта.
 
 Запуск из корня репо (только стандартная библиотека):
     python3 eval/run_eval.py                      # живой бэкенд на :8000
@@ -459,15 +459,22 @@ def main():
         else:
             resp, ms = call_api(a.base, body, a.timeout)
         lat_all.append(ms)
-        if not a.rescore:
+        case_pois = pois
+        if a.rescore and resp.get("_pois_snapshot"):
+            # проверяем против базы на момент прогона, а не против пересобранной
+            case_pois = {**pois, **resp["_pois_snapshot"]}
+            _POIS.update(resp["_pois_snapshot"])
+        if not a.rescore and not a.mock:  # мок не затирает сохранённые живые ответы
             resp["_eval_ms"] = round(ms)
+            resp["_pois_snapshot"] = {x["poi_id"]: pois[x["poi_id"]] for x in resp.get("recommendations") or []
+                                      if isinstance(x, dict) and x.get("poi_id") in pois}
             if h:
                 resp["_health"] = h
             (raw_dir / f"{c['id']}.json").write_text(json.dumps(resp, ensure_ascii=False, indent=1), encoding="utf-8")
         if "_error" in resp or "_http_error" in resp:
             res = [("request_ok", "hard", False, str(resp)[:200])]
         else:
-            res = Checker(c, resp, pois, spec["defaults"], ms).run()
+            res = Checker(c, resp, case_pois, spec["defaults"], ms).run()
         rows.append((c, resp, res, ms))
         hard_ok = all(ok for _, sev, ok, _ in res if sev == "hard")
         llm_tag = ((resp.get("llm") or {}).get("provider") or "none")[:6]
@@ -508,7 +515,7 @@ def write_report(a, rows, lat_all, pois_path, n_pois, h):
     p95 = lat_sorted[min(len(lat_sorted) - 1, int(0.95 * len(lat_sorted)))] if lat_sorted else 0
     mode = f"МОК ({a.mock})" if a.mock else (f"пересчёт сохранённых ответов живого бэкенда ({a.base})" if a.rescore else f"живой бэкенд {a.base}")
     L = [
-        "# Отчёт авто-оценки «Серуен»", "",
+        "# Отчёт авто-оценки Seruen", "",
         f"- Дата: {datetime.now().strftime('%Y-%m-%d %H:%M')}; режим: **{mode}**",
         f"- База POI: `{pois_path.relative_to(ROOT)}` ({n_pois} объектов)" + (f"; health: `{json.dumps(h, ensure_ascii=False)}`" if h else ""),
         f"- Кейсов: {n} (`eval/cases.json`), сырые ответы: `eval/results/`", "",

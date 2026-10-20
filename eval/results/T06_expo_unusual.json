@@ -1,15 +1,15 @@
 {
- "request_id": "4b29a7eba2ee",
+ "request_id": "1979d1cfa427",
  "context_used": {
   "location": "≈ район ЭКСПО (точность ~100 м)",
   "time": "вторник, 13:00",
-  "weather": "+3°C, ветер 6 м/с",
+  "weather": "+4°C, ветер 5 м/с",
   "mode": "пешком",
   "radius_m": 2284,
   "filters": [
    "бюджет 120 мин",
    "пожелания: unusual",
-   "скрыто закрытых к приходу: 7",
+   "скрыто закрытых к приходу: 6",
    "скрыто без часов, вероятно закрытых в это время: 1"
   ],
   "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
@@ -38,11 +38,11 @@
    "distance_m": 36,
    "travel_min": 1,
    "visit_min": [
-    60,
-    90
+    65,
+    110
    ],
-   "why": "Сферический музей энергии будущего прямо у ЭКСПО с высоким рейтингом 4.8 и тегом необычного интерактива.",
-   "what_to_do": "Исследуйте интерактивные экспозиции музея и насладитесь необычным оформлением сферы.",
+   "why": "Необычный формат; высокий рейтинг 4.8. Сферический павильон ЭКСПО-2017, музей энергии будущего с интерактивными экспозициями.",
+   "what_to_do": "Начните с главной экспозиции, отметьте 2–3 зала по интересам; проверьте, есть ли интерактив.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
@@ -64,15 +64,88 @@
     "unusual",
     "interactive",
     "hours_unverified"
-   ]
-  }
- ],
- "ideas": [
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg/960px-Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "author": "颲風",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   }
+  },
   {
-   "text": "Прогуляйтесь вокруг территории ЭКСПО и сделайте футуристичные фотографии на фоне архитектуры.",
-   "source_type": "generated_idea"
+   "poi_id": "2gis:70000001079220947",
+   "name": "Айкью Пати",
+   "category": "entertainment",
+   "lat": 51.096352,
+   "lon": 71.444572,
+   "distance_m": 2092,
+   "travel_min": 36,
+   "visit_min": [
+    65,
+    84
+   ],
+   "why": "Необычный формат; высокий рейтинг 4.9. Развлечения «Айкью Пати». Рубрики 2GIS: квесты, организация праздников.",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 21:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001079220947"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor",
+    "unusual",
+    "interactive"
+   ],
+   "image": null
+  },
+  {
+   "poi_id": "2gis:70000001033333609",
+   "name": "Государственный театр драмы и комедии им. Азербайжана Мамбетова",
+   "category": "theatre",
+   "lat": 51.088579,
+   "lon": 71.416244,
+   "distance_m": 71,
+   "travel_min": 1,
+   "visit_min": [
+    104,
+    119
+   ],
+   "why": "Необычный формат; высокий рейтинг 5.0. Театр «Государственный театр драмы и комедии им. Азербайжана Мамбетова». Рубрики 2GIS: театры.",
+   "what_to_do": "Проверьте афишу на сегодня и приходите за 15–20 минут до начала.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001033333609"
+    }
+   ],
+   "rating": 5.0,
+   "badges": [
+    "indoor",
+    "night"
+   ],
+   "image": null
   }
  ],
+ "ideas": [],
  "route": {
   "stops": [
    "seed:nur_alem"
@@ -85,7 +158,7 @@
     "minutes": 0
    }
   ],
-  "total_min": 60,
+  "total_min": 65,
   "geometry": [
    [
     51.08902,
@@ -107,21 +180,163 @@
   "geometry_source": "osrm"
  },
  "warnings": [
-  "Часы работы 1 мест(а) неизвестны — уточните перед выходом."
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
+  "Часы работы 1 мест(а) неизвестны — уточните перед выходом.",
+  "В маршрут на 120 мин не влезает: Государственный театр драмы и комедии им. Азербайжана Мамбетова, Айкью Пати — это запасные варианты."
  ],
  "llm": {
-  "provider": "gemini",
-  "model": "gemini-3.5-flash-lite",
-  "latency_ms": 2560
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
  },
- "_eval_ms": 2991,
+ "_eval_ms": 8398,
+ "_pois_snapshot": {
+  "seed:nur_alem": {
+   "id": "seed:nur_alem",
+   "name": "Музей «Нур Алем» (ЭКСПО)",
+   "name_i18n": {
+    "ru": "Музей «Нур Алем» (ЭКСПО)"
+   },
+   "lat": 51.0892,
+   "lon": 71.4166,
+   "category": "museum",
+   "tags": [
+    "indoor",
+    "interactive",
+    "kids",
+    "must_see",
+    "science",
+    "sight",
+    "unusual",
+    "view"
+   ],
+   "description": "Сферический павильон ЭКСПО-2017, музей энергии будущего с интерактивными экспозициями.",
+   "description_source": "manual",
+   "address": "проспект Мангилик Ел, 53/1",
+   "opening_hours": null,
+   "opening_hours_source": null,
+   "opening_hours_checked_at": null,
+   "phone": null,
+   "website": null,
+   "rating": 4.8,
+   "rating_count": null,
+   "popularity": 1.0,
+   "indoor": true,
+   "wheelchair": "yes",
+   "kid_friendly": true,
+   "price_level": 2,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "seed",
+     "url": null,
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg/960px-Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "author": "颲風",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   },
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001079220947": {
+   "id": "2gis:70000001079220947",
+   "name": "Айкью Пати",
+   "name_i18n": {
+    "ru": "Айкью Пати"
+   },
+   "lat": 51.096352,
+   "lon": 71.444572,
+   "category": "entertainment",
+   "tags": [
+    "fun",
+    "indoor",
+    "interactive",
+    "quest",
+    "unusual"
+   ],
+   "description": "Развлечения «Айкью Пати» по адресу: улица Касыма Кайсенова, 4. Рубрики 2GIS: квесты, организация праздников.",
+   "description_source": "template",
+   "address": "улица Касыма Кайсенова, 4",
+   "opening_hours": "Mo-Su 09:00-21:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 219,
+   "popularity": 0.231,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001079220947",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001033333609": {
+   "id": "2gis:70000001033333609",
+   "name": "Государственный театр драмы и комедии им. Азербайжана Мамбетова",
+   "name_i18n": {
+    "ru": "Государственный театр драмы и комедии им. Азербайжана Мамбетова"
+   },
+   "lat": 51.088579,
+   "lon": 71.416244,
+   "category": "theatre",
+   "tags": [
+    "culture",
+    "indoor",
+    "night"
+   ],
+   "description": "Театр «Государственный театр драмы и комедии им. Азербайжана Мамбетова» по адресу: проспект Мангилик Ел, 55/1. Рубрики 2GIS: театры.",
+   "description_source": "template",
+   "address": "проспект Мангилик Ел, 55/1",
+   "opening_hours": "Mo-Su 09:00-24:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 5.0,
+   "rating_count": 427,
+   "popularity": 0.356,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 150,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001033333609",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

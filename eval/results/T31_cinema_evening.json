@@ -1,5 +1,5 @@
 {
- "request_id": "ef22caaec318",
+ "request_id": "8f4c019d8570",
  "context_used": {
   "location": "≈ район Mega Silk Way (точность ~100 м)",
   "time": "вторник, 19:00",
@@ -36,7 +36,7 @@
     90
    ],
    "why": "Отличный вариант на вечер: современный кинотеатр с высоким рейтингом 4.8, который открыт до полуночи.",
-   "what_to_do": "Посмотрите расписание сеансов и возьмите билеты онлайн, чтобы не стоять в очереди.",
+   "what_to_do": "Выберите актуальный сеанс, купите билет и насладитесь просмотром фильма в уютном зале.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -58,12 +58,13 @@
    "badges": [
     "indoor",
     "night"
-   ]
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Возьмите с собой любимый попкорн и напиток для идеального киновечера.",
+   "text": "Купите попкорн и напитки перед сеансом, чтобы просмотр фильма был еще уютнее.",
    "source_type": "generated_idea"
   }
  ],
@@ -74,16 +75,63 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 1815
+  "latency_ms": 1719
  },
- "_eval_ms": 1878,
+ "_eval_ms": 1785,
+ "_pois_snapshot": {
+  "osm:node/5880883097": {
+   "id": "osm:node/5880883097",
+   "name": "Chaplin Cinema",
+   "name_i18n": {
+    "ru": "Chaplin Cinema"
+   },
+   "lat": 51.088319,
+   "lon": 71.40973,
+   "category": "cinema",
+   "tags": [
+    "indoor",
+    "night"
+   ],
+   "description": "Кинотеатр «Chaplin Cinema».",
+   "description_source": "template",
+   "address": "Кабанбай батыр проспект, 62",
+   "opening_hours": "Mo-Su 10:00-24:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "+7 747 174 25 57",
+   "website": "https://new.chaplin.kz/",
+   "rating": 4.8,
+   "rating_count": 3218,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": true,
+   "price_level": null,
+   "typical_visit_min": 140,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/5880883097",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001027048493",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.75,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

@@ -1,5 +1,5 @@
 {
- "request_id": "d0adadd72f23",
+ "request_id": "65cd70080d77",
  "context_used": {
   "location": "≈ район Mega Silk Way (точность ~100 м)",
   "time": "вторник, 20:00",
@@ -9,7 +9,7 @@
   "filters": [
    "бюджет не указан — беру ~90 мин",
    "нужно: спа / сауна (только подходящие места)",
-   "скрыто закрытых к приходу: 12"
+   "скрыто закрытых к приходу: 7"
   ],
   "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
@@ -28,38 +28,6 @@
  },
  "recommendations": [
   {
-   "poi_id": "2gis:70000001030596111",
-   "name": "eforea",
-   "category": "wellness",
-   "lat": 51.09069,
-   "lon": 71.410801,
-   "distance_m": 196,
-   "travel_min": 5,
-   "visit_min": [
-    60,
-    80
-   ],
-   "why": "Отличный вариант с высоким рейтингом 4.9 для вечернего расслабления. Открыто до 22:00, доступны термальные комплексы и соляные комнаты.",
-   "what_to_do": "Посетите термальный комплекс или расслабьтесь в соляной комнате для полноценного отдыха.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 22:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001030596111"
-    }
-   ],
-   "rating": 4.9,
-   "badges": [
-    "indoor"
-   ]
-  },
-  {
    "poi_id": "2gis:70000001065444076",
    "name": "AqMonsha",
    "category": "wellness",
@@ -71,8 +39,8 @@
     60,
     80
    ],
-   "why": "Спа и сауна неподалеку, работает до 23:00, рейтинг 4.7. Подходит для вечернего восстановления сил.",
-   "what_to_do": "Закажите сеанс массажа или отдохните в сауне.",
+   "why": "Отличный вариант для вечернего отдыха, работает до 23:00, рейтинг 4.7.",
+   "what_to_do": "Посетите сауну и расслабьтесь на спа-процедурах.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -90,12 +58,46 @@
    "badges": [
     "indoor",
     "night"
-   ]
+   ],
+   "image": null
+  },
+  {
+   "poi_id": "2gis:70000001030596111",
+   "name": "eforea",
+   "category": "wellness",
+   "lat": 51.09069,
+   "lon": 71.410801,
+   "distance_m": 196,
+   "travel_min": 5,
+   "visit_min": [
+    60,
+    80
+   ],
+   "why": "Высокий рейтинг 4.9 и спа-процедуры для вечернего расслабления.",
+   "what_to_do": "Воспользуйтесь термальным комплексом и соляной комнатой.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 22:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001030596111"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor"
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Возьмите с собой любимый расслабляющий чай в термосе для вечера после сауны.",
+   "text": "Захватите с собой любимую книгу или наушники для полного расслабления.",
    "source_type": "generated_idea"
   }
  ],
@@ -104,16 +106,102 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 4807
+  "latency_ms": 1620
  },
- "_eval_ms": 4872,
+ "_eval_ms": 1691,
+ "_pois_snapshot": {
+  "2gis:70000001065444076": {
+   "id": "2gis:70000001065444076",
+   "name": "AqMonsha",
+   "name_i18n": {
+    "ru": "AqMonsha"
+   },
+   "lat": 51.093445,
+   "lon": 71.429351,
+   "category": "wellness",
+   "tags": [
+    "indoor",
+    "night",
+    "sauna",
+    "spa"
+   ],
+   "description": "Спорт и отдых «AqMonsha» по адресу: улица Алихан Бокейхан, 34Б. Рубрики 2GIS: бани и сауны, массажист, spa-процедуры, эпиляция.",
+   "description_source": "template",
+   "address": "улица Алихан Бокейхан, 34Б",
+   "opening_hours": "Mo-Fr 11:00-23:00; Sa-Su 10:00-24:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.7,
+   "rating_count": 1651,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001065444076",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001030596111": {
+   "id": "2gis:70000001030596111",
+   "name": "eforea",
+   "name_i18n": {
+    "ru": "eforea"
+   },
+   "lat": 51.09069,
+   "lon": 71.410801,
+   "category": "wellness",
+   "tags": [
+    "fitness",
+    "gym",
+    "indoor",
+    "spa"
+   ],
+   "description": "Спорт и отдых «eforea» по адресу: улица Гейдара Алиева, 14. Рубрики 2GIS: spa-процедуры, тренажёрные залы, массажист, термальные комплексы, соляные комнаты.",
+   "description_source": "template",
+   "address": "улица Гейдара Алиева, 14",
+   "opening_hours": "Mo-Su 08:00-22:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 55,
+   "popularity": 0.133,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001030596111",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

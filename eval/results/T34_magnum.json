@@ -1,5 +1,5 @@
 {
- "request_id": "702aca9123c4",
+ "request_id": "2105ba560f1b",
  "context_used": {
   "location": "≈ район Mega Silk Way (точность ~100 м)",
   "time": "вторник, 18:00",
@@ -37,8 +37,8 @@
     10,
     15
    ],
-   "why": "Ближайший магазин сети «Magnum» в 943 метрах, открыт до 23:00.",
-   "what_to_do": "Зайдите за продуктами и необходимыми товарами.",
+   "why": "Ближайший магазин сети «Magnum», где можно купить продукты.",
+   "what_to_do": "Зайдите за необходимыми продуктами и быстро совершите покупки.",
    "open_status": {
     "state": "open",
     "confidence": "medium",
@@ -56,12 +56,13 @@
    "badges": [
     "indoor",
     "night"
-   ]
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Составьте список покупок заранее, чтобы быстро найти всё нужное.",
+   "text": "Составьте список покупок заранее, чтобы сэкономить время.",
    "source_type": "generated_idea"
   }
  ],
@@ -70,16 +71,59 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 1119
+  "latency_ms": 1648
  },
- "_eval_ms": 1164,
+ "_eval_ms": 1715,
+ "_pois_snapshot": {
+  "osm:node/10799137517": {
+   "id": "osm:node/10799137517",
+   "name": "Magnum",
+   "name_i18n": {
+    "ru": "Magnum"
+   },
+   "lat": 51.088308,
+   "lon": 71.396547,
+   "category": "convenience",
+   "tags": [
+    "groceries",
+    "night",
+    "shopping"
+   ],
+   "description": "Магазин у дома «Magnum».",
+   "description_source": "template",
+   "address": null,
+   "opening_hours": "Mo-Su 08:00-23:00",
+   "opening_hours_source": "osm",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "7766",
+   "website": "https://magnum.kz/",
+   "rating": null,
+   "rating_count": null,
+   "popularity": 0.1,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 10,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/10799137517",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.5,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notes": "Тестовые сценарии «Серуен». request — тело POST /api/recommend по contracts/api.md. expect — правила для eval/run_eval.py (общие правила проверяются для всех кейсов, здесь только специфичные). Время — Астана, UTC+5. 2026-10-20 — вторник.",
+  "notes": "Тестовые сценарии Seruen. request — тело POST /api/recommend по contracts/api.md. expect — правила для eval/run_eval.py (общие правила проверяются для всех кейсов, здесь только специфичные). Время — Астана, UTC+5. 2026-10-20 — вторник.",
   "defaults": {
     "recs_min": 1,
     "recs_max": 3,

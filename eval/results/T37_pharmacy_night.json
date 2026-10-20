@@ -1,5 +1,5 @@
 {
- "request_id": "a57abb171464",
+ "request_id": "f8e6efe241f5",
  "context_used": {
   "location": "≈ район Байтерек (точность ~100 м)",
   "time": "среда, 02:00",
@@ -42,8 +42,8 @@
     10,
     15
    ],
-   "why": "Аптека рядом — 390 м; работает допоздна или круглосуточно (по данным базы).",
-   "what_to_do": "Лекарства и товары для здоровья; рецептурные препараты — уточните у фармацевта.",
+   "why": "Ближайшая круглосуточная аптека, работает ночью.",
+   "what_to_do": "Зайдите внутрь, приобретите необходимые лекарства или средства гигиены.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -61,7 +61,8 @@
    "badges": [
     "indoor",
     "night"
-   ]
+   ],
+   "image": null
   },
   {
    "poi_id": "osm:node/2540818462",
@@ -75,8 +76,8 @@
     10,
     15
    ],
-   "why": "Аптека рядом — 444 м; работает допоздна или круглосуточно (по данным базы).",
-   "what_to_do": "Лекарства и товары для здоровья; рецептурные препараты — уточните у фармацевта.",
+   "why": "Еще один круглосуточный вариант неподалеку, открытый в ночное время.",
+   "what_to_do": "Обратитесь к фармацевту за нужными медикаментами.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -98,64 +99,118 @@
    "badges": [
     "indoor",
     "night"
-   ]
-  },
-  {
-   "poi_id": "osm:node/4966002804",
-   "name": "Europharma",
-   "category": "pharmacy",
-   "lat": 51.129071,
-   "lon": 71.437638,
-   "distance_m": 546,
-   "travel_min": 9,
-   "visit_min": [
-    10,
-    15
    ],
-   "why": "Аптека рядом — 546 м; работает допоздна или круглосуточно (по данным базы).",
-   "what_to_do": "Лекарства и товары для здоровья; рецептурные препараты — уточните у фармацевта.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Круглосуточно (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/4966002804"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001018626390"
-    }
-   ],
-   "rating": 4.6,
-   "badges": [
-    "indoor",
-    "night"
-   ]
+   "image": null
   }
  ],
  "ideas": [],
  "route": null,
- "warnings": [
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
- ],
+ "warnings": [],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 2510
  },
- "_eval_ms": 6067,
+ "_eval_ms": 2577,
+ "_pois_snapshot": {
+  "2gis:70000001061504155": {
+   "id": "2gis:70000001061504155",
+   "name": "АльфаМед",
+   "name_i18n": {
+    "ru": "АльфаМед"
+   },
+   "lat": 51.125109,
+   "lon": 71.426848,
+   "category": "pharmacy",
+   "tags": [
+    "24_7",
+    "indoor",
+    "medicine",
+    "night",
+    "pharmacy"
+   ],
+   "description": "Аптека «АльфаМед» по адресу: улица Сыганак, 39/1. Рубрики 2GIS: аптеки, детское питание, средства гигиены.",
+   "description_source": "template",
+   "address": "улица Сыганак, 39/1",
+   "opening_hours": "24/7",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.8,
+   "rating_count": 116,
+   "popularity": 0.17,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 10,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001061504155",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "osm:node/2540818462": {
+   "id": "osm:node/2540818462",
+   "name": "Ойық Фарм",
+   "name_i18n": {
+    "ru": "Ойық Фарм"
+   },
+   "lat": 51.126017,
+   "lon": 71.424476,
+   "category": "pharmacy",
+   "tags": [
+    "24_7",
+    "medicine",
+    "night",
+    "pharmacy"
+   ],
+   "description": "Аптека «Ойық Фарм» по адресу: Сауран көшесі, 4.",
+   "description_source": "template",
+   "address": "Сауран көшесі, 4",
+   "opening_hours": "24/7",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.8,
+   "rating_count": 128,
+   "popularity": 0.177,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 10,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/2540818462",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018108269",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

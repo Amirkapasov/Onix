@@ -1,5 +1,5 @@
 {
- "request_id": "104ce710eb83",
+ "request_id": "4b78624c9fa8",
  "context_used": {
   "location": "≈ Baiterek area (~100 m precision)",
   "time": "Tuesday, 10:00",
@@ -8,8 +8,8 @@
   "radius_m": 3426,
   "filters": [
    "budget 180 min",
-   "looking for: museum / exhibition (matching places only)",
-   "preferences: outdoor_ok, indoor"
+   "hidden as closed on arrival: 113",
+   "hidden (no hours, likely closed now): 84"
   ],
   "data_note": "Used: coarse location (~100 m), time, filters and your query. Coordinates are not stored or logged; weather is fetched for the city centre."
  },
@@ -17,114 +17,2025 @@
   "intent": "sightseeing",
   "time_budget_min": 180,
   "companions": "solo",
-  "constraints": [
-   "outdoor_ok",
-   "indoor"
-  ],
+  "constraints": [],
   "keywords": [
-   "музей / выставка",
-   "байтерек",
-   "достопримечательности",
-   "центр",
-   "экскурсия",
-   "туризм",
    "tourist",
    "baiterek",
    "hours",
-   "must"
+   "must",
+   "see",
+   "places",
+   "nearby"
   ]
  },
  "recommendations": [
   {
-   "poi_id": "2gis:70000001028161260",
-   "name": "Национальный центр рукописей и редких книг",
-   "category": "museum",
-   "lat": 51.127854,
-   "lon": 71.427423,
-   "distance_m": 181,
-   "travel_min": 3,
+   "poi_id": "osm:way/230401645",
+   "name": "Монумент «Байтерек»",
+   "category": "viewpoint",
+   "lat": 51.128288,
+   "lon": 71.430455,
+   "distance_m": 45,
+   "travel_min": 1,
    "visit_min": [
-    50,
-    90
+    20,
+    35
    ],
-   "why": "Located very close to Baiterek, this indoor museum fits your 3-hour time budget and has a high rating of 4.6.",
-   "what_to_do": "Explore the rare books and historical manuscripts on display.",
+   "why": "A must-see viewpoint right next to you with a high rating of 4.9. Perfect for a quick start to your 3-hour tour.",
+   "what_to_do": "Go up to the observation deck, enjoy the panoramic view of the city, and take memorable photos.",
    "open_status": {
     "state": "open",
     "confidence": "high",
-    "label": "Open until 18:00 (2GIS hours, checked 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001028161260"
-    }
-   ],
-   "rating": 4.6,
-   "badges": [
-    "indoor"
-   ]
-  },
-  {
-   "poi_id": "osm:way/230358847",
-   "name": "Корме",
-   "category": "gallery",
-   "lat": 51.128641,
-   "lon": 71.42038,
-   "distance_m": 675,
-   "travel_min": 12,
-   "visit_min": [
-    30,
-    55
-   ],
-   "why": "An indoor art and culture space nearby with a high rating of 4.9, perfect for a short visit.",
-   "what_to_do": "Check out the current exhibitions and art displays.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Open until 20:00 (2GIS hours, checked 2026-10-20)",
+    "label": "Open until 21:00 (2GIS hours, checked 2026-10-20)",
     "source": "2gis"
    },
    "source_type": "poi_data",
    "sources": [
     {
      "name": "osm",
-     "url": "https://www.openstreetmap.org/way/230358847"
+     "url": "https://www.openstreetmap.org/way/230401645"
+    },
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q804210"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B9%D1%82%D0%B5%D1%80%D0%B5%D0%BA_(%D0%BC%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D0%BD%D1%82)"
     },
     {
      "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001058713640"
+     "url": "https://2gis.kz/astana/firm/70000001021365759"
     }
    ],
    "rating": 4.9,
    "badges": [
-    "indoor"
-   ]
+    "outdoor",
+    "free",
+    "view",
+    "photo"
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg/960px-Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Night_at_Esil_District,_Astana_(P1190721).jpg",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "source": "wikimedia_commons"
+   }
+  },
+  {
+   "poi_id": "osm:way/166198046",
+   "name": "Резиденция «Ак Орда» (вид с площади)",
+   "category": "landmark",
+   "lat": 51.1258,
+   "lon": 71.446473,
+   "distance_m": 1175,
+   "travel_min": 20,
+   "visit_min": [
+    15,
+    25
+   ],
+   "why": "An iconic landmark located just a 20-minute walk away, offering great photo opportunities from the square.",
+   "what_to_do": "Walk to the square, admire the architecture of the presidential residence, and take photos.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Open 24/7 (OSM hours, checked 2026-10-20)",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/166198046"
+    },
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q413579"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D0%BE%D1%80%D0%B4%D0%B0_(%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D1%8F)"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "free",
+    "night",
+    "photo"
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Astana-2021-10_-_25.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Astana-2021-10_-_25.jpg/960px-Astana-2021-10_-_25.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_25.jpg",
+    "author": "Vyacheslav Bukharov",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   }
+  },
+  {
+   "poi_id": "osm:way/460703779",
+   "name": "ТРЦ «Хан Шатыр»",
+   "category": "mall",
+   "lat": 51.132509,
+   "lon": 71.403873,
+   "distance_m": 1891,
+   "travel_min": 33,
+   "visit_min": [
+    45,
+    60
+   ],
+   "why": "A massive architectural landmark and shopping center with a high rating, great for warming up given the +4°C weather.",
+   "what_to_do": "Explore the indoor space, enjoy the unique tent architecture, and look around the shops.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Open until 22:00 (2GIS hours, checked 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/460703779"
+    },
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q671484"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%BD_%D0%A8%D0%B0%D1%82%D1%8B%D1%80"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018125368"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor",
+    "night",
+    "family"
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Khan_Shatyr.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Khan_Shatyr.jpg/960px-Khan_Shatyr.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Khan_Shatyr.jpg",
+    "author": "Quarot",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons"
+   }
   }
  ],
  "ideas": [
   {
-   "text": "Grab a hot coffee nearby to warm up since it's +4°C outside.",
+   "text": "Stroll along Nurzhol Boulevard to enjoy the outdoor views between the main monuments.",
    "source_type": "generated_idea"
   }
  ],
- "route": null,
+ "route": {
+  "stops": [
+   "osm:way/230401645",
+   "osm:way/166198046",
+   "osm:way/460703779"
+  ],
+  "legs": [
+   {
+    "from": "start",
+    "to": "osm:way/230401645",
+    "distance_m": 64,
+    "minutes": 1
+   },
+   {
+    "from": "osm:way/230401645",
+    "to": "osm:way/166198046",
+    "distance_m": 1531,
+    "minutes": 20
+   },
+   {
+    "from": "osm:way/166198046",
+    "to": "osm:way/460703779",
+    "distance_m": 3712,
+    "minutes": 49
+   }
+  ],
+  "total_min": 150,
+  "geometry": [
+   [
+    51.12802,
+    71.43003
+   ],
+   [
+    51.12803,
+    71.43
+   ],
+   [
+    51.12809,
+    71.42994
+   ],
+   [
+    51.12815,
+    71.42989
+   ],
+   [
+    51.12835,
+    71.43009
+   ],
+   [
+    51.12834,
+    71.43013
+   ],
+   [
+    51.12832,
+    71.43023
+   ],
+   [
+    51.12831,
+    71.4303
+   ],
+   [
+    51.1283,
+    71.43036
+   ],
+   [
+    51.1283,
+    71.43036
+   ],
+   [
+    51.12831,
+    71.4303
+   ],
+   [
+    51.12832,
+    71.43023
+   ],
+   [
+    51.12834,
+    71.43013
+   ],
+   [
+    51.12835,
+    71.43009
+   ],
+   [
+    51.12839,
+    71.43012
+   ],
+   [
+    51.12843,
+    71.43016
+   ],
+   [
+    51.12847,
+    71.43021
+   ],
+   [
+    51.1285,
+    71.43027
+   ],
+   [
+    51.12852,
+    71.43034
+   ],
+   [
+    51.12853,
+    71.43041
+   ],
+   [
+    51.12853,
+    71.43049
+   ],
+   [
+    51.12852,
+    71.43056
+   ],
+   [
+    51.12865,
+    71.43061
+   ],
+   [
+    51.12875,
+    71.43066
+   ],
+   [
+    51.12872,
+    71.43082
+   ],
+   [
+    51.1287,
+    71.43092
+   ],
+   [
+    51.12859,
+    71.43154
+   ],
+   [
+    51.12855,
+    71.43156
+   ],
+   [
+    51.12852,
+    71.43158
+   ],
+   [
+    51.12846,
+    71.43161
+   ],
+   [
+    51.1284,
+    71.43162
+   ],
+   [
+    51.12835,
+    71.43163
+   ],
+   [
+    51.12831,
+    71.43164
+   ],
+   [
+    51.12825,
+    71.43164
+   ],
+   [
+    51.1282,
+    71.43164
+   ],
+   [
+    51.12816,
+    71.43163
+   ],
+   [
+    51.12811,
+    71.43161
+   ],
+   [
+    51.1281,
+    71.43165
+   ],
+   [
+    51.12808,
+    71.43175
+   ],
+   [
+    51.12807,
+    71.43184
+   ],
+   [
+    51.12805,
+    71.43197
+   ],
+   [
+    51.12803,
+    71.43212
+   ],
+   [
+    51.12803,
+    71.43216
+   ],
+   [
+    51.12803,
+    71.43218
+   ],
+   [
+    51.128,
+    71.4323
+   ],
+   [
+    51.12799,
+    71.43239
+   ],
+   [
+    51.12797,
+    71.43247
+   ],
+   [
+    51.12793,
+    71.43245
+   ],
+   [
+    51.12792,
+    71.43251
+   ],
+   [
+    51.12791,
+    71.4326
+   ],
+   [
+    51.1279,
+    71.43269
+   ],
+   [
+    51.12786,
+    71.43267
+   ],
+   [
+    51.12786,
+    71.43269
+   ],
+   [
+    51.12781,
+    71.43296
+   ],
+   [
+    51.12764,
+    71.43404
+   ],
+   [
+    51.12762,
+    71.43421
+   ],
+   [
+    51.12761,
+    71.43422
+   ],
+   [
+    51.12761,
+    71.43424
+   ],
+   [
+    51.1276,
+    71.43429
+   ],
+   [
+    51.1276,
+    71.43432
+   ],
+   [
+    51.12758,
+    71.43443
+   ],
+   [
+    51.12756,
+    71.43457
+   ],
+   [
+    51.12745,
+    71.43467
+   ],
+   [
+    51.12736,
+    71.43476
+   ],
+   [
+    51.12724,
+    71.43556
+   ],
+   [
+    51.12723,
+    71.4356
+   ],
+   [
+    51.12727,
+    71.4357
+   ],
+   [
+    51.12732,
+    71.43587
+   ],
+   [
+    51.12736,
+    71.43596
+   ],
+   [
+    51.12735,
+    71.43601
+   ],
+   [
+    51.12733,
+    71.43614
+   ],
+   [
+    51.12732,
+    71.43617
+   ],
+   [
+    51.12732,
+    71.43621
+   ],
+   [
+    51.12731,
+    71.43624
+   ],
+   [
+    51.12731,
+    71.43627
+   ],
+   [
+    51.12728,
+    71.43644
+   ],
+   [
+    51.12712,
+    71.43746
+   ],
+   [
+    51.12712,
+    71.4375
+   ],
+   [
+    51.12712,
+    71.43751
+   ],
+   [
+    51.12708,
+    71.43776
+   ],
+   [
+    51.12706,
+    71.43789
+   ],
+   [
+    51.12705,
+    71.43794
+   ],
+   [
+    51.12704,
+    71.43804
+   ],
+   [
+    51.12692,
+    71.43799
+   ],
+   [
+    51.12677,
+    71.43793
+   ],
+   [
+    51.12671,
+    71.43791
+   ],
+   [
+    51.12656,
+    71.43887
+   ],
+   [
+    51.12641,
+    71.43974
+   ],
+   [
+    51.1264,
+    71.43979
+   ],
+   [
+    51.12638,
+    71.43993
+   ],
+   [
+    51.12617,
+    71.44119
+   ],
+   [
+    51.12626,
+    71.44123
+   ],
+   [
+    51.12625,
+    71.44129
+   ],
+   [
+    51.12617,
+    71.44178
+   ],
+   [
+    51.12619,
+    71.44179
+   ],
+   [
+    51.12618,
+    71.44187
+   ],
+   [
+    51.12618,
+    71.44196
+   ],
+   [
+    51.12618,
+    71.44201
+   ],
+   [
+    51.12618,
+    71.44207
+   ],
+   [
+    51.12619,
+    71.44218
+   ],
+   [
+    51.12619,
+    71.44224
+   ],
+   [
+    51.1262,
+    71.44231
+   ],
+   [
+    51.1262,
+    71.44237
+   ],
+   [
+    51.1262,
+    71.44249
+   ],
+   [
+    51.12618,
+    71.44263
+   ],
+   [
+    51.12618,
+    71.44265
+   ],
+   [
+    51.12616,
+    71.44277
+   ],
+   [
+    51.12612,
+    71.44288
+   ],
+   [
+    51.12609,
+    71.44297
+   ],
+   [
+    51.12607,
+    71.443
+   ],
+   [
+    51.12609,
+    71.44306
+   ],
+   [
+    51.12611,
+    71.44312
+   ],
+   [
+    51.12612,
+    71.44319
+   ],
+   [
+    51.12612,
+    71.44322
+   ],
+   [
+    51.12612,
+    71.44326
+   ],
+   [
+    51.12612,
+    71.44329
+   ],
+   [
+    51.12611,
+    71.44335
+   ],
+   [
+    51.12614,
+    71.44336
+   ],
+   [
+    51.12607,
+    71.44383
+   ],
+   [
+    51.12605,
+    71.44398
+   ],
+   [
+    51.126,
+    71.44428
+   ],
+   [
+    51.12599,
+    71.44432
+   ],
+   [
+    51.12597,
+    71.44445
+   ],
+   [
+    51.12609,
+    71.4445
+   ],
+   [
+    51.12608,
+    71.44458
+   ],
+   [
+    51.12607,
+    71.44461
+   ],
+   [
+    51.12606,
+    71.44465
+   ],
+   [
+    51.12602,
+    71.44494
+   ],
+   [
+    51.12597,
+    71.44525
+   ],
+   [
+    51.12594,
+    71.44543
+   ],
+   [
+    51.12587,
+    71.44589
+   ],
+   [
+    51.12626,
+    71.44606
+   ],
+   [
+    51.1264,
+    71.44611
+   ],
+   [
+    51.12643,
+    71.44611
+   ],
+   [
+    51.12635,
+    71.44656
+   ],
+   [
+    51.12628,
+    71.44701
+   ],
+   [
+    51.12615,
+    71.44715
+   ],
+   [
+    51.12597,
+    71.44708
+   ],
+   [
+    51.12575,
+    71.44699
+   ],
+   [
+    51.12572,
+    71.44698
+   ],
+   [
+    51.12575,
+    71.44699
+   ],
+   [
+    51.12597,
+    71.44708
+   ],
+   [
+    51.12615,
+    71.44715
+   ],
+   [
+    51.12628,
+    71.44701
+   ],
+   [
+    51.12635,
+    71.44656
+   ],
+   [
+    51.12643,
+    71.44611
+   ],
+   [
+    51.1264,
+    71.44611
+   ],
+   [
+    51.12626,
+    71.44606
+   ],
+   [
+    51.12587,
+    71.44589
+   ],
+   [
+    51.12594,
+    71.44543
+   ],
+   [
+    51.12597,
+    71.44525
+   ],
+   [
+    51.12602,
+    71.44494
+   ],
+   [
+    51.12606,
+    71.44465
+   ],
+   [
+    51.12607,
+    71.44461
+   ],
+   [
+    51.12608,
+    71.44458
+   ],
+   [
+    51.12609,
+    71.4445
+   ],
+   [
+    51.12597,
+    71.44445
+   ],
+   [
+    51.12599,
+    71.44432
+   ],
+   [
+    51.126,
+    71.44428
+   ],
+   [
+    51.12605,
+    71.44398
+   ],
+   [
+    51.12607,
+    71.44383
+   ],
+   [
+    51.12614,
+    71.44336
+   ],
+   [
+    51.12611,
+    71.44335
+   ],
+   [
+    51.12612,
+    71.44329
+   ],
+   [
+    51.12612,
+    71.44326
+   ],
+   [
+    51.12612,
+    71.44322
+   ],
+   [
+    51.12612,
+    71.44319
+   ],
+   [
+    51.12611,
+    71.44312
+   ],
+   [
+    51.12609,
+    71.44306
+   ],
+   [
+    51.12607,
+    71.443
+   ],
+   [
+    51.12609,
+    71.44297
+   ],
+   [
+    51.12612,
+    71.44288
+   ],
+   [
+    51.12616,
+    71.44277
+   ],
+   [
+    51.12618,
+    71.44265
+   ],
+   [
+    51.12618,
+    71.44263
+   ],
+   [
+    51.1262,
+    71.44249
+   ],
+   [
+    51.1262,
+    71.44237
+   ],
+   [
+    51.1262,
+    71.44231
+   ],
+   [
+    51.12619,
+    71.44224
+   ],
+   [
+    51.12619,
+    71.44218
+   ],
+   [
+    51.12618,
+    71.44207
+   ],
+   [
+    51.12618,
+    71.44201
+   ],
+   [
+    51.12618,
+    71.44196
+   ],
+   [
+    51.12618,
+    71.44187
+   ],
+   [
+    51.12619,
+    71.44179
+   ],
+   [
+    51.12617,
+    71.44178
+   ],
+   [
+    51.12625,
+    71.44129
+   ],
+   [
+    51.12626,
+    71.44123
+   ],
+   [
+    51.12617,
+    71.44119
+   ],
+   [
+    51.12638,
+    71.43993
+   ],
+   [
+    51.1264,
+    71.43979
+   ],
+   [
+    51.12641,
+    71.43974
+   ],
+   [
+    51.12656,
+    71.43887
+   ],
+   [
+    51.12671,
+    71.43791
+   ],
+   [
+    51.12677,
+    71.43793
+   ],
+   [
+    51.12692,
+    71.43799
+   ],
+   [
+    51.12704,
+    71.43804
+   ],
+   [
+    51.12705,
+    71.43794
+   ],
+   [
+    51.12706,
+    71.43789
+   ],
+   [
+    51.12708,
+    71.43776
+   ],
+   [
+    51.12712,
+    71.43751
+   ],
+   [
+    51.12712,
+    71.4375
+   ],
+   [
+    51.12712,
+    71.43746
+   ],
+   [
+    51.12728,
+    71.43644
+   ],
+   [
+    51.12731,
+    71.43627
+   ],
+   [
+    51.12731,
+    71.43624
+   ],
+   [
+    51.12732,
+    71.43621
+   ],
+   [
+    51.12732,
+    71.43617
+   ],
+   [
+    51.12733,
+    71.43614
+   ],
+   [
+    51.12735,
+    71.43601
+   ],
+   [
+    51.12736,
+    71.43596
+   ],
+   [
+    51.12732,
+    71.43587
+   ],
+   [
+    51.12727,
+    71.4357
+   ],
+   [
+    51.12723,
+    71.4356
+   ],
+   [
+    51.12724,
+    71.43556
+   ],
+   [
+    51.12736,
+    71.43476
+   ],
+   [
+    51.12745,
+    71.43467
+   ],
+   [
+    51.12756,
+    71.43457
+   ],
+   [
+    51.12758,
+    71.43443
+   ],
+   [
+    51.1276,
+    71.43432
+   ],
+   [
+    51.1276,
+    71.43429
+   ],
+   [
+    51.12761,
+    71.43424
+   ],
+   [
+    51.12761,
+    71.43422
+   ],
+   [
+    51.12762,
+    71.43421
+   ],
+   [
+    51.12764,
+    71.43404
+   ],
+   [
+    51.12781,
+    71.43296
+   ],
+   [
+    51.12786,
+    71.43269
+   ],
+   [
+    51.12786,
+    71.43267
+   ],
+   [
+    51.1279,
+    71.43269
+   ],
+   [
+    51.12791,
+    71.4326
+   ],
+   [
+    51.12792,
+    71.43251
+   ],
+   [
+    51.12793,
+    71.43245
+   ],
+   [
+    51.12797,
+    71.43247
+   ],
+   [
+    51.12799,
+    71.43239
+   ],
+   [
+    51.128,
+    71.4323
+   ],
+   [
+    51.12803,
+    71.43218
+   ],
+   [
+    51.12803,
+    71.43216
+   ],
+   [
+    51.12803,
+    71.43212
+   ],
+   [
+    51.12805,
+    71.43197
+   ],
+   [
+    51.12807,
+    71.43184
+   ],
+   [
+    51.12808,
+    71.43175
+   ],
+   [
+    51.1281,
+    71.43165
+   ],
+   [
+    51.12811,
+    71.43161
+   ],
+   [
+    51.12816,
+    71.43163
+   ],
+   [
+    51.1282,
+    71.43164
+   ],
+   [
+    51.12825,
+    71.43164
+   ],
+   [
+    51.12831,
+    71.43164
+   ],
+   [
+    51.12835,
+    71.43163
+   ],
+   [
+    51.1284,
+    71.43162
+   ],
+   [
+    51.12846,
+    71.43161
+   ],
+   [
+    51.12852,
+    71.43158
+   ],
+   [
+    51.12855,
+    71.43156
+   ],
+   [
+    51.12859,
+    71.43154
+   ],
+   [
+    51.1287,
+    71.43092
+   ],
+   [
+    51.12872,
+    71.43082
+   ],
+   [
+    51.12875,
+    71.43066
+   ],
+   [
+    51.12877,
+    71.43048
+   ],
+   [
+    51.12879,
+    71.4304
+   ],
+   [
+    51.12889,
+    71.42974
+   ],
+   [
+    51.12887,
+    71.42971
+   ],
+   [
+    51.12881,
+    71.42962
+   ],
+   [
+    51.12877,
+    71.42956
+   ],
+   [
+    51.12872,
+    71.4295
+   ],
+   [
+    51.12865,
+    71.42944
+   ],
+   [
+    51.12858,
+    71.42938
+   ],
+   [
+    51.12852,
+    71.42934
+   ],
+   [
+    51.12848,
+    71.42932
+   ],
+   [
+    51.12848,
+    71.42929
+   ],
+   [
+    51.1285,
+    71.42915
+   ],
+   [
+    51.12851,
+    71.42908
+   ],
+   [
+    51.12853,
+    71.42894
+   ],
+   [
+    51.12855,
+    71.42881
+   ],
+   [
+    51.12856,
+    71.42877
+   ],
+   [
+    51.12856,
+    71.42875
+   ],
+   [
+    51.12858,
+    71.42863
+   ],
+   [
+    51.12859,
+    71.42855
+   ],
+   [
+    51.1286,
+    71.42848
+   ],
+   [
+    51.12855,
+    71.42818
+   ],
+   [
+    51.12859,
+    71.42792
+   ],
+   [
+    51.12871,
+    71.42718
+   ],
+   [
+    51.12872,
+    71.42712
+   ],
+   [
+    51.12876,
+    71.42685
+   ],
+   [
+    51.12843,
+    71.42671
+   ],
+   [
+    51.12851,
+    71.42644
+   ],
+   [
+    51.12855,
+    71.42617
+   ],
+   [
+    51.1286,
+    71.4259
+   ],
+   [
+    51.12864,
+    71.42562
+   ],
+   [
+    51.12864,
+    71.42544
+   ],
+   [
+    51.12865,
+    71.42536
+   ],
+   [
+    51.1287,
+    71.4251
+   ],
+   [
+    51.12893,
+    71.42378
+   ],
+   [
+    51.12897,
+    71.42354
+   ],
+   [
+    51.12902,
+    71.42329
+   ],
+   [
+    51.12908,
+    71.42314
+   ],
+   [
+    51.1291,
+    71.42303
+   ],
+   [
+    51.12914,
+    71.42276
+   ],
+   [
+    51.12916,
+    71.42247
+   ],
+   [
+    51.12918,
+    71.42224
+   ],
+   [
+    51.12919,
+    71.42221
+   ],
+   [
+    51.12923,
+    71.42194
+   ],
+   [
+    51.12945,
+    71.4206
+   ],
+   [
+    51.1295,
+    71.42034
+   ],
+   [
+    51.12951,
+    71.4203
+   ],
+   [
+    51.12958,
+    71.42009
+   ],
+   [
+    51.12966,
+    71.41984
+   ],
+   [
+    51.1297,
+    71.41957
+   ],
+   [
+    51.12971,
+    71.41929
+   ],
+   [
+    51.12972,
+    71.41905
+   ],
+   [
+    51.12972,
+    71.41902
+   ],
+   [
+    51.12977,
+    71.41876
+   ],
+   [
+    51.12995,
+    71.41771
+   ],
+   [
+    51.13003,
+    71.41774
+   ],
+   [
+    51.1301,
+    71.41776
+   ],
+   [
+    51.13019,
+    71.4178
+   ],
+   [
+    51.13025,
+    71.41769
+   ],
+   [
+    51.13032,
+    71.4176
+   ],
+   [
+    51.13032,
+    71.41754
+   ],
+   [
+    51.13034,
+    71.41742
+   ],
+   [
+    51.13036,
+    71.41732
+   ],
+   [
+    51.13037,
+    71.41727
+   ],
+   [
+    51.13039,
+    71.41715
+   ],
+   [
+    51.13041,
+    71.41704
+   ],
+   [
+    51.13043,
+    71.41688
+   ],
+   [
+    51.1305,
+    71.41644
+   ],
+   [
+    51.13049,
+    71.41637
+   ],
+   [
+    51.13052,
+    71.41614
+   ],
+   [
+    51.13055,
+    71.41594
+   ],
+   [
+    51.13066,
+    71.41526
+   ],
+   [
+    51.13068,
+    71.41517
+   ],
+   [
+    51.13072,
+    71.41493
+   ],
+   [
+    51.13067,
+    71.41491
+   ],
+   [
+    51.13062,
+    71.41486
+   ],
+   [
+    51.13061,
+    71.41484
+   ],
+   [
+    51.13058,
+    71.4148
+   ],
+   [
+    51.13055,
+    71.41473
+   ],
+   [
+    51.13054,
+    71.4147
+   ],
+   [
+    51.13053,
+    71.41466
+   ],
+   [
+    51.13051,
+    71.41457
+   ],
+   [
+    51.13051,
+    71.41449
+   ],
+   [
+    51.13051,
+    71.41445
+   ],
+   [
+    51.13052,
+    71.4144
+   ],
+   [
+    51.13054,
+    71.41432
+   ],
+   [
+    51.13056,
+    71.41424
+   ],
+   [
+    51.13058,
+    71.41421
+   ],
+   [
+    51.1306,
+    71.41418
+   ],
+   [
+    51.13064,
+    71.41413
+   ],
+   [
+    51.13069,
+    71.41409
+   ],
+   [
+    51.13071,
+    71.41408
+   ],
+   [
+    51.13074,
+    71.41406
+   ],
+   [
+    51.13079,
+    71.41406
+   ],
+   [
+    51.13085,
+    71.41407
+   ],
+   [
+    51.13086,
+    71.41407
+   ],
+   [
+    51.13089,
+    71.41385
+   ],
+   [
+    51.13091,
+    71.41374
+   ],
+   [
+    51.13092,
+    71.41368
+   ],
+   [
+    51.13097,
+    71.41337
+   ],
+   [
+    51.131,
+    71.41316
+   ],
+   [
+    51.13108,
+    71.41265
+   ],
+   [
+    51.1311,
+    71.41249
+   ],
+   [
+    51.1311,
+    71.41246
+   ],
+   [
+    51.13116,
+    71.41212
+   ],
+   [
+    51.13118,
+    71.41198
+   ],
+   [
+    51.13126,
+    71.4114
+   ],
+   [
+    51.13118,
+    71.41137
+   ],
+   [
+    51.13122,
+    71.41108
+   ],
+   [
+    51.13124,
+    71.41099
+   ],
+   [
+    51.13126,
+    71.41084
+   ],
+   [
+    51.1313,
+    71.41057
+   ],
+   [
+    51.13143,
+    71.4097
+   ],
+   [
+    51.13146,
+    71.40948
+   ],
+   [
+    51.13157,
+    71.40878
+   ],
+   [
+    51.13169,
+    71.40799
+   ],
+   [
+    51.13155,
+    71.40783
+   ],
+   [
+    51.13141,
+    71.40757
+   ],
+   [
+    51.13158,
+    71.40754
+   ],
+   [
+    51.1319,
+    71.40761
+   ],
+   [
+    51.13191,
+    71.40747
+   ],
+   [
+    51.13196,
+    71.40713
+   ],
+   [
+    51.132,
+    71.4068
+   ],
+   [
+    51.13207,
+    71.40637
+   ],
+   [
+    51.13211,
+    71.40614
+   ],
+   [
+    51.13211,
+    71.40609
+   ],
+   [
+    51.13226,
+    71.40612
+   ],
+   [
+    51.13231,
+    71.40613
+   ],
+   [
+    51.1324,
+    71.40614
+   ],
+   [
+    51.13251,
+    71.40611
+   ],
+   [
+    51.13264,
+    71.40607
+   ],
+   [
+    51.13284,
+    71.40595
+   ],
+   [
+    51.13303,
+    71.40577
+   ],
+   [
+    51.13317,
+    71.40561
+   ],
+   [
+    51.13324,
+    71.40552
+   ],
+   [
+    51.13346,
+    71.40511
+   ],
+   [
+    51.13359,
+    71.40474
+   ],
+   [
+    51.13362,
+    71.40461
+   ],
+   [
+    51.13369,
+    71.40433
+   ],
+   [
+    51.13325,
+    71.40413
+   ],
+   [
+    51.13325,
+    71.40413
+   ]
+  ],
+  "geometry_source": "osrm"
+ },
  "warnings": [],
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 3119
+  "latency_ms": 2258
  },
- "_eval_ms": 3183,
+ "_eval_ms": 6150,
+ "_pois_snapshot": {
+  "osm:way/230401645": {
+   "id": "osm:way/230401645",
+   "name": "Монумент «Байтерек»",
+   "name_i18n": {
+    "ru": "Монумент «Байтерек»",
+    "kk": "Бәйтерек",
+    "en": "Bayterek"
+   },
+   "lat": 51.128288,
+   "lon": 71.430455,
+   "category": "viewpoint",
+   "tags": [
+    "free",
+    "must_see",
+    "outdoor",
+    "photo",
+    "sight",
+    "view"
+   ],
+   "description": "«Байтерек» — монумент и смотровая башня в столице Казахстана — Астане. Монумент был построен как символ переноса столицы Казахстана в 1997 году. Входит в список памятников истории и культуры местного значения Астаны.",
+   "description_source": "wikipedia",
+   "address": "Нұржол желек жолы, 14",
+   "opening_hours": "Mo-Su 10:00-21:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 3228,
+   "popularity": 1.0,
+   "indoor": false,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": 0,
+   "typical_visit_min": 30,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/230401645",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q804210",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B9%D1%82%D0%B5%D1%80%D0%B5%D0%BA_(%D0%BC%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D0%BD%D1%82)",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001021365759",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg/960px-Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Night_at_Esil_District,_Astana_(P1190721).jpg",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "source": "wikimedia_commons"
+   },
+   "data_quality": 0.85,
+   "updated_at": "2026-10-20"
+  },
+  "osm:way/166198046": {
+   "id": "osm:way/166198046",
+   "name": "Резиденция «Ак Орда» (вид с площади)",
+   "name_i18n": {
+    "ru": "Резиденция «Ак Орда» (вид с площади)",
+    "kk": "Ақорда резиденциясы",
+    "en": "Ak Orda Presidential Palace"
+   },
+   "lat": 51.1258,
+   "lon": 71.446473,
+   "category": "landmark",
+   "tags": [
+    "24_7",
+    "free",
+    "must_see",
+    "night",
+    "photo",
+    "sight"
+   ],
+   "description": "Акорда — резиденция президента Казахстана. Является штаб-квартирой Администрации Президента.",
+   "description_source": "wikipedia",
+   "address": "4CGW+7GX, Ак орда, Левобережье",
+   "opening_hours": "24/7",
+   "opening_hours_source": "osm",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "8 (702) 383 3734",
+   "website": "https://www.akorda.kz",
+   "rating": null,
+   "rating_count": null,
+   "popularity": 1.0,
+   "indoor": null,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": 0,
+   "typical_visit_min": 20,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/166198046",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q413579",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D0%BE%D1%80%D0%B4%D0%B0_(%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D1%8F)",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Astana-2021-10_-_25.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Astana-2021-10_-_25.jpg/960px-Astana-2021-10_-_25.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_25.jpg",
+    "author": "Vyacheslav Bukharov",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   },
+   "data_quality": 0.8,
+   "updated_at": "2026-10-20"
+  },
+  "osm:way/460703779": {
+   "id": "osm:way/460703779",
+   "name": "ТРЦ «Хан Шатыр»",
+   "name_i18n": {
+    "ru": "ТРЦ «Хан Шатыр»",
+    "en": "Khan Shatyr",
+    "kk": "Хан Шатыр"
+   },
+   "lat": 51.132509,
+   "lon": 71.403873,
+   "category": "mall",
+   "tags": [
+    "family",
+    "indoor",
+    "must_see",
+    "night",
+    "shopping",
+    "sight",
+    "wheelchair"
+   ],
+   "description": "«Хан Шатыр» — крупный торгово-развлекательный центр в столице Казахстана Астане.",
+   "description_source": "wikipedia",
+   "address": "Тұран даңғылы, 37",
+   "opening_hours": "Mo-Su 10:00-22:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 8624,
+   "popularity": 1.0,
+   "indoor": true,
+   "wheelchair": "yes",
+   "kid_friendly": true,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/460703779",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q671484",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%BD_%D0%A8%D0%B0%D1%82%D1%8B%D1%80",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018125368",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Khan_Shatyr.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Khan_Shatyr.jpg/960px-Khan_Shatyr.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Khan_Shatyr.jpg",
+    "author": "Quarot",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons"
+   },
+   "data_quality": 0.9,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

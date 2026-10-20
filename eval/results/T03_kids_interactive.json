@@ -1,5 +1,5 @@
 {
- "request_id": "28978b64f55f",
+ "request_id": "a22c6be3c74f",
  "context_used": {
   "location": "≈ район Хан Шатыр (точность ~100 м)",
   "time": "суббота, 11:00",
@@ -45,8 +45,8 @@
     30,
     50
    ],
-   "why": "Детская площадка — то, что вы искали; подходит для детей. Детская площадка «Детская площадка».",
-   "what_to_do": "Дайте детям поиграть, присмотрите скамейку рядом.",
+   "why": "Бесплатная открытая детская площадка для отдыха всей семьей с детьми рядом с вами. Уточните часы работы перед выходом.",
+   "what_to_do": "Погуляйте с ребенком на свежем воздухе. Обратите внимание на погоду: на улице +4°C, одевайтесь теплее.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
@@ -71,42 +71,8 @@
     "kids",
     "family",
     "hours_unverified"
-   ]
-  },
-  {
-   "poi_id": "osm:way/1449322354",
-   "name": "Fame City",
-   "category": "kids",
-   "lat": 51.132534,
-   "lon": 71.40388,
-   "distance_m": 52,
-   "travel_min": 1,
-   "visit_min": [
-    65,
-    110
    ],
-   "why": "Детская площадка — то, что вы искали; подходит для детей. Парк развлечений «Fame City».",
-   "what_to_do": "Выберите 1–2 активности по возрасту ребёнка.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы работы неизвестны — уточните перед выходом",
-    "source": null
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/1449322354"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "outdoor",
-    "kids",
-    "family",
-    "hours_unverified"
-   ]
+   "image": null
   },
   {
    "poi_id": "2gis:70000001110302686",
@@ -117,11 +83,11 @@
    "distance_m": 740,
    "travel_min": 13,
    "visit_min": [
-    65,
-    110
+    60,
+    90
    ],
-   "why": "Детская площадка — то, что вы искали; подходит для детей; высокий рейтинг 4.7. Место для детей «ТимаТома». Рубрики 2GIS: детские игровые залы.",
-   "what_to_do": "Выберите 1–2 активности по возрасту ребёнка.",
+   "why": "Отличный детский игровой зал «ТимаТома» с высоким рейтингом 4.7 и семейной атмосферой. Сейчас открыто до 22:00.",
+   "what_to_do": "Проведите время в игровой зоне, где ребенку будет интересно играть в помещении.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -140,28 +106,122 @@
     "indoor",
     "kids",
     "family"
-   ]
+   ],
+   "image": null
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "Одевайтесь теплее: на улице прохладно (+4°C), чередуйте активные игры на улице с посещением теплых мест.",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
-  "Часы работы 2 мест(а) неизвестны — уточните перед выходом."
+  "Часы работы 1 мест(а) неизвестны — уточните перед выходом."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 3414
  },
- "_eval_ms": 4268,
+ "_eval_ms": 3488,
+ "_pois_snapshot": {
+  "osm:way/1449322330": {
+   "id": "osm:way/1449322330",
+   "name": "Детская площадка",
+   "name_i18n": {},
+   "lat": 51.13227,
+   "lon": 71.403346,
+   "category": "playground",
+   "tags": [
+    "family",
+    "free",
+    "kids",
+    "outdoor"
+   ],
+   "description": "Детская площадка «Детская площадка».",
+   "description_source": "template",
+   "address": null,
+   "opening_hours": null,
+   "opening_hours_source": null,
+   "opening_hours_checked_at": null,
+   "phone": null,
+   "website": null,
+   "rating": null,
+   "rating_count": null,
+   "popularity": 0.02,
+   "indoor": false,
+   "wheelchair": "unknown",
+   "kid_friendly": true,
+   "price_level": 0,
+   "typical_visit_min": 40,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449322330",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449322332",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.15,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001110302686": {
+   "id": "2gis:70000001110302686",
+   "name": "ТимаТома",
+   "name_i18n": {
+    "ru": "ТимаТома"
+   },
+   "lat": 51.128009,
+   "lon": 71.41102,
+   "category": "kids",
+   "tags": [
+    "family",
+    "fun",
+    "indoor",
+    "kids"
+   ],
+   "description": "Место для детей «ТимаТома» по адресу: Кабанбай батыр проспект, 21. Рубрики 2GIS: детские игровые залы.",
+   "description_source": "template",
+   "address": "Кабанбай батыр проспект, 21",
+   "opening_hours": "Mo-Su 10:00-22:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.7,
+   "rating_count": 16,
+   "popularity": 0.11,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": true,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001110302686",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

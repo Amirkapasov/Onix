@@ -1,5 +1,5 @@
 {
- "request_id": "99745a30298d",
+ "request_id": "a1636947d73c",
  "context_used": {
   "location": "≈ район Хан Шатыр (точность ~100 м)",
   "time": "суббота, 12:00",
@@ -26,39 +26,6 @@
  },
  "recommendations": [
   {
-   "poi_id": "osm:way/1449301296",
-   "name": "LC Waikiki",
-   "category": "clothes",
-   "lat": 51.132662,
-   "lon": 71.404299,
-   "distance_m": 43,
-   "travel_min": 1,
-   "visit_min": [
-    30,
-    50
-   ],
-   "why": "Ближайший магазин одежды, подходит для шопинга.",
-   "what_to_do": "Посмотрите текущие коллекции и акции; перед покупкой сравните цены в соседних магазинах.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы работы неизвестны — уточните перед выходом",
-    "source": null
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/1449301296"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "indoor",
-    "hours_unverified"
-   ]
-  },
-  {
    "poi_id": "osm:way/1449305181",
    "name": "Kanzler",
    "category": "clothes",
@@ -70,8 +37,8 @@
     30,
     50
    ],
-   "why": "Магазин одежды «Kanzler», открыт до 22:00.",
-   "what_to_do": "Загляните внутрь, чтобы выбрать новые вещи.",
+   "why": "Ближайший открытый магазин одежды с возможностью быстрой покупки.",
+   "what_to_do": "Посмотрите текущие коллекции и акции; перед покупкой сравните цены в соседних магазинах.",
    "open_status": {
     "state": "open",
     "confidence": "medium",
@@ -88,33 +55,148 @@
    "rating": null,
    "badges": [
     "indoor"
-   ]
+   ],
+   "image": null
+  },
+  {
+   "poi_id": "osm:way/1449317658",
+   "name": "Ecco",
+   "category": "clothes",
+   "lat": 51.132965,
+   "lon": 71.404548,
+   "distance_m": 38,
+   "travel_min": 1,
+   "visit_min": [
+    30,
+    50
+   ],
+   "why": "Магазин обуви рядом, открыт и подходит для поиска элементов гардероба.",
+   "what_to_do": "Посмотрите текущие коллекции и акции; перед покупкой сравните цены в соседних магазинах.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто до 22:00 (часы по OSM, проверено 2026-10-20)",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449317658"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor"
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Составьте список необходимых вещей заранее, чтобы сэкономить время на шопинг.",
+   "text": "Составьте список необходимых вещей заранее, чтобы быстрее сориентироваться в магазинах.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
  "warnings": [
-  "Часы работы 1 мест(а) неизвестны — уточните перед выходом.",
   "Данных о ценах в базе нет — показываю ближайшие подходящие места; уровень цен уточните на месте."
  ],
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 5572
+  "latency_ms": 1976
  },
- "_eval_ms": 5631,
+ "_eval_ms": 2046,
+ "_pois_snapshot": {
+  "osm:way/1449305181": {
+   "id": "osm:way/1449305181",
+   "name": "Kanzler",
+   "name_i18n": {
+    "ru": "Kanzler"
+   },
+   "lat": 51.132743,
+   "lon": 71.403619,
+   "category": "clothes",
+   "tags": [
+    "shopping"
+   ],
+   "description": "Магазин одежды «Kanzler».",
+   "description_source": "template",
+   "address": null,
+   "opening_hours": "Mo-Su 10:00-22:00",
+   "opening_hours_source": "osm",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "+7 701 364 2284",
+   "website": "https://www.kanzler-style.ru",
+   "rating": null,
+   "rating_count": null,
+   "popularity": 0.1,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 40,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449305181",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.5,
+   "updated_at": "2026-10-20"
+  },
+  "osm:way/1449317658": {
+   "id": "osm:way/1449317658",
+   "name": "Ecco",
+   "name_i18n": {
+    "ru": "Ecco"
+   },
+   "lat": 51.132965,
+   "lon": 71.404548,
+   "category": "clothes",
+   "tags": [
+    "brand:ecco",
+    "shoes",
+    "shopping"
+   ],
+   "description": "Магазин обуви «Ecco».",
+   "description_source": "template",
+   "address": null,
+   "opening_hours": "Mo-Su 10:00-22:00",
+   "opening_hours_source": "osm",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "+7 727 349 4499;+7 771 993 9177",
+   "website": "https://ecco.kz/",
+   "rating": null,
+   "rating_count": null,
+   "popularity": 0.1,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 40,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449317658",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.5,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

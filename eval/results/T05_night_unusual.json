@@ -1,5 +1,5 @@
 {
- "request_id": "c4eaf680b6cd",
+ "request_id": "d5273c91a171",
  "context_used": {
   "location": "≈ район Бульвар Нуржол (точность ~100 м)",
   "time": "вторник, 22:30",
@@ -10,8 +10,8 @@
    "бюджет 120 мин",
    "пожелания: night, unusual",
    "ночь: места, открытые допоздна",
-   "скрыто закрытых к приходу: 123",
-   "скрыто без часов, вероятно закрытых в это время: 88"
+   "скрыто закрытых к приходу: 120",
+   "скрыто без часов, вероятно закрытых в это время: 86"
   ],
   "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
@@ -45,8 +45,8 @@
     65,
     110
    ],
-   "why": "Отличный вариант для необычной ночной активности: интерактивные квесты и развлечения, открыто до 01:00.",
-   "what_to_do": "Пройдите квест или примите участие в интерактивной игре, погрузившись в ночное приключение.",
+   "why": "Место подходит под ваш запрос на необычную ночную активность: рейтинг 5.0, интерактивные квесты и открыто до 01:00.",
+   "what_to_do": "Пройдите квест или погрузитесь в интерактивное развлечение.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -66,7 +66,8 @@
     "night",
     "unusual",
     "interactive"
-   ]
+   ],
+   "image": null
   },
   {
    "poi_id": "2gis:70000001115110557",
@@ -80,8 +81,8 @@
     65,
     95
    ],
-   "why": "Необычное место с квестами и антикафе, которое работает всю ночь (до 05:00) и подходит под ваш запрос.",
-   "what_to_do": "Забронируйте прохождение квеста или отдохните в необычной атмосферной обстановке антикафе.",
+   "why": "Отличный вариант для позднего вечера с высоким рейтингом 4.9, работающий до 05:00 с квестами и необычным форматом.",
+   "what_to_do": "Испытайте себя в необычной атмосфере антикафе и квестов.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -101,12 +102,13 @@
     "night",
     "unusual",
     "interactive"
-   ]
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Прогуляйтесь по ночному городу после активности, оценив подсветку архитектуры.",
+   "text": "Проверьте расписание ночных сеансов в кинотеатрах или загляните на ночную прогулку по подсветке столицы.",
    "source_type": "generated_idea"
   }
  ],
@@ -115,16 +117,106 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 3196
+  "latency_ms": 4855
  },
- "_eval_ms": 3291,
+ "_eval_ms": 4948,
+ "_pois_snapshot": {
+  "2gis:70000001079723926": {
+   "id": "2gis:70000001079723926",
+   "name": "Show Today",
+   "name_i18n": {
+    "ru": "Show Today"
+   },
+   "lat": 51.124406,
+   "lon": 71.436578,
+   "category": "entertainment",
+   "tags": [
+    "fun",
+    "indoor",
+    "interactive",
+    "night",
+    "quest",
+    "unusual"
+   ],
+   "description": "Развлечения «Show Today» по адресу: улица Достык, 20. Рубрики 2GIS: квесты, организация праздников, тимбилдинг.",
+   "description_source": "template",
+   "address": "улица Достык, 20",
+   "opening_hours": "Mo-Su 09:00-01:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 5.0,
+   "rating_count": 1150,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001079723926",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001115110557": {
+   "id": "2gis:70000001115110557",
+   "name": "DevilRoom",
+   "name_i18n": {
+    "ru": "DevilRoom"
+   },
+   "lat": 51.140156,
+   "lon": 71.43082,
+   "category": "entertainment",
+   "tags": [
+    "fun",
+    "indoor",
+    "interactive",
+    "night",
+    "quest",
+    "unusual"
+   ],
+   "description": "Развлечения «DevilRoom» по адресу: улица Адырна, 25/1. Рубрики 2GIS: квесты, антикафе.",
+   "description_source": "template",
+   "address": "улица Адырна, 25/1",
+   "opening_hours": "Mo-Su 13:00-05:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 162,
+   "popularity": 0.197,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001115110557",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

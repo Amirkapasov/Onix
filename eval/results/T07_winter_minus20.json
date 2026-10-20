@@ -1,5 +1,5 @@
 {
- "request_id": "b12d8664b75a",
+ "request_id": "0b068e686661",
  "context_used": {
   "location": "≈ район Байтерек (точность ~100 м)",
   "time": "четверг, 18:30",
@@ -46,8 +46,8 @@
     30,
     50
    ],
-   "why": "Отличное теплое место неподалеку с высоким рейтингом 4.9, открытое до трех часов ночи.",
-   "what_to_do": "Закажите горячий кофе и отдохните за столиком, спрятавшись от мороза и ветра.",
+   "why": "Отличное уютное кафе с высоким рейтингом 4.9, идеально подходит, чтобы согреться в холодный ветреный вечер недалеко от вас.",
+   "what_to_do": "Закажите чашку горячего кофе или чая, устройтесь за столиком и отдохните, наслаждаясь теплом.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -66,41 +66,8 @@
     "indoor",
     "night",
     "coffee"
-   ]
-  },
-  {
-   "poi_id": "2gis:70000001032494391",
-   "name": "Көкtem",
-   "category": "cafe",
-   "lat": 51.129267,
-   "lon": 71.428581,
-   "distance_m": 172,
-   "travel_min": 3,
-   "visit_min": [
-    30,
-    45
    ],
-   "why": "Уютное кафе всего в 3 минутах ходьбы, отлично подходящее для вечернего отдыха в тепле.",
-   "what_to_do": "Выпейте чашку кофе с десертом и согрейтесь после улицы.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001032494391"
-    }
-   ],
-   "rating": 4.8,
-   "badges": [
-    "indoor",
-    "night",
-    "coffee"
-   ]
+   "image": null
   },
   {
    "poi_id": "2gis:70000001018069131",
@@ -111,11 +78,11 @@
    "distance_m": 348,
    "travel_min": 6,
    "visit_min": [
-    90,
-    120
+    100,
+    130
    ],
-   "why": "Кинотеатр в закрытом помещении рядом с вами, работающий до полуночи, идеален для холодной погоды.",
-   "what_to_do": "Выберите интересный фильм в расписании и насладитесь просмотром в комфортном зале.",
+   "why": "Кинотеатр с высоким рейтингом 4.9 находится всего в нескольких минутах ходьбы и позволяет полностью укрыться от непогоды.",
+   "what_to_do": "Посмотрите расписание сеансов и возьмите билеты онлайн, чтобы не стоять в очереди.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -134,12 +101,13 @@
     "indoor",
     "night",
     "coffee"
-   ]
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Проверь афишу сеансов заранее, чтобы сразу занять уютные места.",
+   "text": "Заверните в теплую кофейню по пути и возьмите согревающий напиток с собой.",
    "source_type": "generated_idea"
   }
  ],
@@ -148,16 +116,100 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 2137
+  "latency_ms": 3514
  },
- "_eval_ms": 2201,
+ "_eval_ms": 3588,
+ "_pois_snapshot": {
+  "2gis:70000001101370539": {
+   "id": "2gis:70000001101370539",
+   "name": "Второй",
+   "name_i18n": {
+    "ru": "Второй"
+   },
+   "lat": 51.128563,
+   "lon": 71.433084,
+   "category": "cafe",
+   "tags": [
+    "coffee",
+    "indoor",
+    "night"
+   ],
+   "description": "Кафе «Второй» по адресу: улица Динмухамед Конаев, 14. Рубрики 2GIS: кафе, бары.",
+   "description_source": "template",
+   "address": "улица Динмухамед Конаев, 14",
+   "opening_hours": "Mo-Th 16:00-03:00; Fr-Sa 17:00-04:00; Su 16:00-03:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 437,
+   "popularity": 0.362,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001101370539",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001018069131": {
+   "id": "2gis:70000001018069131",
+   "name": "Kinopark",
+   "name_i18n": {
+    "ru": "Kinopark"
+   },
+   "lat": 51.127393,
+   "lon": 71.425104,
+   "category": "cinema",
+   "tags": [
+    "coffee",
+    "indoor",
+    "night"
+   ],
+   "description": "Кинотеатр «Kinopark» по адресу: улица Достык, 9. Рубрики 2GIS: кинотеатры.",
+   "description_source": "template",
+   "address": "улица Достык, 9",
+   "opening_hours": "Mo-Su 10:00-24:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 602,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 140,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018069131",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

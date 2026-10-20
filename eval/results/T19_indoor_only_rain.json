@@ -1,9 +1,9 @@
 {
- "request_id": "05323ffca86c",
+ "request_id": "861e9411d80e",
  "context_used": {
   "location": "≈ район ЭКСПО (точность ~100 м)",
   "time": "вторник, 15:00",
-  "weather": "+3°C, ветер 6 м/с",
+  "weather": "+4°C, ветер 5 м/с",
   "mode": "пешком",
   "radius_m": 1142,
   "filters": [
@@ -31,43 +31,6 @@
  },
  "recommendations": [
   {
-   "poi_id": "osm:node/5880883097",
-   "name": "Chaplin Cinema",
-   "category": "cinema",
-   "lat": 51.088319,
-   "lon": 71.40973,
-   "distance_m": 513,
-   "travel_min": 9,
-   "visit_min": [
-    36,
-    51
-   ],
-   "why": "Отличный вариант переждать дождь под крышей в кинотеатре с высоким рейтингом 4.8.",
-   "what_to_do": "Выберите фильм в расписании, купите билет и посмотрите сеанс в уютном зале.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/5880883097"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001027048493"
-    }
-   ],
-   "rating": 4.8,
-   "badges": [
-    "indoor",
-    "night"
-   ]
-  },
-  {
    "poi_id": "2gis:70000001039308458",
    "name": "Kakao Dak",
    "category": "cafe",
@@ -79,8 +42,8 @@
     30,
     50
    ],
-   "why": "Уютное кафе неподалеку под крышей с рейтингом 4.6, где можно согреться в ненастную погоду.",
-   "what_to_do": "Закажите кофе и любимое блюдо, расположившись за столиком внутри.",
+   "why": "Уютное кафе под крышей с высоким рейтингом 4.6, отлично подойдет переждать дождь.",
+   "what_to_do": "Закажите чашку горячего кофе и отдохните за столиком, наблюдая за погодой.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -99,12 +62,59 @@
     "indoor",
     "night",
     "coffee"
-   ]
+   ],
+   "image": null
+  },
+  {
+   "poi_id": "osm:way/499328514",
+   "name": "ТРЦ «Mega Silk Way»",
+   "category": "mall",
+   "lat": 51.08909,
+   "lon": 71.40733,
+   "distance_m": 675,
+   "travel_min": 12,
+   "visit_min": [
+    33,
+    48
+   ],
+   "why": "Можно провести время в тепле; высокий рейтинг 5.0. Торговый центр «Mega Silk Way».",
+   "what_to_do": "Пройдитесь по магазинам или просто прогуляйтесь по просторным галереям.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 22:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/499328514"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001026995330"
+    }
+   ],
+   "rating": 5.0,
+   "badges": [
+    "indoor",
+    "family"
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/A%C4%89etcentro_SilkWay_%28Astano%29_01.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/A%C4%89etcentro_SilkWay_%28Astano%29_01.jpg/960px-A%C4%89etcentro_SilkWay_%28Astano%29_01.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:A%C4%89etcentro_SilkWay_(Astano)_01.jpg",
+    "author": "RG72",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   }
   }
  ],
  "ideas": [
   {
-   "text": "Возьмите с собой наушники и послушайте любимый подкаст по дороге до уютного места.",
+   "text": "Возьмите с собой интересную книгу или наушники, чтобы с комфортом провести время в тепле.",
    "source_type": "generated_idea"
   }
  ],
@@ -113,16 +123,115 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 5080
+  "latency_ms": 3573
  },
- "_eval_ms": 5143,
+ "_eval_ms": 3646,
+ "_pois_snapshot": {
+  "2gis:70000001039308458": {
+   "id": "2gis:70000001039308458",
+   "name": "Kakao Dak",
+   "name_i18n": {
+    "ru": "Kakao Dak"
+   },
+   "lat": 51.088909,
+   "lon": 71.415083,
+   "category": "cafe",
+   "tags": [
+    "coffee",
+    "indoor",
+    "night"
+   ],
+   "description": "Кафе «Kakao Dak» по адресу: проспект Мангилик Ел, 55/1. Рубрики 2GIS: кафе, доставка еды.",
+   "description_source": "template",
+   "address": "проспект Мангилик Ел, 55/1",
+   "opening_hours": "Mo-Su 11:00-23:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.6,
+   "rating_count": 1203,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001039308458",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "osm:way/499328514": {
+   "id": "osm:way/499328514",
+   "name": "ТРЦ «Mega Silk Way»",
+   "name_i18n": {
+    "ru": "ТРЦ «Mega Silk Way»"
+   },
+   "lat": 51.08909,
+   "lon": 71.40733,
+   "category": "mall",
+   "tags": [
+    "family",
+    "indoor",
+    "must_see",
+    "shopping",
+    "sight"
+   ],
+   "description": "Торговый центр «Mega Silk Way» по адресу: Қабанбай Батыр даңғылы, 62.",
+   "description_source": "template",
+   "address": "Қабанбай Батыр даңғылы, 62",
+   "opening_hours": "Mo-Su 10:00-22:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "7010",
+   "website": null,
+   "rating": 5.0,
+   "rating_count": 9635,
+   "popularity": 0.75,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": true,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/499328514",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001026995330",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/A%C4%89etcentro_SilkWay_%28Astano%29_01.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/A%C4%89etcentro_SilkWay_%28Astano%29_01.jpg/960px-A%C4%89etcentro_SilkWay_%28Astano%29_01.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:A%C4%89etcentro_SilkWay_(Astano)_01.jpg",
+    "author": "RG72",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   },
+   "data_quality": 0.75,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

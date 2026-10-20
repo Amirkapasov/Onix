@@ -1,5 +1,5 @@
 {
- "request_id": "fb2a70c688cd",
+ "request_id": "6a4c4bc84dc5",
  "context_used": {
   "location": "≈ район Хан Шатыр (точность ~100 м)",
   "time": "пятница, 19:00",
@@ -28,6 +28,40 @@
  },
  "recommendations": [
   {
+   "poi_id": "2gis:70000001116864210",
+   "name": "Strike Zone Bowling",
+   "category": "entertainment",
+   "lat": 51.13026,
+   "lon": 71.39028,
+   "distance_m": 1005,
+   "travel_min": 17,
+   "visit_min": [
+    65,
+    103
+   ],
+   "why": "Отличное место с высоким рейтингом 5.0 для компании друзей, чтобы весело провести вечер за игрой в боулинг.",
+   "what_to_do": "Забронируйте дорожку для боулинга, сыграйте несколько партий и поделитесь впечатлениями.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 23:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001116864210"
+    }
+   ],
+   "rating": 5.0,
+   "badges": [
+    "indoor",
+    "night"
+   ],
+   "image": null
+  },
+  {
    "poi_id": "osm:way/1449317673",
    "name": "Chaplin Cinemas",
    "category": "cinema",
@@ -39,7 +73,7 @@
     100,
     118
    ],
-   "why": "Кино в тепле; высокий рейтинг 4.8. Кинотеатр «Chaplin Cinemas».",
+   "why": "Кинотеатр с высоким рейтингом 4.8 подходит для вечернего отдыха вчетвером под крышей в прохладную погоду.",
    "what_to_do": "Посмотрите расписание сеансов и возьмите билеты онлайн, чтобы не стоять в очереди.",
    "open_status": {
     "state": "open",
@@ -62,102 +96,120 @@
    "badges": [
     "indoor",
     "night"
-   ]
-  },
-  {
-   "poi_id": "osm:way/1449317691",
-   "name": "Лепим и варим",
-   "category": "cafe",
-   "lat": 51.132337,
-   "lon": 71.403344,
-   "distance_m": 87,
-   "travel_min": 2,
-   "visit_min": [
-    30,
-    55
    ],
-   "why": "Можно передохнуть за кофе; высокий рейтинг 4.7. Кафе «Лепим и варим». Кухня: русская.",
-   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 23:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/1449317691"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001068514638"
-    }
-   ],
-   "rating": 4.7,
-   "badges": [
-    "indoor",
-    "night",
-    "coffee"
-   ]
-  },
-  {
-   "poi_id": "osm:node/13577080723",
-   "name": "KAL'BI meat house",
-   "category": "restaurant",
-   "lat": 51.135923,
-   "lon": 71.402928,
-   "distance_m": 334,
-   "travel_min": 6,
-   "visit_min": [
-    50,
-    90
-   ],
-   "why": "Можно спокойно поесть; высокий рейтинг 4.8. Ресторан «KAL'BI meat house». Кухня: американская, пицца, стейки.",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 01:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/13577080723"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001111096264"
-    }
-   ],
-   "rating": 4.8,
-   "badges": [
-    "indoor",
-    "night"
-   ]
+   "image": null
   }
  ],
- "ideas": [],
- "route": null,
- "warnings": [
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+ "ideas": [
+  {
+   "text": "Устройте вечер настольных игр в уютной обстановке.",
+   "source_type": "generated_idea"
+  }
  ],
+ "route": null,
+ "warnings": [],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 1592
  },
- "_eval_ms": 8591,
+ "_eval_ms": 4202,
+ "_pois_snapshot": {
+  "2gis:70000001116864210": {
+   "id": "2gis:70000001116864210",
+   "name": "Strike Zone Bowling",
+   "name_i18n": {
+    "ru": "Strike Zone Bowling"
+   },
+   "lat": 51.13026,
+   "lon": 71.39028,
+   "category": "entertainment",
+   "tags": [
+    "bowling",
+    "fun",
+    "indoor",
+    "night"
+   ],
+   "description": "Развлечения «Strike Zone Bowling» по адресу: улица Сыганак, 17Б. Рубрики 2GIS: боулинг, клубы видеоигр.",
+   "description_source": "template",
+   "address": "улица Сыганак, 17Б",
+   "opening_hours": "Mo-Su 10:00-23:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 5.0,
+   "rating_count": 4,
+   "popularity": 0.102,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001116864210",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "osm:way/1449317673": {
+   "id": "osm:way/1449317673",
+   "name": "Chaplin Cinemas",
+   "name_i18n": {
+    "ru": "Chaplin Cinemas"
+   },
+   "lat": 51.132632,
+   "lon": 71.402871,
+   "category": "cinema",
+   "tags": [
+    "indoor",
+    "night"
+   ],
+   "description": "Кинотеатр «Chaplin Cinemas».",
+   "description_source": "template",
+   "address": "проспект Туран, 37",
+   "opening_hours": "Mo-Su 10:00-24:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "+7 717 257 26 26",
+   "website": "https://new.chaplin.kz/",
+   "rating": 4.8,
+   "rating_count": 1169,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": true,
+   "price_level": null,
+   "typical_visit_min": 140,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449317673",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001029310655",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.75,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

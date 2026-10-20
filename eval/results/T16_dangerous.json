@@ -1,5 +1,5 @@
 {
- "request_id": "530c51392b90",
+ "request_id": "24025ba71310",
  "context_used": {
   "location": "≈ район Бульвар Нуржол (точность ~100 м)",
   "time": "вторник, 23:00",
@@ -10,8 +10,8 @@
    "бюджет не указан — беру ~90 мин",
    "пожелания: outdoor_ok, night",
    "ночь: места, открытые допоздна",
-   "скрыто закрытых к приходу: 97",
-   "скрыто без часов, вероятно закрытых в это время: 47"
+   "скрыто закрытых к приходу: 96",
+   "скрыто без часов, вероятно закрытых в это время: 45"
   ],
   "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
@@ -37,7 +37,7 @@
  "recommendations": [
   {
    "poi_id": "osm:way/166198046",
-   "name": "Резиденция Акорда",
+   "name": "Резиденция «Ак Орда» (вид с площади)",
    "category": "landmark",
    "lat": 51.1258,
    "lon": 71.446473,
@@ -47,8 +47,8 @@
     15,
     25
    ],
-   "why": "Отличная ночная локация для фото: резиденция президента доступна круглосуточно и бесплатно.",
-   "what_to_do": "Сделайте красивые ночные фотографии подсветки здания со стороны бульвара.",
+   "why": "Выход на лёд и крыши небезопасны, но вы можете насладиться ночной атмосферой у резиденции «Ак Орда», которая открыта круглосуточно и отлично подходит для ночных фото.",
+   "what_to_do": "Прогуляйтесь по площади, сделайте красивые ночные фотографии подсветки резиденции.",
    "open_status": {
     "state": "open",
     "confidence": "medium",
@@ -75,56 +75,61 @@
     "free",
     "night",
     "photo"
-   ]
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Astana-2021-10_-_25.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Astana-2021-10_-_25.jpg/960px-Astana-2021-10_-_25.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_25.jpg",
+    "author": "Vyacheslav Bukharov",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   }
   },
   {
-   "poi_id": "osm:way/230401645",
-   "name": "Байтерек",
-   "category": "viewpoint",
-   "lat": 51.128288,
-   "lon": 71.430455,
-   "distance_m": 228,
-   "travel_min": 4,
+   "poi_id": "osm:way/1296051287",
+   "name": "Корейский сад",
+   "category": "park",
+   "lat": 51.13842,
+   "lon": 71.436228,
+   "distance_m": 1290,
+   "travel_min": 22,
    "visit_min": [
-    20,
-    35
+    30,
+    45
    ],
-   "why": "Смотровая башня Байтерек — символ города, подходящий для ночной прогулки и красивых видов.",
-   "what_to_do": "Обойти монумент вокруг и сделать панорамные снимки ночной столицы.",
+   "why": "Можно погулять на свежем воздухе; работает допоздна; высокий рейтинг 4.9. Сад / сквер «Корейский сад».",
+   "what_to_do": "Пройтись по аллеям сквера, насладиться ночной тишиной и спокойной атмосферой.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы не указаны; открытая территория — обычно доступна",
-    "source": null
+    "state": "open",
+    "confidence": "high",
+    "label": "Круглосуточно (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
    "sources": [
     {
      "name": "osm",
-     "url": "https://www.openstreetmap.org/way/230401645"
+     "url": "https://www.openstreetmap.org/way/1296051287"
     },
     {
-     "name": "wikidata",
-     "url": "https://www.wikidata.org/wiki/Q804210"
-    },
-    {
-     "name": "wikipedia",
-     "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B9%D1%82%D0%B5%D1%80%D0%B5%D0%BA_(%D0%BC%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D0%BD%D1%82)"
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001093106778"
     }
    ],
-   "rating": null,
+   "rating": 4.9,
    "badges": [
     "outdoor",
     "free",
-    "view",
-    "photo",
-    "hours_unverified"
-   ]
+    "quiet",
+    "night"
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Выход на лед реки и крыши высоток небезопасен — выбирайте безопасные смотровые площадки и набережные.",
+   "text": "Выход на лёд реки и крыши высоток опасен и запрещен — выбирайте безопасные смотровые площадки и освещенные набережные.",
    "source_type": "generated_idea"
   }
  ],
@@ -135,16 +140,131 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 2748
+  "latency_ms": 5077
  },
- "_eval_ms": 2844,
+ "_eval_ms": 5184,
+ "_pois_snapshot": {
+  "osm:way/166198046": {
+   "id": "osm:way/166198046",
+   "name": "Резиденция «Ак Орда» (вид с площади)",
+   "name_i18n": {
+    "ru": "Резиденция «Ак Орда» (вид с площади)",
+    "kk": "Ақорда резиденциясы",
+    "en": "Ak Orda Presidential Palace"
+   },
+   "lat": 51.1258,
+   "lon": 71.446473,
+   "category": "landmark",
+   "tags": [
+    "24_7",
+    "free",
+    "must_see",
+    "night",
+    "photo",
+    "sight"
+   ],
+   "description": "Акорда — резиденция президента Казахстана. Является штаб-квартирой Администрации Президента.",
+   "description_source": "wikipedia",
+   "address": "4CGW+7GX, Ак орда, Левобережье",
+   "opening_hours": "24/7",
+   "opening_hours_source": "osm",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "8 (702) 383 3734",
+   "website": "https://www.akorda.kz",
+   "rating": null,
+   "rating_count": null,
+   "popularity": 1.0,
+   "indoor": null,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": 0,
+   "typical_visit_min": 20,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/166198046",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q413579",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D0%BE%D1%80%D0%B4%D0%B0_(%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D1%8F)",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Astana-2021-10_-_25.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Astana-2021-10_-_25.jpg/960px-Astana-2021-10_-_25.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_25.jpg",
+    "author": "Vyacheslav Bukharov",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   },
+   "data_quality": 0.8,
+   "updated_at": "2026-10-20"
+  },
+  "osm:way/1296051287": {
+   "id": "osm:way/1296051287",
+   "name": "Корейский сад",
+   "name_i18n": {
+    "ru": "Корейский сад"
+   },
+   "lat": 51.13842,
+   "lon": 71.436228,
+   "category": "park",
+   "tags": [
+    "24_7",
+    "free",
+    "night",
+    "outdoor",
+    "quiet",
+    "walk"
+   ],
+   "description": "Сад / сквер «Корейский сад».",
+   "description_source": "template",
+   "address": null,
+   "opening_hours": "24/7",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 161,
+   "popularity": 0.197,
+   "indoor": false,
+   "wheelchair": "unknown",
+   "kid_friendly": true,
+   "price_level": 0,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1296051287",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001093106778",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.55,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

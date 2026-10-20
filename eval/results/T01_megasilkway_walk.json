@@ -1,9 +1,9 @@
 {
- "request_id": "45d30eca46af",
+ "request_id": "63f528e32f43",
  "context_used": {
   "location": "≈ район Mega Silk Way (точность ~100 м)",
   "time": "вторник, 17:00",
-  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "weather": "+4°C, ветер 5 м/с",
   "mode": "пешком",
   "radius_m": 1557,
   "filters": [
@@ -29,41 +29,6 @@
  },
  "recommendations": [
   {
-   "poi_id": "osm:way/1467797207",
-   "name": "NU Park",
-   "category": "park",
-   "lat": 51.08727,
-   "lon": 71.399439,
-   "distance_m": 762,
-   "travel_min": 13,
-   "visit_min": [
-    15,
-    30
-   ],
-   "why": "Отличный вариант для спокойной пешей прогулки на свежем воздухе рядом с вашим местоположением.",
-   "what_to_do": "Пройдитесь по аллеям парка, насладитесь тишиной и свежим воздухом.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы не указаны; открытая территория — обычно доступна",
-    "source": null
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/1467797207"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "outdoor",
-    "free",
-    "quiet",
-    "hours_unverified"
-   ]
-  },
-  {
    "poi_id": "seed:nur_alem",
    "name": "Музей «Нур Алем» (ЭКСПО)",
    "category": "museum",
@@ -73,10 +38,10 @@
    "travel_min": 8,
    "visit_min": [
     30,
-    50
+    45
    ],
-   "why": "Интересный музей энергии будущего с интерактивными экспозициями всего в нескольких минутах ходьбы.",
-   "what_to_do": "Осмотрите сферический павильон и изучите интерактивные научные экспозиции.",
+   "why": "Сферический павильон ЭКСПО-2017 с интерактивными экспозициями и высоким рейтингом 4.8 находится всего в 8 минутах ходьбы.",
+   "what_to_do": "Исследуйте музей энергии будущего, посмотрите интерактивные экспозиции и насладитесь необычными экспонатами.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
@@ -98,12 +63,57 @@
     "unusual",
     "interactive",
     "hours_unverified"
-   ]
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg/960px-Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "author": "颲風",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   }
+  },
+  {
+   "poi_id": "osm:way/1467797207",
+   "name": "NU Park",
+   "category": "park",
+   "lat": 51.08727,
+   "lon": 71.399439,
+   "distance_m": 762,
+   "travel_min": 13,
+   "visit_min": [
+    20,
+    30
+   ],
+   "why": "Тихий бесплатный парк неподалёку, отлично подходит для пеших прогулок на свежем воздухе.",
+   "what_to_do": "Пройдитесь по парковым дорожкам и насладитесь спокойной атмосферой.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы не указаны; открытая территория — обычно доступна",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1467797207"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "outdoor",
+    "free",
+    "quiet",
+    "hours_unverified"
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Одевайтесь теплее: на улице прохладно (+4°C) и ветрено, для прогулки пригодится ветрозащитная одежда.",
+   "text": "Одевайтесь теплее: на улице +4°C и ветрено, выбирайте темп движения побыстрее.",
    "source_type": "generated_idea"
   }
  ],
@@ -115,198 +125,22 @@
    {
     "from": "start",
     "to": "seed:nur_alem",
-    "distance_m": 605,
+    "distance_m": 461,
     "minutes": 8
    }
   ],
   "total_min": 38,
   "geometry": [
    [
-    51.08951,
-    71.41001
-   ],
-   [
-    51.0895,
-    71.41106
-   ],
-   [
-    51.0895,
-    71.41111
-   ],
-   [
-    51.08954,
-    71.41111
-   ],
-   [
-    51.08954,
-    71.41115
-   ],
-   [
-    51.08954,
-    71.41128
-   ],
-   [
-    51.08954,
-    71.41147
-   ],
-   [
-    51.08954,
-    71.41164
-   ],
-   [
-    51.08949,
-    71.41164
-   ],
-   [
-    51.08937,
-    71.41164
-   ],
-   [
-    51.08922,
-    71.41166
-   ],
-   [
-    51.08923,
-    71.41176
-   ],
-   [
-    51.08923,
-    71.41182
-   ],
-   [
-    51.08909,
-    71.41191
-   ],
-   [
     51.089,
-    71.41206
-   ],
-   [
-    51.08905,
-    71.41257
-   ],
-   [
-    51.08913,
-    71.41327
-   ],
-   [
-    51.08913,
-    71.41333
-   ],
-   [
-    51.08914,
-    71.41345
-   ],
-   [
-    51.08915,
-    71.41356
-   ],
-   [
-    51.08915,
-    71.41362
+    71.41
    ],
    [
     51.0892,
-    71.41404
-   ],
-   [
-    51.08922,
-    71.41431
-   ],
-   [
-    51.08923,
-    71.41438
-   ],
-   [
-    51.0893,
-    71.41467
-   ],
-   [
-    51.08913,
-    71.41476
-   ],
-   [
-    51.08917,
-    71.41502
-   ],
-   [
-    51.08919,
-    71.41519
-   ],
-   [
-    51.08912,
-    71.41522
-   ],
-   [
-    51.0891,
-    71.41524
-   ],
-   [
-    51.08908,
-    71.41527
-   ],
-   [
-    51.08898,
-    71.4154
-   ],
-   [
-    51.08891,
-    71.41552
-   ],
-   [
-    51.08884,
-    71.41566
-   ],
-   [
-    51.0888,
-    71.41581
-   ],
-   [
-    51.08879,
-    71.41592
-   ],
-   [
-    51.08877,
-    71.41602
-   ],
-   [
-    51.08877,
-    71.4163
-   ],
-   [
-    51.08881,
-    71.41655
-   ],
-   [
-    51.08885,
-    71.41669
-   ],
-   [
-    51.0889,
-    71.41679
-   ],
-   [
-    51.08896,
-    71.41687
-   ],
-   [
-    51.08897,
-    71.41689
-   ],
-   [
-    51.08905,
-    71.41696
-   ],
-   [
-    51.08915,
-    71.417
-   ],
-   [
-    51.08916,
-    71.417
+    71.4166
    ]
   ],
-  "geometry_source": "osrm"
+  "geometry_source": "straight_line"
  },
  "warnings": [
   "Часы работы 1 мест(а) неизвестны — уточните перед выходом.",
@@ -315,16 +149,114 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 3460
+  "latency_ms": 0
  },
- "_eval_ms": 4809,
+ "_eval_ms": 3072,
+ "_pois_snapshot": {
+  "seed:nur_alem": {
+   "id": "seed:nur_alem",
+   "name": "Музей «Нур Алем» (ЭКСПО)",
+   "name_i18n": {
+    "ru": "Музей «Нур Алем» (ЭКСПО)"
+   },
+   "lat": 51.0892,
+   "lon": 71.4166,
+   "category": "museum",
+   "tags": [
+    "indoor",
+    "interactive",
+    "kids",
+    "must_see",
+    "science",
+    "sight",
+    "unusual",
+    "view"
+   ],
+   "description": "Сферический павильон ЭКСПО-2017, музей энергии будущего с интерактивными экспозициями.",
+   "description_source": "manual",
+   "address": "проспект Мангилик Ел, 53/1",
+   "opening_hours": null,
+   "opening_hours_source": null,
+   "opening_hours_checked_at": null,
+   "phone": null,
+   "website": null,
+   "rating": 4.8,
+   "rating_count": null,
+   "popularity": 1.0,
+   "indoor": true,
+   "wheelchair": "yes",
+   "kid_friendly": true,
+   "price_level": 2,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "seed",
+     "url": null,
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg/960px-Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "author": "颲風",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons"
+   },
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "osm:way/1467797207": {
+   "id": "osm:way/1467797207",
+   "name": "NU Park",
+   "name_i18n": {
+    "ru": "NU Park"
+   },
+   "lat": 51.08727,
+   "lon": 71.399439,
+   "category": "park",
+   "tags": [
+    "free",
+    "outdoor",
+    "quiet",
+    "walk"
+   ],
+   "description": "Парк «NU Park».",
+   "description_source": "template",
+   "address": null,
+   "opening_hours": null,
+   "opening_hours_source": null,
+   "opening_hours_checked_at": null,
+   "phone": null,
+   "website": null,
+   "rating": null,
+   "rating_count": null,
+   "popularity": 0.1,
+   "indoor": false,
+   "wheelchair": "unknown",
+   "kid_friendly": true,
+   "price_level": 0,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1467797207",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.15,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

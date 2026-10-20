@@ -1,9 +1,9 @@
 {
- "request_id": "27bcfbfb8d91",
+ "request_id": "806d4772a386",
  "context_used": {
   "location": "≈ район Аэропорт Астаны (точность ~100 м)",
   "time": "вторник, 15:00",
-  "weather": "+3°C, ветер 6 м/с",
+  "weather": "+4°C, ветер 5 м/с",
   "mode": "на машине/такси",
   "radius_m": 7266,
   "filters": [
@@ -37,10 +37,10 @@
    "travel_min": 22,
    "visit_min": [
     10,
-    15
+    16
    ],
-   "why": "Отличная смотровая площадка с хорошим рейтингом 3.9, открыта до 20:00 и расположена удобно для быстрой поездки перед вылетом.",
-   "what_to_do": "Поднимитесь на смотровую точку, сделайте памятные фото города и отправляйтесь в аэропорт.",
+   "why": "Смотровая площадка с рейтингом 3.9 и хорошим видом. Удобно перед вылетом, после посещения ехать в аэропорт всего 22 минуты.",
+   "what_to_do": "Поднимитесь на смотровую точку, сделайте памятные фото и насладитесь панорамным видом на город.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -60,7 +60,8 @@
     "outdoor",
     "view",
     "photo"
-   ]
+   ],
+   "image": null
   },
   {
    "poi_id": "osm:node/10976892637",
@@ -71,11 +72,11 @@
    "distance_m": 667,
    "travel_min": 7,
    "visit_min": [
-    15,
-    25
+    30,
+    45
    ],
-   "why": "Круглосуточная кофейня с высоким рейтингом 4.1 рядом с вами, идеальна чтобы быстро выпить кофе перед дорогой в аэропорт.",
-   "what_to_do": "Закажите любимый кофе с собой и перекусите перед вылетом.",
+   "why": "Кофейня Starbucks рядом, открыта круглосуточно. Рейтинг 4.1, до аэропорта всего 7 минут пути.",
+   "what_to_do": "Закажите любимый кофе с собой и перекусите перед дорогой в аэропорт.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -98,12 +99,13 @@
     "indoor",
     "night",
     "coffee"
-   ]
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Проверьте онлайн-табло рейсов перед выходом из кафе, чтобы не опоздать на посадку.",
+   "text": "Проверьте статус рейса онлайн, пока пьете кофе, чтобы не волноваться перед выездом.",
    "source_type": "generated_idea"
   }
  ],
@@ -114,16 +116,107 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 2616
+  "latency_ms": 2317
  },
- "_eval_ms": 2703,
+ "_eval_ms": 2404,
+ "_pois_snapshot": {
+  "2gis:70000001102851748": {
+   "id": "2gis:70000001102851748",
+   "name": "Смотровая площадка",
+   "name_i18n": {
+    "ru": "Смотровая площадка"
+   },
+   "lat": 51.073439,
+   "lon": 71.411632,
+   "category": "viewpoint",
+   "tags": [
+    "indoor",
+    "outdoor",
+    "photo",
+    "view"
+   ],
+   "description": "Смотровая точка «Смотровая площадка» по адресу: проспект Мангилик Ел, 65. Рубрики 2GIS: смотровые площадки.",
+   "description_source": "template",
+   "address": "проспект Мангилик Ел, 65",
+   "opening_hours": "Mo-Su 07:00-20:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 3.9,
+   "rating_count": 3,
+   "popularity": 0.102,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 20,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001102851748",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "osm:node/10976892637": {
+   "id": "osm:node/10976892637",
+   "name": "Starbucks",
+   "name_i18n": {
+    "ru": "Starbucks"
+   },
+   "lat": 51.026821,
+   "lon": 71.461314,
+   "category": "cafe",
+   "tags": [
+    "24_7",
+    "brand:starbucks",
+    "coffee",
+    "night"
+   ],
+   "description": "Кафе «Starbucks». Кухня: кофейня.",
+   "description_source": "template",
+   "address": "Кабанбай батыр проспект, 119",
+   "opening_hours": "24/7",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "+7 727 339 9860;+7 800 0802185",
+   "website": null,
+   "rating": 4.1,
+   "rating_count": 308,
+   "popularity": 0.285,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/10976892637",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001060837508",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.75,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

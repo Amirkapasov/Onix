@@ -1,9 +1,9 @@
 {
- "request_id": "937736afed52",
+ "request_id": "73a6bffc39b2",
  "context_used": {
   "location": "≈ район Байтерек (точность ~100 м)",
   "time": "вторник, 13:00",
-  "weather": "+3°C, ветер 6 м/с",
+  "weather": "+4°C, ветер 5 м/с",
   "mode": "пешком",
   "radius_m": 800,
   "filters": [
@@ -43,8 +43,8 @@
     5,
     10
    ],
-   "why": "Самое близкое кафе с высоким рейтингом 4.9, идеально подходит для быстрого перерыва.",
-   "what_to_do": "Зайдите за любимым кофе и выпечкой навынос, чтобы успеть вернуться.",
+   "why": "Есть кофе; можно поесть; высокий рейтинг 4.9. Кафе «Baiterek Coffee». Рубрики 2GIS: кофейни.",
+   "what_to_do": "Зайти за кофе с собой и быстро вернуться в офис.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -62,50 +62,47 @@
    "badges": [
     "indoor",
     "coffee"
-   ]
+   ],
+   "image": null
   },
   {
-   "poi_id": "osm:node/6408271985",
-   "name": "CrepeCafe",
+   "poi_id": "2gis:70000001027784347",
+   "name": "Coffeёk",
    "category": "cafe",
-   "lat": 51.129382,
-   "lon": 71.428593,
-   "distance_m": 182,
-   "travel_min": 3,
+   "lat": 51.129872,
+   "lon": 71.428813,
+   "distance_m": 224,
+   "travel_min": 4,
    "visit_min": [
     5,
     10
    ],
-   "why": "Есть кофе; можно поесть; совсем рядом. Кафе «CrepeCafe».",
-   "what_to_do": "Быстро закажите кофе и свежий десерт.",
+   "why": "Удобное кафе-кофейня в 4 минутах ходьбы, специализирующееся на продаже кофе.",
+   "what_to_do": "Быстро купить стаканчик любимого кофе на вынос.",
    "open_status": {
     "state": "open",
     "confidence": "high",
-    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "label": "Открыто до 18:00 (часы по 2GIS, проверено 2026-10-20)",
     "source": "2gis"
    },
    "source_type": "poi_data",
    "sources": [
     {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/6408271985"
-    },
-    {
      "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001025216760"
+     "url": "https://2gis.kz/astana/firm/70000001027784347"
     }
    ],
-   "rating": 4.8,
+   "rating": 4.5,
    "badges": [
     "indoor",
-    "night",
     "coffee"
-   ]
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Если времени совсем мало, оформите заказ заранее, если это возможно.",
+   "text": "Если времени совсем мало, закажите кофе заранее через мобильное приложение.",
    "source_type": "generated_idea"
   }
  ],
@@ -114,16 +111,98 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 2833
+  "latency_ms": 1514
  },
- "_eval_ms": 2891,
+ "_eval_ms": 1568,
+ "_pois_snapshot": {
+  "2gis:70000001083840101": {
+   "id": "2gis:70000001083840101",
+   "name": "Baiterek Coffee",
+   "name_i18n": {
+    "ru": "Baiterek Coffee"
+   },
+   "lat": 51.128249,
+   "lon": 71.430437,
+   "category": "cafe",
+   "tags": [
+    "coffee",
+    "indoor"
+   ],
+   "description": "Кафе «Baiterek Coffee» по адресу: бульвар Нуржол, 14. Рубрики 2GIS: кофейни.",
+   "description_source": "template",
+   "address": "бульвар Нуржол, 14",
+   "opening_hours": "Mo-Su 10:00-21:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.9,
+   "rating_count": 37,
+   "popularity": 0.122,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001083840101",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  },
+  "2gis:70000001027784347": {
+   "id": "2gis:70000001027784347",
+   "name": "Coffeёk",
+   "name_i18n": {
+    "ru": "Coffeёk"
+   },
+   "lat": 51.129872,
+   "lon": 71.428813,
+   "category": "cafe",
+   "tags": [
+    "coffee",
+    "indoor"
+   ],
+   "description": "Кафе «Coffeёk» по адресу: улица Динмухамед Конаев, 12/1. Рубрики 2GIS: кофейни, продажа кофе.",
+   "description_source": "template",
+   "address": "улица Динмухамед Конаев, 12/1",
+   "opening_hours": "Mo-Fr 08:00-18:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": null,
+   "rating": 4.5,
+   "rating_count": 13,
+   "popularity": 0.108,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001027784347",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.65,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

@@ -1,5 +1,5 @@
 {
- "request_id": "979ec9bcd1d0",
+ "request_id": "0ffff9018f0c",
  "context_used": {
   "location": "≈ район рядом с Хан Шатыр (точность ~100 м)",
   "time": "вторник, 23:15",
@@ -9,7 +9,7 @@
   "filters": [
    "бюджет не указан — беру ~90 мин",
    "ночь: места, открытые допоздна",
-   "скрыто закрытых к приходу: 124",
+   "скрыто закрытых к приходу: 123",
    "скрыто без часов, вероятно закрытых в это время: 67"
   ],
   "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
@@ -35,11 +35,11 @@
    "distance_m": 168,
    "travel_min": 3,
    "visit_min": [
-    65,
-    110
+    45,
+    60
    ],
-   "why": "Бар Taiyo находится рядом и открыт до 02:00, подходит для позднего вечера при рейтинге 4.7.",
-   "what_to_do": "Зайдите отдохнуть в помещении и воспользоваться wi-fi.",
+   "why": "Бар Taiyo открыт до 02:00 и находится совсем близко. Рейтинг 4.7.",
+   "what_to_do": "Зайдите отдохнуть, воспользуйтесь Wi-Fi и выпейте напиток в уютной обстановке.",
    "open_status": {
     "state": "open",
     "confidence": "high",
@@ -61,50 +61,51 @@
    "badges": [
     "indoor",
     "wifi"
-   ]
+   ],
+   "image": null
   },
   {
-   "poi_id": "osm:node/12686474701",
-   "name": "Brewery",
-   "category": "bar",
-   "lat": 51.128543,
-   "lon": 71.406148,
-   "distance_m": 314,
-   "travel_min": 5,
+   "poi_id": "osm:node/3404172551",
+   "name": "Кишлак",
+   "category": "restaurant",
+   "lat": 51.130409,
+   "lon": 71.413503,
+   "distance_m": 249,
+   "travel_min": 4,
    "visit_min": [
-    65,
-    110
+    45,
+    60
    ],
-   "why": "Бар Brewery открыт до 02:00, имеет высокий рейтинг 4.8 и находится вблизи.",
-   "what_to_do": "Расположитесь внутри, закажите стейк и воспользуйтесь wi-fi.",
+   "why": "Ресторан Кишлак работает до 00:30 и имеет высокий рейтинг 4.8.",
+   "what_to_do": "Устройте поздний ужин или перекус в приятной атмосфере заведения.",
    "open_status": {
     "state": "open",
     "confidence": "high",
-    "label": "Открыто до 02:00 (часы по 2GIS, проверено 2026-10-20)",
+    "label": "Открыто до 00:30 (часы по 2GIS, проверено 2026-10-20)",
     "source": "2gis"
    },
    "source_type": "poi_data",
    "sources": [
     {
      "name": "osm",
-     "url": "https://www.openstreetmap.org/node/12686474701"
+     "url": "https://www.openstreetmap.org/node/3404172551"
     },
     {
      "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001018064401"
+     "url": "https://2gis.kz/astana/firm/70000001019504151"
     }
    ],
    "rating": 4.8,
    "badges": [
     "indoor",
-    "night",
-    "wifi"
-   ]
+    "night"
+   ],
+   "image": null
   }
  ],
  "ideas": [
   {
-   "text": "Учитывайте, что сейчас поздно, поэтому лучше выбирать заведения под крышей с известным графиком работы.",
+   "text": "Сам Хан Шатыр сейчас закрыт, но можно прогуляться вокруг него и полюсваться ночной подсветкой.",
    "source_type": "generated_idea"
   }
  ],
@@ -115,16 +116,107 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 2477
+  "latency_ms": 2175
  },
- "_eval_ms": 5053,
+ "_eval_ms": 4778,
+ "_pois_snapshot": {
+  "osm:node/13109131801": {
+   "id": "osm:node/13109131801",
+   "name": "Taiyo",
+   "name_i18n": {
+    "ru": "Taiyo"
+   },
+   "lat": 51.128912,
+   "lon": 71.408326,
+   "category": "bar",
+   "tags": [
+    "evening",
+    "wifi"
+   ],
+   "description": "Бар «Taiyo» по адресу: Достық көшесі, 4. Есть wi-fi.",
+   "description_source": "template",
+   "address": "Достық көшесі, 4",
+   "opening_hours": "Mo-Tu 12:00-02:00; We-Th 12:00-03:00; Fr 12:00-05:00; Sa 14:00-05:00; Su 14:00-03:00",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": "+77761116633",
+   "website": null,
+   "rating": 4.7,
+   "rating_count": 1050,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": false,
+   "price_level": null,
+   "typical_visit_min": 90,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/13109131801",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001090104472",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.75,
+   "updated_at": "2026-10-20"
+  },
+  "osm:node/3404172551": {
+   "id": "osm:node/3404172551",
+   "name": "Кишлак",
+   "name_i18n": {
+    "ru": "Кишлак"
+   },
+   "lat": 51.130409,
+   "lon": 71.413503,
+   "category": "restaurant",
+   "tags": [
+    "night"
+   ],
+   "description": "Ресторан «Кишлак».",
+   "description_source": "template",
+   "address": "Кабанбай батыр проспект, 19/1",
+   "opening_hours": "Mo-Th 11:00-00:30; Fr-Sa 11:00-01:00; Su 11:00-00:30",
+   "opening_hours_source": "2gis",
+   "opening_hours_checked_at": "2026-10-20",
+   "phone": null,
+   "website": "https://kishlak.kz/astana",
+   "rating": 4.8,
+   "rating_count": 1782,
+   "popularity": 0.4,
+   "indoor": true,
+   "wheelchair": "unknown",
+   "kid_friendly": null,
+   "price_level": null,
+   "typical_visit_min": 75,
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/3404172551",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001019504151",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": null,
+   "data_quality": 0.75,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }

@@ -1,9 +1,9 @@
 {
- "request_id": "88e1f8dbda07",
+ "request_id": "71af504a7a24",
  "context_used": {
   "location": "≈ Бәйтерек маңы (~100 м дәлдік)",
   "time": "сейсенбі, 16:00",
-  "weather": "+3°C, жел 6 м/с",
+  "weather": "+4°C (климаттық норма)",
   "mode": "жаяу",
   "radius_m": 1557,
   "filters": [
@@ -37,7 +37,7 @@
  "recommendations": [
   {
    "poi_id": "wikidata:Q713955",
-   "name": "Водно-зелёный бульвар",
+   "name": "Бульвар Нуржол",
    "category": "park",
    "lat": 51.127208,
    "lon": 71.436947,
@@ -45,10 +45,10 @@
    "travel_min": 9,
    "visit_min": [
     30,
-    42
+    45
    ],
-   "why": "Бәйтерекке жақын орналасқан жаяу жүргіншілер аймағы бар, балалармен серуендеуге өте ыңғайлы.",
-   "what_to_do": "Бульвар бойымен тыныш серуендеп, айналадағы архитектураны тамашалаңыз.",
+   "why": "Бәйтеректің қасында орналасқан жаяу жүргіншілер аймағы. Балалармен серуендеуге ыңғайлы.",
+   "what_to_do": "Жаңа әкімшілік орталық бойымен серуендеп, айналадағы сәулет өнерін тамашалаңыз.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
@@ -72,12 +72,21 @@
     "free",
     "quiet",
     "hours_unverified"
-   ]
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Astana_DSC04189_%287709788152%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Astana_DSC04189_%287709788152%29.jpg/960px-Astana_DSC04189_%287709788152%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana_DSC04189_(7709788152).jpg",
+    "author": "jtstewart",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "wikimedia_commons"
+   }
   }
  ],
  "ideas": [
   {
-   "text": "Желді күнде балалармен жылы киініп, ыстық шай ішетін орынды алдын ала жоспарлаңыз.",
+   "text": "Бәйтерек айналасындағы бульварда балалармен тыныш серуен жасаңыз.",
    "source_type": "generated_idea"
   }
  ],
@@ -86,16 +95,77 @@
  "llm": {
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
-  "latency_ms": 3053
+  "latency_ms": 3446
  },
- "_eval_ms": 3105,
+ "_eval_ms": 3514,
+ "_pois_snapshot": {
+  "wikidata:Q713955": {
+   "id": "wikidata:Q713955",
+   "name": "Бульвар Нуржол",
+   "name_i18n": {
+    "ru": "Бульвар Нуржол",
+    "kk": "Нұржол желек жолы",
+    "en": "Water Green Boulevard"
+   },
+   "lat": 51.127208,
+   "lon": 71.436947,
+   "category": "park",
+   "tags": [
+    "free",
+    "must_see",
+    "outdoor",
+    "quiet",
+    "sight",
+    "walk"
+   ],
+   "description": "Бульвар Нуржол — сооружение с пешеходной зоной в новом административно-деловом центре Астаны на левом берегу реки Ишим.",
+   "description_source": "wikipedia",
+   "address": null,
+   "opening_hours": null,
+   "opening_hours_source": null,
+   "opening_hours_checked_at": null,
+   "phone": null,
+   "website": null,
+   "rating": null,
+   "rating_count": null,
+   "popularity": 0.823,
+   "indoor": false,
+   "wheelchair": "unknown",
+   "kid_friendly": true,
+   "price_level": 0,
+   "typical_visit_min": 45,
+   "sources": [
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q713955",
+     "fetched_at": "2026-10-20"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BB%D1%8C%D0%B2%D0%B0%D1%80_%D0%9D%D1%83%D1%80%D0%B6%D0%BE%D0%BB",
+     "fetched_at": "2026-10-20"
+    }
+   ],
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Astana_DSC04189_%287709788152%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Astana_DSC04189_%287709788152%29.jpg/960px-Astana_DSC04189_%287709788152%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana_DSC04189_(7709788152).jpg",
+    "author": "jtstewart",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "wikimedia_commons"
+   },
+   "data_quality": 0.35,
+   "updated_at": "2026-10-20"
+  }
+ },
  "_health": {
   "status": "ok",
-  "pois": 3070,
+  "pois": 3039,
   "llm_provider": "gemini",
   "llm_model": "gemini-3.5-flash-lite",
   "embeddings": false,
-  "embeddings_progress": "788/1383",
+  "embeddings_progress": "655/1354",
   "data_file": "pois.json",
   "configured_provider": "gemini"
  }
