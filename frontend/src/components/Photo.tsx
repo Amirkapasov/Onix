@@ -66,7 +66,7 @@ export function Credit({ img, t, illustration = false, light = false }: { img: I
   const author = cleanAuthor(img.author) || t.authorUnknown
   return (
     <figcaption className={`mt-1.5 truncate text-[11px] leading-tight ${light ? 'text-white/80' : 'text-ink-400'}`}>
-      {illustration && <span className={light ? 'text-white' : 'text-ink-500'}>{t.illustration} · </span>}
+      {illustration && <span className={`font-semibold ${light ? 'text-white' : 'text-ink-600'}`}>{t.illustration} · </span>}
       <a href={img.page_url} target="_blank" rel="noreferrer" className="hover:underline">
         {t.photoBy}: {author}
       </a>

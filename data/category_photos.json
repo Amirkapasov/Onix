@@ -1,531 +1,444 @@
 {
- "_comment": "Фолбэк-фото по категориям для мест без своего фото (помечать «иллюстрация») и обложка (hero). Все — Wikimedia Commons, свободные лицензии; атрибуция обязательна. astana=true — снято в Астане.",
+ "_comment": "Иллюстрации категорий для мест без своего фото (помечать «иллюстрация»): generic=true — не конкретное заведение; astana=true — снято в Астане/Казахстане; tag — подтип внутри категории (wellness: pool/fitness/sauna). hero — обложка. Все фото — Wikimedia Commons, свободные лицензии; атрибуция обязательна.",
  "categories": {
-  "bar": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Bar_in_Bristol.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Bar_in_Bristol.jpg/960px-Bar_in_Bristol.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Bar_in_Bristol.jpg",
-    "author": "Klafubra",
-    "license": "CC BY-SA 3.0",
-    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "source": "wikimedia_commons",
-    "depicts": "Bar in Bristol",
-    "astana": false
-   }
-  ],
   "cafe": [
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Starbucks_coffee_shop_interior_design.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Starbucks_coffee_shop_interior_design.jpg/960px-Starbucks_coffee_shop_interior_design.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Starbucks_coffee_shop_interior_design.jpg",
-    "author": "Fumikas Sagisavas",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/A_cup_of_coffee_in_Mohk.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/A_cup_of_coffee_in_Mohk.jpg/960px-A_cup_of_coffee_in_Mohk.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:A_cup_of_coffee_in_Mohk.jpg",
+    "author": "Peachyeung316",
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Starbucks coffee shop interior design",
+    "depicts": "A cup of coffee in Mohk",
+    "generic": true,
     "astana": false
    },
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Bauirsaq_with_candy.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Bauirsaq_with_candy.jpg/960px-Bauirsaq_with_candy.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Bauirsaq_with_candy.jpg",
-    "author": "Nurken",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Cup_of_coffee_%28Serbian_cuisine%2C_Grand_kava%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Cup_of_coffee_%28Serbian_cuisine%2C_Grand_kava%29.jpg/960px-Cup_of_coffee_%28Serbian_cuisine%2C_Grand_kava%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Cup_of_coffee_(Serbian_cuisine,_Grand_kava).jpg",
+    "author": "Petar Milošević",
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Bauirsaq with candy",
-    "astana": false
-   }
-  ],
-  "cinema": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Cinema_Roma_interi%C3%B6r.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Cinema_Roma_interi%C3%B6r.jpg/960px-Cinema_Roma_interi%C3%B6r.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Cinema_Roma_interi%C3%B6r.jpg",
-    "author": "Nalle&Lisa",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "wikimedia_commons",
-    "depicts": "Cinema Roma interiör",
+    "depicts": "Cup of coffee (Serbian cuisine, Grand kava)",
+    "generic": true,
     "astana": false
    },
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Interior_of_hall_at_CInema_Museum%2C_Kennington_Lambeth.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Interior_of_hall_at_CInema_Museum%2C_Kennington_Lambeth.jpg/960px-Interior_of_hall_at_CInema_Museum%2C_Kennington_Lambeth.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Interior_of_hall_at_CInema_Museum,_Kennington_Lambeth.jpg",
-    "author": "Anonymous Unknown author",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Espresso_Coffee_01.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Espresso_Coffee_01.jpg/960px-Espresso_Coffee_01.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Espresso_Coffee_01.jpg",
+    "author": "Jubair1985",
     "license": "CC0",
     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "source": "wikimedia_commons",
-    "depicts": "Interior of hall at CInema Museum, Kennington Lambeth",
+    "depicts": "Espresso Coffee 01",
+    "generic": true,
     "astana": false
    }
   ],
-  "clothes": [
+  "restaurant": [
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Jacadi_shop%2C_Keruen_mall%2C_Astana%2C_2026.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Jacadi_shop%2C_Keruen_mall%2C_Astana%2C_2026.jpg/960px-Jacadi_shop%2C_Keruen_mall%2C_Astana%2C_2026.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Jacadi_shop,_Keruen_mall,_Astana,_2026.jpg",
-    "author": "Bdx",
-    "license": "CC0",
-    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Jacadi shop, Keruen mall, Astana, 2026",
-    "astana": true
-   }
-  ],
-  "convenience": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Convenience_store._Tetrikhevi.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Convenience_store._Tetrikhevi.jpg/960px-Convenience_store._Tetrikhevi.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Convenience_store._Tetrikhevi.jpg",
-    "author": "David Osipov 0000 0005 1802 960X 0009-0005-2713-9242",
-    "license": "CC BY 4.0",
-    "license_url": "https://creativecommons.org/licenses/by/4.0",
-    "source": "wikimedia_commons",
-    "depicts": "Convenience store. Tetrikhevi",
-    "astana": false
-   }
-  ],
-  "coworking": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Coworking_Space_in_Columbus_Ohio.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Coworking_Space_in_Columbus_Ohio.jpg/960px-Coworking_Space_in_Columbus_Ohio.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Coworking_Space_in_Columbus_Ohio.jpg",
-    "author": "Benlande",
-    "license": "CC0",
-    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Coworking Space in Columbus Ohio",
-    "astana": false
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Coworking_space_2026-09-27.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Coworking_space_2026-09-27.jpg/960px-Coworking_space_2026-09-27.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Coworking_space_2026-09-27.jpg",
-    "author": "JustWritingHere",
-    "license": "CC0",
-    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Coworking space 2026-09-27",
-    "astana": false
-   }
-  ],
-  "entertainment": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Splitz_bowling_alley%2C_Jacksonville.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Splitz_bowling_alley%2C_Jacksonville.jpg/960px-Splitz_bowling_alley%2C_Jacksonville.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Splitz_bowling_alley,_Jacksonville.jpg",
-    "author": "Michael Rivera",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Baghala_polo.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Baghala_polo.jpg/960px-Baghala_polo.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Baghala_polo.jpg",
+    "author": "مانفی",
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Splitz bowling alley, Jacksonville",
+    "depicts": "Baghala polo",
+    "generic": true,
     "astana": false
    },
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Escape_Room_by_Midgaard_Event.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Escape_Room_by_Midgaard_Event.jpg/960px-Escape_Room_by_Midgaard_Event.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Escape_Room_by_Midgaard_Event.jpg",
-    "author": "Leif Jørgensen",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Loobia_Polo.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Loobia_Polo.jpg/960px-Loobia_Polo.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Loobia_Polo.jpg",
+    "author": "مانفی",
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Escape Room by Midgaard Event",
+    "depicts": "Loobia Polo",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Bangladeshi_Polao_1.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Bangladeshi_Polao_1.jpg/960px-Bangladeshi_Polao_1.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Bangladeshi_Polao_1.jpg",
+    "author": "Rocky Masum This work was made by Masum-al-Hasan Rocky and released under the license(s) stated below. Please feel free ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Bangladeshi Polao 1",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Hamburg%2C_Jungfernstieg_--_2016_--_4182.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Hamburg%2C_Jungfernstieg_--_2016_--_4182.jpg/960px-Hamburg%2C_Jungfernstieg_--_2016_--_4182.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Hamburg,_Jungfernstieg_--_2016_--_4182.jpg",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Hamburg, Jungfernstieg -- 2016 -- 4182",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "bar": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Cocktail-Bar_%28Kleines_Phi%29_in_Hamburg.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Cocktail-Bar_%28Kleines_Phi%29_in_Hamburg.jpg/960px-Cocktail-Bar_%28Kleines_Phi%29_in_Hamburg.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Cocktail-Bar_(Kleines_Phi)_in_Hamburg.jpg",
+    "author": "Achim Schleuning",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Cocktail-Bar (Kleines Phi) in Hamburg",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Casa_Classic_Cocktail_Bar_%26_Jazz_Club_by_Roland_Barrera.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Casa_Classic_Cocktail_Bar_%26_Jazz_Club_by_Roland_Barrera.jpg/960px-Casa_Classic_Cocktail_Bar_%26_Jazz_Club_by_Roland_Barrera.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Casa_Classic_Cocktail_Bar_%26_Jazz_Club_by_Roland_Barrera.jpg",
+    "author": "неизвестен",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Casa Classic Cocktail Bar & Jazz Club by Roland Barrera",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Interior_view_of_Golden_Era_Cocktail_Lounge_in_Nevada_City.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Interior_view_of_Golden_Era_Cocktail_Lounge_in_Nevada_City.jpg/960px-Interior_view_of_Golden_Era_Cocktail_Lounge_in_Nevada_City.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Interior_view_of_Golden_Era_Cocktail_Lounge_in_Nevada_City.jpg",
+    "author": "Frank Schulenburg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Interior view of Golden Era Cocktail Lounge in Nevada City",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cure_cocktail_bar_New_Orleans_2011.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Cure_cocktail_bar_New_Orleans_2011.jpg/960px-Cure_cocktail_bar_New_Orleans_2011.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Cure_cocktail_bar_New_Orleans_2011.jpg",
+    "author": "Chelsea Marie Hicks",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "wikimedia_commons",
+    "depicts": "Cure cocktail bar New Orleans 2011",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "nightlife": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Long_Island_City_New_York_May_2015_panorama_3.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Long_Island_City_New_York_May_2015_panorama_3.jpg/960px-Long_Island_City_New_York_May_2015_panorama_3.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Long_Island_City_New_York_May_2015_panorama_3.jpg",
+    "author": "King of Hearts",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Long Island City New York May 2015 panorama 3",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Melbourne_%28AU%29%2C_Melbourne_City_Centre_--_2019_--_1493-7.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Melbourne_%28AU%29%2C_Melbourne_City_Centre_--_2019_--_1493-7.jpg/960px-Melbourne_%28AU%29%2C_Melbourne_City_Centre_--_2019_--_1493-7.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Melbourne_(AU),_Melbourne_City_Centre_--_2019_--_1493-7.jpg",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Melbourne (AU), Melbourne City Centre -- 2019 -- 1493-7",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Sydney_%28AU%29%2C_Darling_Harbour_--_2019_--_3193-5.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Sydney_%28AU%29%2C_Darling_Harbour_--_2019_--_3193-5.jpg/960px-Sydney_%28AU%29%2C_Darling_Harbour_--_2019_--_3193-5.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Darling_Harbour_--_2019_--_3193-5.jpg",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Sydney (AU), Darling Harbour -- 2019 -- 3193-5",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "museum": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Hall_of_Minerals_%E2%80%93_National_Museum_in_Prague_03.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Hall_of_Minerals_%E2%80%93_National_Museum_in_Prague_03.jpg/960px-Hall_of_Minerals_%E2%80%93_National_Museum_in_Prague_03.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Hall_of_Minerals_%E2%80%93_National_Museum_in_Prague_03.jpg",
+    "author": "Skot",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Hall of Minerals – National Museum in Prague 03",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Hall_of_Minerals_%E2%80%93_National_Museum_in_Prague_02.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Hall_of_Minerals_%E2%80%93_National_Museum_in_Prague_02.jpg/960px-Hall_of_Minerals_%E2%80%93_National_Museum_in_Prague_02.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Hall_of_Minerals_%E2%80%93_National_Museum_in_Prague_02.jpg",
+    "author": "Skot",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Hall of Minerals – National Museum in Prague 02",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Animated_lion_and_African_buffalo_taxidermy_Powell-Cotton_Museum%2C_Birchington_Kent_England.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Animated_lion_and_African_buffalo_taxidermy_Powell-Cotton_Museum%2C_Birchington_Kent_England.jpg/960px-Animated_lion_and_African_buffalo_taxidermy_Powell-Cotton_Museum%2C_Birchington_Kent_England.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Animated_lion_and_African_buffalo_taxidermy_Powell-Cotton_Museum,_Birchington_Kent_England.jpg",
+    "author": "Acabashi",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Animated lion and African buffalo taxidermy Powell-Cotton Museum, Birchington Kent England",
+    "generic": true,
     "astana": false
    }
   ],
   "gallery": [
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Interior_of_Christchurch_Art_Gallery%2C_New_Zealand_04.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Interior_of_Christchurch_Art_Gallery%2C_New_Zealand_04.jpg/960px-Interior_of_Christchurch_Art_Gallery%2C_New_Zealand_04.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Interior_of_Christchurch_Art_Gallery,_New_Zealand_04.jpg",
-    "author": "Michal Klajban",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "wikimedia_commons",
-    "depicts": "Interior of Christchurch Art Gallery, New Zealand 04",
-    "astana": false
-   }
-  ],
-  "kids": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Tung_Tao_Court_Indoor_playground_201407.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Tung_Tao_Court_Indoor_playground_201407.jpg/960px-Tung_Tao_Court_Indoor_playground_201407.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Tung_Tao_Court_Indoor_playground_201407.jpg",
-    "author": "Wpcpey",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "wikimedia_commons",
-    "depicts": "Tung Tao Court Indoor playground 201407",
-    "astana": false
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Siu_Sai_Wan_Complex_Children_Play_Room_2015.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Siu_Sai_Wan_Complex_Children_Play_Room_2015.jpg/960px-Siu_Sai_Wan_Complex_Children_Play_Room_2015.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Siu_Sai_Wan_Complex_Children_Play_Room_2015.jpg",
-    "author": "Wing1990hk",
-    "license": "CC BY 3.0",
-    "license_url": "https://creativecommons.org/licenses/by/3.0",
-    "source": "wikimedia_commons",
-    "depicts": "Siu Sai Wan Complex Children Play Room 2015",
-    "astana": false
-   }
-  ],
-  "landmark": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Astana-2021-10_-_25.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Astana-2021-10_-_25.jpg/960px-Astana-2021-10_-_25.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_25.jpg",
-    "author": "Vyacheslav Bukharov",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "wikimedia_commons",
-    "depicts": "Astana-2021-10 - 25",
-    "astana": true
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Central_Downtown_Astana_pamorama.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Central_Downtown_Astana_pamorama.jpg/960px-Central_Downtown_Astana_pamorama.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Central_Downtown_Astana_pamorama.jpg",
-    "author": "Ken and Nyetta",
-    "license": "CC BY 2.0",
-    "license_url": "https://creativecommons.org/licenses/by/2.0",
-    "source": "wikimedia_commons",
-    "depicts": "Central Downtown Astana pamorama",
-    "astana": true
-   }
-  ],
-  "library": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Liverpool_Central_Library_Picton_Reading_Room_-_panoramio.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Liverpool_Central_Library_Picton_Reading_Room_-_panoramio.jpg/960px-Liverpool_Central_Library_Picton_Reading_Room_-_panoramio.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Liverpool_Central_Library_Picton_Reading_Room_-_panoramio.jpg",
-    "author": "Michael D Beckwith",
-    "license": "CC BY 3.0",
-    "license_url": "https://creativecommons.org/licenses/by/3.0",
-    "source": "wikimedia_commons",
-    "depicts": "Liverpool Central Library Picton Reading Room - panoramio",
-    "astana": false
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Graz_University-Library_reading-room.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Graz_University-Library_reading-room.jpg/960px-Graz_University-Library_reading-room.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Graz_University-Library_reading-room.jpg",
-    "author": "Dr. Marcus Gossler",
-    "license": "CC BY-SA 3.0",
-    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "source": "wikimedia_commons",
-    "depicts": "Graz University-Library reading-room",
-    "astana": false
-   }
-  ],
-  "mall": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Khan_Shatyr.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Khan_Shatyr.jpg/960px-Khan_Shatyr.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Khan_Shatyr.jpg",
-    "author": "Quarot",
-    "license": "CC0",
-    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "ТРЦ «Хан Шатыр»",
-    "poi_id": "osm:way/460703779",
-    "astana": true
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg/960px-Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Keruen_mall,_interior,_Astana,_2026.jpg",
-    "author": "Bdx",
-    "license": "CC0",
-    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Keruen mall, interior, Astana, 2026",
-    "astana": true
-   }
-  ],
-  "market": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/%D0%97%D0%B5%D0%BB%D1%91%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%B7%D0%B0%D1%80_%D0%B2_%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B_%28%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%29.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/%D0%97%D0%B5%D0%BB%D1%91%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%B7%D0%B0%D1%80_%D0%B2_%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B_%28%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%29.jpg/960px-%D0%97%D0%B5%D0%BB%D1%91%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%B7%D0%B0%D1%80_%D0%B2_%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B_%28%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%29.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B5%D0%BB%D1%91%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%B7%D0%B0%D1%80_%D0%B2_%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B_(%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD).jpg",
-    "author": "Spacekid",
-    "license": "CC0",
-    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Зелёный базар в Алматы (Казахстан)",
-    "astana": false
-   }
-  ],
-  "monument": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/20000_tenge_averse_2021.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/20000_tenge_averse_2021.jpg/960px-20000_tenge_averse_2021.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:20000_tenge_averse_2021.jpg",
-    "author": "Национальный банк Республики Казахстан",
-    "license": "Public domain",
-    "license_url": null,
-    "source": "wikimedia_commons",
-    "depicts": "Триумфальная арка Мангилик Ел",
-    "poi_id": "osm:way/549307755",
-    "astana": true
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Kazakh_Eli.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Kazakh_Eli.jpg/960px-Kazakh_Eli.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Kazakh_Eli.jpg",
-    "author": "Ken and Nyetta",
-    "license": "CC BY 2.0",
-    "license_url": "https://creativecommons.org/licenses/by/2.0",
-    "source": "wikimedia_commons",
-    "depicts": "Казак ели",
-    "poi_id": "osm:node/2681623412",
-    "astana": true
-   }
-  ],
-  "museum": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/%22%D0%90%D0%9B%D0%96%D0%98%D0%A0%22_%D1%82%D2%B1%D1%82%D2%9B%D1%8B%D0%BD%D1%8B_%D0%9B._%D0%A4%D1%80%D0%B5%D0%BD%D0%BA%D0%B5%D0%BB%D1%8C%D0%B4%D1%96%D2%A3_%D2%AF%D1%81%D1%82%D0%B5%D0%BB_%D1%88%D0%B0%D0%BC%D1%8B.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/%22%D0%90%D0%9B%D0%96%D0%98%D0%A0%22_%D1%82%D2%B1%D1%82%D2%9B%D1%8B%D0%BD%D1%8B_%D0%9B._%D0%A4%D1%80%D0%B5%D0%BD%D0%BA%D0%B5%D0%BB%D1%8C%D0%B4%D1%96%D2%A3_%D2%AF%D1%81%D1%82%D0%B5%D0%BB_%D1%88%D0%B0%D0%BC%D1%8B.jpg/960px-%22%D0%90%D0%9B%D0%96%D0%98%D0%A0%22_%D1%82%D2%B1%D1%82%D2%9B%D1%8B%D0%BD%D1%8B_%D0%9B._%D0%A4%D1%80%D0%B5%D0%BD%D0%BA%D0%B5%D0%BB%D1%8C%D0%B4%D1%96%D2%A3_%D2%AF%D1%81%D1%82%D0%B5%D0%BB_%D1%88%D0%B0%D0%BC%D1%8B.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:%22%D0%90%D0%9B%D0%96%D0%98%D0%A0%22_%D1%82%D2%B1%D1%82%D2%9B%D1%8B%D0%BD%D1%8B_%D0%9B._%D0%A4%D1%80%D0%B5%D0%BD%D0%BA%D0%B5%D0%BB%D1%8C%D0%B4%D1%96%D2%A3_%D2%AF%D1%81%D1%82%D0%B5%D0%BB_%D1%88%D0%B0%D0%BC%D1%8B.jpg",
-    "author": "Muzaffar Turgunov",
-    "license": "CC0",
-    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Национальный музей Республики Казахстан",
-    "poi_id": "osm:node/4894937300",
-    "astana": true
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg/960px-Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
-    "author": "颲風",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "wikimedia_commons",
-    "depicts": "Музей «Нур Алем» (ЭКСПО)",
-    "poi_id": "seed:nur_alem",
-    "astana": true
-   }
-  ],
-  "nightlife": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg/960px-Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Night_at_Esil_District,_Astana_(P1190721).jpg",
-    "author": "Matti Blume",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Night at Esil District, Astana (P1190721)",
-    "astana": true
-   }
-  ],
-  "park": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/A_view_of_Nur-Sultan%27s_Botanical_Garden.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/A_view_of_Nur-Sultan%27s_Botanical_Garden.jpg/960px-A_view_of_Nur-Sultan%27s_Botanical_Garden.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:A_view_of_Nur-Sultan%27s_Botanical_Garden.jpg",
-    "author": "Demir Berisha",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "wikimedia_commons",
-    "depicts": "Ботанический сад Астаны",
-    "poi_id": "osm:way/1196402246",
-    "astana": true
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Fountain_in_Lovers_Park.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Fountain_in_Lovers_Park.jpg/960px-Fountain_in_Lovers_Park.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Fountain_in_Lovers_Park.jpg",
-    "author": "Bernard Gagnon",
-    "license": "CC0",
-    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Fountain in Lovers Park",
-    "astana": false
-   }
-  ],
-  "pharmacy": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/%D0%9A%D0%BE%D0%BD%D0%B0%D0%B5%D0%B2%2C_%D0%90%D0%B1%D0%B0%D1%8F_18%D0%B0.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/%D0%9A%D0%BE%D0%BD%D0%B0%D0%B5%D0%B2%2C_%D0%90%D0%B1%D0%B0%D1%8F_18%D0%B0.jpg/960px-%D0%9A%D0%BE%D0%BD%D0%B0%D0%B5%D0%B2%2C_%D0%90%D0%B1%D0%B0%D1%8F_18%D0%B0.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BD%D0%B0%D0%B5%D0%B2,_%D0%90%D0%B1%D0%B0%D1%8F_18%D0%B0.jpg",
-    "author": "Nikolai Bulykin",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "wikimedia_commons",
-    "depicts": "Конаев, Абая 18а",
-    "astana": false
-   }
-  ],
-  "playground": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Ma_Wan_Children%27s_Playground_01.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Ma_Wan_Children%27s_Playground_01.jpg/960px-Ma_Wan_Children%27s_Playground_01.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Ma_Wan_Children%27s_Playground_01.jpg",
-    "author": "Underwaterbuffalo",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "wikimedia_commons",
-    "depicts": "Ma Wan Children's Playground 01",
-    "astana": false
-   }
-  ],
-  "religious": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg/960px-Rustam_Minnikhanov_on_Expo_2017_72.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Rustam_Minnikhanov_on_Expo_2017_72.jpg",
-    "author": "Лаззат Хайдаров",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_05.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_05.jpg/960px-Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_05.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_05.jpg",
+    "author": "HonysTorresArt",
     "license": "CC BY 4.0",
     "license_url": "https://creativecommons.org/licenses/by/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Мечеть «Хазрет Султан»",
-    "poi_id": "osm:way/240860325",
-    "astana": true
+    "depicts": "Exhibition views with visitors – ART FUSION BASEL 2022 05",
+    "generic": true,
+    "astana": false
    },
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Astana_DSC04235_%287709902002%29.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Astana_DSC04235_%287709902002%29.jpg/960px-Astana_DSC04235_%287709902002%29.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Astana_DSC04235_(7709902002).jpg",
-    "author": "jtstewart",
-    "license": "CC BY-SA 2.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_06.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_06.jpg/960px-Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_06.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_06.jpg",
+    "author": "HonysTorresArt",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Мечеть Абу Насыра аль-Фараби",
-    "poi_id": "osm:relation/16827715",
-    "astana": true
-   }
-  ],
-  "restaurant": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Darijani%2C_Astana_%28LRM_20240819_173519%29.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Darijani%2C_Astana_%28LRM_20240819_173519%29.jpg/960px-Darijani%2C_Astana_%28LRM_20240819_173519%29.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Darijani,_Astana_(LRM_20240819_173519).jpg",
-    "author": "Matti Blume",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Darijani, Astana (LRM 20240819 173519)",
-    "astana": true
+    "depicts": "Exhibition views with visitors – ART FUSION BASEL 2022 06",
+    "generic": true,
+    "astana": false
    },
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Daredzhani%2C_Astana_%2820240819-2024-08-19_14.35.19%29.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Daredzhani%2C_Astana_%2820240819-2024-08-19_14.35.19%29.jpg/960px-Daredzhani%2C_Astana_%2820240819-2024-08-19_14.35.19%29.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Daredzhani,_Astana_(20240819-2024-08-19_14.35.19).jpg",
-    "author": "Q116983635",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_08.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_08.jpg/960px-Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_08.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Exhibition_views_with_visitors_%E2%80%93_ART_FUSION_BASEL_2022_08.jpg",
+    "author": "HonysTorresArt",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Daredzhani, Astana (20240819-2024-08-19 14.35.19)",
-    "astana": true
-   }
-  ],
-  "shop": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg/960px-Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Keruen_mall,_interior,_Astana,_2026.jpg",
-    "author": "Bdx",
-    "license": "CC0",
-    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Keruen mall, interior, Astana, 2026",
-    "astana": true
-   }
-  ],
-  "sport": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Astana_Arena_%28inside_interior%29.JPG",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Astana_Arena_%28inside_interior%29.JPG/960px-Astana_Arena_%28inside_interior%29.JPG",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Astana_Arena_(inside_interior).JPG",
-    "author": "ChelseaFunNumberOne",
-    "license": "CC BY-SA 3.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-    "source": "wikimedia_commons",
-    "depicts": "Астана Арена",
-    "poi_id": "osm:way/1460088073",
-    "astana": true
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Barys_Arena_2014-03-15.JPG",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Barys_Arena_2014-03-15.JPG/960px-Barys_Arena_2014-03-15.JPG",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Barys_Arena_2014-03-15.JPG",
-    "author": "ChelseaFunNumberOne",
-    "license": "CC BY-SA 3.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-    "source": "wikimedia_commons",
-    "depicts": "Барыс Арена",
-    "poi_id": "osm:way/663143306",
-    "astana": true
-   }
-  ],
-  "supermarket": [
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Molmart%2C_Astana%2C_2026.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Molmart%2C_Astana%2C_2026.jpg/960px-Molmart%2C_Astana%2C_2026.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Molmart,_Astana,_2026.jpg",
-    "author": "Bdx",
-    "license": "CC0",
-    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Molmart, Astana, 2026",
-    "astana": true
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Cheeses%2C_Galmart%2C_Keruen_mall%2C_Astana%2C_2026.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Cheeses%2C_Galmart%2C_Keruen_mall%2C_Astana%2C_2026.jpg/960px-Cheeses%2C_Galmart%2C_Keruen_mall%2C_Astana%2C_2026.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Cheeses,_Galmart,_Keruen_mall,_Astana,_2026.jpg",
-    "author": "Bdx",
-    "license": "CC0",
-    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "source": "wikimedia_commons",
-    "depicts": "Cheeses, Galmart, Keruen mall, Astana, 2026",
-    "astana": true
+    "depicts": "Exhibition views with visitors – ART FUSION BASEL 2022 08",
+    "generic": true,
+    "astana": false
    }
   ],
   "theatre": [
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Inside_Astana%27s_New_Opera_House_%288282915665%29.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Inside_Astana%27s_New_Opera_House_%288282915665%29.jpg/960px-Inside_Astana%27s_New_Opera_House_%288282915665%29.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Inside_Astana%27s_New_Opera_House_(8282915665).jpg",
-    "author": "Ken and Nyetta",
-    "license": "CC BY 2.0",
-    "license_url": "https://creativecommons.org/licenses/by/2.0",
-    "source": "wikimedia_commons",
-    "depicts": "Астана Опера",
-    "poi_id": "osm:way/917478479",
-    "astana": true
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD_%D0%A6%D0%9A%D0%97_2011_02.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD_%D0%A6%D0%9A%D0%97_2011_02.jpg/960px-%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD_%D0%A6%D0%9A%D0%97_2011_02.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD_%D0%A6%D0%9A%D0%97_2011_02.jpg",
-    "author": "Мазур Владимир",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Grand_Th%C3%A9%C3%A2tre_Tours_-_Sc%C3%A8ne_et_parterre.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Grand_Th%C3%A9%C3%A2tre_Tours_-_Sc%C3%A8ne_et_parterre.jpg/960px-Grand_Th%C3%A9%C3%A2tre_Tours_-_Sc%C3%A8ne_et_parterre.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Grand_Th%C3%A9%C3%A2tre_Tours_-_Sc%C3%A8ne_et_parterre.jpg",
+    "author": "Antoine Montulé",
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Центральный концертный зал «Казахстан»",
-    "poi_id": "osm:way/1460537088",
-    "astana": true
+    "depicts": "Grand Théâtre Tours - Scène et parterre",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/War_Memorial_Opera_House_auditorium_chandelier.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/War_Memorial_Opera_House_auditorium_chandelier.jpg/960px-War_Memorial_Opera_House_auditorium_chandelier.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:War_Memorial_Opera_House_auditorium_chandelier.jpg",
+    "author": "Photo: Andreas Praefcke",
+    "license": "Public domain",
+    "license_url": null,
+    "source": "wikimedia_commons",
+    "depicts": "War Memorial Opera House auditorium chandelier",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/War_Memorial_Opera_House_auditorium_upper_levels.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/War_Memorial_Opera_House_auditorium_upper_levels.jpg/960px-War_Memorial_Opera_House_auditorium_upper_levels.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:War_Memorial_Opera_House_auditorium_upper_levels.jpg",
+    "author": "Photo: Andreas Praefcke",
+    "license": "Public domain",
+    "license_url": null,
+    "source": "wikimedia_commons",
+    "depicts": "War Memorial Opera House auditorium upper levels",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "cinema": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Lichtburg-Essen-Kinosaal-2025.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Lichtburg-Essen-Kinosaal-2025.jpg/960px-Lichtburg-Essen-Kinosaal-2025.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Lichtburg-Essen-Kinosaal-2025.jpg",
+    "author": "Tuxyso",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Lichtburg-Essen-Kinosaal-2025",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Columbia_City_Cinema_main_hall.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Columbia_City_Cinema_main_hall.jpg/960px-Columbia_City_Cinema_main_hall.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Columbia_City_Cinema_main_hall.jpg",
+    "author": "Joe Mabel",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "wikimedia_commons",
+    "depicts": "Columbia City Cinema main hall",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Luxury_Movie_Theater_Seats.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Luxury_Movie_Theater_Seats.jpg/960px-Luxury_Movie_Theater_Seats.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Luxury_Movie_Theater_Seats.jpg",
+    "author": "Author0612",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Luxury Movie Theater Seats",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/4DX_seats_in_cinema_%28motion_and_environmental_effects_synced_with_the_on-screen_action%29_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg%2C_Norway_2023_IMG_7849.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/4DX_seats_in_cinema_%28motion_and_environmental_effects_synced_with_the_on-screen_action%29_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg%2C_Norway_2023_IMG_7849.jpg/960px-thumbnail.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:4DX_seats_in_cinema_(motion_and_environmental_effects_synced_with_the_on-screen_action)_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg,_Norway_2023_IMG_7849.jpg",
+    "author": "Wolfmann",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "4DX seats in cinema (motion and environmental effects synced with the on-screen action) bench rows in a movie theater hall Kinostoler kinosal Kilden kino Tønsberg, Norway 2023 IMG 7849",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "park": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/A_garden_path_and_lawn_Gibberd_Garden_Essex_England.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/A_garden_path_and_lawn_Gibberd_Garden_Essex_England.JPG/960px-A_garden_path_and_lawn_Gibberd_Garden_Essex_England.JPG",
+    "page_url": "https://commons.wikimedia.org/wiki/File:A_garden_path_and_lawn_Gibberd_Garden_Essex_England.JPG",
+    "author": "Acabashi",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "A garden path and lawn Gibberd Garden Essex England",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/T%C3%BCbingen_-_Neckarinsel_-_Blick_entlang_Neckar_im_Herbst.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/T%C3%BCbingen_-_Neckarinsel_-_Blick_entlang_Neckar_im_Herbst.jpg/960px-T%C3%BCbingen_-_Neckarinsel_-_Blick_entlang_Neckar_im_Herbst.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:T%C3%BCbingen_-_Neckarinsel_-_Blick_entlang_Neckar_im_Herbst.jpg",
+    "author": "Roman Eisele",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Tübingen - Neckarinsel - Blick entlang Neckar im Herbst",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Park_%C5%9Arodula%2C_Sosnowiec%2C_Jesie%C5%84_2021.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Park_%C5%9Arodula%2C_Sosnowiec%2C_Jesie%C5%84_2021.jpg/960px-Park_%C5%9Arodula%2C_Sosnowiec%2C_Jesie%C5%84_2021.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Park_%C5%9Arodula,_Sosnowiec,_Jesie%C5%84_2021.jpg",
+    "author": "Krzysztof Popławski",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Park Środula, Sosnowiec, Jesień 2021",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/D%C3%BClmen%2C_Merfeld%2C_Von-Galen-Park_--_2013_--_2367.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/D%C3%BClmen%2C_Merfeld%2C_Von-Galen-Park_--_2013_--_2367.jpg/960px-D%C3%BClmen%2C_Merfeld%2C_Von-Galen-Park_--_2013_--_2367.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Merfeld,_Von-Galen-Park_--_2013_--_2367.jpg",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Dülmen, Merfeld, Von-Galen-Park -- 2013 -- 2367",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Viru_Bog_at_winter.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Viru_Bog_at_winter.jpg/960px-Viru_Bog_at_winter.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Viru_Bog_at_winter.jpg",
+    "author": "Abrget47j",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Viru Bog at winter",
+    "generic": true,
+    "astana": false
    }
   ],
   "viewpoint": [
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg/960px-Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Night_at_Esil_District,_Astana_(P1190721).jpg",
-    "author": "Matti Blume",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_%28northeast%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_%28northeast%29.jpg/960px-View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_%28northeast%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_(northeast).jpg",
+    "author": "そらみみ",
     "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Монумент «Байтерек»",
-    "poi_id": "osm:way/230401645",
-    "astana": true
+    "depicts": "View of Fukuoka City from West Observation Deck of Minami Park (northeast)",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_%28north%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_%28north%29.jpg/960px-View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_%28north%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_(north).jpg",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "View of Fukuoka City from West Observation Deck of Minami Park (north)",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_%28southwest%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_%28southwest%29.jpg/960px-View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_%28southwest%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:View_of_Fukuoka_City_from_West_Observation_Deck_of_Minami_Park_(southwest).jpg",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "View of Fukuoka City from West Observation Deck of Minami Park (southwest)",
+    "generic": true,
+    "astana": false
    },
    {
     "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/View_from_Bayterek_tower.jpg",
@@ -536,20 +449,852 @@
     "license_url": "https://creativecommons.org/licenses/by/2.0",
     "source": "wikimedia_commons",
     "depicts": "View from Bayterek tower",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "monument": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Dresden%2C_Schloss%2C_Ruhender_Hirsch_%28Dezember_2023%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Dresden%2C_Schloss%2C_Ruhender_Hirsch_%28Dezember_2023%29.jpg/960px-Dresden%2C_Schloss%2C_Ruhender_Hirsch_%28Dezember_2023%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Dresden,_Schloss,_Ruhender_Hirsch_(Dezember_2023).jpg",
+    "author": "Romzig",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Dresden, Schloss, Ruhender Hirsch (Dezember 2023)",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Luxembourg_City_monument_Guillaume_II_statue_2011.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Luxembourg_City_monument_Guillaume_II_statue_2011.jpg/960px-Luxembourg_City_monument_Guillaume_II_statue_2011.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Luxembourg_City_monument_Guillaume_II_statue_2011.jpg",
+    "author": "Antonin Mercié",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Luxembourg City monument Guillaume II statue 2011",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "religious": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Sheikh-Lotf-Allah_mosque_wall_and_ceiling_2.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Sheikh-Lotf-Allah_mosque_wall_and_ceiling_2.jpg/960px-Sheikh-Lotf-Allah_mosque_wall_and_ceiling_2.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Sheikh-Lotf-Allah_mosque_wall_and_ceiling_2.jpg",
+    "author": "Phillip Maiwald ( Nikopol )",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Sheikh-Lotf-Allah mosque wall and ceiling 2",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Jame_mosque_of_Yazd.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Jame_mosque_of_Yazd.jpg/960px-Jame_mosque_of_Yazd.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Jame_mosque_of_Yazd.jpg",
+    "author": "Mohammad Reza Domiri Ganji",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Jame mosque of Yazd",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Ribbed_vault_of_Jameh_Mosque_of_Isfahan.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Ribbed_vault_of_Jameh_Mosque_of_Isfahan.jpg/960px-Ribbed_vault_of_Jameh_Mosque_of_Isfahan.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Ribbed_vault_of_Jameh_Mosque_of_Isfahan.jpg",
+    "author": "Amir Pashaei",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Ribbed vault of Jameh Mosque of Isfahan",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/%D0%90%D1%98%D0%B4%D0%B0%D1%80_%D0%BA%D0%B0%D0%B4%D0%B8_%D1%9F%D0%B0%D0%BC%D0%B8%D1%98%D0%B0%2C_%D0%91%D0%B8%D1%82%D0%BE%D0%BB%D0%B0_%28enterance_domes_of_Hajdar_Kadi_Mosque%2C_Bitola%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/%D0%90%D1%98%D0%B4%D0%B0%D1%80_%D0%BA%D0%B0%D0%B4%D0%B8_%D1%9F%D0%B0%D0%BC%D0%B8%D1%98%D0%B0%2C_%D0%91%D0%B8%D1%82%D0%BE%D0%BB%D0%B0_%28enterance_domes_of_Hajdar_Kadi_Mosque%2C_Bitola%29.jpg/960px-%D0%90%D1%98%D0%B4%D0%B0%D1%80_%D0%BA%D0%B0%D0%B4%D0%B8_%D1%9F%D0%B0%D0%BC%D0%B8%D1%98%D0%B0%2C_%D0%91%D0%B8%D1%82%D0%BE%D0%BB%D0%B0_%28enterance_domes_of_Hajdar_Kadi_Mosque%2C_Bitola%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%98%D0%B4%D0%B0%D1%80_%D0%BA%D0%B0%D0%B4%D0%B8_%D1%9F%D0%B0%D0%BC%D0%B8%D1%98%D0%B0,_%D0%91%D0%B8%D1%82%D0%BE%D0%BB%D0%B0_(enterance_domes_of_Hajdar_Kadi_Mosque,_Bitola).jpg",
+    "author": "Petar Milošević",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Ајдар кади џамија, Битола (enterance domes of Hajdar Kadi Mosque, Bitola)",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "mall": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Bamberg_Atrium_Rolltreppen-20180417-RM-171311.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Bamberg_Atrium_Rolltreppen-20180417-RM-171311.jpg/960px-Bamberg_Atrium_Rolltreppen-20180417-RM-171311.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Bamberg_Atrium_Rolltreppen-20180417-RM-171311.jpg",
+    "author": "Ermell",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Bamberg Atrium Rolltreppen-20180417-RM-171311",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Villach_Warmbad_Einkaufszentrum_ATRIO_19032015_0900.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Villach_Warmbad_Einkaufszentrum_ATRIO_19032015_0900.jpg/960px-Villach_Warmbad_Einkaufszentrum_ATRIO_19032015_0900.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Villach_Warmbad_Einkaufszentrum_ATRIO_19032015_0900.jpg",
+    "author": "Johann Jaritz",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Villach Warmbad Einkaufszentrum ATRIO 19032015 0900",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Villach_Warmbad_Einkaufszentrum_ATRIO_19032015_0904.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Villach_Warmbad_Einkaufszentrum_ATRIO_19032015_0904.jpg/960px-Villach_Warmbad_Einkaufszentrum_ATRIO_19032015_0904.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Villach_Warmbad_Einkaufszentrum_ATRIO_19032015_0904.jpg",
+    "author": "Johann Jaritz",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Villach Warmbad Einkaufszentrum ATRIO 19032015 0904",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/The_Bay_Centre%2C_Victoria%2C_British_Columbia%2C_Canada_004.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/The_Bay_Centre%2C_Victoria%2C_British_Columbia%2C_Canada_004.jpg/960px-The_Bay_Centre%2C_Victoria%2C_British_Columbia%2C_Canada_004.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:The_Bay_Centre,_Victoria,_British_Columbia,_Canada_004.jpg",
+    "author": "Michal Klajban",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "The Bay Centre, Victoria, British Columbia, Canada 004",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "playground": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Spielplatz_Volkshain-St%C3%BCnz_%E2%80%93_Rutsche.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Spielplatz_Volkshain-St%C3%BCnz_%E2%80%93_Rutsche.jpg/960px-Spielplatz_Volkshain-St%C3%BCnz_%E2%80%93_Rutsche.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Spielplatz_Volkshain-St%C3%BCnz_%E2%80%93_Rutsche.jpg",
+    "author": "August Geyler",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Spielplatz Volkshain-Stünz – Rutsche",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Kletterger%C3%BCst_mit_Rutsche_vom_Spielplatz_beim_General_Kalb_Weg_M%C3%BCnchen_Bild_2_2025-04-13.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Kletterger%C3%BCst_mit_Rutsche_vom_Spielplatz_beim_General_Kalb_Weg_M%C3%BCnchen_Bild_2_2025-04-13.jpg/960px-Kletterger%C3%BCst_mit_Rutsche_vom_Spielplatz_beim_General_Kalb_Weg_M%C3%BCnchen_Bild_2_2025-04-13.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Kletterger%C3%BCst_mit_Rutsche_vom_Spielplatz_beim_General_Kalb_Weg_M%C3%BCnchen_Bild_2_2025-04-13.jpg",
+    "author": "Strubbl",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Klettergerüst mit Rutsche vom Spielplatz beim General Kalb Weg München Bild 2 2025-04-13",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/2025._Torre_con_tobog%C3%A1n._Parque_infantil_da_Alameda_de_Compostela._Galiza.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/2025._Torre_con_tobog%C3%A1n._Parque_infantil_da_Alameda_de_Compostela._Galiza.jpg/960px-2025._Torre_con_tobog%C3%A1n._Parque_infantil_da_Alameda_de_Compostela._Galiza.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:2025._Torre_con_tobog%C3%A1n._Parque_infantil_da_Alameda_de_Compostela._Galiza.jpg",
+    "author": "Luis Miguel Bugallo Sánchez",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "2025. Torre con tobogán. Parque infantil da Alameda de Compostela. Galiza",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/2026._Parque_infantil_de_Belv%C3%ADs._Santiago_de_Compostela._Galiza._04.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/2026._Parque_infantil_de_Belv%C3%ADs._Santiago_de_Compostela._Galiza._04.jpg/960px-2026._Parque_infantil_de_Belv%C3%ADs._Santiago_de_Compostela._Galiza._04.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:2026._Parque_infantil_de_Belv%C3%ADs._Santiago_de_Compostela._Galiza._04.jpg",
+    "author": "Luis Miguel Bugallo Sánchez",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "2026. Parque infantil de Belvís. Santiago de Compostela. Galiza. 04",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Playground_swing_03.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Playground_swing_03.jpg/960px-Playground_swing_03.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Playground_swing_03.jpg",
+    "author": "Kritzolina",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Playground swing 03",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "kids": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Happy_Duck_Round_The_World_ball_pit_at_BHG_Shangdi_%2820210813160534%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Happy_Duck_Round_The_World_ball_pit_at_BHG_Shangdi_%2820210813160534%29.jpg/960px-Happy_Duck_Round_The_World_ball_pit_at_BHG_Shangdi_%2820210813160534%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Happy_Duck_Round_The_World_ball_pit_at_BHG_Shangdi_(20210813160534).jpg",
+    "author": "N509FZ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Happy Duck Round The World ball pit at BHG Shangdi (20210813160534)",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Asobono_ball_pool.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Asobono_ball_pool.jpg/960px-Asobono_ball_pool.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Asobono_ball_pool.jpg",
+    "author": "Syced",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Asobono ball pool",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Hometrampoline.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Hometrampoline.jpg/960px-Hometrampoline.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Hometrampoline.jpg",
+    "author": "Ludraman",
+    "license": "Public domain",
+    "license_url": null,
+    "source": "wikimedia_commons",
+    "depicts": "Hometrampoline",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Poland_2025_350_Czarna_G%C3%B3ra_-_Colourful_Play_Area.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Poland_2025_350_Czarna_G%C3%B3ra_-_Colourful_Play_Area.jpg/960px-Poland_2025_350_Czarna_G%C3%B3ra_-_Colourful_Play_Area.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Poland_2025_350_Czarna_G%C3%B3ra_-_Colourful_Play_Area.jpg",
+    "author": "Scotch Mist",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Poland 2025 350 Czarna Góra - Colourful Play Area",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "entertainment": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Bowling_Alley_Pelixir_Oulu_20150110.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Bowling_Alley_Pelixir_Oulu_20150110.JPG/960px-Bowling_Alley_Pelixir_Oulu_20150110.JPG",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Bowling_Alley_Pelixir_Oulu_20150110.JPG",
+    "author": "Estormiz",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Bowling Alley Pelixir Oulu 20150110",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/The_New_HUB_Bowling_Alley_%287975562172%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/The_New_HUB_Bowling_Alley_%287975562172%29.jpg/960px-The_New_HUB_Bowling_Alley_%287975562172%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:The_New_HUB_Bowling_Alley_(7975562172).jpg",
+    "author": "Atomic Taco from Seattle, WA, USA",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "wikimedia_commons",
+    "depicts": "The New HUB Bowling Alley (7975562172)",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Bowling_Corner_%26_Billiard_interior_01.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Bowling_Corner_%26_Billiard_interior_01.jpg/960px-Bowling_Corner_%26_Billiard_interior_01.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Bowling_Corner_%26_Billiard_interior_01.jpg",
+    "author": "Abel111222",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Bowling Corner & Billiard interior 01",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Ch%C3%A2teau_de_Malmaison_-_Salle_de_billard_001.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Ch%C3%A2teau_de_Malmaison_-_Salle_de_billard_001.jpg/960px-Ch%C3%A2teau_de_Malmaison_-_Salle_de_billard_001.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Malmaison_-_Salle_de_billard_001.jpg",
+    "author": "Moonik",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Château de Malmaison - Salle de billard 001",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Le_ch%C3%A2teau_de_Rundal_%28Rundal_Pils%29_%283%29.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Le_ch%C3%A2teau_de_Rundal_%28Rundal_Pils%29_%283%29.JPG/960px-Le_ch%C3%A2teau_de_Rundal_%28Rundal_Pils%29_%283%29.JPG",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Le_ch%C3%A2teau_de_Rundal_(Rundal_Pils)_(3).JPG",
+    "author": "PIERRE ANDRE LECLERCQ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Le château de Rundal (Rundal Pils) (3)",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "sport": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Rijksmuseum_winter_7441.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Rijksmuseum_winter_7441.jpg/960px-Rijksmuseum_winter_7441.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Rijksmuseum_winter_7441.jpg",
+    "author": "C messier",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Rijksmuseum winter 7441",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Outdoor_ice_rink_-_Aerial_view_%281%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Outdoor_ice_rink_-_Aerial_view_%281%29.jpg/960px-Outdoor_ice_rink_-_Aerial_view_%281%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Outdoor_ice_rink_-_Aerial_view_(1).jpg",
+    "author": "Gabriel Picard",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Outdoor ice rink - Aerial view (1)",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/2026-01-10_Dresdner_Eisl%C3%B6wen_gegen_Eisb%C3%A4ren_Berlin_%28DEL_Winter_Game_2026%2C_Deutsche_Eishockey-Liga_2025-26%29_by_Sandro_Halank%E2%80%93047.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/2026-01-10_Dresdner_Eisl%C3%B6wen_gegen_Eisb%C3%A4ren_Berlin_%28DEL_Winter_Game_2026%2C_Deutsche_Eishockey-Liga_2025-26%29_by_Sandro_Halank%E2%80%93047.jpg/960px-2026-01-10_Dresdner_Eisl%C3%B6wen_gegen_Eisb%C3%A4ren_Berlin_%28DEL_Winter_Game_2026%2C_Deutsche_Eishockey-Liga_2025-26%29_by_Sandro_Halank%E2%80%93047.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:2026-01-10_Dresdner_Eisl%C3%B6wen_gegen_Eisb%C3%A4ren_Berlin_(DEL_Winter_Game_2026,_Deutsche_Eishockey-Liga_2025-26)_by_Sandro_Halank%E2%80%93047.jpg",
+    "author": "Sandro Halank, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "2026-01-10 Dresdner Eislöwen gegen Eisbären Berlin (DEL Winter Game 2026, Deutsche Eishockey-Liga 2025-26) by Sandro Halank–047",
+    "generic": true,
     "astana": false
    }
   ],
   "wellness": [
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Indoor_pool_of_spa_with_open_door_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Indoor_pool_of_spa_with_open_door_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg/960px-Indoor_pool_of_spa_with_open_door_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Indoor_pool_of_spa_with_open_door_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
-    "author": "Basile Morin",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Swimming_Pool_lanes_and_starting_blocks.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Swimming_Pool_lanes_and_starting_blocks.jpg/960px-Swimming_Pool_lanes_and_starting_blocks.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Swimming_Pool_lanes_and_starting_blocks.jpg",
+    "author": "KeepActive Australia from Melbourne, VIC, Australia",
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Indoor pool of spa with open door at Amantaka luxury Resort & Hotel in Luang Prabang Laos",
+    "depicts": "Swimming Pool lanes and starting blocks",
+    "generic": true,
+    "astana": false,
+    "tag": "pool"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Swimming_Pool_lanes_and_starting_blocks_at_AIS.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Swimming_Pool_lanes_and_starting_blocks_at_AIS.jpg/960px-Swimming_Pool_lanes_and_starting_blocks_at_AIS.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Swimming_Pool_lanes_and_starting_blocks_at_AIS.jpg",
+    "author": "KeepActive Australia",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Swimming Pool lanes and starting blocks at AIS",
+    "generic": true,
+    "astana": false,
+    "tag": "pool"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Gym_Dumbbells_For_Working_Out_%28193383405%29.jpeg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Gym_Dumbbells_For_Working_Out_%28193383405%29.jpeg/960px-Gym_Dumbbells_For_Working_Out_%28193383405%29.jpeg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Gym_Dumbbells_For_Working_Out_(193383405).jpeg",
+    "author": "Sterling",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Gym Dumbbells For Working Out (193383405)",
+    "generic": true,
+    "astana": false,
+    "tag": "fitness"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Colorful_pile_of_dumbbells_at_the_gym.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Colorful_pile_of_dumbbells_at_the_gym.jpg/960px-Colorful_pile_of_dumbbells_at_the_gym.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Colorful_pile_of_dumbbells_at_the_gym.jpg",
+    "author": "Ser Amantio di Nicolao",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Colorful pile of dumbbells at the gym",
+    "generic": true,
+    "astana": false,
+    "tag": "fitness"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Smoke_sauna_stove_Utsjoki.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Smoke_sauna_stove_Utsjoki.JPG/960px-Smoke_sauna_stove_Utsjoki.JPG",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Smoke_sauna_stove_Utsjoki.JPG",
+    "author": "MattiPaavola",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Smoke sauna stove Utsjoki",
+    "generic": true,
+    "astana": false,
+    "tag": "sauna"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Wood_stove_of_smoke_sauna_of_Kuusij%C3%A4rvi%2C_Kuninkaanm%C3%A4ki%2C_Vantaa%2C_Finland%2C_2023_April_-_2.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Wood_stove_of_smoke_sauna_of_Kuusij%C3%A4rvi%2C_Kuninkaanm%C3%A4ki%2C_Vantaa%2C_Finland%2C_2023_April_-_2.jpg/960px-Wood_stove_of_smoke_sauna_of_Kuusij%C3%A4rvi%2C_Kuninkaanm%C3%A4ki%2C_Vantaa%2C_Finland%2C_2023_April_-_2.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Wood_stove_of_smoke_sauna_of_Kuusij%C3%A4rvi,_Kuninkaanm%C3%A4ki,_Vantaa,_Finland,_2023_April_-_2.jpg",
+    "author": "Ximonic (Simo Räsänen)",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Wood stove of smoke sauna of Kuusijärvi, Kuninkaanmäki, Vantaa, Finland, 2023 April - 2",
+    "generic": true,
+    "astana": false,
+    "tag": "sauna"
+   }
+  ],
+  "library": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg/960px-Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Bookshelf_Prunksaal_OeNB_Vienna_AT_matl00786ch.jpg",
+    "author": "Matl",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Bookshelf Prunksaal OeNB Vienna AT matl00786ch",
+    "generic": true,
     "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/13-11-02-olb-by-RalfR-03.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/13-11-02-olb-by-RalfR-03.jpg/960px-13-11-02-olb-by-RalfR-03.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:13-11-02-olb-by-RalfR-03.jpg",
+    "author": "Ralf Roletschek",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "13-11-02-olb-by-RalfR-03",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Providence_Athenaeum_interior_2013.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Providence_Athenaeum_interior_2013.jpg/960px-Providence_Athenaeum_interior_2013.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Providence_Athenaeum_interior_2013.jpg",
+    "author": "Kenneth C. Zirkel",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Providence Athenaeum interior 2013",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Westmount_Public_Library_by_Rodrigo_Tetsuo_Argenton_%2803%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Westmount_Public_Library_by_Rodrigo_Tetsuo_Argenton_%2803%29.jpg/960px-Westmount_Public_Library_by_Rodrigo_Tetsuo_Argenton_%2803%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Westmount_Public_Library_by_Rodrigo_Tetsuo_Argenton_(03).jpg",
+    "author": "Rodrigo.Argenton",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Westmount Public Library by Rodrigo Tetsuo Argenton (03)",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "coworking": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/The_Venture_Studios_Best_coworking_space_in_HSR_Layout.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/The_Venture_Studios_Best_coworking_space_in_HSR_Layout.jpg/960px-The_Venture_Studios_Best_coworking_space_in_HSR_Layout.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:The_Venture_Studios_Best_coworking_space_in_HSR_Layout.jpg",
+    "author": "TheVentureStudios",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "The Venture Studios Best coworking space in HSR Layout",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Cowork_Videmonte.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Cowork_Videmonte.jpg/960px-Cowork_Videmonte.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Cowork_Videmonte.jpg",
+    "author": "Hipersyl",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Cowork Videmonte",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Desks_in_an_open_office_space_%28Unsplash%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Desks_in_an_open_office_space_%28Unsplash%29.jpg/960px-Desks_in_an_open_office_space_%28Unsplash%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Desks_in_an_open_office_space_(Unsplash).jpg",
+    "author": "Crew crew",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Desks in an open office space (Unsplash)",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Working_in_open_office_space_%28Unsplash%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Working_in_open_office_space_%28Unsplash%29.jpg/960px-Working_in_open_office_space_%28Unsplash%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Working_in_open_office_space_(Unsplash).jpg",
+    "author": "Crew crew",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Working in open office space (Unsplash)",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "market": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Fruit_Stall_in_Barcelona_Market.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Fruit_Stall_in_Barcelona_Market.jpg/960px-Fruit_Stall_in_Barcelona_Market.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Fruit_Stall_in_Barcelona_Market.jpg",
+    "author": "By en:User:Daderot .",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "wikimedia_commons",
+    "depicts": "Fruit Stall in Barcelona Market",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Burrabazar_Market_in_Kolkata_09.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Burrabazar_Market_in_Kolkata_09.jpg/960px-Burrabazar_Market_in_Kolkata_09.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Burrabazar_Market_in_Kolkata_09.jpg",
+    "author": "Kritzolina",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Burrabazar Market in Kolkata 09",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Gesundes_Leben_002_2014_03_19.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Gesundes_Leben_002_2014_03_19.jpg/960px-Gesundes_Leben_002_2014_03_19.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Gesundes_Leben_002_2014_03_19.jpg",
+    "author": "Friedrich Haag",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Gesundes Leben 002 2014 03 19",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "supermarket": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Metro_%28supermarket%29_02.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Metro_%28supermarket%29_02.jpg/960px-Metro_%28supermarket%29_02.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Metro_(supermarket)_02.jpg",
+    "author": "Wilfredor",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Metro (supermarket) 02",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Metro_%28supermarket%29_04.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Metro_%28supermarket%29_04.jpg/960px-Metro_%28supermarket%29_04.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Metro_(supermarket)_04.jpg",
+    "author": "Wilfredor",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Metro (supermarket) 04",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/IGA_store_in_Quebec%2C_Limoilou_12.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/IGA_store_in_Quebec%2C_Limoilou_12.jpg/960px-IGA_store_in_Quebec%2C_Limoilou_12.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:IGA_store_in_Quebec,_Limoilou_12.jpg",
+    "author": "Wilfredor",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "IGA store in Quebec, Limoilou 12",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/IGA_store_in_Quebec%2C_Limoilou_13.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/IGA_store_in_Quebec%2C_Limoilou_13.jpg/960px-IGA_store_in_Quebec%2C_Limoilou_13.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:IGA_store_in_Quebec,_Limoilou_13.jpg",
+    "author": "Wilfredor",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "IGA store in Quebec, Limoilou 13",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "convenience": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Shelves_in_a_Ralphs_grocery_store.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Shelves_in_a_Ralphs_grocery_store.jpg/960px-Shelves_in_a_Ralphs_grocery_store.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Shelves_in_a_Ralphs_grocery_store.jpg",
+    "author": "Downtowngal",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Shelves in a Ralphs grocery store",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Familymart_sunc%5En.eko_02.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Familymart_sunc%5En.eko_02.JPG/960px-Familymart_sunc%5En.eko_02.JPG",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Familymart_sunc%5En.eko_02.JPG",
+    "author": "Ellif",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Familymart sunc^n.eko 02",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Bento_Boxes_in_Japanese_Convenience_Store_%2813539630195%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Bento_Boxes_in_Japanese_Convenience_Store_%2813539630195%29.jpg/960px-Bento_Boxes_in_Japanese_Convenience_Store_%2813539630195%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Bento_Boxes_in_Japanese_Convenience_Store_(13539630195).jpg",
+    "author": "Martin Lewison",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "wikimedia_commons",
+    "depicts": "Bento Boxes in Japanese Convenience Store (13539630195)",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "clothes": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/2008_Taipei_In_Style_Outdoor_Fashion_Show_Clothes_Racks.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/2008_Taipei_In_Style_Outdoor_Fashion_Show_Clothes_Racks.jpg/960px-2008_Taipei_In_Style_Outdoor_Fashion_Show_Clothes_Racks.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:2008_Taipei_In_Style_Outdoor_Fashion_Show_Clothes_Racks.jpg",
+    "author": "Rico Shen",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "2008 Taipei In Style Outdoor Fashion Show Clothes Racks",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Interior_sports_clothing_store_Cala_Millor.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Interior_sports_clothing_store_Cala_Millor.jpg/960px-Interior_sports_clothing_store_Cala_Millor.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Interior_sports_clothing_store_Cala_Millor.jpg",
+    "author": "Steffen Mokosch",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Interior sports clothing store Cala Millor",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Bespoke_Coat_Rack.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Bespoke_Coat_Rack.jpg/960px-Bespoke_Coat_Rack.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Bespoke_Coat_Rack.jpg",
+    "author": "Christoph2109",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Bespoke Coat Rack",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Swastika_coat_rack.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Swastika_coat_rack.jpg/960px-Swastika_coat_rack.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Swastika_coat_rack.jpg",
+    "author": "Sarang",
+    "license": "Public domain",
+    "license_url": null,
+    "source": "wikimedia_commons",
+    "depicts": "Swastika coat rack",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "shop": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Colored_pencils_chevre.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Colored_pencils_chevre.jpg/960px-Colored_pencils_chevre.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Colored_pencils_chevre.jpg",
+    "author": "Chevre",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "wikimedia_commons",
+    "depicts": "Colored pencils chevre",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Colouring_pencils.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Colouring_pencils.jpg/960px-Colouring_pencils.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Colouring_pencils.jpg",
+    "author": "MichaelMaggs",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Colouring pencils",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Buntstifte_--_2021_--_9151.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Buntstifte_--_2021_--_9151.jpg/960px-Buntstifte_--_2021_--_9151.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Buntstifte_--_2021_--_9151.jpg",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Buntstifte -- 2021 -- 9151",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "pharmacy": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Brest_Greenberg_Pharmacy_Interior_2024-09-20_3798.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Brest_Greenberg_Pharmacy_Interior_2024-09-20_3798.jpg/960px-Brest_Greenberg_Pharmacy_Interior_2024-09-20_3798.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Brest_Greenberg_Pharmacy_Interior_2024-09-20_3798.jpg",
+    "author": "Mike1979 Russia",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Brest Greenberg Pharmacy Interior 2024-09-20 3798",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Hospital_Pharmacy.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Hospital_Pharmacy.JPG/960px-Hospital_Pharmacy.JPG",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Hospital_Pharmacy.JPG",
+    "author": "User:Mattes",
+    "license": "Public domain",
+    "license_url": null,
+    "source": "wikimedia_commons",
+    "depicts": "Hospital Pharmacy",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Sekkisei_at_a_drugstore_in_Japan.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Sekkisei_at_a_drugstore_in_Japan.jpg/960px-Sekkisei_at_a_drugstore_in_Japan.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Sekkisei_at_a_drugstore_in_Japan.jpg",
+    "author": "毒島みるく",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Sekkisei at a drugstore in Japan",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Castellon_Pharmacy_New_Orleans_Empty_Shelves_where_TP_and_Wipes_were.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Castellon_Pharmacy_New_Orleans_Empty_Shelves_where_TP_and_Wipes_were.jpg/960px-Castellon_Pharmacy_New_Orleans_Empty_Shelves_where_TP_and_Wipes_were.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Castellon_Pharmacy_New_Orleans_Empty_Shelves_where_TP_and_Wipes_were.jpg",
+    "author": "Infrogmation of New Orleans",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Castellon Pharmacy New Orleans Empty Shelves where TP and Wipes were",
+    "generic": true,
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Empty_shelves_in_one_pharmacy_in_Suzhou-20220214.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Empty_shelves_in_one_pharmacy_in_Suzhou-20220214.jpg/960px-Empty_shelves_in_one_pharmacy_in_Suzhou-20220214.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Empty_shelves_in_one_pharmacy_in_Suzhou-20220214.jpg",
+    "author": "Shwangtianyuan",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Empty shelves in one pharmacy in Suzhou-20220214",
+    "generic": true,
+    "astana": false
+   }
+  ],
+  "landmark": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Central_Downtown_Astana_pamorama.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Central_Downtown_Astana_pamorama.jpg/960px-Central_Downtown_Astana_pamorama.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Central_Downtown_Astana_pamorama.jpg",
+    "author": "Ken and Nyetta",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "wikimedia_commons",
+    "depicts": "Central Downtown Astana pamorama",
+    "generic": true,
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Sunny_January_Day_on_Astana%27s_Ishim_River_%286658586715%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Sunny_January_Day_on_Astana%27s_Ishim_River_%286658586715%29.jpg/960px-Sunny_January_Day_on_Astana%27s_Ishim_River_%286658586715%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Sunny_January_Day_on_Astana%27s_Ishim_River_(6658586715).jpg",
+    "author": "Ken and Nyetta",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "wikimedia_commons",
+    "depicts": "Sunny January Day on Astana's Ishim River (6658586715)",
+    "generic": true,
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Astana-kazakhstan.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Astana-kazakhstan.JPG/960px-Astana-kazakhstan.JPG",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana-kazakhstan.JPG",
+    "author": "Kjwathne",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Astana-kazakhstan",
+    "generic": true,
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Astana-2021-10_-_12.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Astana-2021-10_-_12.jpg/960px-Astana-2021-10_-_12.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_12.jpg",
+    "author": "Vyacheslav Bukharov",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Astana-2021-10 - 12",
+    "generic": true,
+    "astana": true
    }
   ]
  },

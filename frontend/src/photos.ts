@@ -68,7 +68,45 @@ export function pickBySeed<T>(items: T[] | undefined, seed: string): T | null {
 
 export const imgSrc = (i: ImageRef) => i.thumb_url || i.url
 
-/** Иллюстрации категорий для выдачи без повторов: одно фото — максимум одной карточке. */
+/** Можно ли показывать фото категории как иллюстрацию: нейтральный кадр или снятое в Астане без привязки к месту. */
+function usableIllustration(img: ImageRef): boolean {
+  return img.generic === true || (img.astana === true && !img.poi_id)
+}
+
+// Если у категории нет подходящих иллюстраций — берём из близких по смыслу (не из случайных).
+const RELATED: Record<string, string[]> = {
+  cafe: ['restaurant', 'bar'],
+  restaurant: ['cafe'],
+  bar: ['nightlife', 'restaurant'],
+  nightlife: ['bar'],
+  kids: ['playground', 'entertainment'],
+  playground: ['kids', 'park'],
+  entertainment: ['kids', 'cinema'],
+  convenience: ['supermarket', 'market', 'shop'],
+  supermarket: ['convenience', 'market'],
+  market: ['supermarket'],
+  shop: ['mall', 'clothes'],
+  clothes: ['shop', 'mall'],
+  mall: ['shop', 'clothes'],
+  pharmacy: [],
+  wellness: ['sport'],
+  sport: ['wellness'],
+  museum: ['gallery'],
+  gallery: ['museum'],
+  theatre: ['cinema'],
+  cinema: ['theatre', 'entertainment'],
+  monument: ['landmark', 'viewpoint'],
+  viewpoint: ['landmark', 'monument'],
+  landmark: ['monument', 'viewpoint'],
+  park: ['landmark'],
+  library: ['coworking'],
+  coworking: ['library', 'cafe'],
+}
+
+/**
+ * Иллюстрации для карточек без своего фото: детерминированно по poi_id, по возможности без повторов в одной выдаче.
+ * Фото другого конкретного места (с чужим poi_id) не используется никогда; заглушка — только если нет ничего.
+ */
 export function assignIllustrations(
   recs: { poi_id: string; category: string; image?: ImageRef | null }[],
   categories: Record<string, ImageRef[]>,
@@ -77,9 +115,11 @@ export function assignIllustrations(
   for (const r of recs) if (r.image) used.add(r.image.url)
   return recs.map((r) => {
     if (r.image) return null
-    // Иллюстрация — только снятое в Астане и не фото другого конкретного места (свой poi_id).
-    // Зарубежные кадры часто с чужими вывесками и надписями (иероглифы, грузинский ларёк) — вместо них заглушка категории.
-    const list = (categories[r.category] ?? []).filter((img) => img.astana === true && (!img.poi_id || img.poi_id === r.poi_id))
+    let list: ImageRef[] = []
+    for (const c of [r.category, ...(RELATED[r.category] ?? [])]) {
+      list = (categories[c] ?? []).filter(usableIllustration)
+      if (list.length) break
+    }
     if (!list.length) return null
     const start = list.indexOf(pickBySeed(list, r.poi_id)!)
     for (let k = 0; k < list.length; k++) {
@@ -89,6 +129,6 @@ export function assignIllustrations(
         return img
       }
     }
-    return null // все фото категории уже показаны — лучше цветовой блок, чем повтор
+    return list[start] // все уже показаны — лучше повтор, чем пустой блок
   })
 }

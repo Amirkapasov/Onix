@@ -78,6 +78,7 @@ export interface ImageRef {
   source?: string
   // только у фото категорий (data/category_photos.json)
   astana?: boolean
+  generic?: boolean // нейтральный кадр категории, не конкретное заведение
   poi_id?: string
   depicts?: string
 }

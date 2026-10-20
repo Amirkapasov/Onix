@@ -29,36 +29,168 @@ CACHE = RAW / "commons"
 ALLOWED_LICENSE = re.compile(r"^(cc0|cc-zero|public domain|pd\b.*|cc[ -]by(-sa)?( \d(\.\d)?)?( [a-z]{2,})?)$", re.I)
 IMAGE_EXT = re.compile(r"\.(jpe?g|png|webp|tiff?)$", re.I)
 
-# Фолбэк-фото по категориям. Сначала — фото самих мест Астаны этой категории (POI_FIRST),
-# затем отобранные вручную файлы Commons (просмотрены глазами: поиск по Commons выдаёт много мусора).
-# Лицензия и наличие каждого файла всё равно проверяются через API при каждой сборке.
-POI_FIRST = {"park", "museum", "monument", "theatre", "religious", "sport", "viewpoint", "mall"}
-CURATED = {
-    "park": ["File:Fountain in Lovers Park.jpg"],
-    "landmark": ["File:Astana-2021-10 - 25.jpg", "File:Central Downtown Astana pamorama.jpg"],
-    "mall": ["File:Keruen mall, interior, Astana, 2026.jpg"],
-    "viewpoint": ["File:View from Bayterek tower.jpg"],
-    "cafe": ["File:Starbucks coffee shop interior design.jpg", "File:Bauirsaq with candy.jpg"],
-    "restaurant": ["File:Darijani, Astana (LRM 20240819 173519).jpg",
-                   "File:Daredzhani, Astana (20240819-2024-08-19 14.35.19).jpg"],
-    "wellness": ["File:Indoor pool of spa with open door at Amantaka luxury Resort & Hotel in Luang Prabang Laos.jpg"],
-    "playground": ["File:Ma Wan Children's Playground 01.jpg"],
-    "kids": ["File:Tung Tao Court Indoor playground 201407.jpg", "File:Siu Sai Wan Complex Children Play Room 2015.jpg"],
-    "cinema": ["File:Cinema Roma interiör.jpg", "File:Interior of hall at CInema Museum, Kennington Lambeth.jpg"],
-    "gallery": ["File:Interior of Christchurch Art Gallery, New Zealand 04.jpg"],
-    "library": ["File:Liverpool Central Library Picton Reading Room - panoramio.jpg",
-                "File:Graz University-Library reading-room.jpg"],
-    "entertainment": ["File:Splitz bowling alley, Jacksonville.jpg", "File:Escape Room by Midgaard Event.jpg"],
-    "supermarket": ["File:Molmart, Astana, 2026.jpg", "File:Cheeses, Galmart, Keruen mall, Astana, 2026.jpg"],
-    "convenience": ["File:Convenience store. Tetrikhevi.jpg"],
-    "clothes": ["File:Jacadi shop, Keruen mall, Astana, 2026.jpg"],
-    "shop": ["File:Keruen mall, interior, Astana, 2026.jpg"],
-    "pharmacy": ["File:Конаев, Абая 18а.jpg"],
-    "market": ["File:Зелёный базар в Алматы (Казахстан).jpg"],
-    "coworking": ["File:Coworking Space in Columbus Ohio.jpg", "File:Coworking space 2026-09-27.jpg"],
-    "bar": ["File:Bar in Bristol.jpg"],
-    "nightlife": ["File:Night at Esil District, Astana (P1190721).jpg"],
+# Нейтральные иллюстрации категорий (generic): не изображают конкретное узнаваемое заведение с вывеской.
+# Отобраны вручную по контактным листам из поиска Commons (в основном «Quality images»); (файл, подтег).
+GENERIC = {
+    'cafe': [
+        ('File:A cup of coffee in Mohk.jpg', None),
+        ('File:Cup of coffee (Serbian cuisine, Grand kava).jpg', None),
+        ('File:Espresso Coffee 01.jpg', None),
+    ],
+    'restaurant': [
+        ('File:Baghala polo.jpg', None),
+        ('File:Loobia Polo.jpg', None),
+        ('File:Bangladeshi Polao 1.jpg', None),
+        ('File:Hamburg, Jungfernstieg -- 2016 -- 4182.jpg', None),
+    ],
+    'bar': [
+        ('File:Cocktail-Bar (Kleines Phi) in Hamburg.jpg', None),
+        ('File:Casa Classic Cocktail Bar & Jazz Club by Roland Barrera.jpg', None),
+        ('File:Interior view of Golden Era Cocktail Lounge in Nevada City.jpg', None),
+        ('File:Cure cocktail bar New Orleans 2011.jpg', None),
+    ],
+    'nightlife': [
+        ('File:Long Island City New York May 2015 panorama 3.jpg', None),
+        ('File:Melbourne (AU), Melbourne City Centre -- 2019 -- 1493-7.jpg', None),
+        ('File:Sydney (AU), Darling Harbour -- 2019 -- 3193-5.jpg', None),
+    ],
+    'museum': [
+        ('File:Hall of Minerals – National Museum in Prague 03.jpg', None),
+        ('File:Hall of Minerals – National Museum in Prague 02.jpg', None),
+        ('File:Animated lion and African buffalo taxidermy Powell-Cotton Museum, Birchington Kent England.jpg', None),
+    ],
+    'gallery': [
+        ('File:Exhibition views with visitors – ART FUSION BASEL 2022 05.jpg', None),
+        ('File:Exhibition views with visitors – ART FUSION BASEL 2022 06.jpg', None),
+        ('File:Exhibition views with visitors – ART FUSION BASEL 2022 08.jpg', None),
+    ],
+    'theatre': [
+        ('File:Grand Théâtre Tours - Scène et parterre.jpg', None),
+        ('File:War Memorial Opera House auditorium chandelier.jpg', None),
+        ('File:War Memorial Opera House auditorium upper levels.jpg', None),
+    ],
+    'cinema': [
+        ('File:Lichtburg-Essen-Kinosaal-2025.jpg', None),
+        ('File:Columbia City Cinema main hall.jpg', None),
+        ('File:Luxury Movie Theater Seats.jpg', None),
+        ('File:4DX seats in cinema (motion and environmental effects synced with the on-screen action) bench rows in a movie theater hall Kinostoler kinosal Kilden kino Tønsberg, Norway 2023 IMG 7849.jpg', None),
+    ],
+    'park': [
+        ('File:A garden path and lawn Gibberd Garden Essex England.JPG', None),
+        ('File:Tübingen - Neckarinsel - Blick entlang Neckar im Herbst.jpg', None),
+        ('File:Park Środula, Sosnowiec, Jesień 2021.jpg', None),
+        ('File:Dülmen, Merfeld, Von-Galen-Park -- 2013 -- 2367.jpg', None),
+        ('File:Viru Bog at winter.jpg', None),
+    ],
+    'viewpoint': [
+        ('File:View of Fukuoka City from West Observation Deck of Minami Park (northeast).jpg', None),
+        ('File:View of Fukuoka City from West Observation Deck of Minami Park (north).jpg', None),
+        ('File:View of Fukuoka City from West Observation Deck of Minami Park (southwest).jpg', None),
+        ('File:View from Bayterek tower.jpg', None),
+    ],
+    'monument': [
+        ('File:Dresden, Schloss, Ruhender Hirsch (Dezember 2023).jpg', None),
+        ('File:Luxembourg City monument Guillaume II statue 2011.jpg', None),
+    ],
+    'religious': [
+        ('File:Sheikh-Lotf-Allah mosque wall and ceiling 2.jpg', None),
+        ('File:Jame mosque of Yazd.jpg', None),
+        ('File:Ribbed vault of Jameh Mosque of Isfahan.jpg', None),
+        ('File:Ајдар кади џамија, Битола (enterance domes of Hajdar Kadi Mosque, Bitola).jpg', None),
+    ],
+    'mall': [
+        ('File:Bamberg Atrium Rolltreppen-20180417-RM-171311.jpg', None),
+        ('File:Villach Warmbad Einkaufszentrum ATRIO 19032015 0900.jpg', None),
+        ('File:Villach Warmbad Einkaufszentrum ATRIO 19032015 0904.jpg', None),
+        ('File:The Bay Centre, Victoria, British Columbia, Canada 004.jpg', None),
+    ],
+    'playground': [
+        ('File:Spielplatz Volkshain-Stünz – Rutsche.jpg', None),
+        ('File:Klettergerüst mit Rutsche vom Spielplatz beim General Kalb Weg München Bild 2 2025-04-13.jpg', None),
+        ('File:2025. Torre con tobogán. Parque infantil da Alameda de Compostela. Galiza.jpg', None),
+        ('File:2026. Parque infantil de Belvís. Santiago de Compostela. Galiza. 04.jpg', None),
+        ('File:Playground swing 03.jpg', None),
+    ],
+    'kids': [
+        ('File:Happy Duck Round The World ball pit at BHG Shangdi (20210813160534).jpg', None),
+        ('File:Asobono ball pool.jpg', None),
+        ('File:Hometrampoline.jpg', None),
+        ('File:Poland 2025 350 Czarna Góra - Colourful Play Area.jpg', None),
+    ],
+    'entertainment': [
+        ('File:Bowling Alley Pelixir Oulu 20150110.JPG', None),
+        ('File:The New HUB Bowling Alley (7975562172).jpg', None),
+        ('File:Bowling Corner & Billiard interior 01.jpg', None),
+        ('File:Château de Malmaison - Salle de billard 001.jpg', None),
+        ('File:Le château de Rundal (Rundal Pils) (3).JPG', None),
+    ],
+    'sport': [
+        ('File:Rijksmuseum winter 7441.jpg', None),
+        ('File:Outdoor ice rink - Aerial view (1).jpg', None),
+        ('File:2026-01-10 Dresdner Eislöwen gegen Eisbären Berlin (DEL Winter Game 2026, Deutsche Eishockey-Liga 2025-26) by Sandro Halank–047.jpg', None),
+    ],
+    'wellness': [
+        ('File:Swimming Pool lanes and starting blocks.jpg', 'pool'),
+        ('File:Swimming Pool lanes and starting blocks at AIS.jpg', 'pool'),
+        ('File:Gym Dumbbells For Working Out (193383405).jpeg', 'fitness'),
+        ('File:Colorful pile of dumbbells at the gym.jpg', 'fitness'),
+        ('File:Smoke sauna stove Utsjoki.JPG', 'sauna'),
+        ('File:Wood stove of smoke sauna of Kuusijärvi, Kuninkaanmäki, Vantaa, Finland, 2023 April - 2.jpg', 'sauna'),
+    ],
+    'library': [
+        ('File:Bookshelf Prunksaal OeNB Vienna AT matl00786ch.jpg', None),
+        ('File:13-11-02-olb-by-RalfR-03.jpg', None),
+        ('File:Providence Athenaeum interior 2013.jpg', None),
+        ('File:Westmount Public Library by Rodrigo Tetsuo Argenton (03).jpg', None),
+    ],
+    'coworking': [
+        ('File:The Venture Studios Best coworking space in HSR Layout.jpg', None),
+        ('File:Cowork Videmonte.jpg', None),
+        ('File:Desks in an open office space (Unsplash).jpg', None),
+        ('File:Working in open office space (Unsplash).jpg', None),
+    ],
+    'market': [
+        ('File:Fruit Stall in Barcelona Market.jpg', None),
+        ('File:Burrabazar Market in Kolkata 09.jpg', None),
+        ('File:Gesundes Leben 002 2014 03 19.jpg', None),
+    ],
+    'supermarket': [
+        ('File:Metro (supermarket) 02.jpg', None),
+        ('File:Metro (supermarket) 04.jpg', None),
+        ('File:IGA store in Quebec, Limoilou 12.jpg', None),
+        ('File:IGA store in Quebec, Limoilou 13.jpg', None),
+    ],
+    'convenience': [
+        ('File:Shelves in a Ralphs grocery store.jpg', None),
+        ('File:Familymart sunc^n.eko 02.JPG', None),
+        ('File:Bento Boxes in Japanese Convenience Store (13539630195).jpg', None),
+    ],
+    'clothes': [
+        ('File:2008 Taipei In Style Outdoor Fashion Show Clothes Racks.jpg', None),
+        ('File:Interior sports clothing store Cala Millor.jpg', None),
+        ('File:Bespoke Coat Rack.jpg', None),
+        ('File:Swastika coat rack.jpg', None),
+    ],
+    'shop': [
+        ('File:Colored pencils chevre.jpg', None),
+        ('File:Colouring pencils.jpg', None),
+        ('File:Buntstifte -- 2021 -- 9151.jpg', None),
+    ],
+    'pharmacy': [
+        ('File:Brest Greenberg Pharmacy Interior 2024-09-20 3798.jpg', None),
+        ('File:Hospital Pharmacy.JPG', None),
+        ('File:Sekkisei at a drugstore in Japan.jpg', None),
+        ('File:Castellon Pharmacy New Orleans Empty Shelves where TP and Wipes were.jpg', None),
+        ('File:Empty shelves in one pharmacy in Suzhou-20220214.jpg', None),
+    ],
+    'landmark': [
+        ('File:Central Downtown Astana pamorama.jpg', None),
+        ("File:Sunny January Day on Astana's Ishim River (6658586715).jpg", None),
+        ('File:Astana-kazakhstan.JPG', None),
+        ('File:Astana-2021-10 - 12.jpg', None),
+    ],
 }
+
 HERO = [
     ("Байтерек ночью", "File:Night at Esil District, Astana (P1190721).jpg"),
     ("Хан Шатыр", "File:Khan Shatyr.jpg"),
@@ -111,15 +243,23 @@ def _file_title(value: str | None) -> str | None:
     return None
 
 
-def _p18(qids: list[str]) -> dict[str, str]:
-    """qid → 'File:…' из P18, иначе 'Category:…' из P373 (Commons-категория объекта)."""
+SITELINK_WIKIS = {"ruwiki": "ru", "kkwiki": "kk", "enwiki": "en"}
+
+
+def _p18(qids: list[str], sitelinks: dict | None = None) -> dict[str, str]:
+    """qid → 'File:…' из P18, иначе 'Category:…' из P373 (Commons-категория объекта).
+    В sitelinks (если передан) складывает qid → [(язык, статья)] для поиска главного фото статьи."""
     out = {}
     qids = sorted(set(qids))
     for i in range(0, len(qids), BATCH):
         chunk = qids[i:i + BATCH]
-        obj = _cached("p18:" + "|".join(chunk), lambda c=chunk: _api(WD_API, {
-            "action": "wbgetentities", "ids": "|".join(c), "props": "claims"}))
+        obj = _cached("p18sl:" + "|".join(chunk), lambda c=chunk: _api(WD_API, {
+            "action": "wbgetentities", "ids": "|".join(c), "props": "claims|sitelinks",
+            "sitefilter": "|".join(SITELINK_WIKIS)}))
         for qid, ent in (obj.get("entities") or {}).items():
+            if sitelinks is not None:
+                sitelinks[qid] = [(SITELINK_WIKIS[k], v["title"]) for k, v in (ent.get("sitelinks") or {}).items()
+                                  if k in SITELINK_WIKIS]
             for claim in (ent.get("claims") or {}).get("P18", []):
                 val = claim.get("mainsnak", {}).get("datavalue", {}).get("value")
                 if val:
@@ -132,6 +272,36 @@ def _p18(qids: list[str]) -> dict[str, str]:
                         out[qid] = "Category:" + val
                         break
     return out
+
+
+def _page_images(refs: list[tuple[str, str]]) -> dict[tuple[str, str], str]:
+    """(язык, статья) → 'File:…' — главное изображение статьи Википедии (prop=pageimages)."""
+    out: dict[tuple[str, str], str] = {}
+    by_lang: dict[str, list[str]] = {}
+    for lang, title in set(refs):
+        by_lang.setdefault(lang, []).append(title)
+    for lang, titles in by_lang.items():
+        titles = sorted(set(titles))
+        api = f"https://{lang}.wikipedia.org/w/api.php"
+        for i in range(0, len(titles), BATCH):
+            chunk = titles[i:i + BATCH]
+            obj = _cached(f"pi:{lang}:" + "|".join(chunk), lambda c=chunk, a=api: _api(a, {
+                "action": "query", "prop": "pageimages", "piprop": "name", "redirects": 1, "titles": "|".join(c)}))
+            q = obj.get("query") or {}
+            alias = {n["to"]: n["from"] for n in q.get("normalized", []) + q.get("redirects", [])}
+            for page in q.get("pages", []):
+                if page.get("pageimage"):
+                    src = page["title"]
+                    while src in alias:
+                        src = alias[src]
+                    out[(lang, src)] = "File:" + page["pageimage"].replace("_", " ")
+    return out
+
+
+def _wiki_ref(tag: str | None) -> tuple[str, str] | None:
+    """OSM wikipedia='ru:Байтерек (монумент)' → ('ru', 'Байтерек (монумент)')."""
+    m = re.match(r"^([a-z]{2,3}):(.+)$", (tag or "").strip())
+    return (m.group(1), m.group(2).replace("_", " ")) if m else None
 
 
 def _category_first_file(category: str) -> str | None:
@@ -199,7 +369,8 @@ def public(img: dict | None) -> dict | None:
 
 def attach(pois: list[dict]) -> str:
     qids = [p["_wikidata"] for p in pois if p.get("_wikidata")]
-    p18 = _p18(qids)
+    sitelinks: dict[str, list] = {}
+    p18 = _p18(qids, sitelinks)
     title_of: dict[str, str] = {}
     for p in pois:
         t = p18.get(p.get("_wikidata") or "")
@@ -214,6 +385,24 @@ def attach(pois: list[dict]) -> str:
             t = next((f for rx, f in MANUAL_POI_IMAGES if re.search(rx, p["name"], re.I)), None)
         if t:
             title_of[p["id"]] = t
+
+    # Главное изображение статьи Википедии — для мест со статьёй, но без P18/тегов Commons
+    want: dict[str, list[tuple[str, str]]] = {}
+    for p in pois:
+        if p["id"] in title_of:
+            continue
+        refs = list(sitelinks.get(p.get("_wikidata") or "", []))
+        if (r := _wiki_ref(p.get("_wikipedia"))):
+            refs.append(r)
+        if refs:
+            want[p["id"]] = sorted(refs, key=lambda r: ["ru", "kk", "en"].index(r[0]) if r[0] in ("ru", "kk", "en") else 9)
+    pi = _page_images([r for refs in want.values() for r in refs])
+    from_wiki = 0
+    for pid, refs in want.items():
+        t = next((pi[r] for r in refs if r in pi), None)
+        if t:
+            title_of[pid] = t
+            from_wiki += 1
     infos = imageinfo(list(title_of.values()))
     with_img = rejected = 0
     for p in pois:
@@ -223,7 +412,8 @@ def attach(pois: list[dict]) -> str:
         p["_image_full"] = img
         p["image"] = public(img)
         with_img += bool(img)
-    msg = f"ok: файлов найдено {len(title_of)}, с подходящей лицензией {with_img}, отклонено {rejected}"
+    msg = (f"ok: файлов найдено {len(title_of)} (из них по статьям Википедии {from_wiki}), "
+           f"с подходящей лицензией {with_img}, отклонено {rejected}")
     log("  Commons: " + msg)
     return msg
 
@@ -235,30 +425,29 @@ def _good(img: dict | None, min_w: int = 1000) -> bool:
 
 
 def build_category_photos(pois: list[dict]) -> str:
-    out: dict = {"_comment": "Фолбэк-фото по категориям для мест без своего фото (помечать «иллюстрация») "
-                             "и обложка (hero). Все — Wikimedia Commons, свободные лицензии; атрибуция обязательна. "
-                             "astana=true — снято в Астане.",
+    """data/category_photos.json: нейтральные иллюстрации по категориям (generic) и обложка (hero)."""
+    out: dict = {"_comment": "Иллюстрации категорий для мест без своего фото (помечать «иллюстрация»): "
+                             "generic=true — не конкретное заведение; astana=true — снято в Астане/Казахстане; "
+                             "tag — подтип внутри категории (wellness: pool/fitness/sauna). hero — обложка. "
+                             "Все фото — Wikimedia Commons, свободные лицензии; атрибуция обязательна.",
                  "categories": {}, "hero": []}
-    by_cat: dict[str, list[dict]] = {}
-    for p in sorted(pois, key=lambda p: -(p.get("popularity") or 0)):
-        img = p.get("_image_full")
-        if p["category"] in POI_FIRST and _good(img):
-            by_cat.setdefault(p["category"], []).append(
-                {**public(img), "depicts": p["name"], "poi_id": p["id"], "astana": True})
-    infos = imageinfo([t for ts in CURATED.values() for t in ts] + [t for _, t in HERO])
+    infos = imageinfo([t for items in GENERIC.values() for t, _ in items] + [t for _, t in HERO])
     missing = []
-    for cat in sorted(set(by_cat) | set(CURATED)):
-        picked = by_cat.get(cat, [])[:1]
-        for t in CURATED.get(cat, []):
+    for cat, items in GENERIC.items():
+        picked = []
+        for t, tag in items:
             img = infos.get(t)
             if not img:
                 missing.append(t)
-            elif len(picked) < 2 and all(x["url"] != img["url"] for x in picked):
-                name = t[5:].rsplit(".", 1)[0]
-                picked.append({**public(img), "depicts": name, "astana": bool(re.search(r"astana|астан|nur-sultan", name, re.I))})
-        picked += by_cat.get(cat, [])[1:2 - len(picked) + 1] if len(picked) < 2 else []
+                continue
+            name = t[5:].rsplit(".", 1)[0]
+            entry = {**public(img), "depicts": name, "generic": True,
+                     "astana": bool(re.search(r"astana|астан|nur-sultan|kazakhstan|казахстан", name, re.I))}
+            if tag:
+                entry["tag"] = tag
+            picked.append(entry)
         if picked:
-            out["categories"][cat] = picked[:2]
+            out["categories"][cat] = picked
     for label, t in HERO:
         img = infos.get(t)
         if img:
@@ -266,7 +455,8 @@ def build_category_photos(pois: list[dict]) -> str:
         else:
             missing.append(t)
     (DATA / "category_photos.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
-    msg = f"категорий с фото {len(out['categories'])}, обложек {len(out['hero'])}"
+    n = sum(len(v) for v in out["categories"].values())
+    msg = f"generic-фото {n} в {len(out['categories'])} категориях, обложек {len(out['hero'])}"
     if missing:
         msg += f"; недоступно/не та лицензия: {len(missing)}"
         log("  нет фото: " + "; ".join(missing))
