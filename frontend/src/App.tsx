@@ -112,7 +112,7 @@ export default function App() {
     if (!USE_MOCK) {
       fetchHealth().then(setBackendUp)
       fetchPois([51.0, 71.3, 51.22, 71.6])
-        .then((items) => setPois(items.slice(0, 1500)))
+        .then(setPois)
         .catch(() => setPois([]))
     }
   }, [])
@@ -371,6 +371,16 @@ export default function App() {
   // Время, которое уйдёт с запросом (пресет или выбор в «Параметрах»): вечер/ночь → «ночной город» на карте.
   const effTime = controls.presetTime ?? slotToIso(controls.slot)
   const night = isNightIso(effTime)
+  // Плавный переход цветов включаем только на время смены день/ночь — в остальное время без лишних пересчётов стилей.
+  const [themeSwitching, setThemeSwitching] = useState(false)
+  const prevNight = useRef(night)
+  useEffect(() => {
+    if (prevNight.current === night) return
+    prevNight.current = night
+    setThemeSwitching(true)
+    const id = window.setTimeout(() => setThemeSwitching(false), 700)
+    return () => window.clearTimeout(id)
+  }, [night])
   // Обложка — первое фото курированного списка (стабильно для демо и скриншотов).
   const hero = photos.hero[0] ?? null
 
@@ -400,7 +410,7 @@ export default function App() {
       </section>
 
       {/* Панель / bottom sheet */}
-      <aside className={`theme-anim ${night ? 'theme-night' : ''} relative z-10 -mt-6 rounded-t-[28px] bg-white shadow-[0_-10px_30px_rgb(11_37_69/0.10)] lg:order-1 lg:mt-0 lg:overflow-y-auto lg:rounded-none lg:border-r lg:border-ink-100 lg:shadow-none`}>
+      <aside className={`${themeSwitching ? 'theme-anim' : ''} ${night ? 'theme-night' : ''} relative z-10 -mt-6 rounded-t-[28px] bg-white shadow-[0_-10px_30px_rgb(11_37_69/0.10)] lg:order-1 lg:mt-0 lg:overflow-y-auto lg:rounded-none lg:border-r lg:border-ink-100 lg:shadow-none`}>
         <div className="mx-auto mt-2.5 h-1.5 w-10 rounded-full bg-ink-200 lg:hidden" aria-hidden />
 
         <header className="z-20 flex items-center justify-between gap-3 bg-white px-5 pb-3 pt-3 sm:px-7 lg:sticky lg:top-0 lg:border-b lg:border-ink-100 lg:pt-4">

@@ -63,7 +63,8 @@ async def api_recommend(req: RecommendRequest):
 
 @app.get("/api/pois")
 def api_pois(bbox: str | None = Query(None, description="minLat,minLon,maxLat,maxLon"),
-             category: str | None = None, limit: int = Query(5000, ge=1, le=20000)):
+             category: str | None = None, limit: int = Query(5000, ge=1, le=20000),
+             fields: str | None = Query(None, description="lite — только поля для точек на карте (в ~8 раз легче)")):
     items = store.get()
     if bbox:
         try:
@@ -74,7 +75,13 @@ def api_pois(bbox: str | None = Query(None, description="minLat,minLon,maxLat,ma
     if category:
         cats = set(category.split(","))
         items = [p for p in items if p.get("category") in cats]
-    return {"items": items[:limit]}
+    items = items[:limit]
+    if fields == "lite":  # точки на карте: без описаний, источников и фото — ответ в разы меньше
+        items = [{k: p.get(k) for k in LITE_FIELDS} for p in items]
+    return JSONResponse({"items": items}, headers={"Cache-Control": "public, max-age=300"})
+
+
+LITE_FIELDS = ("id", "name", "lat", "lon", "category", "opening_hours")
 
 
 @app.get("/api/presets")

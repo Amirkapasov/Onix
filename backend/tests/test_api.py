@@ -272,3 +272,10 @@ def test_category_photos_endpoint(tmp_path, monkeypatch):
 def test_recommendation_has_image_field():
     d = client.post("/api/recommend", json=_body(_presets()[0])).json()
     assert all("image" in r for r in d["recommendations"])
+
+
+def test_pois_lite_fields_are_small():
+    full = client.get("/api/pois").json()["items"]
+    lite = client.get("/api/pois", params={"fields": "lite"}).json()["items"]
+    assert len(lite) == len(full)
+    assert set(lite[0]) == {"id", "name", "lat", "lon", "category", "opening_hours"}

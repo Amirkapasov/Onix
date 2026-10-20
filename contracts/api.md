@@ -106,6 +106,7 @@
 
 ## GET /api/pois?bbox=minLat,minLon,maxLat,maxLon&category=museum
 Возвращает `{ "items": [POI…] }` (поля по `contracts/poi.schema.json`) — для отображения точек на карте.
+С `fields=lite` — облегчённый список для фонового слоя карты: только `id, name, lat, lon, category, opening_hours` (~0,4 МБ на всю базу вместо ~2,4 МБ).
 
 ## GET /api/presets
 Готовые сценарии для кнопок демо:

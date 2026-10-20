@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { memo, useEffect, useMemo, useState } from 'react'
 import { Circle, CircleMarker, MapContainer, Marker, Polyline, TileLayer, Tooltip, ZoomControl, useMap, useMapEvents } from 'react-leaflet'
 import L from 'leaflet'
 import { Moon, MousePointerClick } from 'lucide-react'
@@ -117,6 +117,35 @@ function ResizeWatcher() {
   return null
 }
 
+/**
+ * Фоновые точки POI: один canvas вместо тысяч SVG-элементов, без подсказок и без анимаций (не грузит CPU).
+ * Ночью открытые по часам места — статичное тёплое свечение: широкий полупрозрачный круг + яркий центр.
+ */
+const PoiLayer = memo(function PoiLayer({ pois, night, openIds }: { pois: Poi[]; night: boolean; openIds: Set<string> | null }) {
+  const map = useMap()
+  const renderer = useMemo(() => L.canvas({ padding: 0.2 }), [])
+  useEffect(() => {
+    const group = L.layerGroup()
+    const base = { renderer, interactive: false, stroke: false } as const
+    for (const p of pois) {
+      const ll: [number, number] = [p.lat, p.lon]
+      if (!night) {
+        L.circleMarker(ll, { ...base, radius: 2.5, fillColor: NAVY, fillOpacity: 0.28 }).addTo(group)
+      } else if (openIds?.has(p.id)) {
+        L.circleMarker(ll, { ...base, radius: 7, fillColor: AMBER, fillOpacity: 0.22 }).addTo(group)
+        L.circleMarker(ll, { ...base, radius: 2.8, fillColor: GOLD, fillOpacity: 1 }).addTo(group)
+      } else {
+        L.circleMarker(ll, { ...base, radius: 1.8, fillColor: '#8693a6', fillOpacity: 0.3 }).addTo(group)
+      }
+    }
+    group.addTo(map)
+    return () => {
+      group.remove()
+    }
+  }, [map, renderer, pois, night, openIds])
+  return null
+})
+
 export default function MapView({
   location,
   result,
@@ -133,13 +162,32 @@ export default function MapView({
   nightLabel,
   hereLabel,
 }: Props) {
-  // Ночной слой монтируется при первом вечере и дальше живёт: смена день/ночь — плавная прозрачность.
-  const [nightMounted, setNightMounted] = useState(night)
+  // Смена день/ночь: новый слой плавно проявляется поверх, старый размонтируется после перехода —
+  // одновременно грузится и рисуется только один слой тайлов.
+  const [showDay, setShowDay] = useState(!night)
+  const [showNight, setShowNight] = useState(night)
+  const [nightOpacity, setNightOpacity] = useState(night ? 1 : 0)
   useEffect(() => {
-    if (night) setNightMounted(true)
+    const delay = STATIC ? 0 : 700
+    let raf = 0
+    let timer = 0
+    if (night) {
+      setShowNight(true)
+      raf = requestAnimationFrame(() => setNightOpacity(1))
+      timer = window.setTimeout(() => setShowDay(false), delay)
+    } else {
+      setShowDay(true)
+      setNightOpacity(0)
+      timer = window.setTimeout(() => setShowNight(false), delay)
+    }
+    return () => {
+      cancelAnimationFrame(raf)
+      window.clearTimeout(timer)
+    }
   }, [night])
-  const poiOpen = useMemo(
-    () => (night ? new Map(pois.map((p) => [p.id, isOpenAt(p.opening_hours, clientTime) === true])) : null),
+  // Какие точки «горят» — считаем только при смене времени/списка, не на hover.
+  const openIds = useMemo(
+    () => (night ? new Set(pois.filter((p) => isOpenAt(p.opening_hours, clientTime) === true).map((p) => p.id)) : null),
     [night, pois, clientTime],
   )
   const recs = result?.recommendations ?? []
@@ -161,40 +209,17 @@ export default function MapView({
   return (
     <div className={`relative isolate h-full w-full ${night ? 'map-night' : ''}`}>
       <MapContainer center={[location.lat, location.lon]} zoom={13} className="h-full w-full" zoomControl={false}>
-        <TileLayer attribution={TILE_ATTR} url={TILE_URL} maxZoom={19} className={MUTED ? 'tiles-muted' : ''} />
-        {nightMounted && (
-          // Тот же OSM, инвертированный в «тёмный город»: CARTO Dark Matter теперь требует API-ключ.
-          <TileLayer url={TILE_URL} maxZoom={19} className="tiles-night" opacity={night ? 1 : 0} />
+        {showDay && <TileLayer attribution={TILE_ATTR} url={TILE_URL} maxZoom={19} className={MUTED ? 'tiles-muted' : ''} />}
+        {showNight && (
+          // Тот же OSM, инвертированный в «тёмный город» (фильтр на контейнере слоя): CARTO Dark Matter требует API-ключ.
+          <TileLayer attribution={TILE_ATTR} url={TILE_URL} maxZoom={19} className="tiles-night" opacity={nightOpacity} zIndex={2} />
         )}
         <ZoomControl position="bottomright" />
         <ClickToPick onPick={onPick} />
         <ResizeWatcher />
         <FitTo points={recPoints} location={location} />
 
-        {pois.map((p, i) => {
-          const lit = poiOpen?.get(p.id)
-          if (!night)
-            return (
-              <CircleMarker key={p.id} center={[p.lat, p.lon]} radius={2.5} pathOptions={{ color: NAVY, weight: 0, fillOpacity: 0.28 }}>
-                <Tooltip direction="top">{p.name}</Tooltip>
-              </CircleMarker>
-            )
-          // Ночью город «зажигается» там, где реально открыто; закрытые и без часов — тусклые.
-          return lit ? (
-            <CircleMarker
-              key={p.id}
-              center={[p.lat, p.lon]}
-              radius={3}
-              pathOptions={{ color: AMBER, weight: 6, opacity: 0.35, fillColor: GOLD, fillOpacity: 1, className: `glow glow-${i % 4}` }}
-            >
-              <Tooltip direction="top">{p.name}</Tooltip>
-            </CircleMarker>
-          ) : (
-            <CircleMarker key={p.id} center={[p.lat, p.lon]} radius={1.8} pathOptions={{ color: '#8693a6', weight: 0, fillOpacity: 0.3 }}>
-              <Tooltip direction="top">{p.name}</Tooltip>
-            </CircleMarker>
-          )
-        })}
+        <PoiLayer pois={pois} night={night} openIds={openIds} />
 
         {routeLine.length > 1 &&
           (night ? (

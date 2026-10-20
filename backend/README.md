@@ -1,6 +1,6 @@
 # Seruen — RAG-бэкенд (FastAPI)
 
-API строго по [`contracts/api.md`](../contracts/api.md): `POST /api/recommend`, `GET /api/pois`, `GET /api/presets`, `GET /api/health`, `POST /api/where` (ориентир и адрес по базе: `{"lat","lon","lang"}` → `{"label": "у «Байтерек», бульвар Нуржол, 14", "landmark", "address", "precision_m": 100}`; координаты не уходят наружу и не пишутся в журнал), `GET /api/category-photos` (отдаёт `data/category_photos.json`; нет файла — `{"hero": [], "categories": {}}`).
+API строго по [`contracts/api.md`](../contracts/api.md): `POST /api/recommend`, `GET /api/pois` (`?fields=lite` — только id, name, lat, lon, category, opening_hours для точек на карте, в ~6 раз легче), `GET /api/presets`, `GET /api/health`, `POST /api/where` (ориентир и адрес по базе: `{"lat","lon","lang"}` → `{"label": "у «Байтерек», бульвар Нуржол, 14", "landmark", "address", "precision_m": 100}`; координаты не уходят наружу и не пишутся в журнал), `GET /api/category-photos` (отдаёт `data/category_photos.json`; нет файла — `{"hero": [], "categories": {}}`).
 
 Фото: поле `image` (Wikimedia Commons с автором и лицензией) идёт из POI в `recommendations[]` и `/api/pois` как есть или `null`; в LLM не передаётся.
 

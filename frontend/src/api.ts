@@ -40,7 +40,8 @@ export async function fetchPresets(): Promise<Preset[]> {
 
 export async function fetchPois(bbox: [number, number, number, number]): Promise<Poi[]> {
   if (USE_MOCK) return []
-  const data = await request<{ items: Poi[] }>(`/api/pois?bbox=${bbox.map((v) => v.toFixed(3)).join(',')}`)
+  // fields=lite — только id, name, lat, lon, category, opening_hours (≈0,4 МБ вместо 2,4 МБ, кэш 5 мин)
+  const data = await request<{ items: Poi[] }>(`/api/pois?bbox=${bbox.map((v) => v.toFixed(3)).join(',')}&fields=lite`)
   return data.items ?? []
 }
 
