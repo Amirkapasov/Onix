@@ -11,6 +11,7 @@ from datetime import datetime, timedelta, timezone
 from . import config, geo, llm
 from .data import store
 from .generate import GEN_SYSTEM, build_user_prompt
+from . import needs as needs_mod
 from .guards import (closed_mention_warning, danger_warning, mentioned_pois,
                      out_of_area_warning)
 from .models import RecommendRequest
@@ -71,9 +72,13 @@ async def recommend(req: RecommendRequest) -> dict:
     # 1. Разбор запроса (LLM) параллельно с погодой
     llm_ms = 0
     parse_task = None
-    if query and llm.get_provider():
-        parse_task = asyncio.to_thread(llm.complete_json, PARSE_SYSTEM, query, temperature=0.0,
-                                       max_tokens=300, timeout=config.LLM_PARSE_TIMEOUT_S)
+    # LLM-разбор нужен, когда правилам не за что зацепиться (или не русский) — экономим квоту
+    weak_rules = rules["intent"] == "other" and not rules["constraints"] and not rules["needs"] or lang != "ru"
+    if query and llm.get_provider() and (config.LLM_PARSE_MODE == "always" or
+                                         config.LLM_PARSE_MODE == "auto" and weak_rules):
+        parse_task = asyncio.wait_for(asyncio.to_thread(
+            llm.complete_json, PARSE_SYSTEM, query, temperature=0.0, max_tokens=300,
+            timeout=config.LLM_PARSE_TIMEOUT_S, purpose="parse"), timeout=config.LLM_PARSE_TIMEOUT_S)
     weather_task = get_weather(when, rules.get("temperature_hint"),
                                req.weather_override.model_dump() if req.weather_override else None)
     llm_parsed = None
@@ -120,9 +125,16 @@ async def recommend(req: RecommendRequest) -> dict:
                            "суық — жаяу қашықтық қысқартылды"))
     parsed_out = {**parsed, "time_budget_min": budget if (budget_explicit or flight) else parsed["time_budget_min"]}
 
+    needs = list(parsed.get("needs") or [])
+    shopping = needs_mod.is_shopping(needs)
+    if needs:  # ключевые слова потребности помогают BM25 внутри подходящих мест
+        parsed_out["keywords"] = list(dict.fromkeys(
+            [needs_mod.BY_KEY[k].label["ru"] for k in needs] + parsed_out["keywords"]))[:10]
     ctx = Ctx(start=start, when=when, mode=mode, lang=lang, budget=budget, budget_explicit=budget_explicit,
               radius=radius, parsed=parsed, with_kids=with_kids, accessibility=access, indoor_only=indoor_only,
-              categories=list(f.categories or []), flight=flight, available=available, weather=weather)
+              categories=list(f.categories or []), flight=flight, available=available, weather=weather,
+              needs=needs, brand=needs_mod.brand(query) if needs else None,
+              want_budget=needs_mod.wants_budget(query))
 
     # 3. Жёсткие фильтры
     cands, stats = hard_filter(pois, ctx)
@@ -134,8 +146,10 @@ async def recommend(req: RecommendRequest) -> dict:
         mc = make_cand(p, ctx)
         if mc.open.state == "closed" or not mc.open.fits_visit:
             warnings.append(closed_mention_warning(p, mc.open.label, lang))
-    if not cands:  # лучшее из доступного: ближайшие не закрытые
-        base = sorted((p for p in pois if not _not_destination(p)),
+    if needs and not cands:
+        cands = need_fallback(pois, ctx, needs, warnings, notes)
+    elif not cands:  # лучшее из доступного: ближайшие не закрытые
+        base = sorted((p for p in pois if not _not_destination(p) and p.get("category") not in needs_mod.SHOP_CATEGORIES),
                       key=lambda p: geo.haversine_m(*start, p["lat"], p["lon"]))[:12]
         all_c = [make_cand(p, ctx) for p in base]
         all_c.sort(key=lambda c: c.travel_min + c.back_min)  # при вылете учитываем и дорогу обратно
@@ -164,7 +178,8 @@ async def recommend(req: RecommendRequest) -> dict:
 
     # 4. Поиск и ранжирование
     expand = list(parsed["constraints"]) + [parsed["intent"]] + (["kids"] if with_kids else [])
-    rel = index.scores(" ".join([query] + parsed["keywords"]), expand, [c.poi["id"] for c in cands])
+    rel = await asyncio.to_thread(index.scores, " ".join([query] + parsed["keywords"]), expand,
+                                  [c.poi["id"] for c in cands])  # эмбеддинг запроса — сетевой вызов, не держим loop
     named = {p["id"] for p in mentioned if geo.haversine_m(*start, p["lat"], p["lon"]) > 300}
     # место, где пользователь уже стоит (метка локации/запрос + < 250 м): при прогулке — только запасной вариант
     if parsed["intent"] in HERE_PENALTY_INTENTS and not indoor_only:
@@ -179,13 +194,20 @@ async def recommend(req: RecommendRequest) -> dict:
     llm_data, llm_info = None, {"provider": "none", "model": None, "latency_ms": 0}
     if llm.get_provider() and top:
         try:
-            res = await asyncio.to_thread(llm.complete_json, GEN_SYSTEM, build_user_prompt(query, ctx, top),
-                                          temperature=0.4, max_tokens=1500)
+            res = await asyncio.wait_for(asyncio.to_thread(
+                llm.complete_json, GEN_SYSTEM, build_user_prompt(query, ctx, top), temperature=0.4,
+                max_tokens=1500), timeout=config.LLM_TIMEOUT_S)
             llm_data = res.data
             llm_info = {"provider": res.provider, "model": res.model, "latency_ms": llm_ms + res.latency_ms}
-        except llm.LLMError as e:
-            log.warning("[%s] generation degraded: %s", rid, str(e)[:120])
-    if llm_data is None:
+        except (llm.LLMError, asyncio.TimeoutError) as e:
+            log.warning("[%s] generation degraded: %s", rid, type(e).__name__ + ": " + str(e)[:120])
+    if not top:
+        pass  # кандидатов нет — LLM не нужен, причина уже в warnings
+    elif llm_data is None and llm.get_provider() and llm.quota_limited():
+        warnings.append(L(lang, "Лимит запросов к ИИ-модели временно исчерпан — подборка собрана по ранжированию базы, тексты шаблонные.",
+                          "AI request quota temporarily exhausted — picks come from database ranking with template texts.",
+                          "ЖИ сұраныс лимиті уақытша таусылды — таңдау база рейтингі бойынша жасалды."))
+    elif llm_data is None:
         warnings.append(L(lang, "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
                           "AI model unavailable — picks come from database ranking with template texts.",
                           "ЖИ моделі қолжетімсіз — таңдау база рейтингі бойынша жасалды."))
@@ -218,7 +240,8 @@ async def recommend(req: RecommendRequest) -> dict:
 
     # 7. Маршрут
     route = None
-    if req.want_route and recs:
+    route_asked = bool(re.search(r"маршрут|route|по пути|обойти|маршрут", query.lower()))
+    if req.want_route and recs and (not shopping or route_asked):  # магазинам маршрут не нужен, если не просили
         route, _, rwarn = await build_route(start, recs, mode, available if (budget_explicit or flight) else None, lang)
         warnings += rwarn
 
@@ -238,8 +261,55 @@ async def recommend(req: RecommendRequest) -> dict:
     return resp
 
 
+def need_fallback(pois: list[dict], ctx: Ctx, needs: list[str], warnings: list[str], notes: list[str]) -> list:
+    """Рядом нет того, что просили: расширяем до 10 км (такси) или честно говорим, что в базе этого нет.
+    Никаких «ближайших кафе» вместо бассейна."""
+    lang, label = ctx.lang, needs_mod.labels(needs, ctx.lang)
+    pool = [p for p in pois if not _not_destination(p) and needs_mod.matches_any(p, needs, ctx.brand)]
+    if not pool:
+        warnings.append(L(lang, f"В нашей базе нет мест для: {label}. Не буду подставлять что-то другое — "
+                                f"попробуйте уточнить запрос или выбрать категорию.",
+                          f"Our database has no places for: {label}. I won't substitute something else.",
+                          f"Біздің базада мына орындар жоқ: {label}."))
+        return []
+    walk_mode = ctx.mode == "walk"
+    if walk_mode:
+        ctx.mode = "car"
+    ctx.radius, ctx.budget_explicit = config.NEED_MAX_RADIUS_M, False
+    cands, _ = hard_filter(pois, ctx)
+    if cands:
+        c0 = min(cands, key=lambda c: c.dist_m)
+        if walk_mode:
+            notes.append(L(lang, "пешком рядом нет — считаю время на такси", "nothing within walking distance — taxi times",
+                           "жаяу жақын жерде жоқ — такси уақыты"))
+        warnings.append(L(lang,
+            f"Пешком рядом нет: ближайший вариант ({label}) — «{c0.poi['name']}», {c0.dist_m / 1000:.1f} км, ~{c0.travel_min} мин на такси.",
+            f"Nothing within walking distance: the closest ({label}) is “{c0.poi['name']}”, {c0.dist_m / 1000:.1f} km, ~{c0.travel_min} min by taxi.",
+            f"Жаяу жақын жерде жоқ: ең жақыны ({label}) — «{c0.poi['name']}», {c0.dist_m / 1000:.1f} км, такси ~{c0.travel_min} мин."))
+        return cands
+    nearest = make_cand(min(pool, key=lambda p: geo.haversine_m(*ctx.start, p["lat"], p["lon"])), ctx)
+    if nearest.open.state == "closed" or not nearest.open.fits_visit:
+        warnings.append(L(lang,
+            f"Ближайший вариант ({label}) — «{nearest.poi['name']}», {nearest.dist_m / 1000:.1f} км — к вашему приходу закрыт: {nearest.open.label}.",
+            f"The closest ({label}) — “{nearest.poi['name']}”, {nearest.dist_m / 1000:.1f} km — is closed when you arrive: {nearest.open.label}.",
+            f"Ең жақыны ({label}) — «{nearest.poi['name']}» — жабық: {nearest.open.label}."))
+        return []
+    warnings.append(L(lang,
+        f"Ближайший вариант ({label}) — «{nearest.poi['name']}», {nearest.dist_m / 1000:.1f} км (~{nearest.travel_min} мин на такси): это далеко.",
+        f"The closest ({label}) is “{nearest.poi['name']}”, {nearest.dist_m / 1000:.1f} km (~{nearest.travel_min} min by taxi): far away.",
+        f"Ең жақыны ({label}) — «{nearest.poi['name']}», {nearest.dist_m / 1000:.1f} км: алыс."))
+    return [nearest]
+
+
+_MY_LOCATION = {"", "моя геолокация", "моё местоположение", "мое местоположение", "я здесь", "текущее местоположение",
+                "my location", "current location", "менің орным", "геолокация"}
+
+
 def context_used(req: RecommendRequest, ctx: Ctx, start, lang: str, notes: list[str]) -> dict:
-    if req.location_label:
+    if req.location and (req.location_label or "").strip().lower() in _MY_LOCATION:
+        loc = L(lang, "≈ ваша локация (точность ~100 м)", "≈ your location (~100 m precision)",
+                "≈ сіздің орныңыз (~100 м дәлдік)")
+    elif req.location_label:
         loc = L(lang, f"≈ район {req.location_label} (точность ~100 м)", f"≈ {req.location_label} area (~100 m precision)",
                 f"≈ {req.location_label} маңы (~100 м дәлдік)")
     elif req.location:
@@ -270,6 +340,11 @@ def context_used(req: RecommendRequest, ctx: Ctx, start, lang: str, notes: list[
         fl.append(L(lang, "только в помещении", "indoor only", "тек ғимарат ішінде"))
     if ctx.categories:
         fl.append(L(lang, "категории: ", "categories: ", "санаттар: ") + ", ".join(ctx.categories))
+    if ctx.needs:
+        fl.append(L(lang, "нужно: ", "looking for: ", "қажет: ") + needs_mod.labels(ctx.needs, lang)
+                  + L(lang, " (только подходящие места)", " (matching places only)", " (тек сәйкес орындар)"))
+    if ctx.brand:
+        fl.append(L(lang, f"сеть: {ctx.brand}", f"brand: {ctx.brand}", f"желі: {ctx.brand}"))
     soft = [c for c in p["constraints"] if c not in ("flight_soon", "accessibility")]
     if soft:
         fl.append(L(lang, "пожелания: ", "preferences: ", "тілектер: ") + ", ".join(soft))

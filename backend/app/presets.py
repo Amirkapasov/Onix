@@ -29,4 +29,8 @@ PRESETS = [
      "location": {"lat": 51.132, "lon": 71.404}, "location_label": "Хан Шатыр",
      "query": "Вечер, на улице −20, хочу провести 1–2 часа в тепле и не замёрзнуть по дороге.",
      "client_time": "2027-01-15T19:00:00+05:00", "filters": {}, "mode": "walk", "icon": "❄️", "weather_override": {"temp_c": -20, "wind_ms": 9}},
+    {"id": "shop_24_7", "label": "Магазин 24/7 рядом",
+     "location": {"lat": 51.128, "lon": 71.43}, "location_label": "Байтерек",
+     "query": "Где рядом круглосуточный магазин?",
+     "client_time": "2026-10-21T01:00:00+05:00", "filters": {}, "mode": "walk", "icon": "🛒"},
 ]

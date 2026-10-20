@@ -1,7 +1,8 @@
 """Проверка LLM-пути на всех пресетах + запросах на kk/en: задержка, валидность, язык.
 
-Запуск из корня: .venv/bin/python -m backend.scripts.check_llm
-Работает in-process (свежо читает .env), сервер не нужен.
+Запуск из корня: .venv/bin/python -m backend.scripts.check_llm [--url http://localhost:8000] [--pause 13]
+Без --url работает in-process (свежо читает .env); с --url — по HTTP против живого сервера (реальная задержка).
+--pause — пауза между запросами (free tier: ~5 запросов/мин на модель).
 """
 from __future__ import annotations
 
@@ -39,12 +40,21 @@ def lang_ok(text: str, lang: str) -> bool:
 
 
 def main() -> int:
-    prov = llm.get_provider()
-    if not prov:
-        print("LLM недоступен: нет ключа для LLM_PROVIDER — проверять нечего.")
-        return 2
-    print(f"provider={prov.name} model={prov.model} pois={len(store.get())}\n")
-    c = TestClient(app)
+    args = sys.argv[1:]
+    url = args[args.index("--url") + 1] if "--url" in args else None
+    pause = float(args[args.index("--pause") + 1]) if "--pause" in args else 0.0
+    if url:
+        import httpx
+        c = httpx.Client(base_url=url, timeout=30)
+        h = c.get("/api/health").json()
+        print(f"server={url} provider={h['llm_provider']} model={h.get('llm_model')} pois={h['pois']}\n")
+    else:
+        prov = llm.get_provider()
+        if not prov:
+            print("LLM недоступен: нет ключа для LLM_PROVIDER — проверять нечего.")
+            return 2
+        print(f"provider={prov.name} model={prov.model} pois={len(store.get())}\n")
+        c = TestClient(app)
     ids = {p["id"] for p in store.get()}
     rows, lat, bad = [], [], 0
     for p in PRESETS + EXTRA:
@@ -52,6 +62,8 @@ def main() -> int:
         body.update(filters=p.get("filters", {}), mode=p.get("mode", "walk"), lang=p.get("lang", "ru"), want_route=False)
         if p.get("weather_override"):
             body["weather_override"] = p["weather_override"]
+        if rows and pause:
+            time.sleep(pause)
         t = time.time()
         r = c.post("/api/recommend", json=body)
         dt = time.time() - t
@@ -77,7 +89,8 @@ def main() -> int:
         rows.append((p["id"], dt, d.get("llm", {}).get("latency_ms"), problems, d))
     for pid, dt, ms, problems, d in rows:
         mark = "OK " if not problems else "ERR"
-        print(f"{mark} {pid:18s} {dt:4.1f}s (LLM {ms} ms)  {'; '.join(problems)}")
+        model = (d.get("llm") or {}).get("model") or "-"
+        print(f"{mark} {pid:18s} {dt:4.1f}s (LLM {ms} ms, {model})  {'; '.join(problems)}")
         for x in d.get("recommendations", []):
             print(f"      • {x['name'][:40]} — {x['why']}")
     print(f"\nзадержка: медиана {statistics.median(lat):.1f}s, max {max(lat):.1f}s; проблемных кейсов: {bad}/{len(rows)}")

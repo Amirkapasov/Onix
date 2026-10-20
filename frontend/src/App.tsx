@@ -4,8 +4,8 @@ import Controls, { type ControlsState } from './components/Controls'
 import Results from './components/Results'
 import ContextUsed from './components/ContextUsed'
 import { ApiError, USE_MOCK, fetchHealth, fetchPois, fetchPresets, recommend } from './api'
-import { coarsen, slotToIso } from './geo'
-import { DICTS, presetIcon } from './i18n'
+import { coarsen, isoClock, slotToIso } from './geo'
+import { DICTS, presetIcon, type Dict } from './i18n'
 import type { Lang, LatLon, Poi, Preset, RecommendRequest, RecommendResponse } from './types'
 
 const LANG_KEY = 'seruen.lang'
@@ -29,6 +29,18 @@ function loadLang(): Lang {
   return 'ru'
 }
 
+// Спец-метки локации: переводятся при показе, на сервер не отправляются.
+const PICKED = '__picked__'
+const GEO = '__geo__'
+
+interface ActivePreset {
+  id: string
+  query: string
+  controls: ControlsState
+  budget: number | null
+  categories: string[]
+}
+
 const DEFAULT_CONTROLS: ControlsState = {
   slot: 'now',
   presetTime: null,
@@ -47,13 +59,20 @@ export default function App() {
   const [location, setLocation] = useState<LatLon>({ lat: 51.089, lon: 71.41 })
   const [locationLabel, setLocationLabel] = useState<string>('Mega Silk Way')
   const [query, setQuery] = useState('')
-  const [controls, setControls] = useState<ControlsState>(DEFAULT_CONTROLS)
-  const [timeBudget, setTimeBudget] = useState<number | null>(null)
+  // Настройки, выбранные пользователем сам, и настройки активного пресета — раздельно:
+  // пресет действует, только пока он активен (его запрос не изменён), потом — снова пользовательские.
+  const [userControls, setUserControls] = useState<ControlsState>(DEFAULT_CONTROLS)
+  const [userBudget, setUserBudget] = useState<number | null>(null)
+  const [preset, setPreset] = useState<ActivePreset | null>(null)
+  const controls = preset?.controls ?? userControls
+  const timeBudget = preset ? preset.budget : userBudget
+  const activePreset = preset?.id ?? null
   const [presets, setPresets] = useState<Preset[]>([])
-  const [activePreset, setActivePreset] = useState<string | null>(null)
   const [history, setHistory] = useState<string[]>([])
 
-  const [result, setResult] = useState<RecommendResponse | null>(null)
+  // Ответ хранится вместе с запросом, на который он пришёл, — «Что учтено» и режим берутся из этой пары.
+  const [shown, setShown] = useState<{ req: RecommendRequest; res: RecommendResponse } | null>(null)
+  const result = shown?.res ?? null
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<ApiError | null>(null)
   const [hovered, setHovered] = useState<number | null>(null)
@@ -113,13 +132,13 @@ export default function App() {
       requestAnimationFrame(() => resultsRef.current?.scrollIntoView({ behavior: STATIC ? 'instant' : 'smooth', block: 'start' }))
     try {
       const res = await recommend(req, presetId)
-      if (seq !== reqSeq.current) return
-      setResult(res)
+      if (seq !== reqSeq.current) return // ответ на устаревший запрос — игнорируем
+      setShown({ req, res })
       if (!STATIC || window.innerWidth >= 1024)
         requestAnimationFrame(() => resultsRef.current?.scrollIntoView({ behavior: STATIC ? 'instant' : 'smooth', block: 'start' }))
     } catch (e) {
       if (seq !== reqSeq.current) return
-      setResult(null)
+      setShown(null)
       setError(e instanceof ApiError ? e : new ApiError('unknown', String(e)))
     } finally {
       if (seq === reqSeq.current) setLoading(false)
@@ -136,7 +155,8 @@ export default function App() {
   ): RecommendRequest => ({
     query: q,
     location: coarsen(loc),
-    location_label: labelText(label),
+    // Для геолокации и точки на карте названия нет — сервер сам напишет «≈ ваша локация».
+    location_label: label === PICKED || label === GEO ? undefined : label,
     client_time: c.presetTime ?? slotToIso(c.slot),
     lang,
     mode: c.mode,
@@ -152,17 +172,51 @@ export default function App() {
     ...(c.weather ? { weather_override: c.weather } : {}),
   })
 
+  // Новый запрос можно отправить и во время загрузки: он вытесняет предыдущий (reqSeq).
   const submit = (q = query) => {
     const text = q.trim()
-    if (!text || loading) return
+    if (!text) return
     setQuery(text)
-    run(buildRequest(text, location, locationLabel, controls, timeBudget), activePreset ?? undefined)
+    // Свой текст (не запрос пресета) — пресет больше не действует, берём выбор пользователя.
+    const keepPreset = preset && preset.query === text ? preset : null
+    if (!keepPreset) setPreset(null)
+    const c = keepPreset ? keepPreset.controls : userControls
+    const budget = keepPreset ? keepPreset.budget : userBudget
+    run(buildRequest(text, location, locationLabel, c, budget, keepPreset?.categories), keepPreset?.id)
+  }
+
+  const changeControls = (next: ControlsState) => {
+    if (!preset) return setUserControls(next)
+    // Правка поверх пресета: меняем и сценарий, и выбор пользователя (только изменённые поля).
+    const changed = Object.fromEntries(
+      (Object.keys(next) as (keyof ControlsState)[]).filter((k) => next[k] !== preset.controls[k]).map((k) => [k, next[k]]),
+    )
+    setPreset({ ...preset, controls: next })
+    setUserControls((u) => ({ ...u, ...changed }))
+  }
+
+  /** «Ничего не нашли» → расширить поиск: повторяем последний запрос с изменениями, видимыми в панели. */
+  const widen = (kind: 'budget' | 'car') => {
+    const last = lastReq.current
+    if (!last) return
+    const req: RecommendRequest = structuredClone(last.req)
+    if (kind === 'budget') {
+      const b = Math.max(120, (req.filters.time_budget_min ?? 60) * 2)
+      req.filters.time_budget_min = b
+      if (preset) setPreset({ ...preset, budget: b })
+      else setUserBudget(b)
+    } else {
+      req.mode = 'car'
+      changeControls({ ...controls, mode: 'car' })
+    }
+    run(req, last.presetId)
   }
 
   const applyPreset = (p: Preset) => {
     const f = p.filters ?? {}
+    // Пресет задаёт всё сам, поверх умолчаний, а не поверх прошлого состояния.
     const c: ControlsState = {
-      ...controls,
+      ...DEFAULT_CONTROLS,
       presetTime: p.client_time ?? null,
       withKids: !!f.with_kids,
       accessibility: !!f.accessibility,
@@ -174,24 +228,19 @@ export default function App() {
     const budget = f.time_budget_min ?? null
     const loc = { lat: p.location.lat, lon: p.location.lon }
     const label = p.location_label ?? p.label
-    setControls(c)
     setLocation(loc)
     setLocationLabel(label)
     setQuery(p.query)
-    setTimeBudget(budget)
-    setActivePreset(p.id)
+    setPreset({ id: p.id, query: p.query, controls: c, budget, categories: f.categories ?? [] })
     run(buildRequest(p.query, loc, label, c, budget, f.categories ?? []), p.id)
   }
 
-  // Спец-метки переводятся при показе, чтобы смена языка их подхватывала.
-  const PICKED = '__picked__'
-  const GEO = '__geo__'
   const labelText = (l: string) => (l === PICKED ? t.pickedPoint : l === GEO ? t.myLocation : l)
 
   const pickLocation = (p: LatLon, label = PICKED) => {
     setLocation(coarsen(p))
     setLocationLabel(label)
-    setActivePreset(null)
+    setPreset(null)
   }
 
   const askGeo = () => {
@@ -271,6 +320,7 @@ export default function App() {
             pois={pois}
             hint={t.locationHint}
             coarseLabel={t.locationCoarse}
+            lang={lang}
           />
         </section>
 
@@ -321,7 +371,7 @@ export default function App() {
                 value={query}
                 onChange={(e) => {
                   setQuery(e.target.value)
-                  setActivePreset(null)
+                  if (preset && e.target.value.trim() !== preset.query) setPreset(null)
                 }}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && !e.shiftKey) {
@@ -333,10 +383,11 @@ export default function App() {
                 placeholder={t.queryPlaceholder}
                 className="w-full resize-none rounded-2xl px-3 py-2 text-[18px] leading-snug text-slate-900 outline-none placeholder:text-slate-400"
               />
-              <div className="flex justify-end">
+              <div className="flex flex-wrap items-center justify-between gap-2 pl-3">
+                <SendSummary t={t} c={controls} budget={timeBudget} fromPreset={!!preset} onClearBudget={() => setUserBudget(null)} />
                 <button
                   type="submit"
-                  disabled={!query.trim() || loading}
+                  disabled={!query.trim()}
                   className="rounded-2xl bg-amber-400 px-6 py-3 text-[17px] font-extrabold text-slate-900 shadow-sm transition hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   {loading ? '…' : `${t.send} →`}
@@ -369,7 +420,6 @@ export default function App() {
                     <button
                       key={p.id}
                       onClick={() => applyPreset(p)}
-                      disabled={loading}
                       className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-left text-[16px] font-bold leading-tight shadow-sm ring-2 transition disabled:opacity-60 ${
                         activePreset === p.id
                           ? 'bg-sky-600 text-white ring-sky-600'
@@ -384,7 +434,7 @@ export default function App() {
               </div>
             )}
 
-            <Controls t={t} value={controls} onChange={setControls} slotIso={slotToIso} />
+            <Controls t={t} value={controls} onChange={changeControls} slotIso={slotToIso} />
 
             {/* Результаты */}
             <div ref={resultsRef} className="scroll-mt-4 space-y-4">
@@ -408,15 +458,17 @@ export default function App() {
               {!loading && !error && result && (
                 <>
                   <Results
-                    result={result}
+                    result={shown!.res}
+                    query={shown!.req.query}
                     t={t}
                     lang={lang}
-                    mode={lastReq.current?.req.mode ?? 'walk'}
+                    mode={shown!.req.mode}
+                    onWiden={widen}
                     hovered={hovered}
                     onHover={setHovered}
                     focusIndex={focusIndex}
                   />
-                  <ContextUsed result={result} t={t} />
+                  <ContextUsed result={shown!.res} t={t} />
                 </>
               )}
 
@@ -436,6 +488,48 @@ export default function App() {
         </aside>
       </main>
     </div>
+  )
+}
+
+/** Что уйдёт на сервер: режим, время, фильтры — всегда на виду рядом с кнопкой. */
+function SendSummary({
+  t,
+  c,
+  budget,
+  fromPreset,
+  onClearBudget,
+}: {
+  t: Dict
+  c: ControlsState
+  budget: number | null
+  fromPreset: boolean
+  onClearBudget: () => void
+}) {
+  const time = c.presetTime ? isoClock(c.presetTime) : `${t[`slot_${c.slot}` as const]} ${isoClock(slotToIso(c.slot))}`
+  const parts = [
+    c.mode === 'car' ? `🚗 ${t.car}` : `🚶 ${t.walk}`,
+    `🕒 ${time}`,
+    c.withKids ? '🧒' : null,
+    c.accessibility ? '♿' : null,
+    c.groupSize > 1 ? `👥${c.groupSize}` : null,
+    c.indoorOnly ? '🏠' : null,
+    c.weather ? `❄️ ${c.weather.temp_c}°` : null,
+  ].filter(Boolean)
+  return (
+    <p className="min-w-0 text-[13px] font-medium text-slate-500">
+      {parts.join(' · ')}
+      {budget != null && (
+        <>
+          {' · '}⏱ {budget >= 60 && budget % 60 === 0 ? `${budget / 60} ${t.hourShort}` : `${budget} ${t.min}`}
+          {!fromPreset && (
+            <button type="button" onClick={onClearBudget} className="ml-1 rounded-full px-1 text-slate-400 hover:text-slate-700" aria-label="×">
+              ×
+            </button>
+          )}
+        </>
+      )}
+      {fromPreset && <span className="ml-1.5 rounded-full bg-sky-100 px-2 py-0.5 text-sky-700">{t.fromPreset}</span>}
+    </p>
   )
 }
 

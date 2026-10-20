@@ -51,7 +51,8 @@ class PoiStore:
         self.by_id = {p["id"]: p for p in pois}
         self._path, self._mtime = path, mtime
         self.version += 1
-        log.info("loaded %d POIs from %s", len(pois), path.relative_to(config.ROOT))
+        shown = path.relative_to(config.ROOT) if path.is_relative_to(config.ROOT) else path.name
+        log.info("loaded %d POIs from %s", len(pois), shown)
 
     @property
     def source_name(self) -> str:

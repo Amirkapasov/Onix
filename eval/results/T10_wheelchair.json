@@ -1,148 +1,97 @@
 {
- "request_id": "d52508949f38",
+ "request_id": "mock",
  "context_used": {
-  "location": "≈ район Байтерек (точность ~100 м)",
-  "time": "вторник, 12:00",
-  "weather": "+3°C, ветер 6 м/с",
-  "mode": "пешком",
-  "radius_m": 1200,
-  "filters": [
-   "бюджет не указан — беру ~90 мин",
-   "доступность для коляски"
-  ],
-  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+  "data_note": "mock"
  },
- "parsed_intent": {
-  "intent": "sightseeing",
-  "time_budget_min": null,
-  "companions": "solo",
-  "constraints": [
-   "accessibility"
-  ],
-  "keywords": [
-   "инвалидной",
-   "коляске",
-   "съездить",
-   "посмотреть",
-   "город"
-  ]
- },
+ "parsed_intent": {},
  "recommendations": [
-  {
-   "poi_id": "osm:node/2671060738",
-   "name": "Избушка",
-   "category": "cafe",
-   "lat": 51.128338,
-   "lon": 71.418047,
-   "distance_m": 835,
-   "travel_min": 14,
-   "visit_min": [
-    30,
-    55
-   ],
-   "why": "Можно передохнуть за кофе; высокий рейтинг 4.8. Кафе «Избушка». Доступно для колясок.",
-   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Круглосуточно (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/2671060738"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001018105848"
-    }
-   ],
-   "rating": 4.8,
-   "badges": [
-    "indoor",
-    "coffee"
-   ]
-  },
   {
    "poi_id": "osm:way/108096984",
    "name": "Керуен",
    "category": "mall",
    "lat": 51.12779,
    "lon": 71.42531,
-   "distance_m": 328,
+   "distance_m": 427,
    "travel_min": 6,
    "visit_min": [
-    65,
-    110
+    20,
+    40
    ],
-   "why": "Тепло, магазины и кафе под одной крышей. Торговый центр «Керуен». Есть wi-fi; доступно для колясок.",
-   "what_to_do": "Зайдите погреться, выпейте кофе; при желании — кино или фуд-корт.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
-    "label": "Часы работы неизвестны — уточните перед выходом",
-    "source": null
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/108096984"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "indoor",
-    "wifi",
-    "family",
-    "hours_unverified"
-   ]
-  },
-  {
-   "poi_id": "osm:way/230409020",
-   "name": "проспект Мәңгілік Ел",
-   "category": "restaurant",
-   "lat": 51.118264,
-   "lon": 71.436526,
-   "distance_m": 1175,
-   "travel_min": 20,
-   "visit_min": [
-    50,
-    90
-   ],
-   "why": "Можно спокойно поесть.",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
-   "open_status": {
-    "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто до 02:00 (часы по OSM, проверено 2026-10-20)",
+    "label": "Часы неизвестны",
     "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/230409020"
-    }
-   ],
+   "sources": [],
    "rating": null,
-   "badges": [
-    "indoor",
-    "night"
-   ]
+   "badges": []
+  },
+  {
+   "poi_id": "osm:way/230358847",
+   "name": "Корме",
+   "category": "gallery",
+   "lat": 51.128641,
+   "lon": 71.42038,
+   "distance_m": 878,
+   "travel_min": 12,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:node/2671060738",
+   "name": "Избушка",
+   "category": "cafe",
+   "lat": 51.128338,
+   "lon": 71.418047,
+   "distance_m": 1085,
+   "travel_min": 14,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": 4.8,
+   "badges": []
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
-  "Часы работы 1 мест(а) неизвестны — уточните перед выходом."
+  "Часы работы некоторых мест неизвестны."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "mock"
  }
 }

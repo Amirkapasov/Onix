@@ -1,162 +1,97 @@
 {
- "request_id": "b2d0772f646c",
+ "request_id": "mock",
  "context_used": {
-  "location": "≈ район Бульвар Нуржол (точность ~100 м)",
-  "time": "вторник, 23:00",
-  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
-  "mode": "пешком",
-  "radius_m": 1713,
-  "filters": [
-   "бюджет не указан — беру ~90 мин",
-   "пожелания: outdoor_ok, night",
-   "ночь: места, открытые допоздна",
-   "скрыто закрытых к приходу: 33",
-   "скрыто без часов, вероятно закрытых в это время: 55"
-  ],
-  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+  "data_note": "mock"
  },
- "parsed_intent": {
-  "intent": "night",
-  "time_budget_min": null,
-  "companions": "solo",
-  "constraints": [
-   "outdoor_ok",
-   "night"
-  ],
-  "keywords": [
-   "ночью",
-   "прогуляться",
-   "льду",
-   "есиля",
-   "залезть",
-   "крышу",
-   "высотки",
-   "ради"
-  ]
- },
+ "parsed_intent": {},
  "recommendations": [
   {
-   "poi_id": "osm:way/166198046",
-   "name": "Резиденция Акорда",
-   "category": "landmark",
-   "lat": 51.1258,
-   "lon": 71.446473,
-   "distance_m": 950,
-   "travel_min": 16,
+   "poi_id": "osm:way/1530378860",
+   "name": "Детская площадка",
+   "category": "playground",
+   "lat": 51.126744,
+   "lon": 71.433254,
+   "distance_m": 44,
+   "travel_min": 1,
    "visit_min": [
-    15,
-    25
+    20,
+    40
    ],
-   "why": "Можно погулять на свежем воздухе; работает допоздна. Акорда́ — резиденция президента Республики Казахстан. Является штаб-квартирой Администрации Президента Казахстана.",
-   "what_to_do": "Осмотрите снаружи, сделайте фото с лучшего ракурса и пройдитесь по округе.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
-    "state": "open",
-    "confidence": "medium",
-    "label": "Круглосуточно (часы по OSM, проверено 2026-10-20)",
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
     "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/166198046"
-    },
-    {
-     "name": "wikidata",
-     "url": "https://www.wikidata.org/wiki/Q413579"
-    },
-    {
-     "name": "wikipedia",
-     "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D0%BE%D1%80%D0%B4%D0%B0_(%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D1%8F)"
-    }
-   ],
+   "sources": [],
    "rating": null,
-   "badges": [
-    "free",
-    "night",
-    "photo"
-   ]
+   "badges": []
   },
   {
-   "poi_id": "osm:node/8595205064",
-   "name": "Пинта",
-   "category": "bar",
-   "lat": 51.12467,
-   "lon": 71.43459,
-   "distance_m": 282,
-   "travel_min": 5,
+   "poi_id": "osm:way/1530378859",
+   "name": "Детская площадка",
+   "category": "playground",
+   "lat": 51.126459,
+   "lon": 71.433727,
+   "distance_m": 102,
+   "travel_min": 1,
    "visit_min": [
-    65,
-    110
+    20,
+    40
    ],
-   "why": "Работает допоздна; совсем рядом. Бар «Пинта».",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
-    "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто до 02:00 (часы по OSM, проверено 2026-10-20)",
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
     "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/8595205064"
-    }
-   ],
+   "sources": [],
    "rating": null,
-   "badges": [
-    "indoor",
-    "night"
-   ]
+   "badges": []
   },
   {
-   "poi_id": "osm:node/10798946230",
-   "name": "Selfie",
-   "category": "restaurant",
-   "lat": 51.125029,
-   "lon": 71.432231,
-   "distance_m": 226,
-   "travel_min": 4,
+   "poi_id": "2gis:70000001094584929",
+   "name": "Каусар, чайхана",
+   "category": "cafe",
+   "lat": 51.12679,
+   "lon": 71.435133,
+   "distance_m": 196,
+   "travel_min": 3,
    "visit_min": [
-    50,
-    90
+    20,
+    40
    ],
-   "why": "Работает допоздна; совсем рядом; высокий рейтинг 4.9. Ресторан «Selfie».",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/10798946230"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001028338057"
-    }
-   ],
-   "rating": 4.9,
-   "badges": [
-    "indoor",
-    "night"
-   ]
+   "sources": [],
+   "rating": 4.8,
+   "badges": []
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "Безопасность: выходить на лёд Есиля, залезать на крыши и стройки опасно и запрещено. Ниже — легальные видовые и освещённые места. Экстренная помощь — 112.",
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+  "Часы работы некоторых мест неизвестны."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "mock"
  }
 }

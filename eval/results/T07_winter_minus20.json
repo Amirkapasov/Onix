@@ -1,150 +1,97 @@
 {
- "request_id": "67d12342ae32",
+ "request_id": "mock",
  "context_used": {
-  "location": "≈ район Байтерек (точность ~100 м)",
-  "time": "четверг, 18:30",
-  "weather": "−20°C, ветер 9 м/с (симуляция)",
-  "mode": "пешком",
-  "radius_m": 800,
-  "filters": [
-   "бюджет не указан — беру ~90 мин",
-   "только в помещении",
-   "пожелания: indoor",
-   "погода: приоритет местам в помещении",
-   "холодно — пешие расстояния сокращены",
-   "скрыто закрытых к приходу: 5",
-   "скрыто без часов, вероятно закрытых в это время: 3"
-  ],
-  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+  "data_note": "mock"
  },
- "parsed_intent": {
-  "intent": "other",
-  "time_budget_min": null,
-  "companions": "solo",
-  "constraints": [
-   "indoor"
-  ],
-  "keywords": [
-   "улице",
-   "ветер",
-   "провести",
-   "вечер",
-   "нибудь",
-   "тепле"
-  ]
- },
+ "parsed_intent": {},
  "recommendations": [
+  {
+   "poi_id": "osm:way/230401645",
+   "name": "Байтерек",
+   "category": "viewpoint",
+   "lat": 51.128288,
+   "lon": 71.430455,
+   "distance_m": 59,
+   "travel_min": 1,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
   {
    "poi_id": "2gis:70000001032494391",
    "name": "Көкtem, кафе",
    "category": "cafe",
    "lat": 51.129267,
    "lon": 71.428581,
-   "distance_m": 172,
+   "distance_m": 224,
    "travel_min": 3,
    "visit_min": [
-    30,
-    55
+    20,
+    40
    ],
-   "why": "Можно провести время в тепле; совсем рядом; высокий рейтинг 4.8.",
-   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001032494391"
-    }
-   ],
+   "sources": [],
    "rating": 4.8,
-   "badges": [
-    "indoor",
-    "night",
-    "coffee"
-   ]
+   "badges": []
   },
   {
-   "poi_id": "2gis:70000001101370539",
-   "name": "Второй, бистро",
+   "poi_id": "osm:node/6408271985",
+   "name": "CrepeCafe",
    "category": "cafe",
-   "lat": 51.128563,
-   "lon": 71.433084,
-   "distance_m": 224,
-   "travel_min": 4,
+   "lat": 51.129382,
+   "lon": 71.428593,
+   "distance_m": 237,
+   "travel_min": 3,
    "visit_min": [
-    30,
-    55
+    20,
+    40
    ],
-   "why": "Можно провести время в тепле; совсем рядом; высокий рейтинг 4.9. Кафе «Второй, бистро».",
-   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 03:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001101370539"
-    }
-   ],
-   "rating": 4.9,
-   "badges": [
-    "indoor",
-    "night",
-    "coffee"
-   ]
-  },
-  {
-   "poi_id": "osm:node/4506675474",
-   "name": "IMAX Кинопарк7",
-   "category": "cinema",
-   "lat": 51.127805,
-   "lon": 71.425328,
-   "distance_m": 327,
-   "travel_min": 6,
-   "visit_min": [
-    100,
-    170
-   ],
-   "why": "Можно провести время в тепле. Кинотеатр «IMAX Кинопарк7».",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы работы неизвестны — уточните перед выходом",
-    "source": null
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/4506675474"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "indoor",
-    "hours_unverified"
-   ]
+   "sources": [],
+   "rating": 4.8,
+   "badges": []
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
-  "Часы работы 1 мест(а) неизвестны — уточните перед выходом."
+  "Часы работы некоторых мест неизвестны."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "mock"
  }
 }

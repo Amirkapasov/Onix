@@ -1,0 +1,97 @@
+{
+ "request_id": "mock",
+ "context_used": {
+  "data_note": "mock"
+ },
+ "parsed_intent": {},
+ "recommendations": [
+  {
+   "poi_id": "osm:node/11910202470",
+   "name": "marrone rosso",
+   "category": "cafe",
+   "lat": 51.128406,
+   "lon": 71.425064,
+   "distance_m": 86,
+   "travel_min": 1,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:node/4133854089",
+   "name": "Rafe",
+   "category": "cafe",
+   "lat": 51.129729,
+   "lon": 71.425986,
+   "distance_m": 138,
+   "travel_min": 2,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:node/13533633413",
+   "name": "Asai Restaurant Astana",
+   "category": "restaurant",
+   "lat": 51.129905,
+   "lon": 71.424491,
+   "distance_m": 139,
+   "travel_min": 2,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": 4.9,
+   "badges": []
+  }
+ ],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
+ "route": null,
+ "warnings": [
+  "Часы работы некоторых мест неизвестны."
+ ],
+ "llm": {
+  "provider": "mock"
+ }
+}

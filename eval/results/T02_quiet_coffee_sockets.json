@@ -1,157 +1,97 @@
 {
- "request_id": "e4170ce5026a",
+ "request_id": "mock",
  "context_used": {
-  "location": "≈ район ТРЦ «Керуен» (точность ~100 м)",
-  "time": "вторник, 14:00",
-  "weather": "+3°C, ветер 6 м/с",
-  "mode": "пешком",
-  "radius_m": 1142,
-  "filters": [
-   "бюджет 60 мин",
-   "пожелания: quiet, sockets, coffee",
-   "скрыто закрытых к приходу: 6",
-   "скрыто без часов, вероятно закрытых в это время: 6"
-  ],
-  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+  "data_note": "mock"
  },
- "parsed_intent": {
-  "intent": "work",
-  "time_budget_min": 60,
-  "companions": "solo",
-  "constraints": [
-   "quiet",
-   "sockets",
-   "coffee"
-  ],
-  "keywords": [
-   "тихое",
-   "кофе",
-   "розеткой",
-   "поработать"
-  ]
- },
+ "parsed_intent": {},
  "recommendations": [
   {
-   "poi_id": "osm:node/14100100182",
-   "name": "Drinkit",
+   "poi_id": "osm:node/11910202470",
+   "name": "marrone rosso",
    "category": "cafe",
-   "lat": 51.130288,
-   "lon": 71.429011,
-   "distance_m": 314,
-   "travel_min": 5,
+   "lat": 51.128406,
+   "lon": 71.425064,
+   "distance_m": 86,
+   "travel_min": 1,
    "visit_min": [
-    30,
-    55
+    20,
+    40
    ],
-   "why": "Есть кофе; совсем рядом; высокий рейтинг 4.8. Кафе «Drinkit». Кухня: кофейня; есть wi-fi.",
-   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:node/4133854089",
+   "name": "Rafe",
+   "category": "cafe",
+   "lat": 51.129729,
+   "lon": 71.425986,
+   "distance_m": 138,
+   "travel_min": 2,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:node/13533633413",
+   "name": "Asai Restaurant Astana",
+   "category": "restaurant",
+   "lat": 51.129905,
+   "lon": 71.424491,
+   "distance_m": 139,
+   "travel_min": 2,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 23:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/14100100182"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001102541704"
-    }
-   ],
-   "rating": 4.8,
-   "badges": [
-    "indoor",
-    "coffee",
-    "wifi"
-   ]
-  },
-  {
-   "poi_id": "wikidata:Q4314789",
-   "name": "Национальная академическая библиотека Казахстана",
-   "category": "library",
-   "lat": 51.1271,
-   "lon": 71.4272,
-   "distance_m": 261,
-   "travel_min": 5,
-   "visit_min": [
-    40,
-    55
-   ],
-   "why": "Тихое место, как вы просили; совсем рядом.",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы работы неизвестны — уточните перед выходом",
-    "source": null
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "wikidata",
-     "url": "https://www.wikidata.org/wiki/Q4314789"
-    },
-    {
-     "name": "wikipedia",
-     "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "indoor",
-    "quiet",
-    "hours_unverified"
-   ]
-  },
-  {
-   "poi_id": "osm:way/230358854",
-   "name": "Сквер",
-   "category": "park",
-   "lat": 51.127997,
-   "lon": 71.42357,
-   "distance_m": 150,
-   "travel_min": 3,
-   "visit_min": [
-    30,
-    55
-   ],
-   "why": "Тихое место, как вы просили; совсем рядом. Парк «Сквер».",
-   "what_to_do": "Пройдитесь по главной аллее, загляните к воде или на видовые точки и вернитесь кольцом.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы не указаны; открытая территория — обычно доступна",
-    "source": null
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/230358854"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "outdoor",
-    "free",
-    "quiet",
-    "hours_unverified"
-   ]
+   "sources": [],
+   "rating": 4.9,
+   "badges": []
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
-  "Часы работы 1 мест(а) неизвестны — уточните перед выходом."
+  "Часы работы некоторых мест неизвестны."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "mock"
  }
 }

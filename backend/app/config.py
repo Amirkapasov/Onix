@@ -22,14 +22,19 @@ CACHE_DIR = ROOT / "data" / "cache"
 # --- LLM ---
 LLM_PROVIDER = _env("LLM_PROVIDER", "gemini").lower()
 GEMINI_API_KEY = _env("GEMINI_API_KEY")
-GEMINI_MODEL = _env("GEMINI_MODEL", "gemini-3.8-flash")
-GEMINI_EMBED_MODEL = _env("GEMINI_EMBED_MODEL", "gemini-embedding-001")
+GEMINI_MODEL = _env("GEMINI_MODEL", "gemini-3.5-flash-lite")
+# Бесплатный тариф: ~5 запросов/мин на КАЖДУЮ модель → разбор на своей lite-модели, генерация с запасными
+GEMINI_PARSE_MODEL = _env("GEMINI_PARSE_MODEL", "gemini-3.1-flash-lite")
+GEMINI_FALLBACK_MODELS = [m.strip() for m in _env(
+    "GEMINI_FALLBACK_MODELS", "gemini-3.5-flash-lite,gemini-2.5-flash-lite,gemini-3.5-flash,gemini-2.5-flash").split(",") if m.strip()]
+GEMINI_EMBED_MODEL = _env("GEMINI_EMBED_MODEL", "gemini-embedding-2")
 ANTHROPIC_API_KEY = _env("ANTHROPIC_API_KEY")
 ANTHROPIC_MODEL = _env("ANTHROPIC_MODEL", "claude-haiku-5-5")
 OPENAI_API_KEY = _env("OPENAI_API_KEY")
 OPENAI_MODEL = _env("OPENAI_MODEL", "gpt-4.1-mini")
-LLM_TIMEOUT_S = float(_env("LLM_TIMEOUT_S", "8"))
-LLM_PARSE_TIMEOUT_S = float(_env("LLM_PARSE_TIMEOUT_S", "4"))
+LLM_TIMEOUT_S = float(_env("LLM_TIMEOUT_S", "6"))
+LLM_PARSE_MODE = _env("LLM_PARSE_MODE", "auto").lower()  # auto (только если правила слабые) | always | off
+LLM_PARSE_TIMEOUT_S = float(_env("LLM_PARSE_TIMEOUT_S", "2.5"))
 # Выключить LLM целиком (для тестов и режима деградации): SERUEN_DISABLE_LLM=1
 DISABLE_LLM = _env("SERUEN_DISABLE_LLM") in ("1", "true", "yes")
 DISABLE_NETWORK = _env("SERUEN_DISABLE_NETWORK") in ("1", "true", "yes")
@@ -58,6 +63,7 @@ ONE_WAY_SHARE_WALK_INTENT = 0.45  # если сама прогулка — це�
 MIN_RADIUS_M = 800
 MAX_RADIUS_M = 15000
 DEFAULT_BUDGET_MIN = 90
+NEED_MAX_RADIUS_M = 10000  # явная потребность («бассейн») рядом не нашлась → ищем до 10 км на такси
 FLIGHT_BUFFER_MIN = 60  # быть в аэропорту за час до вылета
 
 # --- Ранжирование (прозрачная формула: score = Σ w_i · f_i) ---
@@ -70,6 +76,11 @@ WEIGHTS = {
     "hours": 0.10,         # уверенность в часах работы
     "weather": 0.10,       # ±1 в зависимости от погоды и indoor/outdoor
     "daytime": 0.10,       # ночь/вечер
+}
+# Явная потребность («бассейн», «аптека»): соответствие уже обеспечено фильтром → близость, потом рейтинг
+WEIGHTS_NEED = {
+    "relevance": 0.10, "constraints": 0.12, "proximity": 0.40, "quality": 0.18, "data_quality": 0.04,
+    "hours": 0.12, "weather": 0.02, "daytime": 0.02,
 }
 DIVERSITY_PENALTY = 0.12  # штраф за повтор категории в выдаче
 LLM_CANDIDATES = 9

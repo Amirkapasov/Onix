@@ -6,6 +6,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 
 from . import config, geo
+from . import needs as needs_mod
 from .hours import PoiOpen, poi_open_status
 from .weather import Weather
 
@@ -54,6 +55,9 @@ class Ctx:
     flight: bool
     available: int  # минут на прогулку (с учётом запаса до вылета)
     weather: Weather | None = None
+    needs: list[str] = field(default_factory=list)  # явные потребности (needs.py) — жёсткий фильтр
+    brand: str | None = None
+    want_budget: bool = False
     notes: list[str] = field(default_factory=list)  # что учли — для context_used.filters
     warnings: list[str] = field(default_factory=list)
 
@@ -108,6 +112,10 @@ def _not_destination(p: dict) -> bool:
 def hard_filter(pois: list[dict], ctx: Ctx) -> tuple[list[Cand], dict]:
     """Возвращает кандидатов и счётчики отсеянного. Ослабляет условия по шагам, если пусто."""
     base = [p for p in pois if not _not_destination(p)]
+    if ctx.needs:  # «бассейн», «аптека»… — только подходящие места, без заглушек
+        base = [p for p in base if needs_mod.matches_any(p, ctx.needs, ctx.brand)]
+    elif not (set(ctx.categories) & needs_mod.SHOP_CATEGORIES):
+        base = [p for p in base if p.get("category") not in needs_mod.SHOP_CATEGORIES]  # магазины не в досуге
     stats = {"closed": 0, "far": 0, "kids": 0, "access": 0, "indoor": 0, "category": 0, "guess_closed": 0, "budget": 0}
     if ctx.categories:
         n = len(base)
@@ -155,6 +163,8 @@ def hard_filter(pois: list[dict], ctx: Ctx) -> tuple[list[Cand], dict]:
     radius = ctx.radius
     # расширяем, только если мест меньше двух, и не дальше 2× (в мороз 1.3×) исходного радиуса
     max_r = min(config.MAX_RADIUS_M, int(ctx.radius * (1.3 if ctx.weather and ctx.weather.cold else 2.0)))
+    if ctx.needs:  # явная потребность: дальше 10 км не ищем (дальше — честное «далеко»)
+        max_r = min(max_r, max(ctx.radius, config.NEED_MAX_RADIUS_M))
     while len(cands) < 2 and not ctx.flight and radius < max_r:
         radius = min(max_r, int(radius * 1.4))
         cands = run(radius, False)
@@ -214,7 +224,7 @@ def _soft(c: str, p: dict, cand: Cand) -> bool | None:
 
 
 def rank(cands: list[Cand], ctx: Ctx) -> list[Cand]:
-    w = config.WEIGHTS
+    w = config.WEIGHTS_NEED if ctx.needs else config.WEIGHTS
     parsed = ctx.parsed
     soft = [c for c in parsed["constraints"] if c not in ("flight_soon", "accessibility")]
     if ctx.with_kids:
@@ -230,8 +240,13 @@ def rank(cands: list[Cand], ctx: Ctx) -> list[Cand]:
             v = _is_kid_ok(p) if s == "kids" else _soft(s, p, c)
             if v is not None:
                 checks.append(1.0 if v else 0.0)
-        if intent_cats:
+        if intent_cats and not ctx.needs:
             checks.append(1.0 if p.get("category") in intent_cats else 0.0)
+        for k in ctx.needs:  # предпочтительные теги потребности: 24/7 для «ночью купить»
+            if needs_mod.BY_KEY[k].soft_tags:
+                checks.append(1.0 if (needs_mod.BY_KEY[k].soft_tags & set(p.get("tags") or []) or c.open.open_late) else 0.0)
+        if ctx.want_budget:
+            checks.append(1.0 if "budget" in (p.get("tags") or []) else 0.0)
         f_cons = sum(checks) / len(checks) if checks else 0.5
         f_prox = max(0.0, 1 - c.dist_m / max(ctx.radius, 1))
         rating = p.get("rating")
@@ -258,6 +273,9 @@ def rank(cands: list[Cand], ctx: Ctx) -> list[Cand]:
     # дубли по названию (сети, две точки одного кафе) — оставляем лучшую
     pool, names = [], set()
     for c in sorted(cands, key=lambda x: -x.score):
+        if needs_mod.is_shopping(ctx.needs):  # «Продукты», «Аптека» — разные точки, не схлопываем
+            pool.append(c)
+            continue
         key = re.sub(r"[^a-zа-яё0-9әғқңөұүһі]", "", c.poi.get("name", "").lower().split(",")[0])
         if key and key in names:
             continue
@@ -271,7 +289,7 @@ def rank(cands: list[Cand], ctx: Ctx) -> list[Cand]:
         best_i, best_s = 0, -1e9
         for i, c in enumerate(pool):
             cat = c.poi.get("category", "")
-            pen = config.DIVERSITY_PENALTY * seen.get(cat, 0) * (0.5 if cat in intent_cats else 1.0)
+            pen = 0.0 if ctx.needs else config.DIVERSITY_PENALTY * seen.get(cat, 0) * (0.5 if cat in intent_cats else 1.0)
             if c.score - pen > best_s:
                 best_i, best_s = i, c.score - pen
         c = pool.pop(best_i)
@@ -286,6 +304,14 @@ def rank(cands: list[Cand], ctx: Ctx) -> list[Cand]:
         check = (lambda x: _is_kid_ok(x.poi)) if facet == "kids" else (lambda x, f=facet: bool(_soft(f, x.poi, x)))
         if len(out) > 3 and not any(check(x) for x in out[:3]):
             best = next((x for x in out[3:] if check(x)), None)
+            if best:
+                out.remove(best)
+                out.insert(min(2, len(out)), best)
+    # «бассейн и сауна»: каждая названная потребность — хотя бы одно место в top-3
+    for k in ctx.needs if len(ctx.needs) > 1 else []:
+        need = needs_mod.BY_KEY[k]
+        if len(out) > 3 and not any(need.matches(x.poi) for x in out[:3]):
+            best = next((x for x in out[3:] if need.matches(x.poi)), None)
             if best:
                 out.remove(best)
                 out.insert(min(2, len(out)), best)

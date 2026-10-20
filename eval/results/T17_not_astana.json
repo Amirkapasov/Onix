@@ -1,143 +1,97 @@
 {
- "request_id": "86325326e8fc",
+ "request_id": "mock",
  "context_used": {
-  "location": "≈ район Байтерек (точность ~100 м)",
-  "time": "вторник, 12:00",
-  "weather": "+3°C, ветер 6 м/с",
-  "mode": "пешком",
-  "radius_m": 1713,
-  "filters": [
-   "бюджет не указан — беру ~90 мин",
-   "скрыто закрытых к приходу: 8",
-   "скрыто без часов, вероятно закрытых в это время: 8"
-  ],
-  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+  "data_note": "mock"
  },
- "parsed_intent": {
-  "intent": "sightseeing",
-  "time_budget_min": null,
-  "companions": "solo",
-  "constraints": [],
-  "keywords": [
-   "посмотреть",
-   "медеу",
-   "шымбулаке",
-   "алматы"
-  ]
- },
+ "parsed_intent": {},
  "recommendations": [
   {
-   "poi_id": "osm:way/258753491",
-   "name": "Поющий фонтан",
-   "category": "landmark",
-   "lat": 51.12754,
-   "lon": 71.435247,
-   "distance_m": 370,
-   "travel_min": 6,
+   "poi_id": "osm:way/230401645",
+   "name": "Байтерек",
+   "category": "viewpoint",
+   "lat": 51.128288,
+   "lon": 71.430455,
+   "distance_m": 59,
+   "travel_min": 1,
    "visit_min": [
-    15,
-    25
+    20,
+    40
    ],
-   "why": "Одна из достопримечательностей города. Фонтан «Поющий фонтан».",
-   "what_to_do": "Осмотрите снаружи, сделайте фото с лучшего ракурса и пройдитесь по округе.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
-    "label": "Часы не указаны; открытая территория — обычно доступна",
-    "source": null
+    "label": "Часы неизвестны",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/258753491"
-    }
-   ],
+   "sources": [],
    "rating": null,
-   "badges": [
-    "free",
-    "photo",
-    "hours_unverified"
-   ]
+   "badges": []
   },
   {
-   "poi_id": "osm:way/230358856",
-   "name": "Национальный архив Республики Казахстан",
-   "category": "landmark",
-   "lat": 51.127967,
-   "lon": 71.427018,
-   "distance_m": 208,
-   "travel_min": 4,
+   "poi_id": "2gis:70000001032494391",
+   "name": "Көкtem, кафе",
+   "category": "cafe",
+   "lat": 51.129267,
+   "lon": 71.428581,
+   "distance_m": 224,
+   "travel_min": 3,
    "visit_min": [
-    15,
-    25
+    20,
+    40
    ],
-   "why": "Одна из достопримечательностей города; совсем рядом. Достопримечательность «Национальный архив Республики Казахстан».",
-   "what_to_do": "Осмотрите снаружи, сделайте фото с лучшего ракурса и пройдитесь по округе.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы не указаны; открытая территория — обычно доступна",
-    "source": null
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/230358856"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "free",
-    "photo",
-    "hours_unverified"
-   ]
+   "sources": [],
+   "rating": 4.8,
+   "badges": []
   },
   {
-   "poi_id": "osm:way/1383291292",
-   "name": "Мажилис Парламента Республики Казахстан",
-   "category": "landmark",
-   "lat": 51.127821,
-   "lon": 71.441497,
-   "distance_m": 803,
-   "travel_min": 14,
+   "poi_id": "osm:node/6408271985",
+   "name": "CrepeCafe",
+   "category": "cafe",
+   "lat": 51.129382,
+   "lon": 71.428593,
+   "distance_m": 237,
+   "travel_min": 3,
    "visit_min": [
-    15,
-    25
+    20,
+    40
    ],
-   "why": "Одна из достопримечательностей города. Достопримечательность «Мажилис Парламента Республики Казахстан».",
-   "what_to_do": "Осмотрите снаружи, сделайте фото с лучшего ракурса и пройдитесь по округе.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы не указаны; открытая территория — обычно доступна",
-    "source": null
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/1383291292"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "free",
-    "photo",
-    "hours_unverified"
-   ]
+   "sources": [],
+   "rating": 4.8,
+   "badges": []
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "Я работаю только по Астане: Алматы, Медеу (Алматы), Шымбулак (Алматы) — вне зоны покрытия. Вот похожие места в Астане.",
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+  "Часы работы некоторых мест неизвестны."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "mock"
  }
 }

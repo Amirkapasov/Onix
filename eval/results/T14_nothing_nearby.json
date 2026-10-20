@@ -1,27 +1,9 @@
 {
- "request_id": "8a28755c07ed",
+ "request_id": "mock",
  "context_used": {
-  "location": "≈ район окраина (степь) (точность ~100 м)",
-  "time": "вторник, 15:00",
-  "weather": "+3°C, ветер 6 м/с",
-  "mode": "пешком",
-  "radius_m": 800,
-  "filters": [
-   "бюджет 15 мин"
-  ],
-  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+  "data_note": "mock"
  },
- "parsed_intent": {
-  "intent": "other",
-  "time_budget_min": 15,
-  "companions": "solo",
-  "constraints": [],
-  "keywords": [
-   "тут",
-   "дойти",
-   "пешком"
-  ]
- },
+ "parsed_intent": {},
  "recommendations": [
   {
    "poi_id": "osm:way/1442526677",
@@ -29,48 +11,87 @@
    "category": "playground",
    "lat": 51.032705,
    "lon": 71.4096,
-   "distance_m": 8486,
+   "distance_m": 11031,
    "travel_min": 147,
    "visit_min": [
-    30,
-    50
+    20,
+    40
    ],
-   "why": "Подходит под ваш запрос по данным базы. Детская площадка «Детская площадка».",
-   "what_to_do": "Дайте детям поиграть, присмотрите скамейку рядом.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
-    "label": "Часы работы неизвестны — уточните перед выходом",
-    "source": null
+    "label": "Часы неизвестны",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/1442526677"
-    }
-   ],
+   "sources": [],
    "rating": null,
-   "badges": [
-    "outdoor",
-    "free",
-    "kids",
-    "family",
-    "hours_unverified"
-   ]
+   "badges": []
+  },
+  {
+   "poi_id": "osm:way/1442526676",
+   "name": "Детская площадка",
+   "category": "playground",
+   "lat": 51.03375,
+   "lon": 71.409777,
+   "distance_m": 11111,
+   "travel_min": 148,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:way/1442526682",
+   "name": "Детская площадка",
+   "category": "playground",
+   "lat": 51.032721,
+   "lon": 71.411408,
+   "distance_m": 11181,
+   "travel_min": 149,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "Под все условия ничего не нашлось — показываю ближайшие варианты; проверьте часы и время в пути.",
-  "Рядом ничего нет: ближайшее место — «Детская площадка», 8.5 км (~147 мин), это дальше вашего бюджета 15 мин.",
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
-  "Часы работы 1 мест(а) неизвестны — уточните перед выходом."
+  "Часы работы некоторых мест неизвестны."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "mock"
  }
 }

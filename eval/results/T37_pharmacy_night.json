@@ -1,0 +1,97 @@
+{
+ "request_id": "mock",
+ "context_used": {
+  "data_note": "mock"
+ },
+ "parsed_intent": {},
+ "recommendations": [
+  {
+   "poi_id": "osm:way/230401645",
+   "name": "Байтерек",
+   "category": "viewpoint",
+   "lat": 51.128288,
+   "lon": 71.430455,
+   "distance_m": 59,
+   "travel_min": 1,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:node/14100100183",
+   "name": "Peek-a-boo",
+   "category": "restaurant",
+   "lat": 51.129328,
+   "lon": 71.428273,
+   "distance_m": 248,
+   "travel_min": 3,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:way/230358856",
+   "name": "Национальный архив Республики Казахстан",
+   "category": "landmark",
+   "lat": 51.127967,
+   "lon": 71.427018,
+   "distance_m": 271,
+   "travel_min": 4,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  }
+ ],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
+ "route": null,
+ "warnings": [
+  "Часы работы некоторых мест неизвестны."
+ ],
+ "llm": {
+  "provider": "mock"
+ }
+}

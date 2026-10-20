@@ -56,3 +56,10 @@ def test_empty_llm_falls_back_to_top3():
         recs, _, _ = validate(data, cands, ctx)
         assert 1 <= len(recs) <= 3
         assert all(r["why"] and r["what_to_do"] for r in recs)
+
+
+def test_extract_json_ignores_trailing_text():
+    from backend.app.llm import extract_json
+    assert extract_json('```json\n{"a": 1}\n```') == {"a": 1}
+    assert extract_json('{"a": 1}\n{"b": 2}') == {"a": 1}
+    assert extract_json('Вот ответ: {"a": {"b": [1]}} спасибо') == {"a": {"b": [1]}}

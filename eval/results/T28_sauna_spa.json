@@ -1,0 +1,97 @@
+{
+ "request_id": "mock",
+ "context_used": {
+  "data_note": "mock"
+ },
+ "parsed_intent": {},
+ "recommendations": [
+  {
+   "poi_id": "osm:node/13173517356",
+   "name": "Gasteria",
+   "category": "cafe",
+   "lat": 51.088945,
+   "lon": 71.409346,
+   "distance_m": 60,
+   "travel_min": 1,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "2gis:70000001027813427",
+   "name": "Coffee BOOM, сеть кофеен",
+   "category": "cafe",
+   "lat": 51.089056,
+   "lon": 71.409344,
+   "distance_m": 60,
+   "travel_min": 1,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": 4.8,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:node/6404769885",
+   "name": "Ocean Basket",
+   "category": "restaurant",
+   "lat": 51.088558,
+   "lon": 71.409871,
+   "distance_m": 65,
+   "travel_min": 1,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  }
+ ],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
+ "route": null,
+ "warnings": [
+  "Часы работы некоторых мест неизвестны."
+ ],
+ "llm": {
+  "provider": "mock"
+ }
+}

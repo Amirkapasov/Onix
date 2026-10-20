@@ -1,155 +1,97 @@
 {
- "request_id": "5a078d2f13ee",
+ "request_id": "mock",
  "context_used": {
-  "location": "≈ район Бульвар Нуржол (точность ~100 м)",
-  "time": "вторник, 22:30",
-  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
-  "mode": "пешком",
-  "radius_m": 2284,
-  "filters": [
-   "бюджет 120 мин",
-   "пожелания: night, unusual",
-   "ночь: места, открытые допоздна",
-   "скрыто закрытых к приходу: 45",
-   "скрыто без часов, вероятно закрытых в это время: 105"
-  ],
-  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+  "data_note": "mock"
  },
- "parsed_intent": {
-  "intent": "night",
-  "time_budget_min": 120,
-  "companions": "solo",
-  "constraints": [
-   "night",
-   "unusual"
-  ],
-  "keywords": [
-   "ищу",
-   "необычную",
-   "ночную",
-   "активность",
-   "последние",
-   "пару"
-  ]
- },
+ "parsed_intent": {},
  "recommendations": [
   {
-   "poi_id": "osm:node/8595205064",
-   "name": "Пинта",
-   "category": "bar",
-   "lat": 51.12467,
-   "lon": 71.43459,
-   "distance_m": 282,
-   "travel_min": 5,
+   "poi_id": "osm:way/1530378860",
+   "name": "Детская площадка",
+   "category": "playground",
+   "lat": 51.126744,
+   "lon": 71.433254,
+   "distance_m": 44,
+   "travel_min": 1,
    "visit_min": [
-    65,
-    110
+    20,
+    40
    ],
-   "why": "Работает допоздна; совсем рядом. Бар «Пинта».",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
-    "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто до 02:00 (часы по OSM, проверено 2026-10-20)",
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
     "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/8595205064"
-    }
-   ],
+   "sources": [],
    "rating": null,
-   "badges": [
-    "indoor",
-    "night"
-   ]
+   "badges": []
   },
   {
-   "poi_id": "osm:node/10798946230",
-   "name": "Selfie",
-   "category": "restaurant",
-   "lat": 51.125029,
-   "lon": 71.432231,
-   "distance_m": 226,
-   "travel_min": 4,
+   "poi_id": "osm:way/1530378859",
+   "name": "Детская площадка",
+   "category": "playground",
+   "lat": 51.126459,
+   "lon": 71.433727,
+   "distance_m": 102,
+   "travel_min": 1,
    "visit_min": [
-    50,
-    90
+    20,
+    40
    ],
-   "why": "Работает допоздна; совсем рядом; высокий рейтинг 4.9. Ресторан «Selfie».",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/10798946230"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001028338057"
-    }
-   ],
-   "rating": 4.9,
-   "badges": [
-    "indoor",
-    "night"
-   ]
+   "sources": [],
+   "rating": null,
+   "badges": []
   },
   {
-   "poi_id": "osm:node/10564988185",
-   "name": "Degirmen",
+   "poi_id": "2gis:70000001094584929",
+   "name": "Каусар, чайхана",
    "category": "cafe",
-   "lat": 51.128566,
-   "lon": 71.433325,
-   "distance_m": 176,
+   "lat": 51.12679,
+   "lon": 71.435133,
+   "distance_m": 196,
    "travel_min": 3,
    "visit_min": [
-    30,
-    55
+    20,
+    40
    ],
-   "why": "Работает допоздна; совсем рядом; высокий рейтинг 4.6. Кафе «Degirmen».",
-   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/10564988185"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001032665509"
-    }
-   ],
-   "rating": 4.6,
-   "badges": [
-    "indoor",
-    "night",
-    "coffee"
-   ]
+   "sources": [],
+   "rating": 4.8,
+   "badges": []
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+  "Часы работы некоторых мест неизвестны."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "mock"
  }
 }

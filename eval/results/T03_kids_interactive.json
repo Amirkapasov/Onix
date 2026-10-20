@@ -1,74 +1,34 @@
 {
- "request_id": "f0dedb72b3e0",
+ "request_id": "mock",
  "context_used": {
-  "location": "≈ район Хан Шатыр (точность ~100 м)",
-  "time": "суббота, 11:00",
-  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
-  "mode": "пешком",
-  "radius_m": 1200,
-  "filters": [
-   "бюджет не указан — беру ~90 мин",
-   "с детьми",
-   "пожелания: interactive"
-  ],
-  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+  "data_note": "mock"
  },
- "parsed_intent": {
-  "intent": "kids",
-  "time_budget_min": null,
-  "companions": "kids",
-  "constraints": [
-   "interactive"
-  ],
-  "keywords": [
-   "еду",
-   "ребёнком",
-   "детские",
-   "площадки",
-   "музей",
-   "интерактивами"
-  ]
- },
+ "parsed_intent": {},
  "recommendations": [
   {
-   "poi_id": "osm:way/1449322330",
-   "name": "Детская площадка",
-   "category": "playground",
-   "lat": 51.13227,
-   "lon": 71.403346,
-   "distance_m": 93,
-   "travel_min": 2,
+   "poi_id": "osm:way/1449317872",
+   "name": "Movenpick",
+   "category": "cafe",
+   "lat": 51.132882,
+   "lon": 71.404082,
+   "distance_m": 19,
+   "travel_min": 0,
    "visit_min": [
-    30,
-    50
+    20,
+    40
    ],
-   "why": "Подходит для детей. Детская площадка «Детская площадка».",
-   "what_to_do": "Дайте детям поиграть, присмотрите скамейку рядом.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
-    "label": "Часы работы неизвестны — уточните перед выходом",
-    "source": null
+    "label": "Часы неизвестны",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/1449322330"
-    },
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/1449322332"
-    }
-   ],
+   "sources": [],
    "rating": null,
-   "badges": [
-    "outdoor",
-    "free",
-    "kids",
-    "family",
-    "hours_unverified"
-   ]
+   "badges": []
   },
   {
    "poi_id": "osm:way/1449322354",
@@ -76,34 +36,24 @@
    "category": "kids",
    "lat": 51.132534,
    "lon": 71.40388,
-   "distance_m": 52,
+   "distance_m": 68,
    "travel_min": 1,
    "visit_min": [
-    65,
-    110
+    20,
+    40
    ],
-   "why": "Подходит для детей. Парк развлечений «Fame City».",
-   "what_to_do": "Выберите 1–2 активности по возрасту ребёнка.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
-    "label": "Часы работы неизвестны — уточните перед выходом",
-    "source": null
+    "label": "Часы неизвестны",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/1449322354"
-    }
-   ],
+   "sources": [],
    "rating": null,
-   "badges": [
-    "outdoor",
-    "kids",
-    "family",
-    "hours_unverified"
-   ]
+   "badges": []
   },
   {
    "poi_id": "osm:way/460703779",
@@ -111,56 +61,37 @@
    "category": "mall",
    "lat": 51.132509,
    "lon": 71.403873,
-   "distance_m": 55,
+   "distance_m": 72,
    "travel_min": 1,
    "visit_min": [
-    65,
-    110
+    20,
+    40
    ],
-   "why": "Подходит для детей; высокий рейтинг 4.9. «Хан Шатыр» — крупный торгово-развлекательный центр в столице Казахстана Астане.",
-   "what_to_do": "Зайдите погреться, выпейте кофе; при желании — кино или фуд-корт.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 22:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/460703779"
-    },
-    {
-     "name": "wikidata",
-     "url": "https://www.wikidata.org/wiki/Q671484"
-    },
-    {
-     "name": "wikipedia",
-     "url": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%BD_%D0%A8%D0%B0%D1%82%D1%8B%D1%80"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001018125368"
-    }
-   ],
+   "sources": [],
    "rating": 4.9,
-   "badges": [
-    "indoor",
-    "night",
-    "family"
-   ]
+   "badges": []
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
-  "Часы работы 2 мест(а) неизвестны — уточните перед выходом."
+  "Часы работы некоторых мест неизвестны."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "mock"
  }
 }

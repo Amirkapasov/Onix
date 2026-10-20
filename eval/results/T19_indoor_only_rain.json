@@ -1,71 +1,34 @@
 {
- "request_id": "9ff25144d359",
+ "request_id": "mock",
  "context_used": {
-  "location": "≈ район ЭКСПО (точность ~100 м)",
-  "time": "вторник, 15:00",
-  "weather": "+3°C, ветер 6 м/с",
-  "mode": "пешком",
-  "radius_m": 1142,
-  "filters": [
-   "бюджет 60 мин",
-   "только в помещении",
-   "пожелания: indoor",
-   "скрыто закрытых к приходу: 1"
-  ],
-  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+  "data_note": "mock"
  },
- "parsed_intent": {
-  "intent": "other",
-  "time_budget_min": 60,
-  "companions": "solo",
-  "constraints": [
-   "indoor"
-  ],
-  "keywords": [
-   "пошёл",
-   "дождь",
-   "нибудь",
-   "под",
-   "крышу"
-  ]
- },
+ "parsed_intent": {},
  "recommendations": [
   {
-   "poi_id": "osm:node/5880883097",
-   "name": "Chaplin Cinema",
-   "category": "cinema",
-   "lat": 51.088319,
-   "lon": 71.40973,
-   "distance_m": 513,
-   "travel_min": 9,
+   "poi_id": "2gis:70000001072135261",
+   "name": "Coffee BOOM, сеть кофеен",
+   "category": "cafe",
+   "lat": 51.088679,
+   "lon": 71.41551,
+   "distance_m": 143,
+   "travel_min": 2,
    "visit_min": [
-    36,
-    51
+    20,
+    40
    ],
-   "why": "Можно провести время в тепле; высокий рейтинг 4.8. Кинотеатр «Chaplin Cinema».",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/5880883097"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001027048493"
-    }
-   ],
-   "rating": 4.8,
-   "badges": [
-    "indoor",
-    "night"
-   ]
+   "sources": [],
+   "rating": 4.7,
+   "badges": []
   },
   {
    "poi_id": "2gis:70000001039308458",
@@ -73,80 +36,60 @@
    "category": "cafe",
    "lat": 51.088909,
    "lon": 71.415083,
-   "distance_m": 134,
+   "distance_m": 175,
    "travel_min": 2,
    "visit_min": [
-    30,
-    55
+    20,
+    40
    ],
-   "why": "Можно провести время в тепле; высокий рейтинг 4.6. Кафе «Kakao Dak, кафе».",
-   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 23:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001039308458"
-    }
-   ],
+   "sources": [],
    "rating": 4.6,
-   "badges": [
-    "indoor",
-    "night",
-    "coffee"
-   ]
+   "badges": []
   },
   {
-   "poi_id": "osm:way/499328514",
-   "name": "Mega Silk Way",
-   "category": "mall",
-   "lat": 51.08909,
-   "lon": 71.40733,
-   "distance_m": 675,
-   "travel_min": 12,
+   "poi_id": "osm:node/11993865901",
+   "name": "Line Brew",
+   "category": "restaurant",
+   "lat": 51.088866,
+   "lon": 71.415016,
+   "distance_m": 181,
+   "travel_min": 2,
    "visit_min": [
-    33,
-    48
+    20,
+    40
    ],
-   "why": "Можно провести время в тепле; высокий рейтинг 5.0. Торговый центр «Mega Silk Way».",
-   "what_to_do": "Зайдите погреться, выпейте кофе; при желании — кино или фуд-корт.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 22:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/499328514"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001026995330"
-    }
-   ],
-   "rating": 5.0,
-   "badges": [
-    "indoor",
-    "family"
-   ]
+   "sources": [],
+   "rating": 4.9,
+   "badges": []
   }
  ],
- "ideas": [],
- "route": null,
- "warnings": [
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
  ],
+ "route": null,
+ "warnings": [],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "mock"
  }
 }

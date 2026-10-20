@@ -1,7 +1,8 @@
 import { useEffect, useMemo } from 'react'
 import { Circle, CircleMarker, MapContainer, Marker, Polyline, TileLayer, Tooltip, useMap, useMapEvents } from 'react-leaflet'
 import L from 'leaflet'
-import type { LatLon, Poi, RecommendResponse } from '../types'
+import type { Lang, LatLon, Poi, RecommendResponse } from '../types'
+import { CATEGORY_ICONS, CATEGORY_LABELS } from '../i18n'
 
 interface Props {
   location: LatLon
@@ -13,12 +14,13 @@ interface Props {
   pois: Poi[]
   hint: string
   coarseLabel: string
+  lang: Lang
 }
 
-function numberIcon(n: number, active: boolean) {
+function numberIcon(n: number, active: boolean, emoji: string) {
   return L.divIcon({
     className: '',
-    html: `<div class="rec-marker${active ? ' rec-marker--active' : ''}"><span>${n}</span></div>`,
+    html: `<div class="rec-marker${active ? ' rec-marker--active' : ''}"><span>${n}</span></div><div class="rec-cat">${emoji}</div>`,
     iconSize: [40, 48],
     iconAnchor: [20, 46],
   })
@@ -62,7 +64,7 @@ function ResizeWatcher() {
   return null
 }
 
-export default function MapView({ location, result, hovered, onHover, onPick, onMarkerClick, pois, hint, coarseLabel }: Props) {
+export default function MapView({ location, result, hovered, onHover, onPick, onMarkerClick, pois, hint, coarseLabel, lang }: Props) {
   const recs = result?.recommendations ?? []
   const recPoints = useMemo(() => recs.map((r) => [r.lat, r.lon] as [number, number]), [recs])
 
@@ -104,7 +106,9 @@ export default function MapView({ location, result, hovered, onHover, onPick, on
             radius={3}
             pathOptions={{ color: '#64748b', weight: 0, fillOpacity: 0.45 }}
           >
-            <Tooltip direction="top">{p.name}</Tooltip>
+            <Tooltip direction="top">
+              {CATEGORY_ICONS[p.category] ?? '📍'} {p.name}
+            </Tooltip>
           </CircleMarker>
         ))}
 
@@ -132,7 +136,7 @@ export default function MapView({ location, result, hovered, onHover, onPick, on
           <Marker
             key={r.poi_id}
             position={[r.lat, r.lon]}
-            icon={numberIcon(i + 1, hovered === i)}
+            icon={numberIcon(i + 1, hovered === i, CATEGORY_ICONS[r.category] ?? '📍')}
             zIndexOffset={hovered === i ? 1000 : 0}
             eventHandlers={{
               mouseover: () => onHover(i),
@@ -140,7 +144,10 @@ export default function MapView({ location, result, hovered, onHover, onPick, on
               click: () => onMarkerClick(i),
             }}
           >
-            <Tooltip direction="top" offset={[0, -44]}>{r.name}</Tooltip>
+            <Tooltip direction="top" offset={[0, -44]}>
+              {CATEGORY_ICONS[r.category] ?? '📍'} {r.name}
+              <span className="ml-1 font-normal text-slate-500">· {CATEGORY_LABELS[r.category]?.[lang] ?? r.category}</span>
+            </Tooltip>
           </Marker>
         ))}
       </MapContainer>

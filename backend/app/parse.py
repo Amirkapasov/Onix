@@ -3,7 +3,10 @@ from __future__ import annotations
 
 import re
 
-INTENTS = ["walk", "coffee", "kids", "sightseeing", "night", "food", "culture", "shopping", "work", "other"]
+from . import needs as needs_mod
+
+INTENTS = ["walk", "coffee", "kids", "sightseeing", "night", "food", "culture", "shopping", "work", "wellness",
+           "sport", "entertainment", "other"]
 COMPANIONS = ["solo", "kids", "group", "couple"]
 CONSTRAINTS = ["quiet", "sockets", "wifi", "coffee", "indoor", "outdoor_ok", "night", "unusual",
                "accessibility", "flight_soon", "free", "view", "interactive", "food"]
@@ -128,8 +131,12 @@ def rule_parse(query: str, lang: str | None = None) -> dict:
         intent = "walk"
     else:
         intent = "other"
+    found = needs_mod.detect(query)
+    if found and intent in ("other", "walk", "sightseeing", "coffee", "food", "shopping", "culture"):
+        intent = needs_mod.intent_for(found) or intent
     return {
         "intent": intent,
+        "needs": found,
         "time_budget_min": parse_time_budget(q),
         "companions": companions,
         "constraints": cons,
@@ -156,6 +163,11 @@ def merge_llm(rules: dict, llm: dict | None) -> dict:
         if c in CONSTRAINTS and c not in cons:
             cons.append(c)
     out["constraints"] = cons
+    extra = [k for k in (llm.get("needs") or []) if k in needs_mod.BY_KEY and k not in out.get("needs", [])]
+    if extra:
+        out["needs"] = list(out.get("needs", [])) + extra
+        if out["intent"] == "other":
+            out["intent"] = needs_mod.intent_for(out["needs"]) or "other"
     kws = [str(k).lower()[:30] for k in (llm.get("keywords") or []) if isinstance(k, str)]
     if kws:
         out["keywords"] = list(dict.fromkeys(kws + rules["keywords"]))[:10]
@@ -167,6 +179,7 @@ PARSE_SYSTEM = (
     '{"intent": one of ' + str(INTENTS) + ', "time_budget_min": int|null (верхняя граница, '
     '"30–60 минут" → 60, "2 часа" → 120), "companions": one of ' + str(COMPANIONS) + ', '
     '"constraints": subset of ' + str(CONSTRAINTS) + ', "keywords": [до 6 коротких ключевых слов по-русски '
-    'для поиска мест, включая синонимы], "lang": "ru"|"kk"|"en"}.\n'
+    'для поиска мест, включая синонимы], "lang": "ru"|"kk"|"en", "needs": subset of '
+    + str(list(needs_mod.BY_KEY)) + ' — ТОЛЬКО если человек явно назвал объект, занятие или покупку}.\n'
     "flight_soon — если человек скоро улетает. Не придумывай то, чего нет в запросе."
 )

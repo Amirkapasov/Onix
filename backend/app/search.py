@@ -3,9 +3,13 @@ from __future__ import annotations
 
 import hashlib
 import logging
+import os
 import re
 import threading
+import time
 from collections import OrderedDict
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 
 import numpy as np
 from rank_bm25 import BM25Okapi
@@ -75,6 +79,9 @@ class Index:
         self._lock = threading.Lock()
         self._emb_thread: threading.Thread | None = None
         self._qcache: OrderedDict[str, np.ndarray] = OrderedDict()
+        self._q_cooldown = 0.0
+        self.emb_mask: np.ndarray | None = None
+        self.progress = (0, 0)
 
     def ensure(self) -> None:
         pois = store.get()
@@ -89,35 +96,79 @@ class Index:
             self.emb = None
             self.version = store.version
             if _embed_enabled():
-                self._emb_thread = threading.Thread(target=self._build_emb, args=(texts, store.version), daemon=True)
+                self._emb_thread = threading.Thread(target=self._build_emb, args=(texts, store.version, pois),
+                                                    daemon=True)
                 self._emb_thread.start()
 
-    def _build_emb(self, texts: list[str], version: int) -> None:
+    def _build_emb(self, texts: list[str], version: int, pois: list[dict] | None = None) -> None:
+        """Фоновое построение индекса. Кэш инкрементальный: вектор хранится по sha1(модель + текст документа),
+        поэтому неизменённые POI не пересчитываются, одинаковые тексты встраиваются один раз, а прогресс
+        переживает перезапуск. Несколько процессов не строят одновременно: строит владелец lock-файла,
+        остальные подхватывают готовое с диска. Суточная квота кончилась → частичный индекс (если ≥ 50 %)."""
+        hashes = [_text_hash(t) for t in texts]
+        uniq = list(dict.fromkeys(hashes))
+        first = {h: i for i, h in reversed(list(enumerate(hashes)))}
+        # сначала популярные и содержательные места — на случай, если квоты хватит не на всё
+        prio = {h: -(_poi_weight(pois[first[h]]) if pois else 0) for h in uniq}
+        self.progress = (0, len(uniq))
         try:
-            h = hashlib.sha1(("\n".join(texts) + config.GEMINI_EMBED_MODEL).encode()).hexdigest()[:16]
-            path = config.CACHE_DIR / f"emb_{h}.npy"
-            if path.exists():
-                mat = np.load(path)
-            else:
-                mat = _embed(texts, "RETRIEVAL_DOCUMENT")
-                config.CACHE_DIR.mkdir(parents=True, exist_ok=True)
-                np.save(path, mat)
-            if version == self.version:
-                self.emb = mat
-                log.info("embeddings ready: %s", mat.shape)
+            while version == self.version:
+                cache = _load_store()
+                missing = sorted((h for h in uniq if h not in cache), key=lambda h: prio[h])
+                self.progress = (len(uniq) - len(missing), len(uniq))
+                if not missing:
+                    self._set_emb(hashes, cache, version)
+                    return
+                if not _take_lock():
+                    time.sleep(30)  # строит другой процесс — ждём его результат
+                    continue
+                try:
+                    for start in range(0, len(missing), EMBED_BATCH):
+                        if version != self.version:
+                            return
+                        chunk = missing[start:start + EMBED_BATCH]
+                        vecs = _embed([texts[first[h]] for h in chunk], "RETRIEVAL_DOCUMENT", patient=True)
+                        cache.update(zip(chunk, vecs))
+                        _save_store(cache)
+                        _touch_lock()
+                        self.progress = (len(uniq) - len(missing) + start + len(chunk), len(uniq))
+                finally:
+                    _release_lock()
+        except DailyQuotaExceeded:
+            cache = _load_store()
+            done = sum(h in cache for h in uniq)
+            log.warning("embeddings: daily quota exhausted (%d/%d); %s", done, len(uniq),
+                        "using partial index" if done >= len(uniq) / 2 else "BM25 only until tomorrow")
+            if done >= len(uniq) / 2:
+                self._set_emb(hashes, cache, version)
         except Exception as e:
             log.warning("embeddings disabled (BM25 only): %s: %s", type(e).__name__, str(e)[:200])
 
+    def _set_emb(self, hashes: list[str], cache: dict, version: int) -> None:
+        dim = len(next(iter(cache.values())))
+        mask = np.array([h in cache for h in hashes])
+        mat = np.stack([cache[h] if h in cache else np.zeros(dim, np.float32) for h in hashes]).astype(np.float32)
+        if version == self.version:
+            self.emb, self.emb_mask = mat, mask
+            log.info("embeddings ready: %s (coverage %d/%d)", mat.shape, int(mask.sum()), len(mask))
+
     def query_emb(self, q: str) -> np.ndarray | None:
+        """Эмбеддинг запроса (кэш в памяти). Квота/таймаут → None, поиск тихо остаётся на BM25."""
         if self.emb is None:
             return None
         if q in self._qcache:
             self._qcache.move_to_end(q)
             return self._qcache[q]
+        if time.monotonic() < self._q_cooldown:
+            return None
+        fut = _QPOOL.submit(_embed, [q], "RETRIEVAL_QUERY")
         try:
-            v = _embed([q], "RETRIEVAL_QUERY", timeout=3.0)[0]
-        except Exception as e:
-            log.warning("query embedding failed: %s", type(e).__name__)
+            v = fut.result(timeout=QUERY_EMBED_BUDGET_S)[0]
+        except Exception as e:  # 429, таймаут, сеть
+            from .llm import _is_quota, _retry_delay
+            err = str(e)
+            self._q_cooldown = time.monotonic() + (_retry_delay(err) if _is_quota(err) else 30)
+            log.info("query embedding skipped (%s) — BM25 only", type(e).__name__)
             return None
         self._qcache[q] = v
         if len(self._qcache) > 500:
@@ -137,8 +188,12 @@ class Index:
         if qv is None:
             return dict(zip(ids, bm.tolist()))
         cos = self.emb[rows] @ qv
-        lo, hi = float(cos.min()), float(cos.max())
+        has = self.emb_mask[rows] if self.emb_mask is not None else np.ones(len(rows), bool)
+        if not has.any():
+            return dict(zip(ids, bm.tolist()))
+        lo, hi = float(cos[has].min()), float(cos[has].max())
         cn = (cos - lo) / (hi - lo) if hi - lo > 1e-6 else np.zeros_like(cos)
+        cn = np.where(has, cn, 0.5)  # у места нет вектора (частичный индекс) — нейтральная оценка
         return dict(zip(ids, (0.5 * bm + 0.5 * cn).tolist()))
 
     @property
@@ -146,26 +201,115 @@ class Index:
         return self.emb is not None
 
 
+class DailyQuotaExceeded(Exception):
+    pass
+
+
+def _poi_weight(p: dict) -> float:
+    return (p.get("popularity") or 0) + (p.get("data_quality") or 0) + (0.5 if len(p.get("description") or "") > 60 else 0)
+
+
+EMBED_BATCH = 100          # одним batchEmbedContents (квота free tier считает каждый текст)
+QUERY_EMBED_BUDGET_S = 2.0
+_QPOOL = ThreadPoolExecutor(max_workers=2)
+LOCK_STALE_S = 180
+
+
+def _store_path() -> Path:
+    return config.CACHE_DIR / f"emb_store_{config.GEMINI_EMBED_MODEL}.npz"
+
+
+def _text_hash(text: str) -> str:
+    return hashlib.sha1(f"{config.GEMINI_EMBED_MODEL}|768|{text}".encode()).hexdigest()
+
+
+def _load_store() -> dict[str, np.ndarray]:
+    path = _store_path()
+    if not path.exists():
+        return {}
+    try:
+        with np.load(path) as z:
+            return dict(zip(z["keys"].tolist(), z["vecs"]))
+    except Exception as e:
+        log.warning("embedding cache unreadable, rebuilding: %s", type(e).__name__)
+        return {}
+
+
+def _save_store(cache: dict[str, np.ndarray]) -> None:
+    config.CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    tmp = _store_path().with_suffix(".tmp.npz")
+    keys = list(cache)
+    np.savez(tmp, keys=np.array(keys), vecs=np.stack([cache[k] for k in keys]).astype(np.float32))
+    os.replace(tmp, _store_path())  # атомарно: читатели не увидят полузаписанный файл
+
+
+def _lock_path() -> Path:
+    return config.CACHE_DIR / f"emb_build_{config.GEMINI_EMBED_MODEL}.lock"
+
+
+def _take_lock() -> bool:
+    config.CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    lp = _lock_path()
+    if lp.exists() and time.time() - lp.stat().st_mtime > LOCK_STALE_S:
+        lp.unlink(missing_ok=True)  # строитель умер (перезапуск) — забираем
+    try:
+        fd = os.open(lp, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        os.write(fd, str(os.getpid()).encode())
+        os.close(fd)
+        return True
+    except FileExistsError:
+        return False
+
+
+def _touch_lock() -> None:
+    try:
+        os.utime(_lock_path())
+    except OSError:
+        pass
+
+
+def _release_lock() -> None:
+    _lock_path().unlink(missing_ok=True)
+
+
 def _embed_enabled() -> bool:
     return bool(config.GEMINI_API_KEY) and not config.DISABLE_LLM and not config.DISABLE_NETWORK
 
 
-def _embed(texts: list[str], task: str, timeout: float = 30.0) -> np.ndarray:
+def _embed(texts: list[str], task: str, timeout: float = 30.0, patient: bool = False) -> np.ndarray:
+    """patient=True (фоновое построение индекса): на 429 ждём и продолжаем, до ~15 мин."""
     from google import genai
     from google.genai import types
     client = genai.Client(api_key=config.GEMINI_API_KEY)
     model = config.GEMINI_EMBED_MODEL
-    kw = {"output_dimensionality": 768, "http_options": types.HttpOptions(timeout=int(timeout * 1000))}
+    kw = {"output_dimensionality": 768, "http_options": types.HttpOptions(timeout=int(max(10.0, timeout) * 1000))}
     if "embedding-001" in model:
         kw["task_type"] = task
     else:  # gemini-embedding-2 и новее: task_type не поддерживается — префикс в тексте
         pre = "task: search result | query: " if task == "RETRIEVAL_QUERY" else "text: "
         texts = [pre + t for t in texts]
-    out = []
-    for i in range(0, len(texts), 100):
-        resp = client.models.embed_content(model=model, contents=texts[i:i + 100],
-                                           config=types.EmbedContentConfig(**kw))
+    out: list = []
+    step, waited = EMBED_BATCH, 0.0
+    i = 0
+    while i < len(texts):
+        try:
+            resp = client.models.embed_content(model=model, contents=texts[i:i + step],
+                                               config=types.EmbedContentConfig(**kw))
+        except Exception as e:
+            from .llm import _is_quota, _retry_delay
+            if not (patient and _is_quota(str(e))) or waited > 1800:
+                raise
+            m = re.search(r"retryDelay'?:\s*'?(\d+)", str(e))
+            if "PerDay" in str(e) or (m and int(m.group(1)) > 600):
+                raise DailyQuotaExceeded(str(e)[:200]) from e
+            delay = _retry_delay(str(e))
+            log.info("embeddings: quota, waiting %.0fs (%d/%d done)", delay, i, len(texts))
+            time.sleep(delay)
+            _touch_lock()
+            waited += delay
+            continue
         out.extend(e.values for e in resp.embeddings)
+        i += step
     mat = np.array(out, dtype=np.float32)
     mat /= np.linalg.norm(mat, axis=1, keepdims=True) + 1e-9
     return mat

@@ -85,4 +85,5 @@ def api_health():
     prov = llm.get_provider()
     return {"status": "ok", "pois": len(store.get()), "llm_provider": prov.name if prov else "none",
             "llm_model": prov.model if prov else None, "embeddings": index.embeddings_ready,
+            "embeddings_progress": "{}/{}".format(*index.progress),
             "data_file": store.source_name, "configured_provider": config.LLM_PROVIDER}

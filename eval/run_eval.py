@@ -6,6 +6,7 @@
     python3 eval/run_eval.py --mock good          # проверка скрипта на моке
     python3 eval/run_eval.py --mock bad           # мок с нарушениями: проверки должны их поймать
     python3 eval/run_eval.py --only T07,T13 --no-weather-override
+    python3 eval/run_eval.py --delay 0            # без паузы между кейсами (по умолчанию 13 с — лимит free tier ~5 запросов/мин)
 
 Выход: eval/report.md (+ сырые ответы в eval/results/).
 """
@@ -140,7 +141,31 @@ def lang_ok(text: str, lang: str) -> bool:
 
 OPEN_CLAIM = re.compile(r"открыт[оа]?\s+сейчас|сейчас\s+открыт|^открыто\b|open now|^open\b|қазір ашық|^ашық", re.I)
 
-FAR_WARN = re.compile(r"радиус|далек|далеко|расшир|мало подходящ|ничего не нашл|far|radius|қашық|радиус", re.I)
+def open_confirmed(poi: dict, dt: datetime) -> bool:
+    """Открыто подтверждённо: тег 24_7 или часы разобраны и показывают «открыто»."""
+    return "24_7" in (poi.get("tags") or []) or is_open(parse_oh(poi.get("opening_hours")), dt) is True
+
+
+def poi_matches(poi: dict, m: dict) -> bool:
+    """expected_match: {categories, tags, regex, indoor} — достаточно любого совпадения;
+    {all_of: [m1, m2]} — должны совпасть все."""
+    if "all_of" in m:
+        return all(poi_matches(poi, x) for x in m["all_of"])
+    if poi.get("category") in m.get("categories", []):
+        return True
+    if set(poi.get("tags") or []) & set(m.get("tags", [])):
+        return True
+    if m.get("indoor") and poi.get("indoor") is True:
+        return True
+    if m.get("regex"):
+        names = " ".join([poi.get("name", "")] + list((poi.get("name_i18n") or {}).values()))
+        blob = f"{names} {poi.get('description', '')} {' '.join(poi.get('tags') or [])}"
+        if re.search(m["regex"], blob, re.I):
+            return True
+    return False
+
+
+FAR_WARN = re.compile(r"пешком рядом нет|радиус|далек|далеко|расшир|мало подходящ|ничего не нашл|на такси|far|radius|nothing within walking|қашық|жаяу жақын", re.I)
 
 # ---------- проверки ----------
 
@@ -218,16 +243,31 @@ class Checker:
         self.add("open_for_visit", not stays, ", ".join(map(str, stays)), sev="soft")
         self.add("distance_consistent", not dist_incons, "; ".join(dist_incons))
         if e.get("max_distance_m"):
-            # контракт п.6: «далеко» допустимо, если честно сказано в warnings → тогда мягкий провал
+            # контракт п.6: «далеко» допустимо, если честно сказано в warnings («Пешком рядом нет: … на такси»)
             far_warned = any(FAR_WARN.search(w) for w in warnings)
-            self.add("distance_budget", not dist_over, "; ".join(dist_over) + (" (есть warning)" if dist_over and far_warned else ""),
-                     sev="soft" if dist_over and far_warned else "hard")
+            self.add("distance_budget", not dist_over or far_warned,
+                     "; ".join(dist_over) + (" — далеко, но честно предупредили" if dist_over and far_warned else ""))
         if e.get("far_requires_warning_m"):
             far = [x for x in recs if (x.get("distance_m") or 0) > e["far_requires_warning_m"]]
             self.add("far_has_warning", not far or bool(warnings), f"{len(far)} далеко")
 
         # специфичные проверки кейса
         pois = [self.pois[x["poi_id"]] for x in recs if x.get("poi_id") in self.pois]
+        m = e.get("expected_match")
+        if m:
+            bad = [f"{p['name']} ({p['category']})" for p in pois if not poi_matches(p, m)]
+            self.add("relevance", not bad, "нерелевантно: " + ", ".join(bad) if bad else "")
+            # если в базе есть подходящее рядом и открытое — пустой ответ не засчитываем
+            lim = e.get("max_distance_m") or 3000
+            avail = [p for p in self.pois.values() if poi_matches(p, m)
+                     and haversine_m(loc["lat"], loc["lon"], p["lat"], p["lon"]) <= lim
+                     and (open_confirmed(p, t0) if e.get("require_open_confirmed")
+                          else is_open(parse_oh(p.get("opening_hours")), t0) is not False)
+                     and "transport" not in (p.get("tags") or [])]
+            if avail and not recs:
+                self.add("recall_if_available", False, f"в базе {len(avail)} подходящих в {lim} м, напр. {avail[0]['name']}")
+            elif not avail:
+                self.add("recall_if_available", True, "в базе нет подходящих рядом")
         if e.get("require_warning"):
             if e.get("warning_regex"):  # нужен предметный warning, а не «ИИ-модель недоступна»
                 rx = re.compile(e["warning_regex"], re.I)
@@ -237,6 +277,12 @@ class Checker:
         if e.get("categories_any") and pois:
             self.add("relevant_category", any(p["category"] in e["categories_any"] for p in pois),
                      ", ".join(p["category"] for p in pois), sev="soft")
+        if e.get("require_open_confirmed"):
+            bad = [p["name"] for p in pois if not open_confirmed(p, t0)]
+            self.add("open_confirmed", not bad, "часы не подтверждают: " + ", ".join(bad) if bad else "")
+        if e.get("forbid_categories"):
+            bad = [f"{p['name']} ({p['category']})" for p in pois if p["category"] in e["forbid_categories"]]
+            self.add("forbidden_category", not bad, ", ".join(bad))
         if e.get("all_kid_friendly"):
             kidtags = {"kids", "family", "playground", "interactive"}
             bad = [p["name"] for p in pois if not (p.get("kid_friendly") or kidtags & set(p.get("tags", []))
@@ -358,11 +404,13 @@ def main():
     ap.add_argument("--only", default="", help="префиксы id через запятую: T01,T07")
     ap.add_argument("--no-weather-override", action="store_true", help="не слать weather_override из кейса (живая погода)")
     ap.add_argument("--timeout", type=float, default=30)
+    ap.add_argument("--delay", type=float, default=13.0, help="пауза между кейсами, с (free tier Gemini ~5 запросов/мин на модель; 4–5 с — если допустимы запасные модели)")
     ap.add_argument("--out", default=str(EVAL / "report.md"))
     a = ap.parse_args()
 
     spec = json.loads(Path(a.cases).read_text(encoding="utf-8"))
     pois, pois_path = load_pois(a.pois)
+    _POIS.update(pois)
     cases = [c for c in spec["cases"] if not a.only or any(c["id"].startswith(p) for p in a.only.split(","))]
 
     h = None
@@ -374,7 +422,9 @@ def main():
     raw_dir = EVAL / "results"
     raw_dir.mkdir(exist_ok=True)
     rows, lat_all = [], []
-    for c in cases:
+    for i, c in enumerate(cases):
+        if i and not a.mock and a.delay > 0:
+            time.sleep(a.delay)
         body = dict(c["request"])
         if not a.no_weather_override and c.get("weather_override"):
             body["weather_override"] = c["weather_override"]
@@ -392,11 +442,15 @@ def main():
             res = Checker(c, resp, pois, spec["defaults"], ms).run()
         rows.append((c, resp, res, ms))
         hard_ok = all(ok for _, sev, ok, _ in res if sev == "hard")
-        print(f"{'PASS' if hard_ok else 'FAIL'} {c['id']:<28} {ms:6.0f} ms  " +
+        llm_tag = ((resp.get("llm") or {}).get("provider") or "none")[:6]
+        print(f"{'PASS' if hard_ok else 'FAIL'} {c['id']:<28} {ms:6.0f} ms {llm_tag:<6} " +
               " ".join(f"✗{n}" for n, _, ok, _ in res if not ok))
 
     write_report(a, rows, lat_all, pois_path, len(pois), h)
     print(f"\nОтчёт: {a.out}")
+
+
+_POIS: dict = {}
 
 
 def pct(a, b):
@@ -416,6 +470,12 @@ def write_report(a, rows, lat_all, pois_path, n_pois, h):
             per_check[name][1] += 1
             sev_of[name] = sev
     recs_n = [len(r.get("recommendations") or []) for _, r, _, _ in rows]
+    # пустой ответ («в базе нет мест для …») LLM не вызывает — это не деградация
+    with_recs = [r for _, r, _, _ in rows if r.get("recommendations")]
+    llm_used = [r for r in with_recs if ((r.get("llm") or {}).get("provider") or "none") not in ("none", "mock")]
+    llm_lat = [x for x in ((r.get("llm") or {}).get("latency_ms") or 0 for r in llm_used) if x > 0]
+    llm_cached = len(llm_used) - len(llm_lat)
+    models = sorted({(r.get("llm") or {}).get("model") or "?" for r in llm_used})
     lat_sorted = sorted(lat_all)
     p95 = lat_sorted[min(len(lat_sorted) - 1, int(0.95 * len(lat_sorted)))] if lat_sorted else 0
     mode = f"МОК ({a.mock})" if a.mock else f"живой бэкенд {a.base}"
@@ -426,20 +486,39 @@ def write_report(a, rows, lat_all, pois_path, n_pois, h):
         f"- Кейсов: {n} (`eval/cases.json`), сырые ответы: `eval/results/`", "",
         "## Итог (для слайда «Качество»)", "",
         "| Метрика | Значение |", "|---|---|",
+        f"| Ответов через LLM — из ответов с рекомендациями (не деградация) | **{len(llm_used)}/{len(with_recs)} ({pct(len(llm_used), len(with_recs))})**" + (f" — {', '.join(models)}" if models else "") + " |",
+        f"| Честно пустых ответов («в базе нет мест для …», LLM не нужен) | {n - len(with_recs)}/{n} |",
         f"| Кейсы, прошедшие все жёсткие правила | **{hard_pass}/{n} ({pct(hard_pass, n)})** |",
         f"| Кейсы, прошедшие все проверки (вкл. мягкие) | {all_pass}/{n} ({pct(all_pass, n)}) |",
     ]
+    rel_rows = [(r, res) for c, r, res, _ in rows if c.get("expect", {}).get("expected_match")]
+    if rel_rows:
+        ok_cases = sum(all(ok for nm, _, ok, _ in res if nm in ("relevance", "recall_if_available")) for _, res in rel_rows)
+        L.append(f"| **Релевантность**: кейсы с конкретным запросом, где все места по теме и нет пустого ответа при наличии в базе | **{ok_cases}/{len(rel_rows)} ({pct(ok_cases, len(rel_rows))})** |")
+        tot = good = 0
+        for c, r, res, _ in rows:
+            mm = c.get("expect", {}).get("expected_match")
+            if not mm:
+                continue
+            for x in r.get("recommendations") or []:
+                p = None if not isinstance(x, dict) else _POIS.get(x.get("poi_id"))
+                if p:
+                    tot += 1
+                    good += poi_matches(p, mm)
+        L.append(f"| Релевантность по местам (рекомендаций по теме) | {good}/{tot} ({pct(good, tot)}) |")
     for key, label in [("poi_in_db", "Нет выдуманных мест (poi_id в базе)"),
                        ("not_closed", "Не рекомендует закрытое"),
                        ("no_open_when_unknown", "Нет «открыто» без данных"),
                        ("distance_budget", "Расстояние в бюджете"),
                        ("lang", "Язык ответа = lang"),
-                       ("relevant_category", "Релевантная категория (мягкая)")]:
+                       ("relevant_category", "Подходящая категория (мягкая, общие запросы)")]:
         if key in per_check:
             ok, tot = per_check[key]
             L.append(f"| {label} | {ok}/{tot} ({pct(ok, tot)}) |")
     L += [f"| Задержка p50 / p95 / max | {statistics.median(lat_all):.0f} / {p95:.0f} / {max(lat_all):.0f} мс |" if lat_all else "| Задержка | — |",
+          (f"| Время LLM p50 (по ответам через LLM) | {statistics.median(llm_lat):.0f} мс" + (f"; из кэша бэкенда: {llm_cached}" if llm_cached else "") + " |") if llm_lat else "| Время LLM | — |",
           f"| Среднее число рекомендаций | {statistics.mean(recs_n):.1f} |" if recs_n else "", "",
+          "> Если «Ответов через LLM» < 100 %, часть ответов с рекомендациями собрана в режиме деградации (без Gemini) — цифры качества не полностью отражают LLM-путь. Бэкенд кэширует ответы 30 мин: честная задержка — первый прогон после перезапуска.", "",
           "## Проверки", "", "| Проверка | Тип | Пройдено |", "|---|---|---|"]
     for name, (ok, tot) in per_check.items():
         L.append(f"| `{name}` | {sev_of[name]} | {ok}/{tot} ({pct(ok, tot)}) |")

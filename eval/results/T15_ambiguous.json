@@ -1,158 +1,97 @@
 {
- "request_id": "dffcd190582a",
+ "request_id": "mock",
  "context_used": {
-  "location": "≈ район Бульвар Нуржол (точность ~100 м)",
-  "time": "вторник, 16:00",
-  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
-  "mode": "пешком",
-  "radius_m": 1713,
-  "filters": [
-   "бюджет не указан — беру ~90 мин",
-   "скрыто закрытых к приходу: 4",
-   "скрыто без часов, вероятно закрытых в это время: 7"
-  ],
-  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+  "data_note": "mock"
  },
- "parsed_intent": {
-  "intent": "other",
-  "time_budget_min": null,
-  "companions": "solo",
-  "constraints": [],
-  "keywords": [
-   "скучно",
-   "сходить"
-  ]
- },
+ "parsed_intent": {},
  "recommendations": [
   {
-   "poi_id": "osm:node/10564988185",
-   "name": "Degirmen",
-   "category": "cafe",
-   "lat": 51.128566,
-   "lon": 71.433325,
-   "distance_m": 176,
-   "travel_min": 3,
+   "poi_id": "osm:way/1530378860",
+   "name": "Детская площадка",
+   "category": "playground",
+   "lat": 51.126744,
+   "lon": 71.433254,
+   "distance_m": 44,
+   "travel_min": 1,
    "visit_min": [
-    30,
-    55
+    20,
+    40
    ],
-   "why": "Совсем рядом; высокий рейтинг 4.6. Кафе «Degirmen».",
-   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/10564988185"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001032665509"
-    }
-   ],
-   "rating": 4.6,
-   "badges": [
-    "indoor",
-    "night",
-    "coffee"
-   ]
-  },
-  {
-   "poi_id": "osm:node/10798946230",
-   "name": "Selfie",
-   "category": "restaurant",
-   "lat": 51.125029,
-   "lon": 71.432231,
-   "distance_m": 226,
-   "travel_min": 4,
-   "visit_min": [
-    50,
-    90
-   ],
-   "why": "Совсем рядом; высокий рейтинг 4.9. Ресторан «Selfie».",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/10798946230"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001028338057"
-    }
-   ],
-   "rating": 4.9,
-   "badges": [
-    "indoor",
-    "night"
-   ]
-  },
-  {
-   "poi_id": "osm:way/762780007",
-   "name": "Абу-Даби Плаза",
-   "category": "mall",
-   "lat": 51.121972,
-   "lon": 71.427932,
-   "distance_m": 662,
-   "travel_min": 11,
-   "visit_min": [
-    65,
-    110
-   ],
-   "why": "Тепло, магазины и кафе под одной крышей. «Абу-Даби Плаза» — многофункциональный комплекс в Астане.",
-   "what_to_do": "Зайдите погреться, выпейте кофе; при желании — кино или фуд-корт.",
-   "open_status": {
-    "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто до 22:00 (часы по OSM, проверено 2026-10-20)",
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
     "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/762780007"
-    },
-    {
-     "name": "wikidata",
-     "url": "https://www.wikidata.org/wiki/Q1073433"
-    },
-    {
-     "name": "wikipedia",
-     "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%B1%D1%83-%D0%94%D0%B0%D0%B1%D0%B8_%D0%9F%D0%BB%D0%B0%D0%B7%D0%B0"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/9570836402930080"
-    }
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:way/1530378859",
+   "name": "Детская площадка",
+   "category": "playground",
+   "lat": 51.126459,
+   "lon": 71.433727,
+   "distance_m": 102,
+   "travel_min": 1,
+   "visit_min": [
+    20,
+    40
    ],
-   "rating": 3.6,
-   "badges": [
-    "indoor",
-    "family"
-   ]
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "2gis:70000001094584929",
+   "name": "Каусар, чайхана",
+   "category": "cafe",
+   "lat": 51.12679,
+   "lon": 71.435133,
+   "distance_m": 196,
+   "travel_min": 3,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": 4.8,
+   "badges": []
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+  "Часы работы некоторых мест неизвестны."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "mock"
  }
 }

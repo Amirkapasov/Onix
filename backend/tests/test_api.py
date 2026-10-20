@@ -25,7 +25,9 @@ def _check_contract(d):
     assert d["request_id"]
     for k in ("location", "time", "weather", "mode", "radius_m", "filters", "data_note"):
         assert k in d["context_used"]
-    assert 1 <= len(d["recommendations"]) <= 3
+    assert len(d["recommendations"]) <= 3
+    if not d["recommendations"]:  # 0 мест допустимо только с честным объяснением
+        assert any("нет мест" in w or "ничего" in w.lower() for w in d["warnings"]), d["warnings"]
     for r in d["recommendations"]:
         assert r["poi_id"] in ids
         assert r["source_type"] == "poi_data"
@@ -68,7 +70,8 @@ def test_presets_degraded_mode(pid):
     d = r.json()
     _check_contract(d)
     assert d["llm"]["provider"] == "none"
-    assert any("ИИ-модель недоступна" in w for w in d["warnings"])
+    if d["recommendations"]:  # при 0 кандидатов LLM не нужен — и предупреждения о нём нет
+        assert any("ИИ-модель недоступна" in w for w in d["warnings"])
 
 
 def test_kids_filter_excludes_adult_places():
@@ -105,6 +108,9 @@ def test_bad_request_format():
 class _FakeProv:
     name, model = "fake", "fake-1"
 
+    def models_for(self, purpose):
+        return [self.model]
+
 
 def test_llm_path_hallucination_removed(monkeypatch):
     def fake_complete(system, user, **kw):
@@ -126,7 +132,7 @@ def test_llm_path_hallucination_removed(monkeypatch):
     _check_contract(d)
     assert [r["poi_id"] for r in d["recommendations"]] != [] and all(
         not r["poi_id"].startswith("osm:node/000") for r in d["recommendations"])
-    assert d["llm"]["provider"] == "fake" and d["llm"]["latency_ms"] == 12
+    assert d["llm"]["provider"] == "fake" and d["llm"]["latency_ms"] in (7, 12)  # разбор LLM — только при слабых правилах
     assert d["ideas"][0]["source_type"] == "generated_idea"
 
 
@@ -187,3 +193,67 @@ def test_template_why_explains_reason_not_distance():
         d = client.post("/api/recommend", json=_body(p, weather_override=p.get("weather_override"))).json()
         for r in d["recommendations"]:
             assert not _re.search(r"^\d|\d+\s?мин|пешком|на машине", r["why"]), r["why"]
+
+
+def test_quota_429_cools_model_down_and_uses_fallback(monkeypatch):
+    from backend.app import config
+    calls = []
+
+    class Prov(_FakeProv):
+        def models_for(self, purpose):
+            return ["m1", "m2"]
+
+        def complete(self, system, user, temperature, max_tokens, timeout, model=None):
+            calls.append(model)
+            if model == "m1":
+                raise RuntimeError("429 RESOURCE_EXHAUSTED retryDelay': '30s'")
+            return '{"ok": true}'
+
+    monkeypatch.setattr(llm, "get_provider", lambda: Prov())
+    monkeypatch.setattr(llm, "_cooldown", {})
+    monkeypatch.setattr(llm, "_cache", llm.OrderedDict())
+    r = llm.complete_json("s", "u1")
+    assert r.model == "m2" and calls == ["m1", "m2"]  # без ретрая на 429
+    llm.complete_json("s", "u2")
+    assert calls[-1] == "m2" and calls.count("m1") == 1  # m1 «остывает»
+    n = len(calls)
+    assert llm.complete_json("s", "u2").latency_ms == 0 and len(calls) == n  # кэш
+    assert config.GEMINI_PARSE_MODEL
+
+
+def test_llm_at_most_two_api_calls(monkeypatch):
+    calls = []
+
+    class Prov(_FakeProv):
+        def models_for(self, purpose):
+            return ["m1", "m2", "m3"]
+
+        def complete(self, system, user, temperature, max_tokens, timeout, model=None):
+            calls.append(model)
+            raise RuntimeError("503 UNAVAILABLE")
+
+    monkeypatch.setattr(llm, "get_provider", lambda: Prov())
+    monkeypatch.setattr(llm, "_cooldown", {})
+    monkeypatch.setattr(llm, "_cache", llm.OrderedDict())
+    with pytest.raises(llm.LLMError):
+        llm.complete_json("s", "u")
+    assert len(calls) == 2
+
+
+def test_overloaded_model_switches_without_retry(monkeypatch):
+    calls = []
+
+    class Prov(_FakeProv):
+        def models_for(self, purpose):
+            return ["busy", "ok"]
+
+        def complete(self, system, user, temperature, max_tokens, timeout, model=None):
+            calls.append(model)
+            if model == "busy":
+                raise RuntimeError("503 UNAVAILABLE high demand")
+            return '{"x": 1}'
+
+    monkeypatch.setattr(llm, "get_provider", lambda: Prov())
+    monkeypatch.setattr(llm, "_cooldown", {})
+    monkeypatch.setattr(llm, "_cache", llm.OrderedDict())
+    assert llm.complete_json("s", "u").model == "ok" and calls == ["busy", "ok"]

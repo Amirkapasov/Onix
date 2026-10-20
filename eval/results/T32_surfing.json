@@ -1,0 +1,97 @@
+{
+ "request_id": "mock",
+ "context_used": {
+  "data_note": "mock"
+ },
+ "parsed_intent": {},
+ "recommendations": [
+  {
+   "poi_id": "osm:way/230401645",
+   "name": "Байтерек",
+   "category": "viewpoint",
+   "lat": 51.128288,
+   "lon": 71.430455,
+   "distance_m": 59,
+   "travel_min": 1,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "2gis:70000001032494391",
+   "name": "Көкtem, кафе",
+   "category": "cafe",
+   "lat": 51.129267,
+   "lon": 71.428581,
+   "distance_m": 224,
+   "travel_min": 3,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": 4.8,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:node/6408271985",
+   "name": "CrepeCafe",
+   "category": "cafe",
+   "lat": 51.129382,
+   "lon": 71.428593,
+   "distance_m": 237,
+   "travel_min": 3,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": 4.8,
+   "badges": []
+  }
+ ],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
+ "route": null,
+ "warnings": [
+  "Часы работы некоторых мест неизвестны."
+ ],
+ "llm": {
+  "provider": "mock"
+ }
+}

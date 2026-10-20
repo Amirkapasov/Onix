@@ -1,0 +1,97 @@
+{
+ "request_id": "mock",
+ "context_used": {
+  "data_note": "mock"
+ },
+ "parsed_intent": {},
+ "recommendations": [
+  {
+   "poi_id": "osm:way/1449317872",
+   "name": "Movenpick",
+   "category": "cafe",
+   "lat": 51.132882,
+   "lon": 71.404082,
+   "distance_m": 19,
+   "travel_min": 0,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:way/1449322329",
+   "name": "Конвой",
+   "category": "landmark",
+   "lat": 51.132847,
+   "lon": 71.403812,
+   "distance_m": 28,
+   "travel_min": 0,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:way/1449301315",
+   "name": "Starbucks",
+   "category": "cafe",
+   "lat": 51.132727,
+   "lon": 71.403763,
+   "distance_m": 45,
+   "travel_min": 1,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": 3.9,
+   "badges": []
+  }
+ ],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
+ "route": null,
+ "warnings": [
+  "Часы работы некоторых мест неизвестны."
+ ],
+ "llm": {
+  "provider": "mock"
+ }
+}

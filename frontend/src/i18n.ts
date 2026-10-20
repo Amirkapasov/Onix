@@ -69,6 +69,14 @@ const ru = {
   rating: 'рейтинг',
   resultsTitle: (n: number) => `${n} ${plural(n, ['место', 'места', 'мест'])} для вас`,
   noResults: 'Подходящих мест рядом не нашлось. Попробуйте увеличить время или сменить точку.',
+  hourShort: 'ч',
+  forQuery: 'По запросу',
+  nothingTitle: 'Рядом ничего подходящего',
+  nothingText: 'Честно: в нашей базе нет мест под этот запрос поблизости. Можно поискать шире или описать иначе.',
+  fewTitle: 'Нашлось немного',
+  fewText: 'Подходит только это место. Можно поискать шире.',
+  widenBudget: '⏱ Искать дальше (больше времени)',
+  widenCar: '🚗 Искать на машине',
   days: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
 }
 
@@ -143,6 +151,14 @@ const kk: Dict = {
   rating: 'рейтинг',
   resultsTitle: (n: number) => `Сізге ${n} орын`,
   noResults: 'Жақын жерде лайықты орын табылмады. Уақытты ұлғайтып немесе нүктені өзгертіп көріңіз.',
+  hourShort: 'сағ',
+  forQuery: 'Сұрау бойынша',
+  nothingTitle: 'Жақын маңда лайықты орын жоқ',
+  nothingText: 'Шынын айтсақ: базамызда бұл сұрауға жақын орын жоқ. Кеңірек іздеуге немесе басқаша сипаттауға болады.',
+  fewTitle: 'Аз табылды',
+  fewText: 'Тек осы орын сәйкес келеді. Кеңірек іздеуге болады.',
+  widenBudget: '⏱ Алысырақ іздеу (көбірек уақыт)',
+  widenCar: '🚗 Көлікпен іздеу',
   days: ['жексенбі', 'дүйсенбі', 'сейсенбі', 'сәрсенбі', 'бейсенбі', 'жұма', 'сенбі'],
 }
 
@@ -215,6 +231,14 @@ const en: Dict = {
   rating: 'rating',
   resultsTitle: (n: number) => `${n} ${n === 1 ? 'place' : 'places'} for you`,
   noResults: 'No suitable places nearby. Try a longer time budget or another point.',
+  hourShort: 'h',
+  forQuery: 'For',
+  nothingTitle: 'Nothing suitable nearby',
+  nothingText: 'Honestly: our database has no places for this request nearby. Search wider or rephrase.',
+  fewTitle: 'Only a few matches',
+  fewText: 'Only this place fits. You can search wider.',
+  widenBudget: '⏱ Search farther (more time)',
+  widenCar: '🚗 Search by car',
   days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 }
 
@@ -251,6 +275,12 @@ export const CATEGORY_LABELS: Record<string, Record<Lang, string>> = {
   library: { ru: 'Библиотека', kk: 'Кітапхана', en: 'Library' },
   coworking: { ru: 'Коворкинг', kk: 'Коворкинг', en: 'Coworking' },
   market: { ru: 'Рынок', kk: 'Базар', en: 'Market' },
+  supermarket: { ru: 'Супермаркет', kk: 'Супермаркет', en: 'Supermarket' },
+  convenience: { ru: 'Магазин у дома', kk: 'Үй жанындағы дүкен', en: 'Convenience store' },
+  clothes: { ru: 'Одежда и обувь', kk: 'Киім мен аяқ киім', en: 'Clothes & shoes' },
+  shop: { ru: 'Магазин', kk: 'Дүкен', en: 'Shop' },
+  pharmacy: { ru: 'Аптека', kk: 'Дәріхана', en: 'Pharmacy' },
+  wellness: { ru: 'Бассейн / спа / фитнес', kk: 'Бассейн / спа / фитнес', en: 'Pool / spa / fitness' },
   other: { ru: 'Место', kk: 'Орын', en: 'Place' },
 }
 
@@ -259,6 +289,7 @@ export const CATEGORY_ICONS: Record<string, string> = {
   theatre: '🎭', cinema: '🎬', park: '🌳', viewpoint: '🔭', monument: '🗿', landmark: '📸',
   religious: '🕌', mall: '🛍️', playground: '🛝', kids: '🧸', entertainment: '🎡', sport: '⛸️',
   library: '📚', coworking: '💻', market: '🧺', other: '📍',
+  supermarket: '🛒', convenience: '🏪', clothes: '👕', shop: '🛍️', pharmacy: '💊', wellness: '🏊',
 }
 
 export const BADGE_LABELS: Record<string, Record<Lang, string>> = {
@@ -287,6 +318,17 @@ export const BADGE_LABELS: Record<string, Record<Lang, string>> = {
   sockets: { ru: 'розетки', kk: 'розеткалар', en: 'sockets' },
   landmark: { ru: 'символ города', kk: 'қала символы', en: 'landmark' },
   transport: { ru: 'транспорт', kk: 'көлік', en: 'transport' },
+  '24_7': { ru: '24/7', kk: '24/7', en: '24/7' },
+  budget: { ru: 'недорого (оценка)', kk: 'арзан (бағалау)', en: 'budget (estimate)' },
+  swimming: { ru: 'бассейн', kk: 'бассейн', en: 'swimming' },
+  spa: { ru: 'спа', kk: 'спа', en: 'spa' },
+  sauna: { ru: 'сауна', kk: 'сауна', en: 'sauna' },
+  fitness: { ru: 'фитнес', kk: 'фитнес', en: 'fitness' },
+  stationery: { ru: 'канцтовары', kk: 'кеңсе тауарлары', en: 'stationery' },
+  books: { ru: 'книги', kk: 'кітаптар', en: 'books' },
+  electronics: { ru: 'электроника', kk: 'электроника', en: 'electronics' },
+  shoes: { ru: 'обувь', kk: 'аяқ киім', en: 'shoes' },
+  kids_clothes: { ru: 'детская одежда', kk: 'балалар киімі', en: 'kids clothes' },
 }
 
 /** День недели по ISO-строке без влияния часового пояса браузера. */
@@ -299,6 +341,9 @@ export function weekdayOf(iso: string): number {
 export function presetIcon(id: string, label: string): string {
   const s = `${id} ${label}`.toLowerCase()
   if (/winter|зим|−20|-20|мороз/.test(s)) return '❄️'
+  if (/shop|store|магазин|супермаркет|дүкен|24\/7|24_7/.test(s)) return '🛒'
+  if (/pharm|аптек|дәрі/.test(s)) return '💊'
+  if (/pool|swim|бассейн|spa|спа/.test(s)) return '🏊'
   if (/kid|child|реб|дет|бала/.test(s)) return '🧒'
   if (/night|ноч|түн/.test(s)) return '🌙'
   if (/airport|аэропорт|вылет|flight/.test(s)) return '✈️'

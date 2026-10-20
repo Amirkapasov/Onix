@@ -63,6 +63,17 @@ export function SourceBadge({ r, t }: { r: Recommendation; t: Dict }) {
   )
 }
 
+// Выделяем значимые для решения теги: круглосуточно и «недорого» (это эвристика — подписано как оценка).
+const BADGE_STYLE: Record<string, string> = {
+  '24_7': 'bg-emerald-100 font-bold text-emerald-800',
+  budget: 'bg-amber-100 text-amber-900',
+}
+
+function badgeText(b: string, lang: Lang): string {
+  if (b.startsWith('brand:')) return b.slice(6)
+  return BADGE_LABELS[b]?.[lang] ?? b
+}
+
 interface Props {
   r: Recommendation
   index: number
@@ -139,8 +150,8 @@ const RecommendationCard = forwardRef<HTMLElement, Props>(function Recommendatio
       {r.badges && r.badges.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-1.5">
           {r.badges.map((b) => (
-            <span key={b} className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[13px] font-medium text-slate-600">
-              {BADGE_LABELS[b]?.[lang] ?? b}
+            <span key={b} className={`rounded-full px-2.5 py-0.5 text-[13px] font-medium ${BADGE_STYLE[b] ?? 'bg-slate-100 text-slate-600'}`}>
+              {badgeText(b, lang)}
             </span>
           ))}
         </div>

@@ -6,6 +6,8 @@ import RecommendationCard from './RecommendationCard'
 
 interface Props {
   result: RecommendResponse
+  query: string
+  onWiden: (kind: 'budget' | 'car') => void
   t: Dict
   lang: Lang
   mode: string
@@ -25,7 +27,7 @@ export function isDegraded(r: RecommendResponse): boolean {
   return !!p && DEGRADED_PROVIDERS.includes(p)
 }
 
-export default function Results({ result, t, lang, mode, hovered, onHover, focusIndex }: Props) {
+export default function Results({ result, query, onWiden, t, lang, mode, hovered, onHover, focusIndex }: Props) {
   const refs = useRef<(HTMLElement | null)[]>([])
   const recs = result.recommendations ?? []
   const ideas = result.ideas ?? []
@@ -46,6 +48,9 @@ export default function Results({ result, t, lang, mode, hovered, onHover, focus
 
   return (
     <div className="space-y-4">
+      <p className="truncate text-[14px] text-slate-500" title={query}>
+        {t.forQuery}: <span className="font-semibold text-slate-700">«{query}»</span>
+      </p>
       {recs.length > 0 && (
         <h2 className="flex items-center gap-2 text-2xl font-black text-slate-900">
           <span className="h-7 w-1.5 rounded-full bg-amber-400" />
@@ -90,9 +95,6 @@ export default function Results({ result, t, lang, mode, hovered, onHover, focus
         </div>
       )}
 
-      {recs.length === 0 && (
-        <div className="rounded-2xl bg-white p-5 text-[17px] text-slate-700 ring-1 ring-slate-200">{t.noResults}</div>
-      )}
 
       {recs.map((r, i) => (
         <RecommendationCard
@@ -109,6 +111,33 @@ export default function Results({ result, t, lang, mode, hovered, onHover, focus
           onHover={onHover}
         />
       ))}
+
+      {recs.length <= 1 && (
+        <section className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+          <p className="text-lg font-extrabold text-slate-900">
+            {recs.length === 0 ? `🔍 ${t.nothingTitle}` : `🔍 ${t.fewTitle}`}
+          </p>
+          <p className="mt-1 text-[16px] leading-snug text-slate-600">{recs.length === 0 ? t.nothingText : t.fewText}</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => onWiden('budget')}
+              className="rounded-full bg-sky-600 px-4 py-2 text-[15px] font-bold text-white hover:bg-sky-500"
+            >
+              {t.widenBudget}
+            </button>
+            {mode !== 'car' && (
+              <button
+                type="button"
+                onClick={() => onWiden('car')}
+                className="rounded-full border-2 border-sky-200 px-4 py-2 text-[15px] font-bold text-sky-700 hover:bg-sky-50"
+              >
+                {t.widenCar}
+              </button>
+            )}
+          </div>
+        </section>
+      )}
 
       {route && route.stops?.length > 0 && (
         <section className="rounded-3xl bg-gradient-to-br from-sky-600 to-sky-800 p-5 text-white shadow-md">

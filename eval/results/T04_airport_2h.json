@@ -1,154 +1,97 @@
 {
- "request_id": "b369f0c4a4a2",
+ "request_id": "mock",
  "context_used": {
-  "location": "≈ район Аэропорт Астаны (точность ~100 м)",
-  "time": "вторник, 15:00",
-  "weather": "+3°C, ветер 6 м/с",
-  "mode": "на машине/такси",
-  "radius_m": 7266,
-  "filters": [
-   "бюджет 120 мин",
-   "запас 60 мин до вылета, остаётся 60 мин с дорогой"
-  ],
-  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+  "data_note": "mock"
  },
- "parsed_intent": {
-  "intent": "sightseeing",
-  "time_budget_min": 120,
-  "companions": "solo",
-  "constraints": [
-   "flight_soon"
-  ],
-  "keywords": [
-   "турист",
-   "вылетом",
-   "посмотреть",
-   "поблизости"
-  ]
- },
+ "parsed_intent": {},
  "recommendations": [
   {
-   "poi_id": "osm:way/1547354178",
-   "name": "Атамекен",
+   "poi_id": "osm:node/10976892637",
+   "name": "Starbucks",
+   "category": "cafe",
+   "lat": 51.026821,
+   "lon": 71.461314,
+   "distance_m": 868,
+   "travel_min": 12,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": 4.1,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:node/13408518301",
+   "name": "Cafe",
+   "category": "cafe",
+   "lat": 51.027805,
+   "lon": 71.462224,
+   "distance_m": 945,
+   "travel_min": 13,
+   "visit_min": [
+    20,
+    40
+   ],
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы неизвестны",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [],
+   "rating": null,
+   "badges": []
+  },
+  {
+   "poi_id": "osm:way/1373272211",
+   "name": "Аэропорт",
    "category": "landmark",
-   "lat": 51.041314,
-   "lon": 71.442213,
-   "distance_m": 2760,
-   "travel_min": 12,
+   "lat": 51.027953,
+   "lon": 71.458858,
+   "distance_m": 1135,
+   "travel_min": 15,
    "visit_min": [
-    10,
-    25
+    20,
+    40
    ],
-   "why": "Одна из достопримечательностей города. Достопримечательность «Атамекен».",
-   "what_to_do": "Осмотрите снаружи, сделайте фото с лучшего ракурса и пройдитесь по округе.",
+   "why": "Рядом и подходит под запрос.",
+   "what_to_do": "Зайдите и осмотритесь 30 минут.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
-    "label": "Часы не указаны; открытая территория — обычно доступна",
-    "source": null
+    "label": "Часы неизвестны",
+    "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/1547354178"
-    },
-    {
-     "name": "wikidata",
-     "url": "https://www.wikidata.org/wiki/Q137551660"
-    }
-   ],
+   "sources": [],
    "rating": null,
-   "badges": [
-    "free",
-    "photo",
-    "hours_unverified"
-   ]
-  },
-  {
-   "poi_id": "osm:way/1490038325",
-   "name": "Welcome to Astana",
-   "category": "monument",
-   "lat": 51.059712,
-   "lon": 71.413699,
-   "distance_m": 5610,
-   "travel_min": 18,
-   "visit_min": [
-    10,
-    15
-   ],
-   "why": "Одна из достопримечательностей города. Арт-объект «Welcome to Astana».",
-   "what_to_do": "Подойдите ближе, прочитайте табличку и сделайте фото.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы не указаны; открытая территория — обычно доступна",
-    "source": null
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/1490038325"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "outdoor",
-    "free",
-    "photo",
-    "hours_unverified"
-   ]
-  },
-  {
-   "poi_id": "wikidata:Q120868807",
-   "name": "Альжан ана",
-   "category": "religious",
-   "lat": 51.0413,
-   "lon": 71.4397,
-   "distance_m": 2872,
-   "travel_min": 12,
-   "visit_min": [
-    15,
-    30
-   ],
-   "why": "Одна из достопримечательностей города. Альжан ана — мечеть, расположенная в столице Казахстана городе Астана.",
-   "what_to_do": "Осмотрите здание снаружи и внутри в часы посещения; одежда — скромная.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы работы неизвестны — уточните перед выходом",
-    "source": null
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "wikidata",
-     "url": "https://www.wikidata.org/wiki/Q120868807"
-    },
-    {
-     "name": "wikipedia",
-     "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%8C%D0%B6%D0%B0%D0%BD_%D0%B0%D0%BD%D0%B0_(%D0%BC%D0%B5%D1%87%D0%B5%D1%82%D1%8C)"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "indoor",
-    "quiet",
-    "hours_unverified"
-   ]
+   "badges": []
   }
  ],
- "ideas": [],
+ "ideas": [
+  {
+   "text": "идея",
+   "source_type": "generated_idea"
+  }
+ ],
  "route": null,
  "warnings": [
-  "До центра (Байтерек) ~34 мин на такси, обратно в аэропорт ~34 мин: с запасом 60 мин до вылета в центр не успеть — предлагаю места ближе.",
-  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
-  "Часы работы 1 мест(а) неизвестны — уточните перед выходом."
+  "Часы работы некоторых мест неизвестны."
  ],
  "llm": {
-  "provider": "none",
-  "model": null,
-  "latency_ms": 0
+  "provider": "mock"
  }
 }
