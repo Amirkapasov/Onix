@@ -11,3 +11,6 @@ frontend/tsconfig.tsbuildinfo
 
 # Полная база с данными 2GIS не публикуется (условия 2GIS). Публичная выгрузка: data/pois_open.json (OSM + Wikidata)
 data/pois.json
+
+# Внутренние рабочие заметки команды
+briefs/

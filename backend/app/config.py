@@ -28,10 +28,6 @@ GEMINI_PARSE_MODEL = _env("GEMINI_PARSE_MODEL", "gemini-3.1-flash-lite")
 GEMINI_FALLBACK_MODELS = [m.strip() for m in _env(
     "GEMINI_FALLBACK_MODELS", "gemini-3.5-flash-lite,gemini-2.5-flash-lite,gemini-3.5-flash,gemini-2.5-flash").split(",") if m.strip()]
 GEMINI_EMBED_MODEL = _env("GEMINI_EMBED_MODEL", "gemini-embedding-2")
-ANTHROPIC_API_KEY = _env("ANTHROPIC_API_KEY")
-ANTHROPIC_MODEL = _env("ANTHROPIC_MODEL", "claude-haiku-5-5")
-OPENAI_API_KEY = _env("OPENAI_API_KEY")
-OPENAI_MODEL = _env("OPENAI_MODEL", "gpt-4.1-mini")
 LLM_TIMEOUT_S = float(_env("LLM_TIMEOUT_S", "10"))  # одна попытка генерации
 LLM_TOTAL_BUDGET_S = float(_env("LLM_TOTAL_BUDGET_S", "12"))  # все попытки вместе, дальше — шаблон
 LLM_PARSE_MODE = _env("LLM_PARSE_MODE", "auto").lower()  # auto (только если правила слабые) | always | off

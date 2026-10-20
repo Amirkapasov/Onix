@@ -39,7 +39,7 @@ pipeline/.venv/bin/python pipeline/run_all.py --refresh  # перекачать 
 
 ## Правила нормализации (кратко)
 
-- **Имя**: русское название из сид-базы координатора для ключевых мест («Монумент «Байтерек»») → `name:ru` → ru-метка Wikidata → `name` (в OSM Астаны `name` чаще на казахском). Все варианты — в `name_i18n`.
+- **Имя**: русское название из ручной сид-базы для ключевых мест («Монумент «Байтерек»») → `name:ru` → ru-метка Wikidata → `name` (в OSM Астаны `name` чаще на казахском). Все варианты — в `name_i18n`.
 - **Описание**: Википедия (summary) → описание Wikidata → OSM `description` → шаблон из полей («Кафе «X» по адресу …; есть Wi-Fi»). Шаблон помечается `description_source: "template"`, новых фактов не добавляет.
 - **Часы работы**: исходная строка OSM / расписание 2GIS, переведённое в OSM-формат. Невалидные строки → `null` и список в отчёте. `opening_hours_source` и `opening_hours_checked_at` заполняются всегда, когда часы есть.
 - **Теги**: `internet_access=wlan` → `wifi`, `socket*` → `sockets`, `outdoor_seating`, `wheelchair`, `vegan/vegetarian/halal`, поздние часы → `night`; по категории — `kids`, `indoor`, `quiet`, `view`, `photo`, `free`, `sight` и т. п.

@@ -26,10 +26,9 @@ cp .env.example .env
 ## Переменные окружения (`.env`)
 | Переменная | По умолчанию | Что |
 |---|---|---|
-| `LLM_PROVIDER` | `gemini` | `gemini` / `anthropic` / `openai`. Без ключа выбранного провайдера → деградация |
+| `LLM_PROVIDER` | `gemini` | `gemini`. Без ключа → деградация |
 | `GEMINI_MODEL` | `gemini-3.5-flash-lite` | модель генерации и разбора запроса |
 | `GEMINI_EMBED_MODEL` | `gemini-embedding-2` | эмбеддинги (поддержан и `gemini-embedding-001`) |
-| `ANTHROPIC_MODEL`, `OPENAI_MODEL` | | для разработки |
 | `POIS_PATH` | `data/pois.json` | если файла нет → `data/seed/pois_seed.json`; файл перечитывается при изменении |
 | `OSRM_FOOT_URL` | routing.openstreetmap.de | геометрия маршрута, таймаут 3 с, иначе прямые линии |
 | `LLM_TIMEOUT_S` / `LLM_PARSE_TIMEOUT_S` | 6 / 2.5 | бюджет времени на LLM (дальше — деградация) |

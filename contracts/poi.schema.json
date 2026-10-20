@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "seruen/poi.schema.json",
   "title": "POI",
-  "description": "Одна точка интереса Астаны. Файл data/pois.json — массив таких объектов. Владелец формата: координатор. Менять только через координатора.",
+  "description": "Одна точка интереса Астаны. Файл data/pois.json — массив таких объектов. Владелец формата: тимлид. Менять только через тимлида.",
   "type": "object",
   "required": [
     "id",

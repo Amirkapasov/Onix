@@ -114,7 +114,7 @@ def api_where(loc: WhereRequest):
 
 @app.get("/api/category-photos")
 def api_category_photos():
-    """Фото категорий и обложки (data/category_photos.json от Агента 1); нет файла — пустой ответ."""
+    """Фото категорий и обложки (data/category_photos.json от команды данных); нет файла — пустой ответ."""
     path = config.ROOT / "data" / "category_photos.json"
     try:
         data = json.loads(path.read_text(encoding="utf-8"))

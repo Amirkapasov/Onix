@@ -1,4 +1,4 @@
-"""Абстракция LLM: gemini (по умолчанию) | anthropic | openai. Ответ — JSON-объект.
+"""LLM-слой на Gemini (Google AI). Ответ — JSON-объект.
 
 Таймаут и 1 ретрай; любая ошибка → LLMError, пайплайн уходит в режим деградации.
 """
@@ -96,43 +96,7 @@ class GeminiProvider(Provider):
         return resp.text or ""
 
 
-class AnthropicProvider(Provider):
-    name = "anthropic"
-
-    def __init__(self) -> None:
-        import anthropic
-        self.model = config.ANTHROPIC_MODEL
-        self.client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY, max_retries=0)
-
-    def complete(self, system, user, temperature, max_tokens, timeout, model=None):
-        resp = self.client.messages.create(
-            model=self.model, max_tokens=max_tokens, temperature=temperature, timeout=timeout,
-            system=system + "\nОтвечай только JSON-объектом, без пояснений и markdown.",
-            messages=[{"role": "user", "content": user}],
-        )
-        return "".join(b.text for b in resp.content if getattr(b, "type", "") == "text")
-
-
-class OpenAIProvider(Provider):
-    name = "openai"
-
-    def __init__(self) -> None:
-        import openai
-        self.model = config.OPENAI_MODEL
-        self.client = openai.OpenAI(api_key=config.OPENAI_API_KEY, max_retries=0)
-
-    def complete(self, system, user, temperature, max_tokens, timeout, model=None):
-        resp = self.client.chat.completions.create(
-            model=self.model, temperature=temperature, max_tokens=max_tokens, timeout=timeout,
-            response_format={"type": "json_object"},
-            messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
-        )
-        return resp.choices[0].message.content or ""
-
-
-_PROVIDERS = {"gemini": (GeminiProvider, "GEMINI_API_KEY"),
-              "anthropic": (AnthropicProvider, "ANTHROPIC_API_KEY"),
-              "openai": (OpenAIProvider, "OPENAI_API_KEY")}
+_PROVIDERS = {"gemini": (GeminiProvider, "GEMINI_API_KEY")}
 _instance: Provider | None = None
 _init_done = False
 

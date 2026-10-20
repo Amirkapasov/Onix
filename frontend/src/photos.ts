@@ -5,7 +5,7 @@ import type { CategoryPhotos, ImageRef } from './types'
  * изображения грузятся с серверов Wikimedia; авторы и лицензии — в public/CREDITS.md.
  */
 export const FALLBACK_PHOTOS: CategoryPhotos = {
-  // Копия обложек из data/category_photos.json (Агент 1) — только ссылки и атрибуция, файлы не копируются.
+  // Копия обложек из data/category_photos.json (Команда данных) — только ссылки и атрибуция, файлы не копируются.
   hero: [
     {
       "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",

@@ -40,7 +40,7 @@ class PoiStore:
     def _load(self, path: Path, mtime: float) -> None:
         try:
             raw = json.loads(path.read_text(encoding="utf-8"))
-        except Exception as e:  # битый файл во время записи Агентом 1 — оставляем старую версию
+        except Exception as e:  # битый файл во время записи командой данных — оставляем старую версию
             log.warning("cannot read %s: %s", path, e)
             if self.pois:
                 return

@@ -22,7 +22,7 @@ def _has(p, tags=(), rx=None, cats=()):
     return bool(rx and re.search(rx, _text(p)))
 
 
-# Те же правила, что в проверке релевантности Агента 4 (eval): категория wellness без подтега не засчитывается.
+# Те же правила, что в проверке релевантности QA (eval): категория wellness без подтега не засчитывается.
 CHECKS_3KM = {
     "бассейн": lambda p: _has(p, ("pool", "swimming", "swimming_pool", "sport:swimming", "water_park"),
                               r"бассейн|аквапарк|\bpool\b|swim"),
@@ -118,7 +118,7 @@ def write(full: list[dict], open_: list[dict], meta: dict) -> str:
     L += [f"- **{k}**: {v}" for k, v in meta["source_status"].items()]
 
     L += ["", "## Проверки покрытия", "",
-          "Ячейка: найдено мест в полной базе / в открытой выгрузке. Правила совпадают с eval (Агент 4).", "",
+          "Ячейка: найдено мест в полной базе / в открытой выгрузке. Правила совпадают с eval (QA).", "",
           "**Радиус 3 км**", "", "| Запрос | От Байтерека | От Mega Silk Way |", "|---|---|---|"]
     L += check_rows(full, open_, CHECKS_3KM, 3000)
     L += ["", "**Радиус 1,5 км (повседневные магазины)**", "", "| Запрос | От Байтерека | От Mega Silk Way |",
