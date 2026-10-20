@@ -158,3 +158,32 @@ def test_small_budget_keeps_places_within_budget():
                                             "client_time": "2026-10-20T13:00:00+05:00",
                                             "filters": {"time_budget_min": 15}}).json()
     assert d["recommendations"] and all(r["travel_min"] <= 15 for r in d["recommendations"])
+
+
+def test_weather_override_marked_as_simulation():
+    d = client.post("/api/recommend", json={"query": "куда сходить вечером", "location": {"lat": 51.128, "lon": 71.43},
+                                            "client_time": "2026-10-20T19:00:00+05:00",
+                                            "weather_override": {"temp_c": -20, "wind_ms": 9}}).json()
+    assert "−20" in d["context_used"]["weather"] and "симуляция" in d["context_used"]["weather"]
+    assert "погода: приоритет местам в помещении" in d["context_used"]["filters"]
+
+
+def test_presets_have_mode_icon_and_winter_override():
+    items = _presets()
+    assert all(p["mode"] in ("walk", "car", "transit") and p["icon"] for p in items)
+    assert next(p for p in items if p["id"] == "airport_2h")["mode"] == "car"
+    assert next(p for p in items if p["id"] == "winter_evening")["weather_override"]["temp_c"] == -20
+
+
+def test_place_user_is_at_is_not_first_for_walk():
+    p = next(x for x in _presets() if x["id"] == "megasilkway_walk")
+    d = client.post("/api/recommend", json=_body(p)).json()
+    assert "seed:mega_silk_way" not in [r["poi_id"] for r in d["recommendations"][:2]]
+
+
+def test_template_why_explains_reason_not_distance():
+    import re as _re
+    for p in _presets():
+        d = client.post("/api/recommend", json=_body(p, weather_override=p.get("weather_override"))).json()
+        for r in d["recommendations"]:
+            assert not _re.search(r"^\d|\d+\s?мин|пешком|на машине", r["why"]), r["why"]

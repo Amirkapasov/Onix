@@ -20,6 +20,11 @@ class Filters(BaseModel):
     categories: list[str] = []
 
 
+class WeatherOverride(BaseModel):
+    temp_c: float = Field(ge=-60, le=60)
+    wind_ms: float | None = Field(default=None, ge=0, le=60)
+
+
 class RecommendRequest(BaseModel):
     query: str = Field(default="", max_length=1000)
     location: Location | None = None
@@ -29,6 +34,7 @@ class RecommendRequest(BaseModel):
     mode: Literal["walk", "car", "transit"] = "walk"
     filters: Filters = Filters()
     want_route: bool = False
+    weather_override: WeatherOverride | None = None  # только демо/eval
 
 
 class ContextUsed(BaseModel):

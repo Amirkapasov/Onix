@@ -1,6 +1,7 @@
 """FastAPI-приложение «Серуен». Запуск из корня: uvicorn backend.app.main:app --reload --port 8000"""
 from __future__ import annotations
 
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 
@@ -9,7 +10,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from . import config, llm
+from . import config, llm, weather
 from .data import store
 from .models import RecommendRequest, RecommendResponse
 from .pipeline import recommend
@@ -25,7 +26,9 @@ async def lifespan(_: FastAPI):
     store.get()
     index.ensure()  # эмбеддинги строятся в фоне
     llm.get_provider()
+    task = asyncio.create_task(weather.prefetch())
     yield
+    task.cancel()
 
 
 app = FastAPI(title="Серуен API", version="0.1.0", lifespan=lifespan)

@@ -1,0 +1,27 @@
+# Секреты — никогда в образ
+.env
+.env.*
+!.env.example
+**/.env.local
+
+# Окружения, зависимости, сборки
+.git
+.venv
+**/__pycache__
+**/*.pyc
+**/node_modules
+frontend/dist
+frontend/tsconfig.tsbuildinfo
+frontend/screenshots
+
+# Данные: сырьё не нужно в рантайме (data/pois.json, data/seed, data/cache — нужны)
+data/raw
+
+# Не нужно в рантайме
+docs
+eval
+pipeline
+briefs
+backend/tests
+**/.DS_Store
+.claude

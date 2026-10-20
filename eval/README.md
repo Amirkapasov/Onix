@@ -14,6 +14,6 @@ python3 eval/build_scenarios_doc.py       # пересобрать docs/TEST_SCE
 - `report.md` — итоговые проценты (для слайда «Качество»), проверки, таблица по кейсам.
 - `results/<id>.json` — сырые ответы для ручного разбора.
 - База для проверки `poi_id` — `data/pois.json`, иначе `data/seed/pois_seed.json` (`--pois` для другой).
-- `--weather-override` шлёт `weather_override` из кейса (запрос в `contracts/CHANGE_REQUESTS.md`).
+- `weather_override` из кейса (T07, зима −20) шлётся по умолчанию (поле есть в `contracts/api.md`); `--no-weather-override` — живая погода.
 
 Жёсткие проверки (✗) — правила контракта; мягкие (△) — релевантность категории, разнообразие, маршрут в бюджете, «открыто на всё время визита», задержка ≤ 5 с.

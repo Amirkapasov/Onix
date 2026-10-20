@@ -49,6 +49,7 @@ class Weather:
         suffix = {
             "climate": {"ru": " (климатическая норма для выбранного времени)", "en": " (climate normal)", "kk": " (климаттық норма)"},
             "query": {"ru": " (из запроса)", "en": " (from your query)", "kk": " (сұраудан)"},
+            "override": {"ru": " (симуляция)", "en": " (simulated)", "kk": " (симуляция)"},
         }.get(self.source, {}).get(lang, "")
         return ", ".join(parts) + suffix
 
@@ -56,7 +57,10 @@ class Weather:
 _cache: tuple[float, Weather] | None = None
 
 
-async def get_weather(client_dt: datetime, temperature_hint: float | None = None) -> Weather:
+async def get_weather(client_dt: datetime, temperature_hint: float | None = None,
+                      override: dict | None = None) -> Weather:
+    if override:  # демо/eval: погода из запроса API важнее всего
+        return Weather(override["temp_c"], override.get("wind_ms"), None, "override")
     if temperature_hint is not None:
         return Weather(temperature_hint, None, None, "query")
     now = datetime.now(timezone.utc)
@@ -73,7 +77,7 @@ async def _current() -> Weather:
         return Weather(None, None, None, "none")
     lat, lon = config.CITY_CENTER
     try:
-        async with httpx.AsyncClient(timeout=2.5) as c:
+        async with httpx.AsyncClient(timeout=2.0) as c:
             r = await c.get("https://api.open-meteo.com/v1/forecast", params={
                 "latitude": lat, "longitude": lon, "wind_speed_unit": "ms",
                 "current": "temperature_2m,wind_speed_10m,precipitation"})
@@ -85,4 +89,14 @@ async def _current() -> Weather:
     except Exception as e:
         log.warning("open-meteo failed: %s", type(e).__name__)
         m = datetime.now(timezone(timedelta(hours=config.TZ_OFFSET_H))).month
-        return Weather(CLIMATE[m - 1], None, None, "climate")
+        w = Weather(CLIMATE[m - 1], None, None, "climate")
+        _cache = (time.monotonic() - config.WEATHER_TTL_S + 120, w)  # не долбим упавший API: повтор через 2 мин
+        return w
+
+
+async def prefetch() -> None:
+    """Прогрев кэша погоды при старте, чтобы первый запрос не ждал Open-Meteo."""
+    try:
+        await _current()
+    except Exception:
+        pass

@@ -15,7 +15,7 @@ from .guards import (closed_mention_warning, danger_warning, mentioned_pois,
                      out_of_area_warning)
 from .models import RecommendRequest
 from .parse import PARSE_SYSTEM, detect_lang, merge_llm, rule_parse
-from .rank import Ctx, hard_filter, make_cand, rank, _not_destination
+from .rank import HERE_PENALTY_INTENTS, Ctx, _not_destination, hard_filter, make_cand, rank
 from .route import build_route
 from .search import index
 from .validate import validate
@@ -74,7 +74,8 @@ async def recommend(req: RecommendRequest) -> dict:
     if query and llm.get_provider():
         parse_task = asyncio.to_thread(llm.complete_json, PARSE_SYSTEM, query, temperature=0.0,
                                        max_tokens=300, timeout=config.LLM_PARSE_TIMEOUT_S)
-    weather_task = get_weather(when, rules.get("temperature_hint"))
+    weather_task = get_weather(when, rules.get("temperature_hint"),
+                               req.weather_override.model_dump() if req.weather_override else None)
     llm_parsed = None
     if parse_task:
         res, weather = await asyncio.gather(parse_task, weather_task, return_exceptions=True)
@@ -165,6 +166,11 @@ async def recommend(req: RecommendRequest) -> dict:
     expand = list(parsed["constraints"]) + [parsed["intent"]] + (["kids"] if with_kids else [])
     rel = index.scores(" ".join([query] + parsed["keywords"]), expand, [c.poi["id"] for c in cands])
     named = {p["id"] for p in mentioned if geo.haversine_m(*start, p["lat"], p["lon"]) > 300}
+    # место, где пользователь уже стоит (метка локации/запрос + < 250 м): при прогулке — только запасной вариант
+    if parsed["intent"] in HERE_PENALTY_INTENTS and not indoor_only:
+        at = {p["id"] for p in mentioned_pois(f"{req.location_label or ''} {query}", pois)}
+        for c in cands:
+            c.here = c.poi["id"] in at and c.dist_m < 250 and c.poi["id"] not in named
     for c in cands:
         c.relevance = 1.5 if c.poi["id"] in named else rel.get(c.poi["id"], 0.0)
     top = rank(cands, ctx)
@@ -184,6 +190,14 @@ async def recommend(req: RecommendRequest) -> dict:
                           "AI model unavailable — picks come from database ranking with template texts.",
                           "ЖИ моделі қолжетімсіз — таңдау база рейтингі бойынша жасалды."))
     recs, ideas, vwarn = validate(llm_data, top, ctx)
+    here_ids = {c.poi["id"] for c in top if c.here}
+    if here_ids and any(r["poi_id"] not in here_ids for r in recs):
+        for r in [r for r in recs if r["poi_id"] in here_ids]:
+            recs.remove(r)  # пользователь уже здесь — переносим в идеи как запасной вариант
+            ideas.append({"source_type": "generated_idea", "text": L(lang,
+                f"Если замёрзнете или устанете — вы рядом с «{r['name']}», можно вернуться туда.",
+                f"If you get cold or tired, “{r['name']}” is right where you are.",
+                f"Тоңып не шаршасаңыз — «{r['name']}» жаныңызда.")})
     warnings += vwarn
 
     top_by_id = {c.poi["id"]: c for c in top}

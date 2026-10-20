@@ -5,7 +5,7 @@
     python3 eval/run_eval.py                      # живой бэкенд на :8000
     python3 eval/run_eval.py --mock good          # проверка скрипта на моке
     python3 eval/run_eval.py --mock bad           # мок с нарушениями: проверки должны их поймать
-    python3 eval/run_eval.py --only T07,T13 --weather-override
+    python3 eval/run_eval.py --only T07,T13 --no-weather-override
 
 Выход: eval/report.md (+ сырые ответы в eval/results/).
 """
@@ -356,7 +356,7 @@ def main():
     ap.add_argument("--pois", default=None, help="по умолчанию data/pois.json, иначе сид")
     ap.add_argument("--mock", choices=["good", "bad"], default=None)
     ap.add_argument("--only", default="", help="префиксы id через запятую: T01,T07")
-    ap.add_argument("--weather-override", action="store_true", help="слать weather_override из кейса (если бэкенд поддерживает)")
+    ap.add_argument("--no-weather-override", action="store_true", help="не слать weather_override из кейса (живая погода)")
     ap.add_argument("--timeout", type=float, default=30)
     ap.add_argument("--out", default=str(EVAL / "report.md"))
     a = ap.parse_args()
@@ -376,7 +376,7 @@ def main():
     rows, lat_all = [], []
     for c in cases:
         body = dict(c["request"])
-        if a.weather_override and c.get("weather_override"):
+        if not a.no_weather_override and c.get("weather_override"):
             body["weather_override"] = c["weather_override"]
         if a.mock:
             t = time.perf_counter()

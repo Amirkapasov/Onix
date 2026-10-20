@@ -13,10 +13,11 @@ GEN_SYSTEM = """Ты — «Серуен», городской гид по Аст
 3. what_to_do — до 230 символов: конкретное действие или мини-план на месте (что посмотреть/сделать, в каком порядке).
 4. visit_min — [от, до] минут, реалистично и в рамках бюджета времени пользователя.
 5. Если у кандидата open_state = "unknown", НЕ пиши, что место открыто; можно посоветовать уточнить часы.
-6. Учитывай погоду, время суток, спутников (дети), ограничения. Разнообразь выбор, если запрос это допускает.
-7. ideas — 0–2 короткие творческие идеи (до 160 символов) без опоры на базу; новых названий заведений не придумывай.
-8. Никогда не советуй опасное или незаконное (выход на лёд, крыши, стройки, заброшки) — предложи безопасную альтернативу. Если место из запроса закрыто или запрос не про Астану — честно скажи это в why и предложи лучшее из кандидатов.
-9. Пиши на языке lang (ru — русский, kk — казахский, en — английский). Кратко и по делу.
+6. Кандидат с user_is_already_here — место, где пользователь уже стоит: не выбирай его для прогулки (можно упомянуть в ideas).
+7. Учитывай погоду, время суток, спутников (дети), ограничения. Разнообразь выбор, если запрос это допускает.
+8. ideas — 0–2 короткие творческие идеи (до 160 символов) без опоры на базу; новых названий заведений не придумывай.
+9. Никогда не советуй опасное или незаконное (выход на лёд, крыши, стройки, заброшки) — предложи безопасную альтернативу. Если место из запроса закрыто или запрос не про Астану — честно скажи это в why и предложи лучшее из кандидатов.
+10. Пиши на языке lang (ru — русский, kk — казахский, en — английский). Кратко и по делу.
 Верни строго JSON: {"recommendations":[{"poi_id":"...","why":"...","what_to_do":"...","visit_min":[30,45]}],"ideas":[{"text":"..."}]}"""
 
 MODE_RU = {"walk": "пешком", "car": "на машине/такси", "transit": "на транспорте"}
@@ -34,6 +35,8 @@ def candidate_payload(c: Cand, ctx: Ctx) -> dict:
     }
     if ctx.flight:
         d["minutes_to_airport_after"] = c.back_min
+    if c.here:
+        d["user_is_already_here"] = True
     return {k: v for k, v in d.items() if v not in (None, [], "")}
 
 
@@ -89,40 +92,99 @@ _DO = {
         "_": "Кіріп, айналаны қарап шығыңыз.",
     },
 }
-_TAG_WORD = {
-    "ru": {"quiet": "тихое место", "coffee": "есть кофе", "sockets": "есть розетки", "wifi": "есть Wi-Fi",
-           "kids": "подходит детям", "interactive": "интерактив", "indoor": "в помещении", "night": "работает допоздна",
-           "view": "хороший вид", "free": "бесплатно", "unusual": "необычное", "walk": "для прогулки", "playground": "детская площадка"},
-    "en": {"quiet": "quiet", "coffee": "coffee", "sockets": "sockets", "wifi": "Wi-Fi", "kids": "kid-friendly",
-           "interactive": "interactive", "indoor": "indoors", "night": "lively at night", "view": "great view",
-           "free": "free", "unusual": "unusual", "walk": "good for a walk", "playground": "playground"},
-    "kk": {"quiet": "тыныш орын", "coffee": "кофе бар", "sockets": "розетка бар", "kids": "балаларға қолайлы",
-           "interactive": "интерактив", "indoor": "ғимарат ішінде", "view": "әдемі көрініс", "free": "тегін",
-           "unusual": "ерекше", "walk": "серуенге"},
+_REASON = {
+    "ru": {"quiet": "тихое место, как вы просили", "coffee": "есть кофе", "sockets": "есть розетки для ноутбука",
+           "wifi": "есть Wi-Fi", "kids": "подходит для детей", "interactive": "есть интерактив",
+           "night": "работает допоздна", "unusual": "необычный формат", "view": "красивые виды и фото",
+           "indoor": "можно провести время в тепле", "outdoor_ok": "можно погулять на свежем воздухе",
+           "food": "можно поесть", "free": "бесплатно",
+           "intent_walk": "зелёная зона для прогулки", "intent_culture": "культурная программа",
+           "intent_sightseeing": "одна из достопримечательностей города", "intent_kids": "место для детей",
+           "intent_shopping": "магазины и развлечения под одной крышей",
+           "cold": "в мороз и ветер — под крышей", "pleasant": "хорошая погода для улицы",
+           "late": "открыто и поздно вечером", "near": "совсем рядом", "rating": "высокий рейтинг",
+           "fallback": "подходит под ваш запрос по данным базы"},
+    "en": {"quiet": "a quiet place, as you asked", "coffee": "serves coffee", "sockets": "has sockets for a laptop",
+           "wifi": "has Wi-Fi", "kids": "good for kids", "interactive": "interactive exhibits",
+           "night": "open late", "unusual": "an unusual format", "view": "great views and photos",
+           "indoor": "you can stay warm indoors", "outdoor_ok": "a fresh-air walk", "food": "you can eat here",
+           "free": "free", "intent_walk": "a green area for a walk", "intent_culture": "a cultural stop",
+           "intent_sightseeing": "one of the city sights", "intent_kids": "a place for kids",
+           "intent_shopping": "shops and fun under one roof", "cold": "indoors — out of the frost and wind",
+           "pleasant": "nice weather to be outside", "late": "open late in the evening", "near": "very close",
+           "rating": "highly rated", "fallback": "matches your request in our data"},
+    "kk": {"quiet": "тыныш орын", "coffee": "кофе бар", "sockets": "ноутбукқа розетка бар", "wifi": "Wi-Fi бар",
+           "kids": "балаларға қолайлы", "interactive": "интерактив бар", "night": "кешке дейін ашық",
+           "unusual": "ерекше формат", "view": "әдемі көрініс", "indoor": "жылы жерде уақыт өткізуге болады",
+           "outdoor_ok": "таза ауада серуендеуге болады", "food": "тамақтануға болады", "free": "тегін",
+           "intent_walk": "серуенге арналған жасыл аймақ", "intent_culture": "мәдени бағдарлама",
+           "intent_sightseeing": "қаланың көрікті жерлерінің бірі", "intent_kids": "балаларға арналған орын",
+           "intent_shopping": "дүкендер мен ойын-сауық бір жерде", "cold": "аязда — жылы жерде",
+           "pleasant": "серуенге жақсы ауа райы", "late": "кешке дейін ашық", "near": "өте жақын",
+           "rating": "жоғары рейтинг", "fallback": "сұранысыңызға сай келеді"},
 }
 
 
-def template_why(c: Cand, ctx: Ctx) -> str:
-    lang = ctx.lang if ctx.lang in _DO else "ru"
+_CAT_REASON = {  # если явных совпадений нет — чем место полезно по своей категории
+    "ru": {"park": "зелёная зона, где можно пройтись", "monument": "заметное место города, хорошо для фото",
+           "landmark": "заметное место города, стоит увидеть", "cafe": "можно передохнуть за кофе",
+           "restaurant": "можно спокойно поесть", "mall": "тепло, магазины и кафе под одной крышей",
+           "museum": "культурная программа", "gallery": "выставки и искусство", "theatre": "вечерняя программа",
+           "cinema": "кино в тепле", "religious": "архитектура и спокойная атмосфера", "bar": "вечерняя атмосфера",
+           "entertainment": "развлечения", "library": "тихо и можно посидеть", "market": "местная еда и колорит",
+           "sport": "активный отдых", "viewpoint": "вид на город"},
+    "en": {"park": "a green area for a stroll", "monument": "a city landmark, good for photos",
+           "landmark": "a notable city sight", "cafe": "a coffee break", "restaurant": "a relaxed meal",
+           "mall": "warm, with shops and cafes", "museum": "a cultural stop", "gallery": "exhibitions and art",
+           "theatre": "an evening show", "cinema": "a movie indoors", "religious": "architecture and calm",
+           "bar": "evening atmosphere", "library": "quiet place to sit", "viewpoint": "city views"},
+    "kk": {"park": "серуендеуге жасыл аймақ", "monument": "қаланың белгілі орны, суретке қолайлы",
+           "landmark": "қаланың көрікті орны", "cafe": "кофе ішіп демалуға болады", "restaurant": "тамақтануға болады",
+           "mall": "жылы, дүкендер мен кафелер бар", "museum": "мәдени бағдарлама", "theatre": "кешкі бағдарлама"},
+}
+
+
+def why_reasons(c: Cand, ctx: Ctx) -> list[str]:
+    """Причины выбора (совпадение с запросом, погода, время) — ключи _REASON, по убыванию важности."""
+    from .rank import INTENT_CATEGORIES, _is_kid_ok, _soft
     p = c.poi
-    mode_word = {"ru": {"walk": "пешком", "car": "на машине", "transit": "на транспорте"},
-                 "en": {"walk": "on foot", "car": "by car", "transit": "by transit"},
-                 "kk": {"walk": "жаяу", "car": "көлікпен", "transit": "көлікпен"}}[lang][ctx.mode]
-    dist = f"{c.dist_m / 1000:.1f} км" if c.dist_m >= 1000 else f"{c.dist_m} м"
-    if lang == "en":
-        dist = dist.replace("км", "km").replace(" м", " m")
-    head = {"ru": f"{dist}, ~{c.travel_min} мин {mode_word}",
-            "en": f"{dist}, ~{c.travel_min} min {mode_word}",
-            "kk": f"{dist}, ~{c.travel_min} мин {mode_word}"}[lang]
-    if c.dist_m < 150:
-        head = {"ru": "Вы уже рядом", "en": "You are right here", "kk": "Сіз жақын тұрсыз"}[lang]
-    wanted = set(ctx.parsed["constraints"]) | ({"kids"} if ctx.with_kids else set())
-    tags = [t for t in (p.get("tags") or []) if t in _TAG_WORD[lang]]
-    tags.sort(key=lambda t: t not in wanted)
-    bits = [head] + [_TAG_WORD[lang][t] for t in tags[:2]]
-    if isinstance(p.get("rating"), (int, float)):
-        bits.append({"ru": "рейтинг", "en": "rating", "kk": "рейтинг"}[lang] + f" {p['rating']:.1f}")
-    s = "; ".join(bits) + "."
+    keys: list[str] = []
+    if ctx.with_kids and _is_kid_ok(p):
+        keys.append("kids")
+    for con in ctx.parsed["constraints"]:
+        if con in ("flight_soon", "accessibility") or con in keys:
+            continue
+        if _soft(con, p, c):
+            keys.append(con)
+    intent = ctx.parsed["intent"]
+    if (p.get("category") in INTENT_CATEGORIES.get(intent, set()) and f"intent_{intent}" in _REASON["ru"]
+            and not (intent == "kids" and "kids" in keys)):
+        keys.append(f"intent_{intent}")
+        if intent == "walk" and "outdoor_ok" in keys:
+            keys.remove("outdoor_ok")
+    wx = ctx.weather
+    if wx and wx.bad and p.get("indoor") is True and "indoor" not in keys:
+        keys.append("cold")
+    elif wx and wx.pleasant and p.get("indoor") is False and "outdoor_ok" not in keys:
+        keys.append("pleasant")
+    if (ctx.when.hour >= 21 or ctx.when.hour < 5) and c.open.open_late and "night" not in keys:
+        keys.append("late")
+    if c.travel_min <= 5 and c.dist_m >= 150:
+        keys.append("near")
+    return keys
+
+
+def template_why(c: Cand, ctx: Ctx) -> str:
+    lang = ctx.lang if ctx.lang in _REASON else "ru"
+    r = _REASON[lang]
+    keys = why_reasons(c, ctx)[:3]
+    phrases = [r[k] for k in keys] or [_CAT_REASON[lang].get(c.poi.get("category", ""), r["fallback"])]
+    rating = c.poi.get("rating")
+    if isinstance(rating, (int, float)) and rating >= 4.6 and len(phrases) < 3:
+        phrases.append(f"{r['rating']} {rating:.1f}")
+    s = "; ".join(phrases)
+    s = s[0].upper() + s[1:] + "."
+    p = c.poi
     desc = re.sub(r"\s*по адресу:[^.]*\.?", ".", (p.get("description") or "").strip()).replace("..", ".")
     if re.search(r"[әғқңөұүһі]", desc.lower()) or desc.strip(". ") == "":
         desc = ""  # адреса/названия на казахском ломают язык ответа

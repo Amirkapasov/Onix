@@ -24,6 +24,7 @@ INTENT_CATEGORIES = {
     "food": {"restaurant", "cafe"}, "culture": {"museum", "gallery", "theatre", "library"},
     "shopping": {"mall", "market"},
 }
+HERE_PENALTY_INTENTS = {"walk", "sightseeing", "other", "culture", "night"}
 FACETS = {"food", "coffee", "kids", "view", "night", "sockets", "quiet"}
 KID_TAGS = {"kids", "playground", "family", "interactive"}
 ADULT_CATEGORIES = {"bar", "nightlife"}
@@ -65,6 +66,7 @@ class Cand:
     visit: tuple[int, int]
     open: PoiOpen
     back_min: int = 0  # дорога до аэропорта (сценарий вылета)
+    here: bool = False  # пользователь уже стоит в этом месте
     relevance: float = 0.0
     score: float = 0.0
     parts: dict = field(default_factory=dict)
@@ -99,7 +101,8 @@ def _is_kid_ok(p: dict) -> bool:
 
 
 def _not_destination(p: dict) -> bool:
-    return "transport" in (p.get("tags") or []) or p.get("category") == "other" and "аэропорт" in p.get("name", "").lower()
+    name = p.get("name", "").lower()
+    return "transport" in (p.get("tags") or []) or bool(re.match(r"(международный )?аэропорт\b|airport\b|(ж/д )?вокзал\b", name))
 
 
 def hard_filter(pois: list[dict], ctx: Ctx) -> tuple[list[Cand], dict]:
@@ -114,6 +117,8 @@ def hard_filter(pois: list[dict], ctx: Ctx) -> tuple[list[Cand], dict]:
         n = len(base)
         base = [p for p in base if _is_kid_ok(p)]
         stats["kids"] = n - len(base)
+    elif ctx.parsed["intent"] != "kids" and "playground" not in ctx.categories:
+        base = [p for p in base if p.get("category") != "playground"]  # площадки — только для запросов с детьми
     if ctx.accessibility:
         n = len(base)
         base = [p for p in base if p.get("wheelchair") in ("yes", "limited")]
@@ -196,7 +201,7 @@ def _soft(c: str, p: dict, cand: Cand) -> bool | None:
     if c == "night":
         return "night" in tags or cat in ("nightlife", "bar") or cand.open.open_late
     if c == "unusual":
-        return bool({"unusual", "art", "interactive"} & tags) or cat in ("gallery", "viewpoint", "entertainment")
+        return bool({"unusual", "art", "interactive"} & tags) or cat in ("gallery", "viewpoint", "entertainment", "museum", "theatre")
     if c == "free":
         return p.get("price_level") == 0 or "free" in tags
     if c == "view":
@@ -261,6 +266,7 @@ def rank(cands: list[Cand], ctx: Ctx) -> list[Cand]:
     # разнообразие: жадно, со штрафом за повтор категории
     out: list[Cand] = []
     seen: dict[str, int] = {}
+    here_later: list[Cand] = []
     while pool and len(out) < config.LLM_CANDIDATES:
         best_i, best_s = 0, -1e9
         for i, c in enumerate(pool):
@@ -269,8 +275,12 @@ def rank(cands: list[Cand], ctx: Ctx) -> list[Cand]:
             if c.score - pen > best_s:
                 best_i, best_s = i, c.score - pen
         c = pool.pop(best_i)
+        if c.here and pool:
+            here_later.append(c)  # «вы уже здесь» — только запасной вариант
+            continue
         seen[c.poi.get("category", "")] = seen.get(c.poi.get("category", ""), 0) + 1
         out.append(c)
+    out += here_later
     # «прогуляться и поужинать»: каждое предметное пожелание должно быть хотя бы в top-3
     for facet in [s for s in soft if s in FACETS]:
         check = (lambda x: _is_kid_ok(x.poi)) if facet == "kids" else (lambda x, f=facet: bool(_soft(f, x.poi, x)))

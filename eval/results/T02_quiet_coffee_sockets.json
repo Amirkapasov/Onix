@@ -1,9 +1,9 @@
 {
- "request_id": "6f4b1c14a230",
+ "request_id": "e4170ce5026a",
  "context_used": {
   "location": "≈ район ТРЦ «Керуен» (точность ~100 м)",
   "time": "вторник, 14:00",
-  "weather": "+2°C, ветер 6 м/с",
+  "weather": "+3°C, ветер 6 м/с",
   "mode": "пешком",
   "radius_m": 1142,
   "filters": [
@@ -43,7 +43,7 @@
     30,
     55
    ],
-   "why": "314 м, ~5 мин пешком; есть кофе; есть Wi-Fi; рейтинг 4.8. Кафе «Drinkit». Кухня: кофейня; есть wi-fi.",
+   "why": "Есть кофе; совсем рядом; высокий рейтинг 4.8. Кафе «Drinkit». Кухня: кофейня; есть wi-fi.",
    "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
    "open_status": {
     "state": "open",
@@ -70,6 +70,44 @@
    ]
   },
   {
+   "poi_id": "wikidata:Q4314789",
+   "name": "Национальная академическая библиотека Казахстана",
+   "category": "library",
+   "lat": 51.1271,
+   "lon": 71.4272,
+   "distance_m": 261,
+   "travel_min": 5,
+   "visit_min": [
+    40,
+    55
+   ],
+   "why": "Тихое место, как вы просили; совсем рядом.",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы работы неизвестны — уточните перед выходом",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q4314789"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "quiet",
+    "hours_unverified"
+   ]
+  },
+  {
    "poi_id": "osm:way/230358854",
    "name": "Сквер",
    "category": "park",
@@ -81,7 +119,7 @@
     30,
     55
    ],
-   "why": "150 м, ~3 мин пешком; тихое место; бесплатно. Парк «Сквер».",
+   "why": "Тихое место, как вы просили; совсем рядом. Парк «Сквер».",
    "what_to_do": "Пройдитесь по главной аллее, загляните к воде или на видовые точки и вернитесь кольцом.",
    "open_status": {
     "state": "unknown",
@@ -100,40 +138,6 @@
    "badges": [
     "outdoor",
     "free",
-    "quiet",
-    "hours_unverified"
-   ]
-  },
-  {
-   "poi_id": "osm:way/230358855",
-   "name": "Национальная академическая библиотека Республики Казахстан",
-   "category": "library",
-   "lat": 51.127215,
-   "lon": 71.427151,
-   "distance_m": 249,
-   "travel_min": 4,
-   "visit_min": [
-    40,
-    56
-   ],
-   "why": "249 м, ~4 мин пешком; тихое место; в помещении. Библиотека «Национальная академическая библиотека Республики Казахстан».",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы работы неизвестны — уточните перед выходом",
-    "source": null
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/way/230358855"
-    }
-   ],
-   "rating": null,
-   "badges": [
-    "indoor",
     "quiet",
     "hours_unverified"
    ]

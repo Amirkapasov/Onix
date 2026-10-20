@@ -1,0 +1,19 @@
+# Что НЕ загружать в Cloud Build при `gcloud run deploy --source .`.
+# Файл задан явно: без него gcloud берёт .gitignore, а там исключён data/cache (кэш эмбеддингов нужен в образе).
+.gcloudignore
+.git
+.env
+.env.*
+!.env.example
+**/.env.local
+.venv
+**/__pycache__
+**/*.pyc
+**/node_modules
+frontend/dist
+frontend/screenshots
+data/raw
+docs
+eval
+briefs
+**/.DS_Store

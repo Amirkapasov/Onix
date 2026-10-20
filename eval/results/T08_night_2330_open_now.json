@@ -1,5 +1,5 @@
 {
- "request_id": "94fc4a09f896",
+ "request_id": "f288fdbb6495",
  "context_used": {
   "location": "≈ район Бульвар Нуржол (точность ~100 м)",
   "time": "вторник, 23:30",
@@ -39,7 +39,7 @@
     30,
     55
    ],
-   "why": "151 м, ~3 мин пешком; есть кофе; в помещении; рейтинг 4.8. Кафе «Каусар, чайхана».",
+   "why": "Открыто и поздно вечером; совсем рядом; высокий рейтинг 4.8. Кафе «Каусар, чайхана».",
    "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
    "open_status": {
     "state": "open",
@@ -62,6 +62,50 @@
    ]
   },
   {
+   "poi_id": "osm:way/230401645",
+   "name": "Байтерек",
+   "category": "viewpoint",
+   "lat": 51.128288,
+   "lon": 71.430455,
+   "distance_m": 228,
+   "travel_min": 4,
+   "visit_min": [
+    20,
+    35
+   ],
+   "why": "Совсем рядом.",
+   "what_to_do": "Поднимитесь на смотровую, посмотрите на город, сделайте панорамные фото.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы не указаны; открытая территория — обычно доступна",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/230401645"
+    },
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q804210"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B9%D1%82%D0%B5%D1%80%D0%B5%D0%BA_(%D0%BC%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D0%BD%D1%82)"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "outdoor",
+    "free",
+    "view",
+    "photo",
+    "hours_unverified"
+   ]
+  },
+  {
    "poi_id": "osm:node/8595205064",
    "name": "Пинта",
    "category": "bar",
@@ -73,7 +117,7 @@
     65,
     110
    ],
-   "why": "282 м, ~5 мин пешком; работает допоздна. Бар «Пинта».",
+   "why": "Открыто и поздно вечером; совсем рядом. Бар «Пинта».",
    "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
    "open_status": {
     "state": "open",
@@ -89,43 +133,6 @@
     }
    ],
    "rating": null,
-   "badges": [
-    "indoor",
-    "night"
-   ]
-  },
-  {
-   "poi_id": "osm:node/13230394599",
-   "name": "Leto Cafe",
-   "category": "restaurant",
-   "lat": 51.126769,
-   "lon": 71.421784,
-   "distance_m": 783,
-   "travel_min": 14,
-   "visit_min": [
-    50,
-    90
-   ],
-   "why": "783 м, ~14 мин пешком; работает допоздна; рейтинг 4.8. Ресторан «Leto Cafe». Кухня: европейская, итальянская.",
-   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
-   "open_status": {
-    "state": "open",
-    "confidence": "high",
-    "label": "Открыто до 02:00 (часы по 2GIS, проверено 2026-10-20)",
-    "source": "2gis"
-   },
-   "source_type": "poi_data",
-   "sources": [
-    {
-     "name": "osm",
-     "url": "https://www.openstreetmap.org/node/13230394599"
-    },
-    {
-     "name": "2gis",
-     "url": "https://2gis.kz/astana/firm/70000001061026053"
-    }
-   ],
-   "rating": 4.8,
    "badges": [
     "indoor",
     "night"
