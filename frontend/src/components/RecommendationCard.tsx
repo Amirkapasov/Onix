@@ -95,7 +95,7 @@ const RecommendationCard = forwardRef<HTMLElement, Props>(function Recommendatio
       >
         <span
           className={`absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-full text-[15px] font-bold shadow-sm transition ${
-            active ? 'bg-sun-500 text-ink-900' : 'bg-white text-ink-900'
+            active ? 'bg-sun-500 text-[#0b2545]' : 'bg-white text-ink-900'
           }`}
         >
           {index + 1}

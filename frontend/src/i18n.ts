@@ -100,6 +100,7 @@ const ru = {
   nightLabel: 'Ночной город: светятся открытые места',
   youAreHere: 'Вы здесь',
   precision: (m: number) => `точность ~${m} м`,
+  back: 'Назад к сценариям',
   days: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
 }
 
@@ -205,6 +206,7 @@ const kk: Dict = {
   nightLabel: 'Түнгі қала: ашық орындар жарқырайды',
   youAreHere: 'Сіз осындасыз',
   precision: (m: number) => `~${m} м дәлдік`,
+  back: 'Сценарийлерге оралу',
   days: ['жексенбі', 'дүйсенбі', 'сейсенбі', 'сәрсенбі', 'бейсенбі', 'жұма', 'сенбі'],
 }
 
@@ -308,6 +310,7 @@ const en: Dict = {
   nightLabel: 'Night city: open places glow',
   youAreHere: 'You are here',
   precision: (m: number) => `accuracy ~${m} m`,
+  back: 'Back to scenarios',
   days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 }
 

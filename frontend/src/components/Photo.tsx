@@ -49,8 +49,10 @@ export default function Photo({ image, illustration, category, alt, t, className
             className="absolute inset-0 h-full w-full object-cover"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-ink-50">
-            <Icon className="h-10 w-10 text-ink-300" strokeWidth={1.4} />
+          // Заглушка категории в цветах Seruen: глубокий синий → бирюза, крупная линейная иконка
+          <div className="absolute inset-0 flex items-center justify-center bg-[linear-gradient(135deg,#0b2545_0%,#13315c_45%,#00798c_100%)]">
+            <Icon className="h-14 w-14 text-[#ffffffb3]" strokeWidth={1.2} />
+            <span className="absolute bottom-3 right-4 h-1.5 w-10 rounded-full bg-sun-500/80" aria-hidden />
           </div>
         )}
         {children}

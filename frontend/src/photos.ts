@@ -77,11 +77,9 @@ export function assignIllustrations(
   for (const r of recs) if (r.image) used.add(r.image.url)
   return recs.map((r) => {
     if (r.image) return null
-    // Фото другого конкретного места (свой poi_id) — не иллюстрация, а подмена: не берём.
-    // Снятые в Астане — в приоритете.
-    const list = (categories[r.category] ?? [])
-      .filter((img) => !img.poi_id || img.poi_id === r.poi_id)
-      .sort((a, b) => Number(!!b.astana) - Number(!!a.astana))
+    // Иллюстрация — только снятое в Астане и не фото другого конкретного места (свой poi_id).
+    // Зарубежные кадры часто с чужими вывесками и надписями (иероглифы, грузинский ларёк) — вместо них заглушка категории.
+    const list = (categories[r.category] ?? []).filter((img) => img.astana === true && (!img.poi_id || img.poi_id === r.poi_id))
     if (!list.length) return null
     const start = list.indexOf(pickBySeed(list, r.poi_id)!)
     for (let k = 0; k < list.length; k++) {

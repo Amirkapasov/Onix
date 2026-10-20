@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { ArrowRight, ChevronDown, ChevronRight, LoaderCircle, LocateFixed, MapPin, RotateCcw, SlidersHorizontal, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ChevronDown, ChevronRight, LoaderCircle, LocateFixed, MapPin, RotateCcw, SlidersHorizontal, X } from 'lucide-react'
 import MapView from './components/MapView'
 import Controls, { type ControlsState } from './components/Controls'
 import Results from './components/Results'
 import ContextUsed from './components/ContextUsed'
 import { ApiError, USE_MOCK, fetchCategoryPhotos, fetchHealth, fetchPois, fetchPresets, fetchWhere, recommend } from './api'
 import Ornament from './components/Ornament'
+import ScrollStrip from './components/ScrollStrip'
 import { Credit } from './components/Photo'
 import { presetVisual } from './components/Icons'
 import { FALLBACK_PHOTOS, imgSrc } from './photos'
@@ -194,7 +195,33 @@ export default function App() {
     run(buildRequest(text, location, locationLabel, c, budget, keepPreset?.categories), keepPreset?.id)
   }
 
-  const changeControls = (next: ControlsState) => {
+  // Параметры поменяли при показанной выдаче — перезапрашиваем тот же запрос с новыми параметрами (debounce 600 мс).
+  const refreshTimer = useRef<number | undefined>(undefined)
+  const scheduleRefresh = (c: ControlsState) => {
+    const last = lastReq.current
+    if (!last) return
+    window.clearTimeout(refreshTimer.current)
+    refreshTimer.current = window.setTimeout(() => {
+      const req: RecommendRequest = {
+        ...last.req,
+        client_time: c.presetTime ?? slotToIso(c.slot),
+        mode: c.mode,
+        filters: {
+          ...last.req.filters,
+          with_kids: c.withKids,
+          accessibility: c.accessibility,
+          group_size: c.groupSize,
+          indoor_only: c.indoorOnly ? true : null,
+        },
+      }
+      delete req.weather_override
+      if (c.weather) req.weather_override = c.weather
+      run(req, last.presetId)
+    }, 600)
+  }
+
+  const changeControls = (next: ControlsState, refresh = true) => {
+    if (refresh && (shown || loading)) scheduleRefresh(next)
     if (!preset) return setUserControls(next)
     // Правка поверх пресета: меняем и сценарий, и выбор пользователя (только изменённые поля).
     const changed = Object.fromEntries(
@@ -216,7 +243,7 @@ export default function App() {
       else setUserBudget(b)
     } else {
       req.mode = 'car'
-      changeControls({ ...controls, mode: 'car' })
+      changeControls({ ...controls, mode: 'car' }, false)
     }
     run(req, last.presetId)
   }
@@ -273,6 +300,51 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang])
 
+  // «Назад» из выдачи к экрану запроса: кнопка, браузерная «Назад» (history state) и Esc. Запрос и параметры сохраняются.
+  const pushedRef = useRef(false)
+  const inResults = !!shown || loading || !!error
+  const goIdle = () => {
+    reqSeq.current++ // ответ на уже отправленный запрос больше не нужен
+    window.clearTimeout(refreshTimer.current)
+    setLoading(false)
+    setShown(null)
+    setError(null)
+    setHovered(null)
+    setFocusIndex(null)
+    document.querySelector('aside')?.scrollTo({ top: 0 })
+    window.scrollTo({ top: 0 })
+  }
+  const goBack = () => {
+    if (pushedRef.current) window.history.back()
+    else goIdle()
+  }
+  useEffect(() => {
+    if (inResults && !pushedRef.current && !STATIC) {
+      window.history.pushState({ seruen: 'results' }, '')
+      pushedRef.current = true
+    }
+  }, [inResults])
+  useEffect(() => {
+    const onPop = () => {
+      if (!pushedRef.current) return
+      pushedRef.current = false
+      goIdle()
+    }
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  const goBackRef = useRef(goBack)
+  goBackRef.current = goBack
+  useEffect(() => {
+    if (!inResults) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') goBackRef.current()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [inResults])
+
   const shownLoc = coarsen(location)
   const locKey = `${shownLoc.lat},${shownLoc.lon}`
 
@@ -328,7 +400,7 @@ export default function App() {
       </section>
 
       {/* Панель / bottom sheet */}
-      <aside className="relative z-10 -mt-6 rounded-t-[28px] bg-white shadow-[0_-10px_30px_rgb(11_37_69/0.10)] lg:order-1 lg:mt-0 lg:overflow-y-auto lg:rounded-none lg:border-r lg:border-ink-100 lg:shadow-none">
+      <aside className={`theme-anim ${night ? 'theme-night' : ''} relative z-10 -mt-6 rounded-t-[28px] bg-white shadow-[0_-10px_30px_rgb(11_37_69/0.10)] lg:order-1 lg:mt-0 lg:overflow-y-auto lg:rounded-none lg:border-r lg:border-ink-100 lg:shadow-none`}>
         <div className="mx-auto mt-2.5 h-1.5 w-10 rounded-full bg-ink-200 lg:hidden" aria-hidden />
 
         <header className="z-20 flex items-center justify-between gap-3 bg-white px-5 pb-3 pt-3 sm:px-7 lg:sticky lg:top-0 lg:border-b lg:border-ink-100 lg:pt-4">
@@ -460,14 +532,23 @@ export default function App() {
             )}
 
             {history.length > 1 && (
-              <div className="no-scrollbar mt-3 flex items-center gap-3 overflow-x-auto whitespace-nowrap text-[13px]">
-                <span className="text-ink-400">{t.history}:</span>
-                {history.slice(1).map((h) => (
-                  <button key={h} onClick={() => submit(h)} title={h} className="inline-flex max-w-[240px] items-center gap-1 text-ink-600 hover:text-ink-900">
-                    <RotateCcw className="h-3.5 w-3.5 shrink-0 text-ink-400" strokeWidth={1.8} />
-                    <span className="truncate">{h}</span>
-                  </button>
-                ))}
+              <div className="mt-3 flex items-center gap-2 text-[13px]">
+                <span className="shrink-0 text-ink-400">{t.history}:</span>
+                <div className="min-w-0 flex-1">
+                  <ScrollStrip className="gap-2">
+                    {history.slice(1).map((h) => (
+                      <button
+                        key={h}
+                        onClick={() => submit(h)}
+                        title={h}
+                        className="inline-flex max-w-[260px] shrink-0 items-center gap-1.5 rounded-full border border-ink-200 px-3 py-1.5 text-ink-700 transition hover:border-ink-400 hover:text-ink-900"
+                      >
+                        <RotateCcw className="h-3.5 w-3.5 shrink-0 text-ink-400" strokeWidth={1.8} />
+                        <span className="truncate">{h}</span>
+                      </button>
+                    ))}
+                  </ScrollStrip>
+                </div>
               </div>
             )}
           </div>
@@ -495,7 +576,7 @@ export default function App() {
                 </ul>
               </section>
             ) : (
-              <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 sm:-mx-7 sm:px-7">
+              <ScrollStrip className="gap-2">
                 {presets.map((p) => {
                   const { Icon } = presetVisual(p.id, p.label)
                   const on = activePreset === p.id
@@ -512,11 +593,22 @@ export default function App() {
                     </button>
                   )
                 })}
-              </div>
+              </ScrollStrip>
             ))}
 
           {/* Результаты */}
           <div ref={resultsRef} className="scroll-mt-20 space-y-8">
+            {inResults && (
+              <button
+                type="button"
+                onClick={goBack}
+                className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-ink-200 px-4 text-[14px] font-semibold text-ink-900 transition hover:border-ink-900"
+                title="Esc"
+              >
+                <ArrowLeft className="h-4 w-4" strokeWidth={2} />
+                {t.back}
+              </button>
+            )}
             {loading && <Skeleton text={t.loading} />}
 
             {!loading && error && (
@@ -564,7 +656,7 @@ export default function App() {
 function Hero({ hero, t }: { hero: import('./types').ImageRef | null; t: Dict }) {
   return (
     <figure className="rise">
-      <div className="relative h-[230px] overflow-hidden rounded-3xl bg-ink-900 sm:h-[300px]">
+      <div className="relative h-[230px] overflow-hidden rounded-3xl bg-[#0b2545] sm:h-[300px]">
         {hero && (
           <img
             src={imgSrc(hero)}
@@ -577,8 +669,8 @@ function Hero({ hero, t }: { hero: import('./types').ImageRef | null; t: Dict })
         {/* затемнение снизу — только чтобы заголовок читался на фото */}
         <div className="absolute inset-0 bg-[linear-gradient(to_top,rgb(6_24_47/0.78),rgb(6_24_47/0.1)_60%,transparent)]" />
         <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-          <h1 className="max-w-[18ch] font-display text-[26px] font-semibold leading-[1.15] text-white sm:text-[32px]">{t.heroTitle}</h1>
-          <p className="mt-2 max-w-[42ch] text-[15px] leading-snug text-white/85">{t.heroSub}</p>
+          <h1 className="max-w-[18ch] font-display text-[26px] font-semibold leading-[1.15] text-[#fff] sm:text-[32px]">{t.heroTitle}</h1>
+          <p className="mt-2 max-w-[42ch] text-[15px] leading-snug text-[#ffffffd9]">{t.heroSub}</p>
         </div>
       </div>
       {hero && <Credit img={hero} t={t} />}
