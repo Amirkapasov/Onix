@@ -30,7 +30,8 @@ class Weather:
 
     @property
     def bad(self) -> bool:
-        return self.cold or (self.precip_mm or 0) > 0.5 or (self.temp_c is not None and self.temp_c > 32)
+        # порог из брифа: мороз < −10 °C или ветер > 10 м/с; плюс сильные осадки и жара
+        return self.cold or (self.precip_mm or 0) > 2.0 or (self.temp_c is not None and self.temp_c > 32)
 
     @property
     def pleasant(self) -> bool:

@@ -63,3 +63,13 @@ def test_extract_json_ignores_trailing_text():
     assert extract_json('```json\n{"a": 1}\n```') == {"a": 1}
     assert extract_json('{"a": 1}\n{"b": 2}') == {"a": 1}
     assert extract_json('Вот ответ: {"a": {"b": [1]}} спасибо') == {"a": {"b": [1]}}
+
+
+def test_unsupported_features_stripped_but_open_kept():
+    from backend.app.validate import strip_unsupported
+    ritz = {"name": "The Ritz-Carlton", "category": "wellness", "tags": ["spa"], "description": "Спа-центр."}
+    assert strip_unsupported("Спа рядом. Есть крытый бассейн. Открыто до 22:00.", ritz) == "Спа рядом. Открыто до 22:00."
+    shoes = {"name": "Сапожок", "category": "clothes", "tags": ["shoes"], "description": ""}
+    assert strip_unsupported("Магазин обуви рядом. Широкий ассортимент и аксессуары.", shoes) == "Магазин обуви рядом."
+    pool = {"name": "Бассейн «Олимп»", "category": "wellness", "tags": ["swimming"], "description": ""}
+    assert strip_unsupported("Большой бассейн для плавания.", pool) == "Большой бассейн для плавания."

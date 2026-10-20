@@ -60,14 +60,30 @@ def core_name(name: str) -> str:
     return m.group(1) if m else name
 
 
+GENERIC_WORDS = set(tokenize(
+    "магазин магазины аптека продукты продуктовый сквер парк кафе кофейня ресторан столовая бар паб маркет "
+    "минимаркет супермаркет детская площадка спортивная центр торговый дом фонтан памятник остановка стоянка "
+    "парковка киоск павильон мини мечеть церковь библиотека музей кинотеатр театр бассейн сауна баня фитнес "
+    "спортзал салон красоты магазинчик гастроном универсам аптечный пункт shop store cafe park market pharmacy"))
+
+
+def is_generic_name(name: str) -> bool:
+    """«Магазин», «Аптека», «Продукты 24», «Сквер» — не имя конкретного места."""
+    toks = [t for t in tokenize(core_name(name)) if not t.isdigit()]
+    return not toks or all(t in GENERIC_WORDS for t in toks)
+
+
 def mentioned_pois(query: str, pois: list[dict]) -> list[dict]:
-    """POI, которые пользователь назвал в запросе (все значимые слова «ядра» названия есть в запросе)."""
+    """POI, которые пользователь назвал в запросе (все значимые слова «ядра» названия есть в запросе).
+    Общие слова («магазин», «аптека», «парк») именем конкретного места не считаются."""
     q = set(tokenize(query))
     if not q:
         return []
     out = []
     for p in pois:
         names = [core_name(p["name"])] + list((p.get("name_i18n") or {}).values())
+        if is_generic_name(p["name"]):
+            continue
         for n in names:
             toks = [t for t in tokenize(core_name(n)) if len(t) >= 3]
             if toks and len(" ".join(toks)) >= 5 and all(t in q for t in toks):

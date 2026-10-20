@@ -30,9 +30,42 @@ def _strip_open_claims(s: str) -> str:
     return _OPEN_NOW.sub("", s).strip()
 
 
+# Удобства/услуги, которые LLM любит «додумывать». Упоминание без опоры на данные места → предложение вырезаем.
+FEATURE_CLAIMS = {
+    r"бассейн|swimming pool|\bpool\b": "бассейн", r"wi-?fi|вай-?фай|интернет": "wifi", r"розетк": "розетк",
+    r"парковк|parking": "парковк", r"террас|веранд|terrace": "террас", r"ассортимент": "ассортимент",
+    r"аксессуар": "аксессуар", r"обув": "обув", r"детск\w* (комнат|меню|зон)": "детск", r"завтрак|breakfast": "завтрак",
+    r"бизнес-?ланч": "ланч", r"кальян": "кальян", r"живая музыка|live music": "музык", r"бильярд": "бильярд",
+    r"сауна|sauna": "саун", r"джакузи|хаммам|hammam": "хаммам", r"массаж": "массаж", r"тренер": "тренер",
+    r"прокат": "прокат", r"скидк|(?<![а-яё])акци[яи]": "скидк", r"доставк": "доставк", r"смотров\w* площадк": "смотров",
+    r"(?<![а-яё])крыт\w*": "крыт", r"аттракцион": "аттракцион", r"динопарк|аквапарк": "парк", r"(?<![а-яё])меню": "меню",
+}
+
+
+def _poi_text(p: dict) -> str:
+    from .search import CATEGORY_RU, TAG_RU
+    tags = p.get("tags") or []
+    return " ".join([p.get("name", ""), p.get("description", ""), CATEGORY_RU.get(p.get("category", ""), ""),
+                     " ".join(tags), " ".join(TAG_RU.get(t, "") for t in tags), p.get("address") or ""]).lower()
+
+
+def strip_unsupported(text: str, p: dict) -> str:
+    """Удаляет предложения с удобствами/услугами, которых нет в данных места (защита от выдумок LLM)."""
+    known = _poi_text(p)
+    out = []
+    for sent in re.split(r"(?<=[.!?])\s+", text or ""):
+        low = sent.lower()
+        bad = [w for rx, w in FEATURE_CLAIMS.items() if re.search(rx, low) and w not in known
+               and not re.search(rx, known)]
+        if not bad:
+            out.append(sent)
+    return " ".join(out).strip()
+
+
 def to_recommendation(c: Cand, ctx: Ctx, why: str, what: str, visit) -> dict:
     p = c.poi
     why, what = scrub_danger(why), scrub_danger(what)
+    why, what = strip_unsupported(why, c.poi), strip_unsupported(what, c.poi)
     if c.open.state != "open":
         why, what = _strip_open_claims(why), _strip_open_claims(what)
     why = clip(why, WHY_MAX) or template_why(c, ctx)

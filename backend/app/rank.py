@@ -80,6 +80,8 @@ def make_cand(p: dict, ctx: Ctx) -> Cand:
     d = geo.haversine_m(ctx.start[0], ctx.start[1], p["lat"], p["lon"])
     tmin = geo.travel_min(d, ctx.mode)
     visit = visit_range(p)
+    if ctx.parsed.get("intent") == "walk" and p.get("category") in ("park", "landmark", "monument", "viewpoint"):
+        visit = (15, max(20, min(visit[1], 30)))  # прогулка через 2–3 места: в каждом 15–30 мин
     back = geo.travel_min(geo.haversine_m(p["lat"], p["lon"], *config.AIRPORT), ctx.mode) if ctx.flight else 0
     if ctx.budget_explicit or ctx.flight:  # визит не длиннее того, что реально остаётся
         room = ctx.available - tmin - back
@@ -160,6 +162,10 @@ def hard_filter(pois: list[dict], ctx: Ctx) -> tuple[list[Cand], dict]:
         return out
 
     cands = run(ctx.radius, False)
+    if "shop_24_7" in ctx.needs:  # «круглосуточный»: часы неизвестны — не подтверждено; только 24_7 или открыто по часам
+        sure = [c for c in cands if "24_7" in (c.poi.get("tags") or []) or c.open.state == "open"]
+        if sure:
+            cands = sure
     radius = ctx.radius
     # расширяем, только если мест меньше двух, и не дальше 2× (в мороз 1.3×) исходного радиуса
     max_r = min(config.MAX_RADIUS_M, int(ctx.radius * (1.3 if ctx.weather and ctx.weather.cold else 2.0)))
@@ -270,6 +276,8 @@ def rank(cands: list[Cand], ctx: Ctx) -> list[Cand]:
                  "data_quality": f_dq, "hours": f_hours, "weather": f_w, "daytime": f_day}
         c.parts = {k: round(v, 3) for k, v in parts.items()}
         c.score = sum(w[k] * v for k, v in parts.items())
+        if ctx.want_budget and "budget" in (p.get("tags") or []):
+            c.score += 0.3  # «недорого»: сети с пометкой budget — выше (оценка, не факт)
     # дубли по названию (сети, две точки одного кафе) — оставляем лучшую
     pool, names = [], set()
     for c in sorted(cands, key=lambda x: -x.score):

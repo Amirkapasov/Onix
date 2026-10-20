@@ -163,6 +163,8 @@ TYPICAL_HOURS = {
     "bar": "Mo-Su 18:00-02:00", "nightlife": "Mo-Su 21:00-04:00", "theatre": "Mo-Su 11:00-21:00",
     "cinema": "Mo-Su 10:00-01:00", "kids": "Mo-Su 10:00-20:00", "entertainment": "Mo-Su 10:00-22:00",
     "coworking": "Mo-Su 09:00-21:00", "market": "Mo-Su 09:00-19:00", "religious": "Mo-Su 06:00-21:00",
+    "supermarket": "Mo-Su 08:00-23:00", "clothes": "Mo-Su 10:00-22:00", "shop": "Mo-Su 10:00-20:00",
+    "pharmacy": "Mo-Su 08:00-22:00", "wellness": "Mo-Su 07:00-23:00",
     "sport": "Mo-Su 08:00-22:00", "viewpoint": "Mo-Su 10:00-21:00", "landmark": "Mo-Su 10:00-18:00",
 }
 

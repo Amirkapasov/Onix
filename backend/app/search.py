@@ -26,6 +26,9 @@ CATEGORY_RU = {
     "landmark": "достопримечательность", "religious": "мечеть храм собор", "mall": "торговый центр тц",
     "playground": "детская площадка", "kids": "детский дети", "entertainment": "развлечения",
     "sport": "спорт", "library": "библиотека", "coworking": "коворкинг работа", "market": "рынок базар",
+    "supermarket": "супермаркет продукты магазин", "convenience": "магазин у дома продукты",
+    "clothes": "одежда обувь магазин", "shop": "магазин", "pharmacy": "аптека лекарства",
+    "wellness": "оздоровление спорт отдых",
     "other": "",
 }
 TAG_RU = {
@@ -35,6 +38,11 @@ TAG_RU = {
     "free": "бесплатно", "photo": "фото", "coffee": "кофе", "family": "семья дети", "unusual": "необычное",
     "walk": "прогулка погулять", "playground": "детская площадка", "architecture": "архитектура",
     "history": "история", "science": "наука", "shopping": "магазины шопинг", "cinema": "кино",
+    "swimming": "бассейн плавание", "pool": "бассейн", "fitness": "фитнес спортзал тренажёры", "gym": "спортзал",
+    "spa": "спа", "sauna": "сауна баня", "massage": "массаж", "24_7": "круглосуточно", "budget": "недорого",
+    "stationery": "канцтовары", "books": "книги", "electronics": "электроника", "shoes": "обувь",
+    "groceries": "продукты", "terrace": "терраса веранда", "outdoor_seating": "летняя веранда",
+    "wheelchair": "доступно для колясок пандус", "takeaway": "навынос",
 }
 EXPAND = {  # ограничение/интент → слова для BM25-запроса
     "quiet": "quiet тихо", "coffee": "coffee cafe кофе", "sockets": "sockets wifi coworking розетки",
@@ -101,23 +109,29 @@ class Index:
                 self._emb_thread.start()
 
     def _build_emb(self, texts: list[str], version: int, pois: list[dict] | None = None) -> None:
-        """Фоновое построение индекса. Кэш инкрементальный: вектор хранится по sha1(модель + текст документа),
-        поэтому неизменённые POI не пересчитываются, одинаковые тексты встраиваются один раз, а прогресс
-        переживает перезапуск. Несколько процессов не строят одновременно: строит владелец lock-файла,
-        остальные подхватывают готовое с диска. Суточная квота кончилась → частичный индекс (если ≥ 50 %)."""
+        """Фоновое построение индекса (сервис тем временем работает на BM25).
+
+        Кэш инкрементальный: вектор хранится по sha1(модель + текст документа), поэтому при новой версии
+        data/pois.json пересчитываются только изменённые/новые места, одинаковые тексты встраиваются один раз,
+        а прогресс переживает перезапуск. Встраиваются только «досуговые» места (магазины, площадки и места
+        с общими названиями обслуживает фильтр потребностей + BM25), сначала популярные. Несколько процессов
+        не строят одновременно (lock-файл). Суточная квота кончилась → частичный индекс (≥ 30 %), поток
+        ждёт сброса квоты и продолжает сам."""
+        want = [i for i in range(len(texts)) if pois is None or _embeddable(pois[i])]
         hashes = [_text_hash(t) for t in texts]
-        uniq = list(dict.fromkeys(hashes))
-        first = {h: i for i, h in reversed(list(enumerate(hashes)))}
-        # сначала популярные и содержательные места — на случай, если квоты хватит не на всё
+        uniq = list(dict.fromkeys(hashes[i] for i in want))
+        first = {}
+        for i in want:
+            first.setdefault(hashes[i], i)
         prio = {h: -(_poi_weight(pois[first[h]]) if pois else 0) for h in uniq}
         self.progress = (0, len(uniq))
-        try:
-            while version == self.version:
+        while version == self.version:
+            try:
                 cache = _load_store()
                 missing = sorted((h for h in uniq if h not in cache), key=lambda h: prio[h])
                 self.progress = (len(uniq) - len(missing), len(uniq))
                 if not missing:
-                    self._set_emb(hashes, cache, version)
+                    self._set_emb(hashes, cache, version, set(uniq))
                     return
                 if not _take_lock():
                     time.sleep(30)  # строит другой процесс — ждём его результат
@@ -134,19 +148,23 @@ class Index:
                         self.progress = (len(uniq) - len(missing) + start + len(chunk), len(uniq))
                 finally:
                     _release_lock()
-        except DailyQuotaExceeded:
-            cache = _load_store()
-            done = sum(h in cache for h in uniq)
-            log.warning("embeddings: daily quota exhausted (%d/%d); %s", done, len(uniq),
-                        "using partial index" if done >= len(uniq) / 2 else "BM25 only until tomorrow")
-            if done >= len(uniq) / 2:
-                self._set_emb(hashes, cache, version)
-        except Exception as e:
-            log.warning("embeddings disabled (BM25 only): %s: %s", type(e).__name__, str(e)[:200])
+            except DailyQuotaExceeded as e:
+                cache = _load_store()
+                done = sum(h in cache for h in uniq)
+                partial = done >= len(uniq) * 0.3
+                log.warning("embeddings: daily quota exhausted (%d/%d) — %s; resume after quota reset",
+                            done, len(uniq), "partial index" if partial else "BM25 only")
+                if partial:
+                    self._set_emb(hashes, cache, version, set(uniq))
+                m = re.search(r"retryDelay'?:\s*'?(\d+)", str(e))
+                time.sleep(min(int(m.group(1)) + 60 if m else 3600, 6 * 3600))
+            except Exception as e:
+                log.warning("embeddings disabled (BM25 only): %s: %s", type(e).__name__, str(e)[:200])
+                return
 
-    def _set_emb(self, hashes: list[str], cache: dict, version: int) -> None:
+    def _set_emb(self, hashes: list[str], cache: dict, version: int, wanted: set | None = None) -> None:
         dim = len(next(iter(cache.values())))
-        mask = np.array([h in cache for h in hashes])
+        mask = np.array([h in cache and (wanted is None or h in wanted) for h in hashes])
         mat = np.stack([cache[h] if h in cache else np.zeros(dim, np.float32) for h in hashes]).astype(np.float32)
         if version == self.version:
             self.emb, self.emb_mask = mat, mask
@@ -203,6 +221,12 @@ class Index:
 
 class DailyQuotaExceeded(Exception):
     pass
+
+
+def _embeddable(p: dict) -> bool:
+    from .guards import is_generic_name
+    from .needs import SHOP_CATEGORIES
+    return p.get("category") not in SHOP_CATEGORIES | {"playground"} and not is_generic_name(p.get("name", ""))
 
 
 def _poi_weight(p: dict) -> float:

@@ -182,10 +182,15 @@ async def recommend(req: RecommendRequest) -> dict:
                                   [c.poi["id"] for c in cands])  # эмбеддинг запроса — сетевой вызов, не держим loop
     named = {p["id"] for p in mentioned if geo.haversine_m(*start, p["lat"], p["lon"]) > 300}
     # место, где пользователь уже стоит (метка локации/запрос + < 250 м): при прогулке — только запасной вариант
-    if parsed["intent"] in HERE_PENALTY_INTENTS and not indoor_only:
+    if parsed["intent"] in HERE_PENALTY_INTENTS and not indoor_only and not needs:
         at = {p["id"] for p in mentioned_pois(f"{req.location_label or ''} {query}", pois)}
-        for c in cands:
-            c.here = c.poi["id"] in at and c.dist_m < 250 and c.poi["id"] not in named
+        walk = parsed["intent"] == "walk"
+        for c in cands:  # прогулка: всё, что в ~200 м от пользователя, — «вы уже здесь», максимум идея
+            c.here = c.poi["id"] not in named and (c.poi["id"] in at and c.dist_m < 250 or walk and c.dist_m < 200)
+    if parsed["intent"] == "walk" and not needs and not cold:
+        walkable = [c for c in cands if is_walkable(c.poi)]
+        if len(walkable) >= 2:  # «прогуляться 30–60 мин» — парки, бульвары, набережные, видовые места
+            cands = walkable
     for c in cands:
         c.relevance = 1.5 if c.poi["id"] in named else rel.get(c.poi["id"], 0.0)
     top = rank(cands, ctx)
@@ -241,7 +246,13 @@ async def recommend(req: RecommendRequest) -> dict:
     # 7. Маршрут
     route = None
     route_asked = bool(re.search(r"маршрут|route|по пути|обойти|маршрут", query.lower()))
-    if req.want_route and recs and (not shopping or route_asked):  # магазинам маршрут не нужен, если не просили
+    if needs and ctx.want_budget and recs and not any("budget" in (store.by_id.get(r["poi_id"], {}).get("tags") or [])
+                                                      for r in recs):
+        warnings.append(L(lang, "Данных о ценах в базе нет — показываю ближайшие подходящие места; уровень цен уточните на месте.",
+                          "We have no price data — showing the nearest matching places; check prices on site.",
+                          "Бағалар туралы дерек жоқ — ең жақын орындар көрсетілді."))
+    # маршрут: прогулкам и досугу; магазинам и «бассейн/кино…» — только если попросили
+    if req.want_route and recs and (not needs or route_asked):
         route, _, rwarn = await build_route(start, recs, mode, available if (budget_explicit or flight) else None, lang)
         warnings += rwarn
 
@@ -259,6 +270,16 @@ async def recommend(req: RecommendRequest) -> dict:
              len(recs), llm_info["provider"], geo.round_coord(start[0]), geo.round_coord(start[1]),
              int((time.monotonic() - t0) * 1000))
     return resp
+
+
+WALK_CATEGORIES = {"park", "viewpoint", "landmark", "monument"}
+NOT_WALK = {"cafe", "restaurant", "bar", "nightlife", "mall", "playground", "cinema"} | needs_mod.SHOP_CATEGORIES
+
+
+def is_walkable(p: dict) -> bool:
+    if p.get("category") in NOT_WALK:
+        return False
+    return p.get("category") in WALK_CATEGORIES or bool({"walk", "view"} & set(p.get("tags") or []))
 
 
 def need_fallback(pois: list[dict], ctx: Ctx, needs: list[str], warnings: list[str], notes: list[str]) -> list:

@@ -50,8 +50,22 @@ def test_daily_quota_gives_partial_index(tmp_path, monkeypatch):
         return np.ones((len(texts), 4), dtype=np.float32) / 2
 
     monkeypatch.setattr(search, "_embed", fake_embed)
+    monkeypatch.setattr(search.time, "sleep", lambda s: setattr(idx, "version", 2))  # «ждём сброса» → выходим
     idx = search.Index()
     idx.version = 1
     idx._build_emb(["a", "b", "a", "c"], 1)  # «a» дважды → встраивается один раз
     assert idx.progress == (2, 3) and idx.emb is not None
-    assert idx.emb_mask.tolist() == [True, True, True, False] or idx.emb_mask.sum() == 3
+    assert idx.emb_mask.tolist() == [True, True, True, False]
+
+
+def test_shops_and_generic_names_not_embedded(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "CACHE_DIR", tmp_path)
+    seen = []
+    monkeypatch.setattr(search, "_embed", lambda texts, task, timeout=30.0, patient=False:
+                        seen.extend(texts) or np.ones((len(texts), 4), dtype=np.float32))
+    pois = [{"name": "Хан Шатыр", "category": "mall"}, {"name": "Аптека", "category": "pharmacy"},
+            {"name": "Детская площадка", "category": "playground"}, {"name": "Сквер", "category": "park"}]
+    idx = search.Index()
+    idx.version = 1
+    idx._build_emb(["t1", "t2", "t3", "t4"], 1, pois)
+    assert seen == ["t1"] and idx.emb_mask.tolist() == [True, False, False, False]
