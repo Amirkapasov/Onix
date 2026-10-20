@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "seruen/poi.schema.json",
+  "title": "POI",
+  "description": "Одна точка интереса Астаны. Файл data/pois.json — массив таких объектов. Владелец формата: координатор. Менять только через координатора.",
+  "type": "object",
+  "required": ["id", "name", "lat", "lon", "category", "tags", "description", "description_source", "sources", "updated_at"],
+  "properties": {
+    "id": { "type": "string", "description": "Стабильный ID: '<source>:<source_id>', напр. 'osm:node/123', '2gis:70000001', 'seed:baiterek'" },
+    "name": { "type": "string", "description": "Название на русском (или как в источнике)" },
+    "name_i18n": {
+      "type": "object",
+      "properties": { "ru": { "type": "string" }, "kk": { "type": "string" }, "en": { "type": "string" } }
+    },
+    "lat": { "type": "number" },
+    "lon": { "type": "number" },
+    "category": {
+      "type": "string",
+      "enum": ["cafe", "restaurant", "bar", "nightlife", "museum", "gallery", "theatre", "cinema", "park", "viewpoint", "monument", "landmark", "religious", "mall", "playground", "kids", "entertainment", "sport", "library", "coworking", "market", "other"]
+    },
+    "tags": {
+      "type": "array", "items": { "type": "string" },
+      "description": "Свободные теги в нижнем регистре: 'wifi', 'sockets', 'quiet', 'interactive', 'kids', 'night', 'view', 'indoor', 'outdoor', 'free', 'photo', 'coffee', 'family', 'unusual', ..."
+    },
+    "description": { "type": "string", "description": "1–3 предложения на русском. Не выдумывать факты." },
+    "description_source": {
+      "type": "string",
+      "enum": ["osm", "wikidata", "wikipedia", "2gis", "official_site", "template", "llm_summary", "manual"],
+      "description": "Откуда текст. 'template' = собрано шаблоном из полей источника; 'llm_summary' = переписано LLM ТОЛЬКО из полей источников, без новых фактов."
+    },
+    "address": { "type": ["string", "null"] },
+    "opening_hours": { "type": ["string", "null"], "description": "Строка в формате OSM opening_hours, напр. 'Mo-Su 10:00-22:00'. null если неизвестно." },
+    "opening_hours_source": { "type": ["string", "null"], "enum": ["osm", "2gis", "official_site", "manual", null] },
+    "opening_hours_checked_at": { "type": ["string", "null"], "description": "ISO-дата, когда часы были получены из источника" },
+    "phone": { "type": ["string", "null"] },
+    "website": { "type": ["string", "null"] },
+    "rating": { "type": ["number", "null"], "description": "0–5" },
+    "rating_count": { "type": ["integer", "null"] },
+    "popularity": { "type": ["number", "null"], "description": "0–1, нормированная популярность (кол-во отзывов, наличие в Wikidata и т.п.)" },
+    "indoor": { "type": ["boolean", "null"], "description": "Можно провести время в помещении (важно зимой в Астане)" },
+    "wheelchair": { "type": "string", "enum": ["yes", "limited", "no", "unknown"] },
+    "kid_friendly": { "type": ["boolean", "null"] },
+    "price_level": { "type": ["integer", "null"], "description": "0 бесплатно, 1 дёшево, 2 средне, 3 дорого" },
+    "typical_visit_min": { "type": ["integer", "null"], "description": "Типичное время визита в минутах (эвристика по категории, если нет данных)" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "fetched_at"],
+        "properties": {
+          "name": { "type": "string", "description": "osm | wikidata | wikipedia | 2gis | official_site | seed" },
+          "url": { "type": ["string", "null"] },
+          "fetched_at": { "type": "string" }
+        }
+      }
+    },
+    "data_quality": { "type": ["number", "null"], "description": "0–1: полнота полей и свежесть. Используется в ранжировании и для пометки уверенности." },
+    "updated_at": { "type": "string" }
+  }
+}
