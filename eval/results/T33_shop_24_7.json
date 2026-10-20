@@ -1,97 +1,121 @@
 {
- "request_id": "mock",
+ "request_id": "8bdd2a7b8b5a",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Бульвар Нуржол (точность ~100 м)",
+  "time": "среда, 01:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1200,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "нужно: круглосуточный магазин (только подходящие места)",
+   "ночь: места, открытые допоздна",
+   "скрыто закрытых к приходу: 12",
+   "скрыто без часов, вероятно закрытых в это время: 5"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "shopping",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "круглосуточный магазин",
+   "круглосуточный",
+   "магазин"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/1530378860",
-   "name": "Детская площадка",
-   "category": "playground",
-   "lat": 51.126744,
-   "lon": 71.433254,
-   "distance_m": 44,
-   "travel_min": 1,
+   "poi_id": "osm:node/2540818469",
+   "name": "Өскен Өңір",
+   "category": "convenience",
+   "lat": 51.126287,
+   "lon": 71.424471,
+   "distance_m": 600,
+   "travel_min": 10,
    "visit_min": [
-    20,
-    40
+    10,
+    15
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:way/1530378859",
-   "name": "Детская площадка",
-   "category": "playground",
-   "lat": 51.126459,
-   "lon": 71.433727,
-   "distance_m": 102,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "2gis:70000001094584929",
-   "name": "Каусар, чайхана",
-   "category": "cafe",
-   "lat": 51.12679,
-   "lon": 71.435133,
-   "distance_m": 196,
-   "travel_min": 3,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Магазин работает круглосуточно, что удобно в ночное время суток.",
+   "what_to_do": "Зайдите за необходимыми продуктами и быстро совершите покупки.",
    "open_status": {
     "state": "open",
     "confidence": "medium",
-    "label": "Вероятно открыто",
+    "label": "Круглосуточно (часы по OSM, проверено 2026-10-20)",
     "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [],
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/2540818469"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "night"
+   ]
+  },
+  {
+   "poi_id": "2gis:70000001020389006",
+   "name": "Айбол",
+   "category": "supermarket",
+   "lat": 51.129441,
+   "lon": 71.434057,
+   "distance_m": 281,
+   "travel_min": 5,
+   "visit_min": [
+    15,
+    25
+   ],
+   "why": "Супермаркет открыт до 04:00 и находится недалеко.",
+   "what_to_do": "Продукты и товары на каждый день; на кассах самообслуживания обычно быстрее.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 04:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001020389006"
+    }
+   ],
    "rating": 4.8,
-   "badges": []
+   "badges": [
+    "indoor",
+    "night"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Проверь список покупок заранее, чтобы быстро найти всё необходимое ночью.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
- "warnings": [
-  "Часы работы некоторых мест неизвестны."
- ],
+ "warnings": [],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 4987
+ },
+ "_eval_ms": 5047,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

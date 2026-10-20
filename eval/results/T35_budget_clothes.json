@@ -1,97 +1,121 @@
 {
- "request_id": "mock",
+ "request_id": "99745a30298d",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Хан Шатыр (точность ~100 м)",
+  "time": "суббота, 12:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1713,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "нужно: одежда / обувь (только подходящие места)"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "shopping",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "одежда / обувь",
+   "бюджетно",
+   "закупиться",
+   "одеждой"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/1449317872",
-   "name": "Movenpick",
-   "category": "cafe",
-   "lat": 51.132882,
-   "lon": 71.404082,
-   "distance_m": 19,
-   "travel_min": 0,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:way/1449322329",
-   "name": "Конвой",
-   "category": "landmark",
-   "lat": 51.132847,
-   "lon": 71.403812,
-   "distance_m": 28,
-   "travel_min": 0,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:way/1449301315",
-   "name": "Starbucks",
-   "category": "cafe",
-   "lat": 51.132727,
-   "lon": 71.403763,
-   "distance_m": 45,
+   "poi_id": "osm:way/1449301296",
+   "name": "LC Waikiki",
+   "category": "clothes",
+   "lat": 51.132662,
+   "lon": 71.404299,
+   "distance_m": 43,
    "travel_min": 1,
    "visit_min": [
-    20,
-    40
+    30,
+    50
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Ближайший магазин одежды, подходит для шопинга.",
+   "what_to_do": "Посмотрите текущие коллекции и акции; перед покупкой сравните цены в соседних магазинах.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы работы неизвестны — уточните перед выходом",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449301296"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:way/1449305181",
+   "name": "Kanzler",
+   "category": "clothes",
+   "lat": 51.132743,
+   "lon": 71.403619,
+   "distance_m": 39,
+   "travel_min": 1,
+   "visit_min": [
+    30,
+    50
+   ],
+   "why": "Магазин одежды «Kanzler», открыт до 22:00.",
+   "what_to_do": "Загляните внутрь, чтобы выбрать новые вещи.",
    "open_status": {
     "state": "open",
     "confidence": "medium",
-    "label": "Вероятно открыто",
+    "label": "Вероятно открыто до 22:00 (часы по OSM, проверено 2026-10-20)",
     "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": 3.9,
-   "badges": []
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449305181"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Составьте список необходимых вещей заранее, чтобы сэкономить время на шопинг.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
  "warnings": [
-  "Часы работы некоторых мест неизвестны."
+  "Часы работы 1 мест(а) неизвестны — уточните перед выходом.",
+  "Данных о ценах в базе нет — показываю ближайшие подходящие места; уровень цен уточните на месте."
  ],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 5572
+ },
+ "_eval_ms": 5631,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

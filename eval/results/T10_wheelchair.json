@@ -1,9 +1,32 @@
 {
- "request_id": "mock",
+ "request_id": "8155b3ad32e3",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Байтерек (точность ~100 м)",
+  "time": "вторник, 12:00",
+  "weather": "+3°C, ветер 6 м/с",
+  "mode": "пешком",
+  "radius_m": 1200,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "доступность для коляски"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "sightseeing",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [
+   "accessibility"
+  ],
+  "keywords": [
+   "инвалидной",
+   "коляске",
+   "съездить",
+   "посмотреть",
+   "город"
+  ]
+ },
  "recommendations": [
   {
    "poi_id": "osm:way/108096984",
@@ -11,49 +34,41 @@
    "category": "mall",
    "lat": 51.12779,
    "lon": 71.42531,
-   "distance_m": 427,
+   "distance_m": 328,
    "travel_min": 6,
    "visit_min": [
-    20,
-    40
+    40,
+    60
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Торговый центр «Керуен» полностью адаптирован для посещения на инвалидной коляске и имеет высокий рейтинг 4.9.",
+   "what_to_do": "Зайдите внутрь, чтобы согреться в прохладную погоду, прогулайтесь по галерее магазинов и отдохните в помещении.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 22:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:way/230358847",
-   "name": "Корме",
-   "category": "gallery",
-   "lat": 51.128641,
-   "lon": 71.42038,
-   "distance_m": 878,
-   "travel_min": 12,
-   "visit_min": [
-    20,
-    40
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/108096984"
+    },
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/4506673731"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018099410"
+    }
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
+   "rating": 4.9,
+   "badges": [
+    "indoor",
+    "wifi",
+    "family"
+   ]
   },
   {
    "poi_id": "osm:node/2671060738",
@@ -61,37 +76,61 @@
    "category": "cafe",
    "lat": 51.128338,
    "lon": 71.418047,
-   "distance_m": 1085,
+   "distance_m": 835,
    "travel_min": 14,
    "visit_min": [
-    20,
-    40
+    30,
+    45
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Кафе «Избушка» отмечено как доступное для колясок, работает круглосуточно и предлагает кофе.",
+   "what_to_do": "Зайдите выпить горячего кофе и отдохнуть во время прогулки.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Круглосуточно (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/2671060738"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018105848"
+    }
+   ],
    "rating": 4.8,
-   "badges": []
+   "badges": [
+    "indoor",
+    "night",
+    "coffee"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Учитывая ветреную погоду (+3°C), лучше планировать маршруты сindoor-объектами.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
- "warnings": [
-  "Часы работы некоторых мест неизвестны."
- ],
+ "warnings": [],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 3070
+ },
+ "_eval_ms": 3144,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

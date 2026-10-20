@@ -1,97 +1,102 @@
 {
- "request_id": "mock",
+ "request_id": "88e1f8dbda07",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ Бәйтерек маңы (~100 м дәлдік)",
+  "time": "сейсенбі, 16:00",
+  "weather": "+3°C, жел 6 м/с",
+  "mode": "жаяу",
+  "radius_m": 1557,
+  "filters": [
+   "уақыт 60 мин",
+   "балалармен",
+   "қажет: саябақ (тек сәйкес орындар)",
+   "тілектер: outdoor_ok"
+  ],
+  "data_note": "Қолданылады: шамамен орын (~100 м), уақыт, сүзгілер. Координаттар сақталмайды."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "walk",
+  "time_budget_min": 60,
+  "companions": "kids",
+  "constraints": [
+   "outdoor_ok"
+  ],
+  "keywords": [
+   "парк",
+   "байтерек",
+   "прогулка",
+   "центр",
+   "серуен",
+   "достопримечательности",
+   "бәйтеректің",
+   "қасындамын",
+   "бір",
+   "сағат"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/230401645",
-   "name": "Байтерек",
-   "category": "viewpoint",
-   "lat": 51.128288,
-   "lon": 71.430455,
-   "distance_m": 59,
-   "travel_min": 1,
+   "poi_id": "wikidata:Q713955",
+   "name": "Водно-зелёный бульвар",
+   "category": "park",
+   "lat": 51.127208,
+   "lon": 71.436947,
+   "distance_m": 493,
+   "travel_min": 9,
    "visit_min": [
-    20,
-    40
+    30,
+    42
    ],
-   "why": "Жақын әрі сұранысыңызға сай.",
-   "what_to_do": "Ішіне кіріп, 30 минут серуендеңіз.",
+   "why": "Бәйтерекке жақын орналасқан жаяу жүргіншілер аймағы бар, балалармен серуендеуге өте ыңғайлы.",
+   "what_to_do": "Бульвар бойымен тыныш серуендеп, айналадағы архитектураны тамашалаңыз.",
    "open_status": {
     "state": "unknown",
     "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
+    "label": "Жұмыс уақыты көрсетілмеген; ашық аумақ, әдетте қолжетімді",
+    "source": null
    },
    "source_type": "poi_data",
-   "sources": [],
+   "sources": [
+    {
+     "name": "wikidata",
+     "url": "https://www.wikidata.org/wiki/Q713955"
+    },
+    {
+     "name": "wikipedia",
+     "url": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BB%D1%8C%D0%B2%D0%B0%D1%80_%D0%9D%D1%83%D1%80%D0%B6%D0%BE%D0%BB"
+    }
+   ],
    "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "2gis:70000001032494391",
-   "name": "Көкtem, кафе",
-   "category": "cafe",
-   "lat": 51.129267,
-   "lon": 71.428581,
-   "distance_m": 224,
-   "travel_min": 3,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Жақын әрі сұранысыңызға сай.",
-   "what_to_do": "Ішіне кіріп, 30 минут серуендеңіз.",
-   "open_status": {
-    "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": 4.8,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:node/6408271985",
-   "name": "CrepeCafe",
-   "category": "cafe",
-   "lat": 51.129382,
-   "lon": 71.428593,
-   "distance_m": 237,
-   "travel_min": 3,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Жақын әрі сұранысыңызға сай.",
-   "what_to_do": "Ішіне кіріп, 30 минут серуендеңіз.",
-   "open_status": {
-    "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": 4.8,
-   "badges": []
+   "badges": [
+    "outdoor",
+    "free",
+    "quiet",
+    "hours_unverified"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Желді күнде балалармен жылы киініп, ыстық шай ішетін орынды алдын ала жоспарлаңыз.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
- "warnings": [
-  "Часы работы некоторых мест неизвестны."
- ],
+ "warnings": [],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 3053
+ },
+ "_eval_ms": 3105,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

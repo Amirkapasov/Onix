@@ -406,6 +406,7 @@ def main():
     ap.add_argument("--timeout", type=float, default=30)
     ap.add_argument("--delay", type=float, default=13.0, help="пауза между кейсами, с (free tier Gemini ~5 запросов/мин на модель; 4–5 с — если допустимы запасные модели)")
     ap.add_argument("--out", default=str(EVAL / "report.md"))
+    ap.add_argument("--rescore", action="store_true", help="не ходить в API: перепроверить сохранённые eval/results/*.json")
     a = ap.parse_args()
 
     spec = json.loads(Path(a.cases).read_text(encoding="utf-8"))
@@ -414,7 +415,7 @@ def main():
     cases = [c for c in spec["cases"] if not a.only or any(c["id"].startswith(p) for p in a.only.split(","))]
 
     h = None
-    if not a.mock:
+    if not a.mock and not a.rescore:
         h = health(a.base)
         if not h:
             sys.exit(f"{a.base}/api/health не отвечает. Запустите бэкенд или используйте --mock good|bad")
@@ -423,19 +424,28 @@ def main():
     raw_dir.mkdir(exist_ok=True)
     rows, lat_all = [], []
     for i, c in enumerate(cases):
-        if i and not a.mock and a.delay > 0:
+        if i and not a.mock and not a.rescore and a.delay > 0:
             time.sleep(a.delay)
         body = dict(c["request"])
         if not a.no_weather_override and c.get("weather_override"):
             body["weather_override"] = c["weather_override"]
-        if a.mock:
+        if a.rescore:
+            f = raw_dir / f"{c['id']}.json"
+            resp = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {"_error": "нет сохранённого ответа"}
+            ms = resp.get("_eval_ms", 0)
+            h = resp.get("_health", h)
+        elif a.mock:
             t = time.perf_counter()
             resp = mock_response(c, pois, bad=a.mock == "bad")
             ms = (time.perf_counter() - t) * 1000
         else:
             resp, ms = call_api(a.base, body, a.timeout)
         lat_all.append(ms)
-        (raw_dir / f"{c['id']}.json").write_text(json.dumps(resp, ensure_ascii=False, indent=1), encoding="utf-8")
+        if not a.rescore:
+            resp["_eval_ms"] = round(ms)
+            if h:
+                resp["_health"] = h
+            (raw_dir / f"{c['id']}.json").write_text(json.dumps(resp, ensure_ascii=False, indent=1), encoding="utf-8")
         if "_error" in resp or "_http_error" in resp:
             res = [("request_ok", "hard", False, str(resp)[:200])]
         else:
@@ -478,7 +488,7 @@ def write_report(a, rows, lat_all, pois_path, n_pois, h):
     models = sorted({(r.get("llm") or {}).get("model") or "?" for r in llm_used})
     lat_sorted = sorted(lat_all)
     p95 = lat_sorted[min(len(lat_sorted) - 1, int(0.95 * len(lat_sorted)))] if lat_sorted else 0
-    mode = f"МОК ({a.mock})" if a.mock else f"живой бэкенд {a.base}"
+    mode = f"МОК ({a.mock})" if a.mock else (f"пересчёт сохранённых ответов живого бэкенда ({a.base})" if a.rescore else f"живой бэкенд {a.base}")
     L = [
         "# Отчёт авто-оценки «Серуен»", "",
         f"- Дата: {datetime.now().strftime('%Y-%m-%d %H:%M')}; режим: **{mode}**",

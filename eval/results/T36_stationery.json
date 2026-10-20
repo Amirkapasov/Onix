@@ -1,97 +1,117 @@
 {
- "request_id": "mock",
+ "request_id": "3702dcfc1823",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район ТРЦ «Керуен» (точность ~100 м)",
+  "time": "вторник, 16:00",
+  "weather": "+3°C, ветер 6 м/с",
+  "mode": "пешком",
+  "radius_m": 1713,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "нужно: канцтовары (только подходящие места)"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "shopping",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "канцтовары",
+   "нужны",
+   "тетради",
+   "ручки"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:node/11910202470",
-   "name": "marrone rosso",
-   "category": "cafe",
-   "lat": 51.128406,
-   "lon": 71.425064,
-   "distance_m": 86,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:node/4133854089",
-   "name": "Rafe",
-   "category": "cafe",
-   "lat": 51.129729,
-   "lon": 71.425986,
-   "distance_m": 138,
+   "poi_id": "2gis:70000001021300418",
+   "name": "Marwin",
+   "category": "shop",
+   "lat": 51.127955,
+   "lon": 71.425553,
+   "distance_m": 122,
    "travel_min": 2,
    "visit_min": [
-    20,
-    40
+    15,
+    25
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:node/13533633413",
-   "name": "Asai Restaurant Astana",
-   "category": "restaurant",
-   "lat": 51.129905,
-   "lon": 71.424491,
-   "distance_m": 139,
-   "travel_min": 2,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Ближайший открытый магазин с канцтоварами и высоким рейтингом 4.9, работает до 22:00.",
+   "what_to_do": "Зайдите в магазин, выберите нужные тетради и ручки, оформите покупку на кассе.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Открыто до 22:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001021300418"
+    }
+   ],
    "rating": 4.9,
-   "badges": []
+   "badges": [
+    "indoor"
+   ]
+  },
+  {
+   "poi_id": "2gis:70000001019252241",
+   "name": "Меломан",
+   "category": "shop",
+   "lat": 51.127885,
+   "lon": 71.425525,
+   "distance_m": 129,
+   "travel_min": 2,
+   "visit_min": [
+    15,
+    25
+   ],
+   "why": "Находится рядом, в том же здании по улице Достык, 9. Открыто до 22:00.",
+   "what_to_do": "Найдите отдел канцелярских товаров и приобретите тетради и письменные принадлежности.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 22:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001019252241"
+    }
+   ],
+   "rating": 4.2,
+   "badges": [
+    "indoor"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Составьте список необходимых принадлежностей заранее, чтобы быстрее найти всё нужное в магазине.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
- "warnings": [
-  "Часы работы некоторых мест неизвестны."
- ],
+ "warnings": [],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 4974
+ },
+ "_eval_ms": 5039,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

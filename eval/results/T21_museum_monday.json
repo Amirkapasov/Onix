@@ -1,97 +1,148 @@
 {
- "request_id": "mock",
+ "request_id": "1ae553741291",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Национальный музей (точность ~100 м)",
+  "time": "понедельник, 11:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 3357,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "нужно: музей / выставка (только подходящие места)",
+   "скрыто закрытых к приходу: 2",
+   "скрыто без часов, вероятно закрытых в это время: 1"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "culture",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "музей / выставка",
+   "сходить",
+   "музей"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/240873345",
-   "name": "Дворец Независимости",
-   "category": "landmark",
-   "lat": 51.120631,
-   "lon": 71.472049,
-   "distance_m": 126,
-   "travel_min": 2,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "wikidata:Q60446898",
-   "name": "Shabyt Palace",
-   "category": "landmark",
-   "lat": 51.122697,
-   "lon": 71.472754,
+   "poi_id": "2gis:70000001041476855",
+   "name": "Государственный историко-культурный музей-заповедник Бозок",
+   "category": "museum",
+   "lat": 51.118221,
+   "lon": 71.468179,
    "distance_m": 390,
-   "travel_min": 5,
+   "travel_min": 7,
    "visit_min": [
-    20,
-    40
+    50,
+    90
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Музей / выставка — то, что вы искали; культурная программа. Музей «Государственный историко-культурный музей-заповедник Бозок». Рубрики 2GIS: музеи.",
+   "what_to_do": "Начните с главной экспозиции, отметьте 2–3 зала по интересам; проверьте, есть ли интерактив.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 18:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001041476855"
+    }
+   ],
+   "rating": 4.5,
+   "badges": [
+    "indoor"
+   ]
   },
   {
-   "poi_id": "wikidata:Q48780885",
-   "name": "Площадь Независимости (Нур-Султан)",
-   "category": "landmark",
-   "lat": 51.122,
-   "lon": 71.47,
-   "distance_m": 397,
-   "travel_min": 5,
+   "poi_id": "2gis:70000001104872669",
+   "name": "Дом-музей Берика Алибая",
+   "category": "museum",
+   "lat": 51.13309,
+   "lon": 71.504816,
+   "distance_m": 2655,
+   "travel_min": 46,
    "visit_min": [
-    20,
-    40
+    50,
+    90
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Музей / выставка — то, что вы искали; культурная программа; высокий рейтинг 4.9. Музей «Дом-музей Берика Алибая». Рубрики 2GIS: музеи.",
+   "what_to_do": "Начните с главной экспозиции, отметьте 2–3 зала по интересам; проверьте, есть ли интерактив.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 18:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  }
- ],
- "ideas": [
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001104872669"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor"
+   ]
+  },
   {
-   "text": "идея",
-   "source_type": "generated_idea"
+   "poi_id": "2gis:70000001028161260",
+   "name": "Национальный центр рукописей и редких книг",
+   "category": "museum",
+   "lat": 51.127854,
+   "lon": 71.427423,
+   "distance_m": 3299,
+   "travel_min": 57,
+   "visit_min": [
+    50,
+    90
+   ],
+   "why": "Музей / выставка — то, что вы искали; культурная программа; высокий рейтинг 4.6. Музей «Национальный центр рукописей и редких книг». Рубрики 2GIS: музеи.",
+   "what_to_do": "Начните с главной экспозиции, отметьте 2–3 зала по интересам; проверьте, есть ли интерактив.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 18:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001028161260"
+    }
+   ],
+   "rating": 4.6,
+   "badges": [
+    "indoor"
+   ]
   }
  ],
+ "ideas": [],
  "route": null,
  "warnings": [
-  "Часы работы некоторых мест неизвестны."
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
+  "Рядом мало подходящих мест — радиус поиска расширен до 3.4 км."
  ],
  "llm": {
-  "provider": "mock"
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ },
+ "_eval_ms": 6065,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

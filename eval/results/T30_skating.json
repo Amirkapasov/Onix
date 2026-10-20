@@ -1,97 +1,121 @@
 {
- "request_id": "mock",
+ "request_id": "6ba03877f8e3",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Байтерек (точность ~100 м)",
+  "time": "суббота, 15:00",
+  "weather": "−12°C, ветер 5 м/с (симуляция)",
+  "mode": "на машине/такси",
+  "radius_m": 10000,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "нужно: каток (только подходящие места)",
+   "погода: приоритет местам в помещении",
+   "холодно — пешие расстояния сокращены",
+   "пешком рядом нет — считаю время на такси"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "sport",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "каток",
+   "покататься",
+   "коньках"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/230401645",
-   "name": "Байтерек",
-   "category": "viewpoint",
-   "lat": 51.128288,
-   "lon": 71.430455,
-   "distance_m": 59,
-   "travel_min": 1,
+   "poi_id": "2gis:70000001019940194",
+   "name": "Тарлан",
+   "category": "sport",
+   "lat": 51.151786,
+   "lon": 71.409547,
+   "distance_m": 3005,
+   "travel_min": 12,
    "visit_min": [
-    20,
-    40
+    60,
+    90
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "2gis:70000001032494391",
-   "name": "Көкtem, кафе",
-   "category": "cafe",
-   "lat": 51.129267,
-   "lon": 71.428581,
-   "distance_m": 224,
-   "travel_min": 3,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Каток — то, что вы искали; в мороз и ветер — под крышей; высокий рейтинг 4.9. Спорт «Тарлан». Рубрики 2GIS: каток.",
+   "what_to_do": "Уточните расписание и прокат инвентаря перед выходом.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Открыто до 22:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": 4.8,
-   "badges": []
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001019940194"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor"
+   ]
   },
   {
-   "poi_id": "osm:node/6408271985",
-   "name": "CrepeCafe",
-   "category": "cafe",
-   "lat": 51.129382,
-   "lon": 71.428593,
-   "distance_m": 237,
-   "travel_min": 3,
+   "poi_id": "2gis:70000001035892961",
+   "name": "Mega Arena",
+   "category": "sport",
+   "lat": 51.088811,
+   "lon": 71.409384,
+   "distance_m": 4589,
+   "travel_min": 16,
    "visit_min": [
-    20,
-    40
+    60,
+    90
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Каток — то, что вы искали; в мороз и ветер — под крышей; высокий рейтинг 4.8. Спорт «Mega Arena». Рубрики 2GIS: каток.",
+   "what_to_do": "Уточните расписание и прокат инвентаря перед выходом.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Открыто до 20:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001035892961"
+    }
+   ],
    "rating": 4.8,
-   "badges": []
+   "badges": [
+    "indoor"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "После катка можно выпить горячий чай или кофе, чтобы согреться.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
  "warnings": [
-  "Часы работы некоторых мест неизвестны."
+  "Пешком рядом нет: ближайший вариант (каток) — «Тарлан», 3.0 км, ~12 мин на такси."
  ],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 3508
+ },
+ "_eval_ms": 3568,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

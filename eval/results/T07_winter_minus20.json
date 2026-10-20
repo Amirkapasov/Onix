@@ -1,97 +1,164 @@
 {
- "request_id": "mock",
+ "request_id": "b12d8664b75a",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Байтерек (точность ~100 м)",
+  "time": "четверг, 18:30",
+  "weather": "−20°C, ветер 9 м/с (симуляция)",
+  "mode": "пешком",
+  "radius_m": 800,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "только в помещении",
+   "пожелания: indoor",
+   "погода: приоритет местам в помещении",
+   "холодно — пешие расстояния сокращены",
+   "скрыто закрытых к приходу: 11",
+   "скрыто без часов, вероятно закрытых в это время: 1"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "other",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [
+   "indoor"
+  ],
+  "keywords": [
+   "улице",
+   "ветер",
+   "провести",
+   "вечер",
+   "нибудь",
+   "тепле"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/230401645",
-   "name": "Байтерек",
-   "category": "viewpoint",
-   "lat": 51.128288,
-   "lon": 71.430455,
-   "distance_m": 59,
-   "travel_min": 1,
+   "poi_id": "2gis:70000001101370539",
+   "name": "Второй",
+   "category": "cafe",
+   "lat": 51.128563,
+   "lon": 71.433084,
+   "distance_m": 224,
+   "travel_min": 4,
    "visit_min": [
-    20,
-    40
+    30,
+    50
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Отличное теплое место неподалеку с высоким рейтингом 4.9, открытое до трех часов ночи.",
+   "what_to_do": "Закажите горячий кофе и отдохните за столиком, спрятавшись от мороза и ветра.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 03:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001101370539"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor",
+    "night",
+    "coffee"
+   ]
   },
   {
    "poi_id": "2gis:70000001032494391",
-   "name": "Көкtem, кафе",
+   "name": "Көкtem",
    "category": "cafe",
    "lat": 51.129267,
    "lon": 71.428581,
-   "distance_m": 224,
+   "distance_m": 172,
    "travel_min": 3,
    "visit_min": [
-    20,
-    40
+    30,
+    45
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Уютное кафе всего в 3 минутах ходьбы, отлично подходящее для вечернего отдыха в тепле.",
+   "what_to_do": "Выпейте чашку кофе с десертом и согрейтесь после улицы.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001032494391"
+    }
+   ],
    "rating": 4.8,
-   "badges": []
+   "badges": [
+    "indoor",
+    "night",
+    "coffee"
+   ]
   },
   {
-   "poi_id": "osm:node/6408271985",
-   "name": "CrepeCafe",
-   "category": "cafe",
-   "lat": 51.129382,
-   "lon": 71.428593,
-   "distance_m": 237,
-   "travel_min": 3,
+   "poi_id": "2gis:70000001018069131",
+   "name": "Kinopark",
+   "category": "cinema",
+   "lat": 51.127393,
+   "lon": 71.425104,
+   "distance_m": 348,
+   "travel_min": 6,
    "visit_min": [
-    20,
-    40
+    90,
+    120
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Кинотеатр в закрытом помещении рядом с вами, работающий до полуночи, идеален для холодной погоды.",
+   "what_to_do": "Выберите интересный фильм в расписании и насладитесь просмотром в комфортном зале.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": 4.8,
-   "badges": []
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018069131"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor",
+    "night",
+    "coffee"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Проверь афишу сеансов заранее, чтобы сразу занять уютные места.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
- "warnings": [
-  "Часы работы некоторых мест неизвестны."
- ],
+ "warnings": [],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 2137
+ },
+ "_eval_ms": 2201,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

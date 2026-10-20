@@ -11,6 +11,7 @@
 from __future__ import annotations
 
 import json
+import re
 import time
 import urllib.parse
 
@@ -40,7 +41,7 @@ HARVEST = [
     ("галерея", r"галере|выставоч", "gallery", ["art", "culture"]),
     ("театр", r"театр|концертн|филармон", "theatre", ["culture"]),
     ("смотровая площадка", r"смотров|достопримечат", "viewpoint", ["view", "photo"]),
-    ("парк", r"парк|сквер|бульвар|зоны отдыха", "park", ["outdoor", "walk"]),
+    ("парк", r"\bпарки?\b|сквер|бульвар|зоны отдыха", "park", ["outdoor", "walk"]),
     ("коворкинг", r"коворкинг", "coworking", ["wifi", "work"]),
     ("кофейня", r"кофейн|кафе", "cafe", ["coffee"]),
     ("супермаркет", r"супермаркет|гипермаркет", "supermarket", ["groceries"]),
@@ -53,6 +54,11 @@ HARVEST = [
 ]
 HARVEST_POINTS = {"baiterek": (51.1283, 71.4305), "mega_silk_way": (51.0890, 71.4100),
                   "old_center": (51.1690, 71.4300)}
+# Рубрики, которые не делают место тем, что ищут: «паркинги» совпадают с «парк»,
+# «строительство бань и саун» — с «сауна». Такие рубрики игнорируются; если основная рубрика
+# из этого списка — объект не берём вовсе.
+EXCLUDE_RUBRICS = re.compile(r"паркинг|парковк|автостоян|стоянк|строительств|обслуживание бассейнов|"
+                             r"гидроизоляц|кровельн|оборудование для|продажа оборудования", re.I)
 HARVEST_RADIUS = 3000
 # Редкие типы мест добираем по всему городу (сортировка по релевантности): запрос → число страниц по 10
 CITYWIDE = {"боулинг": 1, "аквапарк": 1, "каток": 1, "батутный центр": 1, "смотровая площадка": 1,
@@ -181,7 +187,8 @@ def _new_poi(item: dict, cat: str = "cafe", tags: list[str] | None = None) -> di
         return None
     name = clean_name(item["name"])
     address = item.get("address_name")
-    rubrics = ", ".join(r.get("name", "") for r in item.get("rubrics") or [])
+    rubrics = ", ".join(r.get("name", "") for r in item.get("rubrics") or []
+                        if not EXCLUDE_RUBRICS.search(r.get("name", "")))
     all_tags = set(tags or ["coffee"]) | set(normalize.CATEGORY_TAGS.get(cat, []))
     all_tags |= set(normalize.name_tags(name + " " + rubrics))
     if name.lower() in normalize.BUDGET_BRANDS:
@@ -221,7 +228,6 @@ def _find_existing(pois: list[dict], name: str, lat: float, lon: float) -> dict 
 
 def _harvest(pois: list[dict], key: str, budget: Budget, refresh: bool, limit: int) -> dict[str, int]:
     """Добор мест по рубрикам вокруг контрольных точек (сортировка по расстоянию)."""
-    import re
     added: dict[str, int] = {}
     seen: set[str] = {p["id"] for p in pois}
     for q, rubric_rx, cat, tags in HARVEST:
@@ -236,7 +242,10 @@ def _harvest(pois: list[dict], key: str, budget: Budget, refresh: bool, limit: i
                 break
             obj = _get(params, key, budget, refresh)
             for it in ((obj or {}).get("result") or {}).get("items") or []:
-                rubrics = " ".join(r.get("name", "") for r in it.get("rubrics") or []).lower()
+                names = [r.get("name", "").lower() for r in it.get("rubrics") or []]
+                if not names or EXCLUDE_RUBRICS.search(names[0]):
+                    continue  # основная рубрика — паркинг, стройка и т. п.
+                rubrics = " | ".join(n for n in names if not EXCLUDE_RUBRICS.search(n))
                 if not re.search(rubric_rx, rubrics):
                     continue  # рубрика не подтверждает тип
                 pid = f"2gis:{str(it.get('id', '')).split('_')[0]}"

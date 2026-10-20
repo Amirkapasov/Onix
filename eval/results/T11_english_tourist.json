@@ -1,107 +1,131 @@
 {
- "request_id": "mock",
+ "request_id": "104ce710eb83",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ Baiterek area (~100 m precision)",
+  "time": "Tuesday, 10:00",
+  "weather": "+4°C, wind 4 m/s (climate normal)",
+  "mode": "on foot",
+  "radius_m": 3426,
+  "filters": [
+   "budget 180 min",
+   "looking for: museum / exhibition (matching places only)",
+   "preferences: outdoor_ok, indoor"
+  ],
+  "data_note": "Used: coarse location (~100 m), time, filters and your query. Coordinates are not stored or logged; weather is fetched for the city centre."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "sightseeing",
+  "time_budget_min": 180,
+  "companions": "solo",
+  "constraints": [
+   "outdoor_ok",
+   "indoor"
+  ],
+  "keywords": [
+   "музей / выставка",
+   "байтерек",
+   "достопримечательности",
+   "центр",
+   "экскурсия",
+   "туризм",
+   "tourist",
+   "baiterek",
+   "hours",
+   "must"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/230401645",
-   "name": "Байтерек",
-   "category": "viewpoint",
-   "lat": 51.128288,
-   "lon": 71.430455,
-   "distance_m": 59,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Close by and fits your request.",
-   "what_to_do": "Walk in and look around for 30 minutes.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "2gis:70000001032494391",
-   "name": "Көкtem, кафе",
-   "category": "cafe",
-   "lat": 51.129267,
-   "lon": 71.428581,
-   "distance_m": 224,
+   "poi_id": "2gis:70000001028161260",
+   "name": "Национальный центр рукописей и редких книг",
+   "category": "museum",
+   "lat": 51.127854,
+   "lon": 71.427423,
+   "distance_m": 181,
    "travel_min": 3,
    "visit_min": [
-    20,
-    40
+    50,
+    90
    ],
-   "why": "Close by and fits your request.",
-   "what_to_do": "Walk in and look around for 30 minutes.",
+   "why": "Located very close to Baiterek, this indoor museum fits your 3-hour time budget and has a high rating of 4.6.",
+   "what_to_do": "Explore the rare books and historical manuscripts on display.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Open until 18:00 (2GIS hours, checked 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": 4.8,
-   "badges": []
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001028161260"
+    }
+   ],
+   "rating": 4.6,
+   "badges": [
+    "indoor"
+   ]
   },
   {
-   "poi_id": "osm:node/6408271985",
-   "name": "CrepeCafe",
-   "category": "cafe",
-   "lat": 51.129382,
-   "lon": 71.428593,
-   "distance_m": 237,
-   "travel_min": 3,
+   "poi_id": "osm:way/230358847",
+   "name": "Корме",
+   "category": "gallery",
+   "lat": 51.128641,
+   "lon": 71.42038,
+   "distance_m": 675,
+   "travel_min": 12,
    "visit_min": [
-    20,
-    40
+    30,
+    55
    ],
-   "why": "Close by and fits your request.",
-   "what_to_do": "Walk in and look around for 30 minutes.",
+   "why": "An indoor art and culture space nearby with a high rating of 4.9, perfect for a short visit.",
+   "what_to_do": "Check out the current exhibitions and art displays.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Open until 20:00 (2GIS hours, checked 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": 4.8,
-   "badges": []
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/230358847"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001058713640"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Grab a hot coffee nearby to warm up since it's +4°C outside.",
    "source_type": "generated_idea"
   }
  ],
- "route": {
-  "stops": [
-   "osm:way/230401645",
-   "2gis:70000001032494391",
-   "osm:node/6408271985"
-  ],
-  "legs": [],
-  "total_min": 60,
-  "geometry": [],
-  "geometry_source": "straight_line"
- },
- "warnings": [
-  "Часы работы некоторых мест неизвестны."
- ],
+ "route": null,
+ "warnings": [],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 3119
+ },
+ "_eval_ms": 3183,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

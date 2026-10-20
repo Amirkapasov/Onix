@@ -1,97 +1,162 @@
 {
- "request_id": "mock",
+ "request_id": "a57abb171464",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Байтерек (точность ~100 м)",
+  "time": "среда, 02:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1200,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "нужно: аптека (только подходящие места)",
+   "пожелания: night",
+   "ночь: места, открытые допоздна",
+   "скрыто закрытых к приходу: 9",
+   "скрыто без часов, вероятно закрытых в это время: 3"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "night",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [
+   "night"
+  ],
+  "keywords": [
+   "аптека",
+   "нужна",
+   "ночь"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/230401645",
-   "name": "Байтерек",
-   "category": "viewpoint",
-   "lat": 51.128288,
-   "lon": 71.430455,
-   "distance_m": 59,
-   "travel_min": 1,
+   "poi_id": "2gis:70000001061504155",
+   "name": "АльфаМед",
+   "category": "pharmacy",
+   "lat": 51.125109,
+   "lon": 71.426848,
+   "distance_m": 390,
+   "travel_min": 7,
    "visit_min": [
-    20,
-    40
+    10,
+    15
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Аптека рядом — 390 м; работает допоздна или круглосуточно (по данным базы).",
+   "what_to_do": "Лекарства и товары для здоровья; рецептурные препараты — уточните у фармацевта.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
+    "state": "open",
+    "confidence": "high",
+    "label": "Круглосуточно (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001061504155"
+    }
+   ],
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "night"
+   ]
   },
   {
-   "poi_id": "osm:node/14100100183",
-   "name": "Peek-a-boo",
-   "category": "restaurant",
-   "lat": 51.129328,
-   "lon": 71.428273,
-   "distance_m": 248,
-   "travel_min": 3,
+   "poi_id": "osm:node/2540818462",
+   "name": "Ойық Фарм",
+   "category": "pharmacy",
+   "lat": 51.126017,
+   "lon": 71.424476,
+   "distance_m": 444,
+   "travel_min": 8,
    "visit_min": [
-    20,
-    40
+    10,
+    15
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Аптека рядом — 444 м; работает допоздна или круглосуточно (по данным базы).",
+   "what_to_do": "Лекарства и товары для здоровья; рецептурные препараты — уточните у фармацевта.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
+    "state": "open",
+    "confidence": "high",
+    "label": "Круглосуточно (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/2540818462"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018108269"
+    }
+   ],
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "night"
+   ]
   },
   {
-   "poi_id": "osm:way/230358856",
-   "name": "Национальный архив Республики Казахстан",
-   "category": "landmark",
-   "lat": 51.127967,
-   "lon": 71.427018,
-   "distance_m": 271,
-   "travel_min": 4,
+   "poi_id": "osm:node/4966002804",
+   "name": "Europharma",
+   "category": "pharmacy",
+   "lat": 51.129071,
+   "lon": 71.437638,
+   "distance_m": 546,
+   "travel_min": 9,
    "visit_min": [
-    20,
-    40
+    10,
+    15
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Аптека рядом — 546 м; работает допоздна или круглосуточно (по данным базы).",
+   "what_to_do": "Лекарства и товары для здоровья; рецептурные препараты — уточните у фармацевта.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
+    "state": "open",
+    "confidence": "high",
+    "label": "Круглосуточно (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/4966002804"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018626390"
+    }
+   ],
+   "rating": 4.6,
+   "badges": [
+    "indoor",
+    "night"
+   ]
   }
  ],
- "ideas": [
-  {
-   "text": "идея",
-   "source_type": "generated_idea"
-  }
- ],
+ "ideas": [],
  "route": null,
  "warnings": [
-  "Часы работы некоторых мест неизвестны."
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
  ],
  "llm": {
-  "provider": "mock"
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ },
+ "_eval_ms": 6067,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

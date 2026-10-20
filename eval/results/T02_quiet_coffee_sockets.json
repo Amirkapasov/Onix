@@ -1,97 +1,95 @@
 {
- "request_id": "mock",
+ "request_id": "fb759768f631",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район ТРЦ «Керуен» (точность ~100 м)",
+  "time": "вторник, 14:00",
+  "weather": "+3°C, ветер 6 м/с",
+  "mode": "пешком",
+  "radius_m": 1142,
+  "filters": [
+   "бюджет 60 мин",
+   "пожелания: quiet, sockets, coffee",
+   "скрыто закрытых к приходу: 13",
+   "скрыто без часов, вероятно закрытых в это время: 5"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "work",
+  "time_budget_min": 60,
+  "companions": "solo",
+  "constraints": [
+   "quiet",
+   "sockets",
+   "coffee"
+  ],
+  "keywords": [
+   "тихое",
+   "кофе",
+   "розеткой",
+   "поработать"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:node/11910202470",
-   "name": "marrone rosso",
-   "category": "cafe",
-   "lat": 51.128406,
-   "lon": 71.425064,
-   "distance_m": 86,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:node/4133854089",
-   "name": "Rafe",
-   "category": "cafe",
-   "lat": 51.129729,
-   "lon": 71.425986,
-   "distance_m": 138,
+   "poi_id": "2gis:70000001033835901",
+   "name": "IQ Coworking",
+   "category": "coworking",
+   "lat": 51.128788,
+   "lon": 71.423117,
+   "distance_m": 133,
    "travel_min": 2,
    "visit_min": [
-    20,
-    40
+    40,
+    55
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:node/13533633413",
-   "name": "Asai Restaurant Astana",
-   "category": "restaurant",
-   "lat": 51.129905,
-   "lon": 71.424491,
-   "distance_m": 139,
-   "travel_min": 2,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Коворкинг с высоким рейтингом 4.9, где есть розетки и Wi-Fi для комфортной работы.",
+   "what_to_do": "Занять свободное рабочее место, подключиться к сети и поработать в течение часа.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Открыто до 22:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001033835901"
+    }
+   ],
    "rating": 4.9,
-   "badges": []
+   "badges": [
+    "indoor",
+    "sockets",
+    "wifi"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Возьмите с собой наушники, чтобы сосредоточиться на задачах в тишине.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
  "warnings": [
-  "Часы работы некоторых мест неизвестны."
+  "Валидатор убрал 1 мест(а), которых нет в базе."
  ],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 1709
+ },
+ "_eval_ms": 1772,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

@@ -1,9 +1,30 @@
 {
- "request_id": "mock",
+ "request_id": "979ec9bcd1d0",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район рядом с Хан Шатыр (точность ~100 м)",
+  "time": "вторник, 23:15",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1713,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "ночь: места, открытые допоздна",
+   "скрыто закрытых к приходу: 124",
+   "скрыто без часов, вероятно закрытых в это время: 67"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "other",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "сходить",
+   "хан",
+   "шатыр"
+  ]
+ },
  "recommendations": [
   {
    "poi_id": "osm:node/13109131801",
@@ -11,87 +32,100 @@
    "category": "bar",
    "lat": 51.128912,
    "lon": 71.408326,
-   "distance_m": 219,
+   "distance_m": 168,
    "travel_min": 3,
    "visit_min": [
-    20,
-    40
+    65,
+    110
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Бар Taiyo находится рядом и открыт до 02:00, подходит для позднего вечера при рейтинге 4.7.",
+   "what_to_do": "Зайдите отдохнуть в помещении и воспользоваться wi-fi.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 02:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/13109131801"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001090104472"
+    }
+   ],
+   "rating": 4.7,
+   "badges": [
+    "indoor",
+    "wifi"
+   ]
   },
   {
-   "poi_id": "osm:way/37884583",
-   "name": "Парк влюбленных",
-   "category": "park",
-   "lat": 51.131492,
-   "lon": 71.40921,
-   "distance_m": 227,
-   "travel_min": 3,
+   "poi_id": "osm:node/12686474701",
+   "name": "Brewery",
+   "category": "bar",
+   "lat": 51.128543,
+   "lon": 71.406148,
+   "distance_m": 314,
+   "travel_min": 5,
    "visit_min": [
-    20,
-    40
+    65,
+    110
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Бар Brewery открыт до 02:00, имеет высокий рейтинг 4.8 и находится вблизи.",
+   "what_to_do": "Расположитесь внутри, закажите стейк и воспользуйтесь wi-fi.",
    "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 02:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "wikidata:Q42422250",
-   "name": "Парк Влюбленных (Астана)",
-   "category": "park",
-   "lat": 51.1316,
-   "lon": 71.4095,
-   "distance_m": 236,
-   "travel_min": 3,
-   "visit_min": [
-    20,
-    40
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/12686474701"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018064401"
+    }
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "night",
+    "wifi"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Учитывайте, что сейчас поздно, поэтому лучше выбирать заведения под крышей с известным графиком работы.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
  "warnings": [
-  "Часы работы некоторых мест неизвестны."
+  "«Хан Шатыр» к вашему приходу закрыт: Закрыто, откроется 21.10 10:00 (часы по 2GIS, проверено 2026-10-20). Предлагаю открытые места рядом."
  ],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 2477
+ },
+ "_eval_ms": 5053,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

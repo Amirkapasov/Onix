@@ -1,97 +1,131 @@
 {
- "request_id": "mock",
+ "request_id": "c4eaf680b6cd",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Бульвар Нуржол (точность ~100 м)",
+  "time": "вторник, 22:30",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 2284,
+  "filters": [
+   "бюджет 120 мин",
+   "пожелания: night, unusual",
+   "ночь: места, открытые допоздна",
+   "скрыто закрытых к приходу: 123",
+   "скрыто без часов, вероятно закрытых в это время: 88"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "night",
+  "time_budget_min": 120,
+  "companions": "solo",
+  "constraints": [
+   "night",
+   "unusual"
+  ],
+  "keywords": [
+   "ищу",
+   "необычную",
+   "ночную",
+   "активность",
+   "последние",
+   "пару"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/1530378860",
-   "name": "Детская площадка",
-   "category": "playground",
-   "lat": 51.126744,
-   "lon": 71.433254,
-   "distance_m": 44,
-   "travel_min": 1,
+   "poi_id": "2gis:70000001079723926",
+   "name": "Show Today",
+   "category": "entertainment",
+   "lat": 51.124406,
+   "lon": 71.436578,
+   "distance_m": 382,
+   "travel_min": 7,
    "visit_min": [
-    20,
-    40
+    65,
+    110
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:way/1530378859",
-   "name": "Детская площадка",
-   "category": "playground",
-   "lat": 51.126459,
-   "lon": 71.433727,
-   "distance_m": 102,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "2gis:70000001094584929",
-   "name": "Каусар, чайхана",
-   "category": "cafe",
-   "lat": 51.12679,
-   "lon": 71.435133,
-   "distance_m": 196,
-   "travel_min": 3,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Отличный вариант для необычной ночной активности: интерактивные квесты и развлечения, открыто до 01:00.",
+   "what_to_do": "Пройдите квест или примите участие в интерактивной игре, погрузившись в ночное приключение.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Открыто до 01:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": 4.8,
-   "badges": []
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001079723926"
+    }
+   ],
+   "rating": 5.0,
+   "badges": [
+    "indoor",
+    "night",
+    "unusual",
+    "interactive"
+   ]
+  },
+  {
+   "poi_id": "2gis:70000001115110557",
+   "name": "DevilRoom",
+   "category": "entertainment",
+   "lat": 51.140156,
+   "lon": 71.43082,
+   "distance_m": 1471,
+   "travel_min": 25,
+   "visit_min": [
+    65,
+    95
+   ],
+   "why": "Необычное место с квестами и антикафе, которое работает всю ночь (до 05:00) и подходит под ваш запрос.",
+   "what_to_do": "Забронируйте прохождение квеста или отдохните в необычной атмосферной обстановке антикафе.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 05:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001115110557"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor",
+    "night",
+    "unusual",
+    "interactive"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Прогуляйтесь по ночному городу после активности, оценив подсветку архитектуры.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
- "warnings": [
-  "Часы работы некоторых мест неизвестны."
- ],
+ "warnings": [],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 3196
+ },
+ "_eval_ms": 3291,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

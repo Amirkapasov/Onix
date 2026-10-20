@@ -44,7 +44,7 @@
           "tags": [
             "walk"
           ],
-          "regex": "парк|бульвар|набережн|аллея|сквер|park|boulevard"
+          "regex": "парк|бульвар|набережн|аллея|сквер|park|boulevard|Нур Алем|Nur Alem|ЭКСПО|EXPO"
         },
         "max_distance_m": 2000,
         "categories_any": [

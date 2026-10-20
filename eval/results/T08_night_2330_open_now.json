@@ -1,97 +1,131 @@
 {
- "request_id": "mock",
+ "request_id": "e9a7cad34ce1",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Бульвар Нуржол (точность ~100 м)",
+  "time": "вторник, 23:30",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1200,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "нужно: бар (только подходящие места)",
+   "пожелания: night",
+   "ночь: места, открытые допоздна"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "coffee",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [
+   "night"
+  ],
+  "keywords": [
+   "бар",
+   "открыто сейчас",
+   "кофейня",
+   "кафе",
+   "посидеть",
+   "ночное",
+   "ещё",
+   "открыто",
+   "нибудь"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/1530378860",
-   "name": "Детская площадка",
-   "category": "playground",
-   "lat": 51.126744,
-   "lon": 71.433254,
-   "distance_m": 44,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:way/1530378859",
-   "name": "Детская площадка",
-   "category": "playground",
-   "lat": 51.126459,
-   "lon": 71.433727,
-   "distance_m": 102,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "2gis:70000001094584929",
-   "name": "Каусар, чайхана",
-   "category": "cafe",
-   "lat": 51.12679,
-   "lon": 71.435133,
-   "distance_m": 196,
+   "poi_id": "osm:node/13620484606",
+   "name": "Ну, шоты!",
+   "category": "bar",
+   "lat": 51.128465,
+   "lon": 71.433911,
+   "distance_m": 175,
    "travel_min": 3,
    "visit_min": [
-    20,
-    40
+    65,
+    110
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Открыто до 03:00, высокий рейтинг 4.9 и бар рядом с вами.",
+   "what_to_do": "Зайдите внутрь, выпейте напиток и отдохните в уютной обстановке паба.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 03:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/13620484606"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001066638430"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor"
+   ]
+  },
+  {
+   "poi_id": "osm:node/4199896989",
+   "name": "Avtor",
+   "category": "bar",
+   "lat": 51.128084,
+   "lon": 71.43654,
+   "distance_m": 275,
+   "travel_min": 5,
+   "visit_min": [
+    65,
+    110
+   ],
+   "why": "Бар «Avtor» работает круглосуточно, отлично подойдет для позднего отдыха.",
+   "what_to_do": "Расположитесь за столиком и проведите время за любимым напитком.",
    "open_status": {
     "state": "open",
     "confidence": "medium",
-    "label": "Вероятно открыто",
+    "label": "Круглосуточно (часы по OSM, проверено 2026-10-20)",
     "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": 4.8,
-   "badges": []
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/4199896989"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "night"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Проверьте телефон перед выходом, чтобы точно узнать актуальные предложения баров.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
- "warnings": [
-  "Часы работы некоторых мест неизвестны."
- ],
+ "warnings": [],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 3139
+ },
+ "_eval_ms": 3203,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

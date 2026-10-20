@@ -1,97 +1,86 @@
 {
- "request_id": "mock",
+ "request_id": "702aca9123c4",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Mega Silk Way (точность ~100 м)",
+  "time": "вторник, 18:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1713,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "нужно: супермаркет / продукты (только подходящие места)",
+   "сеть: magnum"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "shopping",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "супермаркет / продукты",
+   "ближайший",
+   "магнум"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:node/13173517356",
-   "name": "Gasteria",
-   "category": "cafe",
-   "lat": 51.088945,
-   "lon": 71.409346,
-   "distance_m": 60,
-   "travel_min": 1,
+   "poi_id": "osm:node/10799137517",
+   "name": "Magnum",
+   "category": "convenience",
+   "lat": 51.088308,
+   "lon": 71.396547,
+   "distance_m": 943,
+   "travel_min": 16,
    "visit_min": [
-    20,
-    40
+    10,
+    15
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Ближайший магазин сети «Magnum» в 943 метрах, открыт до 23:00.",
+   "what_to_do": "Зайдите за продуктами и необходимыми товарами.",
    "open_status": {
     "state": "open",
     "confidence": "medium",
-    "label": "Вероятно открыто",
+    "label": "Вероятно открыто до 23:00 (часы по OSM, проверено 2026-10-20)",
     "source": "osm"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "2gis:70000001027813427",
-   "name": "Coffee BOOM, сеть кофеен",
-   "category": "cafe",
-   "lat": 51.089056,
-   "lon": 71.409344,
-   "distance_m": 60,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/10799137517"
+    }
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": 4.8,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:node/6404769885",
-   "name": "Ocean Basket",
-   "category": "restaurant",
-   "lat": 51.088558,
-   "lon": 71.409871,
-   "distance_m": 65,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
    "rating": null,
-   "badges": []
+   "badges": [
+    "indoor",
+    "night"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Составьте список покупок заранее, чтобы быстро найти всё нужное.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
- "warnings": [
-  "Часы работы некоторых мест неизвестны."
- ],
+ "warnings": [],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 1119
+ },
+ "_eval_ms": 1164,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

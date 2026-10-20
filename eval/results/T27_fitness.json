@@ -1,97 +1,125 @@
 {
- "request_id": "mock",
+ "request_id": "3c99c9fd3a5e",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Хан Шатыр (точность ~100 м)",
+  "time": "вторник, 19:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1713,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "нужно: фитнес / спортзал (только подходящие места)"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "wellness",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "фитнес / спортзал",
+   "тут",
+   "покачаться",
+   "фитнес",
+   "зал"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/1449317872",
-   "name": "Movenpick",
-   "category": "cafe",
-   "lat": 51.132882,
-   "lon": 71.404082,
-   "distance_m": 19,
-   "travel_min": 0,
+   "poi_id": "2gis:70000001018062580",
+   "name": "Fitness Palace",
+   "category": "wellness",
+   "lat": 51.128918,
+   "lon": 71.406196,
+   "distance_m": 479,
+   "travel_min": 8,
    "visit_min": [
-    20,
-    40
+    60,
+    90
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:way/1449322329",
-   "name": "Конвой",
-   "category": "landmark",
-   "lat": 51.132847,
-   "lon": 71.403812,
-   "distance_m": 28,
-   "travel_min": 0,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:way/1449301315",
-   "name": "Starbucks",
-   "category": "cafe",
-   "lat": 51.132727,
-   "lon": 71.403763,
-   "distance_m": 45,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Отличный фитнес-клуб с высоким рейтингом 4.8 и тренажёрным залом, открытый до полуночи.",
+   "what_to_do": "Проведите полноценную силовую тренировку в тренажёрном зале и расслабьтесь в бассейне.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": 3.9,
-   "badges": []
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018062580"
+    }
+   ],
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "night"
+   ]
+  },
+  {
+   "poi_id": "osm:node/12686463901",
+   "name": "INVICTUS GO",
+   "category": "wellness",
+   "lat": 51.128124,
+   "lon": 71.404242,
+   "distance_m": 542,
+   "travel_min": 9,
+   "visit_min": [
+    60,
+    90
+   ],
+   "why": "Ближайший современный фитнес-клуб с тренажёрным залом и высоким рейтингом 4.7.",
+   "what_to_do": "Сходите на тренировку в спортивный зал, оценив доступный wi-fi.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 23:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/12686463901"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001093714445"
+    }
+   ],
+   "rating": 4.7,
+   "badges": [
+    "indoor",
+    "night",
+    "wifi"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Возьмите с собой бутылку воды и удобную сменную обувь для зала.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
- "warnings": [
-  "Часы работы некоторых мест неизвестны."
- ],
+ "warnings": [],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 2585
+ },
+ "_eval_ms": 2634,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

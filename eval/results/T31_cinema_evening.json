@@ -1,97 +1,90 @@
 {
- "request_id": "mock",
+ "request_id": "ef22caaec318",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Mega Silk Way (точность ~100 м)",
+  "time": "вторник, 19:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 3426,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "нужно: кино (только подходящие места)"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "culture",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "кино",
+   "вечером"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:node/13173517356",
-   "name": "Gasteria",
-   "category": "cafe",
-   "lat": 51.088945,
-   "lon": 71.409346,
-   "distance_m": 60,
+   "poi_id": "osm:node/5880883097",
+   "name": "Chaplin Cinema",
+   "category": "cinema",
+   "lat": 51.088319,
+   "lon": 71.40973,
+   "distance_m": 78,
    "travel_min": 1,
    "visit_min": [
-    20,
-    40
+    60,
+    90
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Отличный вариант на вечер: современный кинотеатр с высоким рейтингом 4.8, который открыт до полуночи.",
+   "what_to_do": "Посмотрите расписание сеансов и возьмите билеты онлайн, чтобы не стоять в очереди.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "2gis:70000001027813427",
-   "name": "Coffee BOOM, сеть кофеен",
-   "category": "cafe",
-   "lat": 51.089056,
-   "lon": 71.409344,
-   "distance_m": 60,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/5880883097"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001027048493"
+    }
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
    "rating": 4.8,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:node/6404769885",
-   "name": "Ocean Basket",
-   "category": "restaurant",
-   "lat": 51.088558,
-   "lon": 71.409871,
-   "distance_m": 65,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
+   "badges": [
+    "indoor",
+    "night"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Возьмите с собой любимый попкорн и напиток для идеального киновечера.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
  "warnings": [
-  "Часы работы некоторых мест неизвестны."
+  "Рядом мало подходящих мест — радиус поиска расширен до 3.4 км."
  ],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 1815
+ },
+ "_eval_ms": 1878,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }

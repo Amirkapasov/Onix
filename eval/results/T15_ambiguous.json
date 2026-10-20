@@ -1,97 +1,164 @@
 {
- "request_id": "mock",
+ "request_id": "80ebe8c661bd",
  "context_used": {
-  "data_note": "mock"
+  "location": "≈ район Бульвар Нуржол (точность ~100 м)",
+  "time": "вторник, 16:00",
+  "weather": "+3°C, ветер 6 м/с",
+  "mode": "пешком",
+  "radius_m": 1713,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "скрыто закрытых к приходу: 11",
+   "скрыто без часов, вероятно закрытых в это время: 7"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
  },
- "parsed_intent": {},
+ "parsed_intent": {
+  "intent": "entertainment",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "развлечения",
+   "досуг",
+   "куда сходить",
+   "интересные места",
+   "скучно",
+   "сходить"
+  ]
+ },
  "recommendations": [
   {
-   "poi_id": "osm:way/1530378860",
-   "name": "Детская площадка",
-   "category": "playground",
-   "lat": 51.126744,
-   "lon": 71.433254,
-   "distance_m": 44,
-   "travel_min": 1,
+   "poi_id": "2gis:70000001021365759",
+   "name": "Монумент-Бәйтерек",
+   "category": "viewpoint",
+   "lat": 51.128301,
+   "lon": 71.430456,
+   "distance_m": 229,
+   "travel_min": 4,
    "visit_min": [
-    20,
-    40
+    15,
+    25
    ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "osm:way/1530378859",
-   "name": "Детская площадка",
-   "category": "playground",
-   "lat": 51.126459,
-   "lon": 71.433727,
-   "distance_m": 102,
-   "travel_min": 1,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
-   "open_status": {
-    "state": "unknown",
-    "confidence": "low",
-    "label": "Часы неизвестны",
-    "source": "osm"
-   },
-   "source_type": "poi_data",
-   "sources": [],
-   "rating": null,
-   "badges": []
-  },
-  {
-   "poi_id": "2gis:70000001094584929",
-   "name": "Каусар, чайхана",
-   "category": "cafe",
-   "lat": 51.12679,
-   "lon": 71.435133,
-   "distance_m": 196,
-   "travel_min": 3,
-   "visit_min": [
-    20,
-    40
-   ],
-   "why": "Рядом и подходит под запрос.",
-   "what_to_do": "Зайдите и осмотритесь 30 минут.",
+   "why": "Отличное место с высоким рейтингом 4.9 для интересного времяпрепровождения и красивых видов со смотровой площадки.",
+   "what_to_do": "Поднимитесь на смотровую площадку, чтобы насладиться панорамным видом города и сделать фотографии.",
    "open_status": {
     "state": "open",
-    "confidence": "medium",
-    "label": "Вероятно открыто",
-    "source": "osm"
+    "confidence": "high",
+    "label": "Открыто до 21:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
    },
    "source_type": "poi_data",
-   "sources": [],
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001021365759"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor",
+    "outdoor",
+    "view",
+    "photo"
+   ]
+  },
+  {
+   "poi_id": "2gis:70000001079723926",
+   "name": "Show Today",
+   "category": "entertainment",
+   "lat": 51.124406,
+   "lon": 71.436578,
+   "distance_m": 382,
+   "travel_min": 7,
+   "visit_min": [
+    65,
+    110
+   ],
+   "why": "Интерактивные развлечения и квесты помогут быстро избавиться от скуки. Рейтинг 5.0.",
+   "what_to_do": "Пройдите необычный интерактивный квест или примите участие в развлекательной программе.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 01:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001079723926"
+    }
+   ],
+   "rating": 5.0,
+   "badges": [
+    "indoor",
+    "night",
+    "unusual",
+    "interactive"
+   ]
+  },
+  {
+   "poi_id": "osm:node/14100100182",
+   "name": "Drinkit",
+   "category": "cafe",
+   "lat": 51.130288,
+   "lon": 71.429011,
+   "distance_m": 460,
+   "travel_min": 8,
+   "visit_min": [
+    30,
+    45
+   ],
+   "why": "Уютное кафе с высоким рейтингом 4.8, где можно согреться за чашкой кофе при прохладной погоде.",
+   "what_to_do": "Закажите любимый кофе и отдохните за чтением книги или просмотром ленты.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 23:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/14100100182"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001102541704"
+    }
+   ],
    "rating": 4.8,
-   "badges": []
+   "badges": [
+    "indoor",
+    "coffee",
+    "wifi"
+   ]
   }
  ],
  "ideas": [
   {
-   "text": "идея",
+   "text": "Попробуйте составить небольшой план прогулки по близлежащим уличным аллеям, если погода покажется комфортной.",
    "source_type": "generated_idea"
   }
  ],
  "route": null,
- "warnings": [
-  "Часы работы некоторых мест неизвестны."
- ],
+ "warnings": [],
  "llm": {
-  "provider": "mock"
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "latency_ms": 3684
+ },
+ "_eval_ms": 3753,
+ "_health": {
+  "status": "ok",
+  "pois": 3070,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-3.5-flash-lite",
+  "embeddings": false,
+  "embeddings_progress": "788/1383",
+  "data_file": "pois.json",
+  "configured_provider": "gemini"
  }
 }
