@@ -1,4 +1,4 @@
-"""FastAPI-приложение «Серуен». Запуск из корня: uvicorn backend.app.main:app --reload --port 8000"""
+"""FastAPI-приложение Seruen. Запуск из корня: uvicorn backend.app.main:app --reload --port 8000"""
 from __future__ import annotations
 
 import asyncio
@@ -32,7 +32,7 @@ async def lifespan(_: FastAPI):
     task.cancel()
 
 
-app = FastAPI(title="Серуен API", version="0.1.0", lifespan=lifespan)
+app = FastAPI(title="Seruen API", version="0.1.0", lifespan=lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
                    allow_methods=["*"], allow_headers=["*"])
 

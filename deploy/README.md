@@ -1,4 +1,4 @@
-# Деплой «Серуен» на Google Cloud Run
+# Деплой «Seruen» на Google Cloud Run
 
 Один сервис: FastAPI отдаёт API на `/api/*` и собранный фронтенд на `/`.
 Образ собирает Cloud Build по `Dockerfile` из корня репозитория, Docker локально не нужен.

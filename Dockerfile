@@ -1,4 +1,4 @@
-# «Серуен» — один сервис для Cloud Run: FastAPI (/api/*) + собранный фронтенд (/).
+# «Seruen» — один сервис для Cloud Run: FastAPI (/api/*) + собранный фронтенд (/).
 # Сборка: gcloud run deploy seruen --source .   (подробно: deploy/README.md)
 
 # ---------- 1. Фронтенд ----------

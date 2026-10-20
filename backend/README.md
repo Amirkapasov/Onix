@@ -1,4 +1,4 @@
-# Серуен — RAG-бэкенд (FastAPI)
+# Seruen — RAG-бэкенд (FastAPI)
 
 API строго по [`contracts/api.md`](../contracts/api.md): `POST /api/recommend`, `GET /api/pois`, `GET /api/presets`, `GET /api/health`, `GET /api/category-photos` (отдаёт `data/category_photos.json`; нет файла — `{"hero": [], "categories": {}}`).
 

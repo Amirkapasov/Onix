@@ -1,4 +1,4 @@
-"""Один сервис для Cloud Run: API «Серуен» на /api/* + собранный фронтенд (frontend/dist) на "/".
+"""Один сервис для Cloud Run: API «Seruen» на /api/* + собранный фронтенд (frontend/dist) на "/".
 
 Запуск из корня репо:  uvicorn deploy.server:app --port 8080
 В контейнере порт берётся из $PORT (Cloud Run), по умолчанию 8080 — см. Dockerfile.
