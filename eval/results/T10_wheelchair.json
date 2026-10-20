@@ -1,0 +1,145 @@
+{
+ "request_id": "27bb5beac19f",
+ "context_used": {
+  "location": "≈ район Байтерек (точность ~100 м)",
+  "time": "вторник, 12:00",
+  "weather": "+2°C, ветер 6 м/с",
+  "mode": "пешком",
+  "radius_m": 1200,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "доступность для коляски"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+ },
+ "parsed_intent": {
+  "intent": "sightseeing",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [
+   "accessibility"
+  ],
+  "keywords": [
+   "инвалидной",
+   "коляске",
+   "съездить",
+   "посмотреть",
+   "город"
+  ]
+ },
+ "recommendations": [
+  {
+   "poi_id": "osm:node/2671060738",
+   "name": "Избушка",
+   "category": "cafe",
+   "lat": 51.128338,
+   "lon": 71.418047,
+   "distance_m": 835,
+   "travel_min": 14,
+   "visit_min": [
+    30,
+    55
+   ],
+   "why": "835 м, ~14 мин пешком; есть кофе. Кафе «Избушка». Доступно для колясок.",
+   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы работы неизвестны — уточните перед выходом",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/2671060738"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "coffee",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:way/108096984",
+   "name": "Керуен",
+   "category": "mall",
+   "lat": 51.12779,
+   "lon": 71.42531,
+   "distance_m": 328,
+   "travel_min": 6,
+   "visit_min": [
+    65,
+    110
+   ],
+   "why": "328 м, ~6 мин пешком; в помещении; есть Wi-Fi. Торговый центр «Керуен». Есть wi-fi; доступно для колясок.",
+   "what_to_do": "Зайдите погреться, выпейте кофе; при желании — кино или фуд-корт.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы работы неизвестны — уточните перед выходом",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/108096984"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "wifi",
+    "family",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:way/230409020",
+   "name": "проспект Мәңгілік Ел",
+   "category": "restaurant",
+   "lat": 51.118264,
+   "lon": 71.436526,
+   "distance_m": 1175,
+   "travel_min": 20,
+   "visit_min": [
+    50,
+    90
+   ],
+   "why": "1.2 км, ~20 мин пешком; работает допоздна.",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто до 02:00 (часы по OSM, проверено 2026-10-20)",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/230409020"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "night"
+   ]
+  }
+ ],
+ "ideas": [],
+ "route": null,
+ "warnings": [
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
+  "Часы работы 2 мест(а) неизвестны — уточните перед выходом."
+ ],
+ "llm": {
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ }
+}

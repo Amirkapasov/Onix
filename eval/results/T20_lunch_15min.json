@@ -1,0 +1,158 @@
+{
+ "request_id": "62857cd9cc95",
+ "context_used": {
+  "location": "≈ район Байтерек (точность ~100 м)",
+  "time": "вторник, 13:00",
+  "weather": "+2°C, ветер 6 м/с",
+  "mode": "пешком",
+  "radius_m": 800,
+  "filters": [
+   "бюджет 15 мин",
+   "пожелания: coffee, food",
+   "скрыто закрытых к приходу: 6",
+   "скрыто без часов, вероятно закрытых в это время: 4"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+ },
+ "parsed_intent": {
+  "intent": "coffee",
+  "time_budget_min": 15,
+  "companions": "solo",
+  "constraints": [
+   "coffee",
+   "food"
+  ],
+  "keywords": [
+   "обеденного",
+   "перерыва",
+   "быстро",
+   "выпить",
+   "кофе"
+  ]
+ },
+ "recommendations": [
+  {
+   "poi_id": "osm:node/6408271985",
+   "name": "CrepeCafe",
+   "category": "cafe",
+   "lat": 51.129382,
+   "lon": 71.428593,
+   "distance_m": 182,
+   "travel_min": 3,
+   "visit_min": [
+    7,
+    12
+   ],
+   "why": "182 м, ~3 мин пешком; есть кофе; работает допоздна; рейтинг 4.8. Кафе «CrepeCafe».",
+   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/6408271985"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001025216760"
+    }
+   ],
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "night",
+    "coffee"
+   ]
+  },
+  {
+   "poi_id": "osm:node/10564988185",
+   "name": "Degirmen",
+   "category": "cafe",
+   "lat": 51.128566,
+   "lon": 71.433325,
+   "distance_m": 240,
+   "travel_min": 4,
+   "visit_min": [
+    7,
+    11
+   ],
+   "why": "240 м, ~4 мин пешком; есть кофе; работает допоздна; рейтинг 4.6. Кафе «Degirmen».",
+   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/10564988185"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001032665509"
+    }
+   ],
+   "rating": 4.6,
+   "badges": [
+    "indoor",
+    "night",
+    "coffee"
+   ]
+  },
+  {
+   "poi_id": "osm:node/12520559589",
+   "name": "Лепим и варим",
+   "category": "cafe",
+   "lat": 51.127925,
+   "lon": 71.42545,
+   "distance_m": 318,
+   "travel_min": 6,
+   "visit_min": [
+    7,
+    9
+   ],
+   "why": "318 м, ~6 мин пешком; есть кофе; рейтинг 4.8. Кафе «Лепим и варим». Кухня: русская.",
+   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 23:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/12520559589"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001052438340"
+    }
+   ],
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "coffee"
+   ]
+  }
+ ],
+ "ideas": [],
+ "route": null,
+ "warnings": [
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+ ],
+ "llm": {
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ }
+}

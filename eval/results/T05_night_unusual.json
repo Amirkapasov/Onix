@@ -1,0 +1,155 @@
+{
+ "request_id": "ea7ccba00bc5",
+ "context_used": {
+  "location": "≈ район Бульвар Нуржол (точность ~100 м)",
+  "time": "вторник, 22:30",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 2284,
+  "filters": [
+   "бюджет 120 мин",
+   "пожелания: night, unusual",
+   "ночь: места, открытые допоздна",
+   "скрыто закрытых к приходу: 41",
+   "скрыто без часов, вероятно закрытых в это время: 110"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+ },
+ "parsed_intent": {
+  "intent": "night",
+  "time_budget_min": 120,
+  "companions": "solo",
+  "constraints": [
+   "night",
+   "unusual"
+  ],
+  "keywords": [
+   "ищу",
+   "необычную",
+   "ночную",
+   "активность",
+   "последние",
+   "пару"
+  ]
+ },
+ "recommendations": [
+  {
+   "poi_id": "osm:node/8595205064",
+   "name": "Пинта",
+   "category": "bar",
+   "lat": 51.12467,
+   "lon": 71.43459,
+   "distance_m": 282,
+   "travel_min": 5,
+   "visit_min": [
+    65,
+    110
+   ],
+   "why": "282 м, ~5 мин пешком; работает допоздна. Бар «Пинта».",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто до 02:00 (часы по OSM, проверено 2026-10-20)",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/8595205064"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "night"
+   ]
+  },
+  {
+   "poi_id": "osm:node/10798946230",
+   "name": "Selfie",
+   "category": "restaurant",
+   "lat": 51.125029,
+   "lon": 71.432231,
+   "distance_m": 226,
+   "travel_min": 4,
+   "visit_min": [
+    50,
+    90
+   ],
+   "why": "226 м, ~4 мин пешком; работает допоздна; рейтинг 4.9. Ресторан «Selfie».",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/10798946230"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001028338057"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor",
+    "night"
+   ]
+  },
+  {
+   "poi_id": "osm:node/10564988185",
+   "name": "Degirmen",
+   "category": "cafe",
+   "lat": 51.128566,
+   "lon": 71.433325,
+   "distance_m": 176,
+   "travel_min": 3,
+   "visit_min": [
+    30,
+    55
+   ],
+   "why": "176 м, ~3 мин пешком; работает допоздна; есть кофе; рейтинг 4.6. Кафе «Degirmen».",
+   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/10564988185"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001032665509"
+    }
+   ],
+   "rating": 4.6,
+   "badges": [
+    "indoor",
+    "night",
+    "coffee"
+   ]
+  }
+ ],
+ "ideas": [],
+ "route": null,
+ "warnings": [
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+ ],
+ "llm": {
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ }
+}

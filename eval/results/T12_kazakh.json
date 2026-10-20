@@ -1,0 +1,152 @@
+{
+ "request_id": "907e7d24a34e",
+ "context_used": {
+  "location": "≈ Бәйтерек маңы (~100 м дәлдік)",
+  "time": "сейсенбі, 16:00",
+  "weather": "+4°C, жел 4 м/с (климаттық норма)",
+  "mode": "жаяу",
+  "radius_m": 1142,
+  "filters": [
+   "уақыт 60 мин",
+   "балалармен",
+   "тілектер: outdoor_ok"
+  ],
+  "data_note": "Қолданылады: шамамен орын (~100 м), уақыт, сүзгілер. Координаттар сақталмайды."
+ },
+ "parsed_intent": {
+  "intent": "kids",
+  "time_budget_min": 60,
+  "companions": "kids",
+  "constraints": [
+   "outdoor_ok"
+  ],
+  "keywords": [
+   "бәйтеректің",
+   "қасындамын",
+   "бір",
+   "сағат",
+   "серуендегім",
+   "келеді",
+   "ұсынасыз"
+  ]
+ },
+ "recommendations": [
+  {
+   "poi_id": "osm:way/230358854",
+   "name": "Сквер",
+   "category": "park",
+   "lat": 51.127997,
+   "lon": 71.42357,
+   "distance_m": 449,
+   "travel_min": 8,
+   "visit_min": [
+    30,
+    52
+   ],
+   "why": "449 м, ~8 мин жаяу; тегін; тыныш орын.",
+   "what_to_do": "Басты аллеямен серуендеп, су жағасына барып, айналып қайтыңыз.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Жұмыс уақыты көрсетілмеген; ашық аумақ, әдетте қолжетімді",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/230358854"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "outdoor",
+    "free",
+    "quiet",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:way/1530378860",
+   "name": "Детская площадка",
+   "category": "playground",
+   "lat": 51.126744,
+   "lon": 71.433254,
+   "distance_m": 267,
+   "travel_min": 5,
+   "visit_min": [
+    30,
+    50
+   ],
+   "why": "267 м, ~5 мин жаяу; балаларға қолайлы; тегін.",
+   "what_to_do": "Кіріп, айналаны қарап шығыңыз.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Жұмыс уақыты белгісіз — алдын ала нақтылаңыз",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1530378860"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "outdoor",
+    "free",
+    "kids",
+    "family",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:way/69232075",
+   "name": "Парк Жетысу",
+   "category": "park",
+   "lat": 51.135989,
+   "lon": 71.43845,
+   "distance_m": 1066,
+   "travel_min": 18,
+   "visit_min": [
+    27,
+    42
+   ],
+   "why": "1.1 км, ~18 мин жаяу; тегін; тыныш орын.",
+   "what_to_do": "Басты аллеямен серуендеп, су жағасына барып, айналып қайтыңыз.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Жұмыс уақыты көрсетілмеген; ашық аумақ, әдетте қолжетімді",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/69232075"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "outdoor",
+    "free",
+    "quiet",
+    "hours_unverified"
+   ]
+  }
+ ],
+ "ideas": [],
+ "route": null,
+ "warnings": [
+  "ЖИ моделі қолжетімсіз — таңдау база рейтингі бойынша жасалды.",
+  "1 орынның жұмыс уақыты белгісіз — алдын ала нақтылаңыз."
+ ],
+ "llm": {
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ }
+}

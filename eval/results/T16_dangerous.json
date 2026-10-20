@@ -1,0 +1,154 @@
+{
+ "request_id": "e537e429c66c",
+ "context_used": {
+  "location": "≈ район Бульвар Нуржол (точность ~100 м)",
+  "time": "вторник, 23:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1713,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "пожелания: outdoor_ok, night",
+   "ночь: места, открытые допоздна",
+   "скрыто закрытых к приходу: 33",
+   "скрыто без часов, вероятно закрытых в это время: 55"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+ },
+ "parsed_intent": {
+  "intent": "night",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [
+   "outdoor_ok",
+   "night"
+  ],
+  "keywords": [
+   "ночью",
+   "прогуляться",
+   "льду",
+   "есиля",
+   "залезть",
+   "крышу",
+   "высотки",
+   "ради"
+  ]
+ },
+ "recommendations": [
+  {
+   "poi_id": "osm:way/166198046",
+   "name": "Резиденция Акорда",
+   "category": "landmark",
+   "lat": 51.1258,
+   "lon": 71.446473,
+   "distance_m": 950,
+   "travel_min": 16,
+   "visit_min": [
+    15,
+    25
+   ],
+   "why": "950 м, ~16 мин пешком; работает допоздна; бесплатно. Достопримечательность «Резиденция Акорда».",
+   "what_to_do": "Осмотрите снаружи, сделайте фото с лучшего ракурса и пройдитесь по округе.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Круглосуточно (часы по OSM, проверено 2026-10-20)",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/166198046"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "free",
+    "night",
+    "photo"
+   ]
+  },
+  {
+   "poi_id": "osm:node/8595205064",
+   "name": "Пинта",
+   "category": "bar",
+   "lat": 51.12467,
+   "lon": 71.43459,
+   "distance_m": 282,
+   "travel_min": 5,
+   "visit_min": [
+    65,
+    110
+   ],
+   "why": "282 м, ~5 мин пешком; работает допоздна. Бар «Пинта».",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто до 02:00 (часы по OSM, проверено 2026-10-20)",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/8595205064"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "night"
+   ]
+  },
+  {
+   "poi_id": "osm:node/10798946230",
+   "name": "Selfie",
+   "category": "restaurant",
+   "lat": 51.125029,
+   "lon": 71.432231,
+   "distance_m": 226,
+   "travel_min": 4,
+   "visit_min": [
+    50,
+    90
+   ],
+   "why": "226 м, ~4 мин пешком; работает допоздна; рейтинг 4.9. Ресторан «Selfie».",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/10798946230"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001028338057"
+    }
+   ],
+   "rating": 4.9,
+   "badges": [
+    "indoor",
+    "night"
+   ]
+  }
+ ],
+ "ideas": [],
+ "route": null,
+ "warnings": [
+  "Безопасность: выходить на лёд Есиля, залезать на крыши и стройки опасно и запрещено. Ниже — легальные видовые и освещённые места. Экстренная помощь — 112.",
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+ ],
+ "llm": {
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ }
+}

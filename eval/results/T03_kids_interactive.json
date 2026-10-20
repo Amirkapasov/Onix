@@ -1,0 +1,155 @@
+{
+ "request_id": "274cff67ba43",
+ "context_used": {
+  "location": "≈ район Хан Шатыр (точность ~100 м)",
+  "time": "суббота, 11:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1200,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "с детьми",
+   "пожелания: interactive"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+ },
+ "parsed_intent": {
+  "intent": "kids",
+  "time_budget_min": null,
+  "companions": "kids",
+  "constraints": [
+   "interactive"
+  ],
+  "keywords": [
+   "еду",
+   "ребёнком",
+   "детские",
+   "площадки",
+   "музей",
+   "интерактивами"
+  ]
+ },
+ "recommendations": [
+  {
+   "poi_id": "osm:way/1449322330",
+   "name": "Детская площадка",
+   "category": "playground",
+   "lat": 51.13227,
+   "lon": 71.403346,
+   "distance_m": 93,
+   "travel_min": 2,
+   "visit_min": [
+    30,
+    50
+   ],
+   "why": "Вы уже рядом; подходит детям; бесплатно. Детская площадка «Детская площадка».",
+   "what_to_do": "Дайте детям поиграть, присмотрите скамейку рядом.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы работы неизвестны — уточните перед выходом",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449322330"
+    },
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449322332"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "outdoor",
+    "free",
+    "kids",
+    "family",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:way/1449322354",
+   "name": "Fame City",
+   "category": "kids",
+   "lat": 51.132534,
+   "lon": 71.40388,
+   "distance_m": 52,
+   "travel_min": 1,
+   "visit_min": [
+    65,
+    110
+   ],
+   "why": "Вы уже рядом; подходит детям. Парк развлечений «Fame City».",
+   "what_to_do": "Выберите 1–2 активности по возрасту ребёнка.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы работы неизвестны — уточните перед выходом",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449322354"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "outdoor",
+    "kids",
+    "family",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:way/1449317872",
+   "name": "Movenpick",
+   "category": "cafe",
+   "lat": 51.132882,
+   "lon": 71.404082,
+   "distance_m": 14,
+   "travel_min": 0,
+   "visit_min": [
+    30,
+    55
+   ],
+   "why": "Вы уже рядом; подходит детям; есть кофе. Кафе-мороженое «Movenpick».",
+   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы работы неизвестны — уточните перед выходом",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1449317872"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "kids",
+    "coffee",
+    "hours_unverified"
+   ]
+  }
+ ],
+ "ideas": [],
+ "route": null,
+ "warnings": [
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
+  "Часы работы 3 мест(а) неизвестны — уточните перед выходом."
+ ],
+ "llm": {
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ }
+}

@@ -1,0 +1,279 @@
+"""Конвейер /api/recommend: разбор → фильтры → поиск → ранжирование → генерация → валидатор → маршрут."""
+from __future__ import annotations
+
+import asyncio
+import re
+import logging
+import time
+import uuid
+from datetime import datetime, timedelta, timezone
+
+from . import config, geo, llm
+from .data import store
+from .generate import GEN_SYSTEM, build_user_prompt
+from .guards import (closed_mention_warning, danger_warning, mentioned_pois,
+                     out_of_area_warning)
+from .models import RecommendRequest
+from .parse import PARSE_SYSTEM, detect_lang, merge_llm, rule_parse
+from .rank import Ctx, hard_filter, make_cand, rank, _not_destination
+from .route import build_route
+from .search import index
+from .validate import validate
+from .weather import get_weather
+
+log = logging.getLogger("seruen.pipeline")
+TZ = timezone(timedelta(hours=config.TZ_OFFSET_H))
+CENTER_LANDMARK = (51.1283, 71.4305)  # Байтерек
+
+WEEKDAYS = {"ru": ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"],
+            "en": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "kk": ["дүйсенбі", "сейсенбі", "сәрсенбі", "бейсенбі", "жұма", "сенбі", "жексенбі"]}
+MODE_LABEL = {"ru": {"walk": "пешком", "car": "на машине/такси", "transit": "общественный транспорт"},
+              "en": {"walk": "on foot", "car": "by car/taxi", "transit": "public transport"},
+              "kk": {"walk": "жаяу", "car": "көлікпен/таксимен", "transit": "қоғамдық көлік"}}
+
+
+def parse_client_time(s: str | None) -> datetime:
+    if s:
+        try:
+            dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=TZ)
+            return dt.astimezone(TZ)
+        except ValueError:
+            pass
+    return datetime.now(TZ)
+
+
+def L(lang: str, ru: str, en: str, kk: str) -> str:
+    return {"ru": ru, "en": en, "kk": kk}.get(lang, ru)
+
+
+async def recommend(req: RecommendRequest) -> dict:
+    t0 = time.monotonic()
+    rid = uuid.uuid4().hex[:12]
+    pois = store.get()
+    index.ensure()
+    query = req.query.strip()
+    lang = req.lang or (detect_lang(query) if query else "ru")
+    rules = rule_parse(query, lang)
+    when = parse_client_time(req.client_time)
+    warnings: list[str] = []
+
+    if req.location:
+        start = (round(req.location.lat, 3), round(req.location.lon, 3))  # на всякий случай огрубляем и здесь
+    else:
+        start = CENTER_LANDMARK
+        warnings.append(L(lang, "Локация не передана — расстояния считаются от Байтерека.",
+                          "No location given — distances are from Baiterek.",
+                          "Орын берілмеді — қашықтық Бәйтеректен есептеледі."))
+
+    # 1. Разбор запроса (LLM) параллельно с погодой
+    llm_ms = 0
+    parse_task = None
+    if query and llm.get_provider():
+        parse_task = asyncio.to_thread(llm.complete_json, PARSE_SYSTEM, query, temperature=0.0,
+                                       max_tokens=300, timeout=config.LLM_PARSE_TIMEOUT_S)
+    weather_task = get_weather(when, rules.get("temperature_hint"))
+    llm_parsed = None
+    if parse_task:
+        res, weather = await asyncio.gather(parse_task, weather_task, return_exceptions=True)
+        if isinstance(res, llm.LLMResult):
+            llm_parsed, llm_ms = res.data, res.latency_ms
+        if isinstance(weather, Exception):
+            weather = None
+    else:
+        weather = await weather_task
+    parsed = merge_llm(rules, llm_parsed)
+
+    # 2. Явные фильтры UI важнее текста
+    f = req.filters
+    with_kids = f.with_kids if f.with_kids is not None else parsed["companions"] == "kids"
+    access = f.accessibility if f.accessibility is not None else "accessibility" in parsed["constraints"]
+    cold = bool(weather and weather.cold)
+    # «в тепле» + мороз/ветер → только помещения (явный фильтр UI важнее)
+    indoor_only = f.indoor_only if f.indoor_only is not None else ("indoor" in parsed["constraints"] and cold)
+    near_airport = geo.haversine_m(*start, *config.AIRPORT) < 3000
+    flight = "flight_soon" in parsed["constraints"] or near_airport
+    mode = req.mode
+    notes: list[str] = []
+    if flight and mode == "walk":
+        mode = "car"
+        notes.append(L(lang, "до вылета мало времени → режим такси", "flight soon → taxi mode", "ұшуға аз уақыт → такси"))
+    budget = f.time_budget_min or parsed["time_budget_min"]
+    budget_explicit = budget is not None
+    if flight:
+        budget = budget or 120
+        available = max(15, budget - config.FLIGHT_BUFFER_MIN)
+        one_way = max(5, (available - 15) / 2)
+        radius = geo.radius_for_budget(int(one_way / config.ONE_WAY_SHARE), mode)
+    else:
+        budget = budget or config.DEFAULT_BUDGET_MIN
+        available = budget
+        radius = geo.radius_for_budget(budget, mode, walk_intent=parsed["intent"] == "walk")
+        if not budget_explicit and mode == "walk" and re.search(r"недалеко|рядом|поблизости|близко|nearby|near me|жақын", query.lower()):
+            radius = min(radius, 1200)
+        if cold and mode == "walk":
+            radius = max(config.MIN_RADIUS_M, int(radius * 0.6))
+            notes.append(L(lang, "холодно — пешие расстояния сокращены", "cold — shorter walking distances",
+                           "суық — жаяу қашықтық қысқартылды"))
+    parsed_out = {**parsed, "time_budget_min": budget if (budget_explicit or flight) else parsed["time_budget_min"]}
+
+    ctx = Ctx(start=start, when=when, mode=mode, lang=lang, budget=budget, budget_explicit=budget_explicit,
+              radius=radius, parsed=parsed, with_kids=with_kids, accessibility=access, indoor_only=indoor_only,
+              categories=list(f.categories or []), flight=flight, available=available, weather=weather)
+
+    # 3. Жёсткие фильтры
+    cands, stats = hard_filter(pois, ctx)
+    for w in (out_of_area_warning(query, start, lang), danger_warning(query, lang)):
+        if w:
+            warnings.append(w)
+    mentioned = mentioned_pois(query, pois)
+    for p in mentioned:
+        mc = make_cand(p, ctx)
+        if mc.open.state == "closed" or not mc.open.fits_visit:
+            warnings.append(closed_mention_warning(p, mc.open.label, lang))
+    if not cands:  # лучшее из доступного: ближайшие не закрытые
+        base = sorted((p for p in pois if not _not_destination(p)),
+                      key=lambda p: geo.haversine_m(*start, p["lat"], p["lon"]))[:12]
+        all_c = [make_cand(p, ctx) for p in base]
+        all_c.sort(key=lambda c: c.travel_min + c.back_min)  # при вылете учитываем и дорогу обратно
+        open_c = [c for c in all_c if c.open.state != "closed"] or all_c
+        within = [c for c in open_c if c.travel_min <= available]
+        cands = (within or open_c[:1])[:3]
+        warnings.append(L(lang, "Под все условия ничего не нашлось — показываю ближайшие варианты; проверьте часы и время в пути.",
+                          "Nothing matches all conditions — showing the nearest options; check hours and travel time.",
+                          "Барлық шартқа сай орын табылмады — ең жақын нұсқалар көрсетілді."))
+        if not within and cands:
+            c0 = cands[0]
+            warnings.append(L(lang,
+                f"Рядом ничего нет: ближайшее место — «{c0.poi['name']}», {c0.dist_m / 1000:.1f} км (~{c0.travel_min} мин), это дальше вашего бюджета {available} мин.",
+                f"Nothing nearby: the closest place is “{c0.poi['name']}”, {c0.dist_m / 1000:.1f} km (~{c0.travel_min} min), beyond your {available}-min budget.",
+                f"Жақын маңда ештеңе жоқ: ең жақыны — «{c0.poi['name']}», {c0.dist_m / 1000:.1f} км (~{c0.travel_min} мин)."))
+    if flight:
+        t_center = geo.travel_min(geo.haversine_m(*start, *CENTER_LANDMARK), mode)
+        back = geo.travel_min(geo.haversine_m(*CENTER_LANDMARK, *config.AIRPORT), mode)
+        if t_center + back + 20 > available:
+            warnings.append(L(lang,
+                f"До центра (Байтерек) ~{t_center} мин на такси, обратно в аэропорт ~{back} мин: с запасом "
+                f"{config.FLIGHT_BUFFER_MIN} мин до вылета в центр не успеть — предлагаю места ближе.",
+                f"Downtown (Baiterek) is ~{t_center} min by taxi and ~{back} min back to the airport: with a "
+                f"{config.FLIGHT_BUFFER_MIN}-min buffer you can't make it — here are closer options.",
+                f"Орталыққа ~{t_center} мин, әуежайға қайту ~{back} мин: үлгермейсіз — жақын орындар ұсынылады."))
+
+    # 4. Поиск и ранжирование
+    expand = list(parsed["constraints"]) + [parsed["intent"]] + (["kids"] if with_kids else [])
+    rel = index.scores(" ".join([query] + parsed["keywords"]), expand, [c.poi["id"] for c in cands])
+    named = {p["id"] for p in mentioned if geo.haversine_m(*start, p["lat"], p["lon"]) > 300}
+    for c in cands:
+        c.relevance = 1.5 if c.poi["id"] in named else rel.get(c.poi["id"], 0.0)
+    top = rank(cands, ctx)
+
+    # 5. Генерация (только из кандидатов) → 6. валидатор
+    llm_data, llm_info = None, {"provider": "none", "model": None, "latency_ms": 0}
+    if llm.get_provider() and top:
+        try:
+            res = await asyncio.to_thread(llm.complete_json, GEN_SYSTEM, build_user_prompt(query, ctx, top),
+                                          temperature=0.4, max_tokens=1500)
+            llm_data = res.data
+            llm_info = {"provider": res.provider, "model": res.model, "latency_ms": llm_ms + res.latency_ms}
+        except llm.LLMError as e:
+            log.warning("[%s] generation degraded: %s", rid, str(e)[:120])
+    if llm_data is None:
+        warnings.append(L(lang, "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
+                          "AI model unavailable — picks come from database ranking with template texts.",
+                          "ЖИ моделі қолжетімсіз — таңдау база рейтингі бойынша жасалды."))
+    recs, ideas, vwarn = validate(llm_data, top, ctx)
+    warnings += vwarn
+
+    top_by_id = {c.poi["id"]: c for c in top}
+    unknown = sum(1 for r in recs if r["open_status"]["state"] == "unknown"
+                  and not top_by_id[r["poi_id"]].open.outdoor_area)
+    if unknown:
+        warnings.append(L(lang, f"Часы работы {unknown} мест(а) неизвестны — уточните перед выходом.",
+                          f"Opening hours of {unknown} place(s) are unknown — check before going.",
+                          f"{unknown} орынның жұмыс уақыты белгісіз — алдын ала нақтылаңыз."))
+    if stats.get("closed"):
+        notes.append(L(lang, f"скрыто закрытых к приходу: {stats['closed']}", f"hidden as closed on arrival: {stats['closed']}",
+                       f"жабық орындар жасырылды: {stats['closed']}"))
+    if stats.get("guess_closed"):
+        notes.append(L(lang, f"скрыто без часов, вероятно закрытых в это время: {stats['guess_closed']}",
+                       f"hidden (no hours, likely closed now): {stats['guess_closed']}",
+                       f"уақыты жоқ, жабық болуы мүмкін: {stats['guess_closed']}"))
+    warnings += ctx.warnings
+
+    # 7. Маршрут
+    route = None
+    if req.want_route and recs:
+        route, _, rwarn = await build_route(start, recs, mode, available if (budget_explicit or flight) else None, lang)
+        warnings += rwarn
+
+    resp = {
+        "request_id": rid,
+        "context_used": context_used(req, ctx, start, lang, notes),
+        "parsed_intent": {k: parsed_out[k] for k in ("intent", "time_budget_min", "companions", "constraints", "keywords")},
+        "recommendations": recs,
+        "ideas": ideas,
+        "route": route,
+        "warnings": [w for w in dict.fromkeys(warnings) if w],
+        "llm": llm_info,
+    }
+    log.info("[%s] intent=%s cands=%d recs=%d llm=%s area=%.2f,%.2f %dms", rid, parsed["intent"], len(cands),
+             len(recs), llm_info["provider"], geo.round_coord(start[0]), geo.round_coord(start[1]),
+             int((time.monotonic() - t0) * 1000))
+    return resp
+
+
+def context_used(req: RecommendRequest, ctx: Ctx, start, lang: str, notes: list[str]) -> dict:
+    if req.location_label:
+        loc = L(lang, f"≈ район {req.location_label} (точность ~100 м)", f"≈ {req.location_label} area (~100 m precision)",
+                f"≈ {req.location_label} маңы (~100 м дәлдік)")
+    elif req.location:
+        near = min(store.get(), key=lambda p: geo.haversine_m(*start, p["lat"], p["lon"]), default=None)
+        if near and geo.haversine_m(*start, near["lat"], near["lon"]) < 1000:
+            loc = L(lang, f"≈ рядом с «{near['name']}» (точность ~100 м)", f"≈ near “{near['name']}” (~100 m precision)",
+                    f"≈ «{near['name']}» маңында (~100 м)")
+        else:
+            loc = f"≈ {start[0]:.2f}, {start[1]:.2f} (~1 km)"
+    else:
+        loc = L(lang, "не передана (считаем от Байтерека)", "not provided (using Baiterek)", "берілмеді (Бәйтерек)")
+    p = ctx.parsed
+    fl: list[str] = []
+    if ctx.budget_explicit or ctx.flight:
+        fl.append(L(lang, f"бюджет {ctx.budget} мин", f"budget {ctx.budget} min", f"уақыт {ctx.budget} мин"))
+    else:
+        fl.append(L(lang, f"бюджет не указан — беру ~{ctx.budget} мин", f"no budget given — assuming ~{ctx.budget} min",
+                    f"уақыт көрсетілмеген — ~{ctx.budget} мин"))
+    if ctx.flight:
+        fl.append(L(lang, f"запас {config.FLIGHT_BUFFER_MIN} мин до вылета, остаётся {ctx.available} мин с дорогой",
+                    f"{config.FLIGHT_BUFFER_MIN}-min buffer before the flight, {ctx.available} min left incl. travel",
+                    f"ұшуға дейін {config.FLIGHT_BUFFER_MIN} мин қор"))
+    if ctx.with_kids:
+        fl.append(L(lang, "с детьми", "with kids", "балалармен"))
+    if ctx.accessibility:
+        fl.append(L(lang, "доступность для коляски", "wheelchair access", "арбамен қолжетімді"))
+    if ctx.indoor_only:
+        fl.append(L(lang, "только в помещении", "indoor only", "тек ғимарат ішінде"))
+    if ctx.categories:
+        fl.append(L(lang, "категории: ", "categories: ", "санаттар: ") + ", ".join(ctx.categories))
+    soft = [c for c in p["constraints"] if c not in ("flight_soon", "accessibility")]
+    if soft:
+        fl.append(L(lang, "пожелания: ", "preferences: ", "тілектер: ") + ", ".join(soft))
+    if ctx.weather and ctx.weather.bad:
+        fl.append(L(lang, "погода: приоритет местам в помещении", "weather: indoor places preferred", "ауа райы: жабық орындар"))
+    h = ctx.when.hour
+    if h >= 22 or h < 6:
+        fl.append(L(lang, "ночь: места, открытые допоздна", "night: late-open places", "түн: кеш жабылатын орындар"))
+    fl += notes
+    return {
+        "location": loc,
+        "time": f"{WEEKDAYS.get(lang, WEEKDAYS['ru'])[ctx.when.weekday()]}, {ctx.when:%H:%M}",
+        "weather": ctx.weather.label(lang) if ctx.weather else L(lang, "нет данных", "no data", "дерек жоқ"),
+        "mode": MODE_LABEL.get(lang, MODE_LABEL["ru"])[ctx.mode],
+        "radius_m": int(ctx.radius),
+        "filters": fl,
+        "data_note": L(lang,
+            "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города.",
+            "Used: coarse location (~100 m), time, filters and your query. Coordinates are not stored or logged; weather is fetched for the city centre.",
+            "Қолданылады: шамамен орын (~100 м), уақыт, сүзгілер. Координаттар сақталмайды."),
+    }

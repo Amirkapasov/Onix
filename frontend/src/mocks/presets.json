@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "id": "megasilkway_walk",
+      "label": "Mega Silk Way · прогулка 30–60 мин",
+      "location": { "lat": 51.089, "lon": 71.41 },
+      "location_label": "Mega Silk Way",
+      "query": "Я сейчас возле Mega Silk Way, хочу прогуляться 30–60 минут — что посоветуете?",
+      "client_time": "2026-10-20T17:00:00+05:00",
+      "filters": { "time_budget_min": 60 }
+    },
+    {
+      "id": "kids_khan_shatyr",
+      "label": "С ребёнком · площадки и интерактив",
+      "location": { "lat": 51.1325, "lon": 71.4036 },
+      "location_label": "Хан Шатыр",
+      "query": "Еду с ребёнком — где рядом есть детские площадки или музей с интерактивами?",
+      "client_time": "2026-10-24T11:00:00+05:00",
+      "filters": { "with_kids": true }
+    },
+    {
+      "id": "night_nurzhol",
+      "label": "Ночь 23:30 · что-то необычное",
+      "location": { "lat": 51.127, "lon": 71.433 },
+      "location_label": "Бульвар Нуржол",
+      "query": "Ищу необычную ночную активность на последние пару часов.",
+      "client_time": "2026-10-20T23:30:00+05:00",
+      "filters": {}
+    },
+    {
+      "id": "airport_2h",
+      "label": "Турист · 2 часа до вылета",
+      "location": { "lat": 51.0222, "lon": 71.4669 },
+      "location_label": "Аэропорт Астаны",
+      "query": "Я турист, у меня 2 часа перед вылетом — что можно посмотреть поблизости?",
+      "client_time": "2026-10-20T14:00:00+05:00",
+      "filters": { "time_budget_min": 120 }
+    }
+  ]
+}

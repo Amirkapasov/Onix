@@ -1,0 +1,145 @@
+{
+ "request_id": "1c1f15a77d5c",
+ "context_used": {
+  "location": "≈ район Аэропорт Астаны (точность ~100 м)",
+  "time": "вторник, 15:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "на машине/такси",
+  "radius_m": 7266,
+  "filters": [
+   "бюджет 120 мин",
+   "запас 60 мин до вылета, остаётся 60 мин с дорогой"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+ },
+ "parsed_intent": {
+  "intent": "sightseeing",
+  "time_budget_min": 120,
+  "companions": "solo",
+  "constraints": [
+   "flight_soon"
+  ],
+  "keywords": [
+   "турист",
+   "вылетом",
+   "посмотреть",
+   "поблизости"
+  ]
+ },
+ "recommendations": [
+  {
+   "poi_id": "osm:way/1373272211",
+   "name": "Аэропорт",
+   "category": "landmark",
+   "lat": 51.027953,
+   "lon": 71.458858,
+   "distance_m": 873,
+   "travel_min": 7,
+   "visit_min": [
+    10,
+    25
+   ],
+   "why": "873 м, ~7 мин на машине; бесплатно. Достопримечательность «Аэропорт».",
+   "what_to_do": "Осмотрите снаружи, сделайте фото с лучшего ракурса и пройдитесь по округе.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы не указаны; открытая территория — обычно доступна",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1373272211"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "free",
+    "photo",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:way/1547354178",
+   "name": "Атамекен",
+   "category": "landmark",
+   "lat": 51.041314,
+   "lon": 71.442213,
+   "distance_m": 2760,
+   "travel_min": 12,
+   "visit_min": [
+    10,
+    25
+   ],
+   "why": "2.8 км, ~12 мин на машине; бесплатно. Достопримечательность «Атамекен».",
+   "what_to_do": "Осмотрите снаружи, сделайте фото с лучшего ракурса и пройдитесь по округе.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы не указаны; открытая территория — обычно доступна",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1547354178"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "free",
+    "photo",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:way/1490038325",
+   "name": "Welcome to Astana",
+   "category": "monument",
+   "lat": 51.059712,
+   "lon": 71.413699,
+   "distance_m": 5610,
+   "travel_min": 18,
+   "visit_min": [
+    10,
+    15
+   ],
+   "why": "5.6 км, ~18 мин на машине; бесплатно. Арт-объект «Welcome to Astana».",
+   "what_to_do": "Подойдите ближе, прочитайте табличку и сделайте фото.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы не указаны; открытая территория — обычно доступна",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1490038325"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "outdoor",
+    "free",
+    "photo",
+    "hours_unverified"
+   ]
+  }
+ ],
+ "ideas": [],
+ "route": null,
+ "warnings": [
+  "До центра (Байтерек) ~34 мин на такси, обратно в аэропорт ~34 мин: с запасом 60 мин до вылета в центр не успеть — предлагаю места ближе.",
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+ ],
+ "llm": {
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ }
+}

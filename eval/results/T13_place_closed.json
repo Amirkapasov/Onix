@@ -1,0 +1,150 @@
+{
+ "request_id": "0e6c04ffb532",
+ "context_used": {
+  "location": "≈ район рядом с Хан Шатыр (точность ~100 м)",
+  "time": "вторник, 23:15",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1713,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "ночь: места, открытые допоздна",
+   "скрыто закрытых к приходу: 56",
+   "скрыто без часов, вероятно закрытых в это время: 82"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+ },
+ "parsed_intent": {
+  "intent": "other",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "сходить",
+   "хан",
+   "шатыр"
+  ]
+ },
+ "recommendations": [
+  {
+   "poi_id": "osm:node/12686474701",
+   "name": "Brewery",
+   "category": "bar",
+   "lat": 51.128543,
+   "lon": 71.406148,
+   "distance_m": 314,
+   "travel_min": 5,
+   "visit_min": [
+    65,
+    110
+   ],
+   "why": "314 м, ~5 мин пешком; работает допоздна; есть Wi-Fi; рейтинг 4.8. Бар «Brewery». Кухня: стейки; есть wi-fi.",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 02:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/12686474701"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001018064401"
+    }
+   ],
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "night",
+    "wifi"
+   ]
+  },
+  {
+   "poi_id": "2gis:70000001092518472",
+   "name": "Каусар, чайхана",
+   "category": "cafe",
+   "lat": 51.127703,
+   "lon": 71.403182,
+   "distance_m": 540,
+   "travel_min": 9,
+   "visit_min": [
+    30,
+    55
+   ],
+   "why": "540 м, ~9 мин пешком; есть кофе; в помещении; рейтинг 4.8. Кафе «Каусар, чайхана».",
+   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 02:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001092518472"
+    }
+   ],
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "night",
+    "coffee"
+   ]
+  },
+  {
+   "poi_id": "osm:node/13230394599",
+   "name": "Leto Cafe",
+   "category": "restaurant",
+   "lat": 51.126769,
+   "lon": 71.421784,
+   "distance_m": 897,
+   "travel_min": 16,
+   "visit_min": [
+    50,
+    90
+   ],
+   "why": "897 м, ~16 мин пешком; работает допоздна; рейтинг 4.8. Ресторан «Leto Cafe». Кухня: европейская, итальянская.",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 02:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/13230394599"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001061026053"
+    }
+   ],
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "night"
+   ]
+  }
+ ],
+ "ideas": [],
+ "route": null,
+ "warnings": [
+  "«Хан Шатыр» к вашему приходу закрыт: Закрыто, откроется 21.10 10:00 (часы по 2GIS, проверено 2026-10-20). Предлагаю открытые места рядом.",
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+ ],
+ "llm": {
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ }
+}

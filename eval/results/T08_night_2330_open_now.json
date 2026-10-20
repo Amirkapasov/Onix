@@ -1,0 +1,145 @@
+{
+ "request_id": "94fc4a09f896",
+ "context_used": {
+  "location": "≈ район Бульвар Нуржол (точность ~100 м)",
+  "time": "вторник, 23:30",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1200,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "ночь: места, открытые допоздна",
+   "скрыто закрытых к приходу: 36",
+   "скрыто без часов, вероятно закрытых в это время: 40"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+ },
+ "parsed_intent": {
+  "intent": "other",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "ещё",
+   "открыто",
+   "посидеть",
+   "нибудь"
+  ]
+ },
+ "recommendations": [
+  {
+   "poi_id": "2gis:70000001094584929",
+   "name": "Каусар, чайхана",
+   "category": "cafe",
+   "lat": 51.12679,
+   "lon": 71.435133,
+   "distance_m": 151,
+   "travel_min": 3,
+   "visit_min": [
+    30,
+    55
+   ],
+   "why": "151 м, ~3 мин пешком; есть кофе; в помещении; рейтинг 4.8. Кафе «Каусар, чайхана».",
+   "what_to_do": "Возьмите напиток, займите столик у окна; уточните про розетки и Wi-Fi у бариста.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 02:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001094584929"
+    }
+   ],
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "night",
+    "coffee"
+   ]
+  },
+  {
+   "poi_id": "osm:node/8595205064",
+   "name": "Пинта",
+   "category": "bar",
+   "lat": 51.12467,
+   "lon": 71.43459,
+   "distance_m": 282,
+   "travel_min": 5,
+   "visit_min": [
+    65,
+    110
+   ],
+   "why": "282 м, ~5 мин пешком; работает допоздна. Бар «Пинта».",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто до 02:00 (часы по OSM, проверено 2026-10-20)",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/8595205064"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "night"
+   ]
+  },
+  {
+   "poi_id": "osm:node/13230394599",
+   "name": "Leto Cafe",
+   "category": "restaurant",
+   "lat": 51.126769,
+   "lon": 71.421784,
+   "distance_m": 783,
+   "travel_min": 14,
+   "visit_min": [
+    50,
+    90
+   ],
+   "why": "783 м, ~14 мин пешком; работает допоздна; рейтинг 4.8. Ресторан «Leto Cafe». Кухня: европейская, итальянская.",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 02:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/13230394599"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001061026053"
+    }
+   ],
+   "rating": 4.8,
+   "badges": [
+    "indoor",
+    "night"
+   ]
+  }
+ ],
+ "ideas": [],
+ "route": null,
+ "warnings": [
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные."
+ ],
+ "llm": {
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ }
+}

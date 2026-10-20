@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* «Небо Астаны»: голубой как на флаге + золотой акцент */
+  --color-sky-50: #eef9ff;
+  --color-sky-100: #d8f1ff;
+  --color-sky-200: #b9e7ff;
+  --color-sky-300: #89d9ff;
+  --color-sky-400: #52c2fc;
+  --color-sky-500: #1ba7ef;
+  --color-sky-600: #0a8fd1;
+  --color-sky-700: #0b70a8;
+  --color-sky-800: #0f5e8a;
+  --color-sky-900: #134e72;
+  --color-amber-300: #ffd84d;
+  --color-amber-400: #f5b700;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body { @apply bg-slate-50 font-sans text-slate-900 antialiased; }
+
+/* Нумерованные маркеры рекомендаций */
+.rec-marker {
+  width: 40px; height: 40px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: #0a8fd1;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.3);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .15s ease, background .15s ease;
+}
+.rec-marker span {
+  transform: rotate(45deg);
+  color: #fff; font-weight: 900; font-size: 18px; font-family: var(--font-sans);
+}
+.rec-marker--active {
+  background: #f5b700;
+  transform: rotate(-45deg) scale(1.25);
+}
+.rec-marker--active span { color: #0f172a; }
+
+.leaflet-container { font-family: var(--font-sans); background: #e8f1f6; }
+.leaflet-tooltip { font-size: 14px; font-weight: 600; }
+
+/* Ползунок времени */
+.time-range { appearance: none; height: 10px; border-radius: 999px;
+  background: linear-gradient(90deg, #f5b700 0%, #52c2fc 30%, #1ba7ef 55%, #f59e0b 78%, #1e1b4b 100%); }
+.time-range::-webkit-slider-thumb { appearance: none; width: 28px; height: 28px; border-radius: 50%;
+  background: #fff; border: 4px solid #0a8fd1; box-shadow: 0 2px 6px rgb(0 0 0 / .25); cursor: pointer; }
+.time-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%;
+  background: #fff; border: 4px solid #0a8fd1; cursor: pointer; }
+
+@keyframes card-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.card-in { animation: card-in .35s ease both; }

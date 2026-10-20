@@ -1,0 +1,419 @@
+{
+  "megasilkway_walk": {
+    "request_id": "mock-msw-01",
+    "context_used": {
+      "location": "≈ район Mega Silk Way (точность ~100 м)",
+      "time": "вторник, 17:00",
+      "weather": "−3°C, ветер 9 м/с",
+      "mode": "пешком",
+      "radius_m": 2500,
+      "filters": ["бюджет 30–60 мин"],
+      "data_note": "Используются: огрублённая локация, время, фильтры. Координаты не сохраняются."
+    },
+    "parsed_intent": {
+      "intent": "walk",
+      "time_budget_min": 60,
+      "companions": "solo",
+      "constraints": ["outdoor_ok"],
+      "keywords": ["прогулка"]
+    },
+    "recommendations": [
+      {
+        "poi_id": "seed:nur_alem",
+        "name": "Музей «Нур Алем» (ЭКСПО)",
+        "category": "museum",
+        "lat": 51.0892,
+        "lon": 71.4166,
+        "distance_m": 460,
+        "travel_min": 6,
+        "visit_min": [25, 40],
+        "why": "Ближайшая знаковая точка — 6 минут пешком. Площадь ЭКСПО вокруг сферы — готовый короткий круг для прогулки.",
+        "what_to_do": "Обойдите сферу «Нур Алем» по площади ЭКСПО, сфотографируйте её с южной стороны, затем вернитесь к Mega по пешеходной аллее.",
+        "open_status": {
+          "state": "unknown",
+          "confidence": "low",
+          "label": "Часы работы неизвестны — уточните перед входом",
+          "source": null
+        },
+        "source_type": "poi_data",
+        "sources": [{ "name": "wikidata", "url": "https://www.wikidata.org/wiki/Q30715617" }],
+        "rating": 4.8,
+        "badges": ["outdoor", "photo", "unusual"]
+      },
+      {
+        "poi_id": "seed:botanical_garden",
+        "name": "Ботанический сад Астаны",
+        "category": "park",
+        "lat": 51.109,
+        "lon": 71.417,
+        "distance_m": 2300,
+        "travel_min": 29,
+        "visit_min": [30, 45],
+        "why": "Самая большая тихая зелёная зона рядом. Подойдёт, если готовы на полный час прогулки.",
+        "what_to_do": "Пройдите от южного входа по кольцевой аллее к пруду и обратно — около 2 км по ровным дорожкам.",
+        "open_status": {
+          "state": "open",
+          "confidence": "medium",
+          "label": "Вероятно открыто (часы по OSM, проверено 2026-10-20)",
+          "source": "osm"
+        },
+        "source_type": "poi_data",
+        "sources": [{ "name": "osm", "url": "https://www.openstreetmap.org/" }],
+        "rating": 4.6,
+        "badges": ["outdoor", "free", "quiet"]
+      },
+      {
+        "poi_id": "seed:mega_silk_way",
+        "name": "ТРЦ «Mega Silk Way»",
+        "category": "mall",
+        "lat": 51.089,
+        "lon": 71.41,
+        "distance_m": 60,
+        "travel_min": 1,
+        "visit_min": [15, 30],
+        "why": "Тёплая точка финиша: на улице −3°C и ветер, после прогулки удобно согреться здесь же.",
+        "what_to_do": "Закончите круг у главного входа и выпейте горячий чай на фуд-корте 2-го этажа.",
+        "open_status": {
+          "state": "open",
+          "confidence": "high",
+          "label": "Открыто до 22:00 (часы по OSM, проверено 2026-10-20)",
+          "source": "osm"
+        },
+        "source_type": "poi_data",
+        "sources": [{ "name": "osm", "url": "https://www.openstreetmap.org/" }],
+        "rating": 4.6,
+        "badges": ["indoor", "coffee"]
+      }
+    ],
+    "ideas": [
+      {
+        "text": "Если ветер усилится — сократите круг: площадь ЭКСПО → крытая галерея Mega, это всё ещё 30 минут шага.",
+        "source_type": "generated_idea"
+      }
+    ],
+    "route": {
+      "stops": ["seed:nur_alem", "seed:mega_silk_way"],
+      "legs": [
+        { "from": "start", "to": "seed:nur_alem", "distance_m": 460, "minutes": 6 },
+        { "from": "seed:nur_alem", "to": "seed:mega_silk_way", "distance_m": 520, "minutes": 7 }
+      ],
+      "total_min": 48,
+      "geometry": [
+        [51.089, 71.41], [51.0886, 71.4122], [51.0884, 71.4148], [51.0889, 71.4166],
+        [51.0897, 71.4152], [51.0899, 71.4121], [51.089, 71.41]
+      ],
+      "geometry_source": "osrm"
+    },
+    "warnings": ["Часы работы 1 места неизвестны — уточните перед входом."],
+    "llm": { "provider": "mock", "model": "mock", "latency_ms": 0 }
+  },
+
+  "kids_khan_shatyr": {
+    "request_id": "mock-kids-01",
+    "context_used": {
+      "location": "≈ район Хан Шатыр (точность ~100 м)",
+      "time": "суббота, 11:00",
+      "weather": "+2°C, облачно",
+      "mode": "пешком",
+      "radius_m": 3000,
+      "filters": ["с ребёнком", "предпочтение: в помещении"],
+      "data_note": "Используются: огрублённая локация, время, фильтры. Координаты не сохраняются."
+    },
+    "parsed_intent": {
+      "intent": "kids",
+      "time_budget_min": null,
+      "companions": "kids",
+      "constraints": ["kid_friendly"],
+      "keywords": ["детская площадка", "интерактив", "музей"]
+    },
+    "recommendations": [
+      {
+        "poi_id": "seed:khan_shatyr",
+        "name": "ТРЦ «Хан Шатыр»",
+        "category": "mall",
+        "lat": 51.1325,
+        "lon": 71.4036,
+        "distance_m": 120,
+        "travel_min": 2,
+        "visit_min": [60, 90],
+        "why": "Вы рядом, внутри тепло, есть детский парк развлечений и семейные кафе — не нужно никуда ехать.",
+        "what_to_do": "Поднимитесь на верхний уровень в детский парк, затем перекусите на фуд-корте.",
+        "open_status": {
+          "state": "open",
+          "confidence": "high",
+          "label": "Открыто до 22:00 (часы по OSM, проверено 2026-10-20)",
+          "source": "osm"
+        },
+        "source_type": "poi_data",
+        "sources": [{ "name": "osm", "url": "https://www.openstreetmap.org/" }],
+        "rating": 4.6,
+        "badges": ["indoor", "kids", "family"]
+      },
+      {
+        "poi_id": "seed:baiterek",
+        "name": "Монумент «Байтерек»",
+        "category": "viewpoint",
+        "lat": 51.1283,
+        "lon": 71.4305,
+        "distance_m": 1940,
+        "travel_min": 25,
+        "visit_min": [30, 45],
+        "why": "Детям нравится подъём на лифте и вид на город сверху — короткая и яркая впечатляющая точка.",
+        "what_to_do": "Пройдите по бульвару Нуржол от Хан Шатыра, поднимитесь на смотровую и найдите отпечаток ладони.",
+        "open_status": {
+          "state": "unknown",
+          "confidence": "low",
+          "label": "Часы работы неизвестны — уточните перед выходом",
+          "source": null
+        },
+        "source_type": "poi_data",
+        "sources": [{ "name": "wikidata", "url": "https://www.wikidata.org/wiki/Q820766" }],
+        "rating": 4.7,
+        "badges": ["indoor", "view", "kids"]
+      },
+      {
+        "poi_id": "seed:central_park",
+        "name": "Центральный парк",
+        "category": "park",
+        "lat": 51.153,
+        "lon": 71.4185,
+        "distance_m": 2500,
+        "travel_min": 32,
+        "visit_min": [40, 60],
+        "why": "Большие детские площадки и аттракционы на открытом воздухе — если погода позволит.",
+        "what_to_do": "Начните с детской площадки у главного входа, затем прогуляйтесь вдоль реки Есиль.",
+        "open_status": {
+          "state": "open",
+          "confidence": "medium",
+          "label": "Вероятно открыто (парк, часы по OSM)",
+          "source": "osm"
+        },
+        "source_type": "poi_data",
+        "sources": [{ "name": "osm", "url": "https://www.openstreetmap.org/" }],
+        "rating": 4.5,
+        "badges": ["outdoor", "playground", "free"]
+      }
+    ],
+    "ideas": [
+      {
+        "text": "Устройте «охоту за видами»: пусть ребёнок найдёт Хан Шатыр из окна Байтерека.",
+        "source_type": "generated_idea"
+      }
+    ],
+    "route": {
+      "stops": ["seed:khan_shatyr", "seed:baiterek"],
+      "legs": [
+        { "from": "start", "to": "seed:khan_shatyr", "distance_m": 120, "minutes": 2 },
+        { "from": "seed:khan_shatyr", "to": "seed:baiterek", "distance_m": 1900, "minutes": 24 }
+      ],
+      "total_min": 146,
+      "geometry": [
+        [51.1325, 71.4036], [51.1318, 71.4060], [51.1305, 71.4120],
+        [51.1295, 71.4190], [51.1288, 71.4250], [51.1283, 71.4305]
+      ],
+      "geometry_source": "osrm"
+    },
+    "warnings": ["Часы работы «Байтерека» неизвестны — уточните перед выходом."],
+    "llm": { "provider": "mock", "model": "mock", "latency_ms": 0 }
+  },
+
+  "night_nurzhol": {
+    "request_id": "mock-night-01",
+    "context_used": {
+      "location": "≈ район бульвара Нуржол (точность ~100 м)",
+      "time": "вторник, 23:30",
+      "weather": "−6°C, слабый ветер",
+      "mode": "пешком",
+      "radius_m": 1500,
+      "filters": ["ночь: только открытые/уличные места"],
+      "data_note": "Используются: огрублённая локация, время, фильтры. Координаты не сохраняются."
+    },
+    "parsed_intent": {
+      "intent": "night",
+      "time_budget_min": 120,
+      "companions": "solo",
+      "constraints": ["open_now"],
+      "keywords": ["ночь", "необычное"]
+    },
+    "recommendations": [
+      {
+        "poi_id": "seed:nurzhol_boulevard",
+        "name": "Бульвар Нуржол",
+        "category": "landmark",
+        "lat": 51.127,
+        "lon": 71.433,
+        "distance_m": 80,
+        "travel_min": 1,
+        "visit_min": [30, 45],
+        "why": "Открыт круглосуточно и ночью подсвечен: поющие фонтаны, огни Байтерека и пустые аллеи.",
+        "what_to_do": "Пройдите бульвар от Байтерека к Ак Орде — около 1 км под подсветкой.",
+        "open_status": {
+          "state": "open",
+          "confidence": "high",
+          "label": "Открыто круглосуточно (OSM: 24/7)",
+          "source": "osm"
+        },
+        "source_type": "poi_data",
+        "sources": [{ "name": "osm", "url": "https://www.openstreetmap.org/" }],
+        "rating": null,
+        "badges": ["outdoor", "night", "free"]
+      },
+      {
+        "poi_id": "seed:baiterek",
+        "name": "Монумент «Байтерек»",
+        "category": "viewpoint",
+        "lat": 51.1283,
+        "lon": 71.4305,
+        "distance_m": 230,
+        "travel_min": 3,
+        "visit_min": [10, 20],
+        "why": "Ночная подсветка — лучшая фототочка города. Внутрь, скорее всего, уже не попасть.",
+        "what_to_do": "Сфотографируйте монумент снизу с площади — подсветка меняет цвета.",
+        "open_status": {
+          "state": "unknown",
+          "confidence": "low",
+          "label": "Часы неизвестны — смотровая, вероятно, закрыта; снаружи доступно",
+          "source": null
+        },
+        "source_type": "poi_data",
+        "sources": [{ "name": "wikidata", "url": "https://www.wikidata.org/wiki/Q820766" }],
+        "rating": 4.7,
+        "badges": ["photo", "night"]
+      },
+      {
+        "poi_id": "seed:ak_orda",
+        "name": "Резиденция «Ак Орда» (вид с площади)",
+        "category": "landmark",
+        "lat": 51.1258,
+        "lon": 71.4461,
+        "distance_m": 930,
+        "travel_min": 12,
+        "visit_min": [10, 15],
+        "why": "Финиш ночного маршрута: подсвеченный купол в конце бульвара, рядом река Есиль.",
+        "what_to_do": "Посмотрите на резиденцию с площади, затем спуститесь к набережной.",
+        "open_status": {
+          "state": "unknown",
+          "confidence": "low",
+          "label": "Часы неизвестны — уличная площадь, доступ может быть ограничен",
+          "source": null
+        },
+        "source_type": "poi_data",
+        "sources": [{ "name": "osm", "url": "https://www.openstreetmap.org/" }],
+        "rating": 4.7,
+        "badges": ["outdoor", "photo", "free"]
+      }
+    ],
+    "ideas": [
+      {
+        "text": "Ночной фотоквест: снимите Байтерек, Ак Орду и Пирамиду с одной точки на набережной.",
+        "source_type": "generated_idea"
+      }
+    ],
+    "route": {
+      "stops": ["seed:nurzhol_boulevard", "seed:baiterek", "seed:ak_orda"],
+      "legs": [
+        { "from": "start", "to": "seed:nurzhol_boulevard", "distance_m": 80, "minutes": 1 },
+        { "from": "seed:nurzhol_boulevard", "to": "seed:baiterek", "distance_m": 230, "minutes": 3 },
+        { "from": "seed:baiterek", "to": "seed:ak_orda", "distance_m": 1150, "minutes": 15 }
+      ],
+      "total_min": 75,
+      "geometry": [
+        [51.127, 71.433], [51.1272, 71.4322], [51.1283, 71.4305], [51.1276, 71.4330],
+        [51.1268, 71.4380], [51.1262, 71.4425], [51.1258, 71.4461]
+      ],
+      "geometry_source": "osrm"
+    },
+    "warnings": [
+      "Сейчас 23:30: ТРЦ «Хан Шатыр» и «Керуен» уже закрыты (до 22:00), поэтому предлагаем уличные места.",
+      "Часы работы 2 мест неизвестны — уточните перед выходом."
+    ],
+    "llm": { "provider": "mock", "model": "mock", "latency_ms": 0 }
+  },
+
+  "airport_2h": {
+    "request_id": "mock-airport-01",
+    "context_used": {
+      "location": "≈ район аэропорта Астаны (точность ~100 м)",
+      "time": "вторник, 14:00",
+      "weather": "+1°C, ясно",
+      "mode": "на машине",
+      "radius_m": 12000,
+      "filters": ["бюджет 2 ч", "обратная дорога в аэропорт учтена"],
+      "data_note": "Используются: огрублённая локация, время, фильтры. Координаты не сохраняются."
+    },
+    "parsed_intent": {
+      "intent": "sightseeing",
+      "time_budget_min": 120,
+      "companions": "solo",
+      "constraints": ["return_to_airport"],
+      "keywords": ["турист", "вылет", "посмотреть"]
+    },
+    "recommendations": [
+      {
+        "poi_id": "seed:nur_alem",
+        "name": "Музей «Нур Алем» (ЭКСПО)",
+        "category": "museum",
+        "lat": 51.0892,
+        "lon": 71.4166,
+        "distance_m": 10400,
+        "travel_min": 14,
+        "visit_min": [40, 50],
+        "why": "Самая яркая достопримечательность по пути из аэропорта — 14 минут на такси, успеете вернуться.",
+        "what_to_do": "Поднимитесь на верхний этаж сферы ради панорамы и спускайтесь пешком по экспозициям.",
+        "open_status": {
+          "state": "unknown",
+          "confidence": "low",
+          "label": "Часы работы неизвестны — уточните перед поездкой",
+          "source": null
+        },
+        "source_type": "poi_data",
+        "sources": [{ "name": "wikidata", "url": "https://www.wikidata.org/wiki/Q30715617" }],
+        "rating": 4.8,
+        "badges": ["indoor", "view", "unusual"]
+      },
+      {
+        "poi_id": "seed:mega_silk_way",
+        "name": "ТРЦ «Mega Silk Way»",
+        "category": "mall",
+        "lat": 51.089,
+        "lon": 71.41,
+        "distance_m": 10900,
+        "travel_min": 15,
+        "visit_min": [20, 30],
+        "why": "В 5 минутах пешком от ЭКСПО: сувениры и обед перед вылетом в одном месте.",
+        "what_to_do": "Пообедайте на фуд-корте и купите сувениры, затем вызовите такси от главного входа.",
+        "open_status": {
+          "state": "open",
+          "confidence": "high",
+          "label": "Открыто до 22:00 (часы по OSM, проверено 2026-10-20)",
+          "source": "osm"
+        },
+        "source_type": "poi_data",
+        "sources": [{ "name": "osm", "url": "https://www.openstreetmap.org/" }],
+        "rating": 4.6,
+        "badges": ["indoor", "coffee", "shopping"]
+      }
+    ],
+    "ideas": [
+      {
+        "text": "Выезжайте обратно не позже чем за 1 ч 15 мин до вылета: 15 минут дороги + регистрация.",
+        "source_type": "generated_idea"
+      }
+    ],
+    "route": {
+      "stops": ["seed:nur_alem", "seed:mega_silk_way"],
+      "legs": [
+        { "from": "start", "to": "seed:nur_alem", "distance_m": 10400, "minutes": 14 },
+        { "from": "seed:nur_alem", "to": "seed:mega_silk_way", "distance_m": 520, "minutes": 7 }
+      ],
+      "total_min": 110,
+      "geometry": [
+        [51.0222, 71.4669], [51.035, 71.458], [51.052, 71.447], [51.068, 71.432],
+        [51.0835, 71.4205], [51.0892, 71.4166], [51.089, 71.41]
+      ],
+      "geometry_source": "osrm"
+    },
+    "warnings": ["Время впритык: оставьте 15 минут на обратную дорогу и 1 час на аэропорт."],
+    "llm": { "provider": "mock", "model": "mock", "latency_ms": 0 }
+  }
+}

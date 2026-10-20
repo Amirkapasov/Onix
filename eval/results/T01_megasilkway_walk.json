@@ -1,0 +1,225 @@
+{
+ "request_id": "34390d9019c0",
+ "context_used": {
+  "location": "≈ район Mega Silk Way (точность ~100 м)",
+  "time": "вторник, 17:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1557,
+  "filters": [
+   "бюджет 60 мин",
+   "пожелания: outdoor_ok"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+ },
+ "parsed_intent": {
+  "intent": "walk",
+  "time_budget_min": 60,
+  "companions": "solo",
+  "constraints": [
+   "outdoor_ok"
+  ],
+  "keywords": [
+   "mega",
+   "silk",
+   "way",
+   "прогуляться"
+  ]
+ },
+ "recommendations": [
+  {
+   "poi_id": "osm:way/1467797207",
+   "name": "NU Park",
+   "category": "park",
+   "lat": 51.08727,
+   "lon": 71.399439,
+   "distance_m": 762,
+   "travel_min": 13,
+   "visit_min": [
+    30,
+    47
+   ],
+   "why": "762 м, ~13 мин пешком; бесплатно; тихое место. Парк «NU Park».",
+   "what_to_do": "Пройдитесь по главной аллее, загляните к воде или на видовые точки и вернитесь кольцом.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы не указаны; открытая территория — обычно доступна",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1467797207"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "outdoor",
+    "free",
+    "quiet",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:way/499328514",
+   "name": "Mega Silk Way",
+   "category": "mall",
+   "lat": 51.08909,
+   "lon": 71.40733,
+   "distance_m": 187,
+   "travel_min": 3,
+   "visit_min": [
+    42,
+    57
+   ],
+   "why": "187 м, ~3 мин пешком; в помещении. Торговый центр «Mega Silk Way».",
+   "what_to_do": "Зайдите погреться, выпейте кофе; при желании — кино или фуд-корт.",
+   "open_status": {
+    "state": "open",
+    "confidence": "medium",
+    "label": "Вероятно открыто до 22:00 (часы по OSM, проверено 2026-10-20)",
+    "source": "osm"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/499328514"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "family"
+   ]
+  },
+  {
+   "poi_id": "osm:way/1456208624",
+   "name": "Аллея мира и согласия",
+   "category": "park",
+   "lat": 51.093812,
+   "lon": 71.41695,
+   "distance_m": 722,
+   "travel_min": 13,
+   "visit_min": [
+    30,
+    47
+   ],
+   "why": "722 м, ~13 мин пешком; бесплатно; тихое место. Парк «Аллея мира и согласия».",
+   "what_to_do": "Пройдитесь по главной аллее, загляните к воде или на видовые точки и вернитесь кольцом.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы не указаны; открытая территория — обычно доступна",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/1456208624"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "outdoor",
+    "free",
+    "quiet",
+    "hours_unverified"
+   ]
+  }
+ ],
+ "ideas": [],
+ "route": {
+  "stops": [
+   "osm:way/499328514"
+  ],
+  "legs": [
+   {
+    "from": "start",
+    "to": "osm:way/499328514",
+    "distance_m": 199,
+    "minutes": 3
+   }
+  ],
+  "total_min": 45,
+  "geometry": [
+   [
+    51.08951,
+    71.41001
+   ],
+   [
+    51.08951,
+    71.40995
+   ],
+   [
+    51.08959,
+    71.40968
+   ],
+   [
+    51.0896,
+    71.40956
+   ],
+   [
+    51.0896,
+    71.4095
+   ],
+   [
+    51.08961,
+    71.40929
+   ],
+   [
+    51.08961,
+    71.40925
+   ],
+   [
+    51.08962,
+    71.40914
+   ],
+   [
+    51.08963,
+    71.40902
+   ],
+   [
+    51.08966,
+    71.40888
+   ],
+   [
+    51.08976,
+    71.40891
+   ],
+   [
+    51.08979,
+    71.40871
+   ],
+   [
+    51.08982,
+    71.40849
+   ],
+   [
+    51.08983,
+    71.40837
+   ],
+   [
+    51.08972,
+    71.40833
+   ],
+   [
+    51.08982,
+    71.40758
+   ]
+  ],
+  "geometry_source": "osrm"
+ },
+ "warnings": [
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
+  "В маршрут на 60 мин не влезает: NU Park, Аллея мира и согласия — это запасные варианты."
+ ],
+ "llm": {
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ }
+}

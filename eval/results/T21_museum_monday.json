@@ -1,0 +1,143 @@
+{
+ "request_id": "dab6f3095760",
+ "context_used": {
+  "location": "≈ район Национальный музей (точность ~100 м)",
+  "time": "понедельник, 11:00",
+  "weather": "+4°C, ветер 4 м/с (климатическая норма для выбранного времени)",
+  "mode": "пешком",
+  "radius_m": 1713,
+  "filters": [
+   "бюджет не указан — беру ~90 мин",
+   "скрыто закрытых к приходу: 6",
+   "скрыто без часов, вероятно закрытых в это время: 4"
+  ],
+  "data_note": "Используются: огрублённая локация (~100 м), время, фильтры и текст запроса. Координаты не сохраняются и не пишутся в логи; погода запрашивается по центру города."
+ },
+ "parsed_intent": {
+  "intent": "culture",
+  "time_budget_min": null,
+  "companions": "solo",
+  "constraints": [],
+  "keywords": [
+   "сходить",
+   "музей"
+  ]
+ },
+ "recommendations": [
+  {
+   "poi_id": "osm:way/917348929",
+   "name": "Государственный Академический казахский музыкально-драматический театр им. К. Куанышбаева",
+   "category": "theatre",
+   "lat": 51.120559,
+   "lon": 71.479974,
+   "distance_m": 491,
+   "travel_min": 9,
+   "visit_min": [
+    105,
+    180
+   ],
+   "why": "491 м, ~9 мин пешком; в помещении. Театр «Государственный Академический казахский музыкально-драматический театр им. К. Куанышбаева».",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы работы неизвестны — уточните перед выходом",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/917348929"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "indoor",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:way/240873345",
+   "name": "Дворец Независимости",
+   "category": "landmark",
+   "lat": 51.120631,
+   "lon": 71.472049,
+   "distance_m": 97,
+   "travel_min": 2,
+   "visit_min": [
+    15,
+    25
+   ],
+   "why": "Вы уже рядом; бесплатно. Достопримечательность «Дворец Независимости».",
+   "what_to_do": "Осмотрите снаружи, сделайте фото с лучшего ракурса и пройдитесь по округе.",
+   "open_status": {
+    "state": "unknown",
+    "confidence": "low",
+    "label": "Часы не указаны; открытая территория — обычно доступна",
+    "source": null
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/way/240873345"
+    }
+   ],
+   "rating": null,
+   "badges": [
+    "free",
+    "photo",
+    "hours_unverified"
+   ]
+  },
+  {
+   "poi_id": "osm:node/13159240457",
+   "name": "Italio",
+   "category": "restaurant",
+   "lat": 51.120221,
+   "lon": 71.459636,
+   "distance_m": 933,
+   "travel_min": 16,
+   "visit_min": [
+    50,
+    90
+   ],
+   "why": "933 м, ~16 мин пешком; работает допоздна; рейтинг 4.5. Ресторан «Italio». Кухня: пицца.",
+   "what_to_do": "Загляните, осмотритесь и решите, задержаться ли подольше.",
+   "open_status": {
+    "state": "open",
+    "confidence": "high",
+    "label": "Открыто до 00:00 (часы по 2GIS, проверено 2026-10-20)",
+    "source": "2gis"
+   },
+   "source_type": "poi_data",
+   "sources": [
+    {
+     "name": "osm",
+     "url": "https://www.openstreetmap.org/node/13159240457"
+    },
+    {
+     "name": "2gis",
+     "url": "https://2gis.kz/astana/firm/70000001050177243"
+    }
+   ],
+   "rating": 4.5,
+   "badges": [
+    "indoor",
+    "night"
+   ]
+  }
+ ],
+ "ideas": [],
+ "route": null,
+ "warnings": [
+  "ИИ-модель недоступна — подборка собрана по ранжированию базы, тексты шаблонные.",
+  "Часы работы 1 мест(а) неизвестны — уточните перед выходом."
+ ],
+ "llm": {
+  "provider": "none",
+  "model": null,
+  "latency_ms": 0
+ }
+}

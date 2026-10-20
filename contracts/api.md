@@ -29,6 +29,7 @@
 - `client_time` нужен для «открыто сейчас» и ночного сценария (в демо его можно сдвигать ползунком).
 - `lang`: `ru` | `kk` | `en`. `mode`: `walk` | `car` | `transit`.
 - Поля `filters` необязательные; явные значения из UI важнее того, что LLM извлёк из текста.
+- `weather_override` (необязательно, только для демо и eval): `{"temp_c": -20, "wind_ms": 9}` подменяет погоду из Open-Meteo. В `context_used.weather` тогда добавляется пометка «(симуляция)».
 
 ### Ответ
 ```json
@@ -108,9 +109,10 @@
 Готовые сценарии для кнопок демо:
 ```json
 { "items": [
-  { "id": "megasilkway_walk", "label": "Mega Silk Way · прогулка 30–60 мин", "location": {"lat": 51.089, "lon": 71.410}, "location_label": "Mega Silk Way", "query": "Я сейчас возле Mega Silk Way, хочу прогуляться 30–60 минут — что посоветуете?", "client_time": "2026-10-20T17:00:00+05:00", "filters": {} }
+  { "id": "megasilkway_walk", "label": "Mega Silk Way · прогулка 30–60 мин", "location": {"lat": 51.089, "lon": 71.410}, "location_label": "Mega Silk Way", "query": "Я сейчас возле Mega Silk Way, хочу прогуляться 30–60 минут — что посоветуете?", "client_time": "2026-10-20T17:00:00+05:00", "filters": {}, "mode": "walk", "icon": "🛍️" }
 ]}
 ```
+`mode` (`walk|car|transit`) и `icon` (эмодзи) — необязательные. Пресет может также нести `weather_override`.
 
 ## GET /api/health
 `{ "status": "ok", "pois": 1234, "llm_provider": "gemini", "embeddings": true }`
