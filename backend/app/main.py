@@ -4,6 +4,8 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import threading
+import time
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Query, Request
@@ -12,12 +14,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from . import config, llm, weather
+from . import search as search_mod
 from .data import store
 from .models import RecommendRequest, RecommendResponse, WhereRequest
-from .where import where
 from .pipeline import recommend
 from .presets import PRESETS
 from .search import index
+from .where import where
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 log = logging.getLogger("seruen")
@@ -29,8 +32,22 @@ async def lifespan(_: FastAPI):
     index.ensure()  # эмбеддинги строятся в фоне
     llm.get_provider()
     task = asyncio.create_task(weather.prefetch())
+    # прогрев в фоне: первый запрос не платит за холодный клиент Gemini; старт и /api/health не ждут
+    threading.Thread(target=_warmup, daemon=True, name="warmup").start()
     yield
     task.cancel()
+
+
+def _warmup() -> None:
+    llm.warmup()
+    if search_mod._embed_enabled():
+        t0 = time.monotonic()
+        try:
+            search_mod._embed(["прогулка по Астане"], "RETRIEVAL_QUERY", timeout=10.0)
+            log.info("embed warmup: %d ms", int((time.monotonic() - t0) * 1000))
+        except Exception as e:
+            why = "daily quota exhausted" if "PerDay" in str(e) else "quota" if "429" in str(e) else type(e).__name__
+            log.warning("embed warmup skipped (%s) — search uses BM25 until it recovers", why)
 
 
 app = FastAPI(title="Seruen API", version="0.1.0", lifespan=lifespan)

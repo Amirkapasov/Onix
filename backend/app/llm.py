@@ -10,6 +10,8 @@ import logging
 import re
 import time
 from collections import OrderedDict
+from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import TimeoutError as FuturesTimeout
 from dataclasses import dataclass
 
 from . import config
@@ -47,6 +49,7 @@ def extract_json(text: str) -> dict:
 class Provider:
     name = "none"
     model = ""
+    fast_model: str | None = None
 
     def models_for(self, purpose: str) -> list[str]:
         return [self.model]
@@ -62,6 +65,7 @@ class GeminiProvider(Provider):
     def __init__(self) -> None:
         from google import genai
         self.model = config.GEMINI_MODEL
+        self.fast_model = config.GEMINI_PARSE_MODEL  # запасная быстрая модель, если основная не уложилась
         self.client = genai.Client(api_key=config.GEMINI_API_KEY)
 
     def models_for(self, purpose: str) -> list[str]:
@@ -151,6 +155,7 @@ def get_provider() -> Provider | None:
     return _instance
 
 
+_POOL = ThreadPoolExecutor(max_workers=8, thread_name_prefix="llm")
 _cooldown: dict[str, float] = {}  # модель → monotonic-время, до которого её не трогаем (429)
 _cache: OrderedDict[str, tuple[float, LLMResult]] = OrderedDict()
 CACHE_TTL_S = 30 * 60
@@ -170,8 +175,13 @@ def _is_overloaded(err: str) -> bool:
 
 
 def complete_json(system: str, user: str, *, temperature: float = 0.2, max_tokens: int = 1200,
-                  timeout: float | None = None, purpose: str = "gen") -> LLMResult:
-    """JSON от LLM. Кэш по (system, user) на 30 мин; при 429 модель «остывает», пробуем следующую."""
+                  timeout: float | None = None, total: float | None = None, purpose: str = "gen") -> LLMResult:
+    """JSON от LLM. Кэш по (system, user) на 30 мин.
+
+    Бюджет времени: каждая попытка ≤ `timeout` (LLM_TIMEOUT_S), все вместе ≤ `total` (LLM_TOTAL_BUDGET_S).
+    Попытка не уложилась → ту же модель не повторяем, сразу быстрая модель (`fast_model`), иначе LLMError
+    и шаблон. 429 → модель «остывает» по retryDelay; 503/504 → следующая модель. Не больше 2 обращений к API.
+    """
     prov = get_provider()
     if prov is None:
         raise LLMError("llm_unavailable")
@@ -180,39 +190,71 @@ def complete_json(system: str, user: str, *, temperature: float = 0.2, max_token
     if hit and time.monotonic() - hit[0] < CACHE_TTL_S:
         _cache.move_to_end(key)
         return LLMResult(hit[1].data, hit[1].provider, hit[1].model, 0)
-    timeout = timeout or config.LLM_TIMEOUT_S
+    attempt_budget = timeout or config.LLM_TIMEOUT_S
+    total = total or (config.LLM_TOTAL_BUDGET_S if purpose == "gen" else attempt_budget)
     t0 = time.monotonic()
+    deadline = t0 + total
+    queue = list(prov.models_for(purpose))
+    tried: set[str] = set()
+    retried: set[str] = set()
     last = "no model available"
-    calls = 0  # не больше 2 обращений к API на запрос: попытка + 1 ретрай (на той же или запасной модели)
-    for model in prov.models_for(purpose):
-        if _cooldown.get(model, 0) > time.monotonic():
-            last = f"{model}: quota cooldown"
+    calls = 0
+    while queue and calls < 2:
+        model = queue.pop(0)
+        if model in tried or _cooldown.get(model, 0) > time.monotonic():
+            if _cooldown.get(model, 0) > time.monotonic():
+                last = f"{model}: quota cooldown"
             continue
-        for attempt in range(2):
-            if calls >= 2:
-                raise LLMError(last)
-            calls += 1
-            try:
-                text = prov.complete(system, user, temperature, max_tokens, timeout, model=model)
-                res = LLMResult(extract_json(text), prov.name, model, int((time.monotonic() - t0) * 1000))
-                _cache[key] = (time.monotonic(), res)
-                if len(_cache) > 300:
-                    _cache.popitem(last=False)
-                return res
-            except Exception as e:
-                last = f"{type(e).__name__}: {str(e)[:300]}"
-                if _is_quota(last):
-                    _cooldown[model] = time.monotonic() + _retry_delay(last)
-                    log.warning("LLM %s/%s quota exhausted — cooldown %.0fs", prov.name, model, _retry_delay(last))
-                    break
-                if _is_overloaded(last):  # 503/504 «high demand» — повтор той же модели не поможет
-                    _cooldown[model] = time.monotonic() + 30
-                    log.warning("LLM %s/%s overloaded — next model", prov.name, model)
-                    break
-                log.warning("LLM %s/%s attempt %d failed: %s", prov.name, model, attempt + 1, last[:200])
-                if time.monotonic() - t0 > timeout:
-                    raise LLMError(last)
+        remaining = deadline - time.monotonic()
+        if remaining < 0.5:
+            break
+        budget = min(attempt_budget, remaining)
+        calls += 1
+        tried.add(model)
+        fut = _POOL.submit(prov.complete, system, user, temperature, max_tokens, budget, model=model)
+        try:
+            text = fut.result(timeout=budget)
+            res = LLMResult(extract_json(text), prov.name, model, int((time.monotonic() - t0) * 1000))
+            _cache[key] = (time.monotonic(), res)
+            if len(_cache) > 300:
+                _cache.popitem(last=False)
+            return res
+        except FuturesTimeout:
+            last = f"timeout {budget:.1f}s on {model}"
+            log.warning("LLM %s/%s did not answer in %.1fs — fast fallback", prov.name, model, budget)
+            fast = getattr(prov, "fast_model", None)
+            if purpose == "gen" and fast and fast not in tried:
+                queue.insert(0, fast)  # ту же модель не повторяем: сразу быстрая
+            else:
+                break
+        except Exception as e:
+            last = f"{type(e).__name__}: {str(e)[:300]}"
+            if _is_quota(last):
+                _cooldown[model] = time.monotonic() + _retry_delay(last)
+                log.warning("LLM %s/%s quota exhausted — cooldown %.0fs", prov.name, model, _retry_delay(last))
+            elif _is_overloaded(last):  # 503/504 «high demand» — повтор той же модели не поможет
+                _cooldown[model] = time.monotonic() + 30
+                log.warning("LLM %s/%s overloaded — next model", prov.name, model)
+            else:
+                log.warning("LLM %s/%s failed: %s", prov.name, model, last[:200])
+                if model not in retried:  # прочие ошибки (битый JSON и т.п.) — один повтор той же модели
+                    retried.add(model)
+                    tried.discard(model)
+                    queue.insert(0, model)
     raise LLMError(last)
+
+
+def warmup() -> None:
+    """Прогрев на старте (в фоне): первый пользовательский запрос попадает на тёплый клиент и соединение."""
+    prov = get_provider()
+    if prov is None:
+        return
+    t0 = time.monotonic()
+    try:
+        prov.complete('Ответь JSON {"ok": true}', "ping", 0.0, 16, config.LLM_TIMEOUT_S)
+        log.info("LLM warmup %s/%s: %d ms", prov.name, prov.model, int((time.monotonic() - t0) * 1000))
+    except Exception as e:
+        log.warning("LLM warmup failed: %s", type(e).__name__)
 
 
 def quota_limited() -> bool:

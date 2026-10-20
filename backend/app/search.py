@@ -140,9 +140,12 @@ class Index:
                     time.sleep(30)  # строит другой процесс — ждём его результат
                     continue
                 try:
+                    last_batch_at = 0.0
                     for start in range(0, len(missing), EMBED_BATCH):
                         if version != self.version:
                             return
+                        _yield_to_users(last_batch_at)
+                        last_batch_at = time.monotonic()
                         chunk = missing[start:start + EMBED_BATCH]
                         vecs = _embed([texts[first[h]] for h in chunk], "RETRIEVAL_DOCUMENT", patient=True)
                         cache.update(zip(chunk, vecs))
@@ -180,6 +183,7 @@ class Index:
         if q in self._qcache:
             self._qcache.move_to_end(q)
             return self._qcache[q]
+        mark_user_activity()
         if time.monotonic() < self._q_cooldown:
             return None
         fut = _QPOOL.submit(_embed, [q], "RETRIEVAL_QUERY")
@@ -236,7 +240,25 @@ def _poi_weight(p: dict) -> float:
     return (p.get("popularity") or 0) + (p.get("data_quality") or 0) + (0.5 if len(p.get("description") or "") > 60 else 0)
 
 
-EMBED_BATCH = 100          # одним batchEmbedContents (квота free tier считает каждый текст)
+EMBED_BATCH = 80           # одним batchEmbedContents (квота free tier — 100 текстов/мин, каждый текст считается)
+EMBED_MIN_INTERVAL_S = 60.0  # не чаще батча в минуту: ~20 текстов/мин остаются эмбеддингам запросов
+USER_QUIET_S = 10.0          # пока пользователи шлют запросы, фоновая сборка ждёт
+_last_user = [0.0]
+
+
+def mark_user_activity() -> None:
+    _last_user[0] = time.monotonic()
+
+
+def _yield_to_users(last_batch_at: float) -> None:
+    """Фоновая сборка уступает приоритет живым запросам и квоте эмбеддингов запросов."""
+    while True:
+        now = time.monotonic()
+        wait = max(EMBED_MIN_INTERVAL_S - (now - last_batch_at), USER_QUIET_S - (now - _last_user[0]), 0.0)
+        if wait <= 0:
+            return
+        time.sleep(min(wait, 5.0))
+        _touch_lock()
 QUERY_EMBED_BUDGET_S = 2.0
 _QPOOL = ThreadPoolExecutor(max_workers=2)
 LOCK_STALE_S = 180

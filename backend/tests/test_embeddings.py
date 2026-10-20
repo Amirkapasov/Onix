@@ -1,6 +1,15 @@
 import numpy as np
 
+import pytest
+
 from backend.app import config, search
+
+
+@pytest.fixture(autouse=True)
+def no_pacing(monkeypatch):
+    """В тестах фоновая сборка не ждёт ни минуту между батчами, ни «тишины» пользователей."""
+    monkeypatch.setattr(search, "EMBED_MIN_INTERVAL_S", 0.0)
+    monkeypatch.setattr(search, "USER_QUIET_S", 0.0)
 
 
 def test_incremental_store_resumes_and_skips_known(tmp_path, monkeypatch):
@@ -69,3 +78,12 @@ def test_shops_and_generic_names_not_embedded(tmp_path, monkeypatch):
     idx.version = 1
     idx._build_emb(["t1", "t2", "t3", "t4"], 1, pois)
     assert seen == ["t1"] and idx.emb_mask.tolist() == [True, False, False, False]
+
+
+def test_builder_yields_to_user_activity(monkeypatch):
+    monkeypatch.setattr(search, "USER_QUIET_S", 0.3)
+    search.mark_user_activity()
+    import time as _t
+    t0 = _t.monotonic()
+    search._yield_to_users(0.0)
+    assert _t.monotonic() - t0 >= 0.25  # пока идут запросы пользователей — сборка ждёт

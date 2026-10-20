@@ -279,3 +279,48 @@ def test_pois_lite_fields_are_small():
     lite = client.get("/api/pois", params={"fields": "lite"}).json()["items"]
     assert len(lite) == len(full)
     assert set(lite[0]) == {"id", "name", "lat", "lon", "category", "opening_hours"}
+
+
+def test_slow_model_falls_back_to_fast_without_retry(monkeypatch):
+    import time as _t
+    calls = []
+
+    class Prov(_FakeProv):
+        fast_model = "fast"
+
+        def models_for(self, purpose):
+            return ["slow", "other"]
+
+        def complete(self, system, user, temperature, max_tokens, timeout, model=None):
+            calls.append(model)
+            if model == "slow":
+                _t.sleep(2)
+            return '{"ok": 1}'
+
+    monkeypatch.setattr(llm, "get_provider", lambda: Prov())
+    monkeypatch.setattr(llm, "_cooldown", {})
+    monkeypatch.setattr(llm, "_cache", llm.OrderedDict())
+    t0 = _t.monotonic()
+    r = llm.complete_json("s", "u", timeout=0.4, total=1.2)
+    assert r.model == "fast" and calls == ["slow", "fast"]  # «slow» не повторяли
+    assert _t.monotonic() - t0 < 1.3  # итог в пределах общего бюджета
+
+
+def test_total_budget_gives_template(monkeypatch):
+    import time as _t
+
+    class Prov(_FakeProv):
+        def models_for(self, purpose):
+            return ["slow"]
+
+        def complete(self, system, user, temperature, max_tokens, timeout, model=None):
+            _t.sleep(2)
+            return "{}"
+
+    monkeypatch.setattr(llm, "get_provider", lambda: Prov())
+    monkeypatch.setattr(llm, "_cooldown", {})
+    monkeypatch.setattr(llm, "_cache", llm.OrderedDict())
+    t0 = _t.monotonic()
+    with pytest.raises(llm.LLMError):
+        llm.complete_json("s", "u2", timeout=0.4, total=0.8)
+    assert _t.monotonic() - t0 < 0.9

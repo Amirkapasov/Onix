@@ -19,6 +19,7 @@ from .models import RecommendRequest
 from .parse import PARSE_SYSTEM, detect_lang, merge_llm, rule_parse
 from .rank import HERE_PENALTY_INTENTS, Ctx, _not_destination, hard_filter, make_cand, rank
 from .route import build_route
+from . import search as search_mod
 from .search import index
 from .validate import validate
 from .weather import get_weather
@@ -56,6 +57,7 @@ async def recommend(req: RecommendRequest) -> dict:
     rid = uuid.uuid4().hex[:12]
     pois = store.get()
     index.ensure()
+    search_mod.mark_user_activity()  # фоновая сборка индекса уступает живым запросам
     query = req.query.strip()
     lang = req.lang or (detect_lang(query) if query else "ru")
     rules = rule_parse(query, lang)
@@ -79,7 +81,8 @@ async def recommend(req: RecommendRequest) -> dict:
                                          config.LLM_PARSE_MODE == "auto" and weak_rules):
         parse_task = asyncio.wait_for(asyncio.to_thread(
             llm.complete_json, PARSE_SYSTEM, query, temperature=0.0, max_tokens=300,
-            timeout=config.LLM_PARSE_TIMEOUT_S, purpose="parse"), timeout=config.LLM_PARSE_TIMEOUT_S)
+            timeout=config.LLM_PARSE_TIMEOUT_S, total=config.LLM_PARSE_TIMEOUT_S, purpose="parse"),
+            timeout=config.LLM_PARSE_TIMEOUT_S + 0.3)
     weather_task = get_weather(when, rules.get("temperature_hint"),
                                req.weather_override.model_dump() if req.weather_override else None)
     llm_parsed = None
@@ -202,7 +205,7 @@ async def recommend(req: RecommendRequest) -> dict:
         try:
             res = await asyncio.wait_for(asyncio.to_thread(
                 llm.complete_json, GEN_SYSTEM, build_user_prompt(query, ctx, top), temperature=0.4,
-                max_tokens=1500), timeout=config.LLM_TIMEOUT_S)
+                max_tokens=1500), timeout=config.LLM_TOTAL_BUDGET_S + 0.5)
             llm_data = res.data
             llm_info = {"provider": res.provider, "model": res.model, "latency_ms": llm_ms + res.latency_ms}
         except (llm.LLMError, asyncio.TimeoutError) as e:
