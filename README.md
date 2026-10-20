@@ -8,7 +8,7 @@
 
 *Seruen — от казахского «серуен», «прогулка».*
 
-[**▶ Открыть демо**](https://seruen-hsvmox55fa-ew.a.run.app) · [Концепция](docs/CONCEPT.md) · [Как работает RAG](docs/RAG.md) · [Тестовые сценарии](docs/TEST_SCENARIOS.md) · [Этика и приватность](docs/ETHICS_PRIVACY.md) · [Питч](docs/PITCH.md)
+[**▶ Открыть демо**](https://seruen-hsvmox55fa-ew.a.run.app) · [Концепция](docs/CONCEPT.md) · [Как работает RAG](docs/RAG.md) · [Тестовые сценарии](docs/TEST_SCENARIOS.md) · [Этика и приватность](docs/ETHICS_PRIVACY.md)
 
 ![Gemini](https://img.shields.io/badge/LLM-Gemini-4285F4?logo=googlegemini&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi&logoColor=white)
@@ -132,7 +132,7 @@ python3 eval/run_eval.py --delay 13
 | [`backend/`](backend/) | FastAPI: разбор → фильтры → гибридный поиск → ранжирование → Gemini → валидатор → маршрут |
 | [`frontend/`](frontend/) | React + Vite + Leaflet: карта + чат, пресеты, ползунок времени, кнопки навигатора, три языка |
 | [`contracts/`](contracts/) | Общий контракт: `api.md`, `poi.schema.json` |
-| [`docs/`](docs/) · [`eval/`](eval/) | Концепция, RAG, этика, ограничения, питч, сценарий видео · 38 тестовых сценариев и авто-оценка |
+| [`docs/`](docs/) · [`eval/`](eval/) | Концепция, RAG, этика, ограничения · 38 тестовых сценариев и авто-оценка |
 | [`deploy/`](deploy/) | Cloud Run: один сервис — API + собранный фронтенд |
 
 ## 🛣️ Дальше
