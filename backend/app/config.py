@@ -82,5 +82,10 @@ WEIGHTS_NEED = {
     "relevance": 0.10, "constraints": 0.12, "proximity": 0.40, "quality": 0.18, "data_quality": 0.04,
     "hours": 0.12, "weather": 0.02, "daytime": 0.02,
 }
+# Туристический запрос («главные достопримечательности», «я турист»): известность важнее близости
+WEIGHTS_SIGHT = {
+    "relevance": 0.15, "constraints": 0.15, "proximity": 0.10, "quality": 0.35, "data_quality": 0.12,
+    "hours": 0.08, "weather": 0.03, "daytime": 0.02,
+}
 DIVERSITY_PENALTY = 0.12  # штраф за повтор категории в выдаче
 LLM_CANDIDATES = 9

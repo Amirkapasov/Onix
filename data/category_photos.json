@@ -230,7 +230,7 @@
     "license": "CC0",
     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "source": "wikimedia_commons",
-    "depicts": "Хан Шатыр",
+    "depicts": "ТРЦ «Хан Шатыр»",
     "poi_id": "osm:way/460703779",
     "astana": true
    },
@@ -299,15 +299,15 @@
     "astana": true
    },
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG/960px-%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
-    "page_url": "https://commons.wikimedia.org/wiki/File:%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
-    "author": "Toshishiro",
-    "license": "CC BY-SA 3.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg/960px-Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+    "author": "颲風",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Этно-мемориальный комплекс Карта Казахстана Атамекен",
-    "poi_id": "osm:way/1460700597",
+    "depicts": "Музей «Нур Алем» (ЭКСПО)",
+    "poi_id": "seed:nur_alem",
     "astana": true
    }
   ],
@@ -333,7 +333,7 @@
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Ботанический сад",
+    "depicts": "Ботанический сад Астаны",
     "poi_id": "osm:way/1196402246",
     "astana": true
    },
@@ -377,6 +377,18 @@
   ],
   "religious": [
    {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg/960px-Rustam_Minnikhanov_on_Expo_2017_72.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Rustam_Minnikhanov_on_Expo_2017_72.jpg",
+    "author": "Лаззат Хайдаров",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Мечеть «Хазрет Султан»",
+    "poi_id": "osm:way/240860325",
+    "astana": true
+   },
+   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Astana_DSC04235_%287709902002%29.jpg",
     "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Astana_DSC04235_%287709902002%29.jpg/960px-Astana_DSC04235_%287709902002%29.jpg",
     "page_url": "https://commons.wikimedia.org/wiki/File:Astana_DSC04235_(7709902002).jpg",
@@ -386,18 +398,6 @@
     "source": "wikimedia_commons",
     "depicts": "Мечеть Абу Насыра аль-Фараби",
     "poi_id": "osm:relation/16827715",
-    "astana": true
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg/960px-Rustam_Minnikhanov_on_Expo_2017_72.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Rustam_Minnikhanov_on_Expo_2017_72.jpg",
-    "author": "Лаззат Хайдаров",
-    "license": "CC BY 4.0",
-    "license_url": "https://creativecommons.org/licenses/by/4.0",
-    "source": "wikimedia_commons",
-    "depicts": "мечеть \"Хазрет Султан\"",
-    "poi_id": "osm:way/240860325",
     "astana": true
    }
   ],
@@ -502,15 +502,15 @@
     "astana": true
    },
    {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Astana_-_190217_DSC_3875.jpg",
-    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Astana_-_190217_DSC_3875.jpg/960px-Astana_-_190217_DSC_3875.jpg",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Astana_-_190217_DSC_3875.jpg",
-    "author": "Ilya Varlamov",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD_%D0%A6%D0%9A%D0%97_2011_02.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD_%D0%A6%D0%9A%D0%97_2011_02.jpg/960px-%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD_%D0%A6%D0%9A%D0%97_2011_02.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD_%D0%A6%D0%9A%D0%97_2011_02.jpg",
+    "author": "Мазур Владимир",
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "wikimedia_commons",
-    "depicts": "Русский драматический театр им. М. Горького",
-    "poi_id": "wikidata:Q16433519",
+    "depicts": "Центральный концертный зал «Казахстан»",
+    "poi_id": "osm:way/1460537088",
     "astana": true
    }
   ],
@@ -523,7 +523,7 @@
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
     "source": "wikimedia_commons",
-    "depicts": "Байтерек",
+    "depicts": "Монумент «Байтерек»",
     "poi_id": "osm:way/230401645",
     "astana": true
    },

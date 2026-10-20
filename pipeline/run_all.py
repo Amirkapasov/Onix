@@ -90,6 +90,11 @@ def main() -> int:
     pois, dups2 = normalize.dedupe(pois)  # после Wikidata имена стали русскими — второй проход
     dups += dups2
 
+    import sights
+    st = sights.apply(pois)
+    status["sights"] = (f"главных мест (must_see) {st['must_see']}, учреждений → other/institution "
+                        f"{st['institution']}, транспорт {st['transport']}")
+
     log("    Фото (Wikimedia Commons)")
     images = None
     if args.skip_images:

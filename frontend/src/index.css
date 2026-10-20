@@ -1,64 +1,84 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  /* «Небо Астаны»: голубой как на флаге + золотой акцент */
-  --color-sky-50: #eef9ff;
-  --color-sky-100: #d8f1ff;
-  --color-sky-200: #b9e7ff;
-  --color-sky-300: #89d9ff;
-  --color-sky-400: #52c2fc;
-  --color-sky-500: #1ba7ef;
-  --color-sky-600: #0a8fd1;
-  --color-sky-700: #0b70a8;
-  --color-sky-800: #0f5e8a;
-  --color-sky-900: #134e72;
-  --color-amber-300: #ffd84d;
-  --color-amber-400: #f5b700;
+  --font-sans: "Onest", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: "Unbounded", "Onest", ui-sans-serif, system-ui, sans-serif;
+
+  /* Астана: глубокий синий для текста, бирюза неба и золото солнца с флага — как акценты */
+  --color-ink-950: #06182f;
+  --color-ink-900: #0b2545;
+  --color-ink-800: #13315c;
+  --color-ink-700: #24446f;
+  --color-ink-600: #3e5677;
+  --color-ink-500: #5b6b82;
+  --color-ink-400: #8693a6;
+  --color-ink-300: #b6c0cd;
+  --color-ink-200: #dbe1e8;
+  --color-ink-100: #ecf0f4;
+  --color-ink-50: #f6f8fa;
+
+  --color-teal-700: #00798c;
+  --color-teal-600: #0094ab;
+  --color-teal-500: #00afca;
+  --color-teal-100: #d3f1f6;
+  --color-teal-50: #ebf9fb;
+
+  --color-sun-600: #d9a400;
+  --color-sun-500: #fec50c;
+  --color-sun-100: #fff3c4;
+  --color-sun-50: #fffaeb;
+
+  --color-open: #12a150;
+  --color-maybe: #e0a800;
+  --color-closed: #d1435b;
 }
 
 html { -webkit-text-size-adjust: 100%; }
-body { @apply bg-slate-50 font-sans text-slate-900 antialiased; }
+body { @apply bg-white font-sans text-ink-900 antialiased; font-feature-settings: "tnum" 0; }
+.font-display { letter-spacing: -0.01em; }
+::selection { background: var(--color-sun-100); }
 
-/* Нумерованные маркеры рекомендаций */
-.rec-marker {
-  width: 40px; height: 40px;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
-  background: #0a8fd1;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 0.3);
+/* ---------- Карта ---------- */
+.leaflet-container { font-family: var(--font-sans); background: #eef2f5; }
+/* OSM в фирменной гамме: меньше насыщенности, чуть холоднее — маркеры и маршрут читаются лучше */
+.tiles-muted { filter: saturate(0.35) brightness(1.06) contrast(0.92) hue-rotate(-8deg); }
+.leaflet-tooltip {
+  font-family: var(--font-sans); font-size: 13px; font-weight: 600; color: var(--color-ink-900);
+  border: 0; border-radius: 10px; padding: 6px 10px; box-shadow: 0 4px 16px rgb(11 37 69 / .16);
+}
+.leaflet-tooltip-top::before { border-top-color: #fff; }
+.leaflet-control-attribution { font-size: 10px; background: rgb(255 255 255 / .85) !important; }
+.leaflet-control-zoom { border: 0 !important; box-shadow: 0 2px 10px rgb(11 37 69 / .15) !important; border-radius: 12px !important; overflow: hidden; }
+.leaflet-control-zoom a { color: var(--color-ink-900) !important; width: 36px !important; height: 36px !important; line-height: 36px !important; }
+
+/* Нумерованный маркер рекомендации */
+.rec-pin { position: relative; width: 36px; height: 36px; }
+.rec-pin__dot {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--color-ink-900); color: #fff; border: 3px solid #fff;
+  box-shadow: 0 3px 10px rgb(11 37 69 / .35);
   display: flex; align-items: center; justify-content: center;
-  transition: transform .15s ease, background .15s ease;
+  font: 700 15px/1 var(--font-sans);
+  transition: transform .18s ease, background-color .18s ease, color .18s ease;
 }
-.rec-marker span {
-  transform: rotate(45deg);
-  color: #fff; font-weight: 900; font-size: 18px; font-family: var(--font-sans);
-}
-.rec-marker--active {
-  background: #f5b700;
-  transform: rotate(-45deg) scale(1.25);
-}
-.rec-marker--active span { color: #0f172a; }
-/* Значок категории на маркере */
-.rec-cat {
-  position: absolute; top: -10px; left: 26px;
-  width: 24px; height: 24px; border-radius: 50%;
-  background: #fff; box-shadow: 0 2px 6px rgb(0 0 0 / .25);
+.rec-pin__cat {
+  position: absolute; right: -8px; top: -8px; width: 22px; height: 22px; border-radius: 50%;
+  background: #fff; color: var(--color-teal-600); box-shadow: 0 1px 4px rgb(11 37 69 / .25);
   display: flex; align-items: center; justify-content: center;
-  font-size: 14px; line-height: 1;
 }
+.rec-pin--active .rec-pin__dot { background: var(--color-sun-500); color: var(--color-ink-900); transform: scale(1.18); }
 
-.leaflet-container { font-family: var(--font-sans); background: #e8f1f6; }
-.leaflet-tooltip { font-size: 14px; font-weight: 600; }
+/* ---------- Анимации ---------- */
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise .4s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes shimmer { 0% { background-position: -400px 0; } 100% { background-position: 400px 0; } }
+.skeleton {
+  background: linear-gradient(90deg, var(--color-ink-100) 0, var(--color-ink-50) 40%, var(--color-ink-100) 80%);
+  background-size: 800px 100%; animation: shimmer 1.4s infinite linear;
+}
+@media (prefers-reduced-motion: reduce) { .rise, .skeleton { animation: none; } }
+.static .rise { animation: none; }
 
-/* Ползунок времени */
-.time-range { appearance: none; height: 10px; border-radius: 999px;
-  background: linear-gradient(90deg, #f5b700 0%, #52c2fc 30%, #1ba7ef 55%, #f59e0b 78%, #1e1b4b 100%); }
-.time-range::-webkit-slider-thumb { appearance: none; width: 28px; height: 28px; border-radius: 50%;
-  background: #fff; border: 4px solid #0a8fd1; box-shadow: 0 2px 6px rgb(0 0 0 / .25); cursor: pointer; }
-.time-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%;
-  background: #fff; border: 4px solid #0a8fd1; cursor: pointer; }
-
-@keyframes card-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-.card-in { animation: card-in .35s ease both; }
+/* Горизонтальная лента без полосы прокрутки */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

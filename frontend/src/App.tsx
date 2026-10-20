@@ -1,12 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { ArrowRight, ChevronDown, ChevronRight, LoaderCircle, LocateFixed, MapPin, RotateCcw, SlidersHorizontal, X } from 'lucide-react'
 import MapView from './components/MapView'
 import Controls, { type ControlsState } from './components/Controls'
 import Results from './components/Results'
 import ContextUsed from './components/ContextUsed'
-import { ApiError, USE_MOCK, fetchHealth, fetchPois, fetchPresets, recommend } from './api'
+import { ApiError, USE_MOCK, fetchCategoryPhotos, fetchHealth, fetchPois, fetchPresets, recommend } from './api'
+import Ornament from './components/Ornament'
+import { Credit } from './components/Photo'
+import { presetVisual } from './components/Icons'
+import { FALLBACK_PHOTOS, imgSrc } from './photos'
 import { coarsen, isoClock, slotToIso } from './geo'
-import { DICTS, presetIcon, type Dict } from './i18n'
-import type { Lang, LatLon, Poi, Preset, RecommendRequest, RecommendResponse } from './types'
+import { DICTS, type Dict } from './i18n'
+import type { CategoryPhotos, Lang, LatLon, Poi, Preset, RecommendRequest, RecommendResponse } from './types'
 
 const LANG_KEY = 'seruen.lang'
 // ?static=1 — без плавных анимаций (для скриншотов headless-браузером)
@@ -81,6 +86,8 @@ export default function App() {
   const [pois, setPois] = useState<Poi[]>([])
   const [geoAsk, setGeoAsk] = useState(false)
   const [geoErr, setGeoErr] = useState(false)
+  const [paramsOpen, setParamsOpen] = useState(false)
+  const [photos, setPhotos] = useState<CategoryPhotos>(FALLBACK_PHOTOS)
 
   const lastReq = useRef<{ req: RecommendRequest; presetId?: string } | null>(null)
   const resultsRef = useRef<HTMLDivElement>(null)
@@ -99,6 +106,7 @@ export default function App() {
     fetchPresets()
       .then(setPresets)
       .catch(() => setPresets([]))
+    fetchCategoryPhotos().then(setPhotos)
     if (!USE_MOCK) {
       fetchHealth().then(setBackendUp)
       fetchPois([51.0, 71.3, 51.22, 71.6])
@@ -265,107 +273,112 @@ export default function App() {
   }, [lang])
 
   const shownLoc = coarsen(location)
+  const idle = !shown && !loading && !error
+  // Обложка — первое фото курированного списка (стабильно для демо и скриншотов).
+  const hero = photos.hero[0] ?? null
 
   return (
-    <div className="flex min-h-dvh flex-col bg-slate-50 lg:h-dvh">
-      {/* Шапка */}
-      <header className="z-10 flex items-center justify-between gap-3 bg-gradient-to-r from-sky-700 via-sky-600 to-sky-500 px-4 py-3 text-white shadow-md sm:px-6">
-        <div className="flex min-w-0 items-center gap-3">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-amber-400 text-2xl shadow-inner">
-            ☀️
-          </div>
-          <div className="min-w-0">
-            <h1 className="text-2xl font-black leading-none tracking-tight">Серуен</h1>
-            <p className="truncate text-sm font-medium text-sky-100">{t.tagline}</p>
-          </div>
-        </div>
-        <div className="flex shrink-0 items-center gap-2">
-          <span
-            className={`hidden rounded-full px-3 py-1 text-xs font-bold sm:inline-block ${
-              USE_MOCK ? 'bg-white/20' : backendUp === false ? 'bg-rose-500' : 'bg-emerald-500'
-            }`}
-          >
-            {USE_MOCK ? t.mockBadge : `● ${t.liveBadge}`}
-          </span>
-          <div className="flex rounded-full bg-white/15 p-0.5" role="group" aria-label="Language">
-            {LANGS.map((l) => (
-              <button
-                key={l.id}
-                onClick={() => setLang(l.id)}
-                aria-pressed={lang === l.id}
-                className={`rounded-full px-2.5 py-1 text-sm font-bold transition sm:px-3 ${
-                  lang === l.id ? 'bg-white text-sky-700' : 'text-white hover:bg-white/10'
-                }`}
-              >
-                {l.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </header>
+    <div className="min-h-dvh bg-white lg:grid lg:h-dvh lg:grid-cols-[minmax(420px,520px)_1fr] xl:grid-cols-[600px_1fr]">
+      {/* Карта: на мобиле — сверху (лист выдачи наезжает на неё), на десктопе — справа */}
+      <section className="sticky top-0 z-0 h-[42vh] max-h-[460px] min-h-[280px] lg:order-2 lg:h-dvh lg:max-h-none">
+        <MapView
+          location={location}
+          result={result}
+          hovered={hovered}
+          onHover={setHovered}
+          onPick={(p) => pickLocation(p)}
+          onMarkerClick={(i) => {
+            setHovered(i)
+            setFocusIndex(i)
+          }}
+          pois={pois}
+          hint={t.locationHint}
+          coarseLabel={t.locationCoarse}
+          lang={lang}
+        />
+      </section>
 
-      <main className="flex flex-1 flex-col lg:min-h-0 lg:flex-row">
-        {/* Карта */}
-        <section className="relative h-[46vh] max-h-[480px] min-h-[300px] lg:h-auto lg:max-h-none lg:flex-1">
-          <MapView
-            location={location}
-            result={result}
-            hovered={hovered}
-            onHover={setHovered}
-            onPick={(p) => pickLocation(p)}
-            onMarkerClick={(i) => {
-              setHovered(i)
-              setFocusIndex(i)
-            }}
-            pois={pois}
-            hint={t.locationHint}
-            coarseLabel={t.locationCoarse}
-            lang={lang}
-          />
-        </section>
+      {/* Панель / bottom sheet */}
+      <aside className="relative z-10 -mt-6 rounded-t-[28px] bg-white shadow-[0_-10px_30px_rgb(11_37_69/0.10)] lg:order-1 lg:mt-0 lg:overflow-y-auto lg:rounded-none lg:border-r lg:border-ink-100 lg:shadow-none">
+        <div className="mx-auto mt-2.5 h-1.5 w-10 rounded-full bg-ink-200 lg:hidden" aria-hidden />
 
-        {/* Панель */}
-        <aside className="w-full lg:w-[480px] lg:shrink-0 lg:overflow-y-auto xl:w-[600px]">
-          <div className="space-y-5 p-4 sm:p-6">
-            {/* Локация */}
-            <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl bg-white px-4 py-3 shadow-sm ring-1 ring-slate-200">
+        <header className="z-20 flex items-center justify-between gap-3 bg-white px-5 pb-3 pt-3 sm:px-7 lg:sticky lg:top-0 lg:border-b lg:border-ink-100 lg:pt-4">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <Ornament className="h-6 w-12 shrink-0 text-sun-500" />
+            <div className="min-w-0">
+              <p className="font-display text-[22px] font-semibold leading-none text-ink-900">Серуен</p>
+              <p className="mt-1 truncate text-[12px] text-ink-500">{t.tagline}</p>
+            </div>
+          </div>
+          <div className="flex shrink-0 items-center gap-3">
+            <span className="hidden items-center gap-1.5 text-[12px] text-ink-500 sm:inline-flex" title={USE_MOCK ? t.mockBadge : t.liveBadge}>
+              <span className={`h-2 w-2 rounded-full ${USE_MOCK ? 'bg-sun-500' : backendUp === false ? 'bg-closed' : 'bg-open'}`} />
+              {USE_MOCK ? t.mockBadge : t.liveBadge}
+            </span>
+            <div className="flex rounded-full border border-ink-200 p-0.5" role="group" aria-label="Language">
+              {LANGS.map((l) => (
+                <button
+                  key={l.id}
+                  onClick={() => setLang(l.id)}
+                  aria-pressed={lang === l.id}
+                  className={`rounded-full px-2.5 py-1 text-[13px] font-semibold transition ${
+                    lang === l.id ? 'bg-ink-900 text-white' : 'text-ink-600 hover:text-ink-900'
+                  }`}
+                >
+                  {l.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </header>
+
+        <div className="space-y-6 px-5 pb-10 pt-2 sm:px-7">
+          {idle && <Hero hero={hero} t={t} />}
+
+          {/* Локация */}
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+            <div className="flex min-w-0 items-center gap-2.5">
+              <MapPin className="h-5 w-5 shrink-0 text-teal-600" strokeWidth={1.8} />
               <div className="min-w-0">
-                <p className="truncate text-[17px] font-bold text-slate-900">📍 {labelText(locationLabel)}</p>
-                <p className="text-[13px] text-slate-500">
+                <p className="truncate text-[16px] font-semibold text-ink-900">{labelText(locationLabel)}</p>
+                <p className="text-[12px] text-ink-400">
                   ≈ {shownLoc.lat.toFixed(3)}, {shownLoc.lon.toFixed(3)} · {t.locationCoarse}
                 </p>
               </div>
-              <button
-                type="button"
-                onClick={() => setGeoAsk(true)}
-                className="rounded-full border-2 border-sky-200 px-3 py-1.5 text-sm font-semibold text-sky-700 hover:bg-sky-50"
-              >
-                🎯 {t.myLocation}
-              </button>
-              {geoAsk && (
-                <div className="w-full rounded-xl bg-sky-50 p-3 text-[14px] text-slate-700">
-                  <p className="font-bold text-slate-900">{t.geoConsentTitle}</p>
-                  <p className="mt-1">{t.geoConsentText}</p>
-                  <div className="mt-2 flex gap-2">
-                    <button onClick={askGeo} className="rounded-full bg-sky-600 px-4 py-1.5 font-semibold text-white">
-                      {t.allow}
-                    </button>
-                    <button onClick={() => setGeoAsk(false)} className="rounded-full px-4 py-1.5 font-semibold text-slate-600 hover:bg-white">
-                      {t.cancel}
-                    </button>
-                  </div>
-                </div>
-              )}
-              {geoErr && <p className="w-full text-[14px] text-rose-700">{t.geoError}</p>}
             </div>
+            <button
+              type="button"
+              onClick={() => setGeoAsk(true)}
+              className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 px-3 py-1.5 text-[13px] font-medium text-ink-800 hover:border-ink-400"
+            >
+              <LocateFixed className="h-4 w-4 text-teal-600" strokeWidth={1.8} />
+              {t.myLocation}
+            </button>
+            {geoAsk && (
+              <div className="w-full rounded-2xl border border-ink-100 p-4 text-[14px] text-ink-700">
+                <p className="font-semibold text-ink-900">{t.geoConsentTitle}</p>
+                <p className="mt-1 leading-snug">{t.geoConsentText}</p>
+                <div className="mt-3 flex gap-2">
+                  <button onClick={askGeo} className="rounded-full bg-ink-900 px-4 py-1.5 font-semibold text-white hover:bg-ink-800">
+                    {t.allow}
+                  </button>
+                  <button onClick={() => setGeoAsk(false)} className="rounded-full px-4 py-1.5 font-semibold text-ink-600 hover:bg-ink-50">
+                    {t.cancel}
+                  </button>
+                </div>
+              </div>
+            )}
+            {geoErr && <p className="w-full text-[14px] text-closed">{t.geoError}</p>}
+          </div>
 
-            {/* Запрос */}
+          {/* Запрос */}
+          <div>
             <form
               onSubmit={(e) => {
                 e.preventDefault()
                 submit()
               }}
-              className="rounded-3xl bg-white p-2 shadow-md ring-2 ring-sky-100 focus-within:ring-sky-400"
+              className="rounded-2xl border border-ink-200 bg-white p-1.5 transition focus-within:border-teal-500 focus-within:ring-4 focus-within:ring-teal-100"
             >
               <textarea
                 value={query}
@@ -381,117 +394,167 @@ export default function App() {
                 }}
                 rows={2}
                 placeholder={t.queryPlaceholder}
-                className="w-full resize-none rounded-2xl px-3 py-2 text-[18px] leading-snug text-slate-900 outline-none placeholder:text-slate-400"
+                className="w-full resize-none bg-transparent px-3 py-2 text-[17px] leading-snug text-ink-900 outline-none placeholder:text-ink-400"
               />
-              <div className="flex flex-wrap items-center justify-between gap-2 pl-3">
-                <SendSummary t={t} c={controls} budget={timeBudget} fromPreset={!!preset} onClearBudget={() => setUserBudget(null)} />
+              <div className="flex items-center justify-end gap-2 px-1 pb-1">
                 <button
                   type="submit"
                   disabled={!query.trim()}
-                  className="rounded-2xl bg-amber-400 px-6 py-3 text-[17px] font-extrabold text-slate-900 shadow-sm transition hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="inline-flex items-center gap-2 rounded-xl bg-ink-900 px-5 py-2.5 text-[15px] font-semibold text-white transition hover:bg-ink-800 disabled:cursor-not-allowed disabled:bg-ink-200 disabled:text-ink-400"
                 >
-                  {loading ? '…' : `${t.send} →`}
+                  {loading ? <LoaderCircle className="h-4 w-4 animate-spin" strokeWidth={2} /> : null}
+                  {t.send}
+                  {!loading && <ArrowRight className="h-4 w-4" strokeWidth={2} />}
                 </button>
               </div>
             </form>
 
-            {history.length > 0 && (
-              <div className="-mt-2 flex flex-wrap items-center gap-1.5">
-                <span className="text-[13px] font-semibold text-slate-400">{t.history}:</span>
-                {history.map((h) => (
-                  <button
-                    key={h}
-                    onClick={() => submit(h)}
-                    className="max-w-[260px] truncate rounded-full bg-slate-200/70 px-3 py-1 text-[13px] text-slate-700 hover:bg-slate-200"
-                    title={h}
-                  >
-                    ↺ {h}
+            <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2">
+              <SendSummary t={t} c={controls} budget={timeBudget} fromPreset={!!preset} onClearBudget={() => setUserBudget(null)} />
+              <button
+                type="button"
+                onClick={() => setParamsOpen((o) => !o)}
+                aria-expanded={paramsOpen}
+                className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-teal-700 hover:text-teal-600"
+              >
+                <SlidersHorizontal className="h-4 w-4" strokeWidth={1.8} />
+                {t.params}
+                <ChevronDown className={`h-4 w-4 transition ${paramsOpen ? 'rotate-180' : ''}`} strokeWidth={1.8} />
+              </button>
+            </div>
+            {paramsOpen && (
+              <div className="rise mt-3 rounded-2xl border border-ink-100 p-4">
+                <Controls t={t} value={controls} onChange={changeControls} slotIso={slotToIso} />
+              </div>
+            )}
+
+            {history.length > 1 && (
+              <div className="no-scrollbar mt-3 flex items-center gap-3 overflow-x-auto whitespace-nowrap text-[13px]">
+                <span className="text-ink-400">{t.history}:</span>
+                {history.slice(1).map((h) => (
+                  <button key={h} onClick={() => submit(h)} title={h} className="inline-flex max-w-[240px] items-center gap-1 text-ink-600 hover:text-ink-900">
+                    <RotateCcw className="h-3.5 w-3.5 shrink-0 text-ink-400" strokeWidth={1.8} />
+                    <span className="truncate">{h}</span>
                   </button>
                 ))}
               </div>
             )}
+          </div>
 
-            {/* Пресеты */}
-            {presets.length > 0 && (
-              <div>
-                <h2 className="mb-2 text-sm font-bold uppercase tracking-wide text-slate-500">⚡ {t.presets}</h2>
-                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                  {presets.map((p) => (
+          {/* Сценарии */}
+          {presets.length > 0 &&
+            (idle ? (
+              <section>
+                <h2 className="font-display text-[17px] font-semibold text-ink-900">{t.presets}</h2>
+                <ul className="mt-2 divide-y divide-ink-100 border-y border-ink-100">
+                  {presets.map((p) => {
+                    const { Icon } = presetVisual(p.id, p.label)
+                    return (
+                      <li key={p.id}>
+                        <button onClick={() => applyPreset(p)} className="group flex w-full items-center gap-4 py-3.5 text-left">
+                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-700 transition group-hover:bg-teal-500 group-hover:text-white">
+                            <Icon className="h-5 w-5" strokeWidth={1.8} />
+                          </span>
+                          <span className="min-w-0 flex-1 text-[16px] font-medium leading-snug text-ink-900">{p.label}</span>
+                          <ChevronRight className="h-5 w-5 shrink-0 text-ink-300 transition group-hover:translate-x-0.5 group-hover:text-ink-900" strokeWidth={1.8} />
+                        </button>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </section>
+            ) : (
+              <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 sm:-mx-7 sm:px-7">
+                {presets.map((p) => {
+                  const { Icon } = presetVisual(p.id, p.label)
+                  const on = activePreset === p.id
+                  return (
                     <button
                       key={p.id}
                       onClick={() => applyPreset(p)}
-                      className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-left text-[16px] font-bold leading-tight shadow-sm ring-2 transition disabled:opacity-60 ${
-                        activePreset === p.id
-                          ? 'bg-sky-600 text-white ring-sky-600'
-                          : 'bg-white text-slate-800 ring-slate-200 hover:-translate-y-0.5 hover:ring-sky-400'
+                      className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-3.5 py-2 text-[13px] font-medium transition ${
+                        on ? 'border-ink-900 bg-ink-900 text-white' : 'border-ink-200 text-ink-800 hover:border-ink-400'
                       }`}
                     >
-                      <span className="text-3xl">{p.icon ?? presetIcon(p.id, p.label)}</span>
-                      <span>{p.label}</span>
+                      <Icon className={`h-4 w-4 ${on ? 'text-sun-500' : 'text-teal-600'}`} strokeWidth={1.8} />
+                      {p.label}
                     </button>
-                  ))}
-                </div>
+                  )
+                })}
+              </div>
+            ))}
+
+          {/* Результаты */}
+          <div ref={resultsRef} className="scroll-mt-20 space-y-8">
+            {loading && <Skeleton text={t.loading} />}
+
+            {!loading && error && (
+              <div className="rounded-2xl border border-closed/30 p-5">
+                <p className="font-display text-[18px] font-semibold text-ink-900">{t.errorTitle}</p>
+                <p className="mt-1 text-[15px] text-ink-600">
+                  {error.message} <span className="text-ink-400">({error.code})</span>
+                </p>
+                <button
+                  onClick={() => lastReq.current && run(lastReq.current.req, lastReq.current.presetId)}
+                  className="mt-3 rounded-full bg-ink-900 px-5 py-2 text-[14px] font-semibold text-white hover:bg-ink-800"
+                >
+                  {t.retry}
+                </button>
               </div>
             )}
 
-            <Controls t={t} value={controls} onChange={changeControls} slotIso={slotToIso} />
-
-            {/* Результаты */}
-            <div ref={resultsRef} className="scroll-mt-4 space-y-4">
-              {loading && <Skeleton text={t.loading} />}
-
-              {!loading && error && (
-                <div className="rounded-3xl border-2 border-rose-200 bg-rose-50 p-5">
-                  <p className="text-lg font-extrabold text-rose-900">😕 {t.errorTitle}</p>
-                  <p className="mt-1 text-[15px] text-rose-800">
-                    {error.message} <span className="text-rose-500">({error.code})</span>
-                  </p>
-                  <button
-                    onClick={() => lastReq.current && run(lastReq.current.req, lastReq.current.presetId)}
-                    className="mt-3 rounded-full bg-rose-600 px-5 py-2 font-bold text-white hover:bg-rose-500"
-                  >
-                    {t.retry}
-                  </button>
-                </div>
-              )}
-
-              {!loading && !error && result && (
-                <>
-                  <Results
-                    result={shown!.res}
-                    query={shown!.req.query}
-                    t={t}
-                    lang={lang}
-                    mode={shown!.req.mode}
-                    onWiden={widen}
-                    hovered={hovered}
-                    onHover={setHovered}
-                    focusIndex={focusIndex}
-                  />
-                  <ContextUsed result={shown!.res} t={t} />
-                </>
-              )}
-
-              {!loading && !error && !result && (
-                <div className="rounded-3xl border-2 border-dashed border-sky-200 bg-sky-50/60 p-6 text-center">
-                  <p className="text-4xl">🧭</p>
-                  <p className="mt-2 text-xl font-extrabold text-slate-900">{t.emptyTitle}</p>
-                  <p className="mx-auto mt-1 max-w-md text-[16px] text-slate-600">{t.emptyText}</p>
-                </div>
-              )}
-            </div>
-
-            <p className="pb-2 text-center text-[12px] text-slate-400">
-              Серуен · OpenStreetMap, Wikidata, 2GIS · {USE_MOCK ? 'mock' : 'api'}
-            </p>
+            {!loading && !error && shown && (
+              <>
+                <Results
+                  result={shown.res}
+                  query={shown.req.query}
+                  t={t}
+                  lang={lang}
+                  mode={shown.req.mode}
+                  onWiden={widen}
+                  hovered={hovered}
+                  onHover={setHovered}
+                  focusIndex={focusIndex}
+                  photos={photos}
+                />
+                <ContextUsed result={shown.res} t={t} />
+              </>
+            )}
           </div>
-        </aside>
-      </main>
+
+          <p className="border-t border-ink-100 pt-4 text-[12px] leading-relaxed text-ink-400">{t.credits}</p>
+        </div>
+      </aside>
     </div>
   )
 }
 
-/** Что уйдёт на сервер: режим, время, фильтры — всегда на виду рядом с кнопкой. */
+function Hero({ hero, t }: { hero: import('./types').ImageRef | null; t: Dict }) {
+  return (
+    <figure className="rise">
+      <div className="relative h-[230px] overflow-hidden rounded-3xl bg-ink-900 sm:h-[300px]">
+        {hero && (
+          <img
+            src={imgSrc(hero)}
+            alt={t.heroAlt}
+            referrerPolicy="no-referrer"
+            className="absolute inset-0 h-full w-full object-cover"
+            onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+          />
+        )}
+        {/* затемнение снизу — только чтобы заголовок читался на фото */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgb(6_24_47/0.78),rgb(6_24_47/0.1)_60%,transparent)]" />
+        <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+          <h1 className="max-w-[18ch] font-display text-[26px] font-semibold leading-[1.15] text-white sm:text-[32px]">{t.heroTitle}</h1>
+          <p className="mt-2 max-w-[42ch] text-[15px] leading-snug text-white/85">{t.heroSub}</p>
+        </div>
+      </div>
+      {hero && <Credit img={hero} t={t} />}
+    </figure>
+  )
+}
+
+/** Что уйдёт на сервер: режим, время, фильтры — всегда на виду под полем запроса. */
 function SendSummary({
   t,
   c,
@@ -505,52 +568,49 @@ function SendSummary({
   fromPreset: boolean
   onClearBudget: () => void
 }) {
-  const time = c.presetTime ? isoClock(c.presetTime) : `${t[`slot_${c.slot}` as const]} ${isoClock(slotToIso(c.slot))}`
+  const time = c.presetTime ? isoClock(c.presetTime) : `${t[`slot_${c.slot}` as const]}, ${isoClock(slotToIso(c.slot))}`
   const parts = [
-    c.mode === 'car' ? `🚗 ${t.car}` : `🚶 ${t.walk}`,
-    `🕒 ${time}`,
-    c.withKids ? '🧒' : null,
-    c.accessibility ? '♿' : null,
-    c.groupSize > 1 ? `👥${c.groupSize}` : null,
-    c.indoorOnly ? '🏠' : null,
-    c.weather ? `❄️ ${c.weather.temp_c}°` : null,
+    c.mode === 'car' ? t.car : t.walk,
+    time,
+    c.withKids ? t.withKids : null,
+    c.accessibility ? t.accessibility : null,
+    c.groupSize > 1 ? `${t.group} ${c.groupSize}` : null,
+    c.indoorOnly ? t.indoorOnly : null,
+    c.weather ? `${t.winter} ${c.weather.temp_c}°` : null,
   ].filter(Boolean)
   return (
-    <p className="min-w-0 text-[13px] font-medium text-slate-500">
+    <p className="min-w-0 text-[13px] text-ink-500">
       {parts.join(' · ')}
       {budget != null && (
         <>
-          {' · '}⏱ {budget >= 60 && budget % 60 === 0 ? `${budget / 60} ${t.hourShort}` : `${budget} ${t.min}`}
+          {' · '}
+          {budget >= 60 && budget % 60 === 0 ? `${budget / 60} ${t.hourShort}` : `${budget} ${t.min}`}
           {!fromPreset && (
-            <button type="button" onClick={onClearBudget} className="ml-1 rounded-full px-1 text-slate-400 hover:text-slate-700" aria-label="×">
-              ×
+            <button type="button" onClick={onClearBudget} className="ml-0.5 inline-flex align-middle text-ink-400 hover:text-ink-800" aria-label="×">
+              <X className="h-3.5 w-3.5" strokeWidth={2} />
             </button>
           )}
         </>
       )}
-      {fromPreset && <span className="ml-1.5 rounded-full bg-sky-100 px-2 py-0.5 text-sky-700">{t.fromPreset}</span>}
+      {fromPreset && <span className="ml-1.5 text-teal-700">· {t.fromPreset}</span>}
     </p>
   )
 }
 
 function Skeleton({ text }: { text: string }) {
   return (
-    <div className="space-y-4" aria-busy>
-      <p className="flex items-center gap-2 text-[16px] font-semibold text-sky-700">
-        <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-sky-600 border-t-transparent" />
+    <div className="space-y-8" aria-busy>
+      <p className="flex items-center gap-2 text-[15px] text-ink-600">
+        <LoaderCircle className="h-4 w-4 animate-spin text-teal-600" strokeWidth={2} />
         {text}
       </p>
-      {[0, 1, 2].map((i) => (
-        <div key={i} className="animate-pulse rounded-3xl bg-white p-6 ring-1 ring-slate-200">
-          <div className="flex gap-4">
-            <div className="h-11 w-11 rounded-2xl bg-slate-200" />
-            <div className="flex-1 space-y-2">
-              <div className="h-5 w-2/3 rounded bg-slate-200" />
-              <div className="h-4 w-1/2 rounded bg-slate-100" />
-            </div>
-          </div>
-          <div className="mt-4 h-4 w-full rounded bg-slate-100" />
-          <div className="mt-2 h-4 w-5/6 rounded bg-slate-100" />
+      {[0, 1].map((i) => (
+        <div key={i} className="space-y-3">
+          <div className="skeleton aspect-[16/9] rounded-2xl" />
+          <div className="skeleton h-3 w-24 rounded" />
+          <div className="skeleton h-6 w-2/3 rounded" />
+          <div className="skeleton h-4 w-full rounded" />
+          <div className="skeleton h-4 w-5/6 rounded" />
         </div>
       ))}
     </div>

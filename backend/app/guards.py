@@ -64,7 +64,8 @@ GENERIC_WORDS = set(tokenize(
     "магазин магазины аптека продукты продуктовый сквер парк кафе кофейня ресторан столовая бар паб маркет "
     "минимаркет супермаркет детская площадка спортивная центр торговый дом фонтан памятник остановка стоянка "
     "парковка киоск павильон мини мечеть церковь библиотека музей кинотеатр театр бассейн сауна баня фитнес "
-    "спортзал салон красоты магазинчик гастроном универсам аптечный пункт shop store cafe park market pharmacy"))
+    "спортзал салон красоты магазинчик гастроном универсам аптечный пункт монумент трц тц жк "
+    "shop store cafe park market pharmacy"))
 
 
 def is_generic_name(name: str) -> bool:
@@ -86,6 +87,7 @@ def mentioned_pois(query: str, pois: list[dict]) -> list[dict]:
             continue
         for n in names:
             toks = [t for t in tokenize(core_name(n)) if len(t) >= 3]
+            toks = [t for t in toks if t not in GENERIC_WORDS] or toks  # «Монумент-Бәйтерек» ≈ «Байтерек»
             if toks and len(" ".join(toks)) >= 5 and all(t in q for t in toks):
                 out.append(p)
                 break

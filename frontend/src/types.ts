@@ -67,6 +67,26 @@ export interface SourceRef {
   url?: string | null
 }
 
+/** Фото под свободной лицензией (Wikimedia Commons). Показывается только с атрибуцией. */
+export interface ImageRef {
+  url: string
+  thumb_url?: string | null
+  page_url: string
+  author: string
+  license: string
+  license_url?: string | null
+  source?: string
+  // только у фото категорий (data/category_photos.json)
+  astana?: boolean
+  poi_id?: string
+  depicts?: string
+}
+
+export interface CategoryPhotos {
+  hero: ImageRef[]
+  categories: Record<string, ImageRef[]>
+}
+
 export interface Recommendation {
   poi_id: string
   name: string
@@ -83,6 +103,7 @@ export interface Recommendation {
   sources?: SourceRef[]
   rating?: number | null
   badges?: string[]
+  image?: ImageRef | null
 }
 
 export interface Idea {

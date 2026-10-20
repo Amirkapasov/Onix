@@ -1,5 +1,193 @@
 [
  {
+  "id": "osm:relation/16827715",
+  "name": "Мечеть Абу Насыра аль-Фараби",
+  "name_i18n": {
+   "ru": "Мечеть Абу Насыра аль-Фараби",
+   "kk": "Әбу Насыр әл-Фараби мешіті",
+   "en": "Abu Nasir Al-Farabi Mosque"
+  },
+  "lat": 51.126709,
+  "lon": 71.415767,
+  "category": "religious",
+  "tags": [
+   "culture",
+   "must_see",
+   "quiet",
+   "sight"
+  ],
+  "description": "Абу Насыра аль-Фараби — мечеть, расположенная в Астане. До открытия мечети Хазрет Султан являлась самой большой мечетью в Казахстане и в Центральной Азии. Мечеть имеет четыре минарета высотой по 62 метра, высота главного купола 43 метра, а общая площадь равна 3930 м².",
+  "description_source": "wikipedia",
+  "address": "Қабанбай Батыр даңғылы, 36",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 1.0,
+  "indoor": true,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/relation/16827715",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q1813417",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%B1%D1%83_%D0%9D%D0%B0%D1%81%D1%8B%D1%80%D0%B0_%D0%B0%D0%BB%D1%8C-%D0%A4%D0%B0%D1%80%D0%B0%D0%B1%D0%B8_(%D0%BC%D0%B5%D1%87%D0%B5%D1%82%D1%8C)",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Astana_DSC04235_%287709902002%29.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Astana_DSC04235_%287709902002%29.jpg/960px-Astana_DSC04235_%287709902002%29.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Astana_DSC04235_(7709902002).jpg",
+   "author": "jtstewart",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.45,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/166198046",
+  "name": "Резиденция «Ак Орда» (вид с площади)",
+  "name_i18n": {
+   "ru": "Резиденция «Ак Орда» (вид с площади)",
+   "kk": "Ақорда резиденциясы",
+   "en": "Ak Orda Presidential Palace"
+  },
+  "lat": 51.1258,
+  "lon": 71.446473,
+  "category": "landmark",
+  "tags": [
+   "24_7",
+   "free",
+   "must_see",
+   "night",
+   "photo",
+   "sight"
+  ],
+  "description": "Акорда — резиденция президента Казахстана. Является штаб-квартирой Администрации Президента.",
+  "description_source": "wikipedia",
+  "address": "4CGW+7GX, Ак орда, Левобережье",
+  "opening_hours": "24/7",
+  "opening_hours_source": "osm",
+  "opening_hours_checked_at": "2026-10-20",
+  "phone": "8 (702) 383 3734",
+  "website": "https://www.akorda.kz",
+  "rating": null,
+  "rating_count": null,
+  "popularity": 1.0,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": 0,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/166198046",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q413579",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D0%BE%D1%80%D0%B4%D0%B0_(%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D1%8F)",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Astana-2021-10_-_25.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Astana-2021-10_-_25.jpg/960px-Astana-2021-10_-_25.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_25.jpg",
+   "author": "Vyacheslav Bukharov",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.8,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/240860325",
+  "name": "Мечеть «Хазрет Султан»",
+  "name_i18n": {
+   "ru": "Мечеть «Хазрет Султан»",
+   "kk": "Әзірет Сұлтан мешіті",
+   "en": "Hazrat Sultan Mosque"
+  },
+  "lat": 51.125426,
+  "lon": 71.472193,
+  "category": "religious",
+  "tags": [
+   "culture",
+   "must_see",
+   "quiet",
+   "sight"
+  ],
+  "description": "Хазрет Султан — мечеть в Астане. Памятник истории и культуры местного значения.",
+  "description_source": "wikipedia",
+  "address": "Рақымжан Қошқарбаев даңғылы, 48",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 1.0,
+  "indoor": true,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/240860325",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q4494668",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%B7%D1%80%D0%B5%D1%82_%D0%A1%D1%83%D0%BB%D1%82%D0%B0%D0%BD_(%D0%BC%D0%B5%D1%87%D0%B5%D1%82%D1%8C)",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg/960px-Rustam_Minnikhanov_on_Expo_2017_72.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Rustam_Minnikhanov_on_Expo_2017_72.jpg",
+   "author": "Лаззат Хайдаров",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.45,
+  "updated_at": "2026-10-20"
+ },
+ {
   "id": "seed:nur_alem",
   "name": "Музей «Нур Алем» (ЭКСПО)",
   "name_i18n": {
@@ -9,12 +197,14 @@
   "lon": 71.4166,
   "category": "museum",
   "tags": [
+   "indoor",
    "interactive",
    "kids",
-   "indoor",
+   "must_see",
    "science",
-   "view",
-   "unusual"
+   "sight",
+   "unusual",
+   "view"
   ],
   "description": "Сферический павильон ЭКСПО-2017, музей энергии будущего с интерактивными экспозициями.",
   "description_source": "manual",
@@ -26,7 +216,7 @@
   "website": null,
   "rating": 4.8,
   "rating_count": null,
-  "popularity": 0.9,
+  "popularity": 1.0,
   "indoor": true,
   "wheelchair": "yes",
   "kid_friendly": true,
@@ -39,8 +229,78 @@
     "fetched_at": "2026-10-20"
    }
   ],
-  "image": null,
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg/960px-Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Expo_2017_%22Nur_Alem%22_Pavilion_Space_Exhibition.jpg",
+   "author": "颲風",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons"
+  },
   "data_quality": 0.65,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:relation/18901938",
+  "name": "Мечеть Нурсултан",
+  "name_i18n": {
+   "ru": "Мечеть Нурсултан",
+   "en": "Nursultan mosque",
+   "kk": "Астана қаласының бас мешіті"
+  },
+  "lat": 51.072903,
+  "lon": 71.410437,
+  "category": "religious",
+  "tags": [
+   "culture",
+   "must_see",
+   "quiet",
+   "sight"
+  ],
+  "description": "Мечеть Нурсултан — соборная мечеть в Астане, самая большая по вместимости мечеть Казахстана и Центральной Азии.",
+  "description_source": "wikipedia",
+  "address": "Мәігілік Ел көшесі, 65",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.897,
+  "indoor": true,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/relation/18901938",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q113675887",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%9D%D1%83%D1%80%D1%81%D1%83%D0%BB%D1%82%D0%B0%D0%BD",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Astana_Grand_Mosque_-_interior_dome_decoration.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Astana_Grand_Mosque_-_interior_dome_decoration.jpg/960px-Astana_Grand_Mosque_-_interior_dome_decoration.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Astana_Grand_Mosque_-_interior_dome_decoration.jpg",
+   "author": "Lucha",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.45,
   "updated_at": "2026-10-20"
  },
  {
@@ -103,24 +363,73 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:relation/16827715",
-  "name": "Мечеть Абу Насыра аль-Фараби",
+  "id": "seed:central_park",
+  "name": "Центральный парк",
   "name_i18n": {
-   "ru": "Мечеть Абу Насыра аль-Фараби",
-   "kk": "Әбу Насыр әл-Фараби мешіті",
-   "en": "Abu Nasir Al-Farabi Mosque"
+   "ru": "Центральный парк"
   },
-  "lat": 51.126709,
-  "lon": 71.415767,
-  "category": "religious",
+  "lat": 51.153,
+  "lon": 71.4185,
+  "category": "park",
   "tags": [
-   "culture",
-   "quiet",
-   "sight"
+   "family",
+   "free",
+   "kids",
+   "must_see",
+   "outdoor",
+   "playground",
+   "sight",
+   "walk"
   ],
-  "description": "Абу Насыра аль-Фараби — мечеть, расположенная в Астане. До открытия мечети Хазрет Султан являлась самой большой мечетью в Казахстане и в Центральной Азии. Мечеть имеет четыре минарета высотой по 62 метра, высота главного купола 43 метра, а общая площадь равна 3930 м².",
+  "description": "Парк на правом берегу Есиля с аттракционами и детскими площадками.",
+  "description_source": "manual",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": 4.5,
+  "rating_count": null,
+  "popularity": 0.85,
+  "indoor": false,
+  "wheelchair": "yes",
+  "kid_friendly": true,
+  "price_level": 0,
+  "typical_visit_min": 60,
+  "sources": [
+   {
+    "name": "seed",
+    "url": null,
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.55,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:relation/19041572",
+  "name": "Площадь независимости",
+  "name_i18n": {
+   "ru": "Площадь независимости",
+   "kk": "Тәуелсіздік алаңы",
+   "en": "Independence Square"
+  },
+  "lat": 51.12196,
+  "lon": 71.471097,
+  "category": "park",
+  "tags": [
+   "free",
+   "must_see",
+   "outdoor",
+   "quiet",
+   "sight",
+   "walk"
+  ],
+  "description": "Площадь Независимости — главная площадь Астаны, столицы Казахстана.",
   "description_source": "wikipedia",
-  "address": "Қабанбай Батыр даңғылы, 36",
+  "address": null,
   "opening_hours": null,
   "opening_hours_source": null,
   "opening_hours_checked_at": null,
@@ -128,170 +437,400 @@
   "website": null,
   "rating": null,
   "rating_count": null,
-  "popularity": 0.762,
-  "indoor": true,
+  "popularity": 0.823,
+  "indoor": false,
   "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
+  "kid_friendly": true,
+  "price_level": 0,
+  "typical_visit_min": 45,
   "sources": [
    {
     "name": "osm",
-    "url": "https://www.openstreetmap.org/relation/16827715",
+    "url": "https://www.openstreetmap.org/relation/19041572",
     "fetched_at": "2026-10-20"
    },
    {
     "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q1813417",
+    "url": "https://www.wikidata.org/wiki/Q48780885",
     "fetched_at": "2026-10-20"
    },
    {
     "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%B1%D1%83_%D0%9D%D0%B0%D1%81%D1%8B%D1%80%D0%B0_%D0%B0%D0%BB%D1%8C-%D0%A4%D0%B0%D1%80%D0%B0%D0%B1%D0%B8_(%D0%BC%D0%B5%D1%87%D0%B5%D1%82%D1%8C)",
+    "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C_%D0%9D%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8_(%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0)",
     "fetched_at": "2026-10-20"
    }
   ],
   "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Astana_DSC04235_%287709902002%29.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Astana_DSC04235_%287709902002%29.jpg/960px-Astana_DSC04235_%287709902002%29.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Astana_DSC04235_(7709902002).jpg",
-   "author": "jtstewart",
-   "license": "CC BY-SA 2.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Kazakh_Eli.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Kazakh_Eli.jpg/960px-Kazakh_Eli.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Kazakh_Eli.jpg",
+   "author": "Ken and Nyetta",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
    "source": "wikimedia_commons"
   },
-  "data_quality": 0.45,
+  "data_quality": 0.35,
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:way/1383291292",
-  "name": "Мажилис Парламента Республики Казахстан",
+  "id": "wikidata:Q713955",
+  "name": "Бульвар Нуржол",
   "name_i18n": {
-   "ru": "Мажилис Парламента Республики Казахстан",
-   "en": "Parliament/Majilis of the Republic of Kazakhstan",
-   "kk": "Мәжіліс"
+   "ru": "Бульвар Нуржол",
+   "kk": "Нұржол желек жолы",
+   "en": "Water Green Boulevard"
   },
-  "lat": 51.127821,
-  "lon": 71.441497,
-  "category": "landmark",
+  "lat": 51.127208,
+  "lon": 71.436947,
+  "category": "park",
   "tags": [
    "free",
-   "photo",
-   "sight"
+   "must_see",
+   "outdoor",
+   "quiet",
+   "sight",
+   "walk"
   ],
-  "description": "Мажилис Парламента Республики Казахстан — нижняя палата Парламента Республики Казахстан с 1995 по 2026 годы.",
+  "description": "Бульвар Нуржол — сооружение с пешеходной зоной в новом административно-деловом центре Астаны на левом берегу реки Ишим.",
   "description_source": "wikipedia",
   "address": null,
   "opening_hours": null,
   "opening_hours_source": null,
   "opening_hours_checked_at": null,
   "phone": null,
-  "website": "https://mazhilis.parlam.kz/",
+  "website": null,
   "rating": null,
   "rating_count": null,
-  "popularity": 0.762,
-  "indoor": null,
+  "popularity": 0.823,
+  "indoor": false,
   "wheelchair": "unknown",
-  "kid_friendly": null,
+  "kid_friendly": true,
   "price_level": 0,
-  "typical_visit_min": 20,
+  "typical_visit_min": 45,
   "sources": [
    {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/1383291292",
-    "fetched_at": "2026-10-20"
-   },
-   {
     "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q1247199",
+    "url": "https://www.wikidata.org/wiki/Q713955",
     "fetched_at": "2026-10-20"
    },
    {
     "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B6%D0%B8%D0%BB%D0%B8%D1%81_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0",
+    "url": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BB%D1%8C%D0%B2%D0%B0%D1%80_%D0%9D%D1%83%D1%80%D0%B6%D0%BE%D0%BB",
     "fetched_at": "2026-10-20"
    }
   ],
   "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/2023_Republican_budget_is_discussed_by_Parliament%2C_Government_and_Supreme_Audit_Chamber_%2855782%29.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/2023_Republican_budget_is_discussed_by_Parliament%2C_Government_and_Supreme_Audit_Chamber_%2855782%29.jpg/960px-2023_Republican_budget_is_discussed_by_Parliament%2C_Government_and_Supreme_Audit_Chamber_%2855782%29.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:2023_Republican_budget_is_discussed_by_Parliament,_Government_and_Supreme_Audit_Chamber_(55782).jpg",
-   "author": "Қазақстан Республикасы Парламентінің Мәжілісі",
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Astana_DSC04189_%287709788152%29.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Astana_DSC04189_%287709788152%29.jpg/960px-Astana_DSC04189_%287709788152%29.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Astana_DSC04189_(7709788152).jpg",
+   "author": "jtstewart",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.35,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/549307755",
+  "name": "Триумфальная арка Мангилик Ел",
+  "name_i18n": {
+   "ru": "Триумфальная арка Мангилик Ел",
+   "en": "Mäñgilik El Triumphal Arch",
+   "kk": "Мәңгілік ел қақпасы"
+  },
+  "lat": 51.104303,
+  "lon": 71.430084,
+  "category": "monument",
+  "tags": [
+   "free",
+   "must_see",
+   "outdoor",
+   "photo",
+   "sight"
+  ],
+  "description": "Триумфальная арка Мангилик Ел — монумент в Астане.",
+  "description_source": "wikidata",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.783,
+  "indoor": false,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": 0,
+  "typical_visit_min": 10,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/549307755",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q42422896",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/20000_tenge_averse_2021.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/20000_tenge_averse_2021.jpg/960px-20000_tenge_averse_2021.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:20000_tenge_averse_2021.jpg",
+   "author": "Национальный банк Республики Казахстан",
+   "license": "Public domain",
+   "license_url": null,
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.35,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/1460700597",
+  "name": "Этно-мемориальный комплекс Карта Казахстана Атамекен",
+  "name_i18n": {
+   "ru": "Этно-мемориальный комплекс Карта Казахстана Атамекен",
+   "kk": "Атамекен",
+   "en": "Atameken miniature park"
+  },
+  "lat": 51.149298,
+  "lon": 71.418081,
+  "category": "museum",
+  "tags": [
+   "culture",
+   "indoor",
+   "must_see",
+   "sight",
+   "tennis"
+  ],
+  "description": "Музей «Этно-мемориальный комплекс Карта Казахстана Атамекен».",
+  "description_source": "template",
+  "address": "Тұран даңғылы, 4/2",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.777,
+  "indoor": true,
+  "wheelchair": "unknown",
+  "kid_friendly": true,
+  "price_level": null,
+  "typical_visit_min": 75,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/1460700597",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/242364773",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q1454511",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG/960px-%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
+   "page_url": "https://commons.wikimedia.org/wiki/File:%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
+   "author": "Toshishiro",
+   "license": "CC BY-SA 3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.25,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/51431624",
+  "name": "Музей первого президента РК Н. А. Назарбаева",
+  "name_i18n": {
+   "ru": "Музей первого президента РК Н. А. Назарбаева",
+   "kk": "Тұңғыш Президент мұражайы",
+   "en": "The Museum of the First President of the Republic of Kazakhstan"
+  },
+  "lat": 51.166713,
+  "lon": 71.419032,
+  "category": "museum",
+  "tags": [
+   "culture",
+   "indoor",
+   "must_see",
+   "sight"
+  ],
+  "description": "Музей Первого Президента Республики Казахстан — музей в Астане, посвящённый Первому Президенту Республики Казахстан Нурсултану Назарбаеву.",
+  "description_source": "wikipedia",
+  "address": "Бейбітшілік көшесі, 11",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.777,
+  "indoor": true,
+  "wheelchair": "unknown",
+  "kid_friendly": true,
+  "price_level": null,
+  "typical_visit_min": 75,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/51431624",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q25500354",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%9C%D1%83%D0%B7%D0%B5%D0%B9_%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%B3%D0%BE_%D0%9F%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Astana_SAM_0149_%2814934464778%29.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Astana_SAM_0149_%2814934464778%29.jpg/960px-Astana_SAM_0149_%2814934464778%29.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Astana_SAM_0149_(14934464778).jpg",
+   "author": "Alex J. Butler from United Kingdom",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
    "source": "wikimedia_commons"
   },
   "data_quality": 0.45,
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:way/166198046",
-  "name": "Резиденция Акорда",
+  "id": "osm:node/2681623412",
+  "name": "Казак ели",
   "name_i18n": {
-   "ru": "Резиденция Акорда",
-   "kk": "Ақорда резиденциясы",
-   "en": "Ak Orda Presidential Palace"
+   "kk": "Қазақ елі",
+   "en": "Kazak Eli Monument",
+   "ru": "Казак ели"
   },
-  "lat": 51.1258,
-  "lon": 71.446473,
-  "category": "landmark",
+  "lat": 51.12211,
+  "lon": 71.469881,
+  "category": "monument",
   "tags": [
-   "24_7",
    "free",
-   "night",
+   "must_see",
+   "outdoor",
    "photo",
    "sight"
   ],
-  "description": "Акорда — резиденция президента Казахстана. Является штаб-квартирой Администрации Президента.",
+  "description": "«Казак ели» — памятник культуры и архитектуры, расположенный на площади Независимости в городе Астана. Памятник был открыт в 2009 году. Авторами памятника являются Сембигали Смагулов.",
   "description_source": "wikipedia",
-  "address": "4CGW+7GX, Ак орда, Левобережье",
-  "opening_hours": "24/7",
-  "opening_hours_source": "osm",
-  "opening_hours_checked_at": "2026-10-20",
-  "phone": "8 (702) 383 3734",
-  "website": "https://www.akorda.kz",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
   "rating": null,
   "rating_count": null,
-  "popularity": 0.754,
-  "indoor": null,
+  "popularity": 0.77,
+  "indoor": false,
   "wheelchair": "unknown",
   "kid_friendly": null,
   "price_level": 0,
-  "typical_visit_min": 20,
+  "typical_visit_min": 10,
   "sources": [
    {
     "name": "osm",
-    "url": "https://www.openstreetmap.org/way/166198046",
+    "url": "https://www.openstreetmap.org/node/2681623412",
     "fetched_at": "2026-10-20"
    },
    {
     "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q413579",
+    "url": "https://www.wikidata.org/wiki/Q12572863",
     "fetched_at": "2026-10-20"
    },
    {
     "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D0%BE%D1%80%D0%B4%D0%B0_(%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D1%8F)",
+    "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D0%BA_%D0%B5%D0%BB%D0%B8_(%D0%BC%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D0%BD%D1%82)",
     "fetched_at": "2026-10-20"
    }
   ],
   "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Astana-2021-10_-_25.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Astana-2021-10_-_25.jpg/960px-Astana-2021-10_-_25.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_25.jpg",
-   "author": "Vyacheslav Bukharov",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Kazakh_Eli.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Kazakh_Eli.jpg/960px-Kazakh_Eli.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Kazakh_Eli.jpg",
+   "author": "Ken and Nyetta",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
    "source": "wikimedia_commons"
   },
-  "data_quality": 0.8,
+  "data_quality": 0.35,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "wikidata:Q60446898",
+  "name": "Shabyt Palace",
+  "name_i18n": {
+   "en": "Shabyt Palace"
+  },
+  "lat": 51.122697,
+  "lon": 71.472754,
+  "category": "landmark",
+  "tags": [
+   "must_see",
+   "photo",
+   "sight"
+  ],
+  "description": "Достопримечательность «Shabyt Palace».",
+  "description_source": "template",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.757,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q60446898",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Palace_of_Arts_Shabyt.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Palace_of_Arts_Shabyt.jpg/960px-Palace_of_Arts_Shabyt.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Palace_of_Arts_Shabyt.jpg",
+   "author": "Ken and Nyetta",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.15,
   "updated_at": "2026-10-20"
  },
  {
   "id": "osm:way/230401645",
-  "name": "Байтерек",
+  "name": "Монумент «Байтерек»",
   "name_i18n": {
-   "ru": "Байтерек",
+   "ru": "Монумент «Байтерек»",
    "kk": "Бәйтерек",
    "en": "Bayterek"
   },
@@ -352,15 +891,15 @@
  },
  {
   "id": "osm:node/5130027840",
-  "name": "Дворец мира и согласия",
+  "name": "Дворец мира и согласия (Пирамида)",
   "name_i18n": {
-   "ru": "Дворец мира и согласия",
+   "ru": "Дворец мира и согласия (Пирамида)",
    "kk": "Бейбітшілік және келісім сарайы",
    "en": "Palace of Peace and Reconciliation"
   },
   "lat": 51.12311,
   "lon": 71.463461,
-  "category": "entertainment",
+  "category": "landmark",
   "tags": [
    "fun",
    "indoor",
@@ -418,9 +957,9 @@
  },
  {
   "id": "osm:way/460703779",
-  "name": "Хан Шатыр",
+  "name": "ТРЦ «Хан Шатыр»",
   "name_i18n": {
-   "ru": "Хан Шатыр",
+   "ru": "ТРЦ «Хан Шатыр»",
    "en": "Khan Shatyr",
    "kk": "Хан Шатыр"
   },
@@ -478,67 +1017,6 @@
    "source": "wikimedia_commons"
   },
   "data_quality": 0.75,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/240860325",
-  "name": "мечеть \"Хазрет Султан\"",
-  "name_i18n": {
-   "ru": "мечеть \"Хазрет Султан\"",
-   "kk": "Әзірет Сұлтан мешіті",
-   "en": "Hazrat Sultan Mosque"
-  },
-  "lat": 51.125426,
-  "lon": 71.472193,
-  "category": "religious",
-  "tags": [
-   "culture",
-   "quiet",
-   "sight"
-  ],
-  "description": "Хазрет Султан — мечеть в Астане. Памятник истории и культуры местного значения.",
-  "description_source": "wikipedia",
-  "address": "Рақымжан Қошқарбаев даңғылы, 48",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.719,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/240860325",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q4494668",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%B7%D1%80%D0%B5%D1%82_%D0%A1%D1%83%D0%BB%D1%82%D0%B0%D0%BD_(%D0%BC%D0%B5%D1%87%D0%B5%D1%82%D1%8C)",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg/960px-Rustam_Minnikhanov_on_Expo_2017_72.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Rustam_Minnikhanov_on_Expo_2017_72.jpg",
-   "author": "Лаззат Хайдаров",
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.45,
   "updated_at": "2026-10-20"
  },
  {
@@ -600,159 +1078,6 @@
    "source": "wikimedia_commons"
   },
   "data_quality": 0.55,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "seed:central_park",
-  "name": "Центральный парк",
-  "name_i18n": {
-   "ru": "Центральный парк"
-  },
-  "lat": 51.153,
-  "lon": 71.4185,
-  "category": "park",
-  "tags": [
-   "outdoor",
-   "walk",
-   "kids",
-   "playground",
-   "free",
-   "family"
-  ],
-  "description": "Парк на правом берегу Есиля с аттракционами и детскими площадками.",
-  "description_source": "manual",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": 4.5,
-  "rating_count": null,
-  "popularity": 0.7,
-  "indoor": false,
-  "wheelchair": "yes",
-  "kid_friendly": true,
-  "price_level": 0,
-  "typical_visit_min": 60,
-  "sources": [
-   {
-    "name": "seed",
-    "url": null,
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.55,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/1383291281",
-  "name": "Сенат Парламента Республики Казахстан",
-  "name_i18n": {
-   "ru": "Сенат Парламента Республики Казахстан",
-   "en": "Parliament/Senate of the Republic of Kazakhstan",
-   "kk": "Қазақстан Парламентінің Сенаты"
-  },
-  "lat": 51.127561,
-  "lon": 71.441923,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Сенат Парламента Республики Казахстан — верхняя палата Парламента Республики Казахстан в 1995—2026 годах.",
-  "description_source": "wikipedia",
-  "address": "Мәңгілік Ел даңғылы, 4",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": "https://senate.parlam.kz/",
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.693,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/1383291281",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q1316045",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0%D1%82_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.55,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q113675887",
-  "name": "Центральная мечеть города Астаны",
-  "name_i18n": {
-   "ru": "Центральная мечеть города Астаны",
-   "kk": "Астана қаласының бас мешіті",
-   "en": "Astana Grand Mosque"
-  },
-  "lat": 51.0725,
-  "lon": 71.4095,
-  "category": "religious",
-  "tags": [
-   "culture",
-   "quiet",
-   "sight"
-  ],
-  "description": "Мечеть Нурсултан — соборная мечеть в Астане, самая большая по вместимости мечеть Казахстана и Центральной Азии.",
-  "description_source": "wikipedia",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.64,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 25,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q113675887",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%9D%D1%83%D1%80%D1%81%D1%83%D0%BB%D1%82%D0%B0%D0%BD",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Astana_Grand_Mosque_-_interior_dome_decoration.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Astana_Grand_Mosque_-_interior_dome_decoration.jpg/960px-Astana_Grand_Mosque_-_interior_dome_decoration.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Astana_Grand_Mosque_-_interior_dome_decoration.jpg",
-   "author": "Lucha",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
   "updated_at": "2026-10-20"
  },
  {
@@ -1115,189 +1440,6 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:relation/19041572",
-  "name": "Площадь независимости",
-  "name_i18n": {
-   "ru": "Площадь независимости",
-   "kk": "Тәуелсіздік алаңы",
-   "en": "Independence Square"
-  },
-  "lat": 51.12196,
-  "lon": 71.471097,
-  "category": "park",
-  "tags": [
-   "free",
-   "outdoor",
-   "quiet",
-   "sight",
-   "walk"
-  ],
-  "description": "Площадь Независимости — главная площадь Астаны, столицы Казахстана.",
-  "description_source": "wikipedia",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.596,
-  "indoor": false,
-  "wheelchair": "unknown",
-  "kid_friendly": true,
-  "price_level": 0,
-  "typical_visit_min": 45,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/relation/19041572",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q48780885",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C_%D0%9D%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8_(%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0)",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Kazakh_Eli.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Kazakh_Eli.jpg/960px-Kazakh_Eli.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Kazakh_Eli.jpg",
-   "author": "Ken and Nyetta",
-   "license": "CC BY 2.0",
-   "license_url": "https://creativecommons.org/licenses/by/2.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/424980293",
-  "name": "Вокзал Нурлы Жол",
-  "name_i18n": {
-   "ru": "Вокзал Нурлы Жол",
-   "kk": "Нұрлы Жол вокзалы",
-   "en": "Astana Nurly Zhol station"
-  },
-  "lat": 51.112358,
-  "lon": 71.531718,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight",
-   "transport"
-  ],
-  "description": "Астана Нурлы Жол — станция Казахстанских железных дорог и, наряду с вокзалом «Астана-1», один из двух железнодорожных вокзалов города Астана. После открытия в 2017 году стал основным вокзалом города.",
-  "description_source": "wikipedia",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.596,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/424980293",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q30642068",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%9D%D1%83%D1%80%D0%BB%D1%8B_%D0%96%D0%BE%D0%BB",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C_%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB_%D0%9D%D1%83%D1%80%D0%BB%D1%8B_%D0%96%D0%BE%D0%BB%2C_%D1%81%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%28cropped%29.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C_%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB_%D0%9D%D1%83%D1%80%D0%BB%D1%8B_%D0%96%D0%BE%D0%BB%2C_%D1%81%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%28cropped%29.jpg/960px-%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C_%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB_%D0%9D%D1%83%D1%80%D0%BB%D1%8B_%D0%96%D0%BE%D0%BB%2C_%D1%81%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%28cropped%29.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0,_%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB_%D0%9D%D1%83%D1%80%D0%BB%D1%8B_%D0%96%D0%BE%D0%BB,_%D1%81%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_(cropped).jpg",
-   "author": "Nikolai Bulykin",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q713955",
-  "name": "Водно-зелёный бульвар",
-  "name_i18n": {
-   "ru": "Водно-зелёный бульвар",
-   "kk": "Нұржол желек жолы",
-   "en": "Water Green Boulevard"
-  },
-  "lat": 51.127208,
-  "lon": 71.436947,
-  "category": "park",
-  "tags": [
-   "free",
-   "outdoor",
-   "quiet",
-   "sight",
-   "walk"
-  ],
-  "description": "Бульвар Нуржол — сооружение с пешеходной зоной в новом административно-деловом центре Астаны на левом берегу реки Ишим.",
-  "description_source": "wikipedia",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.596,
-  "indoor": false,
-  "wheelchair": "unknown",
-  "kid_friendly": true,
-  "price_level": 0,
-  "typical_visit_min": 45,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q713955",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BB%D1%8C%D0%B2%D0%B0%D1%80_%D0%9D%D1%83%D1%80%D0%B6%D0%BE%D0%BB",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Astana_DSC04189_%287709788152%29.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Astana_DSC04189_%287709788152%29.jpg/960px-Astana_DSC04189_%287709788152%29.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Astana_DSC04189_(7709788152).jpg",
-   "author": "jtstewart",
-   "license": "CC BY-SA 2.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "wikidata:Q25481641",
   "name": "Монумент защитникам Отечества",
   "name_i18n": {
@@ -1466,67 +1608,6 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:way/230403281",
-  "name": "Верховный суд",
-  "name_i18n": {
-   "ru": "Верховный суд",
-   "kk": "Жоғарғы сот",
-   "en": "Supreme Court"
-  },
-  "lat": 51.129522,
-  "lon": 71.443999,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Верховный Суд Республики Казахстан является высшим судебным органом Республики Казахстан по гражданским, уголовным и иным делам, подсудным местным и другим судам, осуществляет в предусмотренных законом процессуальных формах надзор за их деятельностью и дает разъяснения по вопросам судебной практики.",
-  "description_source": "wikipedia",
-  "address": "Қонаев көшесі, 39",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": "https://www.sud.gov.kz/",
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.57,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/230403281",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q4109099",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D1%81%D1%83%D0%B4_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D1%81%D1%83%D0%B4_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D1%81%D1%83%D0%B4_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg/960px-%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D1%81%D1%83%D0%B4_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D1%81%D1%83%D0%B4_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
-   "author": "Мазур Владимир",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.55,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "osm:way/240873345",
   "name": "Дворец Независимости",
   "name_i18n": {
@@ -1536,7 +1617,7 @@
   },
   "lat": 51.120631,
   "lon": 71.472049,
-  "category": "entertainment",
+  "category": "landmark",
   "tags": [
    "fun",
    "indoor",
@@ -1637,14 +1718,14 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "wikidata:Q16538413",
-  "name": "Собор Божией Матери Неустанной Помощи",
+  "id": "osm:node/4902165007",
+  "name": "Римско-Католический Приход Матери Божией Неустанной Помощи",
   "name_i18n": {
-   "ru": "Собор Божией Матери Неустанной Помощи",
-   "en": "Our Mother of Perpetual Help Cathedral, Astana"
+   "ru": "Римско-Католический Приход Матери Божией Неустанной Помощи",
+   "en": "Roman Catholic Church of Our Mother of Perpetual Help"
   },
-  "lat": 51.153674,
-  "lon": 71.451843,
+  "lat": 51.153702,
+  "lon": 71.451873,
   "category": "religious",
   "tags": [
    "culture",
@@ -1658,7 +1739,7 @@
   "opening_hours_source": null,
   "opening_hours_checked_at": null,
   "phone": null,
-  "website": null,
+  "website": "https://www.katast.info/",
   "rating": null,
   "rating_count": null,
   "popularity": 0.561,
@@ -1666,8 +1747,13 @@
   "wheelchair": "unknown",
   "kid_friendly": null,
   "price_level": null,
-  "typical_visit_min": 25,
+  "typical_visit_min": 20,
   "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/node/4902165007",
+    "fetched_at": "2026-10-20"
+   },
    {
     "name": "wikidata",
     "url": "https://www.wikidata.org/wiki/Q16538413",
@@ -1688,14 +1774,14 @@
    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
    "source": "wikimedia_commons"
   },
-  "data_quality": 0.35,
+  "data_quality": 0.45,
   "updated_at": "2026-10-20"
  },
  {
   "id": "osm:way/1196402246",
-  "name": "Ботанический сад",
+  "name": "Ботанический сад Астаны",
   "name_i18n": {
-   "ru": "Ботанический сад",
+   "ru": "Ботанический сад Астаны",
    "kk": "Ботаникалық бақ",
    "en": "Botanical Garden"
   },
@@ -1755,6 +1841,67 @@
   "updated_at": "2026-10-20"
  },
  {
+  "id": "osm:way/240592107",
+  "name": "Кафедральный собор в честь Успения Пресвятой Богородицы",
+  "name_i18n": {
+   "ru": "Кафедральный собор в честь Успения Пресвятой Богородицы",
+   "kk": "Әулие Мария Успен соборы",
+   "en": "Assumption Cathedral"
+  },
+  "lat": 51.149495,
+  "lon": 71.48138,
+  "category": "religious",
+  "tags": [
+   "culture",
+   "quiet",
+   "sight"
+  ],
+  "description": "Кафедральный собор в честь Успения Пресвятой Богородицы — кафедральный собор Астанайской епархии в Астане.",
+  "description_source": "wikipedia",
+  "address": "улица Куйши Дина, 27",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.552,
+  "indoor": true,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/240592107",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q1899549",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_(%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0)",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/%D0%9A%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%B2_%D1%87%D0%B5%D1%81%D1%82%D1%8C_%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9F%D1%80%D0%B5%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%86%D1%8B.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/%D0%9A%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%B2_%D1%87%D0%B5%D1%81%D1%82%D1%8C_%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9F%D1%80%D0%B5%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%86%D1%8B.jpg/960px-%D0%9A%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%B2_%D1%87%D0%B5%D1%81%D1%82%D1%8C_%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9F%D1%80%D0%B5%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%86%D1%8B.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%B2_%D1%87%D0%B5%D1%81%D1%82%D1%8C_%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9F%D1%80%D0%B5%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%86%D1%8B.jpg",
+   "author": "Kaiyr",
+   "license": "CC BY-SA 3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.45,
+  "updated_at": "2026-10-20"
+ },
+ {
   "id": "wikidata:Q104866684",
   "name": "Президентский парк",
   "name_i18n": {
@@ -1798,6 +1945,11 @@
     "name": "wikipedia",
     "url": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA",
     "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/243041606",
+    "fetched_at": "2026-10-20"
    }
   ],
   "image": {
@@ -1810,115 +1962,6 @@
    "source": "wikimedia_commons"
   },
   "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q1899549",
-  "name": "Кафедральный собор в честь Успения Пресвятой Богородицы",
-  "name_i18n": {
-   "ru": "Кафедральный собор в честь Успения Пресвятой Богородицы",
-   "kk": "Әулие Мария Успен соборы",
-   "en": "Assumption Cathedral"
-  },
-  "lat": 51.149603,
-  "lon": 71.481481,
-  "category": "religious",
-  "tags": [
-   "culture",
-   "quiet",
-   "sight"
-  ],
-  "description": "Кафедральный собор в честь Успения Пресвятой Богородицы — кафедральный собор Астанайской епархии в Астане.",
-  "description_source": "wikipedia",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.552,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 25,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q1899549",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_(%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0)",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/%D0%9A%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%B2_%D1%87%D0%B5%D1%81%D1%82%D1%8C_%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9F%D1%80%D0%B5%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%86%D1%8B.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/%D0%9A%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%B2_%D1%87%D0%B5%D1%81%D1%82%D1%8C_%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9F%D1%80%D0%B5%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%86%D1%8B.jpg/960px-%D0%9A%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%B2_%D1%87%D0%B5%D1%81%D1%82%D1%8C_%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9F%D1%80%D0%B5%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%86%D1%8B.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D1%84%D0%B5%D0%B4%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_%D0%B2_%D1%87%D0%B5%D1%81%D1%82%D1%8C_%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9F%D1%80%D0%B5%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%86%D1%8B.jpg",
-   "author": "Kaiyr",
-   "license": "CC BY-SA 3.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/1087197699",
-  "name": "Главный корпус",
-  "name_i18n": {
-   "ru": "Главный корпус",
-   "kk": "Астана аграрлық университеті",
-   "en": "Kazakh Agro Technical University"
-  },
-  "lat": 51.187047,
-  "lon": 71.40913,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Казахский агротехнический исследовательский университет имени Сакена Сейфуллина — крупнейший аграрный вуз Центрального и Северного Казахстана, первое высшее учебное заведение города Астана. Назван в честь основоположника современной казахской литературы Сакена Сейфуллина.",
-  "description_source": "wikipedia",
-  "address": "Жеңіс даңғылы, 62",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": "https://kazatu.kz/?lang=ru",
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.544,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/1087197699",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q4208086",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B8%D0%B9_%D0%B0%D0%B3%D1%80%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8_%D0%A1%D0%B0%D0%BA%D0%B5%D0%BD%D0%B0_%D0%A1%D0%B5%D0%B9%D1%84%D1%83%D0%BB%D0%BB%D0%B8%D0%BD%D0%B0",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.55,
   "updated_at": "2026-10-20"
  },
  {
@@ -1985,118 +2028,6 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:way/549307755",
-  "name": "Триумфальная арка Мангилик Ел",
-  "name_i18n": {
-   "ru": "Триумфальная арка Мангилик Ел",
-   "en": "Mäñgilik El Triumphal Arch",
-   "kk": "Мәңгілік ел қақпасы"
-  },
-  "lat": 51.104303,
-  "lon": 71.430084,
-  "category": "monument",
-  "tags": [
-   "free",
-   "outdoor",
-   "photo",
-   "sight"
-  ],
-  "description": "Триумфальная арка Мангилик Ел — монумент в Астане.",
-  "description_source": "wikidata",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.544,
-  "indoor": false,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 10,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/549307755",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q42422896",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/20000_tenge_averse_2021.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/20000_tenge_averse_2021.jpg/960px-20000_tenge_averse_2021.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:20000_tenge_averse_2021.jpg",
-   "author": "Национальный банк Республики Казахстан",
-   "license": "Public domain",
-   "license_url": null,
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q1073439",
-  "name": "Изумрудный квартал",
-  "name_i18n": {
-   "ru": "Изумрудный квартал",
-   "kk": "Асыл тас",
-   "en": "Emerald Towers"
-  },
-  "lat": 51.130719,
-  "lon": 71.422394,
-  "category": "landmark",
-  "tags": [
-   "photo",
-   "sight"
-  ],
-  "description": "«Изумрудный квартал» — комплекс из трёх высотных башен разной этажности в городе Астана. Строительство было начато в 2006 году. Комплекс введён в эксплуатацию в 2011 году.",
-  "description_source": "wikipedia",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.544,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q1073439",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%98%D0%B7%D1%83%D0%BC%D1%80%D1%83%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B0%D0%BB",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Astana-2021-10_-_37.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Astana-2021-10_-_37.jpg/960px-Astana-2021-10_-_37.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_37.jpg",
-   "author": "Vyacheslav Bukharov",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "wikidata:Q25495527",
   "name": "Talan Towers",
   "name_i18n": {
@@ -2152,180 +2083,15 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:relation/3466338",
-  "name": "Транспорт Тауэр",
+  "id": "osm:way/1363058986",
+  "name": "Триатлон парк",
   "name_i18n": {
-   "ru": "Транспорт Тауэр",
-   "en": "Transport Tower"
+   "ru": "Триатлон парк",
+   "kk": "Триатлон саябағы",
+   "en": "Triathlon park"
   },
-  "lat": 51.131364,
-  "lon": 71.41651,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Транспорт Тауэр» по адресу: Қабанбай Батыр даңғылы, 32/1.",
-  "description_source": "template",
-  "address": "Қабанбай Батыр даңғылы, 32/1",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.535,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/relation/3466338",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q1516792",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Transport_Tower%2C_Astana.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Transport_Tower%2C_Astana.jpg/960px-Transport_Tower%2C_Astana.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Transport_Tower,_Astana.jpg",
-   "author": "Bernard Gagnon",
-   "license": "CC0",
-   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/1460700597",
-  "name": "Этно-мемориальный комплекс Карта Казахстана Атамекен",
-  "name_i18n": {
-   "ru": "Этно-мемориальный комплекс Карта Казахстана Атамекен",
-   "kk": "Атамекен",
-   "en": "Atameken miniature park"
-  },
-  "lat": 51.149298,
-  "lon": 71.418081,
-  "category": "museum",
-  "tags": [
-   "culture",
-   "indoor",
-   "sight"
-  ],
-  "description": "Музей «Этно-мемориальный комплекс Карта Казахстана Атамекен».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.535,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": true,
-  "price_level": null,
-  "typical_visit_min": 75,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/1460700597",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q1454511",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG/960px-%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
-   "page_url": "https://commons.wikimedia.org/wiki/File:%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
-   "author": "Toshishiro",
-   "license": "CC BY-SA 3.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.15,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/240909255",
-  "name": "ЖК “Триумф Астана”",
-  "name_i18n": {
-   "ru": "ЖК “Триумф Астана”",
-   "en": "“Triumph of Astana” Apartments"
-  },
-  "lat": 51.140433,
-  "lon": 71.414819,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Триумф Астана — Жилой комплекс в Астане, Казахстан.",
-  "description_source": "wikidata",
-  "address": "Қабанбай Батыр даңғылы, 11",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.535,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/240909255",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q475139",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/This_building_in_Astana_mimics_a_certain_Moscow_style_%284054861399%29.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/This_building_in_Astana_mimics_a_certain_Moscow_style_%284054861399%29.jpg/960px-This_building_in_Astana_mimics_a_certain_Moscow_style_%284054861399%29.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:This_building_in_Astana_mimics_a_certain_Moscow_style_(4054861399).jpg",
-   "author": "Peretz Partensky from San Francisco, USA",
-   "license": "CC BY-SA 2.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.45,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q104866885",
-  "name": "Триатлон парк Астана",
-  "name_i18n": {
-   "ru": "Триатлон парк Астана",
-   "en": "Astana Triathlon Park"
-  },
-  "lat": 51.136111,
-  "lon": 71.449722,
+  "lat": 51.135277,
+  "lon": 71.449778,
   "category": "park",
   "tags": [
    "free",
@@ -2352,6 +2118,11 @@
   "typical_visit_min": 45,
   "sources": [
    {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/1363058986",
+    "fetched_at": "2026-10-20"
+   },
+   {
     "name": "wikidata",
     "url": "https://www.wikidata.org/wiki/Q104866885",
     "fetched_at": "2026-10-20"
@@ -2375,71 +2146,15 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "wikidata:Q25500354",
-  "name": "Музей Первого Президента Республики Казахстан",
+  "id": "osm:way/240391776",
+  "name": "Государственный военно-исторический музей",
   "name_i18n": {
-   "ru": "Музей Первого Президента Республики Казахстан",
-   "kk": "Тұңғыш Президент мұражайы",
-   "en": "The Museum of the First President of the Republic of Kazakhstan"
-  },
-  "lat": 51.166317,
-  "lon": 71.418777,
-  "category": "museum",
-  "tags": [
-   "culture",
-   "indoor",
-   "sight"
-  ],
-  "description": "Музей Первого Президента Республики Казахстан — музей в Астане, посвящённый Первому Президенту Республики Казахстан Нурсултану Назарбаеву.",
-  "description_source": "wikipedia",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.535,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 75,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q25500354",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%9C%D1%83%D0%B7%D0%B5%D0%B9_%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%B3%D0%BE_%D0%9F%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Astana_SAM_0149_%2814934464778%29.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Astana_SAM_0149_%2814934464778%29.jpg/960px-Astana_SAM_0149_%2814934464778%29.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Astana_SAM_0149_(14934464778).jpg",
-   "author": "Alex J. Butler from United Kingdom",
-   "license": "CC BY 2.0",
-   "license_url": "https://creativecommons.org/licenses/by/2.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q4146879",
-  "name": "Государственный музей золота и драгоценных металлов",
-  "name_i18n": {
-   "ru": "Государственный музей золота и драгоценных металлов",
-   "kk": "Қазақстан Республикасының алтын және бағалы металдар мемлекеттік мұражайы",
+   "ru": "Государственный военно-исторический музей",
+   "kk": "Мемлекеттік әскери-тарихи музей",
    "en": "State Museum of Gold and Precious Metals of the Republic of Kazakhstan"
   },
-  "lat": 51.157,
-  "lon": 71.4313,
+  "lat": 51.15593,
+  "lon": 71.431298,
   "category": "museum",
   "tags": [
    "culture",
@@ -2448,7 +2163,7 @@
   ],
   "description": "Государственный музей золота и драгоценных металлов – музей ювелирного искусства в городе Астана.",
   "description_source": "wikipedia",
-  "address": null,
+  "address": "Республика даңғылы, 2",
   "opening_hours": null,
   "opening_hours_source": null,
   "opening_hours_checked_at": null,
@@ -2459,10 +2174,15 @@
   "popularity": 0.535,
   "indoor": true,
   "wheelchair": "unknown",
-  "kid_friendly": null,
+  "kid_friendly": true,
   "price_level": null,
   "typical_visit_min": 75,
   "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/240391776",
+    "fetched_at": "2026-10-20"
+   },
    {
     "name": "wikidata",
     "url": "https://www.wikidata.org/wiki/Q4146879",
@@ -2475,7 +2195,7 @@
    }
   ],
   "image": null,
-  "data_quality": 0.35,
+  "data_quality": 0.45,
   "updated_at": "2026-10-20"
  },
  {
@@ -2535,23 +2255,23 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:node/2681623412",
-  "name": "Казак ели",
+  "id": "osm:node/455447680",
+  "name": "Русский драматический театр им. М. Горького",
   "name_i18n": {
-   "kk": "Қазақ елі",
-   "en": "Kazak Eli Monument",
-   "ru": "Казак ели"
+   "ru": "Русский драматический театр им. М. Горького",
+   "kk": "Ақмола Облыстық Орыс Драма Театры",
+   "en": "State Russian Dramatic Theatre Maxim Gorky"
   },
-  "lat": 51.12211,
-  "lon": 71.469881,
-  "category": "monument",
+  "lat": 51.165132,
+  "lon": 71.416335,
+  "category": "theatre",
   "tags": [
-   "free",
-   "outdoor",
-   "photo",
-   "sight"
+   "culture",
+   "indoor",
+   "sight",
+   "wheelchair"
   ],
-  "description": "«Казак ели» — памятник культуры и архитектуры, расположенный на площади Независимости в городе Астана. Памятник был открыт в 2009 году. Авторами памятника являются Сембигали Смагулов.",
+  "description": "Государственный академический русский театр драмы имени М. Горького — старейший театр драмы в Астане.",
   "description_source": "wikipedia",
   "address": null,
   "opening_hours": null,
@@ -2562,38 +2282,99 @@
   "rating": null,
   "rating_count": null,
   "popularity": 0.526,
-  "indoor": false,
-  "wheelchair": "unknown",
+  "indoor": true,
+  "wheelchair": "yes",
   "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 10,
+  "price_level": null,
+  "typical_visit_min": 150,
   "sources": [
    {
     "name": "osm",
-    "url": "https://www.openstreetmap.org/node/2681623412",
+    "url": "https://www.openstreetmap.org/node/455447680",
     "fetched_at": "2026-10-20"
    },
    {
     "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q12572863",
+    "url": "https://www.wikidata.org/wiki/Q16433519",
     "fetched_at": "2026-10-20"
    },
    {
     "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D0%BA_%D0%B5%D0%BB%D0%B8_(%D0%BC%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D0%BD%D1%82)",
+    "url": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9_%D0%B4%D1%80%D0%B0%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%82%D0%B5%D0%B0%D1%82%D1%80_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8_%D0%9C._%D0%93%D0%BE%D1%80%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE",
     "fetched_at": "2026-10-20"
    }
   ],
   "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Kazakh_Eli.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Kazakh_Eli.jpg/960px-Kazakh_Eli.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Kazakh_Eli.jpg",
-   "author": "Ken and Nyetta",
-   "license": "CC BY 2.0",
-   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Astana_-_190217_DSC_3875.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Astana_-_190217_DSC_3875.jpg/960px-Astana_-_190217_DSC_3875.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Astana_-_190217_DSC_3875.jpg",
+   "author": "Ilya Varlamov",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
    "source": "wikimedia_commons"
   },
-  "data_quality": 0.35,
+  "data_quality": 0.4,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/230358855",
+  "name": "Национальная академическая библиотека Республики Казахстан",
+  "name_i18n": {
+   "ru": "Национальная академическая библиотека Республики Казахстан",
+   "en": "National Academic Library of Republic of Kazakhstan",
+   "kk": "ҚР Ұлттық академиялық кітапханасы"
+  },
+  "lat": 51.127215,
+  "lon": 71.427151,
+  "category": "library",
+  "tags": [
+   "indoor",
+   "quiet",
+   "sight"
+  ],
+  "description": "«Национальная академическая библиотека Республики Казахстан» в городе Астана была создана постановлением Правительства РК от 23 апреля 2004 года за № 461. Главная цель - дальнейшее развитие информационной, образовательной и культурно-просветительной инфраструктуры столицы.",
+  "description_source": "wikipedia",
+  "address": "Достық көшесі, 11",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.526,
+  "indoor": true,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 60,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/230358855",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q4314789",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Library_of_the_Republic_of_Kazakhstan.jpg",
+   "thumb_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Library_of_the_Republic_of_Kazakhstan.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Library_of_the_Republic_of_Kazakhstan.jpg",
+   "author": "Unknown author Unknown author",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.45,
   "updated_at": "2026-10-20"
  },
  {
@@ -2660,15 +2441,15 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "wikidata:Q12530274",
-  "name": "Казахский музыкально-драматический театр имени К. Куанышбаева",
+  "id": "osm:way/917348929",
+  "name": "Государственный Академический казахский музыкально-драматический театр им. К. Куанышбаева",
   "name_i18n": {
-   "ru": "Казахский музыкально-драматический театр имени К. Куанышбаева",
-   "kk": "Астана қалалық музыкалық драма театры",
+   "ru": "Государственный Академический казахский музыкально-драматический театр им. К. Куанышбаева",
+   "kk": "Қ.Қуанышбаев атындағы Мемлекеттік академиялық қазақ музыкалық-драма театры",
    "en": "Kalibek Kuanyshpaev Theatre"
   },
-  "lat": 51.120592,
-  "lon": 71.479657,
+  "lat": 51.120559,
+  "lon": 71.479974,
   "category": "theatre",
   "tags": [
    "culture",
@@ -2677,7 +2458,7 @@
   ],
   "description": "Казахский национальный музыкально-драматический театр имени Калибека Куанышбаева — учреждение культуры в Астане, основанное в 1991 году. Нынешнее здание театра было возведено в 2020 году по инициативе первого президента Республики Казахстан.",
   "description_source": "wikipedia",
-  "address": null,
+  "address": "Қалибек Қуанышбаев көшесі;​улица Калибек Куанышбаев, 8/1",
   "opening_hours": null,
   "opening_hours_source": null,
   "opening_hours_checked_at": null,
@@ -2692,6 +2473,11 @@
   "price_level": null,
   "typical_visit_min": 150,
   "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/917348929",
+    "fetched_at": "2026-10-20"
+   },
    {
     "name": "wikidata",
     "url": "https://www.wikidata.org/wiki/Q12530274",
@@ -2704,176 +2490,6 @@
    }
   ],
   "image": null,
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q1542507",
-  "name": "Grand Alatau",
-  "name_i18n": {
-   "en": "Grand Alatau"
-  },
-  "lat": 51.161944,
-  "lon": 71.419722,
-  "category": "landmark",
-  "tags": [
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Grand Alatau».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.526,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q1542507",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Astana-Ishim-7809.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Astana-Ishim-7809.jpg/960px-Astana-Ishim-7809.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Astana-Ishim-7809.jpg",
-   "author": "Vmenkov",
-   "license": "CC BY-SA 3.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.15,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q16433519",
-  "name": "Русский драматический театр им. М. Горького",
-  "name_i18n": {
-   "ru": "Русский драматический театр им. М. Горького",
-   "kk": "Ақмола Облыстық Орыс Драма Театры",
-   "en": "State Russian Dramatic Theatre Maxim Gorky"
-  },
-  "lat": 51.165219,
-  "lon": 71.416311,
-  "category": "theatre",
-  "tags": [
-   "culture",
-   "indoor",
-   "sight"
-  ],
-  "description": "Государственный академический русский театр драмы имени М. Горького — старейший театр драмы в Астане.",
-  "description_source": "wikipedia",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.526,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 150,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q16433519",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9_%D0%B4%D1%80%D0%B0%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%82%D0%B5%D0%B0%D1%82%D1%80_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8_%D0%9C._%D0%93%D0%BE%D1%80%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/node/455447680",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Astana_-_190217_DSC_3875.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Astana_-_190217_DSC_3875.jpg/960px-Astana_-_190217_DSC_3875.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Astana_-_190217_DSC_3875.jpg",
-   "author": "Ilya Varlamov",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q4314789",
-  "name": "Национальная академическая библиотека Казахстана",
-  "name_i18n": {
-   "ru": "Национальная академическая библиотека Казахстана",
-   "kk": "ҚР Ұлттық академиялық кітапханасы",
-   "en": "National Academic Library of the Republic of Kazakhstan"
-  },
-  "lat": 51.1271,
-  "lon": 71.4272,
-  "category": "library",
-  "tags": [
-   "indoor",
-   "quiet",
-   "sight"
-  ],
-  "description": "«Национальная академическая библиотека Республики Казахстан» в городе Астана была создана постановлением Правительства РК от 23 апреля 2004 года за № 461. Главная цель - дальнейшее развитие информационной, образовательной и культурно-просветительной инфраструктуры столицы.",
-  "description_source": "wikipedia",
-  "address": "Достық көшесі, 11",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.526,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 60,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q4314789",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/230358855",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Library_of_the_Republic_of_Kazakhstan.jpg",
-   "thumb_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Library_of_the_Republic_of_Kazakhstan.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Library_of_the_Republic_of_Kazakhstan.jpg",
-   "author": "Unknown author Unknown author",
-   "license": "CC0",
-   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-   "source": "wikimedia_commons"
-  },
   "data_quality": 0.45,
   "updated_at": "2026-10-20"
  },
@@ -2934,119 +2550,14 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:way/1373272211",
-  "name": "Аэропорт",
-  "name_i18n": {
-   "ru": "Аэропорт",
-   "kk": "Әуежай",
-   "en": "Airport"
-  },
-  "lat": 51.027953,
-  "lon": 71.458858,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight",
-   "transport"
-  ],
-  "description": "Достопримечательность «Аэропорт».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.517,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/1373272211",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q137551659",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Platform_view_at_Airport_station_of_the_Astana_Light_Rail_Transit_%28LRT%29_system_serving_Astana_International_Airport.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Platform_view_at_Airport_station_of_the_Astana_Light_Rail_Transit_%28LRT%29_system_serving_Astana_International_Airport.jpg/960px-Platform_view_at_Airport_station_of_the_Astana_Light_Rail_Transit_%28LRT%29_system_serving_Astana_International_Airport.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Platform_view_at_Airport_station_of_the_Astana_Light_Rail_Transit_(LRT)_system_serving_Astana_International_Airport.jpg",
-   "author": "Kristianmusic",
-   "license": "CC0",
-   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.15,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/230358856",
-  "name": "Национальный архив Республики Казахстан",
-  "name_i18n": {
-   "ru": "Национальный архив Республики Казахстан",
-   "en": "The National Archive of the Republic of Kazakhstan",
-   "kk": "Қазақстан Республикасының ұлттық мұрағаттары"
-  },
-  "lat": 51.127967,
-  "lon": 71.427018,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Национальный архив Республики Казахстан» по адресу: Нұржол желек жолы, 12.",
-  "description_source": "template",
-  "address": "Нұржол желек жолы, 12",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": "https://nmrk.kz/",
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.517,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/230358856",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q12573359",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q113119435",
+  "id": "osm:node/4915178198",
   "name": "Церковь Святого Иосифа Обручника",
   "name_i18n": {
    "ru": "Церковь Святого Иосифа Обручника",
    "en": "Iýsýf shіrkeýі, Astana"
   },
-  "lat": 51.15145,
-  "lon": 71.447812,
+  "lat": 51.151418,
+  "lon": 71.447821,
   "category": "religious",
   "tags": [
    "culture",
@@ -3068,8 +2579,13 @@
   "wheelchair": "unknown",
   "kid_friendly": null,
   "price_level": null,
-  "typical_visit_min": 25,
+  "typical_visit_min": 20,
   "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/node/4915178198",
+    "fetched_at": "2026-10-20"
+   },
    {
     "name": "wikidata",
     "url": "https://www.wikidata.org/wiki/Q113119435",
@@ -3141,54 +2657,6 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "wikidata:Q746625",
-  "name": "Astana Tower",
-  "name_i18n": {
-   "en": "Astana Tower"
-  },
-  "lat": 51.153333,
-  "lon": 71.429167,
-  "category": "landmark",
-  "tags": [
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Astana Tower».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.517,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q746625",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Astana%2C_capital_of_Kazakhstan_06.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Astana%2C_capital_of_Kazakhstan_06.jpg/960px-Astana%2C_capital_of_Kazakhstan_06.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Astana,_capital_of_Kazakhstan_06.jpg",
-   "author": "Ninaras",
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.15,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "wikidata:Q85758095",
   "name": "Круглая площадь",
   "name_i18n": {
@@ -3232,6 +2700,53 @@
   ],
   "image": null,
   "data_quality": 0.35,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/1239171353",
+  "name": "Военно-исторический музей",
+  "name_i18n": {
+   "ru": "Военно-исторический музей",
+   "en": "Military History Museum"
+  },
+  "lat": 51.155498,
+  "lon": 71.431972,
+  "category": "museum",
+  "tags": [
+   "culture",
+   "indoor",
+   "sight"
+  ],
+  "description": "Музей «Военно-исторический музей».",
+  "description_source": "template",
+  "address": null,
+  "opening_hours": "Mo-Su 10:00-18:00",
+  "opening_hours_source": "osm",
+  "opening_hours_checked_at": "2026-10-20",
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.509,
+  "indoor": true,
+  "wheelchair": "unknown",
+  "kid_friendly": true,
+  "price_level": null,
+  "typical_visit_min": 75,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/1239171353",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q85787940",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.4,
   "updated_at": "2026-10-20"
  },
  {
@@ -3315,95 +2830,6 @@
    {
     "name": "wikidata",
     "url": "https://www.wikidata.org/wiki/Q20036756",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.15,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q60446898",
-  "name": "Shabyt Palace",
-  "name_i18n": {
-   "en": "Shabyt Palace"
-  },
-  "lat": 51.122697,
-  "lon": 71.472754,
-  "category": "landmark",
-  "tags": [
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Shabyt Palace».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.509,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q60446898",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Palace_of_Arts_Shabyt.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Palace_of_Arts_Shabyt.jpg/960px-Palace_of_Arts_Shabyt.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Palace_of_Arts_Shabyt.jpg",
-   "author": "Ken and Nyetta",
-   "license": "CC BY 2.0",
-   "license_url": "https://creativecommons.org/licenses/by/2.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.15,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q85787940",
-  "name": "National Military-Patriotic Center of the Armed Forces of Kazakhstan",
-  "name_i18n": {
-   "en": "National Military-Patriotic Center of the Armed Forces of Kazakhstan"
-  },
-  "lat": 51.155917,
-  "lon": 71.431528,
-  "category": "museum",
-  "tags": [
-   "culture",
-   "indoor",
-   "sight"
-  ],
-  "description": "Музей «National Military-Patriotic Center of the Armed Forces of Kazakhstan».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.509,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 75,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q85787940",
     "fetched_at": "2026-10-20"
    }
   ],
@@ -5226,97 +4652,6 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:way/230403290",
-  "name": "Правительство Республики Казахстан",
-  "name_i18n": {
-   "ru": "Правительство Республики Казахстан",
-   "en": "Government of the Republic of Kazakhstan"
-  },
-  "lat": 51.12552,
-  "lon": 71.440831,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Правительство Республики Казахстан» по адресу: Мәңгілік Ел даңғылы, 6.",
-  "description_source": "template",
-  "address": "Мәңгілік Ел даңғылы, 6",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": "https://primeminister.kz/",
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.5,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/230403290",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg/960px-%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
-   "author": "Мазур Владимир",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "seed:airport",
-  "name": "Международный аэропорт Астаны",
-  "name_i18n": {
-   "ru": "Международный аэропорт Астаны"
-  },
-  "lat": 51.0222,
-  "lon": 71.4669,
-  "category": "other",
-  "tags": [
-   "transport",
-   "indoor",
-   "transport"
-  ],
-  "description": "Аэропорт имени Нурсултана Назарбаева; ~20–30 минут на машине до левого берега.",
-  "description_source": "manual",
-  "address": null,
-  "opening_hours": "24/7",
-  "opening_hours_source": "manual",
-  "opening_hours_checked_at": "2026-10-20",
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.5,
-  "indoor": true,
-  "wheelchair": "yes",
-  "kid_friendly": true,
-  "price_level": null,
-  "typical_visit_min": null,
-  "sources": [
-   {
-    "name": "seed",
-    "url": null,
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.65,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "osm:way/209448027",
   "name": "MEGA Astana",
   "name_i18n": {
@@ -5478,60 +4813,6 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "wikidata:Q97167320",
-  "name": "Школа Косшыгулова",
-  "name_i18n": {
-   "ru": "Школа Косшыгулова",
-   "kk": "Қосшығұлов мектебі"
-  },
-  "lat": 51.167616,
-  "lon": 71.42226,
-  "category": "landmark",
-  "tags": [
-   "photo",
-   "sight"
-  ],
-  "description": "Школа Баймухамбета Косшыгулова для мусульманской молодёжи — памятник архитектуры конца XIX — начала XX века в Астане. Памятник истории и культуры местного значения.",
-  "description_source": "wikipedia",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.467,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q97167320",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%A8%D0%BA%D0%BE%D0%BB%D0%B0_%D0%9A%D0%BE%D1%81%D1%88%D1%8B%D0%B3%D1%83%D0%BB%D0%BE%D0%B2%D0%B0",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Kosshygulov_School_Nur-Sultan.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Kosshygulov_School_Nur-Sultan.jpg/960px-Kosshygulov_School_Nur-Sultan.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Kosshygulov_School_Nur-Sultan.jpg",
-   "author": "Yakov Fedorov",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "wikidata:Q97168850",
   "name": "Торговый дом купца Матвея Кубрина",
   "name_i18n": {
@@ -5640,13 +4921,13 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "wikidata:Q117835598",
+  "id": "osm:way/577099472",
   "name": "Ырыскелды кажы",
   "name_i18n": {
    "ru": "Ырыскелды кажы"
   },
-  "lat": 51.1655,
-  "lon": 71.3782,
+  "lat": 51.165423,
+  "lon": 71.378116,
   "category": "religious",
   "tags": [
    "culture",
@@ -5655,7 +4936,7 @@
   ],
   "description": "Ырыскелды кажы — мечеть на правом берегу реки Есиль в Астане с необычной архитектурой. Здание мечети построено в стиле постмодерн с использованием традиционных узоров и декоративных элементов. Главное здание имеет сложную форму, отличающуюся от классической формы мечети.",
   "description_source": "wikipedia",
-  "address": null,
+  "address": "Ермек Серкебаев көшесі, 2",
   "opening_hours": null,
   "opening_hours_source": null,
   "opening_hours_checked_at": null,
@@ -5668,8 +4949,13 @@
   "wheelchair": "unknown",
   "kid_friendly": null,
   "price_level": null,
-  "typical_visit_min": 25,
+  "typical_visit_min": 20,
   "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/577099472",
+    "fetched_at": "2026-10-20"
+   },
    {
     "name": "wikidata",
     "url": "https://www.wikidata.org/wiki/Q117835598",
@@ -5682,7 +4968,7 @@
    }
   ],
   "image": null,
-  "data_quality": 0.35,
+  "data_quality": 0.45,
   "updated_at": "2026-10-20"
  },
  {
@@ -5868,59 +5154,6 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Blagoveschenskiy_House_Nur-Sultan_1.jpg",
    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Blagoveschenskiy_House_Nur-Sultan_1.jpg/960px-Blagoveschenskiy_House_Nur-Sultan_1.jpg",
    "page_url": "https://commons.wikimedia.org/wiki/File:Blagoveschenskiy_House_Nur-Sultan_1.jpg",
-   "author": "Yakov Fedorov",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q97165482",
-  "name": "Больница купца Степана Кубрина",
-  "name_i18n": {
-   "ru": "Больница купца Степана Кубрина"
-  },
-  "lat": 51.174245,
-  "lon": 71.425678,
-  "category": "landmark",
-  "tags": [
-   "photo",
-   "sight"
-  ],
-  "description": "Больница купца Степана Кубрина — памятник архитектуры начала XX века в Астане. Входит в список памятников истории и культуры местного значения.",
-  "description_source": "wikipedia",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.459,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q97165482",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikipedia",
-    "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%B0_%D0%BA%D1%83%D0%BF%D1%86%D0%B0_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%B0_%D0%9A%D1%83%D0%B1%D1%80%D0%B8%D0%BD%D0%B0",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Kubrin_Hospital_Nur-Sultan.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Kubrin_Hospital_Nur-Sultan.jpg/960px-Kubrin_Hospital_Nur-Sultan.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Kubrin_Hospital_Nur-Sultan.jpg",
    "author": "Yakov Fedorov",
    "license": "CC BY-SA 4.0",
    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
@@ -6398,393 +5631,23 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:way/917236998",
-  "name": "Архив Президента Республики Казахстан",
-  "name_i18n": {
-   "ru": "Архив Президента Республики Казахстан"
-  },
-  "lat": 51.118252,
-  "lon": 71.433763,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Архив Президента Республики Казахстан» по адресу: Мәңгілік Ел даңғылы, 15.",
-  "description_source": "template",
-  "address": "Мәңгілік Ел даңғылы, 15",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.45,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/917236998",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/917236999",
-  "name": "Конституционный суд",
-  "name_i18n": {
-   "ru": "Конституционный суд"
-  },
-  "lat": 51.119258,
-  "lon": 71.434036,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Конституционный суд» по адресу: Мәңгілік Ел даңғылы, 13.",
-  "description_source": "template",
-  "address": "Мәңгілік Ел даңғылы, 13",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.45,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/917236999",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:relation/3468477",
-  "name": "Министерство иностранных дел Республики Казахстан",
-  "name_i18n": {
-   "ru": "Министерство иностранных дел Республики Казахстан",
-   "kk": "Қазақстан Республикасы Сыртқы істер министрлігі",
-   "en": "Ministry of Foreign Affairs of the Republic of Kazakhstan"
-  },
-  "lat": 51.131618,
-  "lon": 71.431858,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Министерство иностранных дел Республики Казахстан» по адресу: Қонаев көшесі, 31.",
-  "description_source": "template",
-  "address": "Қонаев көшесі, 31",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.4,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/relation/3468477",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Emblem_of_MFA_of_Kazakhstan.png",
-   "thumb_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Emblem_of_MFA_of_Kazakhstan.png",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Emblem_of_MFA_of_Kazakhstan.png",
-   "author": "Ministry of Foreign Affairs of the Republic of Kazakhstan",
-   "license": "Public domain",
-   "license_url": null,
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/1484667027",
-  "name": "Нурлы Жол",
-  "name_i18n": {
-   "ru": "Нурлы Жол",
-   "kk": "Нұрлы Жол",
-   "en": "Nurly Zhol"
-  },
-  "lat": 51.112014,
-  "lon": 71.528866,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight",
-   "transport"
-  ],
-  "description": "Достопримечательность «Нурлы Жол».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.4,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/1484667027",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.15,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/1547354178",
-  "name": "Атамекен",
-  "name_i18n": {
-   "ru": "Атамекен",
-   "kk": "Атамекен",
-   "en": "Atameken"
-  },
-  "lat": 51.041314,
-  "lon": 71.442213,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight",
-   "transport"
-  ],
-  "description": "Достопримечательность «Атамекен».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.4,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/1547354178",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "wikidata",
-    "url": "https://www.wikidata.org/wiki/Q137551660",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.15,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/230401643",
-  "name": "Министерство обороны Республики Казахстан",
-  "name_i18n": {
-   "ru": "Министерство обороны Республики Казахстан",
-   "kk": "Қазақстан Республикасының Қорғаныс министрлігі",
-   "en": "Ministry of Defense of the Republic of Kazakhstan"
-  },
-  "lat": 51.124892,
-  "lon": 71.42922,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Министерство обороны Республики Казахстан» по адресу: Достық көшесі, 14.",
-  "description_source": "template",
-  "address": "Достық көшесі, 14",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.4,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/230401643",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Kazakh_Defense_Minister_ensign_at_the_Kazakhstan_Military_History_Museum.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Kazakh_Defense_Minister_ensign_at_the_Kazakhstan_Military_History_Museum.jpg/960px-Kazakh_Defense_Minister_ensign_at_the_Kazakhstan_Military_History_Museum.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Kazakh_Defense_Minister_ensign_at_the_Kazakhstan_Military_History_Museum.jpg",
-   "author": "Nurken",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/240485225",
-  "name": "Министерство внутренних дел Республики Казахстан",
-  "name_i18n": {
-   "ru": "Министерство внутренних дел Республики Казахстан",
-   "kk": "Қазақстан Республикасы Ішкі істер министрлігі",
-   "en": "Ministry of Internal Affairs of the Republic of Kazakhstan"
-  },
-  "lat": 51.152498,
-  "lon": 71.45362,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Министерство внутренних дел Республики Казахстан» по адресу: Тәуелсіздік даңғылы, 1.",
-  "description_source": "template",
-  "address": "Тәуелсіздік даңғылы, 1",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.4,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/240485225",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Kazakhstan_Internal_Affairs_Ministry_Patrol_Police_worker.jpg",
-   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Kazakhstan_Internal_Affairs_Ministry_Patrol_Police_worker.jpg/960px-Kazakhstan_Internal_Affairs_Ministry_Patrol_Police_worker.jpg",
-   "page_url": "https://commons.wikimedia.org/wiki/File:Kazakhstan_Internal_Affairs_Ministry_Patrol_Police_worker.jpg",
-   "author": "Қазақстан премьер-министрі",
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0",
-   "source": "wikimedia_commons"
-  },
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/240931356",
-  "name": "Посольство Ватикана",
-  "name_i18n": {
-   "ru": "Посольство Ватикана",
-   "en": "Embassy of the Holy See (Vatican)"
-  },
-  "lat": 51.144596,
-  "lon": 71.423519,
-  "category": "landmark",
-  "tags": [
-   "free",
-   "photo",
-   "sight"
-  ],
-  "description": "Достопримечательность «Посольство Ватикана» по адресу: улица Жекебатыр, 20.",
-  "description_source": "template",
-  "address": "улица Жекебатыр, 20",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": "+7 (7172) 241269",
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.4,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": 0,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/240931356",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "wikidata:Q122526919",
+  "id": "osm:way/499328449",
   "name": "Театр Астана Балет",
   "name_i18n": {
    "ru": "Театр Астана Балет",
    "en": "Astana Ballet Theatre"
   },
-  "lat": 51.09825,
-  "lon": 71.41939,
+  "lat": 51.099235,
+  "lon": 71.419653,
   "category": "theatre",
   "tags": [
    "culture",
    "indoor",
    "sight"
   ],
-  "description": "Театр / концертный зал «Театр Астана Балет».",
+  "description": "Театр «Астана балет» по адресу: Ұлы Дала даңғылы, 43.",
   "description_source": "template",
-  "address": null,
+  "address": "Ұлы Дала даңғылы, 43",
   "opening_hours": null,
   "opening_hours_source": null,
   "opening_hours_checked_at": null,
@@ -6800,6 +5663,11 @@
   "typical_visit_min": 150,
   "sources": [
    {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/499328449",
+    "fetched_at": "2026-10-20"
+   },
+   {
     "name": "wikidata",
     "url": "https://www.wikidata.org/wiki/Q122526919",
     "fetched_at": "2026-10-20"
@@ -6814,7 +5682,7 @@
    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
    "source": "wikimedia_commons"
   },
-  "data_quality": 0.15,
+  "data_quality": 0.25,
   "updated_at": "2026-10-20"
  },
  {
@@ -6982,6 +5850,639 @@
    }
   ],
   "image": null,
+  "data_quality": 0.15,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/1383291292",
+  "name": "Мажилис Парламента Республики Казахстан",
+  "name_i18n": {
+   "ru": "Мажилис Парламента Республики Казахстан",
+   "en": "Parliament/Majilis of the Republic of Kazakhstan",
+   "kk": "Мәжіліс"
+  },
+  "lat": 51.127821,
+  "lon": 71.441497,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Мажилис Парламента Республики Казахстан — нижняя палата Парламента Республики Казахстан с 1995 по 2026 годы.",
+  "description_source": "wikipedia",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": "https://mazhilis.parlam.kz/",
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.229,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/1383291292",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q1247199",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B6%D0%B8%D0%BB%D0%B8%D1%81_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/2023_Republican_budget_is_discussed_by_Parliament%2C_Government_and_Supreme_Audit_Chamber_%2855782%29.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/2023_Republican_budget_is_discussed_by_Parliament%2C_Government_and_Supreme_Audit_Chamber_%2855782%29.jpg/960px-2023_Republican_budget_is_discussed_by_Parliament%2C_Government_and_Supreme_Audit_Chamber_%2855782%29.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:2023_Republican_budget_is_discussed_by_Parliament,_Government_and_Supreme_Audit_Chamber_(55782).jpg",
+   "author": "Қазақстан Республикасы Парламентінің Мәжілісі",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.45,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/1383291281",
+  "name": "Сенат Парламента Республики Казахстан",
+  "name_i18n": {
+   "ru": "Сенат Парламента Республики Казахстан",
+   "en": "Parliament/Senate of the Republic of Kazakhstan",
+   "kk": "Қазақстан Парламентінің Сенаты"
+  },
+  "lat": 51.127561,
+  "lon": 71.441923,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Сенат Парламента Республики Казахстан — верхняя палата Парламента Республики Казахстан в 1995—2026 годах.",
+  "description_source": "wikipedia",
+  "address": "Мәңгілік Ел даңғылы, 4",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": "https://senate.parlam.kz/",
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.208,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/1383291281",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q1316045",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0%D1%82_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.55,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/424980293",
+  "name": "Вокзал Нурлы Жол",
+  "name_i18n": {
+   "ru": "Вокзал Нурлы Жол",
+   "kk": "Нұрлы Жол вокзалы",
+   "en": "Astana Nurly Zhol station"
+  },
+  "lat": 51.112358,
+  "lon": 71.531718,
+  "category": "other",
+  "tags": [
+   "transport"
+  ],
+  "description": "Астана Нурлы Жол — станция Казахстанских железных дорог и, наряду с вокзалом «Астана-1», один из двух железнодорожных вокзалов города Астана. После открытия в 2017 году стал основным вокзалом города.",
+  "description_source": "wikipedia",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.179,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": 0,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/424980293",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q30642068",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%9D%D1%83%D1%80%D0%BB%D1%8B_%D0%96%D0%BE%D0%BB",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C_%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB_%D0%9D%D1%83%D1%80%D0%BB%D1%8B_%D0%96%D0%BE%D0%BB%2C_%D1%81%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%28cropped%29.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C_%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB_%D0%9D%D1%83%D1%80%D0%BB%D1%8B_%D0%96%D0%BE%D0%BB%2C_%D1%81%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%28cropped%29.jpg/960px-%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C_%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB_%D0%9D%D1%83%D1%80%D0%BB%D1%8B_%D0%96%D0%BE%D0%BB%2C_%D1%81%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_%28cropped%29.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0,_%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB_%D0%9D%D1%83%D1%80%D0%BB%D1%8B_%D0%96%D0%BE%D0%BB,_%D1%81%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0_(cropped).jpg",
+   "author": "Nikolai Bulykin",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.35,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/230403281",
+  "name": "Верховный суд",
+  "name_i18n": {
+   "ru": "Верховный суд",
+   "kk": "Жоғарғы сот",
+   "en": "Supreme Court"
+  },
+  "lat": 51.129522,
+  "lon": 71.443999,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Верховный Суд Республики Казахстан является высшим судебным органом Республики Казахстан по гражданским, уголовным и иным делам, подсудным местным и другим судам, осуществляет в предусмотренных законом процессуальных формах надзор за их деятельностью и дает разъяснения по вопросам судебной практики.",
+  "description_source": "wikipedia",
+  "address": "Қонаев көшесі, 39",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": "https://www.sud.gov.kz/",
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.171,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/230403281",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q4109099",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D1%81%D1%83%D0%B4_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D1%81%D1%83%D0%B4_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D1%81%D1%83%D0%B4_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg/960px-%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D1%81%D1%83%D0%B4_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D1%81%D1%83%D0%B4_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
+   "author": "Мазур Владимир",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.55,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/1087197699",
+  "name": "Главный корпус",
+  "name_i18n": {
+   "ru": "Главный корпус",
+   "kk": "Астана аграрлық университеті",
+   "en": "Kazakh Agro Technical University"
+  },
+  "lat": 51.187047,
+  "lon": 71.40913,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Казахский агротехнический исследовательский университет имени Сакена Сейфуллина — крупнейший аграрный вуз Центрального и Северного Казахстана, первое высшее учебное заведение города Астана. Назван в честь основоположника современной казахской литературы Сакена Сейфуллина.",
+  "description_source": "wikipedia",
+  "address": "Жеңіс даңғылы, 62",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": "https://kazatu.kz/?lang=ru",
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.163,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/1087197699",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q4208086",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B8%D0%B9_%D0%B0%D0%B3%D1%80%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8_%D0%A1%D0%B0%D0%BA%D0%B5%D0%BD%D0%B0_%D0%A1%D0%B5%D0%B9%D1%84%D1%83%D0%BB%D0%BB%D0%B8%D0%BD%D0%B0",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.55,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "wikidata:Q1073439",
+  "name": "Изумрудный квартал",
+  "name_i18n": {
+   "ru": "Изумрудный квартал",
+   "kk": "Асыл тас",
+   "en": "Emerald Towers"
+  },
+  "lat": 51.130719,
+  "lon": 71.422394,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "«Изумрудный квартал» — комплекс из трёх высотных башен разной этажности в городе Астана. Строительство было начато в 2006 году. Комплекс введён в эксплуатацию в 2011 году.",
+  "description_source": "wikipedia",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.163,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q1073439",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%98%D0%B7%D1%83%D0%BC%D1%80%D1%83%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B0%D0%BB",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Astana-2021-10_-_37.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Astana-2021-10_-_37.jpg/960px-Astana-2021-10_-_37.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_37.jpg",
+   "author": "Vyacheslav Bukharov",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.35,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:relation/3466338",
+  "name": "Транспорт Тауэр",
+  "name_i18n": {
+   "ru": "Транспорт Тауэр",
+   "en": "Transport Tower"
+  },
+  "lat": 51.131364,
+  "lon": 71.41651,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Достопримечательность «Транспорт Тауэр» по адресу: Қабанбай Батыр даңғылы, 32/1.",
+  "description_source": "template",
+  "address": "Қабанбай Батыр даңғылы, 32/1",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.16,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/relation/3466338",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q1516792",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Transport_Tower%2C_Astana.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Transport_Tower%2C_Astana.jpg/960px-Transport_Tower%2C_Astana.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Transport_Tower,_Astana.jpg",
+   "author": "Bernard Gagnon",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.25,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/240909255",
+  "name": "ЖК “Триумф Астана”",
+  "name_i18n": {
+   "ru": "ЖК “Триумф Астана”",
+   "en": "“Triumph of Astana” Apartments"
+  },
+  "lat": 51.140433,
+  "lon": 71.414819,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Триумф Астана — Жилой комплекс в Астане, Казахстан.",
+  "description_source": "wikidata",
+  "address": "Қабанбай Батыр даңғылы, 11",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.16,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/240909255",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q475139",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/This_building_in_Astana_mimics_a_certain_Moscow_style_%284054861399%29.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/This_building_in_Astana_mimics_a_certain_Moscow_style_%284054861399%29.jpg/960px-This_building_in_Astana_mimics_a_certain_Moscow_style_%284054861399%29.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:This_building_in_Astana_mimics_a_certain_Moscow_style_(4054861399).jpg",
+   "author": "Peretz Partensky from San Francisco, USA",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.45,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "wikidata:Q1542507",
+  "name": "Grand Alatau",
+  "name_i18n": {
+   "en": "Grand Alatau"
+  },
+  "lat": 51.161944,
+  "lon": 71.419722,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Достопримечательность «Grand Alatau».",
+  "description_source": "template",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.158,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q1542507",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Astana-Ishim-7809.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Astana-Ishim-7809.jpg/960px-Astana-Ishim-7809.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Astana-Ishim-7809.jpg",
+   "author": "Vmenkov",
+   "license": "CC BY-SA 3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.15,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/1373272211",
+  "name": "Аэропорт",
+  "name_i18n": {
+   "ru": "Аэропорт",
+   "kk": "Әуежай",
+   "en": "Airport"
+  },
+  "lat": 51.027953,
+  "lon": 71.458858,
+  "category": "other",
+  "tags": [
+   "transport"
+  ],
+  "description": "Достопримечательность «Аэропорт».",
+  "description_source": "template",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.155,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": 0,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/1373272211",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q137551659",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Platform_view_at_Airport_station_of_the_Astana_Light_Rail_Transit_%28LRT%29_system_serving_Astana_International_Airport.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Platform_view_at_Airport_station_of_the_Astana_Light_Rail_Transit_%28LRT%29_system_serving_Astana_International_Airport.jpg/960px-Platform_view_at_Airport_station_of_the_Astana_Light_Rail_Transit_%28LRT%29_system_serving_Astana_International_Airport.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Platform_view_at_Airport_station_of_the_Astana_Light_Rail_Transit_(LRT)_system_serving_Astana_International_Airport.jpg",
+   "author": "Kristianmusic",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.15,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/230358856",
+  "name": "Национальный архив Республики Казахстан",
+  "name_i18n": {
+   "ru": "Национальный архив Республики Казахстан",
+   "en": "The National Archive of the Republic of Kazakhstan",
+   "kk": "Қазақстан Республикасының ұлттық мұрағаттары"
+  },
+  "lat": 51.127967,
+  "lon": 71.427018,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Достопримечательность «Национальный архив Республики Казахстан» по адресу: Нұржол желек жолы, 12.",
+  "description_source": "template",
+  "address": "Нұржол желек жолы, 12",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": "https://nmrk.kz/",
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.155,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/230358856",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q12573359",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.35,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "wikidata:Q746625",
+  "name": "Astana Tower",
+  "name_i18n": {
+   "en": "Astana Tower"
+  },
+  "lat": 51.153333,
+  "lon": 71.429167,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Достопримечательность «Astana Tower».",
+  "description_source": "template",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.155,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q746625",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Astana%2C_capital_of_Kazakhstan_06.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Astana%2C_capital_of_Kazakhstan_06.jpg/960px-Astana%2C_capital_of_Kazakhstan_06.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Astana,_capital_of_Kazakhstan_06.jpg",
+   "author": "Ninaras",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "source": "wikimedia_commons"
+  },
   "data_quality": 0.15,
   "updated_at": "2026-10-20"
  },
@@ -9607,47 +9108,6 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:node/4902165007",
-  "name": "Римско-Католический Приход Матери Божией Неустанной Помощи",
-  "name_i18n": {
-   "ru": "Римско-Католический Приход Матери Божией Неустанной Помощи",
-   "en": "Roman Catholic Church of Our Mother of Perpetual Help"
-  },
-  "lat": 51.153702,
-  "lon": 71.451873,
-  "category": "religious",
-  "tags": [
-   "culture",
-   "quiet"
-  ],
-  "description": "Религиозный объект «Римско-Католический Приход Матери Божией Неустанной Помощи».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": "https://www.katast.info/",
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.15,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/node/4902165007",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "osm:node/4907087023",
   "name": "ТехноДом",
   "name_i18n": {
@@ -12240,47 +11700,6 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:relation/18901938",
-  "name": "Мечеть Нурсултан",
-  "name_i18n": {
-   "ru": "Мечеть Нурсултан",
-   "en": "Nursultan mosque"
-  },
-  "lat": 51.072903,
-  "lon": 71.410437,
-  "category": "religious",
-  "tags": [
-   "culture",
-   "quiet"
-  ],
-  "description": "Религиозный объект «Мечеть Нурсултан» по адресу: Мәігілік Ел көшесі, 65.",
-  "description_source": "template",
-  "address": "Мәігілік Ел көшесі, 65",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.15,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/relation/18901938",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "osm:relation/20321103",
   "name": "Qazaq Oil",
   "name_i18n": {
@@ -12370,9 +11789,9 @@
  },
  {
   "id": "osm:way/108096984",
-  "name": "Керуен",
+  "name": "ТРЦ «Керуен»",
   "name_i18n": {
-   "ru": "Керуен",
+   "ru": "ТРЦ «Керуен»",
    "kk": "Керуен",
    "en": "Keruen"
   },
@@ -12505,47 +11924,6 @@
   ],
   "image": null,
   "data_quality": 0.15,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/1239171353",
-  "name": "Военно-исторический музей",
-  "name_i18n": {
-   "ru": "Военно-исторический музей",
-   "en": "Military History Museum"
-  },
-  "lat": 51.155498,
-  "lon": 71.431972,
-  "category": "museum",
-  "tags": [
-   "culture",
-   "indoor"
-  ],
-  "description": "Музей «Военно-исторический музей».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": "Mo-Su 10:00-18:00",
-  "opening_hours_source": "osm",
-  "opening_hours_checked_at": "2026-10-20",
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.15,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": true,
-  "price_level": null,
-  "typical_visit_min": 75,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/1239171353",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.4,
   "updated_at": "2026-10-20"
  },
  {
@@ -12718,50 +12096,6 @@
   ],
   "image": null,
   "data_quality": 0.6,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/1363058986",
-  "name": "Триатлон парк",
-  "name_i18n": {
-   "ru": "Триатлон парк",
-   "kk": "Триатлон саябағы",
-   "en": "Triathlon park"
-  },
-  "lat": 51.135277,
-  "lon": 71.449778,
-  "category": "park",
-  "tags": [
-   "free",
-   "outdoor",
-   "quiet",
-   "walk"
-  ],
-  "description": "Парк «Триатлон парк».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.15,
-  "indoor": false,
-  "wheelchair": "unknown",
-  "kid_friendly": true,
-  "price_level": 0,
-  "typical_visit_min": 45,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/1363058986",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.15,
   "updated_at": "2026-10-20"
  },
  {
@@ -13108,6 +12442,54 @@
   "updated_at": "2026-10-20"
  },
  {
+  "id": "osm:way/230403290",
+  "name": "Правительство Республики Казахстан",
+  "name_i18n": {
+   "ru": "Правительство Республики Казахстан",
+   "en": "Government of the Republic of Kazakhstan"
+  },
+  "lat": 51.12552,
+  "lon": 71.440831,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Достопримечательность «Правительство Республики Казахстан» по адресу: Мәңгілік Ел даңғылы, 6.",
+  "description_source": "template",
+  "address": "Мәңгілік Ел даңғылы, 6",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": "https://primeminister.kz/",
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.15,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/230403290",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg/960px-%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_2017.jpg",
+   "author": "Мазур Владимир",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.35,
+  "updated_at": "2026-10-20"
+ },
+ {
   "id": "osm:way/239954943",
   "name": "Арсенал",
   "name_i18n": {
@@ -13374,50 +12756,6 @@
   ],
   "image": null,
   "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/243041606",
-  "name": "Президентский парк",
-  "name_i18n": {
-   "ru": "Президентский парк",
-   "kk": "Президент саябағы",
-   "en": "Presidential Park"
-  },
-  "lat": 51.113398,
-  "lon": 71.444769,
-  "category": "park",
-  "tags": [
-   "free",
-   "outdoor",
-   "quiet",
-   "walk"
-  ],
-  "description": "Парк «Президентский парк».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.15,
-  "indoor": false,
-  "wheelchair": "unknown",
-  "kid_friendly": true,
-  "price_level": 0,
-  "typical_visit_min": 45,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/243041606",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.15,
   "updated_at": "2026-10-20"
  },
  {
@@ -13885,6 +13223,503 @@
   ],
   "image": null,
   "data_quality": 0.25,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "seed:airport",
+  "name": "Международный аэропорт Астаны",
+  "name_i18n": {
+   "ru": "Международный аэропорт Астаны"
+  },
+  "lat": 51.0222,
+  "lon": 71.4669,
+  "category": "other",
+  "tags": [
+   "indoor",
+   "transport"
+  ],
+  "description": "Аэропорт имени Нурсултана Назарбаева; ~20–30 минут на машине до левого берега.",
+  "description_source": "manual",
+  "address": null,
+  "opening_hours": "24/7",
+  "opening_hours_source": "manual",
+  "opening_hours_checked_at": "2026-10-20",
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.15,
+  "indoor": true,
+  "wheelchair": "yes",
+  "kid_friendly": true,
+  "price_level": null,
+  "typical_visit_min": null,
+  "sources": [
+   {
+    "name": "seed",
+    "url": null,
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.65,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "wikidata:Q97167320",
+  "name": "Школа Косшыгулова",
+  "name_i18n": {
+   "ru": "Школа Косшыгулова",
+   "kk": "Қосшығұлов мектебі"
+  },
+  "lat": 51.167616,
+  "lon": 71.42226,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Школа Баймухамбета Косшыгулова для мусульманской молодёжи — памятник архитектуры конца XIX — начала XX века в Астане. Памятник истории и культуры местного значения.",
+  "description_source": "wikipedia",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.14,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q97167320",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%A8%D0%BA%D0%BE%D0%BB%D0%B0_%D0%9A%D0%BE%D1%81%D1%88%D1%8B%D0%B3%D1%83%D0%BB%D0%BE%D0%B2%D0%B0",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Kosshygulov_School_Nur-Sultan.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Kosshygulov_School_Nur-Sultan.jpg/960px-Kosshygulov_School_Nur-Sultan.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Kosshygulov_School_Nur-Sultan.jpg",
+   "author": "Yakov Fedorov",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.35,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "wikidata:Q97165482",
+  "name": "Больница купца Степана Кубрина",
+  "name_i18n": {
+   "ru": "Больница купца Степана Кубрина"
+  },
+  "lat": 51.174245,
+  "lon": 71.425678,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Больница купца Степана Кубрина — памятник архитектуры начала XX века в Астане. Входит в список памятников истории и культуры местного значения.",
+  "description_source": "wikipedia",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.138,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q97165482",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikipedia",
+    "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%B0_%D0%BA%D1%83%D0%BF%D1%86%D0%B0_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%B0_%D0%9A%D1%83%D0%B1%D1%80%D0%B8%D0%BD%D0%B0",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Kubrin_Hospital_Nur-Sultan.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Kubrin_Hospital_Nur-Sultan.jpg/960px-Kubrin_Hospital_Nur-Sultan.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Kubrin_Hospital_Nur-Sultan.jpg",
+   "author": "Yakov Fedorov",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.35,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/917236998",
+  "name": "Архив Президента Республики Казахстан",
+  "name_i18n": {
+   "ru": "Архив Президента Республики Казахстан"
+  },
+  "lat": 51.118252,
+  "lon": 71.433763,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Достопримечательность «Архив Президента Республики Казахстан» по адресу: Мәңгілік Ел даңғылы, 15.",
+  "description_source": "template",
+  "address": "Мәңгілік Ел даңғылы, 15",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.135,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/917236998",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.25,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/917236999",
+  "name": "Конституционный суд",
+  "name_i18n": {
+   "ru": "Конституционный суд"
+  },
+  "lat": 51.119258,
+  "lon": 71.434036,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Достопримечательность «Конституционный суд» по адресу: Мәңгілік Ел даңғылы, 13.",
+  "description_source": "template",
+  "address": "Мәңгілік Ел даңғылы, 13",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.135,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/917236999",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.25,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:relation/3468477",
+  "name": "Министерство иностранных дел Республики Казахстан",
+  "name_i18n": {
+   "ru": "Министерство иностранных дел Республики Казахстан",
+   "kk": "Қазақстан Республикасы Сыртқы істер министрлігі",
+   "en": "Ministry of Foreign Affairs of the Republic of Kazakhstan"
+  },
+  "lat": 51.131618,
+  "lon": 71.431858,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Достопримечательность «Министерство иностранных дел Республики Казахстан» по адресу: Қонаев көшесі, 31.",
+  "description_source": "template",
+  "address": "Қонаев көшесі, 31",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.12,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/relation/3468477",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Emblem_of_MFA_of_Kazakhstan.png",
+   "thumb_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Emblem_of_MFA_of_Kazakhstan.png",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Emblem_of_MFA_of_Kazakhstan.png",
+   "author": "Ministry of Foreign Affairs of the Republic of Kazakhstan",
+   "license": "Public domain",
+   "license_url": null,
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.25,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/1484667027",
+  "name": "Нурлы Жол",
+  "name_i18n": {
+   "ru": "Нурлы Жол",
+   "kk": "Нұрлы Жол",
+   "en": "Nurly Zhol"
+  },
+  "lat": 51.112014,
+  "lon": 71.528866,
+  "category": "other",
+  "tags": [
+   "transport"
+  ],
+  "description": "Достопримечательность «Нурлы Жол».",
+  "description_source": "template",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.12,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": 0,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/1484667027",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.15,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/1547354178",
+  "name": "Атамекен",
+  "name_i18n": {
+   "ru": "Атамекен",
+   "kk": "Атамекен",
+   "en": "Atameken"
+  },
+  "lat": 51.041314,
+  "lon": 71.442213,
+  "category": "other",
+  "tags": [
+   "transport"
+  ],
+  "description": "Достопримечательность «Атамекен».",
+  "description_source": "template",
+  "address": null,
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.12,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": 0,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/1547354178",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "wikidata",
+    "url": "https://www.wikidata.org/wiki/Q137551660",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.15,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/230401643",
+  "name": "Министерство обороны Республики Казахстан",
+  "name_i18n": {
+   "ru": "Министерство обороны Республики Казахстан",
+   "kk": "Қазақстан Республикасының Қорғаныс министрлігі",
+   "en": "Ministry of Defense of the Republic of Kazakhstan"
+  },
+  "lat": 51.124892,
+  "lon": 71.42922,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Достопримечательность «Министерство обороны Республики Казахстан» по адресу: Достық көшесі, 14.",
+  "description_source": "template",
+  "address": "Достық көшесі, 14",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.12,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/230401643",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Kazakh_Defense_Minister_ensign_at_the_Kazakhstan_Military_History_Museum.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Kazakh_Defense_Minister_ensign_at_the_Kazakhstan_Military_History_Museum.jpg/960px-Kazakh_Defense_Minister_ensign_at_the_Kazakhstan_Military_History_Museum.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Kazakh_Defense_Minister_ensign_at_the_Kazakhstan_Military_History_Museum.jpg",
+   "author": "Nurken",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.25,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/240485225",
+  "name": "Министерство внутренних дел Республики Казахстан",
+  "name_i18n": {
+   "ru": "Министерство внутренних дел Республики Казахстан",
+   "kk": "Қазақстан Республикасы Ішкі істер министрлігі",
+   "en": "Ministry of Internal Affairs of the Republic of Kazakhstan"
+  },
+  "lat": 51.152498,
+  "lon": 71.45362,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Достопримечательность «Министерство внутренних дел Республики Казахстан» по адресу: Тәуелсіздік даңғылы, 1.",
+  "description_source": "template",
+  "address": "Тәуелсіздік даңғылы, 1",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.12,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/240485225",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Kazakhstan_Internal_Affairs_Ministry_Patrol_Police_worker.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Kazakhstan_Internal_Affairs_Ministry_Patrol_Police_worker.jpg/960px-Kazakhstan_Internal_Affairs_Ministry_Patrol_Police_worker.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Kazakhstan_Internal_Affairs_Ministry_Patrol_Police_worker.jpg",
+   "author": "Қазақстан премьер-министрі",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "source": "wikimedia_commons"
+  },
+  "data_quality": 0.25,
+  "updated_at": "2026-10-20"
+ },
+ {
+  "id": "osm:way/240931356",
+  "name": "Посольство Ватикана",
+  "name_i18n": {
+   "ru": "Посольство Ватикана",
+   "en": "Embassy of the Holy See (Vatican)"
+  },
+  "lat": 51.144596,
+  "lon": 71.423519,
+  "category": "other",
+  "tags": [
+   "institution"
+  ],
+  "description": "Достопримечательность «Посольство Ватикана» по адресу: улица Жекебатыр, 20.",
+  "description_source": "template",
+  "address": "улица Жекебатыр, 20",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": "+7 (7172) 241269",
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.12,
+  "indoor": null,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 20,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/240931356",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.35,
   "updated_at": "2026-10-20"
  },
  {
@@ -42378,50 +42213,6 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:node/13779471493",
-  "name": "Aizere2",
-  "name_i18n": {
-   "ru": "Aizere2"
-  },
-  "lat": 51.002288,
-  "lon": 71.379489,
-  "category": "cafe",
-  "tags": [
-   "coffee"
-  ],
-  "description": "Кафе «Aizere2» по адресу: Республика көшесі, 7305.",
-  "description_source": "template",
-  "address": "Республика көшесі, 7305",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.1,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 45,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/node/13779471493",
-    "fetched_at": "2026-10-20"
-   },
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/1499433763",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "osm:node/13779471494",
   "name": "Умар",
   "name_i18n": {
@@ -56435,46 +56226,6 @@
    {
     "name": "osm",
     "url": "https://www.openstreetmap.org/node/4915119663",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.15,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:node/4915178198",
-  "name": "Украинская Греко-Католическая церковь Святого Иосифа Обручника",
-  "name_i18n": {
-   "ru": "Украинская Греко-Католическая церковь Святого Иосифа Обручника"
-  },
-  "lat": 51.151418,
-  "lon": 71.447821,
-  "category": "religious",
-  "tags": [
-   "culture",
-   "quiet"
-  ],
-  "description": "Религиозный объект «Украинская Греко-Католическая церковь Святого Иосифа Обручника».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.1,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/node/4915178198",
     "fetched_at": "2026-10-20"
    }
   ],
@@ -84809,7 +84560,7 @@
   },
   "lat": 51.137416,
   "lon": 71.463417,
-  "category": "entertainment",
+  "category": "landmark",
   "tags": [
    "fun",
    "indoor"
@@ -87522,6 +87273,11 @@
     "name": "osm",
     "url": "https://www.openstreetmap.org/way/1450732938",
     "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/1534678435",
+    "fetched_at": "2026-10-20"
    }
   ],
   "image": null,
@@ -87895,6 +87651,50 @@
   "updated_at": "2026-10-20"
  },
  {
+  "id": "osm:way/1499433763",
+  "name": "Aizere2  Кафе",
+  "name_i18n": {
+   "ru": "Aizere2  Кафе"
+  },
+  "lat": 51.002284,
+  "lon": 71.379507,
+  "category": "cafe",
+  "tags": [
+   "coffee"
+  ],
+  "description": "Кафе «Aizere2  Кафе» по адресу: Республика көшесі, 7305.",
+  "description_source": "template",
+  "address": "Республика көшесі, 7305",
+  "opening_hours": null,
+  "opening_hours_source": null,
+  "opening_hours_checked_at": null,
+  "phone": null,
+  "website": null,
+  "rating": null,
+  "rating_count": null,
+  "popularity": 0.1,
+  "indoor": true,
+  "wheelchair": "unknown",
+  "kid_friendly": null,
+  "price_level": null,
+  "typical_visit_min": 45,
+  "sources": [
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/way/1499433763",
+    "fetched_at": "2026-10-20"
+   },
+   {
+    "name": "osm",
+    "url": "https://www.openstreetmap.org/node/13779471493",
+    "fetched_at": "2026-10-20"
+   }
+  ],
+  "image": null,
+  "data_quality": 0.25,
+  "updated_at": "2026-10-20"
+ },
+ {
   "id": "osm:way/1499446217",
   "name": "Мечеть имени Ондыбай ата",
   "name_i18n": {
@@ -88124,48 +87924,6 @@
    {
     "name": "osm",
     "url": "https://www.openstreetmap.org/way/1526900307",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.15,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/1534678435",
-  "name": "Greenline",
-  "name_i18n": {
-   "ru": "Greenline"
-  },
-  "lat": 51.136677,
-  "lon": 71.376993,
-  "category": "park",
-  "tags": [
-   "free",
-   "outdoor",
-   "quiet",
-   "walk"
-  ],
-  "description": "Парк «Greenline».",
-  "description_source": "template",
-  "address": null,
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.1,
-  "indoor": false,
-  "wheelchair": "unknown",
-  "kid_friendly": true,
-  "price_level": 0,
-  "typical_visit_min": 45,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/1534678435",
     "fetched_at": "2026-10-20"
    }
   ],
@@ -88891,47 +88649,6 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:way/240391776",
-  "name": "Государственный военно-исторический музей",
-  "name_i18n": {
-   "ru": "Государственный военно-исторический музей",
-   "kk": "Мемлекеттік әскери-тарихи музей"
-  },
-  "lat": 51.15593,
-  "lon": 71.431298,
-  "category": "museum",
-  "tags": [
-   "culture",
-   "indoor"
-  ],
-  "description": "Музей «Государственный военно-исторический музей» по адресу: Республика даңғылы, 2.",
-  "description_source": "template",
-  "address": "Республика даңғылы, 2",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.1,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": true,
-  "price_level": null,
-  "typical_visit_min": 75,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/240391776",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "osm:way/240485199",
   "name": "Толкын",
   "name_i18n": {
@@ -89040,46 +88757,6 @@
    {
     "name": "osm",
     "url": "https://www.openstreetmap.org/way/240564855",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/240592107",
-  "name": "Свято-Успенский кафедральный собор",
-  "name_i18n": {
-   "ru": "Свято-Успенский кафедральный собор"
-  },
-  "lat": 51.149495,
-  "lon": 71.48138,
-  "category": "religious",
-  "tags": [
-   "culture",
-   "quiet"
-  ],
-  "description": "Религиозный объект «Свято-Успенский кафедральный собор» по адресу: улица Куйши Дина, 27.",
-  "description_source": "template",
-  "address": "улица Куйши Дина, 27",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.1,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/240592107",
     "fetched_at": "2026-10-20"
    }
   ],
@@ -89880,45 +89557,6 @@
   ],
   "image": null,
   "data_quality": 0.6,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/242364773",
-  "name": "Этно-мемориальный комплекс Карта Казахстана Атамекен",
-  "name_i18n": {
-   "ru": "Этно-мемориальный комплекс Карта Казахстана Атамекен"
-  },
-  "lat": 51.153335,
-  "lon": 71.419312,
-  "category": "sport",
-  "tags": [
-   "tennis"
-  ],
-  "description": "Стадион «Этно-мемориальный комплекс Карта Казахстана Атамекен» по адресу: Тұран даңғылы, 4/2.",
-  "description_source": "template",
-  "address": "Тұран даңғылы, 4/2",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.1,
-  "indoor": null,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 90,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/242364773",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
   "updated_at": "2026-10-20"
  },
  {
@@ -91474,50 +91112,10 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:way/499328449",
-  "name": "Астана балет",
-  "name_i18n": {
-   "ru": "Астана балет"
-  },
-  "lat": 51.099235,
-  "lon": 71.419653,
-  "category": "theatre",
-  "tags": [
-   "culture",
-   "indoor"
-  ],
-  "description": "Театр «Астана балет» по адресу: Ұлы Дала даңғылы, 43.",
-  "description_source": "template",
-  "address": "Ұлы Дала даңғылы, 43",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.1,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 150,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/499328449",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "osm:way/499328514",
-  "name": "Mega Silk Way",
+  "name": "ТРЦ «Mega Silk Way»",
   "name_i18n": {
-   "ru": "Mega Silk Way"
+   "ru": "ТРЦ «Mega Silk Way»"
   },
   "lat": 51.08909,
   "lon": 71.40733,
@@ -91550,7 +91148,15 @@
     "fetched_at": "2026-10-20"
    }
   ],
-  "image": null,
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/A%C4%89etcentro_SilkWay_%28Astano%29_01.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/A%C4%89etcentro_SilkWay_%28Astano%29_01.jpg/960px-A%C4%89etcentro_SilkWay_%28Astano%29_01.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:A%C4%89etcentro_SilkWay_(Astano)_01.jpg",
+   "author": "RG72",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons"
+  },
   "data_quality": 0.6,
   "updated_at": "2026-10-20"
  },
@@ -91760,46 +91366,6 @@
   "updated_at": "2026-10-20"
  },
  {
-  "id": "osm:way/51431624",
-  "name": "Музей первого президента РК Н. А. Назарбаева",
-  "name_i18n": {
-   "ru": "Музей первого президента РК Н. А. Назарбаева"
-  },
-  "lat": 51.166713,
-  "lon": 71.419032,
-  "category": "museum",
-  "tags": [
-   "culture",
-   "indoor"
-  ],
-  "description": "Музей «Музей первого президента РК Н. А. Назарбаева» по адресу: Бейбітшілік көшесі, 11.",
-  "description_source": "template",
-  "address": "Бейбітшілік көшесі, 11",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.1,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": true,
-  "price_level": null,
-  "typical_visit_min": 75,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/51431624",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
   "id": "osm:way/514836167",
   "name": "Акося",
   "name_i18n": {
@@ -91998,46 +91564,6 @@
    {
     "name": "osm",
     "url": "https://www.openstreetmap.org/way/564543884",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/577099472",
-  "name": "Ырыскелді Қажы мешіті",
-  "name_i18n": {
-   "ru": "Ырыскелді Қажы мешіті"
-  },
-  "lat": 51.165423,
-  "lon": 71.378116,
-  "category": "religious",
-  "tags": [
-   "culture",
-   "quiet"
-  ],
-  "description": "Религиозный объект «Ырыскелді Қажы мешіті» по адресу: Ермек Серкебаев көшесі, 2.",
-  "description_source": "template",
-  "address": "Ермек Серкебаев көшесі, 2",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.1,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 20,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/577099472",
     "fetched_at": "2026-10-20"
    }
   ],
@@ -92606,47 +92132,6 @@
   ],
   "image": null,
   "data_quality": 0.35,
-  "updated_at": "2026-10-20"
- },
- {
-  "id": "osm:way/917348929",
-  "name": "Государственный Академический казахский музыкально-драматический театр им. К. Куанышбаева",
-  "name_i18n": {
-   "ru": "Государственный Академический казахский музыкально-драматический театр им. К. Куанышбаева",
-   "kk": "Қ.Қуанышбаев атындағы Мемлекеттік академиялық қазақ музыкалық-драма театры"
-  },
-  "lat": 51.120559,
-  "lon": 71.479974,
-  "category": "theatre",
-  "tags": [
-   "culture",
-   "indoor"
-  ],
-  "description": "Театр «Государственный Академический казахский музыкально-драматический театр им. К. Куанышбаева» по адресу: Қалибек Қуанышбаев көшесі;​улица Калибек Куанышбаев, 8/1.",
-  "description_source": "template",
-  "address": "Қалибек Қуанышбаев көшесі;​улица Калибек Куанышбаев, 8/1",
-  "opening_hours": null,
-  "opening_hours_source": null,
-  "opening_hours_checked_at": null,
-  "phone": null,
-  "website": null,
-  "rating": null,
-  "rating_count": null,
-  "popularity": 0.1,
-  "indoor": true,
-  "wheelchair": "unknown",
-  "kid_friendly": null,
-  "price_level": null,
-  "typical_visit_min": 150,
-  "sources": [
-   {
-    "name": "osm",
-    "url": "https://www.openstreetmap.org/way/917348929",
-    "fetched_at": "2026-10-20"
-   }
-  ],
-  "image": null,
-  "data_quality": 0.25,
   "updated_at": "2026-10-20"
  },
  {

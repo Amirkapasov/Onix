@@ -14,12 +14,16 @@ shot() { # name query width height
   echo "→ $OUT/$1.png"
 }
 if [[ "${1:-}" == "mock" ]]; then
-  WALK=megasilkway_walk; WINTER=kids_khan_shatyr; KIDS=kids_khan_shatyr; NIGHT=night_nurzhol
+  WALK=megasilkway_walk; WINTER=kids_khan_shatyr; NIGHT=night_nurzhol; MOB=megasilkway_walk
 else
-  WALK=megasilkway_walk; WINTER=winter_evening; KIDS=kids; NIGHT=night_unusual
+  WALK=megasilkway_walk; WINTER=winter_evening; NIGHT=night_unusual; MOB=winter_evening
 fi
+rm -f "$OUT"/*.png
+shot 00-start-desktop    "lang=ru"                 1600 900
 shot 01-walk-desktop     "preset=$WALK"            1600 900
 shot 02-winter-desktop   "preset=$WINTER"          1600 900
-shot 03-kids-mobile      "preset=$KIDS"            500 2400   # headless Chrome не уже ~500 px; без прокрутки
-shot 04-night-kz-desktop "lang=kk&preset=$NIGHT"   1600 900
+shot 03-night-kz-desktop "lang=kk&preset=$NIGHT"   1600 900
+# headless Chrome не уже ~500 px и плохо снимает прокрутку — мобильные кадры без прокрутки
+shot 04-mobile-start     "lang=kk"                 500 1080
+shot 05-mobile-results   "lang=kk&preset=$MOB"             500 2300
 rm -rf "$PROFILE"

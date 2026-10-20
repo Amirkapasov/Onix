@@ -140,3 +140,33 @@ def test_shop_24_7_preset(rich_db):
     d = client.post("/api/recommend", json={**body, "want_route": True}).json()
     ids = [r["poi_id"] for r in d["recommendations"]]
     assert ids[0] == "test:p24" and "test:mini" not in ids and d["route"] is None
+
+
+SIGHTS = [
+    _poi("mod", "Министерство обороны", "landmark", 0.002, 0.0, ["photo", "sight"], popularity=0.7),
+    _poi("arch", "Национальный архив", "landmark", 0.0, 0.002, ["sight", "institution"], popularity=0.6),
+    _poi("misc", "Что-то прочее", "other", 0.001, 0.001, ["sight"], popularity=0.9),
+    _poi("famous", "Знаменитый дворец", "landmark", 0.010, 0.0, ["photo", "sight"], popularity=0.95, data_quality=0.8),
+    _poi("small", "Маленький памятник", "monument", 0.0009, 0.0, ["photo"], popularity=0.05, data_quality=0.2),
+]
+
+
+@pytest.fixture()
+def sights_db(tmp_path, monkeypatch):
+    seed = json.loads((config.ROOT / config.SEED_PATH).read_text(encoding="utf-8"))
+    path = tmp_path / "pois.json"
+    path.write_text(json.dumps(seed + SIGHTS, ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(config, "POIS_PATH", str(path))
+    store.get()
+    yield
+    monkeypatch.undo()
+    store.get()
+
+
+def test_main_sights_popular_first_no_institutions(sights_db):
+    d = ask("хочу посмотреть главные достопримечательности")
+    assert d["parsed_intent"]["intent"] == "sightseeing"
+    ids = [r["poi_id"] for r in d["recommendations"]]
+    assert not {"test:mod", "test:arch", "test:misc"} & set(ids)  # учреждения и «прочее» — не досуг
+    assert ids.index("test:famous") < ids.index("test:small") if "test:small" in ids else "test:famous" in ids
+    assert "seed:baiterek" not in ids  # пользователь стоит у Байтерека → максимум идея

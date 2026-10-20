@@ -29,6 +29,7 @@ pipeline/.venv/bin/python pipeline/run_all.py --refresh  # перекачать 
 | 4 | Wikidata SPARQL (P131* = Q1520): русские названия, описания, sitelinks → `popularity`, категория по P31, новые объекты, которых нет в OSM. Для статей ruwiki — 1–3 предложения из summary Википедии | `sources/wikidata.py` |
 | 5 | Резерв из `data/seed/` — только места, которых не нашли автоматические источники (например, «Нур Алем») | `sources/seed.py` |
 | 6 | 2GIS Places API — **только если в `.env` есть `TWOGIS_API_KEY`**: добор по рубрикам (бассейны, фитнес, спа, сауны, боулинг, квесты, караоке, катки, батуты, детские центры, кино, музеи, галереи, театры, смотровые, парки, коворкинги, кофейни, супермаркеты, продукты 24 ч, одежда, обувь, канцтовары, книжные, аптеки) в радиусе 3 км от Байтерека, Mega Silk Way и старого центра; место берётся, только если рубрика 2GIS подтверждает тип. Затем часы работы, рейтинг и контакты для уже найденных мест. Без ключа тихо пропускается | `sources/twogis.py` |
+| 5b | Достопримечательность или учреждение (`sights.py`): министерства, суды, архивы, парламент, посольства, ЖК, офисные башни (по тегам OSM office/government/building, классам P31 Wikidata и названию) → `other` + тег `institution`; вокзалы и аэропорт → `other` + `transport`. Главные туристические места из белого списка → тег `must_see` и буст popularity | `sights.py` |
 | 6a | Фото: Wikidata P18 (или первый файл Commons-категории P373), OSM `wikimedia_commons`/`image` на Commons → метаданные Commons API пакетами по 50 (`imageinfo`, `extmetadata`): ссылка, миниатюра, автор, лицензия. Только CC0 / PD / CC BY / CC BY-SA, файлы не скачиваются. Плюс `data/category_photos.json`: по 1–2 фото на категорию (сначала фото мест Астаны, затем отобранные вручную файлы Commons) и 5 обложек `hero` | `sources/images.py` |
 | 7 | Второй проход дедупликации, `popularity` и `data_quality`, валидация по схеме, атомарная запись | `run_all.py`, `validate.py` |
 | 8 | Открытая выгрузка: места только из 2GIS выбрасываются, у остальных поля из 2GIS откатываются к значениям OSM/Wikidata (снимок до 2GIS), источник `2gis` удаляется | `normalize.open_version` |
@@ -38,7 +39,7 @@ pipeline/.venv/bin/python pipeline/run_all.py --refresh  # перекачать 
 
 ## Правила нормализации (кратко)
 
-- **Имя**: `name:ru` → ru-метка Wikidata → `name` (в OSM Астаны `name` чаще на казахском). Все варианты — в `name_i18n`.
+- **Имя**: русское название из сид-базы координатора для ключевых мест («Монумент «Байтерек»») → `name:ru` → ru-метка Wikidata → `name` (в OSM Астаны `name` чаще на казахском). Все варианты — в `name_i18n`.
 - **Описание**: Википедия (summary) → описание Wikidata → OSM `description` → шаблон из полей («Кафе «X» по адресу …; есть Wi-Fi»). Шаблон помечается `description_source: "template"`, новых фактов не добавляет.
 - **Часы работы**: исходная строка OSM / расписание 2GIS, переведённое в OSM-формат. Невалидные строки → `null` и список в отчёте. `opening_hours_source` и `opening_hours_checked_at` заполняются всегда, когда часы есть.
 - **Теги**: `internet_access=wlan` → `wifi`, `socket*` → `sockets`, `outdoor_seating`, `wheelchair`, `vegan/vegetarian/halal`, поздние часы → `night`; по категории — `kids`, `indoor`, `quiet`, `view`, `photo`, `free`, `sight` и т. п.

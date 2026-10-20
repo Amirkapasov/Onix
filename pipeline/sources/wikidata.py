@@ -210,6 +210,7 @@ def _description(it: dict) -> tuple[str, str] | None:
 def _apply(p: dict, it: dict, fetched_at: str) -> None:
     p["_wikidata"] = it["qid"]
     p["_sitelinks"] = it["sitelinks"]
+    p["_wd_classes"] = sorted(it["classes"])
     i18n = p["name_i18n"]
     for lang in ("ru", "kk", "en"):
         if it.get(lang) and lang not in i18n:
@@ -262,6 +263,20 @@ def _new_poi(it: dict, cat: str, fetched_at: str) -> dict | None:
     return p
 
 
+_STOP_ROOTS = {"госуд", "нацио", "акаде", "респу", "казах", "астан", "имени", "kazak", "natio", "state", "центр",
+               "center", "centr", "здани"}
+
+
+def _roots(names) -> set[str]:
+    return {w[:5] for n in names if n for w in norm_name(n).split() if len(w) >= 4} - _STOP_ROOTS
+
+
+def _share_root(it: dict, p: dict) -> bool:
+    """Есть общий значимый корень в названиях (первые 5 букв слова, без «государственный», «национальный»…)."""
+    wiki_title = _title(it["ruwiki"]) if it.get("ruwiki") else None  # «Мечеть Нурсултан» для «Центральной мечети»
+    return bool(_roots([it.get("ru"), it.get("kk"), it.get("en"), wiki_title]) & _roots([p["name"], *p["name_i18n"].values()]))
+
+
 def enrich(pois: list[dict], refresh: bool = False) -> str:
     bindings, fetched_at, failed = [], TODAY, []
     for name, query in QUERIES.items():
@@ -289,7 +304,7 @@ def enrich(pois: list[dict], refresh: bool = False) -> str:
                 it[k] = clean_name(it[k])
     wiki_req = prefetch_wiki([i["ruwiki"] for i in items if i.get("ruwiki") and
                               (i["qid"] in by_qid or classify(i["classes"]))], refresh)
-    matched_tag = matched_name = added = 0
+    matched_tag = matched_name = matched_near = added = 0
     for it in sorted(items, key=lambda i: -i["sitelinks"]):
         p = by_qid.get(it["qid"])
         if p:
@@ -303,16 +318,27 @@ def enrich(pois: list[dict], refresh: bool = False) -> str:
                     p = close[0]
                     matched_name += 1
                     break
+        cat = classify(it["classes"])
+        if not p and cat and cat not in ("landmark", "monument"):
+            # имена в OSM и Wikidata часто разные («Мечеть Нурсултан» / «Центральная мечеть»):
+            # ближайший объект OSM той же категории без своего wikidata в пределах 120 м
+            near = [(haversine_m(c["lat"], c["lon"], it["lat"], it["lon"]), c) for c in pois
+                    if c["category"] == cat and not c.get("_wikidata") and not c.get("_unnamed")
+                    and abs(c["lat"] - it["lat"]) < 0.002 and abs(c["lon"] - it["lon"]) < 0.003]
+            near = [x for x in near if x[0] < 120 and _share_root(it, x[1])]
+            if near:
+                p = min(near, key=lambda x: x[0])[1]
+                matched_near += 1
+                log(f"    по близости: {it.get('ru') or it.get('en')} ({it['qid']}) → {p['name']} ({p['id']})")
         if p:
             _apply(p, it, fetched_at)
             continue
-        cat = classify(it["classes"])
         if cat:
             np_ = _new_poi(it, cat, fetched_at)
             if np_:
                 pois.append(np_)
                 added += 1
-    msg = (f"ok: {len(items)} объектов; совпало по тегу {matched_tag}, по имени+150 м {matched_name}; "
+    msg = (f"ok: {len(items)} объектов; совпало по тегу {matched_tag}, по имени+150 м {matched_name}, по категории+120 м {matched_near}; "
            f"добавлено новых {added}; запросов к Wikipedia {wiki_req}"
            + (f"; не получено: {', '.join(failed)}" if failed else ""))
     log("  " + msg)

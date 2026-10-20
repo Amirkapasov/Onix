@@ -123,7 +123,8 @@ def rule_parse(query: str, lang: str | None = None) -> dict:
         intent = "food"
     elif re.search(r"музе|выставк|галере|театр|museum|gallery|мұражай", q):
         intent = "culture"
-    elif re.search(r"достопримеч|посмотреть|увидеть|турист|sight|see|көрікті", q) or "view" in cons:
+    elif re.search(r"достопримеч|посмотреть|увидеть|турист|главн\w* (в городе|места|объект)|главное в город|знаков|"
+                   r"визитн\w* карточк|must.?see|sight|see|көрікті", q) or "view" in cons:
         intent = "sightseeing"
     elif re.search(r"магазин|шопинг|купить|shopping|сауда", q):
         intent = "shopping"

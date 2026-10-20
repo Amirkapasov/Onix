@@ -68,6 +68,14 @@ HERO = [
 ]
 
 
+# Главные места без P18 в Wikidata: файл Commons подобран вручную (просмотрен), лицензия проверяется API.
+MANUAL_POI_IMAGES = [
+    (r"mega silk way", "File:Aĉetcentro SilkWay (Astano) 01.jpg"),
+    (r"нур алем|nur alem", 'File:Expo 2017 "Nur Alem" Pavilion Space Exhibition.jpg'),
+    (r"shabyt|шабыт", "File:Shabyt Palace.jpg"),
+]
+
+
 # ---------- HTTP с кэшем ----------
 
 def _cached(key: str, fetch):
@@ -202,6 +210,8 @@ def attach(pois: list[dict]) -> str:
             t = _file_title(c) or (_category_first_file(c.split(";")[0]) if c.startswith("Category:") else None)
         if not t:
             t = _file_title(p.get("_image"))
+        if not t and "must_see" in p["tags"]:
+            t = next((f for rx, f in MANUAL_POI_IMAGES if re.search(rx, p["name"], re.I)), None)
         if t:
             title_of[p["id"]] = t
     infos = imageinfo(list(title_of.values()))

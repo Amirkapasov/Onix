@@ -5,6 +5,7 @@ import re
 
 from common import TODAY, haversine_m, norm_name
 import opening_hours as oh
+import sights
 
 # (ключ, значение | None = любое) → категория. Первое совпадение выигрывает.
 CATEGORY_RULES = [
@@ -377,6 +378,7 @@ def from_osm(e: dict, fetched_at: str, bad_hours: list) -> dict | None:
         "_wikidata": t.get("wikidata"),
         "_wikipedia": t.get("wikipedia"),
         "_commons": t.get("wikimedia_commons"),
+        "_osm_institution": sights.osm_institution(t),
         "_image": t.get("image"),
         "_unnamed": not (t.get("name:ru") or t.get("name")),
         "_has_name_ru": bool(t.get("name:ru")),
@@ -386,11 +388,15 @@ def from_osm(e: dict, fetched_at: str, bad_hours: list) -> dict | None:
 # ---------- дедупликация ----------
 
 FILL_FIELDS = ["address", "opening_hours", "opening_hours_source", "opening_hours_checked_at",
-               "phone", "website", "rating", "rating_count", "_wikidata", "_wikipedia", "_commons", "_image"]
+               "phone", "website", "rating", "rating_count", "_wikidata", "_wikipedia", "_commons", "_image",
+               "_osm_institution", "_wd_classes"]
 
 
 SNAPSHOT_FIELDS = ["opening_hours", "opening_hours_source", "opening_hours_checked_at", "rating", "rating_count",
                    "phone", "website", "address", "tags"]
+
+
+BIG_CATEGORIES = {"park", "museum", "landmark", "sport", "viewpoint", "monument"}
 
 
 def _merge(a: dict, b: dict) -> dict:
@@ -423,6 +429,8 @@ def dedupe(pois: list[dict], radius_m: float = 80.0) -> tuple[list[dict], int]:
     for p in sorted(pois, key=_richness, reverse=True):
         key = "__playground__" if p.get("_unnamed") else (norm_name(p["name"]) or p["name"].lower())
         r = 30.0 if p.get("_unnamed") else radius_m
+        if p["category"] in BIG_CATEGORIES and len(key) >= 8:
+            r = 600.0  # территория и здание одного комплекса (Атамекен, парки) — центры далеко друг от друга
         lst = buckets.setdefault(key, [])
         for q in lst:
             if haversine_m(p["lat"], p["lon"], q["lat"], q["lon"]) < r:
@@ -440,14 +448,29 @@ def _first_word(p: dict) -> str:
     return w[0] if w and len(w[0]) >= 4 else ""
 
 
+# Категории, где два разных места в одной точке почти не встречаются
+SOLO_CATEGORIES = {"theatre", "museum", "religious", "park", "gallery", "library", "viewpoint", "monument",
+                   "landmark", "sport", "cinema"}
+
+
+def _same_place(p: dict, q: dict) -> bool:
+    if _first_word(q) and _first_word(q) == _first_word(p) and (
+            q["category"] == p["category"] or {q["category"], p["category"]} <= {"entertainment", "sport", "wellness", "kids"}):
+        return haversine_m(p["lat"], p["lon"], q["lat"], q["lon"]) < 30
+    # объект только из 2GIS под другим названием рядом с объектом OSM той же «одиночной» категории
+    if (bool(p.get("_only2gis")) != bool(q.get("_only2gis")) and p["category"] == q["category"]
+            and p["category"] in SOLO_CATEGORIES):
+        return haversine_m(p["lat"], p["lon"], q["lat"], q["lon"]) < 40
+    return False
+
+
 def _merge_close_same_word(pois: list[dict], radius_m: float = 30.0) -> list[dict]:
     """< 30 м и одинаковое первое слово названия («PINGWIN Friends» и «PingWin (Bowling…)»,
     два филиала сети в одном здании) → один объект. Сетка ~100 м, чтобы не сравнивать всё со всем."""
     grid: dict[tuple[int, int], list[dict]] = {}
     out = []
     for p in sorted(pois, key=_richness, reverse=True):
-        w = _first_word(p)
-        if not w or p.get("_unnamed"):
+        if p.get("_unnamed"):
             out.append(p)
             continue
         cell = (int(p["lat"] * 1000), int(p["lon"] * 600))
@@ -455,11 +478,9 @@ def _merge_close_same_word(pois: list[dict], radius_m: float = 30.0) -> list[dic
         for dx in (-1, 0, 1):
             for dy in (-1, 0, 1):
                 for q in grid.get((cell[0] + dx, cell[1] + dy), []):
-                    if _first_word(q) == w and q["category"] == p["category"] or (
-                            _first_word(q) == w and {q["category"], p["category"]} <= {"entertainment", "sport", "wellness", "kids"}):
-                        if haversine_m(p["lat"], p["lon"], q["lat"], q["lon"]) < radius_m:
-                            target = q
-                            break
+                    if _same_place(p, q):
+                        target = q
+                        break
                 if target:
                     break
             if target:
@@ -490,6 +511,11 @@ def score(p: dict) -> None:
         pop = 0.02
     if p.get("_seed_popularity") is not None:
         pop = max(pop, p["_seed_popularity"])
+    tags = set(p["tags"])
+    if "must_see" in tags:  # главные туристические места — первыми на «главное в городе»
+        pop = max(pop, 0.6) + 0.15 + min(sitelinks, 30) / 30 * 0.2
+    if tags & {"institution", "transport"}:
+        pop *= 0.3
     p["popularity"] = round(min(pop, 1.0), 3)
 
     q = 0.0

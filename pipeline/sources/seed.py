@@ -37,8 +37,17 @@ def merge(pois: list[dict]) -> str:
         return "нет data/seed/pois_seed.json"
     seeds = json.loads(SEED.read_text(encoding="utf-8"))
     added = []
+    renamed = 0
     for s in seeds:
-        if _covered(s, pois):
+        hit = _covered(s, pois)
+        if hit:
+            # сид — выверенные русские названия ключевых мест: «Монумент «Байтерек»» вместо «Бәйтерек»
+            if hit["name"] != s["name"]:
+                if re.search("[әөүұқғңһі]", hit["name"].lower()):
+                    hit["name_i18n"].setdefault("kk", hit["name"])
+                hit["name"] = s["name"]
+                hit["name_i18n"]["ru"] = s["name"]
+                renamed += 1
             continue
         p = dict(s)
         p["tags"] = list(p.get("tags", []))
@@ -50,4 +59,5 @@ def merge(pois: list[dict]) -> str:
         pois.append(p)
         added.append(s["id"])
     log(f"  сид: добавлено {len(added)} из {len(seeds)} ({', '.join(added) or '—'})")
-    return f"ok: добавлено {len(added)} из {len(seeds)} (остальные уже найдены автоматически)"
+    return (f"ok: добавлено {len(added)} из {len(seeds)} (остальные уже найдены автоматически), "
+            f"русское название из сида у {renamed}")

@@ -56,8 +56,11 @@ _ENDINGS = sorted("ами ями ого его ому ему ыми ими ой 
                   "а я о е ы и у ю ь й".split(), key=len, reverse=True)
 
 
+_KK = str.maketrans("әөұүқғңһі", "аоуукгнхи")  # «Бәйтерек» = «Байтерек» при сравнении
+
+
 def stem(w: str) -> str:
-    w = w.replace("ё", "е")
+    w = w.replace("ё", "е").translate(_KK)
     if re.match(r"[а-я]", w):
         for e in _ENDINGS:
             if w.endswith(e) and len(w) - len(e) >= 3:

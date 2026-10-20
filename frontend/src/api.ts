@@ -1,4 +1,5 @@
-import type { Poi, Preset, RecommendRequest, RecommendResponse } from './types'
+import type { CategoryPhotos, Poi, Preset, RecommendRequest, RecommendResponse } from './types'
+import { FALLBACK_PHOTOS } from './photos'
 import { coarsen, haversineM, isoClock } from './geo'
 import { weekdayOf } from './i18n'
 import presetsMock from './mocks/presets.json'
@@ -41,6 +42,22 @@ export async function fetchPois(bbox: [number, number, number, number]): Promise
   if (USE_MOCK) return []
   const data = await request<{ items: Poi[] }>(`/api/pois?bbox=${bbox.map((v) => v.toFixed(3)).join(',')}`)
   return data.items ?? []
+}
+
+/** Обложка и фото категорий; пусто/ошибка — временные фото из photos.ts. */
+export async function fetchCategoryPhotos(): Promise<CategoryPhotos> {
+  let data: Partial<CategoryPhotos> = {}
+  if (!USE_MOCK) {
+    try {
+      data = await request<Partial<CategoryPhotos>>('/api/category-photos')
+    } catch {
+      data = {}
+    }
+  }
+  return {
+    hero: data.hero?.length ? data.hero : FALLBACK_PHOTOS.hero,
+    categories: { ...FALLBACK_PHOTOS.categories, ...(data.categories ?? {}) },
+  }
 }
 
 export async function fetchHealth(): Promise<boolean> {

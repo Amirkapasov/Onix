@@ -120,12 +120,15 @@ def in_bbox(lat, lon, bbox=ASTANA_BBOX) -> bool:
 
 
 _QUOTES = "«»\"'“”„`’"
-_GENERIC = r"\b(тц|трц|трк|тд|кафе|cafe|coffee|кофейня|ресторан|restaurant|бар|bar|парк|park|сквер|музей|museum)\b"
+_GENERIC = (r"\b(тц|трц|трк|тд|кафе|cafe|coffee|кофейня|ресторан|restaurant|бар|bar|парк|park|сквер|музей|museum|"
+            r"монумент|monument|памятник|ескерткіш\w*|мечеть|мешіт\w*|mosque)\b")
+# Казахские буквы → русские, чтобы «Бәйтерек» и «Байтерек» считались одним именем
+_KK_FOLD = str.maketrans({"ә": "а", "ө": "о", "ү": "у", "ұ": "у", "қ": "к", "ғ": "г", "ң": "н", "һ": "х", "і": "и"})
 
 
 def norm_name(name: str) -> str:
     """Имя для дедупликации/сопоставления: нижний регистр, без кавычек и родовых слов."""
-    s = unicodedata.normalize("NFKC", name or "").lower().replace("ё", "е")
+    s = unicodedata.normalize("NFKC", name or "").lower().replace("ё", "е").translate(_KK_FOLD)
     s = "".join(ch for ch in s if ch not in _QUOTES)
     s = re.sub(_GENERIC, " ", s)
     s = re.sub(r"[^\w\s]", " ", s)
