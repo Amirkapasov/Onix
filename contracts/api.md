@@ -71,7 +71,8 @@
       "source_type": "poi_data",
       "sources": [{ "name": "osm", "url": "https://www.openstreetmap.org/way/123" }],
       "rating": 4.7,
-      "badges": ["outdoor", "free"]
+      "badges": ["outdoor", "free"],
+      "image": { "url": "https://upload.wikimedia.org/…", "thumb_url": "https://upload.wikimedia.org/…/640px-…", "page_url": "https://commons.wikimedia.org/wiki/File:…", "author": "…", "license": "CC BY-SA 4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "source": "wikimedia_commons" }
     }
   ],
   "ideas": [
@@ -99,8 +100,9 @@
 2. `source_type` у recommendations всегда `poi_data`; всё, что придумано LLM без опоры на базу, идёт в `ideas` с `source_type: "generated_idea"`.
 3. `open_status.state` ∈ `open` | `closed` | `unknown`; `confidence` ∈ `high` | `medium` | `low`. Если часов нет — `unknown` + `low`, и **запрещено** писать «открыто сейчас».
 4. `distance_m`/`travel_min` считает код, а не LLM.
-5. `why` ≤ 200 символов, `what_to_do` ≤ 250 символов, язык = `lang`.
-6. Если места закрыты/далеко — честно сказать в `warnings` и предложить лучшее из доступного.
+5. `image` — из поля POI как есть или `null`. Фото показывается только с атрибуцией (автор, лицензия, ссылка на страницу файла).
+6. `why` ≤ 200 символов, `what_to_do` ≤ 250 символов, язык = `lang`.
+7. Если места закрыты/далеко — честно сказать в `warnings` и предложить лучшее из доступного.
 
 ## GET /api/pois?bbox=minLat,minLon,maxLat,maxLon&category=museum
 Возвращает `{ "items": [POI…] }` (поля по `contracts/poi.schema.json`) — для отображения точек на карте.

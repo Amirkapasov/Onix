@@ -239,6 +239,56 @@
     },
     "updated_at": {
       "type": "string"
+    },
+    "image": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Фото места под свободной лицензией. Только Wikimedia Commons (через Wikidata P18 или OSM wikimedia_commons/image на Commons). Лицензии: CC0, PD, CC BY, CC BY-SA. Без фото — null.",
+      "required": [
+        "url",
+        "page_url",
+        "author",
+        "license",
+        "source"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "Прямая ссылка на изображение (upload.wikimedia.org)"
+        },
+        "thumb_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Миниатюра ~640px по ширине"
+        },
+        "page_url": {
+          "type": "string",
+          "description": "Страница файла на Commons (для атрибуции)"
+        },
+        "author": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string",
+          "description": "Короткое имя: CC BY-SA 4.0, CC0, Public domain…"
+        },
+        "license_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "wikimedia_commons"
+          ]
+        }
+      }
     }
   }
 }
