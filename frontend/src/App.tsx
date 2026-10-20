@@ -508,6 +508,7 @@ export default function App() {
                 <Results
                   result={shown.res}
                   query={shown.req.query}
+                  start={shown.req.location}
                   t={t}
                   lang={lang}
                   mode={shown.req.mode}

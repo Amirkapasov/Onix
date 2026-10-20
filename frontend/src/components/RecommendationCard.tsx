@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { Car, Clock, Database, Footprints, Star } from 'lucide-react'
+import { Car, Clock, Database, Footprints, Navigation, Star } from 'lucide-react'
 import type { ImageRef, Lang, OpenStatus, Recommendation } from '../types'
 import { BADGE_LABELS, CATEGORY_LABELS, type Dict } from '../i18n'
 import { formatDistance } from '../geo'
@@ -59,11 +59,12 @@ interface Props {
   mode: string
   active: boolean
   illustration: ImageRef | null
+  navLinks: { id: string; label: string; url: string }[]
   onHover: (i: number | null) => void
 }
 
 const RecommendationCard = forwardRef<HTMLElement, Props>(function RecommendationCard(
-  { r, index, t, lang, mode, active, illustration, onHover },
+  { r, index, t, lang, mode, active, illustration, navLinks, onHover },
   ref,
 ) {
   const visit = r.visit_min && r.visit_min.length ? r.visit_min : null
@@ -147,6 +148,20 @@ const RecommendationCard = forwardRef<HTMLElement, Props>(function Recommendatio
         </div>
         {r.open_status.label && r.open_status.state !== 'unknown' && (
           <p className="mt-1 text-[13px] text-ink-400">{r.open_status.label}</p>
+        )}
+
+        {navLinks.length > 0 && (
+          <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px]" title={t.navNote}>
+            <span className="inline-flex items-center gap-1.5 text-ink-500">
+              <Navigation className="h-4 w-4 text-teal-600" strokeWidth={1.8} />
+              {t.howToGet}:
+            </span>
+            {navLinks.map((l) => (
+              <a key={l.id} href={l.url} target="_blank" rel="noopener noreferrer" className="font-medium text-teal-700 underline-offset-2 hover:underline">
+                {l.label}
+              </a>
+            ))}
+          </p>
         )}
 
         {badges.length > 0 && (

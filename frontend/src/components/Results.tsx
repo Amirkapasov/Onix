@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
-import { Car, Clock, Info, Lightbulb, MapPin, SearchX, Thermometer, TriangleAlert } from 'lucide-react'
-import type { CategoryPhotos, Lang, RecommendResponse } from '../types'
+import { Car, Clock, ExternalLink, Info, Lightbulb, MapPin, Navigation, SearchX, Thermometer, TriangleAlert } from 'lucide-react'
+import type { CategoryPhotos, Lang, LatLon, Mode, RecommendResponse } from '../types'
+import { NAV_PROVIDERS, navUrl } from '../nav'
 import type { Dict } from '../i18n'
 import { formatDistance } from '../geo'
 import { assignIllustrations } from '../photos'
@@ -9,10 +10,11 @@ import RecommendationCard from './RecommendationCard'
 interface Props {
   result: RecommendResponse
   query: string
+  start: LatLon // огрублённая локация запроса — старт для навигатора
   onWiden: (kind: 'budget' | 'car') => void
   t: Dict
   lang: Lang
-  mode: string
+  mode: Mode
   hovered: number | null
   onHover: (i: number | null) => void
   focusIndex: number | null
@@ -30,7 +32,7 @@ export function isDegraded(r: RecommendResponse): boolean {
   return !!p && DEGRADED_PROVIDERS.includes(p)
 }
 
-export default function Results({ result, query, onWiden, t, lang, mode, hovered, onHover, focusIndex, photos }: Props) {
+export default function Results({ result, query, start, onWiden, t, lang, mode, hovered, onHover, focusIndex, photos }: Props) {
   const refs = useRef<(HTMLElement | null)[]>([])
   const recs = result.recommendations ?? []
   const ideas = result.ideas ?? []
@@ -50,6 +52,13 @@ export default function Results({ result, query, onWiden, t, lang, mode, hovered
   }
   const routeM = route?.legs?.reduce((s, l) => s + (l.distance_m || 0), 0) ?? 0
   const illustrations = assignIllustrations(recs, photos.categories)
+  const routePoints: LatLon[] = [
+    start,
+    ...(route?.stops ?? [])
+      .map((id) => recs.find((r) => r.poi_id === id))
+      .filter((r): r is NonNullable<typeof r> => !!r)
+      .map((r) => ({ lat: r.lat, lon: r.lon })),
+  ]
   const simulated = /симуляц|simulat/i.test(ctx?.weather ?? '')
 
   return (
@@ -150,12 +159,14 @@ export default function Results({ result, query, onWiden, t, lang, mode, hovered
             mode={mode}
             active={hovered === i}
             illustration={illustrations[i]}
+            navLinks={NAV_PROVIDERS.map((p) => ({ ...p, url: navUrl(p.id, [start, { lat: r.lat, lon: r.lon }], mode) }))}
             onHover={onHover}
           />
         ))}
+        {recs.length > 0 && !(route && route.stops?.length > 0) && <p className="-mt-6 text-[12px] text-ink-400">{t.navNote}</p>}
       </div>
 
-      {route && route.stops?.length > 1 && (
+      {route && route.stops?.length > 0 && (
         <section className="border-t border-ink-100 pt-6">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h3 className="font-display text-[18px] font-semibold text-ink-900">{t.route}</h3>
@@ -187,6 +198,29 @@ export default function Results({ result, query, onWiden, t, lang, mode, hovered
               )
             })}
           </ol>
+          {routePoints.length > 1 && (
+            <div className="mt-5">
+              <p className="flex items-center gap-1.5 text-[13px] font-semibold text-ink-500">
+                <Navigation className="h-4 w-4 text-teal-600" strokeWidth={1.8} />
+                {t.navTitle}
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {NAV_PROVIDERS.map((p) => (
+                  <a
+                    key={p.id}
+                    href={navUrl(p.id, routePoints, mode)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 px-3.5 py-2 text-[14px] font-medium text-ink-900 transition hover:border-ink-900"
+                  >
+                    {p.label}
+                    <ExternalLink className="h-3.5 w-3.5 text-ink-400" strokeWidth={1.8} />
+                  </a>
+                ))}
+              </div>
+              <p className="mt-2 text-[12px] text-ink-400">{t.navNote}</p>
+            </div>
+          )}
         </section>
       )}
 

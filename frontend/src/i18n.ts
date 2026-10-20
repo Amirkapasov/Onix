@@ -94,6 +94,9 @@ const ru = {
   params: 'Параметры',
   km: 'км',
   credits: 'Данные: OpenStreetMap, Wikidata, 2GIS. Фото: Wikimedia Commons (авторы и лицензии — под фото). Карта: © OpenStreetMap.',
+  navTitle: 'Вести в навигаторе',
+  howToGet: 'Как добраться',
+  navNote: 'Откроется сторонний сервис: ему будут переданы точки маршрута.',
   days: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
 }
 
@@ -193,6 +196,9 @@ const kk: Dict = {
   params: 'Параметрлер',
   km: 'км',
   credits: 'Деректер: OpenStreetMap, Wikidata, 2GIS. Фото: Wikimedia Commons (авторлар мен лицензиялар — фото астында). Карта: © OpenStreetMap.',
+  navTitle: 'Навигатормен бару',
+  howToGet: 'Қалай жетуге болады',
+  navNote: 'Сыртқы сервис ашылады: оған маршрут нүктелері беріледі.',
   days: ['жексенбі', 'дүйсенбі', 'сейсенбі', 'сәрсенбі', 'бейсенбі', 'жұма', 'сенбі'],
 }
 
@@ -290,6 +296,9 @@ const en: Dict = {
   params: 'Settings',
   km: 'km',
   credits: 'Data: OpenStreetMap, Wikidata, 2GIS. Photos: Wikimedia Commons (authors and licenses under each photo). Map: © OpenStreetMap.',
+  navTitle: 'Open in a navigator',
+  howToGet: 'Directions',
+  navNote: 'Opens a third-party service: the route points will be shared with it.',
   days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 }
 
