@@ -1,9 +1,10 @@
 import { forwardRef } from 'react'
-import { Car, Clock, Database, Footprints, Navigation, Star } from 'lucide-react'
+import { Car, Clock, Database, Footprints, Star } from 'lucide-react'
 import type { ImageRef, Lang, OpenStatus, Recommendation } from '../types'
 import { BADGE_LABELS, CATEGORY_LABELS, type Dict } from '../i18n'
 import { formatDistance } from '../geo'
 import Photo from './Photo'
+import NavButtons from './NavButtons'
 
 const SOURCE_NAMES: Record<string, string> = {
   osm: 'OpenStreetMap',
@@ -151,17 +152,10 @@ const RecommendationCard = forwardRef<HTMLElement, Props>(function Recommendatio
         )}
 
         {navLinks.length > 0 && (
-          <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px]" title={t.navNote}>
-            <span className="inline-flex items-center gap-1.5 text-ink-500">
-              <Navigation className="h-4 w-4 text-teal-600" strokeWidth={1.8} />
-              {t.howToGet}:
-            </span>
-            {navLinks.map((l) => (
-              <a key={l.id} href={l.url} target="_blank" rel="noopener noreferrer" className="font-medium text-teal-700 underline-offset-2 hover:underline">
-                {l.label}
-              </a>
-            ))}
-          </p>
+          <div className="mt-4">
+            <p className="mb-2 text-[13px] font-semibold text-ink-500">{t.howToGet}</p>
+            <NavButtons links={navLinks} note={t.navNote} />
+          </div>
         )}
 
         {badges.length > 0 && (

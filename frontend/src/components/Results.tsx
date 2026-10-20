@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react'
-import { Car, Clock, ExternalLink, Info, Lightbulb, MapPin, Navigation, SearchX, Thermometer, TriangleAlert } from 'lucide-react'
+import { Car, Clock, Info, Lightbulb, MapPin, Navigation, SearchX, Thermometer, TriangleAlert } from 'lucide-react'
 import type { CategoryPhotos, Lang, LatLon, Mode, RecommendResponse } from '../types'
 import { NAV_PROVIDERS, navUrl } from '../nav'
 import type { Dict } from '../i18n'
 import { formatDistance } from '../geo'
 import { assignIllustrations } from '../photos'
 import RecommendationCard from './RecommendationCard'
+import NavButtons from './NavButtons'
 
 interface Props {
   result: RecommendResponse
@@ -204,19 +205,8 @@ export default function Results({ result, query, start, onWiden, t, lang, mode, 
                 <Navigation className="h-4 w-4 text-teal-600" strokeWidth={1.8} />
                 {t.navTitle}
               </p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {NAV_PROVIDERS.map((p) => (
-                  <a
-                    key={p.id}
-                    href={navUrl(p.id, routePoints, mode)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 px-3.5 py-2 text-[14px] font-medium text-ink-900 transition hover:border-ink-900"
-                  >
-                    {p.label}
-                    <ExternalLink className="h-3.5 w-3.5 text-ink-400" strokeWidth={1.8} />
-                  </a>
-                ))}
+              <div className="mt-2.5">
+                <NavButtons links={NAV_PROVIDERS.map((p) => ({ ...p, url: navUrl(p.id, routePoints, mode) }))} note={t.navNote} />
               </div>
               <p className="mt-2 text-[12px] text-ink-400">{t.navNote}</p>
             </div>

@@ -306,7 +306,7 @@ export default function App() {
           <div className="flex min-w-0 items-center gap-2.5">
             <Ornament className="h-6 w-12 shrink-0 text-sun-500" />
             <div className="min-w-0">
-              <p className="font-display text-[22px] font-semibold leading-none text-ink-900">Серуен</p>
+              <p className="font-display text-[22px] font-semibold leading-none text-ink-900">Seruen</p>
               <p className="mt-1 truncate text-[12px] text-ink-500">{t.tagline}</p>
             </div>
           </div>

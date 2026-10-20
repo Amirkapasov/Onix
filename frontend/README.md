@@ -1,4 +1,4 @@
-# Серуен — интерфейс демо (frontend)
+# Seruen — интерфейс демо (frontend)
 
 Vite + React 19 + TypeScript + Tailwind 4 + react-leaflet (тайлы OpenStreetMap с атрибуцией).
 
