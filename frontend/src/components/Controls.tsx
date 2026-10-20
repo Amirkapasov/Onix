@@ -1,6 +1,8 @@
 import type { Dict } from '../i18n'
 import { TIME_SLOTS, isoClock, type TimeSlot } from '../geo'
-import type { Mode } from '../types'
+import type { Mode, WeatherOverride } from '../types'
+
+export const WINTER: WeatherOverride = { temp_c: -20, wind_ms: 9 }
 
 export interface ControlsState {
   slot: TimeSlot
@@ -10,6 +12,7 @@ export interface ControlsState {
   groupSize: number
   indoorOnly: boolean
   mode: Mode
+  weather: WeatherOverride | null // симуляция погоды для демо (weather_override)
 }
 
 interface Props {
@@ -35,6 +38,8 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
     </button>
   )
 }
+
+const formatTemp = (c: number) => `${c > 0 ? '+' : c < 0 ? '−' : ''}${Math.abs(c)}°`
 
 export default function Controls({ t, value, onChange, slotIso }: Props) {
   const set = (patch: Partial<ControlsState>) => onChange({ ...value, ...patch })
@@ -89,6 +94,9 @@ export default function Controls({ t, value, onChange, slotIso }: Props) {
         </Chip>
         <Chip active={value.indoorOnly} onClick={() => set({ indoorOnly: !value.indoorOnly })}>
           🏠 {t.indoorOnly}
+        </Chip>
+        <Chip active={!!value.weather} onClick={() => set({ weather: value.weather ? null : WINTER })}>
+          ❄️ {t.winter} {formatTemp((value.weather ?? WINTER).temp_c)}
         </Chip>
         <div className="flex items-center gap-1 rounded-full border-2 border-slate-200 bg-white py-1 pl-4 pr-1 text-[15px] font-semibold text-slate-700">
           👥 {t.group}

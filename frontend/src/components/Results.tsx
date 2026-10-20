@@ -14,6 +14,7 @@ interface Props {
   focusIndex: number | null
 }
 
+const LLM_WARNING = /ИИ-модель|ЖИ модел|AI model|LLM/i
 const DEGRADED_PROVIDERS = ['none', 'fallback', 'template', 'ranking', 'degraded', 'off']
 
 export function isDegraded(r: RecommendResponse): boolean {
@@ -28,7 +29,9 @@ export default function Results({ result, t, lang, mode, hovered, onHover, focus
   const refs = useRef<(HTMLElement | null)[]>([])
   const recs = result.recommendations ?? []
   const ideas = result.ideas ?? []
-  const warnings = result.warnings ?? []
+  const degraded = isDegraded(result)
+  // Предупреждение «ИИ-модель недоступна» показываем мягкой плашкой, а не в жёлтом блоке.
+  const warnings = (result.warnings ?? []).filter((w) => !(degraded && LLM_WARNING.test(w)))
   const route = result.route
 
   useEffect(() => {
@@ -54,7 +57,8 @@ export default function Results({ result, t, lang, mode, hovered, onHover, focus
           {[
             result.context_used.location && `📍 ${result.context_used.location}`,
             result.context_used.time && `🕒 ${result.context_used.time}`,
-            result.context_used.weather && `🌡️ ${result.context_used.weather}`,
+            result.context_used.weather &&
+              `${/симуляц|simulat/i.test(result.context_used.weather) ? '❄️' : '🌡️'} ${result.context_used.weather}`,
             ...(result.context_used.filters ?? []).slice(0, 2).map((f) => `✓ ${f}`),
             (result.context_used.filters?.length ?? 0) > 2 && `+${result.context_used.filters!.length - 2} ↓`,
           ]
@@ -66,8 +70,13 @@ export default function Results({ result, t, lang, mode, hovered, onHover, focus
             ))}
         </div>
       )}
-      {isDegraded(result) && (
-        <div className="rounded-2xl bg-slate-800 px-4 py-3 text-[15px] font-medium text-white">⚙️ {t.degraded}</div>
+      {degraded && (
+        <div className="flex items-start gap-3 rounded-2xl bg-sky-50 px-4 py-3 ring-1 ring-sky-200">
+          <span className="mt-0.5 shrink-0 whitespace-nowrap rounded-full bg-sky-600 px-2 py-0.5 text-[12px] font-bold uppercase tracking-wide text-white">
+            {t.degradedTag}
+          </span>
+          <p className="text-[15px] leading-snug text-sky-950">{t.degraded}</p>
+        </div>
       )}
 
       {warnings.length > 0 && (

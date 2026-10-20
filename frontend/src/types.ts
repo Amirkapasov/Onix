@@ -17,6 +17,11 @@ export interface Filters {
   categories?: string[]
 }
 
+export interface WeatherOverride {
+  temp_c: number
+  wind_ms?: number
+}
+
 export interface RecommendRequest {
   query: string
   location: LatLon
@@ -26,6 +31,7 @@ export interface RecommendRequest {
   mode: Mode
   filters: Filters
   want_route: boolean
+  weather_override?: WeatherOverride
 }
 
 export interface ContextUsed {
@@ -120,6 +126,7 @@ export interface Preset {
   filters?: Filters
   icon?: string
   mode?: Mode
+  weather_override?: WeatherOverride | null
 }
 
 export interface ApiErrorBody {

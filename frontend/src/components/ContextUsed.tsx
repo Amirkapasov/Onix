@@ -7,10 +7,10 @@ export default function ContextUsed({ result, t }: { result: RecommendResponse; 
   const rows: [string, string, string | undefined | null][] = [
     ['📍', t.ctx_location, c.location],
     ['🕒', t.ctx_time, c.time],
-    ['🌡️', t.ctx_weather, c.weather],
+    [/симуляц|simulat|симуляция/i.test(c.weather ?? '') ? '❄️' : '🌡️', t.ctx_weather, c.weather],
     ['🚶', t.ctx_mode, c.mode],
     ['⭕', t.ctx_radius, c.radius_m ? `${(c.radius_m / 1000).toFixed(1).replace('.0', '')} км` : null],
-    ['🎚️', t.ctx_filters, c.filters?.length ? c.filters.join(', ') : null],
+    ['✓', t.ctx_filters, c.filters?.length ? c.filters.join(', ') : null],
     ['🧠', t.ctx_intent, pi ? [pi.intent, ...(pi.keywords ?? [])].filter(Boolean).join(' · ') : null],
     ['🤖', t.ctx_llm, result.llm?.provider ? [result.llm.provider, result.llm.model].filter(Boolean).join(' / ') : null],
   ]

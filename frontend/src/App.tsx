@@ -37,6 +37,7 @@ const DEFAULT_CONTROLS: ControlsState = {
   groupSize: 1,
   indoorOnly: false,
   mode: 'walk',
+  weather: null,
 }
 
 export default function App() {
@@ -148,6 +149,7 @@ export default function App() {
       categories,
     },
     want_route: true,
+    ...(c.weather ? { weather_override: c.weather } : {}),
   })
 
   const submit = (q = query) => {
@@ -167,6 +169,7 @@ export default function App() {
       groupSize: f.group_size ?? 1,
       indoorOnly: !!f.indoor_only,
       mode: p.mode ?? (/airport|аэропорт/i.test(p.id + p.label) ? 'car' : 'walk'),
+      weather: p.weather_override ?? null,
     }
     const budget = f.time_budget_min ?? null
     const loc = { lat: p.location.lat, lon: p.location.lon }

@@ -89,6 +89,11 @@ async function mockRecommend(req: RecommendRequest, presetId?: string): Promise<
     time: `${day}, ${isoClock(req.client_time)}`,
     mode: req.mode === 'car' ? 'на машине' : 'пешком',
   }
+  if (req.weather_override) {
+    const { temp_c, wind_ms } = req.weather_override
+    const temp = `${temp_c > 0 ? '+' : temp_c < 0 ? '−' : ''}${Math.abs(temp_c)}°C`
+    base.context_used.weather = `${temp}${wind_ms != null ? `, ветер ${wind_ms} м/с` : ''} (симуляция)`
+  }
   const speed = req.mode === 'car' ? 500 : 80 // м/мин
   for (const r of base.recommendations) {
     const d = Math.round(haversineM(req.location, r) * 1.3)
