@@ -1,5 +1,6 @@
 """Явные потребности: только подходящие места, честные предупреждения, магазины отдельно от досуга."""
 import json
+import re
 
 import pytest
 from fastapi.testclient import TestClient
@@ -66,7 +67,7 @@ def test_detection_synonyms():
     assert detect("сауна или баня") == ["spa"]
     assert detect("ночью купить воды") == ["shop_24_7"]
     assert detect("канцтовары, ручки") == ["stationery"]
-    assert detect("хочу прогуляться 30–60 минут") == []
+    assert detect("хочу прогуляться 30–60 минут") == ["walk"]  # тема: парки, набережные, видовые места
     assert detect("Хочу тихое место с кофе и розеткой") == []
 
 
@@ -181,3 +182,28 @@ def test_main_sights_popular_first_no_institutions(sights_db):
     assert not {"test:mod", "test:arch", "test:misc"} & set(ids)  # учреждения и «прочее» — не досуг
     assert ids.index("test:famous") < ids.index("test:small") if "test:small" in ids else "test:famous" in ids
     assert "seed:baiterek" not in ids  # пользователь стоит у Байтерека → максимум идея
+
+
+def test_theme_detection():
+    assert detect("красивый вид вечером") == ["view"]
+    assert detect("куда сходить культурно") == ["culture"]
+    assert detect("романтичное место") == ["romantic"]
+    assert detect("что-то необычное") == ["unusual"]
+    assert detect("хочу поесть") == ["food"]
+    assert detect("погулять в парке") == ["park"]  # конкретный объект важнее темы
+    assert detect("куда сходить?") == []
+    assert detect("Мұнда бар ма?") == []  # по-казахски «бар» = «есть»
+
+
+@pytest.mark.parametrize("q", ["красивый вид вечером", "куда сходить культурно", "что-то необычное", "куда сходить?"])
+def test_themes_without_llm_no_cafes(rich_db, q):
+    d = ask(q)
+    cats = [rich_db[r["poi_id"]]["category"] for r in d["recommendations"]]
+    assert not {"cafe", "restaurant", "bar"} & set(cats), (q, cats)
+    assert all("рядом" not in re.split(r"[;.]", r["why"])[0].lower() for r in d["recommendations"])  # почему — по факту, не по расстоянию
+
+
+def test_view_why_is_fact_based(rich_db):
+    d = ask("красивый вид вечером")
+    assert d["recommendations"]
+    assert re.search(r"вид|символ|смотров|набережн|фото", d["recommendations"][0]["why"].lower())

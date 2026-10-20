@@ -24,3 +24,4 @@ pipeline
 briefs
 backend/tests
 **/.DS_Store
+frontend/public/video

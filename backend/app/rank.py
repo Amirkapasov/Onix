@@ -25,6 +25,7 @@ INTENT_CATEGORIES = {
     "food": {"restaurant", "cafe"}, "culture": {"museum", "gallery", "theatre", "library"},
     "shopping": {"mall", "market"},
 }
+FOOD_CATEGORIES = {"cafe", "restaurant", "bar", "nightlife"}
 HERE_PENALTY_INTENTS = {"walk", "sightseeing", "other", "culture", "night"}
 FACETS = {"food", "coffee", "kids", "view", "night", "sockets", "quiet"}
 KID_TAGS = {"kids", "playground", "family", "interactive"}
@@ -58,6 +59,7 @@ class Ctx:
     needs: list[str] = field(default_factory=list)  # явные потребности (needs.py) — жёсткий фильтр
     brand: str | None = None
     want_budget: bool = False
+    allow_food: bool = True  # кафе/рестораны/бары — только если запрос про еду, кофе, работу, «посидеть» или ночь
     notes: list[str] = field(default_factory=list)  # что учли — для context_used.filters
     warnings: list[str] = field(default_factory=list)
 
@@ -127,11 +129,17 @@ def hard_filter(pois: list[dict], ctx: Ctx) -> tuple[list[Cand], dict]:
     base = [p for p in pois if not _not_destination(p)]
     if ctx.needs:  # «бассейн», «аптека»… — только подходящие места, без заглушек
         base = [p for p in base if needs_mod.matches_any(p, ctx.needs, ctx.brand)]
+        if needs_mod.is_theme(ctx.needs):  # тема досуга («ночью», «необычное») — без магазинов и учреждений
+            base = [p for p in base if p.get("category") not in needs_mod.SHOP_CATEGORIES and not is_institution(p)]
     else:
         if not (set(ctx.categories) & needs_mod.SHOP_CATEGORIES):
             base = [p for p in base if p.get("category") not in needs_mod.SHOP_CATEGORIES]  # магазины не в досуге
         if "other" not in ctx.categories:
             base = [p for p in base if not is_institution(p)]  # министерства, архивы, суды — не досуг
+        if not ctx.allow_food and not ctx.categories:  # «куда сходить» — не кафе по соседству
+            base = [p for p in base if p.get("category") not in FOOD_CATEGORIES]
+            if ctx.parsed["intent"] in ("other", "sightseeing", "walk", "culture"):  # «куда сходить» — не фитнес-клуб
+                base = [p for p in base if p.get("category") != "wellness"]
     stats = {"closed": 0, "far": 0, "kids": 0, "access": 0, "indoor": 0, "category": 0, "guess_closed": 0, "budget": 0}
     if ctx.categories:
         n = len(base)
@@ -245,8 +253,11 @@ def _soft(c: str, p: dict, cand: Cand) -> bool | None:
 
 def rank(cands: list[Cand], ctx: Ctx) -> list[Cand]:
     parsed = ctx.parsed
-    sightseeing = parsed["intent"] == "sightseeing" and not ctx.needs and not ctx.flight
-    w = config.WEIGHTS_NEED if ctx.needs else config.WEIGHTS_SIGHT if sightseeing else config.WEIGHTS
+    generic = (parsed["intent"] == "other" and not parsed["constraints"] and not ctx.categories
+               and not ctx.allow_food)  # «куда сходить?» (а «посидеть где-нибудь» — кафе рядом)
+    sightseeing = (parsed["intent"] == "sightseeing" or generic) and not ctx.needs and not ctx.flight
+    theme = needs_mod.is_theme(ctx.needs)  # «вид», «культурно»: соответствие → популярность/рейтинг → близость
+    w = (config.WEIGHTS_SIGHT if theme or sightseeing else config.WEIGHTS_NEED if ctx.needs else config.WEIGHTS)
     soft = [c for c in parsed["constraints"] if c not in ("flight_soon", "accessibility")]
     if ctx.with_kids:
         soft.append("kids")
@@ -272,7 +283,7 @@ def rank(cands: list[Cand], ctx: Ctx) -> list[Cand]:
         f_prox = max(0.0, 1 - c.dist_m / max(ctx.radius, 1))
         rating = p.get("rating")
         f_q = 0.6 * ((rating / 5) if isinstance(rating, (int, float)) else 0.6) + 0.4 * (p.get("popularity") or 0.3)
-        if sightseeing:  # «главные достопримечательности»: известность места важнее рейтинга кафе-типа
+        if sightseeing or theme:  # известность места важнее, чем у кафе по соседству
             f_q = 0.75 * (p.get("popularity") or 0.1) + 0.25 * ((rating / 5) if isinstance(rating, (int, float)) else 0.6)
         f_dq = p.get("data_quality") if isinstance(p.get("data_quality"), (int, float)) else 0.5
         f_hours = {("open", "high"): 1.0, ("open", "medium"): 0.85, ("open", "low"): 0.6}.get(

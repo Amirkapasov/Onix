@@ -24,19 +24,33 @@ class Need:
     shopping: bool = False
     intent: str = "other"
     soft_tags: frozenset = field(default_factory=frozenset)  # предпочтительные (не обязательные) теги
+    theme: bool = False               # тема («вид», «культурно», «романтично») — популярность важнее близости
+    extra: object = field(default=None, compare=False)  # доп. правило p -> bool (напр. ресторан с рейтингом ≥ 4.6)
 
     def matches(self, p: dict) -> bool:
+        if self.theme and p.get("category") in THEME_NOT_CATS - self.cats:  # кафе с тегом view — не «смотровая»
+            return bool(self.extra and self.extra(p))
         tags = set(p.get("tags") or [])
         if self.tags & tags:
             return True
         if self.name_rx and re.search(self.name_rx, (p.get("name") or "").lower()):
             return True
+        if self.extra and self.extra(p):
+            return True
         return not self.strict and p.get("category") in self.cats
 
 
-def _n(key, rx, ru, en, kk, cats=(), tags=(), name_rx=None, strict=False, shopping=False, intent="other", soft=()):
+THEME_NOT_CATS = frozenset({"cafe", "restaurant", "bar", "nightlife", "mall", "playground"})
+
+
+def _n(key, rx, ru, en, kk, cats=(), tags=(), name_rx=None, strict=False, shopping=False, intent="other", soft=(),
+       theme=False, extra=None):
     return Need(key, rx, {"ru": ru, "en": en, "kk": kk}, frozenset(cats), frozenset(tags), name_rx, strict,
-                shopping, intent, frozenset(soft))
+                shopping, intent, frozenset(soft), theme, extra)
+
+
+def _tags(p: dict) -> set:
+    return set(p.get("tags") or [])
 
 
 NEEDS: list[Need] = [
@@ -69,7 +83,7 @@ NEEDS: list[Need] = [
     _n("theatre", r"театр|спектакл|опер[аыуе]\b|балет|концерт|theat|ballet|opera|театр",
        "театр / концерт", "theatre / concert", "театр", cats=("theatre",), name_rx=r"театр|опера|балет|филармон",
        intent="culture"),
-    _n("park", r"(?<![а-я])парк(?![а-я])|сквер|\bpark\b|саябақ", "парк", "park", "саябақ",
+    _n("park", r"(?<![а-я])парк(е|и|а|ом|ов|ах|ам)?(?![а-я])|сквер|\bpark\b|саябақ", "парк", "park", "саябақ",
        cats=("park",), intent="walk"),
     _n("library", r"библиотек|library|кітапхана", "библиотека", "library", "кітапхана", cats=("library",),
        intent="culture"),
@@ -105,6 +119,36 @@ NEEDS: list[Need] = [
     _n("horse", r"конн\w* (прогул|клуб|спорт)|верхов|лошад|ипподром|horse|riding|атқа міну", "верховая езда",
        "horse riding", "атқа міну", tags=("horse_riding",), name_rx=r"конн|ипподром|horse|equestr", strict=True,
        intent="sport"),
+    # --- еда: конкретная потребность, сочетается с темами («прогуляться и поужинать») ---
+    _n("food", r"поесть|покушать|пообедать|поужинать|(?<![а-я])обед|(?<![а-я])ужин|голод|ресторан|перекус|"
+       r"(?<![а-я])еда(?![а-я])|\beat\b|\bfood\b|hungry|lunch|dinner|restaurant|тамақ|ас ішу|кешкі ас",
+       "где поесть", "food", "тамақ", cats=("restaurant", "cafe"), intent="food"),
+    # --- темы: жёсткий фильтр по теме, ранжирование «популярность → близость» ---
+    _n("view", r"(?<![а-я])вид(?![а-яё]*(еть|ит|ел|ишь|им|ят))|видом|видами|панорам|смотров|красив|фотограф|сфоткать|"
+       r"(?<![а-я])фото(?![а-я])|закат|\bview|panoram|scenic|sunset|көрініс|көркем|сурет", "красивый вид",
+       "scenic view", "әдемі көрініс", cats=("viewpoint",), tags=("view",),
+       name_rx=r"смотров|набережн|байтерек|бәйтерек|панорам",
+       extra=lambda p: p.get("category") in ("landmark", "monument") and bool({"photo", "sight"} & _tags(p)),
+       intent="sightseeing", theme=True),
+    _n("walk", r"погулять|прогул|пройтись|подышать|воздух|\bwalk|stroll|серуендеу|қыдыр", "прогулка", "walk",
+       "серуен", cats=("park", "viewpoint", "landmark", "monument"), tags=("walk", "view"),
+       name_rx=r"бульвар|набережн|аллея|сквер|променад|саябақ", intent="walk", theme=True),
+    _n("culture", r"культур|искусств|(?<![а-я])арт(?![а-я])|\bart\b|culture|cultural|мәдени|өнер",
+       "культурная программа", "culture", "мәдени бағдарлама", cats=("museum", "gallery", "theatre"),
+       tags=("culture", "art"), intent="culture", theme=True),
+    _n("romantic", r"романти|свидани|вдво[её]м|с девушк|с парн|с женой|с мужем|\bdate\b|romantic|ғашық|махаббат",
+       "романтичное место", "romantic place", "романтикалық орын", cats=("viewpoint", "park"), tags=("view",),
+       name_rx=r"набережн|аллея|бульвар",
+       extra=lambda p: p.get("category") == "restaurant" and (p.get("rating") or 0) >= 4.6,
+       intent="sightseeing", theme=True),
+    _n("unusual", r"необычн|интересн|нестандартн|уникальн|удиви|\bunusual|unique|weird|ерекше|қызық",
+       "что-то необычное", "something unusual", "ерекше нәрсе", cats=("entertainment", "gallery", "museum"),
+       tags=("unusual", "interactive", "art"), intent="culture", theme=True),
+    _n("night", r"ночн|ночью|после 2[2-4]|после полуноч|(?<![а-я])поздно|\bnight|\blate\b|түнде|түнгі",
+       "ночной досуг", "night out", "түнгі демалыс", cats=("nightlife", "bar"), tags=("night", "24_7"),
+       intent="night", theme=True),
+    _n("kids_fun", r"ребён|ребен|(?<![а-я])дет(ьми|ей|и|ск)|малыш|\bkids?\b|child|бала", "для детей", "for kids",
+       "балаларға", cats=("kids", "playground"), tags=("kids", "interactive"), intent="kids", theme=True),
     # --- покупки (утилитарные запросы) ---
     _n("shop_24_7", r"круглосуточн|24/7|24 час|ночью купить|купить ночью|магазин\w* ночью|тәулік бойы",
        "круглосуточный магазин", "24/7 shop", "тәулік бойы дүкен", cats=("convenience", "supermarket"),
@@ -141,6 +185,14 @@ BUDGET_RX = r"бюджетн|недорог|дёшев|дешев|подешев
 def detect(query: str) -> list[str]:
     q = (query or "").lower()
     keys = [n.key for n in NEEDS if re.search(n.query_rx, q)]
+    if "bar" in keys and re.search(r"[әғқңөұүһі]", q) and not re.search(r"сыра|паб|коктейл|\bbar\b|\bpub\b", q):
+        keys.remove("bar")  # по-казахски «бар» = «есть» («орын бар ма?»), а не бар
+    themes = [k for k in keys if BY_KEY[k].theme]
+    objects = [k for k in keys if not BY_KEY[k].theme and k != "food"]
+    if objects:  # назван конкретный объект («кино», «бассейн», «аптека») — он важнее общей темы
+        keys = [k for k in keys if k not in themes]
+    elif "kids_fun" in themes and {"view", "walk", "romantic"} & set(themes):
+        keys.remove("kids_fun")  # «красивый вид с ребёнком» — тема вид, а «с детьми» сделает фильтр детей
     if "shop_24_7" in keys and "supermarket" in keys and not re.search(BRANDS["magnum"] + "|" + BRANDS["small"]
                                                                           + "|" + BRANDS["galmart"], q):
         keys.remove("supermarket")  # «круглосуточный магазин продуктов» — достаточно 24/7
@@ -169,6 +221,11 @@ def matches_any(p: dict, keys: list[str], brand_name: str | None = None) -> bool
 
 def labels(keys: list[str], lang: str) -> str:
     return ", ".join(BY_KEY[k].label.get(lang, BY_KEY[k].label["ru"]) for k in keys)
+
+
+def is_theme(keys: list[str]) -> bool:
+    """Только темы (вид, прогулка, культура…) — популярность важнее близости, маршрут уместен."""
+    return bool(keys) and all(BY_KEY[k].theme for k in keys)
 
 
 def is_shopping(keys: list[str]) -> bool:

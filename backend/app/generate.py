@@ -201,6 +201,79 @@ def _need_label(c: Cand, ctx: Ctx, lang: str) -> str | None:
     return needs_mod.BY_KEY[k].label.get(lang, needs_mod.BY_KEY[k].label["ru"]) if k else None
 
 
+# Факт совпадения с темой запроса: (тема, категория или «*») → ru / en / kk
+_THEME_FACT = {
+    ("view", "viewpoint"): ("смотровая с видом на город", "a viewpoint over the city", "қала көрінетін шолу алаңы"),
+    ("view", "landmark"): ("символ города — красивый вид и фото", "a city landmark — great views and photos",
+                           "қала символы — әдемі көрініс пен фото"),
+    ("view", "monument"): ("памятник на открытом месте — хорошие виды для фото", "a monument in the open — good photo views",
+                           "ашық жердегі ескерткіш — фотоға жақсы көрініс"),
+    ("view", "*"): ("место с видом на город", "a place with a city view", "қала көрінетін орын"),
+    ("walk", "park"): ("зелёная зона для прогулки", "a green area for a walk", "серуенге арналған жасыл аймақ"),
+    ("walk", "viewpoint"): ("можно пройтись и посмотреть на город", "walk around and take in the city",
+                            "серуендеп, қаланы тамашалауға болады"),
+    ("walk", "*"): ("открытое место для прогулки", "an open place for a walk", "серуенге арналған ашық орын"),
+    ("culture", "museum"): ("музей — культурная программа", "a museum for a cultural outing", "мұражай — мәдени бағдарлама"),
+    ("culture", "gallery"): ("галерея — выставки и искусство", "a gallery with exhibitions and art", "галерея — көрмелер мен өнер"),
+    ("culture", "theatre"): ("театр — вечерняя культурная программа", "a theatre for a cultural evening",
+                             "театр — кешкі мәдени бағдарлама"),
+    ("culture", "*"): ("культурное место", "a cultural spot", "мәдени орын"),
+    ("romantic", "restaurant"): ("ресторан с высоким рейтингом для ужина вдвоём", "a top-rated restaurant for dinner for two",
+                                 "екеуге кешкі асқа рейтингі жоғары мейрамхана"),
+    ("romantic", "viewpoint"): ("смотровая — красивый вид вдвоём", "a viewpoint to enjoy together", "екеуге әдемі көрініс"),
+    ("romantic", "*"): ("спокойное место для прогулки вдвоём", "a calm place to walk together", "екеуге серуендеуге тыныш орын"),
+    ("unusual", "entertainment"): ("необычный формат развлечения", "an unusual kind of fun", "ерекше ойын-сауық"),
+    ("unusual", "*"): ("нестандартное место — не обычный маршрут", "an off-the-beaten-path place", "ерекше орын"),
+    ("night", "landmark"): ("красиво вечером с подсветкой", "beautiful when lit up at night", "кешкі жарықта әдемі"),
+    ("night", "*"): ("место для ночного досуга", "a spot for a night out", "түнгі демалыс орны"),
+    ("kids_fun", "*"): ("место для детей", "a place for kids", "балаларға арналған орын"),
+    ("food", "restaurant"): ("ресторан — можно нормально поесть", "a restaurant for a proper meal", "мейрамхана — тамақтануға болады"),
+    ("food", "*"): ("кафе — можно поесть", "a café to grab a meal", "кафе — тамақтануға болады"),
+}
+_NAME_FACT = (  # название точнее категории: «Набережная» — это вид и прогулка
+    (r"набережн", ("набережная с видом на Есиль", "an embankment along the Yesil", "Есіл жағалауы")),
+    (r"бульвар|аллея", ("бульвар для неспешной прогулки", "a boulevard for a slow walk", "асықпай серуендейтін бульвар")),
+)
+_LANG_I = {"ru": 0, "en": 1, "kk": 2}
+
+
+def need_fact(c: Cand, ctx: Ctx, lang: str) -> str | None:
+    """Почему место подходит под тему запроса — по категории/тегам/названию, не по расстоянию."""
+    from . import needs as needs_mod
+    i, p = _LANG_I[lang], c.poi
+    for k in ctx.needs:
+        need = needs_mod.BY_KEY[k]
+        if not need.matches(p):
+            continue
+        if not need.theme and k != "food":
+            return {"ru": f"{need.label['ru']} — то, что вы искали", "en": f"{need.label['en']} — what you asked for",
+                    "kk": f"{need.label['kk']} — сіз іздеген орын"}[lang]
+        name = (p.get("name") or "").lower()
+        if k in ("view", "walk", "romantic"):
+            for rx, t in _NAME_FACT:
+                if re.search(rx, name) and (k != "view" or "набережн" in rx):  # «вид» — не «бульвар для прогулки»
+                    return t[i]
+        if k == "unusual" and "interactive" in (p.get("tags") or []):
+            return ("интерактив — можно участвовать самому", "interactive — you take part yourself", "интерактив — өзіңіз қатысасыз")[i]
+        t = _THEME_FACT.get((k, p.get("category"))) or _THEME_FACT.get((k, "*"))
+        if t:
+            return t[i]
+    return None
+
+
+def hours_fact(c: Cand, lang: str) -> str | None:
+    """«открыто до 21:00» / «круглосуточно» — только при подтверждённом статусе «открыто»."""
+    if c.open.state != "open" or not c.open.label:
+        return None
+    label = c.open.label
+    if re.search(r"Круглосуточно|24/7|Тәулік", label):
+        return {"ru": "открыто круглосуточно", "en": "open 24/7", "kk": "тәулік бойы ашық"}[lang]
+    m = re.search(r"(\d\d?:\d\d)", label)
+    if not m or re.search(r"Возможно|Possibly|мүмкін", label):
+        return None
+    return {"ru": f"открыто до {m[1]}", "en": f"open until {m[1]}", "kk": f"{m[1]} дейін ашық"}[lang]
+
+
 def shopping_why(c: Cand, ctx: Ctx) -> str:
     """Утилитарный запрос (магазин, аптека): коротко и практично, расстояние уместно."""
     lang = ctx.lang if ctx.lang in ("ru", "en", "kk") else "ru"
@@ -229,12 +302,12 @@ def template_why(c: Cand, ctx: Ctx) -> str:
     if needs_mod.is_shopping(ctx.needs):
         return shopping_why(c, ctx)
     r = _REASON[lang]
-    keys = why_reasons(c, ctx)[:3]
+    keys = [k for k in why_reasons(c, ctx) if k != "near"][:3]  # причина — факт о месте, а не расстояние
     phrases = [r[k] for k in keys] or [_CAT_REASON[lang].get(c.poi.get("category", ""), r["fallback"])]
-    if ctx.needs:
-        label = _need_label(c, ctx, lang)
-        phrases = [{"ru": f"{label} — то, что вы искали", "en": f"{label} — what you asked for",
-                    "kk": f"{label} — сіз іздеген орын"}[lang]] + phrases[:1]
+    fact = need_fact(c, ctx, lang) if ctx.needs else None
+    if fact:  # сначала факт совпадения с запросом, потом часы работы — а не «близко»
+        extra = [r[k] for k in keys if not k.startswith("intent_") and k != "late"]  # интент уже сказан фактом
+        phrases = [fact] + [h for h in [hours_fact(c, lang)] if h] + extra[:1]
     rating = c.poi.get("rating")
     if isinstance(rating, (int, float)) and rating >= 4.6 and len(phrases) < 3:
         phrases.append(f"{r['rating']} {rating:.1f}")

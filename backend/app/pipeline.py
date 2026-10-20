@@ -130,6 +130,8 @@ async def recommend(req: RecommendRequest) -> dict:
     parsed_out = {**parsed, "time_budget_min": budget if (budget_explicit or flight) else parsed["time_budget_min"]}
 
     needs = list(parsed.get("needs") or [])
+    if cold or indoor_only:  # в мороз «погулять» — не обязательный парк, а тёплые места
+        needs = [k for k in needs if k != "walk"]
     shopping = needs_mod.is_shopping(needs)
     if needs:  # ключевые слова потребности помогают BM25 внутри подходящих мест
         parsed_out["keywords"] = list(dict.fromkeys(
@@ -138,7 +140,10 @@ async def recommend(req: RecommendRequest) -> dict:
               radius=radius, parsed=parsed, with_kids=with_kids, accessibility=access, indoor_only=indoor_only,
               categories=list(f.categories or []), flight=flight, available=available, weather=weather,
               needs=needs, brand=needs_mod.brand(query) if needs else None,
-              want_budget=needs_mod.wants_budget(query))
+              want_budget=needs_mod.wants_budget(query),
+              allow_food=bool(needs) or flight or parsed["intent"] in ("coffee", "food", "work", "night")
+              or bool({"coffee", "food", "sockets", "wifi"} & set(parsed["constraints"]))
+              or bool(re.search(r"посидеть|посидим|перекус|кофе|(?<![а-я])чай", query.lower())))
 
     # 3. Жёсткие фильтры
     cands, stats = hard_filter(pois, ctx)
@@ -186,9 +191,9 @@ async def recommend(req: RecommendRequest) -> dict:
                                   [c.poi["id"] for c in cands])  # эмбеддинг запроса — сетевой вызов, не держим loop
     named = {p["id"] for p in mentioned if geo.haversine_m(*start, p["lat"], p["lon"]) > 300}
     # место, где пользователь уже стоит (метка локации/запрос + < 250 м): при прогулке — только запасной вариант
-    if parsed["intent"] in HERE_PENALTY_INTENTS and not indoor_only and not needs:
+    if parsed["intent"] in HERE_PENALTY_INTENTS and not indoor_only and (not needs or needs_mod.is_theme(needs)):
         at = {p["id"] for p in mentioned_pois(f"{req.location_label or ''} {query}", pois)}
-        walk = parsed["intent"] == "walk"
+        walk = parsed["intent"] in ("walk", "other")  # «куда сходить?» из ТЦ — не сам ТЦ
         for c in cands:  # прогулка: всё, что в ~200 м от пользователя, — «вы уже здесь», максимум идея
             c.here = c.poi["id"] not in named and (c.poi["id"] in at and c.dist_m < 250 or walk and c.dist_m < 200)
     if parsed["intent"] == "walk" and not needs and not cold:
@@ -256,7 +261,7 @@ async def recommend(req: RecommendRequest) -> dict:
                           "We have no price data — showing the nearest matching places; check prices on site.",
                           "Бағалар туралы дерек жоқ — ең жақын орындар көрсетілді."))
     # маршрут: прогулкам и досугу; магазинам и «бассейн/кино…» — только если попросили
-    if req.want_route and recs and (not needs or route_asked):
+    if req.want_route and recs and (not needs or needs_mod.is_theme(needs) or route_asked):
         route, _, rwarn = await build_route(start, recs, mode, available if (budget_explicit or flight) else None, lang)
         warnings += rwarn
 
