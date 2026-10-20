@@ -64,4 +64,5 @@ Open-Meteo (без ключа) по центру города — координ
 ## Стек
 - **Google AI — Gemini**: разбор запроса (JSON-режим), генерация объяснений, эмбеддинги POI и запросов (Gemini Embedding). Провайдер вынесен в абстракцию, в финале — только Gemini.
 - **Открытые данные**: OpenStreetMap (база и маршруты через OSRM), Wikidata, Open-Meteo; 2GIS — через официальный API.
+- **Фото мест**: поле `image` — только Wikimedia Commons (Wikidata P18 / OSM), лицензии CC0, PD, CC BY, CC BY-SA, с автором и лицензией в карточке. Фото из 2GIS/Google не берём; без фото — иллюстрация категории с пометкой.
 - Python 3.12, FastAPI · rank_bm25, numpy · React + Vite + Leaflet.

@@ -83,6 +83,7 @@ class Recommendation(BaseModel):
     sources: list[SourceRef]
     rating: float | None = None
     badges: list[str] = []
+    image: dict | None = None  # Wikimedia Commons с атрибуцией (author, license, page_url) — из POI как есть
 
 
 class Idea(BaseModel):

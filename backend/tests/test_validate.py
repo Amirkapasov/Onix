@@ -73,3 +73,24 @@ def test_unsupported_features_stripped_but_open_kept():
     assert strip_unsupported("Магазин обуви рядом. Широкий ассортимент и аксессуары.", shoes) == "Магазин обуви рядом."
     pool = {"name": "Бассейн «Олимп»", "category": "wellness", "tags": ["swimming"], "description": ""}
     assert strip_unsupported("Большой бассейн для плавания.", pool) == "Большой бассейн для плавания."
+
+
+def test_image_passes_through_unchanged_and_null_ok():
+    ctx = _ctx()
+    cands = _cands(ctx)
+    img = {"url": "https://upload.wikimedia.org/x.jpg", "thumb_url": None, "page_url": "https://commons.wikimedia.org/wiki/File:x.jpg",
+           "author": "Автор", "license": "CC BY-SA 4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+           "source": "wikimedia_commons"}
+    cands[0].poi = {**cands[0].poi, "image": img}
+    recs, _, _ = validate({"recommendations": [{"poi_id": c.poi["id"], "why": "x", "what_to_do": "y"} for c in cands]}, cands, ctx)
+    by = {r["poi_id"]: r for r in recs}
+    assert by[cands[0].poi["id"]]["image"] == img
+    assert all(r["image"] is None for r in recs if r["poi_id"] != cands[0].poi["id"])
+
+
+def test_image_not_sent_to_llm():
+    from backend.app.generate import build_user_prompt
+    ctx = _ctx()
+    cands = _cands(ctx)
+    cands[0].poi = {**cands[0].poi, "image": {"url": "https://upload.wikimedia.org/secret.jpg"}}
+    assert "upload.wikimedia.org" not in build_user_prompt("погулять", ctx, cands)

@@ -29,7 +29,7 @@ ORDER = ["id", "name", "name_i18n", "lat", "lon", "category", "tags", "descripti
          "description_source", "address", "opening_hours", "opening_hours_source",
          "opening_hours_checked_at", "phone", "website", "rating", "rating_count", "popularity",
          "indoor", "wheelchair", "kid_friendly", "price_level", "typical_visit_min", "sources",
-         "data_quality", "updated_at"]
+         "image", "data_quality", "updated_at"]
 
 
 def main() -> int:
@@ -41,6 +41,7 @@ def main() -> int:
                     help="источник OSM: auto — Geofabrik, если уже скачан и есть pyosmium, иначе Overpass с откатом")
     ap.add_argument("--skip-wikidata", action="store_true")
     ap.add_argument("--skip-2gis", action="store_true")
+    ap.add_argument("--skip-images", action="store_true", help="без фото Wikimedia Commons")
     args = ap.parse_args()
     t0 = time.time()
     env = load_env()
@@ -89,6 +90,21 @@ def main() -> int:
     pois, dups2 = normalize.dedupe(pois)  # после Wikidata имена стали русскими — второй проход
     dups += dups2
 
+    log("    Фото (Wikimedia Commons)")
+    images = None
+    if args.skip_images:
+        status["commons"] = "пропущено (--skip-images)"
+    else:
+        try:
+            from sources import images
+            status["commons"] = images.attach(pois)
+        except Exception as e:  # фото — не критично для сборки
+            images = None
+            status["commons"] = f"ошибка: {e}"
+            log(f"  Commons пропущен: {e}")
+    for p in pois:
+        p.setdefault("image", None)
+
     log("5/5 Оценки, валидация, запись")
 
     def finalize(items: list[dict], invalid_list: list) -> list[dict]:
@@ -121,6 +137,11 @@ def main() -> int:
     meta = {"elapsed_s": time.time() - t0, "invalid": len(invalid_list), "invalid_list": invalid_list,
             "duplicates": dups, "bad_hours": bad_hours, "validator": validate.BACKEND,
             "source_status": status}
+    if images:
+        try:
+            status["category_photos"] = images.build_category_photos(pois)
+        except Exception as e:
+            status["category_photos"] = f"ошибка: {e}"
     stats.write(valid, valid_open, meta)
     log(f"Готово: {len(valid)} POI → data/pois.json, открытая выгрузка {len(valid_open)} → data/pois_open.json, "
         f"отчёт data/stats.md ({meta['elapsed_s']:.1f} с, невалидных {len(invalid_list)})")

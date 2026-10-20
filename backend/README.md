@@ -1,6 +1,8 @@
 # Серуен — RAG-бэкенд (FastAPI)
 
-API строго по [`contracts/api.md`](../contracts/api.md): `POST /api/recommend`, `GET /api/pois`, `GET /api/presets`, `GET /api/health`.
+API строго по [`contracts/api.md`](../contracts/api.md): `POST /api/recommend`, `GET /api/pois`, `GET /api/presets`, `GET /api/health`, `GET /api/category-photos` (отдаёт `data/category_photos.json`; нет файла — `{"hero": [], "categories": {}}`).
+
+Фото: поле `image` (Wikimedia Commons с автором и лицензией) идёт из POI в `recommendations[]` и `/api/pois` как есть или `null`; в LLM не передаётся.
 
 ## Запуск (из корня репозитория)
 ```bash

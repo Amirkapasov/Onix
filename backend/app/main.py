@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import asyncio
+import json
 import logging
 from contextlib import asynccontextmanager
 
@@ -78,6 +79,22 @@ def api_pois(bbox: str | None = Query(None, description="minLat,minLon,maxLat,ma
 @app.get("/api/presets")
 def api_presets():
     return {"items": PRESETS}
+
+
+@app.get("/api/category-photos")
+def api_category_photos():
+    """Фото категорий и обложки (data/category_photos.json от Агента 1); нет файла — пустой ответ."""
+    path = config.ROOT / "data" / "category_photos.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(data, dict):
+            return {"hero": data.get("hero") or [], "categories": data.get("categories") or {},
+                    **{k: v for k, v in data.items() if k not in ("hero", "categories")}}
+    except FileNotFoundError:
+        pass
+    except Exception as e:  # битый/пишущийся файл — не 500
+        log.warning("category_photos.json unreadable: %s", type(e).__name__)
+    return {"hero": [], "categories": {}}
 
 
 @app.get("/api/health")

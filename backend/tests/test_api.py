@@ -257,3 +257,18 @@ def test_overloaded_model_switches_without_retry(monkeypatch):
     monkeypatch.setattr(llm, "_cooldown", {})
     monkeypatch.setattr(llm, "_cache", llm.OrderedDict())
     assert llm.complete_json("s", "u").model == "ok" and calls == ["busy", "ok"]
+
+
+def test_category_photos_endpoint(tmp_path, monkeypatch):
+    from backend.app import config
+    monkeypatch.setattr(config, "ROOT", tmp_path)
+    assert client.get("/api/category-photos").json() == {"hero": [], "categories": {}}
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data" / "category_photos.json").write_text('{"hero": [{"url": "u"}], "categories": {"park": [{"url": "p"}]}}')
+    d = client.get("/api/category-photos").json()
+    assert d["hero"] == [{"url": "u"}] and d["categories"]["park"] == [{"url": "p"}]
+
+
+def test_recommendation_has_image_field():
+    d = client.post("/api/recommend", json=_body(_presets()[0])).json()
+    assert all("image" in r for r in d["recommendations"])

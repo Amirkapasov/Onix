@@ -24,7 +24,8 @@ RAW = DATA / "raw"
 CACHE = DATA / "cache"
 SCHEMA_PATH = ROOT / "contracts" / "poi.schema.json"
 
-USER_AGENT = "seruen-hackathon/0.1 (NIC Smart City hackathon; Astana walking assistant)"
+USER_AGENT = ("seruen-hackathon/0.1 (NIC Smart City hackathon; Astana walking assistant; "
+              "https://github.com/Amirkapasov/Onix)")
 
 # Граница Астаны: relation 3087155, wikidata Q1520. bbox — запасной фильтр.
 ASTANA_WIKIDATA = "Q1520"

@@ -376,6 +376,8 @@ def from_osm(e: dict, fetched_at: str, bad_hours: list) -> dict | None:
         # служебные поля (удаляются перед записью)
         "_wikidata": t.get("wikidata"),
         "_wikipedia": t.get("wikipedia"),
+        "_commons": t.get("wikimedia_commons"),
+        "_image": t.get("image"),
         "_unnamed": not (t.get("name:ru") or t.get("name")),
         "_has_name_ru": bool(t.get("name:ru")),
     }
@@ -384,7 +386,7 @@ def from_osm(e: dict, fetched_at: str, bad_hours: list) -> dict | None:
 # ---------- дедупликация ----------
 
 FILL_FIELDS = ["address", "opening_hours", "opening_hours_source", "opening_hours_checked_at",
-               "phone", "website", "rating", "rating_count", "_wikidata", "_wikipedia"]
+               "phone", "website", "rating", "rating_count", "_wikidata", "_wikipedia", "_commons", "_image"]
 
 
 SNAPSHOT_FIELDS = ["opening_hours", "opening_hours_source", "opening_hours_checked_at", "rating", "rating_count",

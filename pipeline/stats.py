@@ -61,6 +61,7 @@ def _fields(pois):
         "Контакты (телефон/сайт)": _pct(sum(1 for p in pois if p.get("phone") or p.get("website")), t),
         "Доступность для колясок известна": _pct(sum(1 for p in pois if p["wheelchair"] != "unknown"), t),
         "Можно в помещении": _pct(sum(1 for p in pois if p.get("indoor")), t),
+        "Фото (Wikimedia Commons)": _pct(sum(1 for p in pois if p.get("image")), t),
         "Средний data_quality": f"{sum(p.get('data_quality') or 0 for p in pois) / max(t, 1):.2f}",
     }
 

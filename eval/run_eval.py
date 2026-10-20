@@ -141,6 +141,12 @@ def lang_ok(text: str, lang: str) -> bool:
 
 OPEN_CLAIM = re.compile(r"открыт[оа]?\s+сейчас|сейчас\s+открыт|^открыто\b|open now|^open\b|қазір ашық|^ашық", re.I)
 
+def free_license(lic: str | None) -> bool:
+    """CC0 / PD / CC BY / CC BY-SA; NC и ND — нет."""
+    t = re.sub(r"[-_]", " ", (lic or "").upper())
+    return bool(re.match(r"(CC0|PD\b|PUBLIC DOMAIN|CC BY\b)", t)) and not re.search(r"\b(NC|ND)\b", t)
+
+
 def open_confirmed(poi: dict, dt: datetime) -> bool:
     """Открыто подтверждённо: тег 24_7 или часы разобраны и показывают «открыто»."""
     return "24_7" in (poi.get("tags") or []) or is_open(parse_oh(poi.get("opening_hours")), dt) is True
@@ -238,6 +244,18 @@ class Checker:
             if lim and hav > lim:
                 dist_over.append(f"{poi.get('name')} {hav:.0f} м")
         self.add("open_status_enum", not enum_bad, ", ".join(map(str, enum_bad)))
+        # фото: только Wikimedia Commons, свободная лицензия, автор и ссылка обязательны (контракт, правило 5)
+        img_bad = []
+        for x in recs:
+            im = x.get("image")
+            if not im:
+                continue
+            ok = (im.get("source") == "wikimedia_commons" and "wikimedia.org" in (im.get("url") or "")
+                  and im.get("author") and im.get("page_url")
+                  and free_license(im.get("license")))
+            if not ok:
+                img_bad.append(f"{x.get('poi_id')}: {im.get('source')}/{im.get('license')}")
+        self.add("image_attribution", not img_bad, "; ".join(img_bad))
         self.add("no_open_when_unknown", not unknown_claims, ", ".join(map(str, unknown_claims)))
         self.add("not_closed", not closed_recs, ", ".join(closed_recs))
         self.add("open_for_visit", not stays, ", ".join(map(str, stays)), sev="soft")
@@ -542,6 +560,9 @@ def write_report(a, rows, lat_all, pois_path, n_pois, h):
     if manual:
         L += ["", "## Требуют ручной проверки", ""] + [f"- **{c['id']}**: {c['manual_review']}" for c in manual]
     L += ["", "Легенда: ✗ — жёсткое правило контракта, △ — мягкая проверка (релевантность, задержка, маршрут).", ""]
+    notes = EVAL / "report_notes.md"
+    if notes.exists() and not a.mock:
+        L += ["", notes.read_text(encoding="utf-8").strip(), ""]
     Path(a.out).write_text("\n".join(L), encoding="utf-8")
 
 

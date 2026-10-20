@@ -95,6 +95,7 @@ def to_recommendation(c: Cand, ctx: Ctx, why: str, what: str, visit) -> dict:
         "sources": [{"name": s.get("name", "?"), "url": s.get("url")} for s in (p.get("sources") or [])] or [{"name": "seed", "url": None}],
         "rating": p.get("rating") if isinstance(p.get("rating"), (int, float)) else None,
         "badges": badges,
+        "image": p.get("image") if isinstance(p.get("image"), dict) else None,  # как есть; в LLM не передаём
     }
 
 

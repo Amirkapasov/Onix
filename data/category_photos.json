@@ -1,0 +1,613 @@
+{
+ "_comment": "Фолбэк-фото по категориям для мест без своего фото (помечать «иллюстрация») и обложка (hero). Все — Wikimedia Commons, свободные лицензии; атрибуция обязательна. astana=true — снято в Астане.",
+ "categories": {
+  "bar": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Bar_in_Bristol.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Bar_in_Bristol.jpg/960px-Bar_in_Bristol.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Bar_in_Bristol.jpg",
+    "author": "Klafubra",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "wikimedia_commons",
+    "depicts": "Bar in Bristol",
+    "astana": false
+   }
+  ],
+  "cafe": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Starbucks_coffee_shop_interior_design.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Starbucks_coffee_shop_interior_design.jpg/960px-Starbucks_coffee_shop_interior_design.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Starbucks_coffee_shop_interior_design.jpg",
+    "author": "Fumikas Sagisavas",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Starbucks coffee shop interior design",
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Bauirsaq_with_candy.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Bauirsaq_with_candy.jpg/960px-Bauirsaq_with_candy.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Bauirsaq_with_candy.jpg",
+    "author": "Nurken",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Bauirsaq with candy",
+    "astana": false
+   }
+  ],
+  "cinema": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Cinema_Roma_interi%C3%B6r.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Cinema_Roma_interi%C3%B6r.jpg/960px-Cinema_Roma_interi%C3%B6r.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Cinema_Roma_interi%C3%B6r.jpg",
+    "author": "Nalle&Lisa",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Cinema Roma interiör",
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Interior_of_hall_at_CInema_Museum%2C_Kennington_Lambeth.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Interior_of_hall_at_CInema_Museum%2C_Kennington_Lambeth.jpg/960px-Interior_of_hall_at_CInema_Museum%2C_Kennington_Lambeth.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Interior_of_hall_at_CInema_Museum,_Kennington_Lambeth.jpg",
+    "author": "Anonymous Unknown author",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Interior of hall at CInema Museum, Kennington Lambeth",
+    "astana": false
+   }
+  ],
+  "clothes": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Jacadi_shop%2C_Keruen_mall%2C_Astana%2C_2026.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Jacadi_shop%2C_Keruen_mall%2C_Astana%2C_2026.jpg/960px-Jacadi_shop%2C_Keruen_mall%2C_Astana%2C_2026.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Jacadi_shop,_Keruen_mall,_Astana,_2026.jpg",
+    "author": "Bdx",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Jacadi shop, Keruen mall, Astana, 2026",
+    "astana": true
+   }
+  ],
+  "convenience": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Convenience_store._Tetrikhevi.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Convenience_store._Tetrikhevi.jpg/960px-Convenience_store._Tetrikhevi.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Convenience_store._Tetrikhevi.jpg",
+    "author": "David Osipov 0000 0005 1802 960X 0009-0005-2713-9242",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Convenience store. Tetrikhevi",
+    "astana": false
+   }
+  ],
+  "coworking": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Coworking_Space_in_Columbus_Ohio.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Coworking_Space_in_Columbus_Ohio.jpg/960px-Coworking_Space_in_Columbus_Ohio.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Coworking_Space_in_Columbus_Ohio.jpg",
+    "author": "Benlande",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Coworking Space in Columbus Ohio",
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Coworking_space_2026-09-27.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Coworking_space_2026-09-27.jpg/960px-Coworking_space_2026-09-27.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Coworking_space_2026-09-27.jpg",
+    "author": "JustWritingHere",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Coworking space 2026-09-27",
+    "astana": false
+   }
+  ],
+  "entertainment": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Splitz_bowling_alley%2C_Jacksonville.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Splitz_bowling_alley%2C_Jacksonville.jpg/960px-Splitz_bowling_alley%2C_Jacksonville.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Splitz_bowling_alley,_Jacksonville.jpg",
+    "author": "Michael Rivera",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Splitz bowling alley, Jacksonville",
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Escape_Room_by_Midgaard_Event.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Escape_Room_by_Midgaard_Event.jpg/960px-Escape_Room_by_Midgaard_Event.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Escape_Room_by_Midgaard_Event.jpg",
+    "author": "Leif Jørgensen",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Escape Room by Midgaard Event",
+    "astana": false
+   }
+  ],
+  "gallery": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Interior_of_Christchurch_Art_Gallery%2C_New_Zealand_04.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Interior_of_Christchurch_Art_Gallery%2C_New_Zealand_04.jpg/960px-Interior_of_Christchurch_Art_Gallery%2C_New_Zealand_04.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Interior_of_Christchurch_Art_Gallery,_New_Zealand_04.jpg",
+    "author": "Michal Klajban",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Interior of Christchurch Art Gallery, New Zealand 04",
+    "astana": false
+   }
+  ],
+  "kids": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Tung_Tao_Court_Indoor_playground_201407.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Tung_Tao_Court_Indoor_playground_201407.jpg/960px-Tung_Tao_Court_Indoor_playground_201407.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Tung_Tao_Court_Indoor_playground_201407.jpg",
+    "author": "Wpcpey",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Tung Tao Court Indoor playground 201407",
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Siu_Sai_Wan_Complex_Children_Play_Room_2015.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Siu_Sai_Wan_Complex_Children_Play_Room_2015.jpg/960px-Siu_Sai_Wan_Complex_Children_Play_Room_2015.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Siu_Sai_Wan_Complex_Children_Play_Room_2015.jpg",
+    "author": "Wing1990hk",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Siu Sai Wan Complex Children Play Room 2015",
+    "astana": false
+   }
+  ],
+  "landmark": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Astana-2021-10_-_25.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Astana-2021-10_-_25.jpg/960px-Astana-2021-10_-_25.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana-2021-10_-_25.jpg",
+    "author": "Vyacheslav Bukharov",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Astana-2021-10 - 25",
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Central_Downtown_Astana_pamorama.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Central_Downtown_Astana_pamorama.jpg/960px-Central_Downtown_Astana_pamorama.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Central_Downtown_Astana_pamorama.jpg",
+    "author": "Ken and Nyetta",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "wikimedia_commons",
+    "depicts": "Central Downtown Astana pamorama",
+    "astana": true
+   }
+  ],
+  "library": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Liverpool_Central_Library_Picton_Reading_Room_-_panoramio.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Liverpool_Central_Library_Picton_Reading_Room_-_panoramio.jpg/960px-Liverpool_Central_Library_Picton_Reading_Room_-_panoramio.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Liverpool_Central_Library_Picton_Reading_Room_-_panoramio.jpg",
+    "author": "Michael D Beckwith",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Liverpool Central Library Picton Reading Room - panoramio",
+    "astana": false
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Graz_University-Library_reading-room.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Graz_University-Library_reading-room.jpg/960px-Graz_University-Library_reading-room.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Graz_University-Library_reading-room.jpg",
+    "author": "Dr. Marcus Gossler",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "wikimedia_commons",
+    "depicts": "Graz University-Library reading-room",
+    "astana": false
+   }
+  ],
+  "mall": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Khan_Shatyr.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Khan_Shatyr.jpg/960px-Khan_Shatyr.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Khan_Shatyr.jpg",
+    "author": "Quarot",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Хан Шатыр",
+    "poi_id": "osm:way/460703779",
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg/960px-Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Keruen_mall,_interior,_Astana,_2026.jpg",
+    "author": "Bdx",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Keruen mall, interior, Astana, 2026",
+    "astana": true
+   }
+  ],
+  "market": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/%D0%97%D0%B5%D0%BB%D1%91%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%B7%D0%B0%D1%80_%D0%B2_%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B_%28%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/%D0%97%D0%B5%D0%BB%D1%91%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%B7%D0%B0%D1%80_%D0%B2_%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B_%28%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%29.jpg/960px-%D0%97%D0%B5%D0%BB%D1%91%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%B7%D0%B0%D1%80_%D0%B2_%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B_%28%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B5%D0%BB%D1%91%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%B7%D0%B0%D1%80_%D0%B2_%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B_(%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD).jpg",
+    "author": "Spacekid",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Зелёный базар в Алматы (Казахстан)",
+    "astana": false
+   }
+  ],
+  "monument": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/20000_tenge_averse_2021.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/20000_tenge_averse_2021.jpg/960px-20000_tenge_averse_2021.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:20000_tenge_averse_2021.jpg",
+    "author": "Национальный банк Республики Казахстан",
+    "license": "Public domain",
+    "license_url": null,
+    "source": "wikimedia_commons",
+    "depicts": "Триумфальная арка Мангилик Ел",
+    "poi_id": "osm:way/549307755",
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Kazakh_Eli.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Kazakh_Eli.jpg/960px-Kazakh_Eli.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Kazakh_Eli.jpg",
+    "author": "Ken and Nyetta",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "wikimedia_commons",
+    "depicts": "Казак ели",
+    "poi_id": "osm:node/2681623412",
+    "astana": true
+   }
+  ],
+  "museum": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/%22%D0%90%D0%9B%D0%96%D0%98%D0%A0%22_%D1%82%D2%B1%D1%82%D2%9B%D1%8B%D0%BD%D1%8B_%D0%9B._%D0%A4%D1%80%D0%B5%D0%BD%D0%BA%D0%B5%D0%BB%D1%8C%D0%B4%D1%96%D2%A3_%D2%AF%D1%81%D1%82%D0%B5%D0%BB_%D1%88%D0%B0%D0%BC%D1%8B.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/%22%D0%90%D0%9B%D0%96%D0%98%D0%A0%22_%D1%82%D2%B1%D1%82%D2%9B%D1%8B%D0%BD%D1%8B_%D0%9B._%D0%A4%D1%80%D0%B5%D0%BD%D0%BA%D0%B5%D0%BB%D1%8C%D0%B4%D1%96%D2%A3_%D2%AF%D1%81%D1%82%D0%B5%D0%BB_%D1%88%D0%B0%D0%BC%D1%8B.jpg/960px-%22%D0%90%D0%9B%D0%96%D0%98%D0%A0%22_%D1%82%D2%B1%D1%82%D2%9B%D1%8B%D0%BD%D1%8B_%D0%9B._%D0%A4%D1%80%D0%B5%D0%BD%D0%BA%D0%B5%D0%BB%D1%8C%D0%B4%D1%96%D2%A3_%D2%AF%D1%81%D1%82%D0%B5%D0%BB_%D1%88%D0%B0%D0%BC%D1%8B.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:%22%D0%90%D0%9B%D0%96%D0%98%D0%A0%22_%D1%82%D2%B1%D1%82%D2%9B%D1%8B%D0%BD%D1%8B_%D0%9B._%D0%A4%D1%80%D0%B5%D0%BD%D0%BA%D0%B5%D0%BB%D1%8C%D0%B4%D1%96%D2%A3_%D2%AF%D1%81%D1%82%D0%B5%D0%BB_%D1%88%D0%B0%D0%BC%D1%8B.jpg",
+    "author": "Muzaffar Turgunov",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Национальный музей Республики Казахстан",
+    "poi_id": "osm:node/4894937300",
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG/960px-%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
+    "page_url": "https://commons.wikimedia.org/wiki/File:%D0%AD%D1%82%D0%BD%D0%BE-%D0%BC%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%9A%D0%B0%D1%80%D1%82%D0%B0_%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%90%D1%82%D0%B0%D0%BC%D0%B5%D0%BA%D0%B5%D0%BD%C2%BB.JPG",
+    "author": "Toshishiro",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Этно-мемориальный комплекс Карта Казахстана Атамекен",
+    "poi_id": "osm:way/1460700597",
+    "astana": true
+   }
+  ],
+  "nightlife": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg/960px-Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Night_at_Esil_District,_Astana_(P1190721).jpg",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Night at Esil District, Astana (P1190721)",
+    "astana": true
+   }
+  ],
+  "park": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/A_view_of_Nur-Sultan%27s_Botanical_Garden.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/A_view_of_Nur-Sultan%27s_Botanical_Garden.jpg/960px-A_view_of_Nur-Sultan%27s_Botanical_Garden.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:A_view_of_Nur-Sultan%27s_Botanical_Garden.jpg",
+    "author": "Demir Berisha",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Ботанический сад",
+    "poi_id": "osm:way/1196402246",
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Fountain_in_Lovers_Park.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Fountain_in_Lovers_Park.jpg/960px-Fountain_in_Lovers_Park.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Fountain_in_Lovers_Park.jpg",
+    "author": "Bernard Gagnon",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Fountain in Lovers Park",
+    "astana": false
+   }
+  ],
+  "pharmacy": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/%D0%9A%D0%BE%D0%BD%D0%B0%D0%B5%D0%B2%2C_%D0%90%D0%B1%D0%B0%D1%8F_18%D0%B0.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/%D0%9A%D0%BE%D0%BD%D0%B0%D0%B5%D0%B2%2C_%D0%90%D0%B1%D0%B0%D1%8F_18%D0%B0.jpg/960px-%D0%9A%D0%BE%D0%BD%D0%B0%D0%B5%D0%B2%2C_%D0%90%D0%B1%D0%B0%D1%8F_18%D0%B0.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BD%D0%B0%D0%B5%D0%B2,_%D0%90%D0%B1%D0%B0%D1%8F_18%D0%B0.jpg",
+    "author": "Nikolai Bulykin",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Конаев, Абая 18а",
+    "astana": false
+   }
+  ],
+  "playground": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Ma_Wan_Children%27s_Playground_01.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Ma_Wan_Children%27s_Playground_01.jpg/960px-Ma_Wan_Children%27s_Playground_01.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Ma_Wan_Children%27s_Playground_01.jpg",
+    "author": "Underwaterbuffalo",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Ma Wan Children's Playground 01",
+    "astana": false
+   }
+  ],
+  "religious": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Astana_DSC04235_%287709902002%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Astana_DSC04235_%287709902002%29.jpg/960px-Astana_DSC04235_%287709902002%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana_DSC04235_(7709902002).jpg",
+    "author": "jtstewart",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "wikimedia_commons",
+    "depicts": "Мечеть Абу Насыра аль-Фараби",
+    "poi_id": "osm:relation/16827715",
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Rustam_Minnikhanov_on_Expo_2017_72.jpg/960px-Rustam_Minnikhanov_on_Expo_2017_72.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Rustam_Minnikhanov_on_Expo_2017_72.jpg",
+    "author": "Лаззат Хайдаров",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "мечеть \"Хазрет Султан\"",
+    "poi_id": "osm:way/240860325",
+    "astana": true
+   }
+  ],
+  "restaurant": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Darijani%2C_Astana_%28LRM_20240819_173519%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Darijani%2C_Astana_%28LRM_20240819_173519%29.jpg/960px-Darijani%2C_Astana_%28LRM_20240819_173519%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Darijani,_Astana_(LRM_20240819_173519).jpg",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Darijani, Astana (LRM 20240819 173519)",
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Daredzhani%2C_Astana_%2820240819-2024-08-19_14.35.19%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Daredzhani%2C_Astana_%2820240819-2024-08-19_14.35.19%29.jpg/960px-Daredzhani%2C_Astana_%2820240819-2024-08-19_14.35.19%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Daredzhani,_Astana_(20240819-2024-08-19_14.35.19).jpg",
+    "author": "Q116983635",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Daredzhani, Astana (20240819-2024-08-19 14.35.19)",
+    "astana": true
+   }
+  ],
+  "shop": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg/960px-Keruen_mall%2C_interior%2C_Astana%2C_2026.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Keruen_mall,_interior,_Astana,_2026.jpg",
+    "author": "Bdx",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Keruen mall, interior, Astana, 2026",
+    "astana": true
+   }
+  ],
+  "sport": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Astana_Arena_%28inside_interior%29.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Astana_Arena_%28inside_interior%29.JPG/960px-Astana_Arena_%28inside_interior%29.JPG",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana_Arena_(inside_interior).JPG",
+    "author": "ChelseaFunNumberOne",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Астана Арена",
+    "poi_id": "osm:way/1460088073",
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Barys_Arena_2014-03-15.JPG",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Barys_Arena_2014-03-15.JPG/960px-Barys_Arena_2014-03-15.JPG",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Barys_Arena_2014-03-15.JPG",
+    "author": "ChelseaFunNumberOne",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "wikimedia_commons",
+    "depicts": "Барыс Арена",
+    "poi_id": "osm:way/663143306",
+    "astana": true
+   }
+  ],
+  "supermarket": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Molmart%2C_Astana%2C_2026.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Molmart%2C_Astana%2C_2026.jpg/960px-Molmart%2C_Astana%2C_2026.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Molmart,_Astana,_2026.jpg",
+    "author": "Bdx",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Molmart, Astana, 2026",
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Cheeses%2C_Galmart%2C_Keruen_mall%2C_Astana%2C_2026.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Cheeses%2C_Galmart%2C_Keruen_mall%2C_Astana%2C_2026.jpg/960px-Cheeses%2C_Galmart%2C_Keruen_mall%2C_Astana%2C_2026.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Cheeses,_Galmart,_Keruen_mall,_Astana,_2026.jpg",
+    "author": "Bdx",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Cheeses, Galmart, Keruen mall, Astana, 2026",
+    "astana": true
+   }
+  ],
+  "theatre": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Inside_Astana%27s_New_Opera_House_%288282915665%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Inside_Astana%27s_New_Opera_House_%288282915665%29.jpg/960px-Inside_Astana%27s_New_Opera_House_%288282915665%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Inside_Astana%27s_New_Opera_House_(8282915665).jpg",
+    "author": "Ken and Nyetta",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "wikimedia_commons",
+    "depicts": "Астана Опера",
+    "poi_id": "osm:way/917478479",
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Astana_-_190217_DSC_3875.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Astana_-_190217_DSC_3875.jpg/960px-Astana_-_190217_DSC_3875.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Astana_-_190217_DSC_3875.jpg",
+    "author": "Ilya Varlamov",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Русский драматический театр им. М. Горького",
+    "poi_id": "wikidata:Q16433519",
+    "astana": true
+   }
+  ],
+  "viewpoint": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg/960px-Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Night_at_Esil_District,_Astana_(P1190721).jpg",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "source": "wikimedia_commons",
+    "depicts": "Байтерек",
+    "poi_id": "osm:way/230401645",
+    "astana": true
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/View_from_Bayterek_tower.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/View_from_Bayterek_tower.jpg/960px-View_from_Bayterek_tower.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:View_from_Bayterek_tower.jpg",
+    "author": "Ken and Nyetta",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "wikimedia_commons",
+    "depicts": "View from Bayterek tower",
+    "astana": false
+   }
+  ],
+  "wellness": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Indoor_pool_of_spa_with_open_door_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+    "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Indoor_pool_of_spa_with_open_door_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg/960px-Indoor_pool_of_spa_with_open_door_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Indoor_pool_of_spa_with_open_door_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+    "author": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "wikimedia_commons",
+    "depicts": "Indoor pool of spa with open door at Amantaka luxury Resort & Hotel in Luang Prabang Laos",
+    "astana": false
+   }
+  ]
+ },
+ "hero": [
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg/960px-Night_at_Esil_District%2C_Astana_%28P1190721%29.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Night_at_Esil_District,_Astana_(P1190721).jpg",
+   "author": "Matti Blume",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+   "source": "wikimedia_commons",
+   "depicts": "Байтерек ночью",
+   "astana": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Khan_Shatyr.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Khan_Shatyr.jpg/960px-Khan_Shatyr.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Khan_Shatyr.jpg",
+   "author": "Quarot",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "wikimedia_commons",
+   "depicts": "Хан Шатыр",
+   "astana": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Central_Downtown_Astana_pamorama.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Central_Downtown_Astana_pamorama.jpg/960px-Central_Downtown_Astana_pamorama.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Central_Downtown_Astana_pamorama.jpg",
+   "author": "Ken and Nyetta",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "source": "wikimedia_commons",
+   "depicts": "Панорама центра и набережная Есиля",
+   "astana": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C_EXPO-2017_%D1%81%D0%B2%D0%B5%D1%80%D1%85%D1%83.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C_EXPO-2017_%D1%81%D0%B2%D0%B5%D1%80%D1%85%D1%83.jpg/960px-%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C_EXPO-2017_%D1%81%D0%B2%D0%B5%D1%80%D1%85%D1%83.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0,_EXPO-2017_%D1%81%D0%B2%D0%B5%D1%80%D1%85%D1%83.jpg",
+   "author": "Nikolai Bulykin",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "source": "wikimedia_commons",
+   "depicts": "ЭКСПО-2017 сверху",
+   "astana": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Sunny_January_Day_on_Astana%27s_Ishim_River_%286658586715%29.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Sunny_January_Day_on_Astana%27s_Ishim_River_%286658586715%29.jpg/960px-Sunny_January_Day_on_Astana%27s_Ishim_River_%286658586715%29.jpg",
+   "page_url": "https://commons.wikimedia.org/wiki/File:Sunny_January_Day_on_Astana%27s_Ishim_River_(6658586715).jpg",
+   "author": "Ken and Nyetta",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "source": "wikimedia_commons",
+   "depicts": "Есиль зимой",
+   "astana": true
+  }
+ ]
+}
