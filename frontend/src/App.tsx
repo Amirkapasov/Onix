@@ -4,14 +4,15 @@ import MapView from './components/MapView'
 import Controls, { type ControlsState } from './components/Controls'
 import Results from './components/Results'
 import ContextUsed from './components/ContextUsed'
-import { ApiError, USE_MOCK, fetchCategoryPhotos, fetchHealth, fetchPois, fetchPresets, recommend } from './api'
+import { ApiError, USE_MOCK, fetchCategoryPhotos, fetchHealth, fetchPois, fetchPresets, fetchWhere, recommend } from './api'
 import Ornament from './components/Ornament'
 import { Credit } from './components/Photo'
 import { presetVisual } from './components/Icons'
 import { FALLBACK_PHOTOS, imgSrc } from './photos'
+import { isNightIso } from './hours'
 import { coarsen, isoClock, slotToIso } from './geo'
 import { DICTS, type Dict } from './i18n'
-import type { CategoryPhotos, Lang, LatLon, Poi, Preset, RecommendRequest, RecommendResponse } from './types'
+import type { CategoryPhotos, Lang, LatLon, Poi, Preset, RecommendRequest, RecommendResponse, WhereInfo } from './types'
 
 const LANG_KEY = 'seruen.lang'
 // ?static=1 — без плавных анимаций (для скриншотов headless-браузером)
@@ -273,7 +274,31 @@ export default function App() {
   }, [lang])
 
   const shownLoc = coarsen(location)
+  const locKey = `${shownLoc.lat},${shownLoc.lon}`
+
+  // Адрес точки старта (POST /api/where) — с debounce; устаревшие ответы отбрасываем, при ошибке — тихо координаты.
+  const [where, setWhere] = useState<{ key: string; lang: Lang; info: WhereInfo } | null>(null)
+  useEffect(() => {
+    const ctrl = new AbortController()
+    const id = setTimeout(() => {
+      fetchWhere(shownLoc, lang, ctrl.signal)
+        .then((info) => setWhere(info ? { key: locKey, lang, info } : null))
+        .catch(() => {
+          if (!ctrl.signal.aborted) setWhere(null)
+        })
+    }, 300)
+    return () => {
+      clearTimeout(id)
+      ctrl.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [locKey, lang])
+  const here = where && where.key === locKey && where.lang === lang ? where.info : null
+  const coordsText = `≈ ${shownLoc.lat.toFixed(3)}, ${shownLoc.lon.toFixed(3)}`
   const idle = !shown && !loading && !error
+  // Время, которое уйдёт с запросом (пресет или выбор в «Параметрах»): вечер/ночь → «ночной город» на карте.
+  const effTime = controls.presetTime ?? slotToIso(controls.slot)
+  const night = isNightIso(effTime)
   // Обложка — первое фото курированного списка (стабильно для демо и скриншотов).
   const hero = photos.hero[0] ?? null
 
@@ -295,6 +320,10 @@ export default function App() {
           hint={t.locationHint}
           coarseLabel={t.locationCoarse}
           lang={lang}
+          night={night}
+          clientTime={effTime}
+          nightLabel={t.nightLabel}
+          hereLabel={`${t.youAreHere} · ${here?.label ?? coordsText}`}
         />
       </section>
 
@@ -340,9 +369,11 @@ export default function App() {
             <div className="flex min-w-0 items-center gap-2.5">
               <MapPin className="h-5 w-5 shrink-0 text-teal-600" strokeWidth={1.8} />
               <div className="min-w-0">
-                <p className="truncate text-[16px] font-semibold text-ink-900">{labelText(locationLabel)}</p>
-                <p className="text-[12px] text-ink-400">
-                  ≈ {shownLoc.lat.toFixed(3)}, {shownLoc.lon.toFixed(3)} · {t.locationCoarse}
+                <p className="truncate text-[16px] font-semibold text-ink-900" title={here?.label}>
+                  {here ? here.label : labelText(locationLabel)}
+                </p>
+                <p className="text-[12px] text-ink-400" title={coordsText}>
+                  {here ? t.precision(here.precision_m ?? 100) : `${coordsText} · ${t.locationCoarse}`}
                 </p>
               </div>
             </div>

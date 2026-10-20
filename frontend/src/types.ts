@@ -150,6 +150,14 @@ export interface Preset {
   weather_override?: WeatherOverride | null
 }
 
+/** POST /api/where — адрес огрублённой точки старта по нашей базе (наружу ничего не уходит). */
+export interface WhereInfo {
+  label: string
+  landmark?: string | null
+  address?: string | null
+  precision_m?: number
+}
+
 export interface ApiErrorBody {
   error: { code: string; message: string }
 }
@@ -160,4 +168,5 @@ export interface Poi {
   lat: number
   lon: number
   category: string
+  opening_hours?: string | null
 }

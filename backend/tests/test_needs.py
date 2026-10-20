@@ -128,9 +128,20 @@ def test_leisure_queries_exclude_shops(rich_db):
         assert not any(rich_db[r["poi_id"]]["category"] in SHOP_CATS for r in d["recommendations"]), q
 
 
-def test_my_location_label():
+def test_my_location_label_shows_landmark_and_address():
     d = ask("куда сходить?", label="Моя геолокация")
-    assert d["context_used"]["location"].startswith("≈ ваша локация")
+    loc = d["context_used"]["location"]
+    assert loc.startswith("≈ у «Байтерек»") and "Нуржол" in loc and "Моя геолокация" not in loc
+
+
+def test_where_endpoint():
+    r = client.post("/api/where", json={"lat": 51.1281, "lon": 71.4302, "lang": "ru"})
+    w = r.json()
+    assert r.status_code == 200 and w["landmark"] == "Байтерек" and "Нуржол" in w["address"]
+    assert w["label"].startswith("у «Байтерек»") and w["precision_m"] == 100
+    far = client.post("/api/where", json={"lat": 50.5, "lon": 70.5}).json()
+    assert far["landmark"] is None and far["label"].startswith("≈ 50.50")
+    assert client.post("/api/where", json={"lat": 999, "lon": 0}).status_code == 422
 
 
 def test_shop_24_7_preset(rich_db):

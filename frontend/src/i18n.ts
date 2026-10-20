@@ -97,6 +97,9 @@ const ru = {
   navTitle: 'Вести в навигаторе',
   howToGet: 'Как добраться',
   navNote: 'Откроется сторонний сервис: ему будут переданы точки маршрута.',
+  nightLabel: 'Ночной город: светятся открытые места',
+  youAreHere: 'Вы здесь',
+  precision: (m: number) => `точность ~${m} м`,
   days: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
 }
 
@@ -199,6 +202,9 @@ const kk: Dict = {
   navTitle: 'Навигатормен бару',
   howToGet: 'Қалай жетуге болады',
   navNote: 'Сыртқы сервис ашылады: оған маршрут нүктелері беріледі.',
+  nightLabel: 'Түнгі қала: ашық орындар жарқырайды',
+  youAreHere: 'Сіз осындасыз',
+  precision: (m: number) => `~${m} м дәлдік`,
   days: ['жексенбі', 'дүйсенбі', 'сейсенбі', 'сәрсенбі', 'бейсенбі', 'жұма', 'сенбі'],
 }
 
@@ -299,6 +305,9 @@ const en: Dict = {
   navTitle: 'Open in a navigator',
   howToGet: 'Directions',
   navNote: 'Opens a third-party service: the route points will be shared with it.',
+  nightLabel: 'Night city: open places glow',
+  youAreHere: 'You are here',
+  precision: (m: number) => `accuracy ~${m} m`,
   days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 }
 

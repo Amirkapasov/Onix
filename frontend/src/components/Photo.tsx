@@ -4,6 +4,9 @@ import type { Dict } from '../i18n'
 import { cleanAuthor, imgSrc } from '../photos'
 import { categoryIcon } from './Icons'
 
+// ?static=1 (скриншоты): грузим сразу, иначе headless успевает снять пустой блок
+const EAGER = new URLSearchParams(window.location.search).get('static') === '1'
+
 interface Props {
   image?: ImageRef | null // фото самого места
   illustration?: ImageRef | null // фото категории — помечается «иллюстрация»
@@ -39,7 +42,7 @@ export default function Photo({ image, illustration, category, alt, t, className
             key={current.src}
             src={current.src}
             alt={alt}
-            loading="lazy"
+            loading={EAGER ? 'eager' : 'lazy'}
             decoding="async"
             referrerPolicy="no-referrer"
             onError={() => setFailed((f) => f + 1)}

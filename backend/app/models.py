@@ -37,6 +37,12 @@ class RecommendRequest(BaseModel):
     weather_override: WeatherOverride | None = None  # только демо/eval
 
 
+class WhereRequest(BaseModel):
+    lat: float = Field(ge=-90, le=90)
+    lon: float = Field(ge=-180, le=180)
+    lang: Literal["ru", "kk", "en"] | None = None
+
+
 class ContextUsed(BaseModel):
     location: str
     time: str

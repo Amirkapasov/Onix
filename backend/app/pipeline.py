@@ -12,6 +12,7 @@ from . import config, geo, llm
 from .data import store
 from .generate import GEN_SYSTEM, build_user_prompt
 from . import needs as needs_mod
+from . import where as where_mod
 from .guards import (closed_mention_warning, danger_warning, mentioned_pois,
                      out_of_area_warning)
 from .models import RecommendRequest
@@ -327,19 +328,15 @@ _MY_LOCATION = {"", "моя геолокация", "моё местополож�
 
 
 def context_used(req: RecommendRequest, ctx: Ctx, start, lang: str, notes: list[str]) -> dict:
-    if req.location and (req.location_label or "").strip().lower() in _MY_LOCATION:
-        loc = L(lang, "≈ ваша локация (точность ~100 м)", "≈ your location (~100 m precision)",
-                "≈ сіздің орныңыз (~100 м дәлдік)")
+    if req.location and (req.location_label or "").strip().lower() in _MY_LOCATION | {""}:
+        w = where_mod.where(*start, lang)  # адрес по нашей базе: «у «Байтерек», бульвар Нуржол, 14»
+        loc = L(lang, f"≈ {w['label']} (точность ~100 м)", f"≈ {w['label']} (~100 m precision)",
+                f"≈ {w['label']} (~100 м дәлдік)")
     elif req.location_label:
-        loc = L(lang, f"≈ район {req.location_label} (точность ~100 м)", f"≈ {req.location_label} area (~100 m precision)",
-                f"≈ {req.location_label} маңы (~100 м дәлдік)")
-    elif req.location:
-        near = min(store.get(), key=lambda p: geo.haversine_m(*start, p["lat"], p["lon"]), default=None)
-        if near and geo.haversine_m(*start, near["lat"], near["lon"]) < 1000:
-            loc = L(lang, f"≈ рядом с «{near['name']}» (точность ~100 м)", f"≈ near “{near['name']}” (~100 m precision)",
-                    f"≈ «{near['name']}» маңында (~100 м)")
-        else:
-            loc = f"≈ {start[0]:.2f}, {start[1]:.2f} (~1 km)"
+        addr = where_mod.where(*start, lang)["address"] if req.location else None
+        place = f"{req.location_label}, {addr}" if addr else req.location_label
+        loc = L(lang, f"≈ район {place} (точность ~100 м)", f"≈ {place} area (~100 m precision)",
+                f"≈ {place} маңы (~100 м дәлдік)")
     else:
         loc = L(lang, "не передана (считаем от Байтерека)", "not provided (using Baiterek)", "берілмеді (Бәйтерек)")
     p = ctx.parsed

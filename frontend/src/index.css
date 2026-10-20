@@ -47,6 +47,14 @@ body { @apply bg-white font-sans text-ink-900 antialiased; font-feature-settings
   border: 0; border-radius: 10px; padding: 6px 10px; box-shadow: 0 4px 16px rgb(11 37 69 / .16);
 }
 .leaflet-tooltip-top::before { border-top-color: #fff; }
+/* Постоянная подпись «Вы здесь · адрес» у точки старта: компактная, не перекрывает метки мест */
+.leaflet-tooltip.me-label {
+  max-width: min(300px, 70vw); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font-size: 12px; font-weight: 600; padding: 4px 9px; border-radius: 999px;
+  background: #fff; color: var(--color-ink-900); border-left: 3px solid var(--color-teal-500);
+  box-shadow: 0 2px 10px rgb(11 37 69 / .18); pointer-events: none;
+}
+.leaflet-tooltip.me-label::before { display: none; }
 .leaflet-control-attribution { font-size: 10px; background: rgb(255 255 255 / .85) !important; }
 .leaflet-control-zoom { border: 0 !important; box-shadow: 0 2px 10px rgb(11 37 69 / .15) !important; border-radius: 12px !important; overflow: hidden; }
 .leaflet-control-zoom a { color: var(--color-ink-900) !important; width: 36px !important; height: 36px !important; line-height: 36px !important; }
@@ -78,6 +86,41 @@ body { @apply bg-white font-sans text-ink-900 antialiased; font-feature-settings
 }
 @media (prefers-reduced-motion: reduce) { .rise, .skeleton { animation: none; } }
 .static .rise { animation: none; }
+
+/* ---------- Ночной город ---------- */
+.tiles-night { filter: invert(1) hue-rotate(185deg) brightness(.82) contrast(.92) saturate(.55); transition: opacity .6s ease; }
+.tiles-muted { transition: opacity .6s ease; }
+.map-night .leaflet-container { background: #0a1424; }
+.static .tiles-night { transition: none; }
+
+/* «Горящие окна»: открытые места мягко светятся и чуть мерцают */
+@keyframes flicker { 0%, 100% { opacity: 1; } 45% { opacity: .78; } 55% { opacity: .92; } 70% { opacity: .7; } }
+.glow { animation: flicker 3.6s ease-in-out infinite; }
+.glow-1 { animation-delay: -.9s; } .glow-2 { animation-delay: -1.8s; } .glow-3 { animation-delay: -2.7s; }
+
+/* Маркеры рекомендаций ночью: открытые — тёплый свет, остальные — приглушённые */
+.map-night .rec-pin__dot { background: #24446f; border-color: #8fdfeb; box-shadow: 0 0 10px rgb(0 175 202 / .35); }
+.map-night .rec-pin__cat { background: #0b2545; color: #fec50c; }
+.map-night .rec-pin--lit .rec-pin__dot {
+  background: #fec50c; color: #0b2545; border-color: #fff4cc;
+  box-shadow: 0 0 0 4px rgb(254 197 12 / .22), 0 0 22px 6px rgb(255 159 28 / .55);
+  animation: flicker 3.6s ease-in-out infinite;
+}
+.map-night .rec-pin--active .rec-pin__dot { background: #fff; color: #0b2545; }
+
+/* «Вы здесь» пульсирует */
+@keyframes pulse-ring { 0% { transform: scale(.6); opacity: .9; } 100% { transform: scale(3.2); opacity: 0; } }
+.me-pulse { width: 16px; height: 16px; border-radius: 50%; background: rgb(0 175 202 / .55); box-shadow: 0 0 12px #00afca; animation: pulse-ring 2.2s ease-out infinite; }
+.static .me-pulse { animation: none; transform: scale(2); opacity: .45; }
+
+.map-night .leaflet-tooltip { background: #0b2545; color: #fff; box-shadow: 0 4px 18px rgb(0 0 0 / .5); }
+.map-night .leaflet-tooltip-top::before { border-top-color: #0b2545; }
+.map-night .leaflet-tooltip-bottom::before { border-bottom-color: #0b2545; }
+.map-night .leaflet-tooltip.me-label { background: rgb(6 24 47 / .9); color: #e6f8fb; border-left-color: #7df3ff; box-shadow: 0 0 14px rgb(0 175 202 / .35); }
+.map-night .map-pill { background: rgb(6 24 47 / .85); color: #dbe1e8; }
+.map-night .leaflet-control-zoom a { background: #13315c !important; color: #fff !important; border-color: #24446f !important; }
+.map-night .leaflet-control-attribution { background: rgb(6 24 47 / .8) !important; color: #b6c0cd; }
+.map-night .leaflet-control-attribution a { color: #8fdfeb; }
 
 /* Горизонтальная лента без полосы прокрутки */
 .no-scrollbar { scrollbar-width: none; }

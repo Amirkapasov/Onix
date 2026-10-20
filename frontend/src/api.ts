@@ -1,4 +1,4 @@
-import type { CategoryPhotos, Poi, Preset, RecommendRequest, RecommendResponse } from './types'
+import type { CategoryPhotos, Lang, LatLon, Poi, Preset, RecommendRequest, RecommendResponse, WhereInfo } from './types'
 import { FALLBACK_PHOTOS } from './photos'
 import { coarsen, haversineM, isoClock } from './geo'
 import { weekdayOf } from './i18n'
@@ -58,6 +58,21 @@ export async function fetchCategoryPhotos(): Promise<CategoryPhotos> {
     hero: data.hero?.length ? data.hero : FALLBACK_PHOTOS.hero,
     categories: { ...FALLBACK_PHOTOS.categories, ...(data.categories ?? {}) },
   }
+}
+
+/** Адрес точки старта. POST, чтобы координаты не попадали в access-лог; координаты — огрублённые. */
+export async function fetchWhere(loc: LatLon, lang: Lang, signal?: AbortSignal): Promise<WhereInfo | null> {
+  if (USE_MOCK) return null
+  const p = coarsen(loc)
+  const res = await fetch('/api/where', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ lat: p.lat, lon: p.lon, lang }),
+    signal,
+  })
+  if (!res.ok) return null
+  const body = (await res.json()) as WhereInfo
+  return body?.label ? body : null
 }
 
 export async function fetchHealth(): Promise<boolean> {

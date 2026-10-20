@@ -13,7 +13,8 @@ from fastapi.responses import JSONResponse
 
 from . import config, llm, weather
 from .data import store
-from .models import RecommendRequest, RecommendResponse
+from .models import RecommendRequest, RecommendResponse, WhereRequest
+from .where import where
 from .pipeline import recommend
 from .presets import PRESETS
 from .search import index
@@ -79,6 +80,12 @@ def api_pois(bbox: str | None = Query(None, description="minLat,minLon,maxLat,ma
 @app.get("/api/presets")
 def api_presets():
     return {"items": PRESETS}
+
+
+@app.post("/api/where")
+def api_where(loc: WhereRequest):
+    """«Где я»: ориентир и адрес по базе мест (POST — координаты не попадают в журнал запросов)."""
+    return where(loc.lat, loc.lon, loc.lang or "ru")
 
 
 @app.get("/api/category-photos")
